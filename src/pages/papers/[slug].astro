@@ -4,12 +4,12 @@ import LibraryBanner from "../../components/LibraryBanner.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import ReadingStatusControl from "../../components/ReadingStatusControl.astro";
 import { fields } from "../../data/fields";
-import { getPapersByField, getRelatedPapers, getTermsByIds, getTopicById } from "../../data/repository";
+import { getAllPapers, getRelatedPapers, getTermsByIds, getTopicById } from "../../data/repository";
 import { renderMarkdown } from "../../lib/render-markdown";
 import { sitePath } from "../../lib/site-path";
 import type { PaperRecord } from "../../data/types";
 
-export function getStaticPaths() { return getPapersByField("embodied-intelligence").map((paper) => ({ params: { slug: paper.slug }, props: { paper } })); }
+export function getStaticPaths() { return getAllPapers().map((paper) => ({ params: { slug: paper.slug }, props: { paper } })); }
 interface Props { paper: PaperRecord }
 const { paper } = Astro.props;
 const field = fields.find((item) => item.id === paper.fieldIds[0])!;

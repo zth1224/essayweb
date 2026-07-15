@@ -43,6 +43,7 @@ export interface PaperSection { id: string; title: string; markdown: string }
 export interface TopicRecord {
   id: string;
   slug: string;
+  fieldId: FieldId;
   title: string;
   descriptionMarkdown: string;
   readingRouteMarkdown: string;

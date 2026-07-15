@@ -46,6 +46,15 @@ test("field search, filtering and local reading status work together", async ({ 
   await expect(page.getByRole("combobox", { name: "更新 Diffusion Policy: Visuomotor Policy Learning via Action Diffusion 的阅读状态" })).toHaveValue("read");
 });
 
+test("cs.AI field publishes the two explicitly mapped papers", async ({ page }) => {
+  await page.goto("/fields/artificial-intelligence/");
+
+  await expect(page.getByRole("heading", { name: "人工智能", level: 1 })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Do AI Agents Know When a Task Is Simple/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Audio-Native Speech Recognition/ })).toBeVisible();
+  await expect(page.locator("[data-paper-card]")).toHaveCount(2);
+});
+
 test("paper details and term directory keep relationships navigable", async ({ page }, testInfo) => {
   await page.goto("/papers/2023-diffusion-policy/");
 
@@ -106,7 +115,7 @@ test("all reachable internal links resolve without missing pages", async ({ requ
     }
   }
 
-  expect(visited.size).toBe(217);
+  expect(visited.size).toBe(220);
 });
 
 test("field pages retain useful server-rendered content without JavaScript", async ({ browser }, testInfo) => {

@@ -34,11 +34,17 @@ describe("essay library synchronization", () => {
   test("builds a deterministic snapshot with topic recovery and safe degradation", async () => {
     const snapshot = await buildLibrarySnapshot(fixtureRoot);
 
-    expect(snapshot.meta).toMatchObject({ paperCount: 2, topicCount: 1, termCount: 1, damagedPaperCount: 1 });
-    expect(snapshot.papers[0]).toMatchObject({ title: "Sample Paper, with a Comma", status: "read", contentState: "complete" });
-    expect(snapshot.papers[1]).toMatchObject({ title: "π*0.6: a VLA That Learns From Experience", status: "unread", contentState: "source-damaged" });
+    expect(snapshot.meta).toMatchObject({ paperCount: 2, topicCount: 2, termCount: 1, damagedPaperCount: 1 });
+    expect(snapshot.papers[0]).toMatchObject({ title: "Sample Paper, with a Comma", status: "read", contentState: "complete", fieldIds: ["cs-ai"] });
+    expect(snapshot.papers[1]).toMatchObject({ title: "π*0.6: a VLA That Learns From Experience", status: "unread", contentState: "source-damaged", fieldIds: ["embodied-intelligence"] });
     expect(snapshot.papers[1].topicIds).toEqual(["embodied-foundation-models"]);
-    expect(snapshot.terms.map((term) => term.name)).toEqual(["VLA (Vision-Language-Action)"]);
+    expect(snapshot.topics).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: "artificial-intelligence", fieldId: "cs-ai" }),
+      expect.objectContaining({ id: "embodied-foundation-models", fieldId: "embodied-intelligence" }),
+    ]));
+    expect(snapshot.terms).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: "VLA (Vision-Language-Action)", fieldId: "cs-ai" }),
+    ]));
     expect(JSON.stringify(snapshot)).not.toContain("????????");
     expect(JSON.stringify(snapshot)).not.toContain(fixtureRoot);
   });

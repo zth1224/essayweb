@@ -17,6 +17,8 @@ export const getPaperBySlug = (slug: string) =>
 export const getPaperById = (id: string) =>
   papers.find((paper) => paper.id === id);
 
+export const getAllPapers = () => papers;
+
 export const getPapersByField = (fieldId: FieldId) =>
   papers.filter((paper) => paper.fieldIds.includes(fieldId));
 
@@ -27,7 +29,7 @@ export const getTermsByIds = (ids: string[]) =>
   ids.map((id) => terms.find((term) => term.id === id)).filter((term) => term !== undefined);
 
 export const getTopicsByField = (fieldId: FieldId) =>
-  fieldId === "embodied-intelligence" ? topics : [];
+  topics.filter((topic) => topic.fieldId === fieldId);
 
 export const getTopicById = (id: string) => topics.find((topic) => topic.id === id);
 

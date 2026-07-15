@@ -9,6 +9,11 @@ const CSV_HEADERS = [
 ] as const;
 
 type CsvRow = Record<(typeof CSV_HEADERS)[number], string>;
+type FieldId = "cs-ai" | "cs-cl" | "cs-cv" | "cs-lg" | "embodied-intelligence";
+
+const FIELD_IDS = new Set<FieldId>([
+  "cs-ai", "cs-cl", "cs-cv", "cs-lg", "embodied-intelligence",
+]);
 
 export interface ParsedPaperSection {
   id: string;
@@ -58,6 +63,38 @@ export const parseCsvText = (text: string): CsvRow[] => {
   return records;
 };
 
+const parsePaperFields = (sourceRoot: string, paperPaths: Set<string>) => {
+  const relativePath = "bibliography/paper-fields.csv";
+  const absolutePath = path.join(sourceRoot, relativePath);
+  const result = new Map<string, FieldId[]>();
+  if (!existsSync(absolutePath)) return { fieldsByPaperPath: result, relativePath: undefined };
+
+  const text = readFileSync(absolutePath, "utf8").replace(/^\uFEFF/, "");
+  const records = parse(text, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_quotes: false,
+    trim: true,
+  }) as Array<{ paper_path: string; fields: string }>;
+  const headers = parse(text.split(/\r?\n/, 1)[0] ?? "", { relax_quotes: false })[0] as string[];
+  if (headers.length !== 2 || headers[0] !== "paper_path" || headers[1] !== "fields") {
+    throw new Error("paper-fields.csv must use the paper_path,fields schema");
+  }
+
+  for (const record of records) {
+    const paperPath = record.paper_path.replaceAll("\\", "/");
+    if (!paperPaths.has(paperPath)) throw new Error(`Unknown paper_path in paper-fields.csv: ${paperPath}`);
+    if (result.has(paperPath)) throw new Error(`Duplicate paper_path in paper-fields.csv: ${paperPath}`);
+    const fields = [...new Set(record.fields.split(";").map((value) => value.trim()).filter(Boolean))];
+    if (!fields.length || fields.some((field) => !FIELD_IDS.has(field as FieldId))) {
+      throw new Error(`Invalid fields for ${paperPath}: ${record.fields}`);
+    }
+    result.set(paperPath, fields as FieldId[]);
+  }
+
+  return { fieldsByPaperPath: result, relativePath };
+};
+
 const sectionBlocks = (markdown: string) => {
   const matches = [...markdown.matchAll(/^##\s+(.+)\s*$/gm)];
   return matches.map((match, index) => ({
@@ -92,6 +129,7 @@ const extractBlock = (markdown: string, heading: string) => {
 const parseTopicMarkdown = (fileName: string, markdown: string) => ({
   id: path.basename(fileName, ".md"),
   slug: path.basename(fileName, ".md"),
+  fieldId: "embodied-intelligence" as FieldId,
   title: markdown.match(/^#\s+(.+)\s*$/m)?.[1]?.trim() ?? path.basename(fileName, ".md"),
   descriptionMarkdown: extractBlock(markdown, "主题定位"),
   readingRouteMarkdown: extractBlock(markdown, "阅读路线"),
@@ -108,7 +146,7 @@ const parseTermsMarkdown = (markdown: string) => {
   const terms: Array<{
     id: string; slug: string; name: string; sortKey: string;
     definitionMarkdown: string; contextMarkdown: string;
-    fieldId: "embodied-intelligence"; relatedPaperIds: string[];
+    fieldId: FieldId; relatedPaperIds: string[];
   }> = [];
   const issues: Array<{ level: "warning"; code: string; sourcePath: string; message: string }> = [];
 
@@ -154,6 +192,9 @@ export const buildLibrarySnapshot = async (sourceRoot: string) => {
 
   const csvText = readFileSync(path.join(sourceRoot, "bibliography/papers.csv"), "utf8");
   const rows = parseCsvText(csvText);
+  const normalizedPaperPaths = new Set(rows.map((row) => row.paper_path.replaceAll("\\", "/")));
+  const paperFields = parsePaperFields(sourceRoot, normalizedPaperPaths);
+  if (paperFields.relativePath) inputPaths.push(paperFields.relativePath);
   const slugs = rows.map((row) => paperSlugFromPath(row.paper_path));
   if (new Set(slugs).size !== slugs.length) throw new Error("Duplicate paper slug in papers.csv");
 
@@ -193,7 +234,7 @@ export const buildLibrarySnapshot = async (sourceRoot: string) => {
       month: safeNumber(row.month),
       summaryMarkdown: damaged ? "源笔记内容损坏，待修复后补充。" : parsed.summaryMarkdown,
       status: row.reading_status.trim() === "已精读" ? "read" as const : "unread" as const,
-      fieldIds: ["embodied-intelligence" as const],
+      fieldIds: paperFields.fieldsByPaperPath.get(relativePaperPath) ?? ["embodied-intelligence" as const],
       topicIds: topicIdsByPaper.get(slug) ?? [],
       termIds: [] as string[],
       sourceUrl: safeHttpUrl(row.source_url) ?? "",
@@ -205,9 +246,12 @@ export const buildLibrarySnapshot = async (sourceRoot: string) => {
   });
 
   const paperIds = new Set(papers.map((paper) => paper.id));
+  const fieldsByPaperId = new Map(papers.map((paper) => [paper.id, paper.fieldIds]));
   for (const topic of topics) {
     const dangling = topic.paperIds.filter((paperId) => !paperIds.has(paperId));
     if (dangling.length) throw new Error(`Dangling topic relationships in ${topic.id}: ${dangling.join(", ")}`);
+    const relatedFields = new Set(topic.paperIds.flatMap((paperId) => fieldsByPaperId.get(paperId) ?? []));
+    if (relatedFields.size === 1) topic.fieldId = [...relatedFields][0];
   }
 
   const termsResult = parseTermsMarkdown(readFileSync(path.join(sourceRoot, "TERMS.md"), "utf8"));
@@ -218,6 +262,10 @@ export const buildLibrarySnapshot = async (sourceRoot: string) => {
     if (dangling.length) throw new Error(`Dangling term relationships in ${term.name}: ${dangling.join(", ")}`);
   }
   const termIdsByPaper = new Map<string, string[]>();
+  for (const term of terms) {
+    const relatedFields = new Set(term.relatedPaperIds.flatMap((paperId) => fieldsByPaperId.get(paperId) ?? []));
+    if (relatedFields.size === 1) term.fieldId = [...relatedFields][0];
+  }
   for (const term of terms) for (const paperId of term.relatedPaperIds) termIdsByPaper.set(paperId, [...(termIdsByPaper.get(paperId) ?? []), term.id]);
   for (const paper of papers) paper.termIds = termIdsByPaper.get(paper.id) ?? [];
 

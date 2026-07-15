@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "sourceHash": "4962d618c910bd2ad00aa6eb6528a7724da31a256f4d4bb8a6a9d6f9e13d53db",
-    "sourceUpdatedAt": "2026-07-13T13:15:31.272Z",
-    "paperCount": 210,
-    "topicCount": 7,
-    "termCount": 497,
+    "sourceHash": "18bdd99908f1d30b5aeaecc265731aac4498d2bf3a4017d93acd6fad537dab91",
+    "sourceUpdatedAt": "2026-07-15T11:46:45.734Z",
+    "paperCount": 212,
+    "topicCount": 8,
+    "termCount": 505,
     "damagedPaperCount": 7,
     "readPaperCount": 47,
     "sourceFiles": {
-      "csvRows": 210,
-      "paperNotes": 210,
-      "topicPages": 7,
-      "termBlocks": 510,
+      "csvRows": 212,
+      "paperNotes": 212,
+      "topicPages": 8,
+      "termBlocks": 518,
       "recentEntries": 6
     }
   },
@@ -4524,7 +4524,7 @@
       "sourceUrl": "https://www.pi.website/blog/pi07",
       "pdfUrl": "https://www.pi.website/download/pi07.pdf",
       "contentState": "complete",
-      "recentRank": 3,
+      "recentRank": 5,
       "sections": [
         {
           "id": "section-1",
@@ -4663,7 +4663,7 @@
       "sourceUrl": "https://arxiv.org/abs/2603.16861",
       "pdfUrl": "https://arxiv.org/pdf/2603.16861",
       "contentState": "complete",
-      "recentRank": 4,
+      "recentRank": 6,
       "sections": [
         {
           "id": "section-1",
@@ -4735,7 +4735,6 @@
       "sourceUrl": "https://airvla.github.io/",
       "pdfUrl": "https://arxiv.org/pdf/2603.25038",
       "contentState": "complete",
-      "recentRank": 5,
       "sections": [
         {
           "id": "section-1",
@@ -4801,7 +4800,6 @@
       "sourceUrl": "https://arxiv.org/abs/2603.15789",
       "pdfUrl": "https://arxiv.org/pdf/2603.15789",
       "contentState": "complete",
-      "recentRank": 6,
       "sections": [
         {
           "id": "section-1",
@@ -5395,7 +5393,7 @@
       "sourceUrl": "https://arxiv.org/abs/2605.18678",
       "pdfUrl": "https://arxiv.org/pdf/2605.18678",
       "contentState": "complete",
-      "recentRank": 2,
+      "recentRank": 4,
       "sections": [
         {
           "id": "section-1",
@@ -5461,7 +5459,7 @@
       "sourceUrl": "https://arxiv.org/abs/2605.19919",
       "pdfUrl": "https://arxiv.org/pdf/2605.19919v1",
       "contentState": "complete",
-      "recentRank": 1,
+      "recentRank": 3,
       "sections": [
         {
           "id": "section-1",
@@ -13690,12 +13688,157 @@
           "markdown": "- contraction 指标与闭环稳定性、Lyapunov 条件或真实扰动恢复率之间能否建立理论联系？\n- BC-loss filter 依赖 Monte-Carlo return 与 critic，一旦奖励极稀疏或 return 噪声大，怎样避免错误解锁正则？\n- 能否动态选择 K、Best-of-N 数量和 residual scale，只在高风险接触节点增加计算？\n- 对一个大规模多任务 VLA，不同任务是否需要独立 critic/residual，还是可共享一个条件化 post-training head？\n- 如何防止 distribution contraction 在多解操作中造成 mode collapse，并保留对新物体/新初态有用的探索覆盖？"
         }
       ]
+    },
+    {
+      "id": "2026-complexity-aware-agents",
+      "slug": "2026-complexity-aware-agents",
+      "sourceNumber": 212,
+      "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+      "authorsText": "Junjie Yin；Xinyu Feng",
+      "year": 2026,
+      "month": 7,
+      "summaryMarkdown": "论文指出，Agent 的效率瓶颈不只在“能否解决任务”，还在“能否判断任务究竟需要多少工作”；E3 通过先估计执行范围、走最小可行路径、验证失败后逐级扩展，在保持任务成功率的同时显著减少无关阅读和工具调用。",
+      "status": "unread",
+      "fieldIds": [
+        "cs-ai"
+      ],
+      "topicIds": [
+        "artificial-intelligence",
+        "artificial-intelligence"
+      ],
+      "termIds": [
+        "term-1204f609f7",
+        "term-953906f0be",
+        "term-7c7ba71ada",
+        "term-365010ed31"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.13034",
+      "pdfUrl": "https://arxiv.org/pdf/2607.13034",
+      "contentState": "complete",
+      "recentRank": 1,
+      "sections": [
+        {
+          "id": "section-1",
+          "title": "研究背景与问题",
+          "markdown": "LLM Agent 在软件维护、数据处理和工程工作流中常采用一种保守策略：先读取尽可能多的文件与上下文，再开始修改。这种 maximum-context-first 行为对高风险或跨仓库任务可能合理，但会把单文件替换等简单任务做成小型代码审计。\n\n论文将缺失能力定义为 **task-aware execution-scope estimation**：Agent 在行动前需要估计任务难度、必要文件、工具、步骤、风险与置信度，并找到满足可靠性要求的最短执行路径。核心问题不是简单地减少思考，而是在验证约束下减少不必要的思考和环境交互。\n\n作者研究三个问题：能否形式化任务“本应需要”的最小执行成本；能否用低成本估计构造初始执行范围；以及从最小范围开始、只在失败时扩展，能否兼顾成功率与成本。"
+        },
+        {
+          "id": "section-2",
+          "title": "方法详解",
+          "markdown": "### Minimum-Sufficient Execution 与 ACRR\n\n作者把一次 Agent 运行表示为包含搜索、读取、依赖追踪、编辑和验证等动作的 trajectory，并用延迟、token、工具调用数和完整读取文件数构成成本。**Minimum-Sufficient Execution** 是在达到目标成功概率的约束下成本最低的轨迹。\n\n**Agent Cognitive Redundancy Ratio（ACRR）** 用实际成本相对 oracle 最小成本的超额比例衡量浪费。ACRR 为 0 表示达到 oracle；ACRR 为 4 表示实际花费约为最小成本的 5 倍。失败运行不计算为“低成本”，而是单独计入成功率，避免把便宜失败误当作效率。\n\n### E3：Estimate、Execute、Expand\n\n1. **Estimate**：根据指令、历史经验和至多一次低成本结构探测，估计任务难度、范围、风险和置信度。明确文件名、引用字面量和局部动词倾向单文件任务；“全仓库重构”等提示倾向仓库级任务；其余情况先搜索关键 token 并统计命中范围。\n2. **Execute**：按估计范围执行最小可行路径。Level 1 只定位并修改直接位置；Level 2 复用搜索结果，读取和修改多个直接位置；Level 3 才追踪 imports 与间接依赖。验证强度随风险调整。\n3. **Expand**：验证失败或置信度不足时只扩大一级范围，复用已经获得的搜索结果和上下文，而不是清空状态重新开始或直接读取全仓库。\n\n该设计允许 estimator 保持便宜且偏乐观，因为遗漏的隐藏依赖由单调扩展和验证兜底。其关键不是一次性精确分类任务，而是把估计变成可修正的初始 operating point。\n\n### MSE-Bench 与真实模型补充验证\n\nMSE-Bench 是能力受控的离线环境，底层编辑能力对所有策略相同，差异只来自它们选择读取多少上下文。121 个任务分为 41 个单文件任务、40 个跨文件直接命中任务和 40 个仓库级任务；仓库级任务包含通过 alias 或 re-export 隐藏的间接依赖。每个任务都有 oracle 最小轨迹。\n\n作者还实现 LLM-Case：在 vendored `toml 0.10.2` 真代码上，让同一个 gpt-4o 通过相同工具执行不同 system prompt 策略，并用真实 pytest grader 与 gold patch 测量成功和 oracle 成本，以检查模拟环境结论是否能在真实模型上出现。"
+        },
+        {
+          "id": "section-3",
+          "title": "实验与结果",
+          "markdown": "### 策略与指标\n\n主要比较 Max-Context-First、Fixed ReAct、Adaptive Retrieval、E3 和 Oracle。指标包括成功率、延迟、token、工具调用、完整读取文件数、加权总成本与 ACRR。\n\n### MSE-Bench 主结果\n\n- Max-Context-First：100% 成功，平均成本 122.85，ACRR 12.90，平均完整读取 8.46 个文件。\n- Fixed ReAct：66.9% 成功，平均成本 17.16；由于不追踪间接依赖，所有 Level 3 任务失败。\n- Adaptive Retrieval：100% 成功，平均成本 22.08，ACRR 1.21，平均完整读取 1.99 个文件。\n- E3：100% 成功，平均成本 18.55，ACRR 0.55，平均完整读取 0.66 个文件。\n\n相对 Max-Context-First，E3 报告约 85% 的总成本下降、91% 的 token 下降和 92% 的完整文件读取下降；相对更强的 Adaptive Retrieval，在相同 100% 成功率下仍降低约 16% 总成本。优势集中在简单任务；最困难的 Level 3 上，Adaptive Retrieval 可因提前做完整追踪而略低于需要扩展的 E3。\n\n### 稳健性和真实模型\n\n将指令改写为与 estimator 关键词不重叠的 held-out wording 后，估计准确率由 85.1% 降至 66.9%，但 E3 仍保持 100% 成功，平均成本只从 18.6 增至 20.2，说明成功兜底来自 Expand 而不是模板关键词。\n\n在 4000 组随机成本权重中，E3 在 99.8% 情况下仍是成本最低的全成功策略。LLM-Case 的 gpt-4o 案例也观察到过度读取，但程度比模拟的 MCF 温和；E3 总体最精简、最快，少数失败与 provider rate limit 相关。该结果是小规模 case study，不等价于跨模型统计结论。"
+        },
+        {
+          "id": "section-4",
+          "title": "贡献与创新",
+          "markdown": "1. 把“Agent 是否知道任务很简单”转化为可测量的 minimum-sufficient trajectory 和 ACRR，而不只讨论主观的 overthinking。\n2. 提出 E3，将执行范围估计、最小路径和验证驱动扩展组合为一个可恢复的闭环。\n3. 构造带逐任务 oracle 的 MSE-Bench，把模型能力与执行冗余分离。\n4. 用 held-out wording、成本权重扫描和真实 LLM-Case 回应 estimator 循环定义、成本模型偏置和机械 baseline 等质疑。\n5. 将 Agent 范围估计类比为工程求解器的 warm start，强调以任务结构和可验证反馈约束推理成本。"
+        },
+        {
+          "id": "section-5",
+          "title": "局限与风险",
+          "markdown": "1. 主体实验是 capability-invariant simulator，结论首先描述的是策略在设定成本模型下的轨迹形状，而不是已部署商业 Agent 的普遍行为。\n2. MSE-Bench 来自少数程序化任务原型，隐藏复杂性主要是 alias/re-export，尚未覆盖动态分派、反射、配置耦合和开放式需求。\n3. estimator 是透明的词法规则加一次探测，不代表学习式复杂度估计器的上限。\n4. LLM-Case 仅使用一个模型、五个真实代码任务且每任务三次运行，统计规模不足；rate limit 也会混入系统因素。\n5. 更大范围的上下文有时能防止语义错误，真实 Agent 的最优起点可能高于模拟 oracle，需要在能力变化和风险敏感任务中重新校准。\n6. 过度追求低成本可能诱发 under-scoping；E3 的安全性依赖可靠 verifier，缺乏可执行验收标准时不能直接照搬。"
+        },
+        {
+          "id": "section-6",
+          "title": "与知识库中其他论文的关系",
+          "markdown": "- 该论文属于通用 AI Agent 的执行策略与评测，不属于机器人具身主题，因此单独归入网站的 `cs.AI` 分区。\n- 方法与 ReAct、adaptive retrieval、test-time compute routing 互补：routing 决定使用哪个模型或多少推理预算，E3 决定当前任务需要理解哪些文件、工具和步骤。\n- 对本知识库维护工作有直接启发：先精确去重与定位必要同步面，运行目标验证；只有在验证失败时再扩大到更多文件，而不是每次完整扫描所有论文资产。"
+        },
+        {
+          "id": "section-7",
+          "title": "阅读备注",
+          "markdown": "- 最值得引用的不是“少读文件”，而是“以成功约束定义最低成本，并用失败触发范围扩展”。\n- ACRR 必须与成功率一起报告；否则 cheap failure 会产生误导。\n- E3 适合有可靠测试、链接检查或构建命令的工程任务。对需求含糊、医疗/安全或不可逆操作，应提高初始范围和验证强度。\n- 阅读实验数字时应区分三层证据：可精确复现的 simulator、较强 adaptive baseline、规模有限的 gpt-4o 案例。\n- 代码仓库已公开 benchmark、实验脚本、权重敏感性结果和测试；未发现模型权重或独立大型真实任务数据集。"
+        }
+      ]
+    },
+    {
+      "id": "2026-audio-native-speech-recognition",
+      "slug": "2026-audio-native-speech-recognition",
+      "sourceNumber": 213,
+      "title": "Audio-Native Speech Recognition with a Frozen Discrete-Diffusion Language Model",
+      "authorsText": "Harsha Vardhan Khurdula；Abhinav Kumar Singh；Yoeven D Khemlani；Vineet Agarwal（Interfaze AI）",
+      "year": 2026,
+      "month": 7,
+      "summaryMarkdown": "论文证明冻结的 DiffusionGemma 离散扩散语言模型可以通过冻结 Whisper encoder、轻量 projector、LoRA 和直接作用于音频表示的 CTC 辅助监督获得语音能力，以约 8 次并行去噪完成转写；关键突破不是更强 decoder，而是绕过失效 attention 的 grounding deadlock。",
+      "status": "unread",
+      "fieldIds": [
+        "cs-ai"
+      ],
+      "topicIds": [
+        "artificial-intelligence",
+        "artificial-intelligence"
+      ],
+      "termIds": [
+        "term-02a9c827fc",
+        "term-fd810e91ba",
+        "term-7118b34380",
+        "term-716e3546b8"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.13013",
+      "pdfUrl": "https://arxiv.org/pdf/2607.13013",
+      "contentState": "complete",
+      "recentRank": 2,
+      "sections": [
+        {
+          "id": "section-1",
+          "title": "研究背景与问题",
+          "markdown": "主流 ASR decoder 自回归地逐 token 生成文本，推理的串行步数随 transcript 长度增长。离散扩散语言模型则从随机 token canvas 出发，多轮并行修正整个序列，理论上可让推理成本主要由去噪步数决定。\n\n已有 TransFusion 和 Whisfusion 证明 diffusion 可以用于 ASR，但它们为语音任务训练专门 decoder，并主要聚焦英语。本文提出更严格的问题：能否不重训 decoder，而是让一个已有的通用离散扩散语言模型直接获得 audio-native 输入能力。\n\n困难在于 modality grounding。冻结语言模型从未见过声谱图，随机初始化的 audio projector 不能产生有意义的 embedding；attention 因而忽略音频，而 diffusion/AR loss 的 projector 梯度又必须经过已忽略音频的 attention，形成相互等待的坏固定点。"
+        },
+        {
+          "id": "section-2",
+          "title": "方法详解",
+          "markdown": "### 冻结 backbone 与音频通路\n\n系统以 26B Mixture-of-Experts DiffusionGemma 为 frozen diffusion LM，并使用 frozen Whisper-small encoder 提取 log-mel acoustic features。两层卷积和投影组成的 trainable projector 将特征下采样并映射到语言模型 embedding space，约形成每秒 6.25 个 audio tokens。\n\nAudio tokens 被 scatter 到固定 prompt 的 placeholder 位置，DiffusionGemma encoder 将 prompt 编码成 KV cache；decoder 在并行去噪 transcript canvas 时对该 cache 做 cross-attention。短于 30 秒的音频通过 attention mask 屏蔽静音 padding，长音频则在接近 13 秒的低能量位置切段。\n\n### Uniform discrete diffusion\n\nDiffusionGemma 不使用常见的 absorbing mask，而是把 token 向整个 vocabulary 的 uniform random tokens 扰动。Decoder 从随机 token canvas 开始，每轮预测完整 clean sequence；低 entropy 位置被保留，其余位置重新随机化。推理使用温度从 0.8 到 0.4 的线性退火、self-conditioning、稳定性提前停止和可选 classifier-free guidance。\n\n### 三类训练目标与 CTC 解锁\n\n1. **Diffusion loss**：在被扰动位置预测 clean token；部分 batch 强制全 canvas 扰动，避免可见文本先验掩盖音频。\n2. **Autoregressive auxiliary loss**：在 causal encoder 上 teacher-force transcript，为共享权重提供密集 next-token 梯度。\n3. **CTC loss**：把 projector 输出直接送入 frozen output head，通过 CTC 对齐到 transcript，不经过 cross-attention。\n\n仅使用前两类 loss 时，attention 对音频的质量近零，projector 梯度也随 attention mass 衰减。CTC 的梯度与 attention 无关，先把音频表示推入可以线性预测 transcript token 的区域；表示变得有信息后，attention 才开始使用音频，diffusion 与 AR 路径恢复学习。CTC 只作为训练 scaffold，推理时移除。\n\n### 参数高效适配\n\nEncoder 与 decoder self-attention 的 Q/K/V/O projection 使用 rank 16、scaling 32 的 LoRA。Whisper encoder、DiffusionGemma experts 和 vision tower 均冻结。Projector 加 adapters 共训练 42.3M 参数，约占 26B backbone 的 0.16%。"
+        },
+        {
+          "id": "section-3",
+          "title": "实验与结果",
+          "markdown": "### 数据与训练\n\n- 英语阶段：LibriSpeech clean 100 小时。\n- 多语阶段：由英语 checkpoint warm start，在 FLEURS 的英语、德语、法语、西班牙语、印地语和普通话上训练。\n- 额外阶段：加入 VoxPopuli 议会语音，总训练音频约 219 小时。\n- 单张 H100 训练，backbone 使用 bfloat16，projector 使用 float32。\n- 英语报告 WER；印地语和普通话报告 CER；文本统一使用 Whisper normalizer。\n\n### Grounding 与英语结果\n\n没有 CTC 时，同一配置在现有计算预算内没有完成 grounding；diffusion loss 约停在 8，AR loss 约停在 4.5。加入 CTC 后，其 loss 在约 300 steps 从 24 降至 8.6，随后低于 0.1；到 2808 steps，held-out AR loss 为 0.34，token accuracy 为 0.85。\n\nLibriSpeech test-clean 最终 WER 为 6.6%。作者强调早期 token accuracy 与 loss 改善并不意味着模型已听懂音频：模型一度只输出语言 unigram prior，需要人工周期性 decode 才能观察真实 grounding。\n\n### 多语与并行解码\n\n- FLEURS English：15.7% WER。\n- VoxPopuli English：18.5% WER。\n- FLEURS Hindi：15.8% CER。\n- FLEURS Mandarin：29.6% CER。\n\n在 FLEURS English 上，8、16、32、48 步分别得到 15.7%、15.6%、15.2%、15.6% WER；8 步吞吐约 14.9× real time，48 步为 4.7×。增加去噪步数几乎不改善准确率，却显著增加延迟，说明模型约 8 次并行 pass 已收敛。\n\n### 与其他系统及瓶颈分析\n\n论文列出的非受控参考结果为：TransFusion 约 6–7% WER，Whisfusion 8.3%，本文 6.6%。但不同系统的 encoder、数据、tokenization 和 decode 均不同，不能视为严格 head-to-head。\n\n本文仍落后自回归 Whisper：LibriSpeech clean 为 6.6% 对 Whisper-small 3.4%、Whisper-large-v3 2.0%；FLEURS 与 VoxPopuli 差距更大。更换 Whisper-large-v3 encoder、增加 audio token resolution 或增加 decode steps 都未解决误差，作者据此推测主要瓶颈是仅 219 小时的数据规模和 adapter alignment，但尚无完整 scaling curve 证明。"
+        },
+        {
+          "id": "section-4",
+          "title": "贡献与创新",
+          "markdown": "1. 首次把现成的通用离散扩散 LM 改造成 audio-native ASR decoder，而不是重新训练专用 diffusion decoder。\n2. 以 frozen Whisper encoder、projector 与少量 LoRA 完成跨模态接入，仅训练约 0.16% backbone 参数。\n3. 识别 attention-routed loss 导致的 grounding deadlock，并用不经过 attention 的 CTC 直接监督解锁。\n4. 展示 uniform random-token diffusion 可在约 8 次并行去噪中转写，计算步数不随 transcript token 长度线性增长。\n5. 训练一个覆盖六种语言的 adapter，并报告英语、印地语和普通话的 held-out 结果。"
+        },
+        {
+          "id": "section-5",
+          "title": "局限与风险",
+          "markdown": "1. 所有测试上仍落后 autoregressive Whisper，尤其多语 read speech；“数据不足是主因”仍是假设。\n2. Whisper encoder 固定 30 秒输入窗口，系统不是真正 streaming ASR；长音频依赖 silence segmentation，连续讲话时可能切错。\n3. 短 utterance 会产生重复词或 n-gram，当前依赖后处理而非从生成机制根治。\n4. Whisper 对照来自公开范围而非同一训练和推理配置的受控重跑。\n5. 德语、法语、西班牙语虽然进入训练混合，但本文没有分别报告 held-out 评测。\n6. 使用 26B MoE backbone 和 H100，训练参数虽少但推理与显存成本仍高；并行步数少不等于端到端系统一定比小型自回归模型便宜。\n7. 未发现官方代码、模型或 adapter 权重链接，复现依赖论文描述。"
+        },
+        {
+          "id": "section-6",
+          "title": "与知识库中其他论文的关系",
+          "markdown": "- 论文属于通用 AI、多模态学习与语音识别，因此归入网站 `cs.AI`，不进入具身智能的七个机器人主题。\n- 与 Diffusion Policy 等机器人 diffusion policy 的共同点是迭代去噪，但本文在离散文本 token 空间生成 transcript，目标和条件结构不同，不能把策略扩散的经验直接等同于语言扩散。\n- 与 Qwen-Audio、AudioPaLM 等音频语言模型共享“frozen/轻适配 backbone + modality connector”的路线；差异在于 decoder 是 uniform discrete diffusion。\n- 与 LoRA、CTC 和 Whisper 的关系不是简单模块拼接：CTC 在这里承担跨模态 bootstrap，而非最终 decoder。"
+        },
+        {
+          "id": "section-7",
+          "title": "阅读备注",
+          "markdown": "- 最关键的工程洞见是：如果所有跨模态监督都经过尚未建立的 attention，projector 与 attention 可能互相等待；应寻找绕过 gating 的直接辅助目标。\n- Loss 下降不等于 modality grounding，训练中需要直接检查 decode 行为或建立音频敏感性诊断。\n- “固定约 8 步”描述 decoder pass 数与 transcript length 解耦，不代表真实 FLOPs 完全与长度无关；每步仍对整个 canvas 计算。\n- 结果证明的是可行性与 grounding 机制，而不是对 Whisper 的性能替代。\n- 当前 arXiv HTML 全文可读，但 PDF 端点暂不可用；后续应补下载本地 PDF，并再次检查是否出现官方代码或权重。"
+        }
+      ]
     }
   ],
   "topics": [
     {
+      "id": "artificial-intelligence",
+      "slug": "artificial-intelligence",
+      "fieldId": "cs-ai",
+      "title": "人工智能",
+      "descriptionMarkdown": "收录不以机器人具身任务为核心的通用人工智能研究，包括 LLM Agent 的推理与执行、语言与语音模型、多模态适配、生成建模和系统评测。该主题通过 `bibliography/paper-fields.csv` 映射到网站 `cs.AI` 分区，与七个具身智能主题分开维护。",
+      "readingRouteMarkdown": "1. 先读 [Do AI Agents Know When a Task Is Simple?](../papers/2026-complexity-aware-agents.md)，理解 Agent 如何估计任务范围并用验证驱动扩展控制执行成本。\n2. 再读 [Audio-Native Speech Recognition with a Frozen Discrete-Diffusion Language Model](../papers/2026-audio-native-speech-recognition.md)，观察冻结生成模型如何通过直接辅助监督完成新的模态 grounding。\n3. 横向比较两篇论文的共同工程原则：先找到真正的瓶颈，再给最短的有效监督或执行路径，并用可观测验证而不是表面 loss 或“更完整上下文”判断是否成功。",
+      "paperIds": [
+        "2026-complexity-aware-agents",
+        "2026-audio-native-speech-recognition",
+        "2026-complexity-aware-agents",
+        "2026-audio-native-speech-recognition"
+      ]
+    },
+    {
       "id": "embodied-foundation-models",
       "slug": "embodied-foundation-models",
+      "fieldId": "embodied-intelligence",
       "title": "具身基础模型",
       "descriptionMarkdown": "什么样的数据和动作接口足以支撑通用机器人模型的说法？从 Gato 到 pi0.7，这个问题的答案在不断修正。",
       "readingRouteMarkdown": "### 阶段一：通用智能体的早期探索\r\n从 **Gato** 和 **PaLM-E** 开始，理解将语言模型与机器人感知/控制连接的早期思路。\r\n\r\n### 阶段二：VLA 范式的确立\r\n**RT-2** 定义了 Vision-Language-Action 模型类别，**OpenVLA** 将其开源化。重点理解：动作 token 化如何让 VLM 说出动作、协同微调为何是保留泛化能力的关键。\r\n\r\n### 阶段三：动作生成机制的演进\r\n**pi0 -> pi0.5 -> pi0.6 -> pi0.7** 系列代表了从离散 token 到 flow matching 的路线演进，**RDT-1B** 使用扩散模型处理双臂操作。\r\n\r\n### 阶段四：空间增强与多模态扩展\r\n**3D-VLA**、**SpatialVLA**、**PointVLA** 分别从 3D 场景、空间位置编码、点云角度增强 VLA。\r\n\r\n### 阶段五：Agentic 与代码式策略\r\n**Code as Policies**、**RATs** 代表模块化、可检查的 embodied coding agent 路线，与端到端 VLA 互补。",
@@ -13769,6 +13912,7 @@
     {
       "id": "imitation-reinforcement-learning",
       "slug": "imitation-reinforcement-learning",
+      "fieldId": "embodied-intelligence",
       "title": "模仿学习与强化学习",
       "descriptionMarkdown": "演示数据、在线交互和奖励信号怎样组合才能避免分布偏移和失败累积？",
       "readingRouteMarkdown": "### 离线模仿学习基础\r\n**What Matters in Offline Human Demos**、**Behavior Generation with Latent Actions**。\r\n\r\n### 动作序列建模\n**Diffusion Policy**、**ACT** 和 **QGF**。\n\r\n### 在线学习与人类反馈\n**HIL-SERL**、**PostBC**、**pi0.6**、**STEAM**、**FACTR 2**、**Compliant Residual DAGGER**、**SoftMimic**。\n\r\n### 视频学习\n**VLM See Robot Do**、**HumanPlus**、**ForceBand**、**ART-Glove**、**Towards Generalist Robot Learning from Internet Video**。",
@@ -13929,6 +14073,7 @@
     {
       "id": "multimodal-world-models",
       "slug": "multimodal-world-models",
+      "fieldId": "embodied-intelligence",
       "title": "多模态感知与世界模型",
       "descriptionMarkdown": "3D、视频、触觉等额外模态是在帮助模型理解世界，还是只增加了训练信息？",
       "readingRouteMarkdown": "### 视觉语言基础\r\n**PaLM-E** 和 **VIMA** 从不同角度将视觉、语言和动作融合。\r\n\r\n### 3D 与空间增强\r\n**3D-VLA**、**PointVLA**、**SpatialVLA** 在 VLA backbone 上增加 3D/空间感知能力。\r\n\r\n### 世界模型总览\r\n先读 **World Model for Robot Learning: A Comprehensive Survey**，用三条主线建立地图：world model for policy、world model as learned simulator、robotic video world model。阅读时重点区分“视觉上合理的未来”和“对动作一致、可用于决策的未来”。\r\n\r\n### 世界模型进入策略\r\n按耦合程度阅读：**GR-2**（生成式 VLA） -> **Unified World Models**（视频与动作单骨干联合建模） -> **FLARE**（latent-space implicit world modeling） -> **Fast-WAM**（保留训练期世界建模，移除测试时显式未来生成）。这条路线用于比较 predict-then-act、统一骨干和隐式预测表征。\r\n\r\n### Learned Simulator 与策略评估\r\n先读 **Evaluating Robot Policies in a World Model**，理解 action-following fidelity、长程 rollout 和策略相对排序；再读 **WorldEval**，观察 Policy2Vec、checkpoint selection 与安全预筛。回到综述第 4、7 节，比较强化学习、后训练和 policy evaluation 对世界模型可靠性的不同要求。\r\n\r\n### 可控视频与结构化未来\r\n**Prediction with Action**、**Moto** 以及 3D/空间工作用于理解如何把视频生成变成 action-conditioned prediction。重点比较像素视频、latent state、3D motion/geometry 和 symbolic state：它们在可解释性、计算成本、长程稳定性与可执行性之间取舍不同。\r\n\r\n### 超越视觉的物理感知\r\n**Tactile-VLA**、**ViTaMIn**、**ForceBand**、**ART-Glove**、**FACTR 2** 和 **The Sound of Simulation** 分别引入触觉、视触觉、肌电/力、接触几何、外部关节力矩与音频。结合综述的 multi-modal perception bottleneck，思考视觉无法直接观察的摩擦、刚度、接触稳定性和手指用力应怎样进入 world model。",
@@ -14039,6 +14184,7 @@
     {
       "id": "navigation-planning",
       "slug": "navigation-planning",
+      "fieldId": "embodied-intelligence",
       "title": "导航与规划",
       "descriptionMarkdown": "高层语义计划如何转化为空间约束和低层控制？关键在于中间表示的选择。",
       "readingRouteMarkdown": "### 语言模型规划\n**SayCan**、**Inner Monologue** 和 **Code as Policies** 奠定了 LLM 机器人规划的基础范式；**RATs** 进一步把代码式规划扩展到 play-time skill acquisition。\n\r\n### 空间中间表示\r\n**VoxPoser -> MOKA -> CoPa -> ReKep**。回答：高层语义如何转化为空间约束和轨迹？\r\n\r\n### 轨迹与思维链\r\n**RT-Trajectory -> EcoT -> FAST EcoT**。在语言到动作之间增加结构化推理步骤。",
@@ -14089,6 +14235,7 @@
     {
       "id": "robot-manipulation",
       "slug": "robot-manipulation",
+      "fieldId": "embodied-intelligence",
       "title": "机器人操作",
       "descriptionMarkdown": "数据采集、动作表示和真机控制之间哪个环节最限制性能？不同论文指向不同的瓶颈。",
       "readingRouteMarkdown": "### 动作序列学习\r\n**Diffusion Policy** 和 **ACT** 是 2023 年最重要的两篇模仿学习论文。\r\n\r\n### 数据采集硬件与遥操作\r\n**Mobile ALOHA**、**UMI**、**GELLO**、**OPEN TEACH**、**Open-TeleVision**。\r\n\r\n### 灵巧操作与力控\r\n**HumanPlus**、**OmniH2O**、**ForceVLA**、**Tactile-VLA**、**ForceBand**、**ART-Glove**、**FACTR 2**。\r\n\r\n### 强化学习与在线优化\n**HIL-SERL**、**PostBC**、**Reactive Diffusion Policy**、**QGF**、**STEAM**、**Prediction with Action**、**Real-World Humanoid Locomotion**、**SoftMimic**。\n\r\n### Agentic 代码策略\r\n**Code as Policies** 和 **RATs** 把 LLM/VLM 规划、代码生成、执行反馈和可复用技能库接到机器人操作任务中。",
@@ -14265,6 +14412,7 @@
     {
       "id": "simulation-datasets-evaluation",
       "slug": "simulation-datasets-evaluation",
+      "fieldId": "embodied-intelligence",
       "title": "仿真、数据集与评测",
       "descriptionMarkdown": "当前 benchmark 是否真的衡量开放世界泛化？OXE 的局限和各 VLA 的评测缺口是什么？",
       "readingRouteMarkdown": "### 核心数据集\r\n**Open X-Embodiment**（OXE）是当前 VLA 训练的标准数据集（970k 轨迹）。\r\n\r\n### 遥操作数据采集\r\n**Mobile ALOHA**、**UMI**、**GELLO**、**OPEN TEACH**、**Open-TeleVision**。\r\n\r\n### 评测方法论\r\n三篇 VLA Survey 系统比较了 VLA 的评测基准和泛化指标。\r\n\r\n### 数据质量与帧级评估\r\n**SCIZOR**、**CUPID**、**RoboArena**、**STEAM**、**FACTR 2**、**QGF** 关注数据质量、策略评测、test-time policy improvement 或 rollout 片段筛选。\r\n\r\n### 多模态演示数据\r\n**ViTaMIn**、**ForceBand**、**ART-Glove**、**DexWild** 关注把人类演示扩展成更接近真实接触物理的数据源。\r\n\r\n### Agentic Benchmark 与技能迁移\r\n**RATs** 使用 LIBERO-PRO、MolmoSpaces、RoboSuite 和真机任务评估 play-learned skill library 的跨任务/跨环境迁移。",
@@ -14444,6 +14592,7 @@
     {
       "id": "vision-language-action-models",
       "slug": "vision-language-action-models",
+      "fieldId": "embodied-intelligence",
       "title": "视觉语言动作模型",
       "descriptionMarkdown": "语言理解能力怎样转化为连续、稳定、可执行的机器人动作？离散 token、flow matching、diffusion 三条路线给出不同答案。",
       "readingRouteMarkdown": "### 离散 Token 路线\r\n**RT-2 -> OpenVLA -> RT-1 -> Octo -> RT-H**。将动作离散化为 token，让 VLM 像生成文本一样生成动作。\r\n\r\n### Flow Matching / Diffusion 路线\r\n**pi0 -> pi0.5 -> pi0.6 -> pi0.7** 以及 **RDT-1B**、**Diffusion-VLA**。在保留 VLM 语义能力的同时用连续生成模型处理动作。\r\n\r\n### 轻量化与高效适配\r\n**TinyVLA -> SmolVLA** 追求在更小模型上保留 VLA 泛化能力。\r\n\r\n### 特殊架构\r\n**ChatVLA**、**DexVLA**、**Helix**、**Dual Process VLA**、**Synergistic Dual-system**。\r\n\r\n### 后训练与策略改进\r\n**ConRFT**、**MG-Select**、**STEAM** 代表从强化微调、测试时选择和自监督 advantage label 角度改善 VLA/flow policy。",
@@ -20987,6 +21136,102 @@
       "fieldId": "embodied-intelligence",
       "relatedPaperIds": [
         "2026-ptr-offline-robot-policy-learning"
+      ]
+    },
+    {
+      "id": "term-1204f609f7",
+      "slug": "e3-estimate-execute-expand-1204f6",
+      "name": "E3 (Estimate, Execute, Expand)",
+      "sortKey": "E",
+      "definitionMarkdown": "先估计任务范围、执行最小可行路径，并仅在验证失败或置信度不足时逐级扩大上下文的 Agent 工作框架。",
+      "contextMarkdown": "用于避免简单工程任务被 maximum-context-first 策略放大成全仓库审计，同时用 verifier 和 progressive expansion 处理低估风险。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-complexity-aware-agents"
+      ]
+    },
+    {
+      "id": "term-953906f0be",
+      "slug": "minimum-sufficient-execution-953906",
+      "name": "Minimum-Sufficient Execution",
+      "sortKey": "M",
+      "definitionMarkdown": "在达到目标成功可靠性的前提下，成本最低的 Agent 执行轨迹。",
+      "contextMarkdown": "把“这项任务本来应该花多少工作”定义成可比较的 oracle，为文件读取、token、工具调用和延迟提供共同基准。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-complexity-aware-agents"
+      ]
+    },
+    {
+      "id": "term-7c7ba71ada",
+      "slug": "acrr-agent-cognitive-redundancy-ratio-7c7ba7",
+      "name": "ACRR (Agent Cognitive Redundancy Ratio)",
+      "sortKey": "A",
+      "definitionMarkdown": "Agent 实际执行成本相对 minimum-sufficient oracle 成本的归一化超额比例。",
+      "contextMarkdown": "ACRR 必须只对成功运行计算并与成功率一起报告，避免把代价很低的失败误判为高效率。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-complexity-aware-agents"
+      ]
+    },
+    {
+      "id": "term-365010ed31",
+      "slug": "mse-bench-minimum-sufficient-execution-benchmark-365010",
+      "name": "MSE-Bench (Minimum-Sufficient Execution Benchmark)",
+      "sortKey": "M",
+      "definitionMarkdown": "带逐任务最小执行 oracle 的能力受控 Agent 编辑基准，用于隔离任务成功能力与执行冗余。",
+      "contextMarkdown": "包含单文件、跨文件和带间接依赖的仓库级编辑，通过固定底层编辑能力比较不同上下文收集策略。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-complexity-aware-agents"
+      ]
+    },
+    {
+      "id": "term-02a9c827fc",
+      "slug": "audio-native-asr-02a9c8",
+      "name": "Audio-Native ASR",
+      "sortKey": "A",
+      "definitionMarkdown": "让语言模型直接接收声学表示并通过自身 decoder 完成自动语音识别，而不是外挂独立的转写 decoder。",
+      "contextMarkdown": "DiffusionGemma 通过 frozen Whisper encoder、projector 和 LoRA 获得音频输入，并用自身离散扩散 decoder 并行生成 transcript。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-audio-native-speech-recognition"
+      ]
+    },
+    {
+      "id": "term-fd810e91ba",
+      "slug": "diffusiongemma-fd810e",
+      "name": "DiffusionGemma",
+      "sortKey": "D",
+      "definitionMarkdown": "采用 uniform random-token 离散扩散进行文本生成的 26B Mixture-of-Experts 语言模型。",
+      "contextMarkdown": "作为冻结 backbone，通过少量 projector 与 LoRA 参数接入音频，约八次并行去噪完成语音转写。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-audio-native-speech-recognition"
+      ]
+    },
+    {
+      "id": "term-7118b34380",
+      "slug": "uniform-discrete-diffusion-7118b3",
+      "name": "Uniform Discrete Diffusion",
+      "sortKey": "U",
+      "definitionMarkdown": "把离散 token 逐步扰动为词表中的均匀随机 token，再学习从随机 canvas 恢复干净序列的扩散过程。",
+      "contextMarkdown": "区别于 absorbing-mask diffusion，DiffusionGemma 的被扰动位置仍是真实词表 token，ASR 推理时反复保留高置信位置并重新随机化其余位置。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-audio-native-speech-recognition"
+      ]
+    },
+    {
+      "id": "term-716e3546b8",
+      "slug": "ctc-grounding-716e35",
+      "name": "CTC Grounding",
+      "sortKey": "C",
+      "definitionMarkdown": "利用 Connectionist Temporal Classification 直接把连续音频表示对齐到文本标签，作为不依赖 attention 的跨模态启动监督。",
+      "contextMarkdown": "当 diffusion 与 autoregressive loss 的梯度因 attention 忽略音频而无法到达 projector 时，CTC 通过 frozen output head 提供直接梯度，先让音频 token 具有文本可预测性。",
+      "fieldId": "cs-ai",
+      "relatedPaperIds": [
+        "2026-audio-native-speech-recognition"
       ]
     }
   ],
