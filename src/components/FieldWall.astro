@@ -18,7 +18,6 @@ const { fields } = Astro.props;
       data-field-link
       href={sitePath(`/fields/${field.slug}/`)}
       style={`--lane:${field.accent};--lane-soft:${field.accentSoft};--delay:${index * 55}ms;`}
-      aria-label={`${field.titleZh} ${field.titleEn} ${field.code}`}
     >
       <span class="field-lane__number">{String(index + 1).padStart(2, "0")} / {field.code}</span>
       <span class="field-lane__titles">

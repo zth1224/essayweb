@@ -8,9 +8,9 @@ const { field, terms } = Astro.props;
 
 <aside class="terms-rail" data-terms-rail aria-label={`${field.titleZh}术语专区`}>
   <div class="terms-rail__head">
-    <span class="meta-label">Field vocabulary / {terms.length}</span>
+    <span class="meta-label">Top vocabulary / {terms.length}</span>
     <h2>术语专区</h2>
-    <p>沿着论文阅读时，随手查阅本领域的核心概念。</p>
+    <p>按关联论文数量选出的 12 个高频概念。</p>
   </div>
   <ol>
     {terms.map((term, index) => (

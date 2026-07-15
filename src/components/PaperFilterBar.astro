@@ -1,13 +1,15 @@
 ---
-interface Props { total: number }
-const { total } = Astro.props;
+import type { TopicRecord } from "../data/types";
+interface Props { total: number; topics?: TopicRecord[] }
+const { total, topics = [] } = Astro.props;
 ---
 
 <section class="filter-bar" aria-label="论文筛选">
   <label class="filter-bar__search">
     <span>搜索论文</span>
-    <input type="search" aria-label="搜索论文" placeholder="标题、作者或标签" data-paper-query />
+    <input type="search" aria-label="搜索论文" placeholder="标题、作者或主题" data-paper-query />
   </label>
+  {topics.length > 0 && <label><span>主题</span><select aria-label="主题筛选" data-paper-topic><option value="all">全部主题</option>{topics.map((topic)=><option value={topic.id}>{topic.title}</option>)}</select></label>}
   <label>
     <span>阅读状态</span>
     <select aria-label="阅读状态筛选" data-paper-status>
@@ -24,7 +26,7 @@ const { total } = Astro.props;
 <style>
   .filter-bar {
     display: grid;
-    grid-template-columns: minmax(14rem, 1fr) minmax(10rem, .45fr) auto auto;
+    grid-template-columns: minmax(14rem, 1fr) minmax(10rem, .45fr) minmax(9rem,.35fr) auto auto;
     gap: 1rem;
     align-items: end;
     padding: 1.25rem 0;

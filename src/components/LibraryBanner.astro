@@ -1,0 +1,11 @@
+---
+import { getLibraryMeta } from "../data/repository";
+const meta = getLibraryMeta();
+const updated = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(meta.sourceUpdatedAt));
+---
+<div class="library-banner" role="note">
+  <span class="library-banner__mark">●</span>
+  <strong>论文库快照</strong>
+  <span>{meta.paperCount} 篇论文 · {meta.termCount} 个术语 · 更新于 {updated}</span>
+</div>
+

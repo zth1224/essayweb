@@ -1,95 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import DemoBanner from "../../components/DemoBanner.astro";
+import LibraryBanner from "../../components/LibraryBanner.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import { fields } from "../../data/fields";
 import { getPaperById, getTermsByField } from "../../data/repository";
+import { renderMarkdown } from "../../lib/render-markdown";
 import { sitePath } from "../../lib/site-path";
 import type { FieldDefinition } from "../../data/types";
 
-export function getStaticPaths() {
-  return fields.map((field) => ({ params: { field: field.slug }, props: { field } }));
-}
-
-interface Props { field: FieldDefinition }
-const { field } = Astro.props;
-const terms = getTermsByField(field.id).sort((a, b) => a.sortKey.localeCompare(b.sortKey, "zh-CN"));
-const letters = [...new Set(terms.map((term) => term.sortKey[0]?.toUpperCase()).filter(Boolean))];
+export function getStaticPaths(){return fields.map((field)=>({params:{field:field.slug},props:{field}}));}
+interface Props{field:FieldDefinition}
+const {field}=Astro.props;
+const terms=[...getTermsByField(field.id)].sort((a,b)=>(a.sortKey==="#"?1:0)-(b.sortKey==="#"?1:0)||a.sortKey.localeCompare(b.sortKey)||a.name.localeCompare(b.name,"zh-CN"));
+const letters=[...new Set(terms.map((term)=>term.sortKey || "#"))];
+const letterId=(letter:string)=>letter==="#"?"hash":letter.toLowerCase();
 ---
-
 <BaseLayout title={`${field.titleZh}术语 · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
-  <DemoBanner />
-  <SiteHeader backHref={`/fields/${field.slug}/`} backLabel={`${field.titleZh}论文`} meta={`${field.code} / Vocabulary`} />
+  <LibraryBanner/><SiteHeader backHref={`/fields/${field.slug}/`} backLabel={`${field.titleZh}论文`} meta={`${field.code} / Vocabulary`}/>
   <main class="terms-page page-shell" data-term-directory>
-    <header class="terms-page__head">
-      <div>
-        <p class="meta-label">Field dictionary · {terms.length} entries</p>
-        <h1 class="terms-title">{field.titleZh}术语</h1>
-      </div>
-      <p>{field.titleEn}<br />Vocabulary Index</p>
-    </header>
-    <div class="terms-tools">
-      <label><span>搜索术语</span><input type="search" aria-label="搜索术语" placeholder="术语名称或定义" data-term-query /></label>
-      <nav aria-label="术语首字母索引">{letters.map((letter) => <a href={`#letter-${letter}`}>{letter}</a>)}</nav>
-      <p><strong data-term-count>{terms.length}</strong> 条术语</p>
-    </div>
-    <section class="term-list" aria-label={`${field.titleZh}术语列表`}>
-      {terms.map((term, index) => {
-        const letter = term.sortKey[0]?.toUpperCase();
-        const isFirstLetter = index === 0 || terms[index - 1].sortKey[0]?.toUpperCase() !== letter;
-        return (
-          <div class="term-row" data-term-item data-search={`${term.name} ${term.definition}`} id={term.slug}>
-            {isFirstLetter && <span class="term-row__letter" id={`letter-${letter}`}>{letter}</span>}
-            <details>
-              <summary><span>{String(index + 1).padStart(2, "0")}</span><h2>{term.name}</h2><b>+</b></summary>
-              <div class="term-row__content">
-                <p>{term.definition}</p>
-                <div><span class="meta-label">Related papers</span>{term.relatedPaperIds.map((id) => { const paper = getPaperById(id); return paper && <a href={sitePath(`/papers/${paper.slug}/`)}>{paper.title} ↗</a>; })}</div>
-              </div>
-            </details>
-          </div>
-        );
-      })}
-    </section>
-    <script>
-      import { initializeTermDirectory } from "../../scripts/term-filter-client";
-      initializeTermDirectory();
-    </script>
+    <header class="terms-page__head"><div><p class="meta-label">Field dictionary · {terms.length} entries</p><h1 class="terms-title">{field.titleZh}术语</h1></div><p>{field.titleEn}<br/>Vocabulary Index</p></header>
+    {terms.length===0?<section class="empty-state"><h2>当前分区尚无术语</h2><p>术语会随源论文库的明确归类一起进入这里。</p></section>:<>
+      <div class="terms-tools"><label><span>搜索术语</span><input type="search" aria-label="搜索术语" placeholder="名称、定义或知识库语境" data-term-query/></label><nav aria-label="术语首字母索引">{letters.map((letter)=><a href={`#letter-${letterId(letter)}`}>{letter}</a>)}</nav><p><strong data-term-count>{terms.length}</strong> 条术语</p></div>
+      <section class="term-list" aria-label={`${field.titleZh}术语列表`}>{terms.map((term,index)=>{const letter=term.sortKey||"#";const first=index===0||terms[index-1].sortKey!==letter;return <div class="term-row" data-term-item data-search={`${term.name} ${term.definitionMarkdown} ${term.contextMarkdown}`} id={term.slug}>{first&&<span class="term-row__letter" id={`letter-${letterId(letter)}`}>{letter}</span>}<details><summary><span>{String(index+1).padStart(3,"0")}</span><h2>{term.name}</h2><b>+</b></summary><div class="term-row__content"><div><span class="meta-label">中文解释</span><div class="markdown-body" set:html={renderMarkdown(term.definitionMarkdown)}/>{term.contextMarkdown&&<><span class="meta-label">知识库语境</span><div class="markdown-body" set:html={renderMarkdown(term.contextMarkdown)}/></>}</div><div><span class="meta-label">Related papers / {term.relatedPaperIds.length}</span>{term.relatedPaperIds.map((id)=>{const paper=getPaperById(id);return paper&&<a href={sitePath(`/papers/${paper.slug}/`)}>{paper.title} ↗</a>})}</div></div></details></div>})}</section>
+      <script>import { initializeTermDirectory } from "../../scripts/term-filter-client";initializeTermDirectory();</script>
+    </>}
   </main>
 </BaseLayout>
-
 <style>
-  .terms-page { padding: 0 var(--page-gutter) 5rem; }
-  .terms-page__head { min-height: 21rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; padding: clamp(4rem,8vw,7rem) 0 2rem; border-bottom: 1px solid var(--line-strong); }
-  .terms-page__head p:last-child { margin: 0; font-family: var(--serif); font-size: 1.2rem; font-style: italic; text-align: right; }
-  .terms-tools { display: grid; grid-template-columns: 1fr auto auto; gap: 2rem; align-items: end; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
-  .terms-tools label { display: grid; gap: .35rem; color: var(--ink-soft); font-family: var(--mono); font-size: .65rem; text-transform: uppercase; }
-  .terms-tools input { min-height: 2.5rem; border: 0; border-bottom: 1px solid var(--line-strong); background: transparent; }
-  .terms-tools nav { display: flex; gap: .4rem; }
-  .terms-tools nav a { width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-family: var(--mono); font-size: .65rem; }
-  .terms-tools p { margin: 0; font-family: var(--mono); font-size: .7rem; }
-  .term-list { max-width: 70rem; margin-left: auto; padding-top: 2rem; }
-  .term-row { position: relative; scroll-margin-top: 1rem; }
-  .term-row__letter { position: absolute; right: calc(100% + 2.5rem); top: 1.25rem; color: var(--accent); font-family: var(--serif); font-size: 3.5rem; line-height: 1; }
-  details { border-top: 1px solid var(--line); }
-  .term-row:last-child details { border-bottom: 1px solid var(--line); }
-  summary { min-height: 5rem; display: grid; grid-template-columns: 3rem 1fr auto; gap: 1rem; align-items: center; cursor: pointer; list-style: none; }
-  summary::-webkit-details-marker { display: none; }
-  summary > span { font-family: var(--mono); font-size: .65rem; }
-  summary h2 { margin: 0; font-family: var(--serif); font-size: clamp(1.55rem,3vw,2.5rem); font-weight: 400; line-height: 1; }
-  summary b { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; transition: transform var(--transition); }
-  details[open] summary b { transform: rotate(45deg); }
-  .term-row__content { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: .3rem 3rem 2rem; }
-  .term-row__content > p { max-width: 55ch; margin: 0; color: var(--ink-soft); }
-  .term-row__content > div { display: grid; gap: .55rem; }
-  .term-row__content a { font-family: var(--serif); line-height: 1.15; }
-  @media (max-width: 800px) {
-    .terms-page__head { min-height: 17rem; flex-direction: column; align-items: flex-start; justify-content: flex-end; }
-    .terms-page__head p:last-child { text-align: left; }
-    .terms-tools { grid-template-columns: 1fr auto; }
-    .terms-tools label { grid-column: 1 / -1; }
-    .term-list { padding-left: 0; }
-    .term-row__letter { display: none; }
-    .term-row__content { grid-template-columns: 1fr; padding-left: 3rem; }
-  }
+  .terms-page{padding:0 var(--page-gutter) 5rem}.terms-page__head{min-height:21rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;padding:clamp(4rem,8vw,7rem) 0 2rem;border-bottom:1px solid var(--line-strong)}.terms-page__head p:last-child{margin:0;font:italic 1.2rem var(--serif);text-align:right}.terms-tools{display:grid;grid-template-columns:1fr auto auto;gap:2rem;align-items:end;padding:1.2rem 0;border-bottom:1px solid var(--line)}.terms-tools label{display:grid;gap:.35rem;color:var(--ink-soft);font:.65rem var(--mono);text-transform:uppercase}.terms-tools input{min-height:2.5rem;border:0;border-bottom:1px solid var(--line-strong);background:transparent}.terms-tools nav{display:flex;flex-wrap:wrap;gap:.3rem}.terms-tools nav a{width:1.8rem;height:1.8rem;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font:.62rem var(--mono)}.terms-tools p{margin:0;font:.7rem var(--mono)}
+  .term-list{max-width:70rem;margin-left:auto;padding-top:2rem}.term-row{position:relative;scroll-margin-top:1rem}.term-row__letter{position:absolute;right:calc(100% + 2.5rem);top:1.25rem;color:var(--accent);font:400 3.5rem/1 var(--serif)}details{border-top:1px solid var(--line)}.term-row:last-child details{border-bottom:1px solid var(--line)}summary{min-height:5rem;display:grid;grid-template-columns:3rem 1fr auto;gap:1rem;align-items:center;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}summary>span{font:.65rem var(--mono)}summary h2{margin:0;font:400 clamp(1.4rem,2.7vw,2.35rem)/1 var(--serif)}summary b{font:400 1.8rem var(--serif);transition:transform var(--transition)}details[open] summary b{transform:rotate(45deg)}.term-row__content{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;padding:.3rem 3rem 2rem}.term-row__content>div{display:grid;align-content:start;gap:.55rem}.term-row__content a{font:400 1rem/1.15 var(--serif)}.markdown-body{color:var(--ink-soft)}.markdown-body :global(p){margin:0 0 .8rem}.markdown-body :global(a){border-bottom:1px solid var(--accent)}
+  @media(max-width:800px){.terms-page__head{min-height:17rem;flex-direction:column;align-items:flex-start;justify-content:flex-end}.terms-page__head p:last-child{text-align:left}.terms-tools{grid-template-columns:1fr}.term-row__letter{display:none}.term-row__content{grid-template-columns:1fr;padding-left:3rem}}
 </style>

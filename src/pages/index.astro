@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import DemoBanner from "../components/DemoBanner.astro";
+import LibraryBanner from "../components/LibraryBanner.astro";
 import FieldWall from "../components/FieldWall.astro";
 import { getFields } from "../data/repository";
 ---
 
 <BaseLayout pageClass="home-page">
-  <DemoBanner />
+  <LibraryBanner />
   <FieldWall fields={getFields()} />
 </BaseLayout>

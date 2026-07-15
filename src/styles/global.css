@@ -32,7 +32,7 @@ img, svg { display: block; max-width: 100%; }
   border: 0;
 }
 
-.demo-banner {
+.library-banner {
   min-height: 2rem;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@ img, svg { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 
-.demo-banner__mark { color: var(--accent); }
+.library-banner__mark { color: var(--accent); }
 
 .site-header {
   min-height: 4rem;

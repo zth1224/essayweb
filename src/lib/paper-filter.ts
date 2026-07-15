@@ -4,6 +4,7 @@ export interface PaperFilters {
   query?: string;
   fieldId?: FieldId;
   status?: ReadingStatus | "all";
+  topicId?: string | "all";
 }
 
 export const normalizeSearchValue = (value: string) =>
@@ -15,12 +16,13 @@ export const filterPapers = (items: PaperRecord[], filters: PaperFilters) => {
   return items.filter((paper) => {
     const matchesField = !filters.fieldId || paper.fieldIds.includes(filters.fieldId);
     const matchesStatus = !filters.status || filters.status === "all" || paper.status === filters.status;
+    const matchesTopic = !filters.topicId || filters.topicId === "all" || paper.topicIds.includes(filters.topicId);
     const haystack = normalizeSearchValue([
       paper.title,
-      paper.authors.join(" "),
-      paper.tags.join(" "),
+      paper.authorsText,
+      paper.topicIds.join(" "),
     ].join(" "));
     const matchesQuery = !query || haystack.includes(query);
-    return matchesField && matchesStatus && matchesQuery;
+    return matchesField && matchesStatus && matchesTopic && matchesQuery;
   });
 };

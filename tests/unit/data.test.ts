@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
+import snapshot from "../../src/data/generated/library.json";
 import { fields } from "../../src/data/fields";
-import { papers, terms } from "../../src/data/demo";
 import {
   getFieldBySlug,
   getPaperById,
@@ -8,10 +8,12 @@ import {
   getPapersByField,
   getTermsByIds,
   getTermsByField,
-  validateDemoRelationships,
+  getLibraryMeta,
+  getTopicsByField,
+  validateLibraryRelationships,
 } from "../../src/data/repository";
 
-describe("demo knowledge model", () => {
+describe("essay knowledge model", () => {
   test("defines five unique research fields", () => {
     expect(fields).toHaveLength(5);
     expect(new Set(fields.map((field) => field.id)).size).toBe(5);
@@ -19,30 +21,38 @@ describe("demo knowledge model", () => {
     expect(new Set(fields.map((field) => field.accent)).size).toBe(5);
   });
 
-  test("provides two demo papers and three terms per field", () => {
-    for (const field of fields) {
-      expect(getPapersByField(field.id)).toHaveLength(2);
-      expect(getTermsByField(field.id)).toHaveLength(3);
+  test("publishes the verified embodied snapshot and leaves other fields empty", () => {
+    expect(getLibraryMeta()).toMatchObject({ paperCount: 210, topicCount: 7, termCount: 497, damagedPaperCount: 7, readPaperCount: 47 });
+    expect(getPapersByField("embodied-intelligence")).toHaveLength(210);
+    expect(getTermsByField("embodied-intelligence")).toHaveLength(497);
+    expect(getTopicsByField("embodied-intelligence")).toHaveLength(7);
+    for (const field of fields.filter((item) => item.id !== "embodied-intelligence")) {
+      expect(getPapersByField(field.id)).toHaveLength(0);
+      expect(getTermsByField(field.id)).toHaveLength(0);
     }
-    expect(papers).toHaveLength(10);
-    expect(terms).toHaveLength(15);
   });
 
   test("resolves routes by slug", () => {
     expect(getFieldBySlug("artificial-intelligence")?.id).toBe("cs-ai");
-    expect(getPaperBySlug("demo-ai-01")?.id).toBe("paper-ai-01");
+    expect(getPaperBySlug("2025-pi-star-0-6-vla-learns-from-experience")?.sourceNumber).toBe(168);
     expect(getPaperBySlug("missing-paper")).toBeUndefined();
   });
 
   test("resolves relationship records by id", () => {
-    expect(getPaperById("paper-ai-01")?.slug).toBe("demo-ai-01");
-    expect(getTermsByIds(["term-ai-01", "term-ai-03"]).map((term) => term.id)).toEqual([
-      "term-ai-01",
-      "term-ai-03",
-    ]);
+    const paper = getPaperBySlug("2025-pi-star-0-6-vla-learns-from-experience")!;
+    expect(getPaperById(paper.id)?.slug).toBe(paper.slug);
+    expect(getTermsByIds(paper.termIds)).toHaveLength(paper.termIds.length);
   });
 
   test("contains no broken paper or term relationships", () => {
-    expect(validateDemoRelationships()).toEqual([]);
+    expect(validateLibraryRelationships()).toEqual([]);
+  });
+
+  test("does not publish damaged text or local source paths", () => {
+    const serialized = JSON.stringify(snapshot);
+    expect(serialized).not.toContain("????");
+    expect(serialized).not.toMatch(/D:\\essay/i);
+    expect(serialized).not.toContain('"pdfUrl":"pdfs/');
+    expect(snapshot.papers.filter((paper) => paper.contentState === "source-damaged")).toHaveLength(7);
   });
 });

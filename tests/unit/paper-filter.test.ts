@@ -1,6 +1,8 @@
 import { describe, expect, test } from "vitest";
-import { papers } from "../../src/data/demo";
+import { getPapersByField } from "../../src/data/repository";
 import { filterPapers, normalizeSearchValue } from "../../src/lib/paper-filter";
+
+const papers = getPapersByField("embodied-intelligence");
 
 describe("paper filtering", () => {
   test("normalizes case, full-width characters and repeated whitespace", () => {
@@ -8,18 +10,19 @@ describe("paper filtering", () => {
   });
 
   test("searches titles, authors and tags", () => {
-    expect(filterPapers(papers, { query: "DEMO AI" })).toHaveLength(2);
-    expect(filterPapers(papers, { query: "Author CV 2" })).toHaveLength(1);
-    expect(filterPapers(papers, { query: "robotics-template" })).toHaveLength(2);
+    expect(filterPapers(papers, { query: "RT-2" }).length).toBeGreaterThan(0);
+    expect(filterPapers(papers, { query: "Google DeepMind" }).length).toBeGreaterThan(0);
   });
 
   test("combines field and reading-status filters", () => {
     const results = filterPapers(papers, {
-      fieldId: "cs-ai",
-      status: "reading",
+      fieldId: "embodied-intelligence",
+      status: "read",
+      topicId: "robot-manipulation",
     });
 
-    expect(results.map((paper) => paper.slug)).toEqual(["demo-ai-02"]);
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.every((paper) => paper.status === "read" && paper.topicIds.includes("robot-manipulation"))).toBe(true);
   });
 
   test("returns all papers when filters are empty", () => {

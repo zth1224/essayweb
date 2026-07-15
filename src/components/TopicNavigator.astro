@@ -1,0 +1,36 @@
+---
+import type { TopicRecord } from "../data/types";
+import { renderMarkdown } from "../lib/render-markdown";
+interface Props { topics: TopicRecord[] }
+const { topics } = Astro.props;
+---
+<section class="topic-index" aria-labelledby="topic-index-title">
+  <header><p class="meta-label">07 Research threads</p><h2 id="topic-index-title">从主题进入</h2><p>主题来自论文库现有的阅读路线，不对其他领域做关键词推测。</p></header>
+  <div class="topic-grid">
+    {topics.map((topic, index) => (
+      <a href={`#papers`} class="topic-card" data-topic-shortcut={topic.id}>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <h3>{topic.title}</h3>
+        <div set:html={renderMarkdown(topic.descriptionMarkdown)} />
+        <b>{topic.paperIds.length} papers →</b>
+      </a>
+    ))}
+  </div>
+</section>
+<style>
+  .topic-index { padding: clamp(3rem,6vw,5rem) var(--page-gutter); border-bottom: 1px solid var(--line-strong); }
+  header { display:grid; grid-template-columns: 1fr 1fr; align-items:end; gap:1rem; margin-bottom:1.5rem; }
+  header .meta-label { grid-column:1/-1; }
+  h2 { margin:0; font:400 clamp(2.4rem,5vw,4.8rem)/.9 var(--serif); letter-spacing:-.04em; }
+  header > p:last-child { max-width:34rem; margin:0; color:var(--ink-soft); }
+  .topic-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+  .topic-card { min-height:14rem; display:flex; flex-direction:column; padding:1rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line); transition:background var(--transition),transform var(--transition); }
+  .topic-card:hover { background:var(--accent-soft); transform:translateY(-2px); }
+  .topic-card > span,.topic-card b { font:500 .64rem/1.2 var(--mono); text-transform:uppercase; letter-spacing:.05em; }
+  h3 { margin:auto 0 .7rem; font:400 1.65rem/1 var(--serif); }
+  .topic-card :global(p) { margin:0 0 1rem; color:var(--ink-soft); font-size:.75rem; }
+  .topic-card b { margin-top:auto; font-weight:500; }
+  @media(max-width:950px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:580px){header{grid-template-columns:1fr}.topic-grid{grid-template-columns:1fr}.topic-card{min-height:11rem}}
+</style>
+

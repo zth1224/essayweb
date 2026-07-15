@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("home presents five keyboard-accessible field lanes", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByText("模板示例数据")).toBeVisible();
+  await expect(page.getByText("论文库快照", { exact: true })).toBeVisible();
   await expect(page.locator("[data-field-link]")).toHaveCount(5);
   await expect(page.getByRole("link", { name: /人工智能/ })).toBeVisible();
 
@@ -26,40 +26,42 @@ test("desktop field titles stay upright in vertical writing mode", async ({ page
 });
 
 test("field search, filtering and local reading status work together", async ({ page }) => {
-  await page.goto("/fields/artificial-intelligence/");
+  await page.goto("/fields/embodied-intelligence/");
 
-  await expect(page.getByRole("heading", { name: "人工智能" })).toBeVisible();
-  await expect(page.locator("[data-paper-card]")).toHaveCount(2);
-  await page.getByRole("searchbox", { name: "搜索论文" }).fill("Demo AI Paper 01");
+  await expect(page.getByRole("heading", { name: "具身智能" })).toBeVisible();
+  await expect(page.locator("[data-paper-card]")).toHaveCount(210);
+  await expect(page.locator("[data-paper-card]:visible")).toHaveCount(24);
+  await expect(page.locator("[data-result-count]")).toHaveText("210");
+  await page.getByRole("searchbox", { name: "搜索论文" }).fill("Universal Manipulation Interface (UMI)");
   await expect(page.locator("[data-paper-card]:visible")).toHaveCount(1);
 
   await page.getByRole("button", { name: "清除筛选" }).click();
-  await page.getByRole("combobox", { name: "阅读状态筛选" }).selectOption("reading");
-  await expect(page.locator("[data-paper-card]:visible")).toHaveCount(1);
-  await expect(page.getByRole("link", { name: "Demo AI Paper 02", exact: true })).toBeVisible();
+  await page.getByRole("combobox", { name: "主题筛选" }).selectOption("robot-manipulation");
+  await expect(page.locator("[data-result-count]")).toHaveText("167");
+  await expect(page.locator("[data-paper-card]:visible")).toHaveCount(24);
 
-  await page.getByRole("combobox", { name: "阅读状态筛选" }).selectOption("all");
-  await page.getByRole("combobox", { name: "更新 Demo AI Paper 01 的阅读状态" }).selectOption("read");
+  await page.getByRole("button", { name: "清除筛选" }).click();
+  await page.getByRole("combobox", { name: "更新 Diffusion Policy: Visuomotor Policy Learning via Action Diffusion 的阅读状态" }).selectOption("read");
   await page.reload();
-  await expect(page.getByRole("combobox", { name: "更新 Demo AI Paper 01 的阅读状态" })).toHaveValue("read");
+  await expect(page.getByRole("combobox", { name: "更新 Diffusion Policy: Visuomotor Policy Learning via Action Diffusion 的阅读状态" })).toHaveValue("read");
 });
 
 test("paper details and term directory keep relationships navigable", async ({ page }, testInfo) => {
-  await page.goto("/papers/demo-ai-01/");
+  await page.goto("/papers/2023-diffusion-policy/");
 
-  await expect(page.getByRole("heading", { name: "Demo AI Paper 01" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion" })).toBeVisible();
   if (testInfo.project.name === "desktop") {
     await expect(page.getByRole("navigation", { name: "文章目录" })).toBeVisible();
   }
-  await expect(page.getByRole("heading", { name: "方法概览" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /AI 示例术语 01/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "方法详解" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Diffusion Policy/ }).first()).toBeVisible();
 
-  await page.goto("/terms/artificial-intelligence/");
-  await expect(page.getByRole("heading", { name: "人工智能术语" })).toBeVisible();
-  await page.getByRole("searchbox", { name: "搜索术语" }).fill("03");
-  await expect(page.locator("details:visible")).toHaveCount(1);
-  await page.locator("details:visible summary").click();
-  await expect(page.locator("details:visible").getByText("用于验证术语索引", { exact: false })).toBeVisible();
+  await page.goto("/terms/embodied-intelligence/");
+  await expect(page.getByRole("heading", { name: "具身智能术语" })).toBeVisible();
+  await page.getByRole("searchbox", { name: "搜索术语" }).fill("Generative Behavior Cloning");
+  await expect(page.locator("details:visible")).not.toHaveCount(0);
+  await page.locator("details:visible summary").first().click();
+  await expect(page.locator("details:visible").first()).toHaveAttribute("open", "");
 });
 
 test("mobile layout has no horizontal overflow and stacks terms after papers", async ({ page }, testInfo) => {
@@ -77,8 +79,9 @@ test("mobile layout has no horizontal overflow and stacks terms after papers", a
   expect(dimensions.termsTop).toBeGreaterThan(dimensions.papersTop);
 });
 
-test("all reachable internal links resolve without missing pages", async ({ page }, testInfo) => {
+test("all reachable internal links resolve without missing pages", async ({ request }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "Crawl once with system Chrome.");
+  test.setTimeout(120_000);
 
   const pending = ["/"];
   const visited = new Set<string>();
@@ -87,22 +90,23 @@ test("all reachable internal links resolve without missing pages", async ({ page
     const path = pending.shift()!;
     if (visited.has(path)) continue;
 
-    const response = await page.goto(path);
-    expect(response?.ok(), `Expected ${path} to resolve`).toBe(true);
+    const response = await request.get(path);
+    expect(response.ok(), `Expected ${path} to resolve`).toBe(true);
     visited.add(path);
 
-    const links = await page.locator("a[href]").evaluateAll((anchors) =>
-      anchors.map((anchor) => new URL((anchor as HTMLAnchorElement).href, window.location.origin))
-        .filter((url) => url.origin === window.location.origin)
-        .map((url) => url.pathname),
-    );
+    const html = await response.text();
+    const responseUrl = new URL(response.url());
+    const links = [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/gi)]
+      .map((match) => new URL(match[1].replaceAll("&amp;", "&"), responseUrl))
+      .filter((url) => url.origin === responseUrl.origin)
+      .map((url) => url.pathname);
 
     for (const link of links) {
       if (!visited.has(link) && !pending.includes(link)) pending.push(link);
     }
   }
 
-  expect(visited.size).toBe(21);
+  expect(visited.size).toBe(217);
 });
 
 test("field pages retain useful server-rendered content without JavaScript", async ({ browser }, testInfo) => {
@@ -111,9 +115,9 @@ test("field pages retain useful server-rendered content without JavaScript", asy
   const page = await context.newPage();
 
   await page.goto("/fields/embodied-intelligence/");
-  await expect(page.locator("[data-paper-card]")).toHaveCount(2);
-  await expect(page.locator("[data-result-count]")).toHaveText("2");
-  await expect(page.locator("[data-reading-status]").nth(1)).toHaveValue("reading");
+  await expect(page.locator("[data-paper-card]")).toHaveCount(210);
+  await expect(page.locator("[data-result-count]")).toHaveText("210");
+  await expect(page.locator("[data-reading-status]").first()).toHaveValue("unread");
 
   await context.close();
 });

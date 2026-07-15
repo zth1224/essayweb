@@ -6,6 +6,7 @@ export type FieldId =
   | "embodied-intelligence";
 
 export type ReadingStatus = "unread" | "reading" | "read";
+export type ContentState = "complete" | "source-damaged";
 
 export interface FieldDefinition {
   id: FieldId;
@@ -20,22 +21,32 @@ export interface FieldDefinition {
 export interface PaperRecord {
   id: string;
   slug: string;
+  sourceNumber: number;
   title: string;
-  authors: string[];
-  year: number;
-  summary: string;
+  authorsText: string;
+  year?: number;
+  month?: number;
+  summaryMarkdown: string;
   status: ReadingStatus;
-  featured: boolean;
   fieldIds: FieldId[];
+  topicIds: string[];
   termIds: string[];
-  tags: string[];
-  sections: {
-    background: string;
-    method: string;
-    experiments: string;
-    contributions: string;
-    limitations: string;
-  };
+  sourceUrl: string;
+  pdfUrl?: string;
+  contentState: ContentState;
+  recentRank?: number;
+  sections: PaperSection[];
+}
+
+export interface PaperSection { id: string; title: string; markdown: string }
+
+export interface TopicRecord {
+  id: string;
+  slug: string;
+  title: string;
+  descriptionMarkdown: string;
+  readingRouteMarkdown: string;
+  paperIds: string[];
 }
 
 export interface TermRecord {
@@ -43,7 +54,30 @@ export interface TermRecord {
   slug: string;
   name: string;
   sortKey: string;
-  definition: string;
+  definitionMarkdown: string;
+  contextMarkdown: string;
   fieldId: FieldId;
   relatedPaperIds: string[];
+}
+
+export interface LibraryMeta {
+  sourceHash: string;
+  sourceUpdatedAt: string;
+  paperCount: number;
+  topicCount: number;
+  termCount: number;
+  damagedPaperCount: number;
+  readPaperCount: number;
+  sourceFiles: { csvRows: number; paperNotes: number; topicPages: number; termBlocks: number; recentEntries: number };
+}
+
+export interface SyncIssue { level: "warning" | "error"; code: string; sourcePath: string; message: string }
+
+export interface LibrarySnapshot {
+  schemaVersion: number;
+  meta: LibraryMeta;
+  papers: PaperRecord[];
+  topics: TopicRecord[];
+  terms: TermRecord[];
+  issues: SyncIssue[];
 }

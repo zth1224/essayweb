@@ -1,57 +1,51 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import DemoBanner from "../../components/DemoBanner.astro";
+import LibraryBanner from "../../components/LibraryBanner.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import PaperCard from "../../components/PaperCard.astro";
 import PaperFilterBar from "../../components/PaperFilterBar.astro";
 import TermsRail from "../../components/TermsRail.astro";
+import TopicNavigator from "../../components/TopicNavigator.astro";
+import RecentShelf from "../../components/RecentShelf.astro";
 import { fields } from "../../data/fields";
-import { getPapersByField, getTermsByField } from "../../data/repository";
+import { getLibraryMeta, getPapersByField, getRecentPapers, getTermsByField, getTopicsByField } from "../../data/repository";
 import type { FieldDefinition } from "../../data/types";
 
-export function getStaticPaths() {
-  return fields.map((field) => ({ params: { field: field.slug }, props: { field } }));
-}
-
+export function getStaticPaths() { return fields.map((field) => ({ params: { field: field.slug }, props: { field } })); }
 interface Props { field: FieldDefinition }
 const { field } = Astro.props;
 const papers = getPapersByField(field.id);
 const terms = getTermsByField(field.id);
+const topics = getTopicsByField(field.id);
+const meta = getLibraryMeta();
+const topTerms = [...terms].sort((a,b)=>b.relatedPaperIds.length-a.relatedPaperIds.length || a.name.localeCompare(b.name)).slice(0,12);
+const recent = field.id === "embodied-intelligence" ? getRecentPapers(6) : [];
+const updated = new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"long",day:"numeric"}).format(new Date(meta.sourceUpdatedAt));
 ---
-
 <BaseLayout title={`${field.titleZh} · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
-  <DemoBanner />
+  <LibraryBanner />
   <SiteHeader meta={`${field.code} / Field Index`} />
   <main class="page-shell">
-    <header class="field-hero">
-      <div>
-        <p class="field-hero__eyebrow">Field {field.code} · {papers.length} papers · {terms.length} terms</p>
-        <h1>{field.titleZh}</h1>
-      </div>
-      <p class="field-hero__english">{field.titleEn}</p>
-    </header>
-    <div class="field-browser" data-paper-browser>
-      <PaperFilterBar total={papers.length} />
-      <div class="field-browser__layout">
-        <section class="paper-shelf" data-paper-shelf aria-label={`${field.titleZh}论文`}>
-          {papers.map((paper, index) => <PaperCard paper={paper} field={field} index={index} />)}
-          <div class="empty-state" data-filter-empty hidden>
-            <h2>没有匹配的论文</h2>
-            <p>调整关键词或阅读状态，或者清除当前筛选。</p>
-          </div>
-        </section>
-        <TermsRail field={field} terms={terms} />
-      </div>
-    </div>
+    <header class="field-hero"><div><p class="field-hero__eyebrow">{field.code} · {papers.length} papers · {terms.length} terms</p><h1>{field.titleZh}</h1></div><p class="field-hero__english">{field.titleEn}</p></header>
+    {papers.length === 0 ? (
+      <section class="formal-empty"><span>00 / EMPTY SHELF</span><h2>当前论文库尚未收录该领域</h2><p>这里保留为正式分区。后续只有源库明确归类到 {field.code} 的论文才会出现，不使用关键词自动推测。</p></section>
+    ) : (
+      <>
+        <section class="snapshot-facts" aria-label="论文库统计"><div><strong>{papers.length}</strong><span>论文</span></div><div><strong>{terms.length}</strong><span>术语</span></div><div><strong>{topics.length}</strong><span>主题</span></div><div><strong>{updated}</strong><span>快照时间</span></div></section>
+        <TopicNavigator topics={topics} />
+        <RecentShelf papers={recent} />
+        <div class="field-browser" data-paper-browser id="papers">
+          <PaperFilterBar total={papers.length} topics={topics} />
+          <div class="field-browser__layout"><section class="paper-shelf" data-paper-shelf aria-label={`${field.titleZh}论文`}>{papers.map((paper,index)=><PaperCard paper={paper} field={field} index={index}/>) }<div class="empty-state" data-filter-empty hidden><h2>没有匹配的论文</h2><p>调整关键词、主题或阅读状态，或者清除当前筛选。</p></div><button class="load-more" type="button" data-load-more hidden>继续加载 24 篇</button></section><TermsRail field={field} terms={topTerms}/></div>
+        </div>
+      </>
+    )}
   </main>
-  <script>
-    import { initializePaperBrowsers } from "../../scripts/paper-filter-client";
-    initializePaperBrowsers();
-  </script>
+  <script>import { initializePaperBrowsers } from "../../scripts/paper-filter-client"; initializePaperBrowsers();</script>
 </BaseLayout>
-
 <style>
-  .field-browser { padding: 0 var(--page-gutter) 4rem; }
-  .field-browser__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem); gap: clamp(2rem, 4vw, 4.5rem); align-items: start; padding-top: 1.6rem; }
-  @media (max-width: 900px) { .field-browser__layout { grid-template-columns: 1fr; } }
+  .snapshot-facts{display:grid;grid-template-columns:repeat(4,1fr);padding:0 var(--page-gutter);border-bottom:1px solid var(--line-strong)}.snapshot-facts div{min-height:7rem;display:flex;flex-direction:column;justify-content:center;padding:1rem;border-right:1px solid var(--line)}.snapshot-facts div:first-child{padding-left:0}.snapshot-facts div:last-child{border:0}.snapshot-facts strong{font:400 clamp(1.5rem,3vw,2.5rem)/1 var(--serif)}.snapshot-facts span{margin-top:.4rem;color:var(--ink-soft);font:500 .62rem var(--mono);text-transform:uppercase}
+  .field-browser{padding:0 var(--page-gutter) 4rem}.field-browser__layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(16rem,21rem);gap:clamp(2rem,4vw,4.5rem);align-items:start;padding-top:1.6rem}.load-more{width:100%;margin-top:1rem;padding:1rem;border:1px solid var(--line-strong);background:transparent;font:500 .68rem var(--mono);text-transform:uppercase}.load-more:hover{background:var(--accent-soft)}
+  .formal-empty{min-height:55vh;display:grid;align-content:center;max-width:58rem;padding:4rem var(--page-gutter)}.formal-empty span{font:.65rem var(--mono);color:var(--accent)}.formal-empty h2{max-width:15ch;margin:1rem 0;font:400 clamp(2.8rem,6vw,6rem)/.9 var(--serif)}.formal-empty p{max-width:48rem;color:var(--ink-soft)}
+  @media(max-width:900px){.field-browser__layout{grid-template-columns:1fr}}@media(max-width:650px){.snapshot-facts{grid-template-columns:1fr 1fr}.snapshot-facts div:nth-child(2){border-right:0}.snapshot-facts div:first-child{padding-left:1rem}}
 </style>
