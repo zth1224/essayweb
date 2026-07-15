@@ -37,6 +37,9 @@ const slugify = (value: string) => value
 
 const stableId = (value: string) => createHash("sha1").update(value).digest("hex").slice(0, 10);
 
+export const snapshotTextChanged = (previous: string, next: string) =>
+  previous.replace(/\r\n/g, "\n") !== next.replace(/\r\n/g, "\n");
+
 export const parseCsvText = (text: string): CsvRow[] => {
   const normalized = text.replace(/^\uFEFF/, "").replace(/\r?\n/g, "\n");
   const records = parse(normalized, {

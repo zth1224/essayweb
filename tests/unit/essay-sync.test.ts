@@ -1,10 +1,14 @@
 import { describe, expect, test } from "vitest";
 import path from "node:path";
-import { buildLibrarySnapshot, parseCsvText, parsePaperMarkdown } from "../../scripts/lib/essay-sync";
+import { buildLibrarySnapshot, parseCsvText, parsePaperMarkdown, snapshotTextChanged } from "../../scripts/lib/essay-sync";
 
 const fixtureRoot = path.resolve(process.cwd(), "tests/fixtures/essay");
 
 describe("essay library synchronization", () => {
+  test("treats CRLF and LF snapshot output as identical", () => {
+    expect(snapshotTextChanged("{\r\n  \"schemaVersion\": 1\r\n}\r\n", "{\n  \"schemaVersion\": 1\n}\n")).toBe(false);
+  });
+
   test("parses the fixed 12-column CSV including quoted commas", () => {
     const rows = parseCsvText([
       "number,title,year,month,source_url,pdf_url,paper_path,pdf_path,pdf_status,topics,reading_status,note",

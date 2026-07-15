@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { buildLibrarySnapshot } from "./lib/essay-sync";
+import { buildLibrarySnapshot, snapshotTextChanged } from "./lib/essay-sync";
 
 const sourceRoot = path.resolve(process.env.ESSAY_ROOT || "D:\\essay");
 const outputPath = path.resolve("src/data/generated/library.json");
@@ -16,7 +16,8 @@ if (existsSync(outputPath)) {
 
 const output = `${JSON.stringify(snapshot, null, 2)}\n`;
 const previousOutput = existsSync(outputPath) ? readFileSync(outputPath, "utf8") : "";
-if (output !== previousOutput) {
+const changed = snapshotTextChanged(previousOutput, output);
+if (changed) {
   mkdirSync(path.dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, output, "utf8");
 }
@@ -24,4 +25,4 @@ if (output !== previousOutput) {
 const { paperCount, topicCount, termCount, damagedPaperCount, readPaperCount } = snapshot.meta;
 console.log(`Essay snapshot: ${paperCount} papers, ${topicCount} topics, ${termCount} terms`);
 console.log(`Reading state: ${readPaperCount} read, ${paperCount - readPaperCount} unread; ${damagedPaperCount} damaged notes`);
-console.log(output === previousOutput ? "Snapshot unchanged." : `Wrote ${path.relative(process.cwd(), outputPath)}`);
+console.log(changed ? `Wrote ${path.relative(process.cwd(), outputPath)}` : "Snapshot unchanged.");
