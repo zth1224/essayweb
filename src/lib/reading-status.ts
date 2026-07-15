@@ -9,6 +9,14 @@ interface StorageLike {
 
 const validStatuses = new Set<ReadingStatus>(["unread", "reading", "read"]);
 
+export const safelyGetStorage = (getStorage: () => StorageLike): StorageLike | undefined => {
+  try {
+    return getStorage();
+  } catch {
+    return undefined;
+  }
+};
+
 export const createReadingStatusStore = (storage?: StorageLike) => {
   let state: Record<string, ReadingStatus> = {};
 

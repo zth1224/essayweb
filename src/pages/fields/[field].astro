@@ -31,7 +31,7 @@ const terms = getTermsByField(field.id);
       <p class="field-hero__english">{field.titleEn}</p>
     </header>
     <div class="field-browser" data-paper-browser>
-      <PaperFilterBar />
+      <PaperFilterBar total={papers.length} />
       <div class="field-browser__layout">
         <section class="paper-shelf" data-paper-shelf aria-label={`${field.titleZh}论文`}>
           {papers.map((paper, index) => <PaperCard paper={paper} field={field} index={index} />)}

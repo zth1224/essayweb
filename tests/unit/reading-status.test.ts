@@ -2,10 +2,15 @@ import { beforeEach, describe, expect, test } from "vitest";
 import {
   READING_STATUS_KEY,
   createReadingStatusStore,
+  safelyGetStorage,
 } from "../../src/lib/reading-status";
 
 describe("reading status store", () => {
   beforeEach(() => localStorage.clear());
+
+  test("falls back when the browser blocks access to the localStorage getter", () => {
+    expect(safelyGetStorage(() => { throw new DOMException("Blocked", "SecurityError"); })).toBeUndefined();
+  });
 
   test("persists status changes in browser storage", () => {
     const store = createReadingStatusStore(localStorage);

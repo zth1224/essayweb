@@ -91,3 +91,16 @@ test("all reachable internal links resolve without missing pages", async ({ page
 
   expect(visited.size).toBe(21);
 });
+
+test("field pages retain useful server-rendered content without JavaScript", async ({ browser }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Check the fallback once.");
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+
+  await page.goto("/fields/embodied-intelligence/");
+  await expect(page.locator("[data-paper-card]")).toHaveCount(2);
+  await expect(page.locator("[data-result-count]")).toHaveText("2");
+  await expect(page.locator("[data-reading-status]").nth(1)).toHaveValue("reading");
+
+  await context.close();
+});

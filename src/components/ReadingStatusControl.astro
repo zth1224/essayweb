@@ -18,9 +18,9 @@ const { slug, title, status } = Astro.props;
     data-paper-slug={slug}
     data-default-status={status}
   >
-    <option value="unread">未读</option>
-    <option value="reading">阅读中</option>
-    <option value="read">已读</option>
+    <option value="unread" selected={status === "unread"}>未读</option>
+    <option value="reading" selected={status === "reading"}>阅读中</option>
+    <option value="read" selected={status === "read"}>已读</option>
   </select>
 </label>
 

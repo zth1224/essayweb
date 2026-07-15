@@ -1,3 +1,8 @@
+---
+interface Props { total: number }
+const { total } = Astro.props;
+---
+
 <section class="filter-bar" aria-label="论文筛选">
   <label class="filter-bar__search">
     <span>搜索论文</span>
@@ -13,7 +18,7 @@
     </select>
   </label>
   <button type="button" data-filter-clear aria-label="清除筛选">清除筛选</button>
-  <p class="filter-bar__count" aria-live="polite"><strong data-result-count>0</strong> 篇论文</p>
+  <p class="filter-bar__count" aria-live="polite"><strong data-result-count>{total}</strong> 篇论文</p>
 </section>
 
 <style>

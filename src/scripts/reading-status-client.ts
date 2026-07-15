@@ -1,12 +1,12 @@
 import type { ReadingStatus } from "../data/types";
-import { createReadingStatusStore } from "../lib/reading-status";
+import { createReadingStatusStore, safelyGetStorage } from "../lib/reading-status";
 
 let initialized = false;
 
 export const initializeReadingStatusControls = () => {
   if (initialized || typeof window === "undefined") return;
   initialized = true;
-  const store = createReadingStatusStore(window.localStorage);
+  const store = createReadingStatusStore(safelyGetStorage(() => window.localStorage));
 
   document.querySelectorAll<HTMLSelectElement>("[data-reading-status]").forEach((select) => {
     const slug = select.dataset.paperSlug;
