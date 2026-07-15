@@ -12,6 +12,19 @@ test("home presents five keyboard-accessible field lanes", async ({ page }) => {
   await expect(page).toHaveURL(/\/fields\/artificial-intelligence\/$/);
 });
 
+test("desktop field titles stay upright in vertical writing mode", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Desktop-only vertical layout.");
+  await page.goto("/");
+
+  const titleStyle = await page.locator(".field-lane__titles").first().evaluate((element) => {
+    const style = getComputedStyle(element);
+    return { writingMode: style.writingMode, transform: style.transform };
+  });
+
+  expect(titleStyle.writingMode).toBe("vertical-rl");
+  expect(titleStyle.transform).toBe("none");
+});
+
 test("field search, filtering and local reading status work together", async ({ page }) => {
   await page.goto("/fields/artificial-intelligence/");
 
