@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DemoBanner from "../../components/DemoBanner.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import PaperCard from "../../components/PaperCard.astro";
+import PaperFilterBar from "../../components/PaperFilterBar.astro";
+import TermsRail from "../../components/TermsRail.astro";
+import { fields } from "../../data/fields";
+import { getPapersByField, getTermsByField } from "../../data/repository";
+import type { FieldDefinition } from "../../data/types";
+
+export function getStaticPaths() {
+  return fields.map((field) => ({ params: { field: field.slug }, props: { field } }));
+}
+
+interface Props { field: FieldDefinition }
+const { field } = Astro.props;
+const papers = getPapersByField(field.id);
+const terms = getTermsByField(field.id);
+---
+
+<BaseLayout title={`${field.titleZh} · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
+  <DemoBanner />
+  <SiteHeader meta={`${field.code} / Field Index`} />
+  <main class="page-shell">
+    <header class="field-hero">
+      <div>
+        <p class="field-hero__eyebrow">Field {field.code} · {papers.length} papers · {terms.length} terms</p>
+        <h1>{field.titleZh}</h1>
+      </div>
+      <p class="field-hero__english">{field.titleEn}</p>
+    </header>
+    <div class="field-browser" data-paper-browser>
+      <PaperFilterBar />
+      <div class="field-browser__layout">
+        <section class="paper-shelf" data-paper-shelf aria-label={`${field.titleZh}论文`}>
+          {papers.map((paper, index) => <PaperCard paper={paper} field={field} index={index} />)}
+          <div class="empty-state" data-filter-empty hidden>
+            <h2>没有匹配的论文</h2>
+            <p>调整关键词或阅读状态，或者清除当前筛选。</p>
+          </div>
+        </section>
+        <TermsRail field={field} terms={terms} />
+      </div>
+    </div>
+  </main>
+  <script>
+    import { initializePaperBrowsers } from "../../scripts/paper-filter-client";
+    initializePaperBrowsers();
+  </script>
+</BaseLayout>
+
+<style>
+  .field-browser { padding: 0 var(--page-gutter) 4rem; }
+  .field-browser__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem); gap: clamp(2rem, 4vw, 4.5rem); align-items: start; padding-top: 1.6rem; }
+  @media (max-width: 900px) { .field-browser__layout { grid-template-columns: 1fr; } }
+</style>

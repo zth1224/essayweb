@@ -1,0 +1,125 @@
+---
+import type { FieldDefinition } from "../data/types";
+import { getPapersByField, getTermsByField } from "../data/repository";
+import { sitePath } from "../lib/site-path";
+
+interface Props { fields: FieldDefinition[] }
+const { fields } = Astro.props;
+---
+
+<main class="field-wall" aria-label="研究领域">
+  <div class="field-wall__masthead" aria-hidden="true">
+    <span>论文索引 / Paper Index</span>
+    <span>05 Fields · Personal Knowledge System</span>
+  </div>
+  {fields.map((field, index) => (
+    <a
+      class="field-lane"
+      data-field-link
+      href={sitePath(`/fields/${field.slug}/`)}
+      style={`--lane:${field.accent};--lane-soft:${field.accentSoft};--delay:${index * 55}ms;`}
+      aria-label={`${field.titleZh} ${field.titleEn} ${field.code}`}
+    >
+      <span class="field-lane__number">{String(index + 1).padStart(2, "0")} / {field.code}</span>
+      <span class="field-lane__titles">
+        <strong>{field.titleZh}</strong>
+        <em>{field.titleEn}</em>
+      </span>
+      <span class="field-lane__footer">
+        <span>{String(getPapersByField(field.id).length).padStart(2, "0")} Papers</span>
+        <span>{String(getTermsByField(field.id).length).padStart(2, "0")} Terms</span>
+        <b>↗</b>
+      </span>
+    </a>
+  ))}
+</main>
+
+<style>
+  .field-wall {
+    min-height: calc(100svh - 2rem);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .field-wall__masthead {
+    position: absolute;
+    z-index: 5;
+    inset: 0 0 auto;
+    min-height: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(27,28,26,.45);
+    background: color-mix(in srgb, var(--surface) 76%, transparent);
+    backdrop-filter: blur(12px);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .field-lane {
+    min-width: 0;
+    flex: 1 1 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4.4rem 1rem 1.1rem;
+    border-right: 1px solid rgba(27,28,26,.55);
+    background: var(--lane-soft);
+    opacity: 0;
+    animation: lane-in 680ms cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay: var(--delay);
+    transition: flex var(--transition), background var(--transition), filter var(--transition);
+  }
+  .field-lane:last-child { border-right: 0; }
+  .field-wall:has(.field-lane:hover) .field-lane:not(:hover),
+  .field-wall:has(.field-lane:focus-visible) .field-lane:not(:focus-visible) { flex-grow: .72; filter: saturate(.7); }
+  .field-lane:hover,
+  .field-lane:focus-visible { flex-grow: 1.8; background: var(--lane); }
+  .field-lane__number,
+  .field-lane__footer {
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .field-lane__titles {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  .field-lane__titles strong {
+    font-family: var(--serif);
+    font-size: clamp(2.25rem, 3.8vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: .86;
+  }
+  .field-lane__titles em {
+    max-height: 12rem;
+    font-family: var(--serif);
+    font-size: .92rem;
+    line-height: 1.2;
+  }
+  .field-lane__footer { display: grid; gap: .15rem; }
+  .field-lane__footer b { margin-top: .6rem; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+  @keyframes lane-in { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
+  @media (max-width: 760px) {
+    .field-wall { min-height: calc(100svh - 2rem); flex-direction: column; overflow: visible; }
+    .field-wall__masthead { position: relative; flex: 0 0 auto; }
+    .field-wall__masthead span:last-child { display: none; }
+    .field-lane { min-height: 8.5rem; flex: 1 1 auto; padding: .85rem 1rem; border-right: 0; border-bottom: 1px solid rgba(27,28,26,.55); }
+    .field-wall:has(.field-lane:hover) .field-lane:not(:hover),
+    .field-wall:has(.field-lane:focus-visible) .field-lane:not(:focus-visible),
+    .field-lane:hover, .field-lane:focus-visible { flex-grow: 1; filter: none; }
+    .field-lane__titles { writing-mode: initial; transform: none; align-items: baseline; justify-content: space-between; }
+    .field-lane__titles strong { font-size: clamp(2rem, 9vw, 3.2rem); }
+    .field-lane__titles em { max-width: 12rem; text-align: right; }
+    .field-lane__footer { grid-template-columns: auto auto 1fr; align-items: end; }
+    .field-lane__footer b { justify-self: end; margin: 0; }
+  }
+</style>

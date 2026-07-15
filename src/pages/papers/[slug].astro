@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DemoBanner from "../../components/DemoBanner.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import ReadingStatusControl from "../../components/ReadingStatusControl.astro";
+import { papers } from "../../data/demo";
+import { fields } from "../../data/fields";
+import { getPapersByField, getTermsByIds } from "../../data/repository";
+import { sitePath } from "../../lib/site-path";
+import type { PaperRecord } from "../../data/types";
+
+export function getStaticPaths() {
+  return papers.map((paper) => ({ params: { slug: paper.slug }, props: { paper } }));
+}
+
+interface Props { paper: PaperRecord }
+const { paper } = Astro.props as Props;
+const field = fields.find((item) => item.id === paper.fieldIds[0])!;
+const relatedTerms = getTermsByIds(paper.termIds);
+const relatedPapers = getPapersByField(field.id).filter((item) => item.id !== paper.id);
+const sections = [
+  ["background", "研究背景", paper.sections.background],
+  ["method", "方法概览", paper.sections.method],
+  ["experiments", "实验与结果", paper.sections.experiments],
+  ["contributions", "贡献与启发", paper.sections.contributions],
+  ["limitations", "局限与风险", paper.sections.limitations],
+] as const;
+---
+
+<BaseLayout title={`${paper.title} · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
+  <DemoBanner />
+  <SiteHeader backHref={`/fields/${field.slug}/`} backLabel={field.titleZh} meta={`${field.code} / Paper Note`} />
+  <main class="paper-detail page-shell">
+    <header class="paper-detail__head">
+      <div>
+        <p class="meta-label">{field.code} · {paper.year} · {paper.featured ? "Featured note" : "Paper note"}</p>
+        <h1 class="detail-title">{paper.title}</h1>
+      </div>
+      <div class="paper-detail__status">
+        <span class="meta-label">Reading status</span>
+        <ReadingStatusControl slug={paper.slug} title={paper.title} status={paper.status} />
+      </div>
+    </header>
+    <div class="paper-detail__meta">
+      <div><span>作者</span><strong>{paper.authors.join(" · ")}</strong></div>
+      <div><span>领域</span><strong>{field.titleZh} / {field.code}</strong></div>
+      <div><span>来源</span><strong class="disabled-source">来源链接待接入</strong></div>
+      <div><span>PDF</span><strong class="disabled-source">PDF 路径待接入</strong></div>
+    </div>
+    <div class="paper-detail__layout">
+      <article class="paper-prose">
+        <section class="paper-abstract">
+          <span class="meta-label">一句话结论 / Abstract</span>
+          <p>{paper.summary}</p>
+        </section>
+        {sections.map(([id, title, content], index) => (
+          <section id={id} class="paper-section">
+            <span class="paper-section__number">{String(index + 1).padStart(2, "0")}</span>
+            <div><h2>{title}</h2><p>{content}</p></div>
+          </section>
+        ))}
+        <section class="related-block">
+          <div>
+            <span class="meta-label">Related vocabulary</span>
+            <h2>关联术语</h2>
+            <ul>{relatedTerms.map((term) => <li><a href={sitePath(`/terms/${field.slug}/#${term.slug}`)}>{term.name} ↗</a></li>)}</ul>
+          </div>
+          <div>
+            <span class="meta-label">Continue reading</span>
+            <h2>关联论文</h2>
+            <ul>{relatedPapers.map((item) => <li><a href={sitePath(`/papers/${item.slug}/`)}>{item.title} ↗</a></li>)}</ul>
+          </div>
+        </section>
+      </article>
+      <nav class="paper-toc" aria-label="文章目录">
+        <span class="meta-label">On this page</span>
+        {sections.map(([id, title], index) => <a href={`#${id}`}><span>{String(index + 1).padStart(2, "0")}</span>{title}</a>)}
+      </nav>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .paper-detail { padding: 0 var(--page-gutter) 5rem; }
+  .paper-detail__head { min-height: 24rem; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 2rem; align-items: end; padding: clamp(4rem,9vw,8rem) 0 2rem; border-bottom: 1px solid var(--line-strong); }
+  .detail-title { max-width: 14ch; font-size: clamp(3.4rem, 7.7vw, 8rem); }
+  .paper-detail__status { display: grid; gap: .5rem; justify-items: end; }
+  .paper-detail__meta { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .paper-detail__meta > div { min-height: 5.6rem; display: grid; align-content: center; gap: .35rem; padding: 1rem; border-right: 1px solid var(--line); }
+  .paper-detail__meta > div:first-child { padding-left: 0; }
+  .paper-detail__meta > div:last-child { border-right: 0; }
+  .paper-detail__meta span { color: var(--ink-soft); font-family: var(--mono); font-size: .62rem; text-transform: uppercase; }
+  .paper-detail__meta strong { font-size: .78rem; font-weight: 500; }
+  .disabled-source { color: #98978f; }
+  .paper-detail__layout { display: grid; grid-template-columns: minmax(0,1fr) 13rem; gap: clamp(3rem,7vw,8rem); padding-top: 3.5rem; }
+  .paper-abstract { padding-bottom: 3rem; border-bottom: 1px solid var(--line-strong); }
+  .paper-abstract p { max-width: 30ch; margin: .9rem 0 0; font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,3.1rem); line-height: 1.08; }
+  .paper-section { display: grid; grid-template-columns: 3rem minmax(0,1fr); gap: 1.2rem; padding: 3rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 1rem; }
+  .paper-section__number { color: var(--accent); font-family: var(--serif); font-size: 2rem; }
+  .paper-section h2, .related-block h2 { margin: 0 0 1rem; font-family: var(--serif); font-size: 2.4rem; font-weight: 400; line-height: 1; }
+  .paper-section p { max-width: 64ch; margin: 0; color: var(--ink-soft); }
+  .paper-toc { position: sticky; top: 1rem; align-self: start; display: grid; }
+  .paper-toc a { display: grid; grid-template-columns: 2rem 1fr; gap: .5rem; padding: .75rem 0; border-top: 1px solid var(--line); font-size: .78rem; }
+  .paper-toc a:last-child { border-bottom: 1px solid var(--line); }
+  .paper-toc span { font-family: var(--mono); font-size: .62rem; }
+  .related-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 4rem; }
+  .related-block ul { list-style: none; margin: 0; padding: 0; }
+  .related-block li { padding: .75rem 0; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 1.1rem; line-height: 1.1; }
+  @media (max-width: 850px) {
+    .paper-detail__head { min-height: 20rem; grid-template-columns: 1fr; }
+    .paper-detail__status { justify-items: start; }
+    .paper-detail__meta { grid-template-columns: 1fr 1fr; }
+    .paper-detail__meta > div:nth-child(2) { border-right: 0; }
+    .paper-detail__meta > div:first-child { padding-left: 1rem; }
+    .paper-detail__layout { grid-template-columns: 1fr; }
+    .paper-toc { display: none; }
+  }
+  @media (max-width: 580px) { .related-block { grid-template-columns: 1fr; } }
+</style>

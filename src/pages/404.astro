@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { sitePath } from "../lib/site-path";
+---
+
+<BaseLayout title="页面不存在 · 论文索引">
+  <SiteHeader meta="404 / Missing Index" />
+  <main class="not-found">
+    <span>404</span>
+    <h1>这条研究线索暂时不存在。</h1>
+    <p>它可能尚未加入索引，也可能已经更换路径。</p>
+    <a href={sitePath("/")}>返回五领域索引 →</a>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found { min-height: calc(100svh - 4rem); display: grid; place-content: center; justify-items: center; padding: 2rem; text-align: center; background: radial-gradient(circle at center, var(--accent-soft), var(--paper) 58%); }
+  .not-found > span { color: var(--accent); font-family: var(--serif); font-size: clamp(7rem,22vw,18rem); line-height: .75; }
+  h1 { max-width: 16ch; margin: 2rem 0 .4rem; font-family: var(--serif); font-size: clamp(2rem,5vw,4.5rem); font-weight: 400; line-height: .95; }
+  p { color: var(--ink-soft); }
+  a { margin-top: 1rem; border-bottom: 1px solid currentColor; font-family: var(--mono); font-size: .72rem; text-transform: uppercase; }
+</style>

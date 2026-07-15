@@ -1,0 +1,45 @@
+---
+import type { ReadingStatus } from "../data/types";
+
+interface Props {
+  slug: string;
+  title: string;
+  status: ReadingStatus;
+}
+
+const { slug, title, status } = Astro.props;
+---
+
+<label class="reading-status">
+  <span class="sr-only">更新 {title} 的阅读状态</span>
+  <select
+    aria-label={`更新 ${title} 的阅读状态`}
+    data-reading-status
+    data-paper-slug={slug}
+    data-default-status={status}
+  >
+    <option value="unread">未读</option>
+    <option value="reading">阅读中</option>
+    <option value="read">已读</option>
+  </select>
+</label>
+
+<script>
+  import { initializeReadingStatusControls } from "../scripts/reading-status-client";
+  initializeReadingStatusControls();
+</script>
+
+<style>
+  .reading-status select {
+    width: max-content;
+    max-width: 100%;
+    padding: .38rem 1.8rem .38rem .65rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: .66rem;
+    letter-spacing: .03em;
+  }
+</style>

@@ -1,0 +1,48 @@
+<section class="filter-bar" aria-label="论文筛选">
+  <label class="filter-bar__search">
+    <span>搜索论文</span>
+    <input type="search" aria-label="搜索论文" placeholder="标题、作者或标签" data-paper-query />
+  </label>
+  <label>
+    <span>阅读状态</span>
+    <select aria-label="阅读状态筛选" data-paper-status>
+      <option value="all">全部状态</option>
+      <option value="unread">未读</option>
+      <option value="reading">阅读中</option>
+      <option value="read">已读</option>
+    </select>
+  </label>
+  <button type="button" data-filter-clear aria-label="清除筛选">清除筛选</button>
+  <p class="filter-bar__count" aria-live="polite"><strong data-result-count>0</strong> 篇论文</p>
+</section>
+
+<style>
+  .filter-bar {
+    display: grid;
+    grid-template-columns: minmax(14rem, 1fr) minmax(10rem, .45fr) auto auto;
+    gap: 1rem;
+    align-items: end;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  label { display: grid; gap: .35rem; color: var(--ink-soft); font-family: var(--mono); font-size: .65rem; letter-spacing: .05em; text-transform: uppercase; }
+  input, select, button {
+    min-height: 2.65rem;
+    border: 0;
+    border-bottom: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+  }
+  input { width: 100%; }
+  input::placeholder { color: #9a9a94; }
+  button { padding-inline: .5rem; font-family: var(--mono); font-size: .67rem; letter-spacing: .04em; text-transform: uppercase; }
+  button:hover { background: var(--accent-soft); }
+  .filter-bar__count { margin: 0; padding-bottom: .62rem; color: var(--ink-soft); font-family: var(--mono); font-size: .7rem; text-align: right; white-space: nowrap; }
+  .filter-bar__count strong { color: var(--ink); font-size: 1rem; }
+  @media (max-width: 760px) {
+    .filter-bar { grid-template-columns: 1fr 1fr; }
+    .filter-bar__search { grid-column: 1 / -1; }
+    .filter-bar__count { text-align: left; }
+  }
+</style>

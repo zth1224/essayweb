@@ -1,0 +1,44 @@
+---
+import type { FieldDefinition, TermRecord } from "../data/types";
+import { sitePath } from "../lib/site-path";
+
+interface Props { field: FieldDefinition; terms: TermRecord[] }
+const { field, terms } = Astro.props;
+---
+
+<aside class="terms-rail" data-terms-rail aria-label={`${field.titleZh}术语专区`}>
+  <div class="terms-rail__head">
+    <span class="meta-label">Field vocabulary / {terms.length}</span>
+    <h2>术语专区</h2>
+    <p>沿着论文阅读时，随手查阅本领域的核心概念。</p>
+  </div>
+  <ol>
+    {terms.map((term, index) => (
+      <li>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <a href={sitePath(`/terms/${field.slug}/#${term.slug}`)}>{term.name}</a>
+        <b aria-hidden="true">↗</b>
+      </li>
+    ))}
+  </ol>
+  <a class="terms-rail__all" href={sitePath(`/terms/${field.slug}/`)}>浏览全部术语 <span>→</span></a>
+</aside>
+
+<style>
+  .terms-rail {
+    position: sticky;
+    top: 1rem;
+    padding: 1.35rem;
+    background: var(--accent-soft);
+    border-radius: var(--radius-md);
+  }
+  .terms-rail__head h2 { margin: .4rem 0 .55rem; font-family: var(--serif); font-size: 2rem; font-weight: 400; line-height: 1; }
+  .terms-rail__head p { margin: 0; color: color-mix(in srgb, var(--ink) 70%, transparent); font-size: .8rem; }
+  ol { list-style: none; margin: 1.25rem 0; padding: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 26%, transparent); }
+  li { display: grid; grid-template-columns: 1.7rem 1fr auto; gap: .4rem; align-items: center; padding: .8rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 26%, transparent); }
+  li span { font-family: var(--mono); font-size: .62rem; }
+  li a { font-family: var(--serif); font-size: 1.07rem; line-height: 1.05; }
+  li b { font-weight: 400; }
+  .terms-rail__all { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .67rem; letter-spacing: .04em; text-transform: uppercase; }
+  @media (max-width: 900px) { .terms-rail { position: static; } }
+</style>

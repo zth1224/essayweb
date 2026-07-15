@@ -1,0 +1,17 @@
+:root {
+  --paper: #f3f1ea;
+  --surface: #fbfaf6;
+  --ink: #1b1c1a;
+  --ink-soft: #6f716b;
+  --line: #d6d3c8;
+  --line-strong: #aaa79e;
+  --accent: #e66f51;
+  --accent-soft: #f2d5ca;
+  --serif: "Instrument Serif", "Noto Serif SC", "Songti SC", SimSun, serif;
+  --sans: "Manrope", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --page-gutter: clamp(1rem, 2.5vw, 2.75rem);
+  --radius-sm: 0.35rem;
+  --radius-md: 0.9rem;
+  --transition: 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
