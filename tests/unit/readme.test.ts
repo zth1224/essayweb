@@ -35,4 +35,11 @@ describe("agent-ready README", () => {
     expect(readme).toContain("HTTP 200");
     expect(readme).toContain("不得声称发布成功");
   });
+
+  test("documents the discovery refresh contract", () => {
+    expect(readme).toContain("npm run refresh:discovery");
+    expect(readme).toContain("src/data/generated/discovery.json");
+    expect(readme).toContain("SEMANTIC_SCHOLAR_API_KEY");
+    expect(readme).toContain("北京时间工作日 11:30");
+  });
 });

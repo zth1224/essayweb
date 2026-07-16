@@ -1,0 +1,68 @@
+---
+import type { DiscoveryPaper } from "../data/discovery-types";
+import { discoveryTopicLabel, isFormalDiscoveryVenue } from "../lib/discovery";
+import { sitePath } from "../lib/site-path";
+
+interface Props { paper: DiscoveryPaper; index: number; featured?: boolean }
+const { paper, index, featured = false } = Astro.props;
+const published = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(paper.publishedAt));
+const tierLabels = { priority: "优先精读", skim: "快速浏览", track: "持续关注", archive: "搜索收录" };
+const sourceLabels = { arxiv: "arXiv", "semantic-scholar": "Semantic Scholar", openreview: "OpenReview" };
+const topics = paper.topicIds.map(discoveryTopicLabel);
+const searchText = [paper.title, paper.authors.join(" "), paper.abstract, paper.venue ?? "", topics.join(" ")].join(" ");
+---
+
+<article
+  class:list={["discovery-card", { "discovery-card--featured": featured, "discovery-card--collected": paper.librarySlug }]}
+  data-discovery-card={!featured ? "" : undefined}
+  data-discovery-feature={featured ? "" : undefined}
+  data-paper-id={paper.id}
+  data-title={paper.title}
+  data-source-url={paper.sourceUrl}
+  data-search={searchText}
+  data-topics={paper.topicIds.join(" ")}
+  data-sources={paper.sources.join(" ")}
+  data-tier={paper.score.tier}
+  data-published={paper.publishedAt}
+  data-venue={isFormalDiscoveryVenue(paper.venue) ? "formal" : "preprint"}
+  data-library={paper.librarySlug ? "collected" : "new"}
+  data-score={paper.score.total}
+  data-reasons={paper.score.reasons.join("；")}
+  style={`--rank:${index + 1};--score:${paper.score.total};`}
+>
+  <div class="discovery-card__rail"><span>{String(index + 1).padStart(3, "0")}</span><b>{paper.score.total}</b><i aria-hidden="true"></i></div>
+  <div class="discovery-card__body">
+    <div class="discovery-card__meta"><span class={`tier tier--${paper.score.tier}`}>{tierLabels[paper.score.tier]}</span><span>{published}</span><span>{paper.venue || paper.categories[0] || "Preprint"}</span></div>
+    <h2><a href={paper.sourceUrl} target="_blank" rel="noreferrer" data-source-link>{paper.title}</a></h2>
+    <p class="discovery-card__authors">{paper.authors.slice(0, featured ? 5 : 8).join(" · ") || "作者信息待来源补充"}</p>
+    <p class="discovery-card__abstract">{paper.abstract || "当前来源未提供摘要，可通过原文页面继续判断。"}</p>
+    <div class="discovery-card__topics">{topics.map((topic) => <span>{topic}</span>)}{paper.sources.map((source) => <span class="source-chip">{sourceLabels[source]}</span>)}</div>
+    <details class="discovery-card__evidence">
+      <summary>为什么推荐 <span>展开证据 +</span></summary>
+      <div class="score-grid">
+        <span><b>{paper.score.interest}</b> / 45<small>兴趣匹配</small></span><span><b>{paper.score.evidence}</b> / 25<small>研究证据</small></span><span><b>{paper.score.freshness}</b> / 15<small>新鲜度</small></span><span><b>{paper.score.completeness}</b> / 15<small>信息完整度</small></span>
+      </div>
+      <ul>{paper.score.reasons.map((reason) => <li>{reason}</li>)}</ul>
+    </details>
+  </div>
+  <div class="discovery-card__actions">
+    {paper.librarySlug ? <a class="action action--primary" href={sitePath(`/papers/${paper.librarySlug}/`)}>已收录 · 查看笔记</a> : <button class="action action--primary" type="button" data-decision-action="queued" aria-pressed="false">加入精读</button>}
+    <button class="action" type="button" data-decision-action="dismissed" aria-pressed="false">暂不关注</button>
+    <a class="action action--source" href={paper.sourceUrl} target="_blank" rel="noreferrer" data-source-link>查看原文 ↗</a>
+  </div>
+</article>
+
+<style is:global>
+  .discovery-card{position:relative;display:grid;grid-template-columns:3.2rem minmax(0,1fr) 9rem;gap:1.2rem;padding:1.45rem 0;border-top:1px solid var(--discovery-line,#313632);transition:background var(--transition),padding var(--transition),opacity var(--transition)}.discovery-card__body{min-width:0}
+  .discovery-card:last-child{border-bottom:1px solid var(--discovery-line,#313632)}.discovery-card:hover{padding-inline:.75rem;background:rgba(226,238,214,.045)}
+  .discovery-card--featured{grid-template-columns:2.8rem minmax(0,1fr);grid-template-rows:1fr auto;min-height:27rem;padding:1rem;border:1px solid rgba(229,235,222,.28);background:linear-gradient(155deg,rgba(226,238,214,.1),rgba(13,17,14,.2));animation:brief-in 650ms cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--rank) * 75ms)}
+  .discovery-card--featured .discovery-card__actions{grid-column:2;flex-direction:row;align-items:center;justify-content:flex-start;flex-wrap:wrap}.discovery-card--featured .discovery-card__abstract{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}.discovery-card--featured h2{font-size:clamp(1.7rem,2.7vw,2.8rem)}
+  .discovery-card--collected{background:repeating-linear-gradient(-45deg,transparent,transparent 10px,rgba(226,238,214,.025) 10px,rgba(226,238,214,.025) 11px)}
+  .discovery-card__rail{display:flex;min-height:100%;flex-direction:column;align-items:center;gap:.5rem;font:500 .62rem var(--mono);color:var(--discovery-muted,#9da79f)}.discovery-card__rail b{font:400 2.3rem/1 var(--serif);color:var(--signal,#d9f99d)}.discovery-card__rail i{width:1px;flex:1;background:linear-gradient(to bottom,var(--signal,#d9f99d) calc(var(--score) * 1%),rgba(229,235,222,.12) 0)}
+  .discovery-card__meta{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;color:var(--discovery-muted,#9da79f);font:500 .62rem var(--mono);letter-spacing:.05em;text-transform:uppercase}.tier{padding:.2rem .38rem;border:1px solid currentColor}.tier--priority{color:var(--signal,#d9f99d)}.tier--skim{color:#f4c978}.tier--track{color:#a7c7e7}.tier--archive{color:#8f9690}
+  .discovery-card h2{max-width:29ch;margin:.7rem 0 .55rem;font:400 clamp(1.45rem,2.4vw,2.15rem)/.98 var(--serif);letter-spacing:-.025em;overflow-wrap:anywhere}.discovery-card h2 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}.discovery-card__authors{margin:0 0 .65rem;color:#c0c8c1;font:500 .67rem/1.5 var(--mono);overflow-wrap:anywhere}.discovery-card__abstract{max-width:76ch;margin:0;color:var(--discovery-muted,#9da79f);font-size:.82rem;line-height:1.65;overflow-wrap:anywhere}
+  .discovery-card__topics{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}.discovery-card__topics span{padding:.18rem .4rem;border:1px solid rgba(229,235,222,.18);color:#cfd6d0;font:500 .59rem var(--mono)}.discovery-card__topics .source-chip{border-style:dashed;color:var(--discovery-muted,#9da79f)}
+  .discovery-card__evidence{margin-top:1rem;border-top:1px solid rgba(229,235,222,.13)}.discovery-card__evidence summary{display:flex;justify-content:space-between;padding:.65rem 0;color:#dfe5df;cursor:pointer;font:500 .64rem var(--mono);text-transform:uppercase}.discovery-card__evidence summary span{color:var(--signal,#d9f99d)}.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(229,235,222,.12)}.score-grid span{padding:.6rem;background:#111612;font:500 .62rem var(--mono)}.score-grid b{font-size:1rem;color:var(--signal,#d9f99d)}.score-grid small{display:block;margin-top:.15rem;color:var(--discovery-muted,#9da79f)}
+  .discovery-card__evidence ul{display:flex;flex-wrap:wrap;gap:.35rem 1.2rem;margin:.7rem 0 0;padding:0;list-style:none;color:#c6cec7;font-size:.7rem}.discovery-card__evidence li::before{content:"↳ ";color:var(--signal,#d9f99d)}.discovery-card__actions{display:flex;flex-direction:column;align-items:stretch;gap:.5rem}.action{min-height:2.3rem;padding:.55rem .65rem;border:1px solid rgba(229,235,222,.25);background:transparent;color:#dbe2dc;font:500 .62rem var(--mono);text-align:center;text-transform:uppercase}.action:hover,.action[aria-pressed="true"]{border-color:var(--signal,#d9f99d);background:var(--signal,#d9f99d);color:#111612}.action--source{margin-top:auto;border:0;border-bottom:1px solid rgba(229,235,222,.25)}
+  @keyframes brief-in{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}@media(max-width:760px){.discovery-card{grid-template-columns:2.4rem minmax(0,1fr)}.discovery-card__actions{grid-column:2;flex-direction:row;flex-wrap:wrap}.action{flex:1 1 8rem}.discovery-card--featured{min-height:0}.score-grid{grid-template-columns:1fr 1fr}}
+</style>

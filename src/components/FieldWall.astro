@@ -31,6 +31,10 @@ const { fields } = Astro.props;
       </span>
     </a>
   ))}
+  <a class="field-wall__discover" href={sitePath("/discover/")}>
+    <span>DISCOVERY DESK</span>
+    <strong>发现新论文 ↗</strong>
+  </a>
 </main>
 
 <style>
@@ -105,6 +109,9 @@ const { fields } = Astro.props;
   }
   .field-lane__footer { display: grid; gap: .15rem; }
   .field-lane__footer b { margin-top: .6rem; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+  .field-wall__discover { position: absolute; z-index: 6; right: 1rem; top: 3.85rem; display: grid; gap: .15rem; padding: .7rem .8rem; border: 1px solid rgba(27,28,26,.5); background: rgba(251,250,246,.82); backdrop-filter: blur(10px); }
+  .field-wall__discover span { font: 500 .55rem var(--mono); letter-spacing: .08em; }
+  .field-wall__discover strong { font: 400 1.15rem var(--serif); }
   @keyframes lane-in { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: none; } }
   @media (max-width: 760px) {
     .field-wall { min-height: calc(100svh - 2rem); flex-direction: column; overflow: visible; }
@@ -119,5 +126,6 @@ const { fields } = Astro.props;
     .field-lane__titles em { max-width: 12rem; text-align: right; }
     .field-lane__footer { grid-template-columns: auto auto 1fr; align-items: end; }
     .field-lane__footer b { justify-self: end; margin: 0; }
+    .field-wall__discover { position: relative; inset: auto; order: 10; min-height: 4rem; align-content: center; padding-inline: 1rem; border: 0; border-bottom: 1px solid rgba(27,28,26,.55); background: var(--surface); }
   }
 </style>

@@ -1,0 +1,265 @@
+import type {
+  DiscoveryDecision,
+  DiscoveryPaper,
+  DiscoveryScore,
+  DiscoveryTier,
+  DiscoveryTopicId,
+  StoredDiscoveryDecision,
+} from "../data/discovery-types";
+
+export const DISCOVERY_DECISION_KEY = "paper-index:discovery-decisions:v1";
+export const DISCOVERY_PAGE_SIZE = 24;
+
+export const discoveryTopics: Array<{
+  id: DiscoveryTopicId;
+  label: string;
+  keywords: string[];
+}> = [
+  {
+    id: "embodied-foundation-models",
+    label: "具身基础模型",
+    keywords: ["embodied foundation", "generalist robot", "robot foundation", "general-purpose robot"],
+  },
+  {
+    id: "imitation-reinforcement-learning",
+    label: "模仿与强化学习",
+    keywords: ["imitation learning", "reinforcement learning", "behavior cloning", "policy learning", "offline rl"],
+  },
+  {
+    id: "multimodal-world-models",
+    label: "多模态与世界模型",
+    keywords: ["world model", "multimodal", "video prediction", "future prediction", "latent dynamics"],
+  },
+  {
+    id: "navigation-planning",
+    label: "导航与规划",
+    keywords: ["navigation", "motion planning", "task planning", "autonomous driving", "trajectory planning"],
+  },
+  {
+    id: "robot-manipulation",
+    label: "机器人操作",
+    keywords: ["manipulation", "grasp", "dexterous", "bimanual", "contact-rich", "robotic arm"],
+  },
+  {
+    id: "simulation-datasets-evaluation",
+    label: "仿真、数据集与评测",
+    keywords: ["benchmark", "dataset", "simulation", "sim-to-real", "evaluation", "teleoperation"],
+  },
+  {
+    id: "vision-language-action-models",
+    label: "视觉语言动作模型",
+    keywords: ["vision-language-action", "vision language action", "vla", "language-conditioned robot"],
+  },
+];
+
+export const discoveryTopicLabel = (id: DiscoveryTopicId) =>
+  discoveryTopics.find((topic) => topic.id === id)?.label ?? id;
+
+export const normalizeDiscoveryText = (value: string) => value
+  .normalize("NFKC")
+  .trim()
+  .replace(/\s+/g, " ")
+  .toLowerCase();
+
+export const normalizeDiscoveryTitle = (value: string) => normalizeDiscoveryText(value)
+  .replace(/[^a-z0-9\u3400-\u9fff]+/g, " ")
+  .trim();
+
+export const classifyDiscoveryTopics = (text: string): DiscoveryTopicId[] => {
+  const normalized = normalizeDiscoveryText(text);
+  return discoveryTopics
+    .filter((topic) => topic.keywords.some((keyword) => normalized.includes(keyword)))
+    .map((topic) => topic.id);
+};
+
+const clamp = (value: number, minimum: number, maximum: number) =>
+  Math.min(maximum, Math.max(minimum, value));
+
+export const tierForScore = (score: number): DiscoveryTier => {
+  if (score >= 75) return "priority";
+  if (score >= 60) return "skim";
+  if (score >= 45) return "track";
+  return "archive";
+};
+
+export const isFormalDiscoveryVenue = (venue = "") => /\b(iclr|neurips|icml|corl|rss|robotics science and systems|icra|iros|cvpr|iccv|eccv)\b/i.test(venue);
+
+export const scoreDiscoveryPaper = (
+  paper: Omit<DiscoveryPaper, "score">,
+  now = new Date(),
+): DiscoveryScore => {
+  const published = new Date(paper.publishedAt);
+  const ageDays = Math.max(0, (now.getTime() - published.getTime()) / 86_400_000);
+  const reasons: string[] = [];
+
+  const recommendationPoints = paper.recommendationRank
+    ? clamp(31 - Math.ceil(paper.recommendationRank / 25), 10, 30)
+    : 0;
+  const topicPoints = paper.topicIds.length
+    ? clamp(7 + paper.topicIds.length * 2, 7, 15)
+    : 0;
+  const interest = clamp(recommendationPoints + topicPoints, 0, 45);
+  if (recommendationPoints >= 24) reasons.push("与已读论文高度相似");
+  if (paper.topicIds.length >= 2) reasons.push(`覆盖 ${paper.topicIds.length} 个关注主题`);
+
+  let evidence = 0;
+  if (isFormalDiscoveryVenue(paper.venue)) {
+    evidence += 12;
+    reasons.push(`已关联正式 venue：${paper.venue}`);
+  }
+  if (ageDays >= 30 && paper.citationCount !== undefined) {
+    const citationsPerMonth = paper.citationCount / Math.max(1, ageDays / 30);
+    const citationPoints = clamp(Math.round(Math.log2(citationsPerMonth + 1) * 2), 0, 8);
+    evidence += citationPoints;
+    if (citationPoints >= 5) reasons.push("同龄论文中引用增长较快");
+  } else if (ageDays < 30) {
+    reasons.push("新论文不以零引用降权");
+  }
+  const artifactKinds = new Set(paper.artifacts.map((artifact) => artifact.kind));
+  const artifactPoints = Math.min(5, (artifactKinds.has("code") ? 3 : 0) + (artifactKinds.has("project") ? 2 : 0) + (paper.pdfUrl ? 1 : 0));
+  evidence = clamp(evidence + artifactPoints, 0, 25);
+  if (artifactKinds.has("code")) reasons.push("提供代码资源");
+  else if (artifactKinds.has("project")) reasons.push("提供项目页面");
+
+  const freshness = ageDays <= 30
+    ? 15
+    : clamp(Math.round(15 * (180 - ageDays) / 150), 0, 15);
+  if (ageDays <= 14) reasons.push("两周内发布");
+
+  let completeness = 0;
+  if (paper.abstract.length >= 240) completeness += 6;
+  if (paper.authors.length > 0) completeness += 3;
+  if (paper.sourceUrl && paper.publishedAt) completeness += 2;
+  if (paper.venue) completeness += 2;
+  if (/\b(benchmark|experiment|evaluation|success rate|outperform|improv(?:e|es|ed|ement)|\d+(?:\.\d+)?%)\b/i.test(paper.abstract)) completeness += 2;
+  completeness = clamp(completeness, 0, 15);
+  if (completeness >= 11) reasons.push("摘要与实验线索较完整");
+
+  const total = clamp(interest + evidence + freshness + completeness, 0, 100);
+  return {
+    interest,
+    evidence,
+    freshness,
+    completeness,
+    total,
+    tier: tierForScore(total),
+    reasons: [...new Set(reasons)].slice(0, 5),
+  };
+};
+
+export interface DiscoveryFilters {
+  query?: string;
+  topicId?: DiscoveryTopicId | "all";
+  age?: "7" | "30" | "90" | "180" | "all";
+  venue?: "all" | "formal" | "preprint";
+  source?: "all" | "arxiv" | "semantic-scholar" | "openreview";
+  tier?: DiscoveryTier | "all";
+  library?: "all" | "new" | "collected";
+}
+
+export const discoveryTextRelevance = (paper: DiscoveryPaper, query: string) => {
+  const normalizedQuery = normalizeDiscoveryText(query);
+  if (!normalizedQuery) return 0;
+  const tokens = normalizedQuery.split(" ").filter(Boolean);
+  const title = normalizeDiscoveryText(paper.title);
+  const authors = normalizeDiscoveryText(paper.authors.join(" "));
+  const haystack = normalizeDiscoveryText([
+    paper.title,
+    paper.authors.join(" "),
+    paper.abstract,
+    paper.venue ?? "",
+    paper.topicIds.map(discoveryTopicLabel).join(" "),
+  ].join(" "));
+  if (!tokens.every((token) => haystack.includes(token))) return -1;
+  let score = tokens.reduce((total, token) => total + (title.includes(token) ? 8 : 0) + (authors.includes(token) ? 3 : 0) + 1, 0);
+  if (title.includes(normalizedQuery)) score += 16;
+  return score;
+};
+
+export const filterAndSortDiscoveryPapers = (
+  papers: DiscoveryPaper[],
+  filters: DiscoveryFilters,
+  now = new Date(),
+) => {
+  const query = filters.query ?? "";
+  const ageLimit = filters.age && filters.age !== "all" ? Number(filters.age) : undefined;
+  return papers
+    .map((paper) => ({ paper, relevance: discoveryTextRelevance(paper, query) }))
+    .filter(({ paper, relevance }) => {
+      if (query && relevance < 0) return false;
+      if (filters.topicId && filters.topicId !== "all" && !paper.topicIds.includes(filters.topicId)) return false;
+      if (ageLimit) {
+        const ageDays = (now.getTime() - new Date(paper.publishedAt).getTime()) / 86_400_000;
+        if (ageDays > ageLimit) return false;
+      }
+      if (filters.venue === "formal" && !isFormalDiscoveryVenue(paper.venue)) return false;
+      if (filters.venue === "preprint" && isFormalDiscoveryVenue(paper.venue)) return false;
+      if (filters.source && filters.source !== "all" && !paper.sources.includes(filters.source)) return false;
+      if (filters.tier && filters.tier !== "all" && paper.score.tier !== filters.tier) return false;
+      if (filters.library === "new" && paper.librarySlug) return false;
+      if (filters.library === "collected" && !paper.librarySlug) return false;
+      return true;
+    })
+    .sort((a, b) => query
+      ? b.relevance - a.relevance || b.paper.score.total - a.paper.score.total
+      : b.paper.score.total - a.paper.score.total || b.paper.publishedAt.localeCompare(a.paper.publishedAt))
+    .map(({ paper }) => paper);
+};
+
+interface StorageLike {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+}
+
+const validDecisions = new Set<DiscoveryDecision>(["queued", "dismissed", "seen"]);
+
+export const createDiscoveryDecisionStore = (storage?: StorageLike) => {
+  let state: Record<string, StoredDiscoveryDecision> = {};
+  try {
+    const saved = storage?.getItem(DISCOVERY_DECISION_KEY);
+    const parsed = saved ? JSON.parse(saved) : {};
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      state = Object.fromEntries(Object.entries(parsed).filter((entry): entry is [string, StoredDiscoveryDecision] => {
+        const value = entry[1] as StoredDiscoveryDecision;
+        return Boolean(value && validDecisions.has(value.decision) && typeof value.updatedAt === "string");
+      }));
+    }
+  } catch {
+    state = {};
+  }
+
+  const persist = () => {
+    try { storage?.setItem(DISCOVERY_DECISION_KEY, JSON.stringify(state)); } catch { /* keep memory state */ }
+  };
+
+  return {
+    all: () => ({ ...state }),
+    get: (id: string) => state[id]?.decision,
+    set(id: string, decision: DiscoveryDecision) {
+      state = { ...state, [id]: { decision, updatedAt: new Date().toISOString() } };
+      persist();
+    },
+    remove(id: string) {
+      const next = { ...state };
+      delete next[id];
+      state = next;
+      persist();
+    },
+  };
+};
+
+export const discoveryPersonalizationAdjustment = (
+  paper: Pick<DiscoveryPaper, "id" | "topicIds">,
+  papersById: Map<string, Pick<DiscoveryPaper, "topicIds">>,
+  decisions: Record<string, StoredDiscoveryDecision>,
+) => {
+  let adjustment = 0;
+  for (const [id, stored] of Object.entries(decisions)) {
+    if (id === paper.id || (stored.decision !== "queued" && stored.decision !== "dismissed")) continue;
+    const decidedPaper = papersById.get(id);
+    if (!decidedPaper) continue;
+    const overlap = decidedPaper.topicIds.filter((topicId) => paper.topicIds.includes(topicId)).length;
+    adjustment += overlap * (stored.decision === "queued" ? 2 : -2);
+  }
+  return clamp(adjustment, -8, 8);
+};

@@ -1,4 +1,11 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+const discoverySnapshot = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery.json"), "utf8")) as {
+  papers: Array<{ title: string; librarySlug?: string }>;
+  meta: { candidateCount: number; libraryMatchCount: number };
+};
 
 test("home presents five keyboard-accessible field lanes", async ({ page }) => {
   await page.goto("/");
@@ -73,6 +80,39 @@ test("paper details and term directory keep relationships navigable", async ({ p
   await expect(page.locator("details:visible").first()).toHaveAttribute("open", "");
 });
 
+test("discovery search, evidence and local shortlist work together", async ({ page }) => {
+  const target = discoverySnapshot.papers.find((paper) => !paper.librarySlug)!;
+  await page.goto("/discover/");
+
+  await expect(page.locator("[data-source-warning]")).toBeVisible();
+  await expect(page.locator("[data-discovery-shelf] [data-discovery-card]")).toHaveCount(24);
+  await expect(page.locator("[data-discovery-count]")).toHaveText(String(discoverySnapshot.meta.candidateCount));
+
+  await page.locator("[data-discovery-query]").fill(target.title);
+  await expect(page.locator("[data-discovery-shelf] [data-discovery-card]")).toHaveCount(1);
+  const card = page.locator("[data-discovery-shelf] [data-discovery-card]").first();
+  await expect(card.locator("[data-card-title]")).toHaveText(target.title);
+  await card.locator("details").click();
+  await expect(card.locator("details")).toHaveAttribute("open", "");
+  await card.locator("[data-decision-action='queued']").click();
+  await expect(page.locator("[data-queue-count]")).toHaveText("1");
+
+  await page.reload();
+  await expect(page.locator("[data-queue-count]")).toHaveText("1");
+  const download = page.waitForEvent("download");
+  await page.locator("[data-queue-export]").click();
+  const exported = await download;
+  expect(exported.suggestedFilename()).toBe("paper-reading-queue.md");
+});
+
+test("discovery collected filter links back to the reading library", async ({ page }) => {
+  await page.goto("/discover/");
+  await page.locator("[data-discovery-library]").selectOption("collected");
+  await expect(page.locator("[data-discovery-count]")).toHaveText(String(discoverySnapshot.meta.libraryMatchCount));
+  const link = page.locator("[data-discovery-shelf] [data-collected-link]:visible").first();
+  await expect(link).toHaveAttribute("href", /\/papers\/.+\/$/);
+});
+
 test("mobile layout has no horizontal overflow and stacks terms after papers", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile", "mobile-only geometry check");
   await page.goto("/fields/embodied-intelligence/");
@@ -86,6 +126,17 @@ test("mobile layout has no horizontal overflow and stacks terms after papers", a
 
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
   expect(dimensions.termsTop).toBeGreaterThan(dimensions.papersTop);
+});
+
+test("discovery desk has no horizontal overflow on mobile", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "mobile", "mobile-only geometry check");
+  await page.goto("/discover/");
+  await expect(page.locator("[data-discovery-shelf] [data-discovery-card]")).toHaveCount(24);
+  const dimensions = await page.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+  }));
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
 
 test("all reachable internal links resolve without missing pages", async ({ request }, testInfo) => {
@@ -115,7 +166,7 @@ test("all reachable internal links resolve without missing pages", async ({ requ
     }
   }
 
-  expect(visited.size).toBe(220);
+  expect(visited.size).toBe(221);
 });
 
 test("field pages retain useful server-rendered content without JavaScript", async ({ browser }, testInfo) => {

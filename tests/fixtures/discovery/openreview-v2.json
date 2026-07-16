@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "id": "openreview-demo",
+      "cdate": 1780000000000,
+      "content": {
+        "title": { "value": "World Models for Robot Planning" },
+        "authors": { "value": ["Ada Robot", "Lin World"] },
+        "abstract": { "value": "A world model evaluated on a robot navigation benchmark." },
+        "venueid": { "value": "CoRL 2026 Poster" },
+        "pdf": { "value": "/pdf?id=openreview-demo" }
+      }
+    },
+    {
+      "id": "anonymous-demo",
+      "cdate": 1780000000000,
+      "content": {
+        "title": { "value": "Anonymous Submission" },
+        "authors": { "value": ["Anonymous"] },
+        "abstract": { "value": "This record must not be published." },
+        "venueid": { "value": "Submitted to CoRL 2026" }
+      }
+    }
+  ]
+}

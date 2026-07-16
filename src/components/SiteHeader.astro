@@ -13,5 +13,5 @@ const { backHref = "/", backLabel = "全部领域", meta = "Personal Knowledge I
 <header class="site-header">
   <a class="site-header__back" href={sitePath(backHref)}>{backLabel}</a>
   <a class="site-header__brand" href={sitePath("/")}>论文索引 <em>Paper Index</em></a>
-  <span class="site-header__meta">{meta}</span>
+  <span class="site-header__meta">{meta} <a href={sitePath("/discover/")}>发现新论文 ↗</a></span>
 </header>

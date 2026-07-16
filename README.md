@@ -227,6 +227,28 @@ npm run preview
 - `tests/unit/essay-sync.test.ts`：同步器和损坏降级规则测试。
 - `tests/unit/readme.test.ts`：本 README 的 Agent 工作流契约测试。
 
+## 论文发现工作台
+
+`/discover/` 是站内的具身智能论文发现入口。正式精读库仍只来自 `D:\essay`；发现页候选箱使用浏览器 `localStorage`，不会直接写回论文库。
+
+刷新候选数据：
+
+```powershell
+npm run refresh:discovery
+```
+
+脚本以 arXiv 为必须来源，并用 Semantic Scholar 和 OpenReview 补充元数据。`SEMANTIC_SCHOLAR_API_KEY` 是可选环境变量；未配置时会使用未认证接口并严格限速。刷新结果写入 `src/data/generated/discovery.json`，只有内容实际变化时才应提交。
+
+`.github/workflows/refresh-discovery.yml` 在北京时间工作日 11:30 自动刷新，也支持手动触发。arXiv 失败、候选异常缩减、重复身份或 schema 校验失败时保留旧快照；Semantic Scholar/OpenReview 暂时失败时页面继续使用旧增强数据并显示来源延迟。
+
+发现页实现入口：
+
+- `scripts/refresh-discovery.ts`：刷新命令入口。
+- `scripts/lib/discovery-refresh.ts`：多来源解析、去重、评分和快照保护。
+- `src/data/generated/discovery.json`：可提交的静态发现快照。
+- `src/pages/discover.astro`：研究编辑台页面。
+- `src/scripts/discovery-client.ts`：搜索、筛选、候选箱和本地反馈。
+
 ## GitHub Pages
 
 部署工作流位于 `.github/workflows/deploy.yml`。推送到 `main` 后，GitHub Actions 使用仓库中已提交的快照执行验证、静态构建和 Pages 部署，不访问本机 D 盘。

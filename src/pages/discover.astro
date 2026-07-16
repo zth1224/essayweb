@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DiscoveryCard from "../components/DiscoveryCard.astro";
+import LibraryBanner from "../components/LibraryBanner.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { getDiscoveryFeatured, getDiscoverySnapshot } from "../data/discovery-repository";
+import { discoveryTopics } from "../lib/discovery";
+import { sitePath } from "../lib/site-path";
+
+const snapshot = getDiscoverySnapshot();
+const featured = getDiscoveryFeatured(3);
+const generatedAt = new Date(snapshot.generatedAt);
+const updated = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(generatedAt);
+const degraded = Object.entries(snapshot.sources).filter(([, source]) => source.state !== "ok");
+const stale = Date.now() - generatedAt.getTime() > 72 * 60 * 60 * 1000;
+---
+
+<BaseLayout title="论文发现工作台 · Paper Index" description="面向具身智能研究的每日论文精选、透明排序与本地精读候选箱" accent="#d9f99d" accentSoft="#334327" pageClass="discovery-page">
+  <LibraryBanner />
+  <SiteHeader backHref="/" backLabel="返回论文索引" meta="Discovery Desk / EI" />
+  <main class="discovery-desk" data-discovery-root data-generated-at={snapshot.generatedAt} data-discovery-url={sitePath("/discovery-data.json")} data-site-base={import.meta.env.BASE_URL}>
+    <header class="discovery-hero">
+      <div class="discovery-hero__index"><span>FIELD NOTES</span><b>DISCOVERY / 001</b></div>
+      <div class="discovery-hero__title"><p>不是把当天所有预印本再列一遍，而是解释哪几篇值得先读。</p><h1>论文发现<br/><em>工作台</em></h1></div>
+      <div class="discovery-hero__facts"><div><strong>{snapshot.meta.candidateCount}</strong><span>候选论文</span></div><div><strong>{snapshot.meta.featuredCount}</strong><span>优先精读</span></div><div><strong>{snapshot.retainedDays}</strong><span>检索天数</span></div><p>快照更新：{updated}</p></div>
+    </header>
+
+    {(degraded.length > 0 || stale) && <aside class="source-warning" role="status" data-source-warning><strong>{stale ? "发现数据已经超过 72 小时未更新" : "部分来源更新延迟"}</strong><span>当前仍使用最近一次有效快照；不会用空结果覆盖已有候选。</span><ul>{degraded.map(([name, source]) => <li>{name}: {source.message || source.state}</li>)}</ul></aside>}
+
+    <section class="daily-brief" aria-labelledby="daily-brief-title">
+      <div class="section-heading"><span>01 / DAILY BRIEF</span><h2 id="daily-brief-title">今天先看这三篇</h2><p>按兴趣匹配、研究证据、新鲜度与信息完整度综合排序。</p></div>
+      {featured.length > 0 ? <div class="daily-brief__grid">{featured.map((paper, index) => <DiscoveryCard paper={paper} index={index} featured />)}</div> : <div class="discovery-empty-brief"><strong>等待第一次数据刷新</strong><p>运行 <code>npm run refresh:discovery</code> 后，这里会出现每日精选。</p></div>}
+    </section>
+
+    <section class="discovery-browser" aria-labelledby="discovery-browser-title">
+      <div class="section-heading section-heading--browser"><span>02 / RESEARCH INDEX</span><h2 id="discovery-browser-title">搜索发现索引</h2><p>关键词搜索优先按文本相关度排序；没有关键词时按阅读优先级排序。</p></div>
+      <div class="discovery-filters" aria-label="论文发现筛选">
+        <label class="filter-search"><span>标题、作者或摘要</span><input type="search" aria-label="搜索发现论文" placeholder="例如：world model manipulation" data-discovery-query /></label>
+        <label><span>主题</span><select aria-label="发现主题" data-discovery-topic><option value="all">全部主题</option>{discoveryTopics.map((topic) => <option value={topic.id}>{topic.label}</option>)}</select></label>
+        <label><span>时间</span><select aria-label="发现时间" data-discovery-age><option value="all">180 天</option><option value="7">最近 7 天</option><option value="30">最近 30 天</option><option value="90">最近 90 天</option></select></label>
+        <label><span>来源</span><select aria-label="发现来源" data-discovery-source><option value="all">全部来源</option><option value="arxiv">arXiv</option><option value="semantic-scholar">Semantic Scholar</option><option value="openreview">OpenReview</option></select></label>
+        <label><span>出版状态</span><select aria-label="出版状态" data-discovery-venue><option value="all">全部状态</option><option value="formal">正式 venue</option><option value="preprint">预印本</option></select></label>
+        <label><span>阅读建议</span><select aria-label="阅读建议" data-discovery-tier><option value="all">全部级别</option><option value="priority">优先精读</option><option value="skim">快速浏览</option><option value="track">持续关注</option><option value="archive">搜索收录</option></select></label>
+        <label><span>论文库</span><select aria-label="论文库状态" data-discovery-library><option value="all">全部论文</option><option value="new">尚未收录</option><option value="collected">已收录</option></select></label>
+        <label class="filter-check"><input type="checkbox" data-show-dismissed /><span>显示已忽略</span></label><button type="button" data-filter-clear>清除筛选</button><p><strong data-discovery-count>{snapshot.meta.candidateCount}</strong> 篇匹配</p>
+      </div>
+      <div class="discovery-layout">
+        <section class="discovery-shelf" data-discovery-shelf aria-label="论文候选列表">{snapshot.papers.slice(0, 24).map((paper, index) => <DiscoveryCard paper={paper} index={index} />)}<div class="discovery-empty" data-discovery-empty hidden><strong>没有匹配的论文</strong><p>调整关键词或筛选条件，也可以重新显示已忽略候选。</p></div><button class="load-more" type="button" data-discovery-more hidden>继续加载 24 篇</button></section>
+        <aside class="reading-queue" aria-labelledby="reading-queue-title"><div class="reading-queue__heading"><span>LOCAL SHORTLIST</span><strong data-queue-count>0</strong></div><h2 id="reading-queue-title">待精读候选箱</h2><p>只保存在当前浏览器。正式收录仍由 <code>D:\essay</code> 的导入流程完成。</p><div class="reading-queue__list" data-queue-list></div><div class="reading-queue__actions"><button type="button" data-queue-copy>复制全部链接</button><button type="button" data-queue-export>导出 Markdown</button></div></aside>
+      </div>
+    </section>
+    <template data-discovery-card-template>
+      <article class="discovery-card" data-discovery-card>
+        <div class="discovery-card__rail"><span data-card-index></span><b data-card-score></b><i aria-hidden="true"></i></div>
+        <div class="discovery-card__body">
+          <div class="discovery-card__meta"><span class="tier" data-card-tier></span><span data-card-date></span><span data-card-venue></span></div>
+          <h2><a target="_blank" rel="noreferrer" data-source-link data-card-title></a></h2>
+          <p class="discovery-card__authors" data-card-authors></p><p class="discovery-card__abstract" data-card-abstract></p><div class="discovery-card__topics" data-card-topics></div>
+          <details class="discovery-card__evidence"><summary>为什么推荐 <span>展开证据 +</span></summary><div class="score-grid"><span><b data-score-interest></b> / 45<small>兴趣匹配</small></span><span><b data-score-evidence></b> / 25<small>研究证据</small></span><span><b data-score-freshness></b> / 15<small>新鲜度</small></span><span><b data-score-completeness></b> / 15<small>信息完整度</small></span></div><ul data-card-reasons></ul></details>
+        </div>
+        <div class="discovery-card__actions"><a class="action action--primary" data-collected-link hidden>已收录 · 查看笔记</a><button class="action action--primary" type="button" data-decision-action="queued" aria-pressed="false">加入精读</button><button class="action" type="button" data-decision-action="dismissed" aria-pressed="false">暂不关注</button><a class="action action--source" target="_blank" rel="noreferrer" data-source-link>查看原文 ↗</a></div>
+      </article>
+    </template>
+  </main>
+  <script>import { initializeDiscoveryDesk } from "../scripts/discovery-client"; initializeDiscoveryDesk();</script>
+</BaseLayout>
+
+<style>
+  :global(.discovery-page){--discovery-bg:#0d110e;--discovery-surface:#111612;--discovery-ink:#e5ebe5;--discovery-muted:#9da79f;--discovery-line:#303631;--signal:#d9f99d;background:var(--discovery-bg);color:var(--discovery-ink)}
+  :global(.discovery-page .site-header){border-color:var(--discovery-line);background:rgba(13,17,14,.92)}:global(.discovery-page .site-header__meta){color:var(--discovery-muted)}
+  .discovery-desk{max-width:108rem;margin:0 auto;background:radial-gradient(circle at 74% 4%,rgba(217,249,157,.09),transparent 24rem),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,8.333% 100%}
+  .discovery-hero{min-height:39rem;display:grid;grid-template-columns:9rem minmax(0,1fr) 18rem;gap:clamp(1rem,4vw,5rem);align-items:end;padding:clamp(4rem,9vw,8rem) var(--page-gutter) 2rem;border-bottom:1px solid var(--discovery-line)}
+  .discovery-hero__index{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--discovery-line);font:500 .62rem var(--mono);letter-spacing:.1em;writing-mode:vertical-rl}.discovery-hero__index b{color:var(--signal)}
+  .discovery-hero__title>p{max-width:38rem;margin:0 0 2rem;color:var(--discovery-muted);font-size:.85rem}.discovery-hero h1{margin:0;font:400 clamp(4.7rem,10vw,10.5rem)/.68 var(--serif);letter-spacing:-.065em}.discovery-hero h1 em{color:var(--signal);font-weight:400}
+  .discovery-hero__facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--discovery-line)}.discovery-hero__facts div{padding:1rem 0;border-bottom:1px solid var(--discovery-line)}.discovery-hero__facts strong{display:block;font:400 2.3rem/1 var(--serif)}.discovery-hero__facts span,.discovery-hero__facts p{color:var(--discovery-muted);font:500 .58rem var(--mono);text-transform:uppercase}.discovery-hero__facts p{grid-column:1/-1;margin:1rem 0 0}
+  .source-warning{min-width:0;margin:1rem var(--page-gutter) 0;padding:1rem;border:1px solid #8a6a2f;background:rgba(244,201,120,.07);font-size:.74rem;overflow-wrap:anywhere}.source-warning strong{display:block;color:#f4c978}.source-warning span{color:var(--discovery-muted)}.source-warning ul{margin:.5rem 0 0;padding-left:1rem;color:#c5b58f;font:500 .62rem var(--mono)}
+  .daily-brief,.discovery-browser{padding:5rem var(--page-gutter)}.section-heading{display:grid;grid-template-columns:9rem minmax(0,1fr) 23rem;gap:2rem;align-items:end;margin-bottom:2rem}.section-heading>span{font:500 .62rem var(--mono);color:var(--signal)}.section-heading h2{margin:0;font:400 clamp(2.4rem,5vw,5rem)/.88 var(--serif);letter-spacing:-.04em}.section-heading p{margin:0;color:var(--discovery-muted);font-size:.75rem}
+  .daily-brief__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.discovery-empty-brief{padding:4rem 1rem;border:1px solid var(--discovery-line);text-align:center}.discovery-empty-brief strong{font:400 2rem var(--serif)}.discovery-empty-brief p{color:var(--discovery-muted)}
+  .discovery-browser{border-top:1px solid var(--discovery-line)}.section-heading--browser{margin-bottom:1rem}.discovery-filters{display:grid;grid-template-columns:minmax(16rem,1.4fr) repeat(6,minmax(7.2rem,.55fr));gap:1px;padding:1px;background:var(--discovery-line)}.discovery-filters label,.discovery-filters>button,.discovery-filters>p{min-width:0;display:grid;align-content:center;gap:.3rem;margin:0;padding:.65rem;background:var(--discovery-bg);color:var(--discovery-muted);font:500 .58rem var(--mono);text-transform:uppercase}.discovery-filters input,.discovery-filters select,.discovery-filters>button{min-width:0;border:0;background:transparent;color:var(--discovery-ink)}.discovery-filters option{background:var(--discovery-bg)}.discovery-filters .filter-check{display:flex;align-items:center}.filter-check input{accent-color:var(--signal)}.discovery-filters>p{display:flex;align-items:center;justify-content:center}.discovery-filters>p strong{margin-right:.3rem;color:var(--signal);font-size:1.1rem}
+  .discovery-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(17rem,21rem);gap:clamp(2rem,4vw,5rem);align-items:start;margin-top:2rem}.discovery-shelf,.reading-queue{min-width:0}.reading-queue{position:sticky;top:1rem;padding:1.2rem;border:1px solid var(--discovery-line);background:rgba(17,22,18,.96);overflow-wrap:anywhere}.reading-queue__heading{display:flex;justify-content:space-between;color:var(--signal);font:500 .61rem var(--mono)}.reading-queue__heading strong{font:400 2.5rem/1 var(--serif)}.reading-queue h2{margin:2.5rem 0 .5rem;font:400 2.3rem/1 var(--serif)}.reading-queue>p{color:var(--discovery-muted);font-size:.72rem}.reading-queue code{color:#cbd4cc}.reading-queue__list{display:grid;gap:.55rem;margin:1.3rem 0}.reading-queue__list :global(article){display:grid;grid-template-columns:1fr auto;gap:.5rem;padding-top:.55rem;border-top:1px solid var(--discovery-line)}.reading-queue__list :global(a){font:400 1rem/1.05 var(--serif)}.reading-queue__list :global(button){border:0;background:transparent;color:var(--discovery-muted);font:500 .58rem var(--mono)}.reading-queue__list :global(.queue-empty){color:var(--discovery-muted);font-size:.7rem}.reading-queue__actions{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.reading-queue__actions button,.load-more{padding:.7rem;border:1px solid var(--discovery-line);background:transparent;color:var(--discovery-ink);font:500 .6rem var(--mono);text-transform:uppercase}.reading-queue__actions button:hover,.load-more:hover{background:var(--signal);color:var(--discovery-bg)}.load-more{width:100%;margin-top:1rem}.discovery-empty{padding:4rem 1rem;border-block:1px solid var(--discovery-line);text-align:center}.discovery-empty strong{font:400 2rem var(--serif)}.discovery-empty p{color:var(--discovery-muted)}
+  @media(max-width:1100px){.daily-brief__grid{grid-template-columns:1fr}.discovery-filters{grid-template-columns:repeat(4,1fr)}.filter-search{grid-column:span 2}}@media(max-width:800px){.discovery-hero{min-height:32rem;grid-template-columns:2rem minmax(0,1fr)}.discovery-hero__facts{grid-column:2}.section-heading{grid-template-columns:minmax(0,1fr)}.section-heading p{max-width:34rem}.discovery-layout{grid-template-columns:minmax(0,1fr)}.reading-queue{position:relative;top:auto;grid-row:1}.discovery-filters{grid-template-columns:1fr 1fr}.filter-search{grid-column:1/-1}}@media(max-width:520px){.discovery-hero{padding-top:4rem}.discovery-hero h1{font-size:clamp(3.7rem,20vw,6rem)}.daily-brief,.discovery-browser{padding-block:3.5rem}.discovery-filters{grid-template-columns:1fr}.filter-search{grid-column:auto}}
+</style>

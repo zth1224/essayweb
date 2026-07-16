@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <entry>
+    <id>http://arxiv.org/abs/2607.01234v2</id>
+    <updated>2026-07-12T09:00:00Z</updated>
+    <published>2026-07-10T09:00:00Z</published>
+    <title>DeskVLA: Vision Language Action Policies for Dexterous Manipulation</title>
+    <summary>We introduce a vision-language-action policy and evaluate it on a manipulation benchmark. Project: https://example.org/deskvla Code: https://github.com/example/deskvla</summary>
+    <author><name>Ada Robot</name></author>
+    <author><name>Lin World</name></author>
+    <arxiv:doi>10.1234/deskvla</arxiv:doi>
+    <arxiv:comment>Project page and code are public.</arxiv:comment>
+    <category term="cs.RO" />
+    <category term="cs.AI" />
+    <link href="https://arxiv.org/pdf/2607.01234" title="pdf" type="application/pdf" />
+  </entry>
+</feed>

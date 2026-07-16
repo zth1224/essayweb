@@ -36,5 +36,12 @@ const {
   </head>
   <body class={pageClass} style={`--accent:${accent};--accent-soft:${accentSoft};`}>
     <slot />
+    <footer class="data-attribution">
+      <span>Thank you to arXiv for use of its open access interoperability.</span>
+      <span>Metadata enrichment:</span>
+      <a href="https://www.semanticscholar.org/" target="_blank" rel="noreferrer">Semantic Scholar</a>
+      <span>/</span>
+      <a href="https://openreview.net/" target="_blank" rel="noreferrer">OpenReview</a>
+    </footer>
   </body>
 </html>
