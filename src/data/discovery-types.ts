@@ -23,7 +23,7 @@ export interface DiscoveryScore {
 }
 
 export interface DiscoveryArtifact {
-  kind: "code" | "project" | "pdf";
+  kind: "code" | "project" | "dataset" | "model" | "pdf";
   url: string;
 }
 

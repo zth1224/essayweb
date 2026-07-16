@@ -40,7 +40,7 @@ const searchText = [paper.title, paper.authors.join(" "), paper.abstract, paper.
     <details class="discovery-card__evidence">
       <summary>为什么推荐 <span>展开证据 +</span></summary>
       <div class="score-grid">
-        <span><b>{paper.score.interest}</b> / 45<small>兴趣匹配</small></span><span><b>{paper.score.evidence}</b> / 25<small>研究证据</small></span><span><b>{paper.score.freshness}</b> / 15<small>新鲜度</small></span><span><b>{paper.score.completeness}</b> / 15<small>信息完整度</small></span>
+        <span><b>{paper.score.interest}</b> / 45<small>兴趣匹配</small></span><span><b>{paper.score.evidence}</b> / 25<small>证据成熟度</small></span><span><b>{paper.score.freshness}</b> / 15<small>新鲜度</small></span><span><b>{paper.score.completeness}</b> / 15<small>信息完整度</small></span>
       </div>
       <ul>{paper.score.reasons.map((reason) => <li>{reason}</li>)}</ul>
     </details>

@@ -13,7 +13,11 @@ import {
   scoreDiscoveryPaper,
 } from "../../src/lib/discovery";
 
-export const RETAINED_DAYS = 180;
+export const RETAINED_DAYS = 730;
+export const STRICT_AGE_DAYS = 180;
+export const STRICT_MIN_INTEREST = 9;
+export const STRICT_MIN_EVIDENCE = 8;
+export const STRICT_MIN_COMPLETENESS = 11;
 export const CANDIDATE_CAP = 2_000;
 
 export type Candidate = Omit<DiscoveryPaper, "score">;
@@ -63,7 +67,13 @@ const unique = <T>(values: T[]) => [...new Set(values)];
 const extractArtifacts = (text: string, pdfUrl?: string): DiscoveryArtifact[] => {
   const urls = [...text.matchAll(/https?:\/\/[^\s<>()\]]+/gi)].map((match) => match[0].replace(/[.,;:]$/, ""));
   const artifacts: DiscoveryArtifact[] = urls.map((url) => ({
-    kind: /github\.com|gitlab\.com|gitee\.com/i.test(url) ? "code" : "project",
+    kind: /github\.com|gitlab\.com|gitee\.com/i.test(url)
+      ? "code"
+      : /huggingface\.co\/datasets\/|kaggle\.com\/datasets\/|zenodo\.org\/records?\//i.test(url)
+        ? "dataset"
+        : /huggingface\.co\/(?!datasets\/)[^/]+\/[^/]+/i.test(url)
+          ? "model"
+          : "project",
     url,
   }));
   if (pdfUrl) artifacts.push({ kind: "pdf", url: pdfUrl });
@@ -270,21 +280,27 @@ export const fetchWithRetry = async (
   throw lastError instanceof Error ? lastError : new Error("Request failed");
 };
 
-const arxivQueries: Array<{ query: string; limit: number }> = [
+const historicalTopicQuery = "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:\"vision language action\" OR all:\"robot manipulation\" OR all:\"world model\" OR all:\"imitation learning\" OR all:\"robot navigation\")";
+const arxivDate = (date: Date) => date.toISOString().replace(/\D/g, "").slice(0, 12);
+const daysBefore = (now: Date, days: number) => new Date(now.getTime() - days * 86_400_000);
+
+export const buildArxivQueries = (now = new Date()): Array<{ query: string; limit: number; sortBy?: "submittedDate" | "relevance" }> => [
   { query: "cat:cs.RO", limit: 500 },
   { query: "(cat:cs.AI OR cat:cs.LG) AND (all:robot OR all:embodied OR all:manipulation)", limit: 300 },
   { query: "(cat:cs.CV OR cat:cs.LG) AND (all:\"vision language action\" OR all:\"world model\" OR all:\"imitation learning\")", limit: 300 },
+  { query: `${historicalTopicQuery} AND submittedDate:[${arxivDate(daysBefore(now, 365))} TO ${arxivDate(daysBefore(now, 181))}]`, limit: 450, sortBy: "relevance" },
+  { query: `${historicalTopicQuery} AND submittedDate:[${arxivDate(daysBefore(now, 730))} TO ${arxivDate(daysBefore(now, 366))}]`, limit: 450, sortBy: "relevance" },
 ];
 
-export const fetchArxivCandidates = async () => {
+export const fetchArxivCandidates = async (now = new Date()) => {
   const candidates: Candidate[] = [];
-  for (const [index, item] of arxivQueries.entries()) {
+  for (const [index, item] of buildArxivQueries(now).entries()) {
     if (index > 0) await sleep(3_100);
     const parameters = new URLSearchParams({
       search_query: item.query,
       start: "0",
       max_results: String(item.limit),
-      sortBy: "submittedDate",
+      sortBy: item.sortBy ?? "submittedDate",
       sortOrder: "descending",
     });
     const response = await fetchWithRetry(`https://export.arxiv.org/api/query?${parameters}`);
@@ -399,6 +415,18 @@ export interface BuildDiscoveryOptions {
   fetchOpenReview?: () => Promise<Candidate[]>;
 }
 
+export const meetsDiscoveryRetention = (
+  paper: Pick<DiscoveryPaper, "publishedAt" | "score">,
+  now = new Date(),
+) => {
+  const ageDays = Math.max(0, (now.getTime() - new Date(paper.publishedAt).getTime()) / 86_400_000);
+  if (ageDays > RETAINED_DAYS) return false;
+  if (ageDays <= STRICT_AGE_DAYS) return true;
+  return paper.score.interest >= STRICT_MIN_INTEREST
+    && paper.score.evidence >= STRICT_MIN_EVIDENCE
+    && paper.score.completeness >= STRICT_MIN_COMPLETENESS;
+};
+
 export const buildDiscoverySnapshot = async (
   library: LibrarySnapshot,
   prior?: DiscoverySnapshot,
@@ -452,6 +480,7 @@ export const buildDiscoverySnapshot = async (
   );
   const scored = candidates
     .map((paper) => ({ ...paper, score: scoreDiscoveryPaper(paper, now) }))
+    .filter((paper) => meetsDiscoveryRetention(paper, now))
     .sort((a, b) => b.score.total - a.score.total || b.publishedAt.localeCompare(a.publishedAt))
     .slice(0, CANDIDATE_CAP);
 

@@ -12,6 +12,8 @@ import {
 } from "../../src/lib/discovery";
 import {
   buildDiscoverySnapshot,
+  buildArxivQueries,
+  meetsDiscoveryRetention,
   mergeDiscoveryCandidates,
   parseArxivAtom,
   parseOpenReviewNotes,
@@ -45,6 +47,15 @@ const paper = (overrides: Partial<DiscoveryPaper> = {}): DiscoveryPaper => {
 };
 
 describe("discovery source parsing and refresh", () => {
+  test("builds explicit arXiv time slices for the two-year window", () => {
+    const queries = buildArxivQueries(now);
+    expect(queries).toHaveLength(5);
+    expect(queries[3].query).toContain("submittedDate:[202507160330 TO 202601160330]");
+    expect(queries[4].query).toContain("submittedDate:[202407160330 TO 202507150330]");
+    expect(queries[3].sortBy).toBe("relevance");
+    expect(queries[4].sortBy).toBe("relevance");
+  });
+
   test("parses arXiv Atom metadata and resources", () => {
     const [parsed] = parseArxivAtom(fixture("arxiv.xml"));
     expect(parsed).toMatchObject({ arxivId: "2607.01234", doi: "10.1234/deskvla", categories: ["cs.RO", "cs.AI"] });
@@ -117,6 +128,30 @@ describe("discovery scoring, search and feedback", () => {
     const missing = scoreDiscoveryPaper(candidate({ citationCount: undefined }), now);
     expect(zero.evidence).toBe(missing.evidence);
     expect(zero.reasons).toContain("新论文不以零引用降权");
+  });
+
+  test("scores reproducibility and explicit experiments as evidence maturity", () => {
+    const result = scoreDiscoveryPaper(candidate({
+      abstract: "Experiments on a benchmark outperform three baselines by 42%. An ablation study validates each component.",
+      artifacts: [
+        { kind: "code", url: "https://github.com/example/deskvla" },
+        { kind: "project", url: "https://example.org/deskvla" },
+        { kind: "pdf", url: "https://arxiv.org/pdf/2607.01234" },
+      ],
+    }), now);
+    expect(result.evidence).toBe(13);
+    expect(result.reasons).toContain("包含明确的量化与对比实验");
+  });
+
+  test("applies a stricter maturity gate after 180 days", () => {
+    const recent = paper({ publishedAt: "2026-03-01T00:00:00Z", score: { ...paper().score, total: 40, evidence: 2 } });
+    const olderWeak = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, interest: 20, evidence: 7, completeness: 13 } });
+    const olderMature = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, interest: 9, evidence: 8, completeness: 11 } });
+    const expired = paper({ publishedAt: "2024-07-15T00:00:00Z", score: { ...paper().score, total: 90, evidence: 20 } });
+    expect(meetsDiscoveryRetention(recent, now)).toBe(true);
+    expect(meetsDiscoveryRetention(olderWeak, now)).toBe(false);
+    expect(meetsDiscoveryRetention(olderMature, now)).toBe(true);
+    expect(meetsDiscoveryRetention(expired, now)).toBe(false);
   });
 
   test("handles missing metadata and keeps scores bounded", () => {

@@ -84,6 +84,12 @@ export const tierForScore = (score: number): DiscoveryTier => {
 
 export const isFormalDiscoveryVenue = (venue = "") => /\b(iclr|neurips|icml|corl|rss|robotics science and systems|icra|iros|cvpr|iccv|eccv)\b/i.test(venue);
 
+const evidenceArtifactKind = (artifact: DiscoveryPaper["artifacts"][number]) => {
+  if (/huggingface\.co\/datasets\/|kaggle\.com\/datasets\/|zenodo\.org\/records?\//i.test(artifact.url)) return "dataset";
+  if (/huggingface\.co\/(?!datasets\/)[^/]+\/[^/]+/i.test(artifact.url)) return "model";
+  return artifact.kind;
+};
+
 export const scoreDiscoveryPaper = (
   paper: Omit<DiscoveryPaper, "score">,
   now = new Date(),
@@ -104,22 +110,36 @@ export const scoreDiscoveryPaper = (
 
   let evidence = 0;
   if (isFormalDiscoveryVenue(paper.venue)) {
-    evidence += 12;
+    evidence += 6;
     reasons.push(`已关联正式 venue：${paper.venue}`);
   }
   if (ageDays >= 30 && paper.citationCount !== undefined) {
     const citationsPerMonth = paper.citationCount / Math.max(1, ageDays / 30);
-    const citationPoints = clamp(Math.round(Math.log2(citationsPerMonth + 1) * 2), 0, 8);
+    const citationPoints = clamp(Math.round(Math.log2(citationsPerMonth + 1)), 0, 4);
     evidence += citationPoints;
-    if (citationPoints >= 5) reasons.push("同龄论文中引用增长较快");
+    if (citationPoints >= 3) reasons.push("同龄论文中引用增长较快");
   } else if (ageDays < 30) {
     reasons.push("新论文不以零引用降权");
   }
-  const artifactKinds = new Set(paper.artifacts.map((artifact) => artifact.kind));
-  const artifactPoints = Math.min(5, (artifactKinds.has("code") ? 3 : 0) + (artifactKinds.has("project") ? 2 : 0) + (paper.pdfUrl ? 1 : 0));
-  evidence = clamp(evidence + artifactPoints, 0, 25);
-  if (artifactKinds.has("code")) reasons.push("提供代码资源");
+  const artifactKinds = new Set(paper.artifacts.map(evidenceArtifactKind));
+  const artifactPoints = Math.min(8,
+    (artifactKinds.has("code") ? 4 : 0)
+    + (artifactKinds.has("project") ? 2 : 0)
+    + (artifactKinds.has("dataset") ? 2 : 0)
+    + (artifactKinds.has("model") ? 2 : 0));
+  evidence += artifactPoints;
+  if (artifactKinds.has("code")) reasons.push("提供可复现代码");
+  if (artifactKinds.has("dataset") || artifactKinds.has("model")) reasons.push("提供数据集或模型资源");
   else if (artifactKinds.has("project")) reasons.push("提供项目页面");
+
+  let empiricalPoints = 0;
+  if (/\b(benchmark|experiment(?:s|al)?|evaluation|evaluate[ds]?|test suite)\b/i.test(paper.abstract)) empiricalPoints += 2;
+  if (/(?:\b\d+(?:\.\d+)?\s*(?:%|x\b|fps\b|hz\b))|(?:success rate|accuracy|precision|recall|reward)\s*(?:of|by|to|=)?\s*\d/i.test(paper.abstract)) empiricalPoints += 2;
+  if (/\b(outperform(?:s|ed)?|baseline(?:s)?|state-of-the-art|sota|compared? (?:to|with)|versus|improv(?:e|es|ed|ement))\b/i.test(paper.abstract)) empiricalPoints += 2;
+  if (/\bablation(?:s| study| studies)?\b/i.test(paper.abstract)) empiricalPoints += 1;
+  evidence = clamp(evidence + empiricalPoints, 0, 25);
+  if (empiricalPoints >= 4) reasons.push("包含明确的量化与对比实验");
+  else if (empiricalPoints >= 2) reasons.push("摘要给出实验或 benchmark 线索");
 
   const freshness = ageDays <= 30
     ? 15
@@ -143,14 +163,14 @@ export const scoreDiscoveryPaper = (
     completeness,
     total,
     tier: tierForScore(total),
-    reasons: [...new Set(reasons)].slice(0, 5),
+    reasons: [...new Set(reasons)].slice(0, 7),
   };
 };
 
 export interface DiscoveryFilters {
   query?: string;
   topicId?: DiscoveryTopicId | "all";
-  age?: "7" | "30" | "90" | "180" | "all";
+  age?: "7" | "30" | "90" | "180" | "365" | "730" | "all";
   venue?: "all" | "formal" | "preprint";
   source?: "all" | "arxiv" | "semantic-scholar" | "openreview";
   tier?: DiscoveryTier | "all";

@@ -28,16 +28,16 @@ const stale = Date.now() - generatedAt.getTime() > 72 * 60 * 60 * 1000;
     {(degraded.length > 0 || stale) && <aside class="source-warning" role="status" data-source-warning><strong>{stale ? "发现数据已经超过 72 小时未更新" : "部分来源更新延迟"}</strong><span>当前仍使用最近一次有效快照；不会用空结果覆盖已有候选。</span><ul>{degraded.map(([name, source]) => <li>{name}: {source.message || source.state}</li>)}</ul></aside>}
 
     <section class="daily-brief" aria-labelledby="daily-brief-title">
-      <div class="section-heading"><span>01 / DAILY BRIEF</span><h2 id="daily-brief-title">今天先看这三篇</h2><p>按兴趣匹配、研究证据、新鲜度与信息完整度综合排序。</p></div>
+      <div class="section-heading"><span>01 / DAILY BRIEF</span><h2 id="daily-brief-title">今天先看这三篇</h2><p>按兴趣匹配、证据成熟度、新鲜度与信息完整度综合排序。</p></div>
       {featured.length > 0 ? <div class="daily-brief__grid">{featured.map((paper, index) => <DiscoveryCard paper={paper} index={index} featured />)}</div> : <div class="discovery-empty-brief"><strong>等待第一次数据刷新</strong><p>运行 <code>npm run refresh:discovery</code> 后，这里会出现每日精选。</p></div>}
     </section>
 
     <section class="discovery-browser" aria-labelledby="discovery-browser-title">
-      <div class="section-heading section-heading--browser"><span>02 / RESEARCH INDEX</span><h2 id="discovery-browser-title">搜索发现索引</h2><p>关键词搜索优先按文本相关度排序；没有关键词时按阅读优先级排序。</p></div>
+      <div class="section-heading section-heading--browser"><span>02 / RESEARCH INDEX</span><h2 id="discovery-browser-title">搜索发现索引</h2><p>覆盖最近两年；超过 180 天的论文只保留主题、证据成熟度和信息完整度均达标的候选。</p></div>
       <div class="discovery-filters" aria-label="论文发现筛选">
         <label class="filter-search"><span>标题、作者或摘要</span><input type="search" aria-label="搜索发现论文" placeholder="例如：world model manipulation" data-discovery-query /></label>
         <label><span>主题</span><select aria-label="发现主题" data-discovery-topic><option value="all">全部主题</option>{discoveryTopics.map((topic) => <option value={topic.id}>{topic.label}</option>)}</select></label>
-        <label><span>时间</span><select aria-label="发现时间" data-discovery-age><option value="all">180 天</option><option value="7">最近 7 天</option><option value="30">最近 30 天</option><option value="90">最近 90 天</option></select></label>
+        <label><span>时间</span><select aria-label="发现时间" data-discovery-age><option value="all">最近 2 年</option><option value="7">最近 7 天</option><option value="30">最近 30 天</option><option value="90">最近 90 天</option><option value="180">最近 180 天</option><option value="365">最近 1 年</option><option value="730">最近 2 年</option></select></label>
         <label><span>来源</span><select aria-label="发现来源" data-discovery-source><option value="all">全部来源</option><option value="arxiv">arXiv</option><option value="semantic-scholar">Semantic Scholar</option><option value="openreview">OpenReview</option></select></label>
         <label><span>出版状态</span><select aria-label="出版状态" data-discovery-venue><option value="all">全部状态</option><option value="formal">正式 venue</option><option value="preprint">预印本</option></select></label>
         <label><span>阅读建议</span><select aria-label="阅读建议" data-discovery-tier><option value="all">全部级别</option><option value="priority">优先精读</option><option value="skim">快速浏览</option><option value="track">持续关注</option><option value="archive">搜索收录</option></select></label>
@@ -56,7 +56,7 @@ const stale = Date.now() - generatedAt.getTime() > 72 * 60 * 60 * 1000;
           <div class="discovery-card__meta"><span class="tier" data-card-tier></span><span data-card-date></span><span data-card-venue></span></div>
           <h2><a target="_blank" rel="noreferrer" data-source-link data-card-title></a></h2>
           <p class="discovery-card__authors" data-card-authors></p><p class="discovery-card__abstract" data-card-abstract></p><div class="discovery-card__topics" data-card-topics></div>
-          <details class="discovery-card__evidence"><summary>为什么推荐 <span>展开证据 +</span></summary><div class="score-grid"><span><b data-score-interest></b> / 45<small>兴趣匹配</small></span><span><b data-score-evidence></b> / 25<small>研究证据</small></span><span><b data-score-freshness></b> / 15<small>新鲜度</small></span><span><b data-score-completeness></b> / 15<small>信息完整度</small></span></div><ul data-card-reasons></ul></details>
+          <details class="discovery-card__evidence"><summary>为什么推荐 <span>展开证据 +</span></summary><div class="score-grid"><span><b data-score-interest></b> / 45<small>兴趣匹配</small></span><span><b data-score-evidence></b> / 25<small>证据成熟度</small></span><span><b data-score-freshness></b> / 15<small>新鲜度</small></span><span><b data-score-completeness></b> / 15<small>信息完整度</small></span></div><ul data-card-reasons></ul></details>
         </div>
         <div class="discovery-card__actions"><a class="action action--primary" data-collected-link hidden>已收录 · 查看笔记</a><button class="action action--primary" type="button" data-decision-action="queued" aria-pressed="false">加入精读</button><button class="action" type="button" data-decision-action="dismissed" aria-pressed="false">暂不关注</button><a class="action action--source" target="_blank" rel="noreferrer" data-source-link>查看原文 ↗</a></div>
       </article>
