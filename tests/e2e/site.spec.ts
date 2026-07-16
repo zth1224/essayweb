@@ -3,9 +3,30 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const discoverySnapshot = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery.json"), "utf8")) as {
-  papers: Array<{ title: string; librarySlug?: string }>;
+  generatedAt: string;
+  papers: Array<{ title: string; publishedAt: string; librarySlug?: string }>;
   meta: { candidateCount: number; libraryMatchCount: number };
 };
+
+test("discovery balances age bands and supports an exact date range", async ({ page }) => {
+  await page.goto("/discover/");
+  await expect(page.locator("[data-discovery-root]")).toHaveAttribute("data-discovery-ready", "true");
+
+  const cutoff = new Date(discoverySnapshot.generatedAt).getTime() - 180 * 86_400_000;
+  const featuredDates = await page.locator("[data-discovery-feature]").evaluateAll((cards) => cards.map((card) => (card as HTMLElement).dataset.published ?? ""));
+  expect(featuredDates.filter((date) => new Date(date).getTime() >= cutoff)).toHaveLength(1);
+  expect(featuredDates.filter((date) => new Date(date).getTime() < cutoff)).toHaveLength(2);
+  const dates = await page.locator("[data-discovery-shelf] [data-discovery-card]").evaluateAll((cards) => cards.map((card) => (card as HTMLElement).dataset.published ?? ""));
+  expect(dates.filter((date) => new Date(date).getTime() >= cutoff)).toHaveLength(8);
+  expect(dates.filter((date) => new Date(date).getTime() < cutoff)).toHaveLength(16);
+
+  const oldestDate = [...discoverySnapshot.papers].sort((left, right) => left.publishedAt.localeCompare(right.publishedAt))[0].publishedAt.slice(0, 10);
+  const expected = discoverySnapshot.papers.filter((paper) => paper.publishedAt.slice(0, 10) === oldestDate).length;
+  await page.locator("[data-discovery-date-from]").fill(oldestDate);
+  await page.locator("[data-discovery-date-to]").fill(oldestDate);
+  await expect(page.locator("[data-discovery-count]")).toHaveText(String(expected));
+  await expect(page.locator("[data-discovery-shelf] [data-discovery-card]").first()).toHaveAttribute("data-published", new RegExp(`^${oldestDate}`));
+});
 
 test("home presents five keyboard-accessible field lanes", async ({ page }) => {
   await page.goto("/");

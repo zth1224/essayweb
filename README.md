@@ -239,6 +239,8 @@ npm run refresh:discovery
 
 脚本以 arXiv 为必须来源，并用 Semantic Scholar 和 OpenReview 补充元数据。`SEMANTIC_SCHOLAR_API_KEY` 是可选环境变量；未配置时会使用未认证接口并严格限速。候选保留最近 730 天；发布超过 180 天的论文只有在兴趣匹配至少 9、证据成熟度至少 8、信息完整度至少 11 时才进入快照。刷新结果写入 `src/data/generated/discovery.json`，只有内容实际变化时才应提交。
 
+发现页在无关键词时按近 180 天与更早论文 `1:2` 交错展示，并支持起始日期、截止日期及快捷时间范围组合筛选；输入关键词后优先按文本相关度排序。
+
 `.github/workflows/refresh-discovery.yml` 在北京时间工作日 11:30 自动刷新，也支持手动触发。arXiv 失败、候选异常缩减、重复身份或 schema 校验失败时保留旧快照；Semantic Scholar/OpenReview 暂时失败时页面继续使用旧增强数据并显示来源延迟。
 
 发现页实现入口：

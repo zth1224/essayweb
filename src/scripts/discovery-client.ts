@@ -1,6 +1,6 @@
 import type { DiscoveryPaper, DiscoverySnapshot, DiscoveryTier, DiscoveryTopicId, StoredDiscoveryDecision } from "../data/discovery-types";
 import { safelyGetStorage } from "../lib/reading-status";
-import { DISCOVERY_PAGE_SIZE, createDiscoveryDecisionStore, discoveryPersonalizationAdjustment, discoveryTopicLabel, isFormalDiscoveryVenue, normalizeDiscoveryText } from "../lib/discovery";
+import { DISCOVERY_PAGE_SIZE, balanceDiscoveryAgeBands, createDiscoveryDecisionStore, discoveryPersonalizationAdjustment, discoveryTopicLabel, isFormalDiscoveryVenue, normalizeDiscoveryText } from "../lib/discovery";
 
 let initialized = false;
 const tierLabels: Record<DiscoveryTier, string> = { priority: "优先精读", skim: "快速浏览", track: "持续关注", archive: "搜索收录" };
@@ -36,6 +36,8 @@ export const initializeDiscoveryDesk = async () => {
   const query = root.querySelector<HTMLInputElement>("[data-discovery-query]");
   const topic = root.querySelector<HTMLSelectElement>("[data-discovery-topic]");
   const age = root.querySelector<HTMLSelectElement>("[data-discovery-age]");
+  const dateFrom = root.querySelector<HTMLInputElement>("[data-discovery-date-from]");
+  const dateTo = root.querySelector<HTMLInputElement>("[data-discovery-date-to]");
   const venue = root.querySelector<HTMLSelectElement>("[data-discovery-venue]");
   const source = root.querySelector<HTMLSelectElement>("[data-discovery-source]");
   const tier = root.querySelector<HTMLSelectElement>("[data-discovery-tier]");
@@ -45,6 +47,7 @@ export const initializeDiscoveryDesk = async () => {
   const queueList = root.querySelector<HTMLElement>("[data-queue-list]");
   const queueCount = root.querySelector<HTMLElement>("[data-queue-count]");
   const base = root.dataset.siteBase ?? "/";
+  const generatedAt = new Date(root.dataset.generatedAt ?? Date.now());
   let papers: DiscoveryPaper[] = [];
   let visibleLimit = DISCOVERY_PAGE_SIZE;
 
@@ -54,6 +57,7 @@ export const initializeDiscoveryDesk = async () => {
     element.dataset.title = paper.title;
     element.dataset.sourceUrl = paper.sourceUrl;
     element.dataset.topics = paper.topicIds.join(" ");
+    element.dataset.published = paper.publishedAt;
     element.dataset.score = String(paper.score.total);
     element.dataset.reasons = paper.score.reasons.join("；");
     element.style.setProperty("--score", String(paper.score.total));
@@ -122,7 +126,7 @@ export const initializeDiscoveryDesk = async () => {
     const topicMap = new Map(papers.map((paper) => [paper.id, { topicIds: paper.topicIds }]));
     const queryValue = query?.value ?? "";
     const ageLimit = age?.value && age.value !== "all" ? Number(age.value) : undefined;
-    const now = Date.now();
+    const now = generatedAt.getTime();
     const matches = papers.map((paper) => ({
       paper,
       relevance: relevance(paper, queryValue),
@@ -131,6 +135,9 @@ export const initializeDiscoveryDesk = async () => {
       if (queryValue && match < 0) return false;
       if (topic?.value && topic.value !== "all" && !paper.topicIds.includes(topic.value as DiscoveryTopicId)) return false;
       if (ageLimit && (now - new Date(paper.publishedAt).getTime()) / 86_400_000 > ageLimit) return false;
+      const publishedDate = paper.publishedAt.slice(0, 10);
+      if (dateFrom?.value && publishedDate < dateFrom.value) return false;
+      if (dateTo?.value && publishedDate > dateTo.value) return false;
       if (venue?.value === "formal" && !isFormalDiscoveryVenue(paper.venue)) return false;
       if (venue?.value === "preprint" && isFormalDiscoveryVenue(paper.venue)) return false;
       if (source?.value && source.value !== "all" && !paper.sources.includes(source.value as "arxiv" | "semantic-scholar" | "openreview")) return false;
@@ -140,8 +147,11 @@ export const initializeDiscoveryDesk = async () => {
       if (!showDismissed?.checked && decisions[paper.id]?.decision === "dismissed") return false;
       return true;
     }).sort((left, right) => queryValue ? right.relevance - left.relevance || right.score - left.score : right.score - left.score || right.paper.publishedAt.localeCompare(left.paper.publishedAt));
+    const orderedPapers = queryValue
+      ? matches.map(({ paper }) => paper)
+      : balanceDiscoveryAgeBands(matches.map(({ paper }) => paper), generatedAt);
 
-    shelf.replaceChildren(...matches.slice(0, visibleLimit).map(({ paper }, index) => renderCard(paper, index)), empty, loadMore);
+    shelf.replaceChildren(...orderedPapers.slice(0, visibleLimit).map((paper, index) => renderCard(paper, index)), empty, loadMore);
     empty.hidden = matches.length > 0;
     loadMore.hidden = matches.length <= visibleLimit;
     if (resultCount) resultCount.textContent = String(matches.length);
@@ -162,7 +172,7 @@ export const initializeDiscoveryDesk = async () => {
     if (remove?.dataset.queueRemove) { store.remove(remove.dataset.queueRemove); refresh(); return; }
     if (target.closest("[data-source-link]") && paperElement?.dataset.paperId && !store.get(paperElement.dataset.paperId)) { store.set(paperElement.dataset.paperId, "seen"); updateButtons(); }
     if (target.closest("[data-filter-clear]")) {
-      if (query) query.value = ""; [topic, age, venue, source, tier, library].forEach((select) => { if (select) select.value = "all"; }); if (showDismissed) showDismissed.checked = false; visibleLimit = DISCOVERY_PAGE_SIZE; apply();
+      if (query) query.value = ""; [topic, age, venue, source, tier, library].forEach((select) => { if (select) select.value = "all"; }); [dateFrom, dateTo].forEach((input) => { if (input) input.value = ""; }); if (showDismissed) showDismissed.checked = false; visibleLimit = DISCOVERY_PAGE_SIZE; apply();
     }
     if (target.closest("[data-discovery-more]")) { visibleLimit += DISCOVERY_PAGE_SIZE; apply(); }
     const exportButton = target.closest<HTMLButtonElement>("[data-queue-export]");
@@ -176,13 +186,14 @@ export const initializeDiscoveryDesk = async () => {
     }
   });
 
-  [query, topic, age, venue, source, tier, library, showDismissed].forEach((control) => control?.addEventListener("input", () => { visibleLimit = DISCOVERY_PAGE_SIZE; apply(); }));
+  [query, topic, age, dateFrom, dateTo, venue, source, tier, library, showDismissed].forEach((control) => control?.addEventListener("input", () => { visibleLimit = DISCOVERY_PAGE_SIZE; apply(); }));
 
   try {
     const response = await fetch(root.dataset.discoveryUrl ?? "");
     if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
     papers = (await response.json() as DiscoverySnapshot).papers;
     refresh();
+    root.dataset.discoveryReady = "true";
   } catch (error) {
     console.error("Discovery index could not be loaded; keeping the server-rendered first page.", error);
     updateButtons(); renderQueue();

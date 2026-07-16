@@ -44,5 +44,7 @@ describe("agent-ready README", () => {
     expect(readme).toContain("最近 730 天");
     expect(readme).toContain("证据成熟度至少 8");
     expect(readme).toContain("信息完整度至少 11");
+    expect(readme).toContain("`1:2` 交错展示");
+    expect(readme).toContain("起始日期、截止日期");
   });
 });

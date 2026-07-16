@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, test } from "vitest";
 import type { DiscoveryPaper } from "../../src/data/discovery-types";
 import type { LibrarySnapshot } from "../../src/data/types";
 import {
+  balanceDiscoveryAgeBands,
   createDiscoveryDecisionStore,
   discoveryPersonalizationAdjustment,
   filterAndSortDiscoveryPapers,
@@ -165,6 +166,29 @@ describe("discovery scoring, search and feedback", () => {
     const titleMatch = paper({ title: "Dexterous Grasp Planning", score: { ...paper().score, total: 46 } });
     const abstractMatch = paper({ id: "arxiv:2607.09999", arxivId: "2607.09999", title: "General Robot Policy", abstract: "dexterous grasp planning ".repeat(20), score: { ...paper().score, total: 90 } });
     expect(filterAndSortDiscoveryPapers([abstractMatch, titleMatch], { query: "dexterous grasp" }, now)[0].title).toBe(titleMatch.title);
+  });
+
+  test("interleaves one recent paper with two older papers", () => {
+    const recentA = paper({ id: "recent-a", arxivId: "recent-a", publishedAt: "2026-07-01" });
+    const recentB = paper({ id: "recent-b", arxivId: "recent-b", publishedAt: "2026-06-01" });
+    const olderA = paper({ id: "older-a", arxivId: "older-a", publishedAt: "2025-12-01" });
+    const olderB = paper({ id: "older-b", arxivId: "older-b", publishedAt: "2025-11-01" });
+    const olderC = paper({ id: "older-c", arxivId: "older-c", publishedAt: "2025-10-01" });
+    const ordered = balanceDiscoveryAgeBands([recentA, recentB, olderA, olderB, olderC], now);
+    expect(ordered.map((item) => item.id)).toEqual(["recent-a", "older-a", "older-b", "recent-b", "older-c"]);
+  });
+
+  test("filters an explicit inclusive publication date range", () => {
+    const recent = paper({ id: "recent", arxivId: "recent", publishedAt: "2026-07-01" });
+    const older = paper({ id: "older", arxivId: "older", publishedAt: "2025-11-15" });
+    expect(filterAndSortDiscoveryPapers([recent, older], { dateFrom: "2025-11-01", dateTo: "2025-11-30" }, now).map((item) => item.id)).toEqual(["older"]);
+  });
+
+  test("decays freshness smoothly across the two-year window", () => {
+    const atSixMonths = scoreDiscoveryPaper(candidate({ publishedAt: "2026-01-17" }), now);
+    const nearTwoYears = scoreDiscoveryPaper(candidate({ publishedAt: "2024-07-17" }), now);
+    expect(atSixMonths.freshness).toBeGreaterThan(0);
+    expect(nearTwoYears.freshness).toBe(0);
   });
 
   test("persists decisions and caps shared-topic feedback at eight points", () => {

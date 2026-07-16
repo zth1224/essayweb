@@ -9,6 +9,8 @@ import type {
 
 export const DISCOVERY_DECISION_KEY = "paper-index:discovery-decisions:v1";
 export const DISCOVERY_PAGE_SIZE = 24;
+export const DISCOVERY_RECENT_DAYS = 180;
+export const DISCOVERY_MAX_AGE_DAYS = 730;
 
 export const discoveryTopics: Array<{
   id: DiscoveryTopicId;
@@ -143,7 +145,7 @@ export const scoreDiscoveryPaper = (
 
   const freshness = ageDays <= 30
     ? 15
-    : clamp(Math.round(15 * (180 - ageDays) / 150), 0, 15);
+    : clamp(Math.round(15 * (DISCOVERY_MAX_AGE_DAYS - ageDays) / (DISCOVERY_MAX_AGE_DAYS - 30)), 0, 15);
   if (ageDays <= 14) reasons.push("两周内发布");
 
   let completeness = 0;
@@ -171,11 +173,35 @@ export interface DiscoveryFilters {
   query?: string;
   topicId?: DiscoveryTopicId | "all";
   age?: "7" | "30" | "90" | "180" | "365" | "730" | "all";
+  dateFrom?: string;
+  dateTo?: string;
   venue?: "all" | "formal" | "preprint";
   source?: "all" | "arxiv" | "semantic-scholar" | "openreview";
   tier?: DiscoveryTier | "all";
   library?: "all" | "new" | "collected";
 }
+
+export const balanceDiscoveryAgeBands = <T extends Pick<DiscoveryPaper, "publishedAt">>(
+  papers: T[],
+  now = new Date(),
+  recentPerCycle = 1,
+  olderPerCycle = 2,
+) => {
+  const cutoff = now.getTime() - DISCOVERY_RECENT_DAYS * 86_400_000;
+  const recent = papers.filter((paper) => new Date(paper.publishedAt).getTime() >= cutoff);
+  const older = papers.filter((paper) => new Date(paper.publishedAt).getTime() < cutoff);
+  const balanced: T[] = [];
+  let recentIndex = 0;
+  let olderIndex = 0;
+  while (recentIndex < recent.length || olderIndex < older.length) {
+    for (let index = 0; index < recentPerCycle && recentIndex < recent.length; index += 1) balanced.push(recent[recentIndex++]);
+    for (let index = 0; index < olderPerCycle && olderIndex < older.length; index += 1) balanced.push(older[olderIndex++]);
+    if (olderIndex >= older.length && recentIndex < recent.length) balanced.push(...recent.slice(recentIndex));
+    if (recentIndex >= recent.length && olderIndex < older.length) balanced.push(...older.slice(olderIndex));
+    if (olderIndex >= older.length || recentIndex >= recent.length) break;
+  }
+  return balanced;
+};
 
 export const discoveryTextRelevance = (paper: DiscoveryPaper, query: string) => {
   const normalizedQuery = normalizeDiscoveryText(query);
@@ -203,7 +229,7 @@ export const filterAndSortDiscoveryPapers = (
 ) => {
   const query = filters.query ?? "";
   const ageLimit = filters.age && filters.age !== "all" ? Number(filters.age) : undefined;
-  return papers
+  const sorted = papers
     .map((paper) => ({ paper, relevance: discoveryTextRelevance(paper, query) }))
     .filter(({ paper, relevance }) => {
       if (query && relevance < 0) return false;
@@ -212,6 +238,9 @@ export const filterAndSortDiscoveryPapers = (
         const ageDays = (now.getTime() - new Date(paper.publishedAt).getTime()) / 86_400_000;
         if (ageDays > ageLimit) return false;
       }
+      const publishedDate = paper.publishedAt.slice(0, 10);
+      if (filters.dateFrom && publishedDate < filters.dateFrom) return false;
+      if (filters.dateTo && publishedDate > filters.dateTo) return false;
       if (filters.venue === "formal" && !isFormalDiscoveryVenue(paper.venue)) return false;
       if (filters.venue === "preprint" && isFormalDiscoveryVenue(paper.venue)) return false;
       if (filters.source && filters.source !== "all" && !paper.sources.includes(filters.source)) return false;
@@ -224,6 +253,7 @@ export const filterAndSortDiscoveryPapers = (
       ? b.relevance - a.relevance || b.paper.score.total - a.paper.score.total
       : b.paper.score.total - a.paper.score.total || b.paper.publishedAt.localeCompare(a.paper.publishedAt))
     .map(({ paper }) => paper);
+  return query ? sorted : balanceDiscoveryAgeBands(sorted, now);
 };
 
 interface StorageLike {
