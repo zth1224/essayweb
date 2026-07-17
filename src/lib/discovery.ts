@@ -5,53 +5,78 @@ import type {
   DiscoveryTier,
   DiscoveryTopicId,
   StoredDiscoveryDecision,
+  DiscoveryTopicDefinition,
 } from "../data/discovery-types";
+import type { FieldId } from "../data/types";
 
 export const DISCOVERY_DECISION_KEY = "paper-index:discovery-decisions:v1";
 export const DISCOVERY_PAGE_SIZE = 24;
 export const DISCOVERY_RECENT_DAYS = 180;
 export const DISCOVERY_MAX_AGE_DAYS = 730;
 
-export const discoveryTopics: Array<{
-  id: DiscoveryTopicId;
-  label: string;
-  keywords: string[];
-}> = [
+export const discoveryTopics: DiscoveryTopicDefinition[] = [
   {
     id: "embodied-foundation-models",
+    fieldId: "embodied-intelligence",
     label: "具身基础模型",
     keywords: ["embodied foundation", "generalist robot", "robot foundation", "general-purpose robot"],
   },
   {
     id: "imitation-reinforcement-learning",
+    fieldId: "embodied-intelligence",
     label: "模仿与强化学习",
     keywords: ["imitation learning", "reinforcement learning", "behavior cloning", "policy learning", "offline rl"],
   },
   {
     id: "multimodal-world-models",
+    fieldId: "embodied-intelligence",
     label: "多模态与世界模型",
     keywords: ["world model", "multimodal", "video prediction", "future prediction", "latent dynamics"],
   },
   {
     id: "navigation-planning",
+    fieldId: "embodied-intelligence",
     label: "导航与规划",
     keywords: ["navigation", "motion planning", "task planning", "autonomous driving", "trajectory planning"],
   },
   {
     id: "robot-manipulation",
+    fieldId: "embodied-intelligence",
     label: "机器人操作",
     keywords: ["manipulation", "grasp", "dexterous", "bimanual", "contact-rich", "robotic arm"],
   },
   {
     id: "simulation-datasets-evaluation",
+    fieldId: "embodied-intelligence",
     label: "仿真、数据集与评测",
     keywords: ["benchmark", "dataset", "simulation", "sim-to-real", "evaluation", "teleoperation"],
   },
   {
     id: "vision-language-action-models",
+    fieldId: "embodied-intelligence",
     label: "视觉语言动作模型",
     keywords: ["vision-language-action", "vision language action", "vla", "language-conditioned robot"],
   },
+  { id: "ai-reasoning-planning", fieldId: "cs-ai", label: "推理与规划", keywords: ["reasoning", "planning", "search algorithm", "constraint satisfaction", "theorem proving"] },
+  { id: "ai-agents-tool-use", fieldId: "cs-ai", label: "智能体与工具", keywords: ["ai agent", "autonomous agent", "tool use", "tool-use", "computer use", "web agent"] },
+  { id: "ai-knowledge-retrieval", fieldId: "cs-ai", label: "知识表示与检索", keywords: ["knowledge representation", "knowledge graph", "ontology", "semantic search", "neural retrieval"] },
+  { id: "ai-multi-agent-systems", fieldId: "cs-ai", label: "多智能体", keywords: ["multi-agent", "multiagent", "agent collaboration", "agent cooperation", "agent communication"] },
+  { id: "ai-safety-alignment", fieldId: "cs-ai", label: "安全与对齐", keywords: ["ai safety", "alignment", "harmlessness", "jailbreak", "red teaming", "reward hacking"] },
+  { id: "cl-language-modeling", fieldId: "cs-cl", label: "语言模型与预训练", keywords: ["language model", "large language model", "pretraining", "pre-training", "tokenizer", "scaling law"] },
+  { id: "cl-retrieval-question-answering", fieldId: "cs-cl", label: "检索增强与问答", keywords: ["retrieval augmented", "retrieval-augmented", "question answering", "open-domain qa", "document retrieval"] },
+  { id: "cl-information-extraction", fieldId: "cs-cl", label: "信息抽取", keywords: ["information extraction", "named entity", "relation extraction", "semantic parsing", "structured prediction"] },
+  { id: "cl-multilingual-translation", fieldId: "cs-cl", label: "多语言与机器翻译", keywords: ["multilingual", "machine translation", "cross-lingual", "low-resource language", "speech translation"] },
+  { id: "cl-evaluation-safety", fieldId: "cs-cl", label: "NLP 评测与安全", keywords: ["language model evaluation", "nlp benchmark", "factuality", "hallucination", "toxicity", "prompt injection"] },
+  { id: "cv-representation-recognition", fieldId: "cs-cv", label: "视觉表征与识别", keywords: ["image recognition", "object detection", "semantic segmentation", "visual representation", "image classification"] },
+  { id: "cv-image-video-generation", fieldId: "cs-cv", label: "图像与视频生成", keywords: ["image generation", "video generation", "diffusion model", "text-to-image", "text-to-video", "generative vision"] },
+  { id: "cv-three-dimensional-vision", fieldId: "cs-cv", label: "三维视觉", keywords: ["3d vision", "three-dimensional", "3d reconstruction", "neural rendering", "novel view synthesis", "point cloud"] },
+  { id: "cv-video-understanding", fieldId: "cs-cv", label: "视频理解", keywords: ["video understanding", "action recognition", "video segmentation", "temporal localization", "video reasoning"] },
+  { id: "cv-vision-language-multimodal", fieldId: "cs-cv", label: "视觉语言与多模态", keywords: ["vision-language", "vision language", "visual question answering", "multimodal model", "image-text"] },
+  { id: "lg-theory-optimization", fieldId: "cs-lg", label: "学习理论与优化", keywords: ["learning theory", "optimization", "convergence", "generalization bound", "online learning"] },
+  { id: "lg-representation-self-supervised", fieldId: "cs-lg", label: "表征与自监督", keywords: ["representation learning", "self-supervised", "self supervised", "contrastive learning", "masked modeling"] },
+  { id: "lg-reinforcement-learning", fieldId: "cs-lg", label: "强化学习", keywords: ["reinforcement learning", "offline rl", "policy optimization", "reward model", "markov decision"] },
+  { id: "lg-generative-modeling", fieldId: "cs-lg", label: "生成建模", keywords: ["generative model", "diffusion model", "flow matching", "variational autoencoder", "normalizing flow"] },
+  { id: "lg-robustness-generalization", fieldId: "cs-lg", label: "鲁棒性与泛化", keywords: ["robustness", "out-of-distribution", "domain generalization", "distribution shift", "adversarial example", "uncertainty"] },
 ];
 
 export const discoveryTopicLabel = (id: DiscoveryTopicId) =>
@@ -67,11 +92,28 @@ export const normalizeDiscoveryTitle = (value: string) => normalizeDiscoveryText
   .replace(/[^a-z0-9\u3400-\u9fff]+/g, " ")
   .trim();
 
-export const classifyDiscoveryTopics = (text: string): DiscoveryTopicId[] => {
+export const discoveryTopicsForField = (fieldId: FieldId) => discoveryTopics.filter((topic) => topic.fieldId === fieldId);
+
+export const classifyDiscoveryTopics = (text: string, fieldId?: FieldId): DiscoveryTopicId[] => {
   const normalized = normalizeDiscoveryText(text);
   return discoveryTopics
+    .filter((topic) => !fieldId || topic.fieldId === fieldId)
     .filter((topic) => topic.keywords.some((keyword) => normalized.includes(keyword)))
     .map((topic) => topic.id);
+};
+
+export const classifyDiscoveryFields = (categories: string[], topicIds: DiscoveryTopicId[]): FieldId[] => {
+  const fields = new Set<FieldId>();
+  if (categories.includes("cs.AI")) fields.add("cs-ai");
+  if (categories.includes("cs.CL")) fields.add("cs-cl");
+  if (categories.includes("cs.CV")) fields.add("cs-cv");
+  if (categories.includes("cs.LG") || categories.includes("stat.ML")) fields.add("cs-lg");
+  if (categories.includes("cs.RO")) fields.add("embodied-intelligence");
+  for (const topicId of topicIds) {
+    const fieldId = discoveryTopics.find((topic) => topic.id === topicId)?.fieldId;
+    if (fieldId) fields.add(fieldId);
+  }
+  return [...fields];
 };
 
 const clamp = (value: number, minimum: number, maximum: number) =>
@@ -84,7 +126,17 @@ export const tierForScore = (score: number): DiscoveryTier => {
   return "archive";
 };
 
-export const isFormalDiscoveryVenue = (venue = "") => /\b(iclr|neurips|icml|corl|rss|robotics science and systems|icra|iros|cvpr|iccv|eccv)\b/i.test(venue);
+const formalVenuePatterns: Record<FieldId, RegExp> = {
+  "embodied-intelligence": /\b(corl|rss|robotics science and systems|icra|iros)\b/i,
+  "cs-ai": /\b(aaai|ijcai|aamas|uai|uncertainty in artificial intelligence)\b/i,
+  "cs-cl": /\b(acl|findings of (?:the )?acl|emnlp|naacl|eacl|coling)\b/i,
+  "cs-cv": /\b(cvpr|iccv|eccv|wacv)\b/i,
+  "cs-lg": /\b(neurips|nips|icml|iclr|aistats|colt|uai|uncertainty in artificial intelligence)\b/i,
+};
+
+export const isFormalDiscoveryVenue = (venue = "", fieldId?: FieldId) => fieldId
+  ? formalVenuePatterns[fieldId].test(venue)
+  : Object.values(formalVenuePatterns).some((pattern) => pattern.test(venue));
 
 const evidenceArtifactKind = (artifact: DiscoveryPaper["artifacts"][number]) => {
   if (/huggingface\.co\/datasets\/|kaggle\.com\/datasets\/|zenodo\.org\/records?\//i.test(artifact.url)) return "dataset";
@@ -95,23 +147,28 @@ const evidenceArtifactKind = (artifact: DiscoveryPaper["artifacts"][number]) => 
 export const scoreDiscoveryPaper = (
   paper: Omit<DiscoveryPaper, "score">,
   now = new Date(),
+  fieldId = paper.fieldIds[0] ?? "embodied-intelligence",
 ): DiscoveryScore => {
   const published = new Date(paper.publishedAt);
   const ageDays = Math.max(0, (now.getTime() - published.getTime()) / 86_400_000);
   const reasons: string[] = [];
 
-  const recommendationPoints = paper.recommendationRank
-    ? clamp(31 - Math.ceil(paper.recommendationRank / 25), 10, 30)
+  const recommendationRank = paper.recommendationRanks?.[fieldId] ?? paper.recommendationRank;
+  const recommendationPoints = recommendationRank
+    ? clamp(16 - Math.ceil(recommendationRank / 50), 6, 15)
     : 0;
-  const topicPoints = paper.topicIds.length
-    ? clamp(7 + paper.topicIds.length * 2, 7, 15)
+  const fieldTopicCount = paper.topicIds.filter((topicId) => discoveryTopics.find((topic) => topic.id === topicId)?.fieldId === fieldId).length;
+  const fieldPoints = paper.fieldIds.includes(fieldId) ? 10 : 0;
+  const topicPoints = fieldTopicCount
+    ? clamp(14 + (fieldTopicCount - 1) * 3, 14, 20)
     : 0;
-  const interest = clamp(recommendationPoints + topicPoints, 0, 45);
-  if (recommendationPoints >= 24) reasons.push("与已读论文高度相似");
-  if (paper.topicIds.length >= 2) reasons.push(`覆盖 ${paper.topicIds.length} 个关注主题`);
+  const interest = clamp(fieldPoints + topicPoints + recommendationPoints, 0, 45);
+  if (fieldPoints) reasons.push("匹配当前研究方向");
+  if (recommendationPoints >= 12) reasons.push("与已读论文高度相似");
+  if (fieldTopicCount >= 2) reasons.push(`覆盖当前方向 ${fieldTopicCount} 个关注主题`);
 
   let evidence = 0;
-  if (isFormalDiscoveryVenue(paper.venue)) {
+  if (isFormalDiscoveryVenue(paper.venue, fieldId)) {
     evidence += 6;
     reasons.push(`已关联正式 venue：${paper.venue}`);
   }
@@ -201,6 +258,16 @@ export const balanceDiscoveryAgeBands = <T extends Pick<DiscoveryPaper, "publish
     if (olderIndex >= older.length || recentIndex >= recent.length) break;
   }
   return balanced;
+};
+
+export const selectDiscoveryFeatured = <T extends Pick<DiscoveryPaper, "publishedAt">>(
+  papers: T[],
+  now = new Date(),
+) => {
+  const cutoff = now.getTime() - DISCOVERY_RECENT_DAYS * 86_400_000;
+  const recent = papers.filter((paper) => new Date(paper.publishedAt).getTime() >= cutoff).slice(0, 1);
+  const older = papers.filter((paper) => new Date(paper.publishedAt).getTime() < cutoff).slice(0, 2);
+  return [...recent, ...older];
 };
 
 export const discoveryTextRelevance = (paper: DiscoveryPaper, query: string) => {

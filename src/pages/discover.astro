@@ -3,12 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import DiscoveryCard from "../components/DiscoveryCard.astro";
 import LibraryBanner from "../components/LibraryBanner.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import { getDiscoveryFeatured, getDiscoverySnapshot } from "../data/discovery-repository";
-import { discoveryTopics } from "../lib/discovery";
+import { fields } from "../data/fields";
+import { getDiscoveryFeatured, getDiscoveryIndex, getDiscoverySnapshot } from "../data/discovery-repository";
+import { discoveryTopicsForField } from "../lib/discovery";
 import { sitePath } from "../lib/site-path";
 
-const snapshot = getDiscoverySnapshot();
-const featured = getDiscoveryFeatured(3);
+const defaultField = fields.find((field) => field.id === "embodied-intelligence")!;
+const snapshot = getDiscoverySnapshot(defaultField.id);
+const discoveryIndex = getDiscoveryIndex();
+const featured = getDiscoveryFeatured(3, defaultField.id);
+const discoveryTopics = discoveryTopicsForField(defaultField.id);
 const generatedAt = new Date(snapshot.generatedAt);
 const updated = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(generatedAt);
 const degraded = Object.entries(snapshot.sources).filter(([, source]) => source.state !== "ok");
@@ -17,21 +21,29 @@ const maximumDiscoveryDate = generatedAt.toISOString().slice(0, 10);
 const minimumDiscoveryDate = new Date(generatedAt.getTime() - snapshot.retainedDays * 86_400_000).toISOString().slice(0, 10);
 ---
 
-<BaseLayout title="论文发现工作台 · Paper Index" description="面向具身智能研究的每日论文精选、透明排序与本地精读候选箱" accent="#d9f99d" accentSoft="#334327" pageClass="discovery-page">
+<BaseLayout title="论文发现工作台 · Paper Index" description="面向五个计算机研究方向的每日论文精选、透明排序与本地精读候选箱" accent="#d9f99d" accentSoft="#334327" pageClass="discovery-page">
   <LibraryBanner />
   <SiteHeader backHref="/" backLabel="返回论文索引" meta="Discovery Desk / EI" />
-  <main class="discovery-desk" data-discovery-root data-generated-at={snapshot.generatedAt} data-discovery-url={sitePath("/discovery-data.json")} data-site-base={import.meta.env.BASE_URL}>
+  <main class="discovery-desk" data-discovery-root data-generated-at={snapshot.generatedAt} data-current-field={defaultField.id} data-discovery-url={sitePath("/discovery-data.json")} data-discovery-url-template={sitePath("/discovery-data/__FIELD__.json")} data-site-base={import.meta.env.BASE_URL} style={`--signal:${defaultField.accent};--signal-soft:${defaultField.accentSoft}`}>
+    <nav class="discovery-fields" aria-label="论文发现方向">
+      <span>RESEARCH CHANNEL</span>
+      {fields.map((field, index) => {
+        const entry = discoveryIndex.fields.find((item) => item.fieldId === field.id);
+        return <button type="button" class:list={{ active: field.id === defaultField.id }} aria-pressed={field.id === defaultField.id ? "true" : "false"} data-discovery-field={field.id} data-field-code={field.code} data-field-title={field.titleZh} data-field-accent={field.accent} data-field-accent-soft={field.accentSoft} style={`--field-accent:${field.accent}`}><i>{String(index + 1).padStart(2, "0")}</i><b>{field.titleZh}</b><small>{entry?.candidateCount ?? 0}</small></button>;
+      })}
+    </nav>
     <header class="discovery-hero">
-      <div class="discovery-hero__index"><span>FIELD NOTES</span><b>DISCOVERY / 001</b></div>
+      <div class="discovery-hero__index"><span>FIELD NOTES</span><b>DISCOVERY / <em data-current-field-code>{defaultField.code}</em></b></div>
       <div class="discovery-hero__title"><p>不是把当天所有预印本再列一遍，而是解释哪几篇值得先读。</p><h1>论文发现<br/><em>工作台</em></h1></div>
-      <div class="discovery-hero__facts"><div><strong>{snapshot.meta.candidateCount}</strong><span>候选论文</span></div><div><strong>{snapshot.meta.featuredCount}</strong><span>优先精读</span></div><div><strong>{snapshot.retainedDays}</strong><span>检索天数</span></div><p>快照更新：{updated}</p></div>
+      <div class="discovery-hero__facts"><div><strong data-candidate-count>{snapshot.meta.candidateCount}</strong><span>候选论文</span></div><div><strong data-priority-count>{snapshot.meta.featuredCount}</strong><span>优先精读</span></div><div><strong data-retained-days>{snapshot.retainedDays}</strong><span>检索天数</span></div><p>快照更新：<span data-snapshot-updated>{updated}</span></p></div>
     </header>
 
-    {(degraded.length > 0 || stale) && <aside class="source-warning" role="status" data-source-warning><strong>{stale ? "发现数据已经超过 72 小时未更新" : "部分来源更新延迟"}</strong><span>当前仍使用最近一次有效快照；不会用空结果覆盖已有候选。</span><ul>{degraded.map(([name, source]) => <li>{name}: {source.message || source.state}</li>)}</ul></aside>}
+    <aside class="source-warning" role="status" data-source-warning hidden={degraded.length === 0 && !stale}><strong data-warning-title>{stale ? "发现数据已经超过 72 小时未更新" : "部分来源更新延迟"}</strong><span>当前仍使用最近一次有效快照；不会用空结果覆盖已有候选。</span><ul data-warning-list>{degraded.map(([name, source]) => <li>{name}: {source.message || source.state}</li>)}</ul></aside>
 
     <section class="daily-brief" aria-labelledby="daily-brief-title">
-      <div class="section-heading"><span>01 / DAILY BRIEF</span><h2 id="daily-brief-title">今天先看这三篇</h2><p>1 篇近半年新作，搭配 2 篇经时间检验的成熟候选。</p></div>
-      {featured.length > 0 ? <div class="daily-brief__grid">{featured.map((paper, index) => <DiscoveryCard paper={paper} index={index} featured />)}</div> : <div class="discovery-empty-brief"><strong>等待第一次数据刷新</strong><p>运行 <code>npm run refresh:discovery</code> 后，这里会出现每日精选。</p></div>}
+      <div class="section-heading"><span>01 / DAILY BRIEF</span><h2 id="daily-brief-title">今天的优先精读</h2><p>最多 1 篇近半年新作与 2 篇成熟候选；不足 75 分不补位。</p></div>
+      <div class="daily-brief__grid" data-featured-shelf hidden={featured.length === 0}>{featured.map((paper, index) => <DiscoveryCard paper={paper} index={index} featured />)}</div>
+      <div class="discovery-empty-brief" data-featured-empty hidden={featured.length > 0}><strong>当前没有达到 75 分的候选</strong><p>本方向不会用普通新论文凑满前三名；仍可在下方搜索和快速浏览。</p></div>
     </section>
 
     <section class="discovery-browser" aria-labelledby="discovery-browser-title">
@@ -72,9 +84,10 @@ const minimumDiscoveryDate = new Date(generatedAt.getTime() - snapshot.retainedD
 <style>
   :global(.discovery-page){--discovery-bg:#0d110e;--discovery-surface:#111612;--discovery-ink:#e5ebe5;--discovery-muted:#9da79f;--discovery-line:#303631;--signal:#d9f99d;background:var(--discovery-bg);color:var(--discovery-ink)}
   :global(.discovery-page .site-header){border-color:var(--discovery-line);background:rgba(13,17,14,.92)}:global(.discovery-page .site-header__meta){color:var(--discovery-muted)}
-  .discovery-desk{max-width:108rem;margin:0 auto;background:radial-gradient(circle at 74% 4%,rgba(217,249,157,.09),transparent 24rem),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,8.333% 100%}
+  .discovery-desk{max-width:108rem;margin:0 auto;background:radial-gradient(circle at 74% 4%,color-mix(in srgb,var(--signal) 10%,transparent),transparent 24rem),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,8.333% 100%;transition:opacity .18s ease}.discovery-desk[data-loading="true"]{opacity:.72;cursor:progress}
+  .discovery-fields{display:grid;grid-template-columns:9rem repeat(5,minmax(0,1fr));border-bottom:1px solid var(--discovery-line);background:#0d110e}.discovery-fields>span{display:grid;place-items:center;border-right:1px solid var(--discovery-line);color:var(--discovery-muted);font:500 .58rem var(--mono);letter-spacing:.12em;writing-mode:vertical-rl}.discovery-fields button{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:.65rem;align-items:end;min-width:0;padding:1rem;border:0;border-right:1px solid var(--discovery-line);background:transparent;color:var(--discovery-muted);text-align:left;transition:background .2s ease,color .2s ease}.discovery-fields button:last-child{border-right:0}.discovery-fields button:hover,.discovery-fields button.active{background:color-mix(in srgb,var(--field-accent,var(--signal)) 12%,transparent);color:var(--discovery-ink)}.discovery-fields button.active::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--field-accent,var(--signal))}.discovery-fields i,.discovery-fields small{font:500 .56rem var(--mono);font-style:normal}.discovery-fields b{min-width:0;font:400 clamp(.85rem,1.3vw,1.25rem)/1 var(--serif)}
   .discovery-hero{min-height:39rem;display:grid;grid-template-columns:9rem minmax(0,1fr) 18rem;gap:clamp(1rem,4vw,5rem);align-items:end;padding:clamp(4rem,9vw,8rem) var(--page-gutter) 2rem;border-bottom:1px solid var(--discovery-line)}
-  .discovery-hero__index{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--discovery-line);font:500 .62rem var(--mono);letter-spacing:.1em;writing-mode:vertical-rl}.discovery-hero__index b{color:var(--signal)}
+  .discovery-hero__index{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--discovery-line);font:500 .62rem var(--mono);letter-spacing:.1em;writing-mode:vertical-rl}.discovery-hero__index b{color:var(--signal)}.discovery-hero__index em{font-style:normal}
   .discovery-hero__title>p{max-width:38rem;margin:0 0 2rem;color:var(--discovery-muted);font-size:.85rem}.discovery-hero h1{margin:0;font:400 clamp(4.7rem,10vw,10.5rem)/.68 var(--serif);letter-spacing:-.065em}.discovery-hero h1 em{color:var(--signal);font-weight:400}
   .discovery-hero__facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--discovery-line)}.discovery-hero__facts div{padding:1rem 0;border-bottom:1px solid var(--discovery-line)}.discovery-hero__facts strong{display:block;font:400 2.3rem/1 var(--serif)}.discovery-hero__facts span,.discovery-hero__facts p{color:var(--discovery-muted);font:500 .58rem var(--mono);text-transform:uppercase}.discovery-hero__facts p{grid-column:1/-1;margin:1rem 0 0}
   .source-warning{min-width:0;margin:1rem var(--page-gutter) 0;padding:1rem;border:1px solid #8a6a2f;background:rgba(244,201,120,.07);font-size:.74rem;overflow-wrap:anywhere}.source-warning strong{display:block;color:#f4c978}.source-warning span{color:var(--discovery-muted)}.source-warning ul{margin:.5rem 0 0;padding-left:1rem;color:#c5b58f;font:500 .62rem var(--mono)}
@@ -82,5 +95,5 @@ const minimumDiscoveryDate = new Date(generatedAt.getTime() - snapshot.retainedD
   .daily-brief__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.discovery-empty-brief{padding:4rem 1rem;border:1px solid var(--discovery-line);text-align:center}.discovery-empty-brief strong{font:400 2rem var(--serif)}.discovery-empty-brief p{color:var(--discovery-muted)}
   .discovery-browser{border-top:1px solid var(--discovery-line)}.section-heading--browser{margin-bottom:1rem}.discovery-filters{display:grid;grid-template-columns:minmax(16rem,1.4fr) repeat(5,minmax(7.2rem,.55fr));gap:1px;padding:1px;background:var(--discovery-line)}.discovery-filters label,.discovery-filters>button,.discovery-filters>p{min-width:0;display:grid;align-content:center;gap:.3rem;margin:0;padding:.65rem;background:var(--discovery-bg);color:var(--discovery-muted);font:500 .58rem var(--mono);text-transform:uppercase}.discovery-filters input,.discovery-filters select,.discovery-filters>button{min-width:0;border:0;background:transparent;color:var(--discovery-ink)}.discovery-filters input[type="date"]{color-scheme:dark;font:500 .64rem var(--mono)}.discovery-filters option{background:var(--discovery-bg)}.discovery-filters .filter-check{display:flex;align-items:center}.filter-check input{accent-color:var(--signal)}.discovery-filters>p{display:flex;align-items:center;justify-content:center}.discovery-filters>p strong{margin-right:.3rem;color:var(--signal);font-size:1.1rem}
   .discovery-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(17rem,21rem);gap:clamp(2rem,4vw,5rem);align-items:start;margin-top:2rem}.discovery-shelf,.reading-queue{min-width:0}.reading-queue{position:sticky;top:1rem;padding:1.2rem;border:1px solid var(--discovery-line);background:rgba(17,22,18,.96);overflow-wrap:anywhere}.reading-queue__heading{display:flex;justify-content:space-between;color:var(--signal);font:500 .61rem var(--mono)}.reading-queue__heading strong{font:400 2.5rem/1 var(--serif)}.reading-queue h2{margin:2.5rem 0 .5rem;font:400 2.3rem/1 var(--serif)}.reading-queue>p{color:var(--discovery-muted);font-size:.72rem}.reading-queue code{color:#cbd4cc}.reading-queue__list{display:grid;gap:.55rem;margin:1.3rem 0}.reading-queue__list :global(article){display:grid;grid-template-columns:1fr auto;gap:.5rem;padding-top:.55rem;border-top:1px solid var(--discovery-line)}.reading-queue__list :global(a){font:400 1rem/1.05 var(--serif)}.reading-queue__list :global(button){border:0;background:transparent;color:var(--discovery-muted);font:500 .58rem var(--mono)}.reading-queue__list :global(.queue-empty){color:var(--discovery-muted);font-size:.7rem}.reading-queue__actions{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.reading-queue__actions button,.load-more{padding:.7rem;border:1px solid var(--discovery-line);background:transparent;color:var(--discovery-ink);font:500 .6rem var(--mono);text-transform:uppercase}.reading-queue__actions button:hover,.load-more:hover{background:var(--signal);color:var(--discovery-bg)}.load-more{width:100%;margin-top:1rem}.discovery-empty{padding:4rem 1rem;border-block:1px solid var(--discovery-line);text-align:center}.discovery-empty strong{font:400 2rem var(--serif)}.discovery-empty p{color:var(--discovery-muted)}
-  @media(max-width:1100px){.daily-brief__grid{grid-template-columns:1fr}.discovery-filters{grid-template-columns:repeat(4,1fr)}.filter-search{grid-column:span 2}}@media(max-width:800px){.discovery-hero{min-height:32rem;grid-template-columns:2rem minmax(0,1fr)}.discovery-hero__facts{grid-column:2}.section-heading{grid-template-columns:minmax(0,1fr)}.section-heading p{max-width:34rem}.discovery-layout{grid-template-columns:minmax(0,1fr)}.reading-queue{position:relative;top:auto;grid-row:1}.discovery-filters{grid-template-columns:1fr 1fr}.filter-search{grid-column:1/-1}}@media(max-width:520px){.discovery-hero{padding-top:4rem}.discovery-hero h1{font-size:clamp(3.7rem,20vw,6rem)}.daily-brief,.discovery-browser{padding-block:3.5rem}.discovery-filters{grid-template-columns:1fr}.filter-search{grid-column:auto}}
+  @media(max-width:1100px){.daily-brief__grid{grid-template-columns:1fr}.discovery-filters{grid-template-columns:repeat(4,1fr)}.filter-search{grid-column:span 2}.discovery-fields{grid-template-columns:4rem repeat(5,minmax(8.5rem,1fr));overflow-x:auto}.discovery-fields button{min-width:8.5rem}}@media(max-width:800px){.discovery-hero{min-height:32rem;grid-template-columns:2rem minmax(0,1fr)}.discovery-hero__facts{grid-column:2}.section-heading{grid-template-columns:minmax(0,1fr)}.section-heading p{max-width:34rem}.discovery-layout{grid-template-columns:minmax(0,1fr)}.reading-queue{position:relative;top:auto;grid-row:1}.discovery-filters{grid-template-columns:1fr 1fr}.filter-search{grid-column:1/-1}.discovery-fields{grid-template-columns:repeat(5,minmax(8.5rem,1fr));padding-left:var(--page-gutter)}.discovery-fields>span{display:none}}@media(max-width:520px){.discovery-hero{padding-top:4rem}.discovery-hero h1{font-size:clamp(3.7rem,20vw,6rem)}.daily-brief,.discovery-browser{padding-block:3.5rem}.discovery-filters{grid-template-columns:1fr}.filter-search{grid-column:auto}}
 </style>

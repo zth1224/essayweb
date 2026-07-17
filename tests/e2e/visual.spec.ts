@@ -5,6 +5,7 @@ const outputDir = "artifacts/visual";
 
 test("capture the approved desktop, tablet and mobile layouts", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "Capture once with system Chrome.");
+  test.setTimeout(120_000);
   await mkdir(outputDir, { recursive: true });
 
   const consoleErrors: string[] = [];

@@ -20,7 +20,7 @@ const date = [paper.year, paper.month ? String(paper.month).padStart(2,"0") : un
 ---
 <BaseLayout title={`${paper.title} · 论文索引`} accent={field.accent} accentSoft={field.accentSoft} description={paper.summaryMarkdown}>
   <LibraryBanner />
-  <SiteHeader backHref={`/fields/${field.slug}/`} backLabel={field.titleZh} meta={`${field.code} / Paper ${paper.sourceNumber}`} />
+  <SiteHeader backHref={`/fields/${field.slug}/`} backLabel={field.titleZh} meta={`${field.code} / Paper ${paper.sourceNumber}`} discoveryField={field.id} />
   <main class="paper-detail page-shell">
     <header class="paper-detail__head"><div><p class="meta-label">{field.code} · {date} · {paper.contentState === "source-damaged" ? "Source damaged" : "Complete note"}</p><h1 class="detail-title">{paper.title}</h1></div><div class="paper-detail__status"><span class="meta-label">Reading status</span><ReadingStatusControl slug={paper.slug} title={paper.title} status={paper.status}/></div></header>
     <div class="paper-detail__meta">

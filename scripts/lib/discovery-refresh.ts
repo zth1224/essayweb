@@ -6,9 +6,11 @@ import type {
   DiscoverySourceStatus,
   DiscoveryTopicId,
 } from "../../src/data/discovery-types";
-import type { LibrarySnapshot, PaperRecord } from "../../src/data/types";
+import type { FieldId, LibrarySnapshot, PaperRecord } from "../../src/data/types";
 import {
+  classifyDiscoveryFields,
   classifyDiscoveryTopics,
+  discoveryTopicsForField,
   normalizeDiscoveryTitle,
   scoreDiscoveryPaper,
 } from "../../src/lib/discovery";
@@ -19,6 +21,7 @@ export const STRICT_MIN_INTEREST = 9;
 export const STRICT_MIN_EVIDENCE = 8;
 export const STRICT_MIN_COMPLETENESS = 11;
 export const CANDIDATE_CAP = 2_000;
+export const DISCOVERY_FIELD_IDS: FieldId[] = ["embodied-intelligence", "cs-ai", "cs-cl", "cs-cv", "cs-lg"];
 
 export type Candidate = Omit<DiscoveryPaper, "score">;
 
@@ -98,6 +101,7 @@ export const parseArxivAtom = (xml: string): Candidate[] => {
       .find((attributes) => /title=["']pdf["']/i.test(attributes))
       ?.match(/href=["']([^"']+)["']/i)?.[1];
     const topicIds = classifyDiscoveryTopics(`${title} ${abstract} ${categories.join(" ")}`);
+    const fieldIds = classifyDiscoveryFields(categories, topicIds);
     return {
       id: `arxiv:${arxivId}`,
       title,
@@ -108,6 +112,7 @@ export const parseArxivAtom = (xml: string): Candidate[] => {
       arxivId,
       doi,
       categories: unique(categories),
+      fieldIds,
       topicIds,
       sources: ["arxiv"],
       sourceUrl,
@@ -117,7 +122,7 @@ export const parseArxivAtom = (xml: string): Candidate[] => {
   }).filter((paper) => paper.arxivId && paper.title && paper.publishedAt);
 };
 
-const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendationRank?: number): Candidate | undefined => {
+const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendationRank?: number, recommendationFieldId?: FieldId): Candidate | undefined => {
   const title = paper.title?.trim() ?? "";
   const publishedAt = paper.publicationDate ?? (paper.year ? `${paper.year}-01-01` : "");
   if (!paper.paperId || !title || !publishedAt) return undefined;
@@ -125,6 +130,8 @@ const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendatio
   const pdfUrl = paper.openAccessPdf?.url || (arxivId ? `https://arxiv.org/pdf/${arxivId}` : undefined);
   const sourceUrl = arxivId ? `https://arxiv.org/abs/${arxivId}` : (paper.url ?? `https://www.semanticscholar.org/paper/${paper.paperId}`);
   const semanticVenue = paper.venue?.trim();
+  const topicIds = classifyDiscoveryTopics(`${title} ${paper.abstract ?? ""}`);
+  const fieldIds = classifyDiscoveryFields([], topicIds);
   return {
     id: arxivId ? `arxiv:${arxivId}` : `s2:${paper.paperId}`,
     title,
@@ -135,7 +142,8 @@ const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendatio
     doi: paper.externalIds?.DOI,
     semanticScholarId: paper.paperId,
     categories: [],
-    topicIds: classifyDiscoveryTopics(`${title} ${paper.abstract ?? ""}`),
+    fieldIds,
+    topicIds,
     sources: ["semantic-scholar"],
     sourceUrl,
     pdfUrl,
@@ -143,6 +151,7 @@ const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendatio
     citationCount: paper.citationCount,
     influentialCitationCount: paper.influentialCitationCount,
     recommendationRank,
+    recommendationRanks: recommendationRank && recommendationFieldId ? { [recommendationFieldId]: recommendationRank } : undefined,
     artifacts: extractArtifacts(paper.abstract ?? "", pdfUrl),
   };
 };
@@ -173,6 +182,7 @@ export const parseOpenReviewNotes = (payload: unknown, venue: string): Candidate
     const isAnonymous = authors.length === 0 || authors.some((author) => /anonymous/i.test(author)) || /anonymous submission/i.test(title);
     const isUndecided = /submitted|under review|withdrawn|rejected|desk rejected/i.test(decisionLabel);
     if (!title || !openReviewId || !publishedAt || isAnonymous || isUndecided) return [];
+    const topicIds = classifyDiscoveryTopics(`${title} ${abstract}`);
     return [{
       id: `openreview:${openReviewId}`,
       title,
@@ -181,7 +191,8 @@ export const parseOpenReviewNotes = (payload: unknown, venue: string): Candidate
       publishedAt,
       openReviewId,
       categories: [],
-      topicIds: classifyDiscoveryTopics(`${title} ${abstract}`),
+      fieldIds: classifyDiscoveryFields([], topicIds),
+      topicIds,
       sources: ["openreview"],
       sourceUrl: `https://openreview.net/forum?id=${openReviewId}`,
       pdfUrl,
@@ -203,6 +214,7 @@ const mergeCandidate = (left: Candidate, right: Candidate): Candidate => ({
   semanticScholarId: right.semanticScholarId ?? left.semanticScholarId,
   openReviewId: right.openReviewId ?? left.openReviewId,
   categories: unique([...left.categories, ...right.categories]),
+  fieldIds: unique([...left.fieldIds, ...right.fieldIds]) as FieldId[],
   topicIds: unique([...left.topicIds, ...right.topicIds]) as DiscoveryTopicId[],
   sources: unique([...left.sources, ...right.sources]) as DiscoverySource[],
   sourceUrl: left.arxivId ? left.sourceUrl : right.sourceUrl,
@@ -213,6 +225,10 @@ const mergeCandidate = (left: Candidate, right: Candidate): Candidate => ({
   recommendationRank: left.recommendationRank && right.recommendationRank
     ? Math.min(left.recommendationRank, right.recommendationRank)
     : (right.recommendationRank ?? left.recommendationRank),
+  recommendationRanks: Object.fromEntries(DISCOVERY_FIELD_IDS.flatMap((fieldId) => {
+    const ranks = [left.recommendationRanks?.[fieldId], right.recommendationRanks?.[fieldId]].filter((rank): rank is number => rank !== undefined);
+    return ranks.length > 0 ? [[fieldId, Math.min(...ranks)]] : [];
+  })),
   artifacts: [...left.artifacts, ...right.artifacts].filter((artifact, index, items) => items.findIndex((item) => item.url === artifact.url) === index),
   librarySlug: right.librarySlug ?? left.librarySlug,
 });
@@ -280,21 +296,48 @@ export const fetchWithRetry = async (
   throw lastError instanceof Error ? lastError : new Error("Request failed");
 };
 
-const historicalTopicQuery = "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG) AND (all:\"vision language action\" OR all:\"robot manipulation\" OR all:\"world model\" OR all:\"imitation learning\" OR all:\"robot navigation\")";
 const arxivDate = (date: Date) => date.toISOString().replace(/\D/g, "").slice(0, 12);
 const daysBefore = (now: Date, days: number) => new Date(now.getTime() - days * 86_400_000);
 
-export const buildArxivQueries = (now = new Date()): Array<{ query: string; limit: number; sortBy?: "submittedDate" | "relevance" }> => [
-  { query: "cat:cs.RO", limit: 500 },
-  { query: "(cat:cs.AI OR cat:cs.LG) AND (all:robot OR all:embodied OR all:manipulation)", limit: 300 },
-  { query: "(cat:cs.CV OR cat:cs.LG) AND (all:\"vision language action\" OR all:\"world model\" OR all:\"imitation learning\")", limit: 300 },
-  { query: `${historicalTopicQuery} AND submittedDate:[${arxivDate(daysBefore(now, 365))} TO ${arxivDate(daysBefore(now, 181))}]`, limit: 450, sortBy: "relevance" },
-  { query: `${historicalTopicQuery} AND submittedDate:[${arxivDate(daysBefore(now, 730))} TO ${arxivDate(daysBefore(now, 366))}]`, limit: 450, sortBy: "relevance" },
-];
+const fieldArxivScopes: Record<FieldId, { categories: string; topics: string }> = {
+  "embodied-intelligence": {
+    categories: "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG)",
+    topics: "(all:robot OR all:embodied OR all:manipulation OR all:navigation OR all:\"vision language action\" OR all:\"world model\")",
+  },
+  "cs-ai": {
+    categories: "cat:cs.AI",
+    topics: "(all:reasoning OR all:planning OR all:agent OR all:\"knowledge graph\" OR all:alignment OR all:multi-agent)",
+  },
+  "cs-cl": {
+    categories: "cat:cs.CL",
+    topics: "(all:\"language model\" OR all:retrieval OR all:\"question answering\" OR all:\"information extraction\" OR all:multilingual OR all:translation OR all:hallucination)",
+  },
+  "cs-cv": {
+    categories: "cat:cs.CV",
+    topics: "(all:recognition OR all:detection OR all:segmentation OR all:generation OR all:\"3d reconstruction\" OR all:video OR all:\"vision language\")",
+  },
+  "cs-lg": {
+    categories: "(cat:cs.LG OR cat:stat.ML)",
+    topics: "(all:optimization OR all:\"representation learning\" OR all:\"self-supervised\" OR all:\"reinforcement learning\" OR all:\"generative model\" OR all:robustness OR all:generalization)",
+  },
+};
 
-export const fetchArxivCandidates = async (now = new Date()) => {
+export const buildArxivQueries = (
+  fieldId: FieldId = "embodied-intelligence",
+  now = new Date(),
+): Array<{ query: string; limit: number; sortBy?: "submittedDate" | "relevance" }> => {
+  const scope = fieldArxivScopes[fieldId];
+  const base = `${scope.categories} AND ${scope.topics}`;
+  return [
+    { query: `${base} AND submittedDate:[${arxivDate(daysBefore(now, 180))} TO ${arxivDate(now)}]`, limit: 700 },
+    { query: `${base} AND submittedDate:[${arxivDate(daysBefore(now, 365))} TO ${arxivDate(daysBefore(now, 181))}]`, limit: 650, sortBy: "relevance" },
+    { query: `${base} AND submittedDate:[${arxivDate(daysBefore(now, 730))} TO ${arxivDate(daysBefore(now, 366))}]`, limit: 650, sortBy: "relevance" },
+  ];
+};
+
+export const fetchArxivCandidates = async (fieldId: FieldId = "embodied-intelligence", now = new Date()) => {
   const candidates: Candidate[] = [];
-  for (const [index, item] of buildArxivQueries(now).entries()) {
+  for (const [index, item] of buildArxivQueries(fieldId, now).entries()) {
     if (index > 0) await sleep(3_100);
     const parameters = new URLSearchParams({
       search_query: item.query,
@@ -306,7 +349,9 @@ export const fetchArxivCandidates = async (now = new Date()) => {
     const response = await fetchWithRetry(`https://export.arxiv.org/api/query?${parameters}`);
     candidates.push(...parseArxivAtom(await response.text()));
   }
-  return mergeDiscoveryCandidates(candidates);
+  return mergeDiscoveryCandidates(candidates).filter((paper) =>
+    paper.fieldIds.includes(fieldId)
+    && paper.topicIds.some((topicId) => discoveryTopicsForField(fieldId).some((topic) => topic.id === topicId)));
 };
 
 const semanticScholarFields = [
@@ -336,12 +381,9 @@ export const fetchSemanticScholarBatch = async (ids: string[], apiKey?: string) 
   return results;
 };
 
-export const selectSeedArxivIds = (library: LibrarySnapshot, maximum = 24) => {
-  const read = library.papers.filter((paper) => paper.status === "read" && libraryArxivId(paper));
-  const topicOrder = [
-    "embodied-foundation-models", "imitation-reinforcement-learning", "multimodal-world-models",
-    "navigation-planning", "robot-manipulation", "simulation-datasets-evaluation", "vision-language-action-models",
-  ];
+export const selectSeedArxivIds = (library: LibrarySnapshot, fieldId: FieldId = "embodied-intelligence", maximum = 24) => {
+  const read = library.papers.filter((paper) => paper.status === "read" && paper.fieldIds.includes(fieldId) && libraryArxivId(paper));
+  const topicOrder = discoveryTopicsForField(fieldId).map((topic) => topic.id);
   const selected: PaperRecord[] = [];
   for (const topicId of topicOrder) {
     selected.push(...read.filter((paper) => paper.topicIds.includes(topicId) && !selected.includes(paper)).slice(0, 3));
@@ -350,7 +392,7 @@ export const selectSeedArxivIds = (library: LibrarySnapshot, maximum = 24) => {
   return selected.slice(0, maximum).map((paper) => `ARXIV:${libraryArxivId(paper)}`);
 };
 
-export const fetchSemanticScholarRecommendations = async (seedPaperIds: string[], apiKey?: string) => {
+export const fetchSemanticScholarRecommendations = async (seedPaperIds: string[], fieldId: FieldId, apiKey?: string) => {
   if (seedPaperIds.length === 0) return [];
   const response = await fetchWithRetry(`https://api.semanticscholar.org/recommendations/v1/papers?limit=500&fields=${semanticScholarFields}`, {
     method: "POST",
@@ -359,8 +401,9 @@ export const fetchSemanticScholarRecommendations = async (seedPaperIds: string[]
   });
   const payload = await response.json() as { recommendedPapers?: SemanticScholarPaper[] };
   return (payload.recommendedPapers ?? [])
-    .map((paper, index) => candidateFromSemanticScholar(paper, index + 1))
-    .filter((paper): paper is Candidate => Boolean(paper));
+    .map((paper, index) => candidateFromSemanticScholar(paper, index + 1, fieldId))
+    .filter((paper): paper is Candidate => Boolean(paper))
+    .filter((paper) => paper.fieldIds.includes(fieldId));
 };
 
 const openReviewVenues = [
@@ -409,11 +452,61 @@ const priorCandidatesForSource = (prior: DiscoverySnapshot | undefined, source: 
 export interface BuildDiscoveryOptions {
   now?: Date;
   apiKey?: string;
-  fetchArxiv?: () => Promise<Candidate[]>;
+  fieldId?: FieldId;
+  fetchArxiv?: (fieldId: FieldId) => Promise<Candidate[]>;
   fetchSemanticBatch?: (ids: string[], apiKey?: string) => Promise<SemanticScholarPaper[]>;
-  fetchRecommendations?: (seedIds: string[], apiKey?: string) => Promise<Candidate[]>;
+  fetchRecommendations?: (seedIds: string[], fieldId: FieldId, apiKey?: string) => Promise<Candidate[]>;
   fetchOpenReview?: () => Promise<Candidate[]>;
 }
+
+const candidateBelongsToField = (paper: Pick<Candidate, "fieldIds" | "topicIds">, fieldId: FieldId) => {
+  const allowedTopics = new Set(discoveryTopicsForField(fieldId).map((topic) => topic.id));
+  return paper.fieldIds.includes(fieldId) && paper.topicIds.some((topicId) => allowedTopics.has(topicId));
+};
+
+const buildSnapshotFromCandidates = (
+  library: LibrarySnapshot,
+  fieldId: FieldId,
+  candidates: Candidate[],
+  sources: DiscoverySnapshot["sources"],
+  seedCount: number,
+  now: Date,
+  prior?: DiscoverySnapshot,
+) => {
+  const cutoff = now.getTime() - RETAINED_DAYS * 86_400_000;
+  const scored = attachLibraryMatches(
+    mergeDiscoveryCandidates(candidates)
+      .filter((paper) => new Date(paper.publishedAt).getTime() >= cutoff)
+      .filter((paper) => candidateBelongsToField(paper, fieldId)),
+    library,
+  )
+    .map((paper) => ({ ...paper, score: scoreDiscoveryPaper(paper, now, fieldId) }))
+    .filter((paper) => meetsDiscoveryRetention(paper, now))
+    .sort((a, b) => b.score.total - a.score.total || b.publishedAt.localeCompare(a.publishedAt))
+    .slice(0, CANDIDATE_CAP);
+
+  if (scored.length === 0) throw new Error(`${fieldId} produced no eligible candidates`);
+  if (prior && prior.meta.candidateCount > 0 && scored.length < prior.meta.candidateCount * 0.5) {
+    throw new Error(`${fieldId} refresh shrank from ${prior.meta.candidateCount} to ${scored.length}`);
+  }
+
+  validateDiscoverySnapshotPapers(scored, fieldId);
+  return {
+    schemaVersion: 2,
+    fieldId,
+    generatedAt: now.toISOString(),
+    retainedDays: RETAINED_DAYS,
+    candidateCap: CANDIDATE_CAP,
+    papers: scored,
+    sources,
+    meta: {
+      candidateCount: scored.length,
+      featuredCount: scored.filter((paper) => !paper.librarySlug && paper.score.tier === "priority").length,
+      libraryMatchCount: scored.filter((paper) => paper.librarySlug).length,
+      seedCount,
+    },
+  } satisfies DiscoverySnapshot;
+};
 
 export const meetsDiscoveryRetention = (
   paper: Pick<DiscoveryPaper, "publishedAt" | "score">,
@@ -433,6 +526,7 @@ export const buildDiscoverySnapshot = async (
   options: BuildDiscoveryOptions = {},
 ): Promise<DiscoverySnapshot> => {
   const now = options.now ?? new Date();
+  const fieldId = options.fieldId ?? "embodied-intelligence";
   const generatedAt = now.toISOString();
   const sources = {} as DiscoverySnapshot["sources"];
   const arxivFetcher = options.fetchArxiv ?? fetchArxivCandidates;
@@ -440,22 +534,23 @@ export const buildDiscoverySnapshot = async (
   const recommendationsFetcher = options.fetchRecommendations ?? fetchSemanticScholarRecommendations;
   const openReviewFetcher = options.fetchOpenReview ?? fetchOpenReviewCandidates;
 
-  const arxiv = await arxivFetcher();
+  const arxiv = await arxivFetcher(fieldId);
   if (arxiv.length === 0) throw new Error("arXiv returned no candidates; keeping the previous discovery snapshot");
   sources.arxiv = status("ok", generatedAt, arxiv.length);
 
-  const seedArxivIds = selectSeedArxivIds(library);
+  const seedArxivIds = selectSeedArxivIds(library, fieldId);
   let semantic: Candidate[] = [];
   try {
     const arxivIds = arxiv.flatMap((paper) => paper.arxivId ? [`ARXIV:${paper.arxivId}`] : []);
-    const [metadata, seedMetadata] = await Promise.all([
-      semanticBatchFetcher(arxivIds, options.apiKey),
-      semanticBatchFetcher(seedArxivIds, options.apiKey),
-    ]);
-    const recommendationSeeds = seedMetadata.map((paper) => paper.paperId).filter((id): id is string => Boolean(id));
+    const metadata = await semanticBatchFetcher([...arxivIds, ...seedArxivIds], options.apiKey);
+    const seedSet = new Set(seedArxivIds.map((id) => normalizeArxivId(id.replace(/^ARXIV:/i, ""))));
+    const recommendationSeeds = metadata
+      .filter((paper) => seedSet.has(normalizeArxivId(paper.externalIds?.ArXiv)))
+      .map((paper) => paper.paperId)
+      .filter((id): id is string => Boolean(id));
     semantic = [
       ...metadata.map((paper) => candidateFromSemanticScholar(paper)).filter((paper): paper is Candidate => Boolean(paper)),
-      ...await recommendationsFetcher(recommendationSeeds, options.apiKey),
+      ...(recommendationSeeds.length >= 5 ? await recommendationsFetcher(recommendationSeeds, fieldId, options.apiKey) : []),
     ];
     sources["semantic-scholar"] = status("ok", generatedAt, semantic.length);
   } catch (error) {
@@ -472,45 +567,113 @@ export const buildDiscoverySnapshot = async (
     sources.openreview = status("degraded", generatedAt, openReview.length, stableSourceError(error, "OpenReview unavailable"));
   }
 
-  const cutoff = now.getTime() - RETAINED_DAYS * 86_400_000;
-  const candidates = attachLibraryMatches(
-    mergeDiscoveryCandidates([...arxiv, ...semantic, ...openReview])
-      .filter((paper) => new Date(paper.publishedAt).getTime() >= cutoff),
-    library,
-  );
-  const scored = candidates
-    .map((paper) => ({ ...paper, score: scoreDiscoveryPaper(paper, now) }))
-    .filter((paper) => meetsDiscoveryRetention(paper, now))
-    .sort((a, b) => b.score.total - a.score.total || b.publishedAt.localeCompare(a.publishedAt))
-    .slice(0, CANDIDATE_CAP);
-
-  if (prior && prior.meta.candidateCount > 0 && scored.length < prior.meta.candidateCount * 0.5) {
-    throw new Error(`Discovery refresh shrank from ${prior.meta.candidateCount} to ${scored.length}; keeping previous snapshot`);
-  }
-
-  validateDiscoverySnapshotPapers(scored);
-  return {
-    schemaVersion: 1,
-    generatedAt,
-    retainedDays: RETAINED_DAYS,
-    candidateCap: CANDIDATE_CAP,
-    papers: scored,
-    sources,
-    meta: {
-      candidateCount: scored.length,
-      featuredCount: scored.filter((paper) => !paper.librarySlug && paper.score.tier === "priority").length,
-      libraryMatchCount: scored.filter((paper) => paper.librarySlug).length,
-      seedCount: seedArxivIds.length,
-    },
-  };
+  return buildSnapshotFromCandidates(library, fieldId, [...arxiv, ...semantic, ...openReview], sources, seedArxivIds.length, now, prior);
 };
 
-export const validateDiscoverySnapshotPapers = (papers: DiscoveryPaper[]) => {
+export type DiscoverySnapshotMap = Partial<Record<FieldId, DiscoverySnapshot>>;
+
+export const buildDiscoverySnapshots = async (
+  library: LibrarySnapshot,
+  priors: DiscoverySnapshotMap = {},
+  options: BuildDiscoveryOptions = {},
+): Promise<DiscoverySnapshotMap> => {
+  const now = options.now ?? new Date();
+  const generatedAt = now.toISOString();
+  const arxivFetcher = options.fetchArxiv ?? ((fieldId: FieldId) => fetchArxivCandidates(fieldId, now));
+  const semanticBatchFetcher = options.fetchSemanticBatch ?? fetchSemanticScholarBatch;
+  const recommendationsFetcher = options.fetchRecommendations ?? fetchSemanticScholarRecommendations;
+  const openReviewFetcher = options.fetchOpenReview ?? fetchOpenReviewCandidates;
+  const arxivByField = new Map<FieldId, Candidate[]>();
+  const arxivErrors = new Map<FieldId, unknown>();
+
+  for (const fieldId of DISCOVERY_FIELD_IDS) {
+    try {
+      const papers = await arxivFetcher(fieldId);
+      if (papers.length === 0) throw new Error("arXiv returned no candidates");
+      arxivByField.set(fieldId, papers);
+    } catch (error) {
+      arxivErrors.set(fieldId, error);
+    }
+  }
+
+  const seedIdsByField = new Map(DISCOVERY_FIELD_IDS.map((fieldId) => [fieldId, selectSeedArxivIds(library, fieldId)]));
+  const arxivCandidates = mergeDiscoveryCandidates([...arxivByField.values()].flat());
+  let semanticCandidates: Candidate[] = [];
+  let semanticState: DiscoverySourceStatus["state"] = "ok";
+  let semanticMessage: string | undefined;
+  try {
+    const arxivIds = arxivCandidates.flatMap((paper) => paper.arxivId ? [`ARXIV:${paper.arxivId}`] : []);
+    const allSeedIds = [...seedIdsByField.values()].flat();
+    const metadata = await semanticBatchFetcher([...arxivIds, ...allSeedIds], options.apiKey);
+    semanticCandidates = metadata.map((paper) => candidateFromSemanticScholar(paper)).filter((paper): paper is Candidate => Boolean(paper));
+    const metadataByArxiv = new Map(metadata.flatMap((paper) => paper.externalIds?.ArXiv && paper.paperId
+      ? [[normalizeArxivId(paper.externalIds.ArXiv), paper.paperId] as const]
+      : []));
+    for (const fieldId of DISCOVERY_FIELD_IDS) {
+      const seedPaperIds = (seedIdsByField.get(fieldId) ?? [])
+        .map((id) => metadataByArxiv.get(normalizeArxivId(id.replace(/^ARXIV:/i, ""))))
+        .filter((id): id is string => Boolean(id));
+      if (seedPaperIds.length >= 5) semanticCandidates.push(...await recommendationsFetcher(seedPaperIds, fieldId, options.apiKey));
+    }
+  } catch (error) {
+    semanticState = "degraded";
+    semanticMessage = stableSourceError(error, "Semantic Scholar unavailable");
+  }
+
+  let openReviewCandidates: Candidate[] = [];
+  let openReviewState: DiscoverySourceStatus["state"] = "ok";
+  let openReviewMessage: string | undefined;
+  try {
+    openReviewCandidates = await openReviewFetcher();
+  } catch (error) {
+    openReviewState = "degraded";
+    openReviewMessage = stableSourceError(error, "OpenReview unavailable");
+  }
+
+  const snapshots: DiscoverySnapshotMap = {};
+  let successfulFields = 0;
+  for (const fieldId of DISCOVERY_FIELD_IDS) {
+    const prior = priors[fieldId];
+    if (arxivErrors.has(fieldId)) {
+      if (!prior) throw new Error(`${fieldId} arXiv failed without a previous snapshot`);
+      snapshots[fieldId] = prior;
+      continue;
+    }
+    const arxiv = arxivByField.get(fieldId) ?? [];
+    const semantic = semanticState === "ok" ? semanticCandidates : priorCandidatesForSource(prior, "semantic-scholar");
+    const openReview = openReviewState === "ok" ? openReviewCandidates : priorCandidatesForSource(prior, "openreview");
+    const sources = {
+      arxiv: status("ok", generatedAt, arxiv.length),
+      "semantic-scholar": status(semanticState, generatedAt, semantic.filter((paper) => candidateBelongsToField(paper, fieldId)).length, semanticMessage),
+      openreview: status(openReviewState, generatedAt, openReview.filter((paper) => candidateBelongsToField(paper, fieldId)).length, openReviewMessage),
+    } satisfies DiscoverySnapshot["sources"];
+    try {
+      snapshots[fieldId] = buildSnapshotFromCandidates(
+        library,
+        fieldId,
+        [...arxiv, ...semantic, ...openReview],
+        sources,
+        seedIdsByField.get(fieldId)?.length ?? 0,
+        now,
+        prior,
+      );
+      successfulFields += 1;
+    } catch (error) {
+      if (!prior) throw error;
+      snapshots[fieldId] = prior;
+    }
+  }
+  if (successfulFields === 0) throw new Error("All discovery fields failed; keeping every previous snapshot");
+  return snapshots;
+};
+
+export const validateDiscoverySnapshotPapers = (papers: DiscoveryPaper[], fieldId?: FieldId) => {
   const ids = new Set<string>();
   const arxivIds = new Set<string>();
   const titles = new Set<string>();
   for (const paper of papers) {
     if (!paper.id || !paper.title || !paper.publishedAt || !paper.sourceUrl) throw new Error(`Incomplete discovery paper: ${paper.id || paper.title}`);
+    if (paper.fieldIds.length === 0 || (fieldId && !candidateBelongsToField(paper, fieldId))) throw new Error(`Discovery paper is outside ${fieldId ?? "all fields"}: ${paper.id}`);
     if (ids.has(paper.id)) throw new Error(`Duplicate discovery id: ${paper.id}`);
     ids.add(paper.id);
     if (paper.arxivId) {

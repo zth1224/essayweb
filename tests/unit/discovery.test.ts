@@ -5,19 +5,26 @@ import type { DiscoveryPaper } from "../../src/data/discovery-types";
 import type { LibrarySnapshot } from "../../src/data/types";
 import {
   balanceDiscoveryAgeBands,
+  classifyDiscoveryFields,
+  classifyDiscoveryTopics,
   createDiscoveryDecisionStore,
+  discoveryTopicsForField,
   discoveryPersonalizationAdjustment,
   filterAndSortDiscoveryPapers,
+  isFormalDiscoveryVenue,
   scoreDiscoveryPaper,
+  selectDiscoveryFeatured,
   tierForScore,
 } from "../../src/lib/discovery";
 import {
   buildDiscoverySnapshot,
+  buildDiscoverySnapshots,
   buildArxivQueries,
   meetsDiscoveryRetention,
   mergeDiscoveryCandidates,
   parseArxivAtom,
   parseOpenReviewNotes,
+  selectSeedArxivIds,
   validateDiscoverySnapshotPapers,
   type Candidate,
 } from "../../scripts/lib/discovery-refresh";
@@ -34,6 +41,7 @@ const candidate = (overrides: Partial<Candidate> = {}): Candidate => ({
   publishedAt: "2026-07-10T09:00:00Z",
   arxivId: "2607.01234",
   categories: ["cs.RO"],
+  fieldIds: ["embodied-intelligence"],
   topicIds: ["vision-language-action-models", "robot-manipulation"],
   sources: ["arxiv"],
   sourceUrl: "https://arxiv.org/abs/2607.01234",
@@ -49,12 +57,20 @@ const paper = (overrides: Partial<DiscoveryPaper> = {}): DiscoveryPaper => {
 
 describe("discovery source parsing and refresh", () => {
   test("builds explicit arXiv time slices for the two-year window", () => {
-    const queries = buildArxivQueries(now);
-    expect(queries).toHaveLength(5);
-    expect(queries[3].query).toContain("submittedDate:[202507160330 TO 202601160330]");
-    expect(queries[4].query).toContain("submittedDate:[202407160330 TO 202507150330]");
-    expect(queries[3].sortBy).toBe("relevance");
-    expect(queries[4].sortBy).toBe("relevance");
+    const queries = buildArxivQueries("embodied-intelligence", now);
+    expect(queries).toHaveLength(3);
+    expect(queries[1].query).toContain("submittedDate:[202507160330 TO 202601160330]");
+    expect(queries[2].query).toContain("submittedDate:[202407160330 TO 202507150330]");
+    expect(queries[1].sortBy).toBe("relevance");
+    expect(queries[2].sortBy).toBe("relevance");
+  });
+
+  test("builds core-topic queries for all five research fields", () => {
+    expect(buildArxivQueries("cs-ai", now)[0].query).toContain("cat:cs.AI");
+    expect(buildArxivQueries("cs-cl", now)[0].query).toContain("cat:cs.CL");
+    expect(buildArxivQueries("cs-cv", now)[0].query).toContain("cat:cs.CV");
+    expect(buildArxivQueries("cs-lg", now)[0].query).toContain("cat:stat.ML");
+    expect(buildArxivQueries("embodied-intelligence", now)[0].query).toContain("cat:cs.RO");
   });
 
   test("parses arXiv Atom metadata and resources", () => {
@@ -115,6 +131,31 @@ describe("discovery source parsing and refresh", () => {
   test("rejects duplicate snapshot identities", () => {
     expect(() => validateDiscoverySnapshotPapers([paper(), paper({ id: "duplicate" })])).toThrow(/Duplicate arXiv id/);
   });
+
+  test("builds isolated snapshots for all fields from fixed candidates", async () => {
+    const fieldTopics = {
+      "embodied-intelligence": "robot-manipulation",
+      "cs-ai": "ai-reasoning-planning",
+      "cs-cl": "cl-language-modeling",
+      "cs-cv": "cv-representation-recognition",
+      "cs-lg": "lg-theory-optimization",
+    } as const;
+    const snapshots = await buildDiscoverySnapshots(library as LibrarySnapshot, {}, {
+      now,
+      fetchArxiv: async (fieldId) => [candidate({
+        id: `arxiv:${fieldId}`,
+        arxivId: fieldId,
+        title: `${fieldId} benchmark paper`,
+        fieldIds: [fieldId],
+        topicIds: [fieldTopics[fieldId]],
+      })],
+      fetchSemanticBatch: async () => [],
+      fetchOpenReview: async () => [],
+    });
+    expect(Object.values(snapshots)).toHaveLength(5);
+    expect(snapshots["cs-cl"]?.papers[0].fieldIds).toContain("cs-cl");
+    expect(snapshots["cs-cl"]?.schemaVersion).toBe(2);
+  });
 });
 
 describe("discovery scoring, search and feedback", () => {
@@ -122,6 +163,42 @@ describe("discovery scoring, search and feedback", () => {
 
   test("uses the documented score boundaries", () => {
     expect([44, 45, 59, 60, 74, 75].map(tierForScore)).toEqual(["archive", "track", "track", "skim", "skim", "priority"]);
+  });
+
+  test("classifies field-scoped core topics and allows multi-field papers", () => {
+    expect(discoveryTopicsForField("cs-ai")).toHaveLength(5);
+    expect(discoveryTopicsForField("cs-cl")).toHaveLength(5);
+    const topics = classifyDiscoveryTopics("A multilingual vision-language model for question answering and video understanding");
+    expect(topics).toEqual(expect.arrayContaining(["cl-language-modeling", "cl-retrieval-question-answering", "cl-multilingual-translation", "cv-video-understanding", "cv-vision-language-multimodal"]));
+    expect(classifyDiscoveryFields(["cs.CL", "cs.CV"], topics)).toEqual(expect.arrayContaining(["cs-cl", "cs-cv"]));
+  });
+
+  test("uses explicit field and topic points without inflating cold-start scores", () => {
+    const coldStart = scoreDiscoveryPaper(candidate({
+      fieldIds: ["cs-ai"],
+      topicIds: ["ai-reasoning-planning"],
+      recommendationRank: undefined,
+      recommendationRanks: undefined,
+    }), now, "cs-ai");
+    const recommended = scoreDiscoveryPaper(candidate({
+      fieldIds: ["cs-ai"],
+      topicIds: ["ai-reasoning-planning", "ai-agents-tool-use"],
+      recommendationRanks: { "cs-ai": 1 },
+    }), now, "cs-ai");
+    expect(coldStart.interest).toBe(24);
+    expect(recommended.interest).toBe(42);
+  });
+
+  test("recognizes formal venues within their research field", () => {
+    expect(isFormalDiscoveryVenue("Findings of ACL 2026", "cs-cl")).toBe(true);
+    expect(isFormalDiscoveryVenue("CVPR 2026", "cs-cv")).toBe(true);
+    expect(isFormalDiscoveryVenue("AAAI 2026", "cs-lg")).toBe(false);
+    expect(isFormalDiscoveryVenue("CoRL 2026", "embodied-intelligence")).toBe(true);
+  });
+
+  test("only exposes recommendation seeds already read in that field", () => {
+    expect(selectSeedArxivIds(library as LibrarySnapshot, "embodied-intelligence").length).toBeGreaterThanOrEqual(5);
+    expect(selectSeedArxivIds(library as LibrarySnapshot, "cs-lg")).toHaveLength(0);
   });
 
   test("does not penalize a new paper for zero citations", () => {
@@ -176,6 +253,14 @@ describe("discovery scoring, search and feedback", () => {
     const olderC = paper({ id: "older-c", arxivId: "older-c", publishedAt: "2025-10-01" });
     const ordered = balanceDiscoveryAgeBands([recentA, recentB, olderA, olderB, olderC], now);
     expect(ordered.map((item) => item.id)).toEqual(["recent-a", "older-a", "older-b", "recent-b", "older-c"]);
+  });
+
+  test("does not pad the daily brief from the wrong age band", () => {
+    const recent = [
+      paper({ id: "recent-a", arxivId: "recent-a", publishedAt: "2026-07-01" }),
+      paper({ id: "recent-b", arxivId: "recent-b", publishedAt: "2026-06-01" }),
+    ];
+    expect(selectDiscoveryFeatured(recent, now).map((item) => item.id)).toEqual(["recent-a"]);
   });
 
   test("filters an explicit inclusive publication date range", () => {

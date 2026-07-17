@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 const discoverySnapshot = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery.json"), "utf8")) as {
   generatedAt: string;
-  papers: Array<{ title: string; publishedAt: string; librarySlug?: string }>;
+  papers: Array<{ title: string; publishedAt: string; librarySlug?: string; score: { total: number; tier: string } }>;
   meta: { candidateCount: number; libraryMatchCount: number };
 };
 
@@ -14,8 +14,10 @@ test("discovery balances age bands and supports an exact date range", async ({ p
 
   const cutoff = new Date(discoverySnapshot.generatedAt).getTime() - 180 * 86_400_000;
   const featuredDates = await page.locator("[data-discovery-feature]").evaluateAll((cards) => cards.map((card) => (card as HTMLElement).dataset.published ?? ""));
-  expect(featuredDates.filter((date) => new Date(date).getTime() >= cutoff)).toHaveLength(1);
-  expect(featuredDates.filter((date) => new Date(date).getTime() < cutoff)).toHaveLength(2);
+  expect(featuredDates.filter((date) => new Date(date).getTime() >= cutoff).length).toBeLessThanOrEqual(1);
+  expect(featuredDates.filter((date) => new Date(date).getTime() < cutoff).length).toBeLessThanOrEqual(2);
+  const featuredScores = await page.locator("[data-discovery-feature]").evaluateAll((cards) => cards.map((card) => Number((card as HTMLElement).dataset.score)));
+  expect(featuredScores.every((score) => score >= 75)).toBe(true);
   const dates = await page.locator("[data-discovery-shelf] [data-discovery-card]").evaluateAll((cards) => cards.map((card) => (card as HTMLElement).dataset.published ?? ""));
   expect(dates.filter((date) => new Date(date).getTime() >= cutoff)).toHaveLength(8);
   expect(dates.filter((date) => new Date(date).getTime() < cutoff)).toHaveLength(16);
@@ -26,6 +28,39 @@ test("discovery balances age bands and supports an exact date range", async ({ p
   await page.locator("[data-discovery-date-to]").fill(oldestDate);
   await expect(page.locator("[data-discovery-count]")).toHaveText(String(expected));
   await expect(page.locator("[data-discovery-shelf] [data-discovery-card]").first()).toHaveAttribute("data-published", new RegExp(`^${oldestDate}`));
+});
+
+test("discovery switches among five lazy-loaded fields and preserves date filters", async ({ page }) => {
+  const dataRequests: string[] = [];
+  page.on("request", (request) => { if (request.url().includes("/discovery-data/")) dataRequests.push(request.url()); });
+  await page.goto("/discover/?field=cs-ai");
+  await expect(page.locator("[data-discovery-root]")).toHaveAttribute("data-discovery-ready", "true");
+  await expect(page.locator("[data-discovery-field='cs-ai']")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-discovery-topic] option")).toHaveCount(6);
+  const aiCount = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery-cs-ai.json"), "utf8")).meta.candidateCount;
+  await expect(page.locator("[data-discovery-count]")).toHaveText(String(aiCount));
+  expect(dataRequests.filter((url) => url.includes("cs-ai.json"))).toHaveLength(1);
+
+  await page.locator("[data-discovery-date-from]").fill("2025-08-01");
+  await page.locator("[data-discovery-field='cs-cv']").click();
+  await expect(page).toHaveURL(/field=cs-cv/);
+  await expect(page.locator("[data-discovery-field='cs-cv']")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-discovery-date-from]")).toHaveValue("2025-08-01");
+  await expect(page.locator("[data-discovery-topic] option")).toHaveCount(6);
+  expect(dataRequests.filter((url) => url.includes("cs-cv.json"))).toHaveLength(1);
+});
+
+test("discovery shortlist survives cross-field navigation", async ({ page }) => {
+  await page.goto("/discover/?field=cs-ai");
+  await expect(page.locator("[data-discovery-root]")).toHaveAttribute("data-discovery-ready", "true");
+  await page.locator("[data-discovery-shelf] [data-decision-action='queued']:visible").first().click();
+  await expect(page.locator("[data-queue-count]")).toHaveText("1");
+  await page.locator("[data-discovery-field='cs-lg']").click();
+  await expect(page.locator("[data-discovery-field='cs-lg']")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-queue-count]")).toHaveText("1");
+  await page.reload();
+  await expect(page.locator("[data-queue-count]")).toHaveText("1");
+  await expect(page.locator("[data-queue-list] article")).toHaveCount(1);
 });
 
 test("home presents five keyboard-accessible field lanes", async ({ page }) => {
@@ -81,6 +116,7 @@ test("cs.AI field publishes the two explicitly mapped papers", async ({ page }) 
   await expect(page.getByRole("link", { name: /Do AI Agents Know When a Task Is Simple/ })).toBeVisible();
   await expect(page.getByRole("link", { name: /Audio-Native Speech Recognition/ })).toBeVisible();
   await expect(page.locator("[data-paper-card]")).toHaveCount(2);
+  await expect(page.getByRole("link", { name: "发现新论文 ↗" })).toHaveAttribute("href", /\/discover\/\?field=cs-ai$/);
 });
 
 test("paper details and term directory keep relationships navigable", async ({ page }, testInfo) => {

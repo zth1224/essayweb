@@ -1,10 +1,30 @@
-import type { DiscoveryPaper, DiscoverySnapshot, DiscoveryTier, DiscoveryTopicId, StoredDiscoveryDecision } from "../data/discovery-types";
+import type {
+  DiscoveryPaper,
+  DiscoverySnapshot,
+  DiscoveryTier,
+  DiscoveryTopicId,
+  StoredDiscoveryDecision,
+} from "../data/discovery-types";
+import { fields } from "../data/fields";
+import type { FieldId } from "../data/types";
 import { safelyGetStorage } from "../lib/reading-status";
-import { DISCOVERY_PAGE_SIZE, balanceDiscoveryAgeBands, createDiscoveryDecisionStore, discoveryPersonalizationAdjustment, discoveryTopicLabel, isFormalDiscoveryVenue, normalizeDiscoveryText } from "../lib/discovery";
+import {
+  DISCOVERY_PAGE_SIZE,
+  balanceDiscoveryAgeBands,
+  createDiscoveryDecisionStore,
+  discoveryPersonalizationAdjustment,
+  discoveryTopicLabel,
+  discoveryTopicsForField,
+  isFormalDiscoveryVenue,
+  normalizeDiscoveryText,
+  selectDiscoveryFeatured,
+} from "../lib/discovery";
 
 let initialized = false;
+const queuePaperKey = "paper-index:discovery-queue-papers:v1";
 const tierLabels: Record<DiscoveryTier, string> = { priority: "优先精读", skim: "快速浏览", track: "持续关注", archive: "搜索收录" };
 const sourceLabels = { arxiv: "arXiv", "semantic-scholar": "Semantic Scholar", openreview: "OpenReview" } as const;
+const fieldById = new Map(fields.map((field) => [field.id, field]));
 
 const relevance = (paper: DiscoveryPaper, query: string) => {
   const normalized = normalizeDiscoveryText(query);
@@ -21,6 +41,13 @@ const setText = (root: ParentNode, selector: string, value: string | number) => 
   if (element) element.textContent = String(value);
 };
 
+const formatDate = (value: string, withTime = false) => new Intl.DateTimeFormat("zh-CN", {
+  year: "numeric",
+  month: withTime ? "long" : "2-digit",
+  day: "2-digit",
+  ...(withTime ? { hour: "2-digit", minute: "2-digit" } : {}),
+}).format(new Date(value));
+
 export const initializeDiscoveryDesk = async () => {
   if (initialized || typeof window === "undefined") return;
   initialized = true;
@@ -30,9 +57,12 @@ export const initializeDiscoveryDesk = async () => {
   const template = root.querySelector<HTMLTemplateElement>("[data-discovery-card-template]");
   const empty = root.querySelector<HTMLElement>("[data-discovery-empty]");
   const loadMore = root.querySelector<HTMLButtonElement>("[data-discovery-more]");
-  if (!shelf || !template || !empty || !loadMore) return;
+  const featuredShelf = root.querySelector<HTMLElement>("[data-featured-shelf]");
+  const featuredEmpty = root.querySelector<HTMLElement>("[data-featured-empty]");
+  if (!shelf || !template || !empty || !loadMore || !featuredShelf || !featuredEmpty) return;
 
-  const store = createDiscoveryDecisionStore(safelyGetStorage(() => window.localStorage));
+  const storage = safelyGetStorage(() => window.localStorage);
+  const store = createDiscoveryDecisionStore(storage);
   const query = root.querySelector<HTMLInputElement>("[data-discovery-query]");
   const topic = root.querySelector<HTMLSelectElement>("[data-discovery-topic]");
   const age = root.querySelector<HTMLSelectElement>("[data-discovery-age]");
@@ -46,12 +76,28 @@ export const initializeDiscoveryDesk = async () => {
   const resultCount = root.querySelector<HTMLElement>("[data-discovery-count]");
   const queueList = root.querySelector<HTMLElement>("[data-queue-list]");
   const queueCount = root.querySelector<HTMLElement>("[data-queue-count]");
+  const warning = root.querySelector<HTMLElement>("[data-source-warning]");
+  const warningList = root.querySelector<HTMLElement>("[data-warning-list]");
+  const fieldButtons = [...root.querySelectorAll<HTMLButtonElement>("[data-discovery-field]")];
   const base = root.dataset.siteBase ?? "/";
-  const generatedAt = new Date(root.dataset.generatedAt ?? Date.now());
+  let currentField = (root.dataset.currentField ?? "embodied-intelligence") as FieldId;
+  let generatedAt = new Date(root.dataset.generatedAt ?? Date.now());
   let papers: DiscoveryPaper[] = [];
   let visibleLimit = DISCOVERY_PAGE_SIZE;
+  const snapshots = new Map<FieldId, DiscoverySnapshot>();
+  const knownPapers = new Map<string, DiscoveryPaper>();
+  let queuePaperCache: Record<string, DiscoveryPaper> = {};
+  try {
+    const saved = storage?.getItem(queuePaperKey);
+    const parsed = saved ? JSON.parse(saved) : {};
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) queuePaperCache = parsed as Record<string, DiscoveryPaper>;
+  } catch { queuePaperCache = {}; }
 
-  const renderCard = (paper: DiscoveryPaper, index: number) => {
+  const persistQueuePapers = () => {
+    try { storage?.setItem(queuePaperKey, JSON.stringify(queuePaperCache)); } catch { /* local decisions still work */ }
+  };
+
+  const renderCard = (paper: DiscoveryPaper, index: number, featured = false) => {
     const element = template.content.firstElementChild?.cloneNode(true) as HTMLElement;
     element.dataset.paperId = paper.id;
     element.dataset.title = paper.title;
@@ -61,15 +107,17 @@ export const initializeDiscoveryDesk = async () => {
     element.dataset.score = String(paper.score.total);
     element.dataset.reasons = paper.score.reasons.join("；");
     element.style.setProperty("--score", String(paper.score.total));
+    element.style.setProperty("--rank", String(index + 1));
+    if (featured) { element.classList.add("discovery-card--featured"); element.dataset.discoveryFeature = ""; }
     if (paper.librarySlug) element.classList.add("discovery-card--collected");
     setText(element, "[data-card-index]", String(index + 1).padStart(3, "0"));
     setText(element, "[data-card-score]", paper.score.total);
     const tierElement = element.querySelector<HTMLElement>("[data-card-tier]");
     if (tierElement) { tierElement.textContent = tierLabels[paper.score.tier]; tierElement.classList.add(`tier--${paper.score.tier}`); }
-    setText(element, "[data-card-date]", new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(paper.publishedAt)));
+    setText(element, "[data-card-date]", formatDate(paper.publishedAt));
     setText(element, "[data-card-venue]", paper.venue || paper.categories[0] || "Preprint");
     setText(element, "[data-card-title]", paper.title);
-    setText(element, "[data-card-authors]", paper.authors.slice(0, 8).join(" · ") || "作者信息待来源补充");
+    setText(element, "[data-card-authors]", paper.authors.slice(0, featured ? 5 : 8).join(" · ") || "作者信息待来源补充");
     setText(element, "[data-card-abstract]", paper.abstract || "当前来源未提供摘要，可通过原文页面继续判断。");
     element.querySelectorAll<HTMLAnchorElement>("[data-source-link]").forEach((link) => { link.href = paper.sourceUrl; });
     const topicsElement = element.querySelector<HTMLElement>("[data-card-topics]");
@@ -104,17 +152,22 @@ export const initializeDiscoveryDesk = async () => {
     });
   };
 
+  const queuedPapers = () => Object.entries(store.all())
+    .filter(([, value]) => value.decision === "queued")
+    .map(([id]) => knownPapers.get(id) ?? queuePaperCache[id])
+    .filter((paper): paper is DiscoveryPaper => Boolean(paper));
+
   const renderQueue = () => {
     if (!queueList || !queueCount) return;
-    const byId = new Map(papers.map((paper) => [paper.id, paper]));
-    const queued = Object.entries(store.all()).filter(([, value]) => value.decision === "queued");
-    queueCount.textContent = String(queued.length);
+    const queuedIds = Object.entries(store.all()).filter(([, value]) => value.decision === "queued");
+    queueCount.textContent = String(queuedIds.length);
     queueList.replaceChildren();
-    if (queued.length === 0) {
+    if (queuedIds.length === 0) {
       const paragraph = document.createElement("p"); paragraph.className = "queue-empty"; paragraph.textContent = "还没有候选。遇到真正想读的论文，再把它留在这里。"; queueList.append(paragraph); return;
     }
-    for (const [id] of queued) {
-      const paper = byId.get(id); if (!paper) continue;
+    for (const [id] of queuedIds) {
+      const paper = knownPapers.get(id) ?? queuePaperCache[id];
+      if (!paper) continue;
       const item = document.createElement("article"); const link = document.createElement("a"); const remove = document.createElement("button");
       link.href = paper.sourceUrl; link.target = "_blank"; link.rel = "noreferrer"; link.textContent = paper.title;
       remove.type = "button"; remove.dataset.queueRemove = id; remove.textContent = "移除"; item.append(link, remove); queueList.append(item);
@@ -138,8 +191,8 @@ export const initializeDiscoveryDesk = async () => {
       const publishedDate = paper.publishedAt.slice(0, 10);
       if (dateFrom?.value && publishedDate < dateFrom.value) return false;
       if (dateTo?.value && publishedDate > dateTo.value) return false;
-      if (venue?.value === "formal" && !isFormalDiscoveryVenue(paper.venue)) return false;
-      if (venue?.value === "preprint" && isFormalDiscoveryVenue(paper.venue)) return false;
+      if (venue?.value === "formal" && !isFormalDiscoveryVenue(paper.venue, currentField)) return false;
+      if (venue?.value === "preprint" && isFormalDiscoveryVenue(paper.venue, currentField)) return false;
       if (source?.value && source.value !== "all" && !paper.sources.includes(source.value as "arxiv" | "semantic-scholar" | "openreview")) return false;
       if (tier?.value && tier.value !== "all" && paper.score.tier !== tier.value) return false;
       if (library?.value === "new" && paper.librarySlug) return false;
@@ -147,10 +200,7 @@ export const initializeDiscoveryDesk = async () => {
       if (!showDismissed?.checked && decisions[paper.id]?.decision === "dismissed") return false;
       return true;
     }).sort((left, right) => queryValue ? right.relevance - left.relevance || right.score - left.score : right.score - left.score || right.paper.publishedAt.localeCompare(left.paper.publishedAt));
-    const orderedPapers = queryValue
-      ? matches.map(({ paper }) => paper)
-      : balanceDiscoveryAgeBands(matches.map(({ paper }) => paper), generatedAt);
-
+    const orderedPapers = queryValue ? matches.map(({ paper }) => paper) : balanceDiscoveryAgeBands(matches.map(({ paper }) => paper), generatedAt);
     shelf.replaceChildren(...orderedPapers.slice(0, visibleLimit).map((paper, index) => renderCard(paper, index)), empty, loadMore);
     empty.hidden = matches.length > 0;
     loadMore.hidden = matches.length <= visibleLimit;
@@ -158,18 +208,107 @@ export const initializeDiscoveryDesk = async () => {
     updateButtons();
   };
 
-  const refresh = () => { renderQueue(); apply(); };
+  const renderFeatured = () => {
+    const decisions = store.all();
+    const priority = papers
+      .filter((paper) => paper.score.tier === "priority" && !paper.librarySlug && decisions[paper.id]?.decision !== "dismissed")
+      .sort((left, right) => right.score.total - left.score.total || right.publishedAt.localeCompare(left.publishedAt));
+    const featured = selectDiscoveryFeatured(priority, generatedAt);
+    featuredShelf.replaceChildren(...featured.map((paper, index) => renderCard(paper, index, true)));
+    featuredShelf.hidden = featured.length === 0;
+    featuredEmpty.hidden = featured.length > 0;
+    updateButtons();
+  };
+
+  const renderSnapshotMeta = (snapshot: DiscoverySnapshot) => {
+    setText(root, "[data-candidate-count]", snapshot.meta.candidateCount);
+    setText(root, "[data-priority-count]", snapshot.meta.featuredCount);
+    setText(root, "[data-retained-days]", snapshot.retainedDays);
+    setText(root, "[data-snapshot-updated]", formatDate(snapshot.generatedAt, true));
+    const field = fieldById.get(snapshot.fieldId);
+    setText(root, "[data-current-field-code]", field?.code ?? snapshot.fieldId);
+    root.style.setProperty("--signal", field?.accent ?? "#d9f99d");
+    root.style.setProperty("--signal-soft", field?.accentSoft ?? "#334327");
+    fieldButtons.forEach((button) => {
+      const active = button.dataset.discoveryField === snapshot.fieldId;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    if (topic) {
+      topic.replaceChildren(new Option("全部主题", "all"), ...discoveryTopicsForField(snapshot.fieldId).map((item) => new Option(item.label, item.id)));
+      topic.value = "all";
+    }
+    const maximum = generatedAt.toISOString().slice(0, 10);
+    const minimum = new Date(generatedAt.getTime() - snapshot.retainedDays * 86_400_000).toISOString().slice(0, 10);
+    for (const input of [dateFrom, dateTo]) { if (input) { input.min = minimum; input.max = maximum; } }
+    const degraded = Object.entries(snapshot.sources).filter(([, item]) => item.state !== "ok");
+    const stale = Date.now() - generatedAt.getTime() > 72 * 60 * 60 * 1000;
+    if (warning && warningList) {
+      warning.hidden = degraded.length === 0 && !stale;
+      setText(warning, "[data-warning-title]", stale ? "发现数据已经超过 72 小时未更新" : "部分来源更新延迟");
+      warningList.replaceChildren(...degraded.map(([name, item]) => { const li = document.createElement("li"); li.textContent = `${name}: ${item.message || item.state}`; return li; }));
+    }
+  };
+
+  const refresh = () => { renderQueue(); renderFeatured(); apply(); };
+
+  const loadField = async (fieldId: FieldId, updateHistory = true) => {
+    if (!fieldById.has(fieldId)) fieldId = "embodied-intelligence";
+    root.dataset.loading = "true";
+    try {
+      let snapshot = snapshots.get(fieldId);
+      if (!snapshot) {
+        const templateUrl = root.dataset.discoveryUrlTemplate ?? root.dataset.discoveryUrl ?? "";
+        const response = await fetch(templateUrl.replace("__FIELD__", fieldId));
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        snapshot = await response.json() as DiscoverySnapshot;
+        snapshots.set(fieldId, snapshot);
+      }
+      currentField = fieldId;
+      root.dataset.currentField = fieldId;
+      root.dataset.generatedAt = snapshot.generatedAt;
+      generatedAt = new Date(snapshot.generatedAt);
+      papers = snapshot.papers.map((paper) => ({ ...paper, fieldIds: paper.fieldIds?.length ? paper.fieldIds : [fieldId] }));
+      for (const paper of papers) knownPapers.set(paper.id, paper);
+      visibleLimit = DISCOVERY_PAGE_SIZE;
+      renderSnapshotMeta(snapshot);
+      refresh();
+      if (updateHistory) {
+        const url = new URL(window.location.href);
+        if (fieldId === "embodied-intelligence") url.searchParams.delete("field"); else url.searchParams.set("field", fieldId);
+        window.history.pushState({ fieldId }, "", url);
+      }
+      root.dataset.discoveryReady = "true";
+    } catch (error) {
+      console.error(`Discovery field ${fieldId} could not be loaded.`, error);
+      if (warning) { warning.hidden = false; setText(warning, "[data-warning-title]", "当前方向加载失败"); }
+    } finally {
+      root.dataset.loading = "false";
+    }
+  };
 
   root.addEventListener("click", async (event) => {
     const target = event.target as HTMLElement;
+    const fieldButton = target.closest<HTMLButtonElement>("[data-discovery-field]");
+    if (fieldButton?.dataset.discoveryField && fieldButton.dataset.discoveryField !== currentField) {
+      await loadField(fieldButton.dataset.discoveryField as FieldId);
+      return;
+    }
     const paperElement = target.closest<HTMLElement>("[data-paper-id]");
     const decisionButton = target.closest<HTMLButtonElement>("[data-decision-action]");
     if (decisionButton && paperElement?.dataset.paperId) {
       const id = paperElement.dataset.paperId; const decision = decisionButton.dataset.decisionAction as "queued" | "dismissed";
-      if (store.get(id) === decision) store.remove(id); else store.set(id, decision); refresh(); return;
+      if (store.get(id) === decision) {
+        store.remove(id);
+        if (decision === "queued") { delete queuePaperCache[id]; persistQueuePapers(); }
+      } else {
+        store.set(id, decision);
+        if (decision === "queued") { const paper = knownPapers.get(id); if (paper) { queuePaperCache[id] = paper; persistQueuePapers(); } }
+      }
+      refresh(); return;
     }
     const remove = target.closest<HTMLButtonElement>("[data-queue-remove]");
-    if (remove?.dataset.queueRemove) { store.remove(remove.dataset.queueRemove); refresh(); return; }
+    if (remove?.dataset.queueRemove) { store.remove(remove.dataset.queueRemove); delete queuePaperCache[remove.dataset.queueRemove]; persistQueuePapers(); refresh(); return; }
     if (target.closest("[data-source-link]") && paperElement?.dataset.paperId && !store.get(paperElement.dataset.paperId)) { store.set(paperElement.dataset.paperId, "seen"); updateButtons(); }
     if (target.closest("[data-filter-clear]")) {
       if (query) query.value = ""; [topic, age, venue, source, tier, library].forEach((select) => { if (select) select.value = "all"; }); [dateFrom, dateTo].forEach((input) => { if (input) input.value = ""; }); if (showDismissed) showDismissed.checked = false; visibleLimit = DISCOVERY_PAGE_SIZE; apply();
@@ -178,24 +317,24 @@ export const initializeDiscoveryDesk = async () => {
     const exportButton = target.closest<HTMLButtonElement>("[data-queue-export]");
     const copyButton = target.closest<HTMLButtonElement>("[data-queue-copy]");
     if (exportButton || copyButton) {
-      const byId = new Map(papers.map((paper) => [paper.id, paper]));
-      const queued = Object.entries(store.all()).filter(([, value]) => value.decision === "queued").map(([id]) => byId.get(id)).filter((paper): paper is DiscoveryPaper => Boolean(paper));
-      const markdown = ["# 待精读论文", "", ...queued.flatMap((paper) => [`- [${paper.title}](${paper.sourceUrl})`, `  - 推荐理由：${paper.score.reasons.join("；") || "来自论文发现工作台"}`])].join("\n");
+      const queued = queuedPapers();
+      const markdown = ["# 待精读论文", "", ...queued.flatMap((paper) => [
+        `- [${paper.title}](${paper.sourceUrl})`,
+        `  - 方向：${(paper.fieldIds ?? []).map((id) => fieldById.get(id)?.titleZh ?? id).join("、") || "待确认"}`,
+        `  - 主题：${paper.topicIds.map(discoveryTopicLabel).join("、") || "待确认"}`,
+        `  - 推荐理由：${paper.score.reasons.join("；") || "来自论文发现工作台"}`,
+      ])].join("\n");
       if (copyButton) { await navigator.clipboard.writeText(queued.map((paper) => paper.sourceUrl).join("\n")); copyButton.textContent = "已复制"; }
       else { const url = URL.createObjectURL(new Blob([markdown], { type: "text/markdown;charset=utf-8" })); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "paper-reading-queue.md"; anchor.click(); URL.revokeObjectURL(url); }
     }
   });
 
   [query, topic, age, dateFrom, dateTo, venue, source, tier, library, showDismissed].forEach((control) => control?.addEventListener("input", () => { visibleLimit = DISCOVERY_PAGE_SIZE; apply(); }));
+  window.addEventListener("popstate", () => {
+    const fieldId = new URL(window.location.href).searchParams.get("field") as FieldId | null;
+    void loadField(fieldId && fieldById.has(fieldId) ? fieldId : "embodied-intelligence", false);
+  });
 
-  try {
-    const response = await fetch(root.dataset.discoveryUrl ?? "");
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-    papers = (await response.json() as DiscoverySnapshot).papers;
-    refresh();
-    root.dataset.discoveryReady = "true";
-  } catch (error) {
-    console.error("Discovery index could not be loaded; keeping the server-rendered first page.", error);
-    updateButtons(); renderQueue();
-  }
+  const requestedField = new URL(window.location.href).searchParams.get("field") as FieldId | null;
+  await loadField(requestedField && fieldById.has(requestedField) ? requestedField : "embodied-intelligence", false);
 };

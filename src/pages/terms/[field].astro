@@ -16,7 +16,7 @@ const letters=[...new Set(terms.map((term)=>term.sortKey || "#"))];
 const letterId=(letter:string)=>letter==="#"?"hash":letter.toLowerCase();
 ---
 <BaseLayout title={`${field.titleZh}术语 · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
-  <LibraryBanner/><SiteHeader backHref={`/fields/${field.slug}/`} backLabel={`${field.titleZh}论文`} meta={`${field.code} / Vocabulary`}/>
+  <LibraryBanner/><SiteHeader backHref={`/fields/${field.slug}/`} backLabel={`${field.titleZh}论文`} meta={`${field.code} / Vocabulary`} discoveryField={field.id}/>
   <main class="terms-page page-shell" data-term-directory>
     <header class="terms-page__head"><div><p class="meta-label">Field dictionary · {terms.length} entries</p><h1 class="terms-title">{field.titleZh}术语</h1></div><p>{field.titleEn}<br/>Vocabulary Index</p></header>
     {terms.length===0?<section class="empty-state"><h2>当前分区尚无术语</h2><p>术语会随源论文库的明确归类一起进入这里。</p></section>:<>

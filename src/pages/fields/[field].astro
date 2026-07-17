@@ -24,7 +24,7 @@ const updated = new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"long",day
 ---
 <BaseLayout title={`${field.titleZh} · 论文索引`} accent={field.accent} accentSoft={field.accentSoft}>
   <LibraryBanner />
-  <SiteHeader meta={`${field.code} / Field Index`} />
+  <SiteHeader meta={`${field.code} / Field Index`} discoveryField={field.id} />
   <main class="page-shell">
     <header class="field-hero"><div><p class="field-hero__eyebrow">{field.code} · {papers.length} papers · {terms.length} terms</p><h1>{field.titleZh}</h1></div><p class="field-hero__english">{field.titleEn}</p></header>
     {papers.length === 0 ? (
