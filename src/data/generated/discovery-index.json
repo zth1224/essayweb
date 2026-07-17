@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-17T01:29:09.124Z",
+  "generatedAt": "2026-07-17T05:59:42.813Z",
   "fields": [
     {
       "fieldId": "embodied-intelligence",
-      "generatedAt": "2026-07-17T01:29:09.124Z",
+      "generatedAt": "2026-07-17T05:59:42.813Z",
       "retainedDays": 730,
-      "candidateCount": 2000,
+      "candidateCount": 1255,
       "featuredCount": 105,
-      "libraryMatchCount": 23,
+      "libraryMatchCount": 28,
       "seedCount": 24,
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-07-17T01:29:09.124Z",
-          "recordCount": 1841
+          "fetchedAt": "2026-07-17T05:59:42.813Z",
+          "recordCount": 1842
         },
         "semantic-scholar": {
           "state": "ok",
-          "fetchedAt": "2026-07-17T01:29:09.124Z",
-          "recordCount": 7071
+          "fetchedAt": "2026-07-17T05:59:42.813Z",
+          "recordCount": 2246
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-07-17T01:29:09.124Z",
+          "fetchedAt": "2026-07-17T05:59:42.813Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
