@@ -10,17 +10,21 @@ import { normalizeDiscoveryTitle } from "../../src/lib/discovery";
 describe("generated discovery snapshot", () => {
   test("is internally consistent and privacy-safe", () => {
     const snapshots = [snapshot, aiSnapshot, clSnapshot, cvSnapshot, lgSnapshot];
+    expect(index.schemaVersion).toBe(2);
     expect(index.fields).toHaveLength(5);
     expect(new Set(snapshots.map((item) => item.fieldId)).size).toBe(5);
     for (const item of snapshots) {
-      expect(item.schemaVersion).toBe(2);
+      expect(item.schemaVersion).toBe(3);
+      expect(item.meta.scoreVersion).toBe("reading-priority-v3");
       expect(item.papers).toHaveLength(item.meta.candidateCount);
       expect(item.papers.length).toBeLessThanOrEqual(item.candidateCap);
       expect(item.sources.arxiv.state).toBe("ok");
       expect(new Set(item.papers.map((paper) => paper.id)).size).toBe(item.papers.length);
       expect(new Set(item.papers.map((paper) => normalizeDiscoveryTitle(paper.title))).size).toBe(item.papers.length);
       expect(item.papers.every((paper) => paper.fieldIds.includes(item.fieldId))).toBe(true);
-      expect(item.papers.every((paper) => paper.score.total >= 0 && paper.score.total <= 100)).toBe(true);
+      expect(item.papers.every((paper) => paper.score.baseTotal >= 0 && paper.score.baseTotal <= 100)).toBe(true);
+      expect(item.papers.every((paper) => ["core", "formal", "unverified", "preprint"].includes(paper.publicationStatus))).toBe(true);
+      expect(item.papers.every((paper) => Object.keys("recommendationRanks" in paper ? paper.recommendationRanks ?? {} : {}).every((fieldId) => fieldId === item.fieldId))).toBe(true);
       expect(JSON.stringify(item)).not.toMatch(/[A-Z]:\\\\(?:Users|essay|Documents)/i);
     }
   });

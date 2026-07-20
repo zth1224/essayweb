@@ -4,6 +4,7 @@ export type DiscoverySource = "arxiv" | "semantic-scholar" | "openreview";
 export type DiscoverySourceState = "ok" | "degraded" | "error";
 export type DiscoveryTier = "priority" | "skim" | "track" | "archive";
 export type DiscoveryDecision = "queued" | "dismissed" | "seen";
+export type DiscoveryPublicationStatus = "core" | "formal" | "unverified" | "preprint";
 
 export type DiscoveryTopicId =
   | "embodied-foundation-models"
@@ -42,13 +43,25 @@ export interface DiscoveryTopicDefinition {
 }
 
 export interface DiscoveryScore {
-  interest: number;
+  baseTotal: number;
+  relevance: number;
   evidence: number;
   freshness: number;
   completeness: number;
-  total: number;
   tier: DiscoveryTier;
   reasons: string[];
+  evidenceBreakdown: {
+    publication: number;
+    citations: number;
+    reproducibility: number;
+    empirical: number;
+    corroboration: number;
+  };
+}
+
+export interface DiscoveryPersonalization {
+  semanticRank?: number;
+  semanticBoost?: number;
 }
 
 export interface DiscoveryArtifact {
@@ -74,10 +87,12 @@ export interface DiscoveryPaper {
   sourceUrl: string;
   pdfUrl?: string;
   venue?: string;
+  canonicalVenueId?: string;
+  publicationStatus: DiscoveryPublicationStatus;
   citationCount?: number;
   influentialCitationCount?: number;
-  recommendationRank?: number;
   recommendationRanks?: Partial<Record<FieldId, number>>;
+  personalization: DiscoveryPersonalization;
   artifacts: DiscoveryArtifact[];
   librarySlug?: string;
   score: DiscoveryScore;
@@ -91,7 +106,7 @@ export interface DiscoverySourceStatus {
 }
 
 export interface DiscoverySnapshot {
-  schemaVersion: 2;
+  schemaVersion: 3;
   fieldId: FieldId;
   generatedAt: string;
   retainedDays: number;
@@ -103,6 +118,7 @@ export interface DiscoverySnapshot {
     featuredCount: number;
     libraryMatchCount: number;
     seedCount: number;
+    scoreVersion: "reading-priority-v3";
   };
 }
 
@@ -114,11 +130,12 @@ export interface DiscoveryIndexEntry {
   featuredCount: number;
   libraryMatchCount: number;
   seedCount: number;
+  scoreVersion: "reading-priority-v3";
   sources: Record<DiscoverySource, DiscoverySourceStatus>;
 }
 
 export interface DiscoveryIndex {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
   fields: DiscoveryIndexEntry[];
 }

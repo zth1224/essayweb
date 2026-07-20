@@ -10,20 +10,66 @@ import type { FieldId, LibrarySnapshot, PaperRecord } from "../../src/data/types
 import {
   classifyDiscoveryFields,
   classifyDiscoveryTopics,
+  classifyDiscoveryPublication,
+  DISCOVERY_SCORE_VERSION,
   discoveryTopicsForField,
   normalizeDiscoveryTitle,
   scoreDiscoveryPaper,
+  semanticRecommendationBoost,
 } from "../../src/lib/discovery";
 
 export const RETAINED_DAYS = 730;
 export const STRICT_AGE_DAYS = 180;
-export const STRICT_MIN_INTEREST = 9;
-export const STRICT_MIN_EVIDENCE = 8;
-export const STRICT_MIN_COMPLETENESS = 11;
+export const STRICT_MIN_RELEVANCE = 24;
+export const STRICT_MIN_EVIDENCE = 14;
+export const STRICT_MIN_COMPLETENESS = 12;
 export const CANDIDATE_CAP = 2_000;
 export const DISCOVERY_FIELD_IDS: FieldId[] = ["embodied-intelligence", "cs-ai", "cs-cl", "cs-cv", "cs-lg"];
 
-export type Candidate = Omit<DiscoveryPaper, "score">;
+export type Candidate = Omit<DiscoveryPaper, "score" | "canonicalVenueId" | "publicationStatus" | "personalization"> &
+  Partial<Pick<DiscoveryPaper, "canonicalVenueId" | "publicationStatus" | "personalization">>;
+
+export type LegacyDiscoveryPaper = Candidate & { score?: unknown; recommendationRank?: number };
+export type LegacyDiscoverySnapshot = Omit<DiscoverySnapshot, "schemaVersion" | "fieldId" | "papers" | "meta"> & {
+  schemaVersion: number;
+  fieldId?: FieldId;
+  papers: LegacyDiscoveryPaper[];
+  meta: Omit<DiscoverySnapshot["meta"], "scoreVersion"> & { scoreVersion?: string };
+};
+
+export const upgradeDiscoverySnapshot = (snapshot: LegacyDiscoverySnapshot, fieldId: FieldId): DiscoverySnapshot => {
+  const papers = snapshot.papers.map((paper) => {
+    const { score: _score, recommendationRank: _legacyRank, ...candidate } = paper;
+    const fieldIds = candidate.fieldIds?.length ? candidate.fieldIds : classifyDiscoveryFields(candidate.categories, candidate.topicIds);
+    const semanticRank = candidate.recommendationRanks?.[fieldId];
+    const scopedCandidate = {
+      ...candidate,
+      fieldIds,
+      recommendationRanks: semanticRank ? { [fieldId]: semanticRank } : undefined,
+    };
+    const publication = classifyDiscoveryPublication(scopedCandidate, fieldId);
+    const upgraded = {
+      ...scopedCandidate,
+      canonicalVenueId: publication.canonicalVenueId,
+      publicationStatus: publication.publicationStatus,
+      personalization: semanticRank
+        ? { semanticRank, semanticBoost: semanticRecommendationBoost(semanticRank) }
+        : {},
+    };
+    return { ...upgraded, score: scoreDiscoveryPaper(upgraded, new Date(snapshot.generatedAt), fieldId) };
+  });
+  return {
+    ...snapshot,
+    schemaVersion: 3,
+    fieldId,
+    papers,
+    meta: {
+      ...snapshot.meta,
+      featuredCount: papers.filter((paper) => !paper.librarySlug && paper.score.tier === "priority").length,
+      scoreVersion: DISCOVERY_SCORE_VERSION,
+    },
+  };
+};
 
 interface SemanticScholarPaper {
   paperId?: string;
@@ -150,7 +196,6 @@ const candidateFromSemanticScholar = (paper: SemanticScholarPaper, recommendatio
     venue: semanticVenue && !/^arxiv(?:\.org)?$/i.test(semanticVenue) ? semanticVenue : undefined,
     citationCount: paper.citationCount,
     influentialCitationCount: paper.influentialCitationCount,
-    recommendationRank,
     recommendationRanks: recommendationRank && recommendationFieldId ? { [recommendationFieldId]: recommendationRank } : undefined,
     artifacts: extractArtifacts(paper.abstract ?? "", pdfUrl),
   };
@@ -222,9 +267,6 @@ const mergeCandidate = (left: Candidate, right: Candidate): Candidate => ({
   venue: right.venue ?? left.venue,
   citationCount: right.citationCount ?? left.citationCount,
   influentialCitationCount: right.influentialCitationCount ?? left.influentialCitationCount,
-  recommendationRank: left.recommendationRank && right.recommendationRank
-    ? Math.min(left.recommendationRank, right.recommendationRank)
-    : (right.recommendationRank ?? left.recommendationRank),
   recommendationRanks: Object.fromEntries(DISCOVERY_FIELD_IDS.flatMap((fieldId) => {
     const ranks = [left.recommendationRanks?.[fieldId], right.recommendationRanks?.[fieldId]].filter((rank): rank is number => rank !== undefined);
     return ranks.length > 0 ? [[fieldId, Math.min(...ranks)]] : [];
@@ -480,9 +522,22 @@ const buildSnapshotFromCandidates = (
       .filter((paper) => candidateBelongsToField(paper, fieldId)),
     library,
   )
-    .map((paper) => ({ ...paper, score: scoreDiscoveryPaper(paper, now, fieldId) }))
+    .map((paper): DiscoveryPaper => {
+      const publication = classifyDiscoveryPublication(paper, fieldId);
+      const semanticRank = paper.recommendationRanks?.[fieldId];
+      const enriched = {
+        ...paper,
+        canonicalVenueId: publication.canonicalVenueId,
+        publicationStatus: publication.publicationStatus,
+        recommendationRanks: semanticRank ? { [fieldId]: semanticRank } : undefined,
+        personalization: semanticRank
+          ? { semanticRank, semanticBoost: semanticRecommendationBoost(semanticRank) }
+          : {},
+      };
+      return { ...enriched, score: scoreDiscoveryPaper(enriched, now, fieldId) };
+    })
     .filter((paper) => meetsDiscoveryRetention(paper, now))
-    .sort((a, b) => b.score.total - a.score.total || b.publishedAt.localeCompare(a.publishedAt))
+    .sort((a, b) => b.score.baseTotal - a.score.baseTotal || b.publishedAt.localeCompare(a.publishedAt))
     .slice(0, CANDIDATE_CAP);
 
   if (scored.length === 0) throw new Error(`${fieldId} produced no eligible candidates`);
@@ -492,7 +547,7 @@ const buildSnapshotFromCandidates = (
 
   validateDiscoverySnapshotPapers(scored, fieldId);
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     fieldId,
     generatedAt: now.toISOString(),
     retainedDays: RETAINED_DAYS,
@@ -504,6 +559,7 @@ const buildSnapshotFromCandidates = (
       featuredCount: scored.filter((paper) => !paper.librarySlug && paper.score.tier === "priority").length,
       libraryMatchCount: scored.filter((paper) => paper.librarySlug).length,
       seedCount,
+      scoreVersion: DISCOVERY_SCORE_VERSION,
     },
   } satisfies DiscoverySnapshot;
 };
@@ -515,7 +571,7 @@ export const meetsDiscoveryRetention = (
   const ageDays = Math.max(0, (now.getTime() - new Date(paper.publishedAt).getTime()) / 86_400_000);
   if (ageDays > RETAINED_DAYS) return false;
   if (ageDays <= STRICT_AGE_DAYS) return true;
-  return paper.score.interest >= STRICT_MIN_INTEREST
+  return paper.score.relevance >= STRICT_MIN_RELEVANCE
     && paper.score.evidence >= STRICT_MIN_EVIDENCE
     && paper.score.completeness >= STRICT_MIN_COMPLETENESS;
 };
@@ -636,6 +692,8 @@ export const buildDiscoverySnapshots = async (
     const prior = priors[fieldId];
     if (arxivErrors.has(fieldId)) {
       if (!prior) throw new Error(`${fieldId} arXiv failed without a previous snapshot`);
+      const error = arxivErrors.get(fieldId);
+      console.warn(`${fieldId} arXiv failed; keeping migrated prior snapshot: ${error instanceof Error ? error.message : String(error)}`);
       snapshots[fieldId] = prior;
       continue;
     }
@@ -660,6 +718,7 @@ export const buildDiscoverySnapshots = async (
       successfulFields += 1;
     } catch (error) {
       if (!prior) throw error;
+      console.warn(`${fieldId} refresh kept prior snapshot: ${error instanceof Error ? error.message : String(error)}`);
       snapshots[fieldId] = prior;
     }
   }
@@ -684,7 +743,10 @@ export const validateDiscoverySnapshotPapers = (papers: DiscoveryPaper[], fieldI
     const normalizedTitle = normalizeDiscoveryTitle(paper.title);
     if (titles.has(normalizedTitle)) throw new Error(`Duplicate discovery title: ${paper.title}`);
     titles.add(normalizedTitle);
-    if (paper.score.total < 0 || paper.score.total > 100) throw new Error(`Invalid discovery score: ${paper.id}`);
+    if (paper.score.baseTotal < 0 || paper.score.baseTotal > 100) throw new Error(`Invalid discovery score: ${paper.id}`);
+    if (fieldId && Object.keys(paper.recommendationRanks ?? {}).some((rankField) => rankField !== fieldId)) {
+      throw new Error(`Cross-field recommendation rank leaked into ${fieldId}: ${paper.id}`);
+    }
   }
 };
 

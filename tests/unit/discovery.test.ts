@@ -5,6 +5,7 @@ import type { DiscoveryPaper } from "../../src/data/discovery-types";
 import type { LibrarySnapshot } from "../../src/data/types";
 import {
   balanceDiscoveryAgeBands,
+  classifyDiscoveryPublication,
   classifyDiscoveryFields,
   classifyDiscoveryTopics,
   createDiscoveryDecisionStore,
@@ -13,8 +14,9 @@ import {
   filterAndSortDiscoveryPapers,
   isFormalDiscoveryVenue,
   scoreDiscoveryPaper,
+  semanticRecommendationBoost,
   selectDiscoveryFeatured,
-  tierForScore,
+  tierForDiscoveryScore,
 } from "../../src/lib/discovery";
 import {
   buildDiscoverySnapshot,
@@ -25,8 +27,10 @@ import {
   parseArxivAtom,
   parseOpenReviewNotes,
   selectSeedArxivIds,
+  upgradeDiscoverySnapshot,
   validateDiscoverySnapshotPapers,
   type Candidate,
+  type LegacyDiscoverySnapshot,
 } from "../../scripts/lib/discovery-refresh";
 import library from "../../src/data/generated/library.json";
 
@@ -52,7 +56,9 @@ const candidate = (overrides: Partial<Candidate> = {}): Candidate => ({
 
 const paper = (overrides: Partial<DiscoveryPaper> = {}): DiscoveryPaper => {
   const base = candidate();
-  return { ...base, score: scoreDiscoveryPaper(base, now), ...overrides };
+  const publication = classifyDiscoveryPublication(base, "embodied-intelligence");
+  const enriched = { ...base, canonicalVenueId: publication.canonicalVenueId, publicationStatus: publication.publicationStatus, personalization: {} };
+  return { ...enriched, score: scoreDiscoveryPaper(enriched, now), ...overrides };
 };
 
 describe("discovery source parsing and refresh", () => {
@@ -128,6 +134,41 @@ describe("discovery source parsing and refresh", () => {
     await expect(buildDiscoverySnapshot(library as LibrarySnapshot, undefined, { fetchArxiv: async () => [] })).rejects.toThrow(/arXiv returned no candidates/);
   });
 
+  test("preserves prior Semantic Scholar evidence when enrichment is degraded", async () => {
+    const aiCandidate = candidate({
+      title: "Reasoning and Planning Benchmark for AI Agents",
+      fieldIds: ["cs-ai"],
+      topicIds: ["ai-reasoning-planning", "ai-agents-tool-use"],
+      categories: ["cs.AI"],
+    });
+    const prior = await buildDiscoverySnapshot(library as LibrarySnapshot, undefined, {
+      now,
+      fieldId: "cs-ai",
+      fetchArxiv: async () => [aiCandidate],
+      fetchSemanticBatch: async () => [{
+        paperId: "semantic-demo",
+        externalIds: { ArXiv: "2607.01234", DOI: "10.1234/demo" },
+        title: aiCandidate.title,
+        abstract: aiCandidate.abstract,
+        venue: "AAAI Conference on Artificial Intelligence",
+        publicationDate: aiCandidate.publishedAt,
+        citationCount: 12,
+        authors: [{ name: "Ada Robot" }],
+      }],
+      fetchOpenReview: async () => [],
+    });
+    const degraded = await buildDiscoverySnapshot(library as LibrarySnapshot, prior, {
+      now,
+      fieldId: "cs-ai",
+      fetchArxiv: async () => [aiCandidate],
+      fetchSemanticBatch: async () => { throw new Error("rate limited"); },
+      fetchOpenReview: async () => [],
+    });
+    expect(degraded.sources["semantic-scholar"].state).toBe("degraded");
+    expect(degraded.papers[0].venue).toBe("AAAI Conference on Artificial Intelligence");
+    expect(degraded.papers[0].publicationStatus).toBe("core");
+  });
+
   test("rejects duplicate snapshot identities", () => {
     expect(() => validateDiscoverySnapshotPapers([paper(), paper({ id: "duplicate" })])).toThrow(/Duplicate arXiv id/);
   });
@@ -154,15 +195,49 @@ describe("discovery source parsing and refresh", () => {
     });
     expect(Object.values(snapshots)).toHaveLength(5);
     expect(snapshots["cs-cl"]?.papers[0].fieldIds).toContain("cs-cl");
-    expect(snapshots["cs-cl"]?.schemaVersion).toBe(2);
+    expect(snapshots["cs-cl"]?.schemaVersion).toBe(3);
+  });
+
+  test("migrates v2 scores deterministically and drops legacy recommendation fallback", () => {
+    const legacy = {
+      schemaVersion: 2,
+      fieldId: "cs-ai",
+      generatedAt: now.toISOString(),
+      retainedDays: 730,
+      candidateCap: 2_000,
+      papers: [{
+        ...candidate({ fieldIds: ["cs-ai"], topicIds: ["ai-reasoning-planning"], recommendationRanks: { "embodied-intelligence": 1 } }),
+        recommendationRank: 1,
+        score: { total: 99, interest: 45 },
+      }],
+      sources: {
+        arxiv: { state: "ok", fetchedAt: now.toISOString(), recordCount: 1 },
+        "semantic-scholar": { state: "ok", fetchedAt: now.toISOString(), recordCount: 0 },
+        openreview: { state: "degraded", fetchedAt: now.toISOString(), recordCount: 0 },
+      },
+      meta: { candidateCount: 1, featuredCount: 1, libraryMatchCount: 0, seedCount: 0 },
+    } as LegacyDiscoverySnapshot;
+    const upgraded = upgradeDiscoverySnapshot(legacy, "cs-ai");
+    expect(upgraded.schemaVersion).toBe(3);
+    expect(upgraded.meta.scoreVersion).toBe("reading-priority-v3");
+    expect(upgraded.papers[0].score.relevance).toBe(24);
+    expect(upgraded.papers[0].personalization).toEqual({});
+    expect(upgraded.papers[0].recommendationRanks).toBeUndefined();
   });
 });
 
 describe("discovery scoring, search and feedback", () => {
   beforeEach(() => localStorage.clear());
 
-  test("uses the documented score boundaries", () => {
-    expect([44, 45, 59, 60, 74, 75].map(tierForScore)).toEqual(["archive", "track", "track", "skim", "skim", "priority"]);
+  test("uses strict total and evidence gates for reading tiers", () => {
+    const tier = (baseTotal: number, evidence: number, ageDays = 10) => tierForDiscoveryScore({ baseTotal, evidence, relevance: 24, completeness: 12 }, ageDays);
+    expect(tier(44, 30)).toBe("archive");
+    expect(tier(45, 0)).toBe("track");
+    expect(tier(60, 10)).toBe("skim");
+    expect(tier(70, 15)).toBe("skim");
+    expect(tier(70, 16)).toBe("priority");
+    expect(tier(70, 19, 181)).toBe("skim");
+    expect(tier(70, 20, 181)).toBe("priority");
   });
 
   test("classifies field-scoped core topics and allows multi-field papers", () => {
@@ -173,11 +248,10 @@ describe("discovery scoring, search and feedback", () => {
     expect(classifyDiscoveryFields(["cs.CL", "cs.CV"], topics)).toEqual(expect.arrayContaining(["cs-cl", "cs-cv"]));
   });
 
-  test("uses explicit field and topic points without inflating cold-start scores", () => {
+  test("keeps recommendation outside the cold-start base score", () => {
     const coldStart = scoreDiscoveryPaper(candidate({
       fieldIds: ["cs-ai"],
       topicIds: ["ai-reasoning-planning"],
-      recommendationRank: undefined,
       recommendationRanks: undefined,
     }), now, "cs-ai");
     const recommended = scoreDiscoveryPaper(candidate({
@@ -185,15 +259,44 @@ describe("discovery scoring, search and feedback", () => {
       topicIds: ["ai-reasoning-planning", "ai-agents-tool-use"],
       recommendationRanks: { "cs-ai": 1 },
     }), now, "cs-ai");
-    expect(coldStart.interest).toBe(24);
-    expect(recommended.interest).toBe(42);
+    expect(coldStart.relevance).toBe(24);
+    expect(recommended.relevance).toBe(27);
+    expect(semanticRecommendationBoost(1)).toBe(15);
+  });
+
+  test("does not leak an embodied recommendation into another field", async () => {
+    const snapshot = await buildDiscoverySnapshot(library as LibrarySnapshot, undefined, {
+      now,
+      fieldId: "cs-ai",
+      fetchArxiv: async () => [candidate({
+        fieldIds: ["cs-ai"],
+        topicIds: ["ai-reasoning-planning"],
+        recommendationRanks: { "embodied-intelligence": 1 },
+      })],
+      fetchSemanticBatch: async () => [],
+      fetchOpenReview: async () => [],
+    });
+    expect(snapshot.papers[0].personalization).toEqual({});
+    expect(snapshot.papers[0].recommendationRanks).toBeUndefined();
   });
 
   test("recognizes formal venues within their research field", () => {
     expect(isFormalDiscoveryVenue("Findings of ACL 2026", "cs-cl")).toBe(true);
     expect(isFormalDiscoveryVenue("CVPR 2026", "cs-cv")).toBe(true);
+    expect(isFormalDiscoveryVenue("Computer Vision and Pattern Recognition", "cs-cv")).toBe(true);
+    expect(isFormalDiscoveryVenue("Neural Information Processing Systems", "cs-lg")).toBe(true);
+    expect(isFormalDiscoveryVenue("IEEE International Conference on Robotics and Automation", "embodied-intelligence")).toBe(true);
+    expect(isFormalDiscoveryVenue("Annual Meeting of the Association for Computational Linguistics", "cs-cl")).toBe(true);
     expect(isFormalDiscoveryVenue("AAAI 2026", "cs-lg")).toBe(false);
     expect(isFormalDiscoveryVenue("CoRL 2026", "embodied-intelligence")).toBe(true);
+    expect(isFormalDiscoveryVenue("CVPR 2026 Workshop", "cs-cv")).toBe(false);
+  });
+
+  test("distinguishes core, cross-field, DOI and unverified publication evidence", () => {
+    expect(classifyDiscoveryPublication(candidate({ venue: "AAAI Conference on Artificial Intelligence" }), "cs-ai").publicationStatus).toBe("core");
+    expect(classifyDiscoveryPublication(candidate({ venue: "AAAI Conference on Artificial Intelligence" }), "cs-lg").publicationStatus).toBe("formal");
+    expect(classifyDiscoveryPublication(candidate({ venue: "Journal of Useful Results", doi: "10.1/demo" }), "cs-ai").publicationStatus).toBe("formal");
+    expect(classifyDiscoveryPublication(candidate({ venue: "Unknown Symposium" }), "cs-ai").publicationStatus).toBe("unverified");
   });
 
   test("only exposes recommendation seeds already read in that field", () => {
@@ -205,7 +308,7 @@ describe("discovery scoring, search and feedback", () => {
     const zero = scoreDiscoveryPaper(candidate({ citationCount: 0 }), now);
     const missing = scoreDiscoveryPaper(candidate({ citationCount: undefined }), now);
     expect(zero.evidence).toBe(missing.evidence);
-    expect(zero.reasons).toContain("新论文不以零引用降权");
+    expect(zero.reasons).toContain("新论文不因零引用降权");
   });
 
   test("scores reproducibility and explicit experiments as evidence maturity", () => {
@@ -217,15 +320,16 @@ describe("discovery scoring, search and feedback", () => {
         { kind: "pdf", url: "https://arxiv.org/pdf/2607.01234" },
       ],
     }), now);
-    expect(result.evidence).toBe(13);
-    expect(result.reasons).toContain("包含明确的量化与对比实验");
+    expect(result.evidenceBreakdown.reproducibility).toBe(6);
+    expect(result.evidenceBreakdown.empirical).toBeGreaterThanOrEqual(8);
+    expect(result.reasons).toContain("包含明确的量化、对比或消融实验");
   });
 
   test("applies a stricter maturity gate after 180 days", () => {
-    const recent = paper({ publishedAt: "2026-03-01T00:00:00Z", score: { ...paper().score, total: 40, evidence: 2 } });
-    const olderWeak = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, interest: 20, evidence: 7, completeness: 13 } });
-    const olderMature = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, interest: 9, evidence: 8, completeness: 11 } });
-    const expired = paper({ publishedAt: "2024-07-15T00:00:00Z", score: { ...paper().score, total: 90, evidence: 20 } });
+    const recent = paper({ publishedAt: "2026-03-01T00:00:00Z", score: { ...paper().score, baseTotal: 40, evidence: 2 } });
+    const olderWeak = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, relevance: 24, evidence: 13, completeness: 12 } });
+    const olderMature = paper({ publishedAt: "2025-07-16T00:00:00Z", score: { ...paper().score, relevance: 24, evidence: 14, completeness: 12 } });
+    const expired = paper({ publishedAt: "2024-07-15T00:00:00Z", score: { ...paper().score, baseTotal: 90, evidence: 20 } });
     expect(meetsDiscoveryRetention(recent, now)).toBe(true);
     expect(meetsDiscoveryRetention(olderWeak, now)).toBe(false);
     expect(meetsDiscoveryRetention(olderMature, now)).toBe(true);
@@ -234,15 +338,23 @@ describe("discovery scoring, search and feedback", () => {
 
   test("handles missing metadata and keeps scores bounded", () => {
     const result = scoreDiscoveryPaper(candidate({ authors: [], abstract: "", artifacts: [], pdfUrl: undefined, topicIds: [] }), now);
-    expect(result.total).toBeGreaterThanOrEqual(0);
-    expect(result.total).toBeLessThanOrEqual(100);
+    expect(result.baseTotal).toBeGreaterThanOrEqual(0);
+    expect(result.baseTotal).toBeLessThanOrEqual(100);
     expect(result.completeness).toBeLessThan(6);
   });
 
   test("sorts keyword matches by text relevance before priority", () => {
-    const titleMatch = paper({ title: "Dexterous Grasp Planning", score: { ...paper().score, total: 46 } });
-    const abstractMatch = paper({ id: "arxiv:2607.09999", arxivId: "2607.09999", title: "General Robot Policy", abstract: "dexterous grasp planning ".repeat(20), score: { ...paper().score, total: 90 } });
+    const titleMatch = paper({ title: "Dexterous Grasp Planning", score: { ...paper().score, baseTotal: 46 } });
+    const abstractMatch = paper({ id: "arxiv:2607.09999", arxivId: "2607.09999", title: "General Robot Policy", abstract: "dexterous grasp planning ".repeat(20), score: { ...paper().score, baseTotal: 90 } });
     expect(filterAndSortDiscoveryPapers([abstractMatch, titleMatch], { query: "dexterous grasp" }, now)[0].title).toBe(titleMatch.title);
+  });
+
+  test("keeps tiers ahead of personalization and reranks only within a tier", () => {
+    const priority = paper({ id: "priority", arxivId: "priority", score: { ...paper().score, baseTotal: 70, tier: "priority" }, personalization: {} });
+    const boostedSkim = paper({ id: "boosted-skim", arxivId: "boosted-skim", score: { ...paper().score, baseTotal: 69, tier: "skim" }, personalization: { semanticRank: 1, semanticBoost: 15 } });
+    const boostedPriority = paper({ id: "boosted-priority", arxivId: "boosted-priority", score: { ...paper().score, baseTotal: 68, tier: "priority" }, personalization: { semanticRank: 1, semanticBoost: 15 } });
+    expect(filterAndSortDiscoveryPapers([boostedSkim, priority], {}, now)[0].id).toBe("priority");
+    expect(filterAndSortDiscoveryPapers([priority, boostedPriority], {}, now)[0].id).toBe("boosted-priority");
   });
 
   test("interleaves one recent paper with two older papers", () => {

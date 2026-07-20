@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 const discoverySnapshot = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery.json"), "utf8")) as {
   generatedAt: string;
-  papers: Array<{ title: string; publishedAt: string; librarySlug?: string; score: { total: number; tier: string } }>;
+  papers: Array<{ title: string; publishedAt: string; librarySlug?: string; publicationStatus: string; score: { baseTotal: number; evidence: number; tier: string } }>;
   meta: { candidateCount: number; libraryMatchCount: number };
 };
 
@@ -17,7 +17,12 @@ test("discovery balances age bands and supports an exact date range", async ({ p
   expect(featuredDates.filter((date) => new Date(date).getTime() >= cutoff).length).toBeLessThanOrEqual(1);
   expect(featuredDates.filter((date) => new Date(date).getTime() < cutoff).length).toBeLessThanOrEqual(2);
   const featuredScores = await page.locator("[data-discovery-feature]").evaluateAll((cards) => cards.map((card) => Number((card as HTMLElement).dataset.score)));
-  expect(featuredScores.every((score) => score >= 75)).toBe(true);
+  expect(featuredScores.every((score) => score >= 70)).toBe(true);
+  const featuredEvidence = await page.locator("[data-discovery-feature]").evaluateAll((cards) => cards.map((card) => ({
+    evidence: Number((card as HTMLElement).dataset.evidence),
+    published: (card as HTMLElement).dataset.published ?? "",
+  })));
+  expect(featuredEvidence.every((item) => item.evidence >= (new Date(item.published).getTime() >= cutoff ? 16 : 20))).toBe(true);
   const dates = await page.locator("[data-discovery-shelf] [data-discovery-card]").evaluateAll((cards) => cards.map((card) => (card as HTMLElement).dataset.published ?? ""));
   expect(dates.filter((date) => new Date(date).getTime() >= cutoff)).toHaveLength(8);
   expect(dates.filter((date) => new Date(date).getTime() < cutoff)).toHaveLength(16);
@@ -37,6 +42,7 @@ test("discovery switches among five lazy-loaded fields and preserves date filter
   await expect(page.locator("[data-discovery-root]")).toHaveAttribute("data-discovery-ready", "true");
   await expect(page.locator("[data-discovery-field='cs-ai']")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("[data-discovery-topic] option")).toHaveCount(6);
+  await expect(page.locator("[data-semantic-personalization]").first()).toHaveText("个性推荐尚未启用");
   const aiCount = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery-cs-ai.json"), "utf8")).meta.candidateCount;
   await expect(page.locator("[data-discovery-count]")).toHaveText(String(aiCount));
   expect(dataRequests.filter((url) => url.includes("cs-ai.json"))).toHaveLength(1);
@@ -48,6 +54,13 @@ test("discovery switches among five lazy-loaded fields and preserves date filter
   await expect(page.locator("[data-discovery-date-from]")).toHaveValue("2025-08-01");
   await expect(page.locator("[data-discovery-topic] option")).toHaveCount(6);
   expect(dataRequests.filter((url) => url.includes("cs-cv.json"))).toHaveLength(1);
+
+  await page.locator("[data-discovery-date-from]").fill("");
+  const cvSnapshot = JSON.parse(readFileSync(resolve(process.cwd(), "src/data/generated/discovery-cs-cv.json"), "utf8")) as { papers: Array<{ publicationStatus: string }> };
+  const coreCount = cvSnapshot.papers.filter((paper) => paper.publicationStatus === "core").length;
+  await page.locator("[data-discovery-venue]").selectOption("core");
+  await expect(page.locator("[data-discovery-count]")).toHaveText(String(coreCount));
+  if (coreCount > 0) await expect(page.locator("[data-discovery-shelf] [data-card-publication]").first()).toHaveText("本方向核心");
 });
 
 test("discovery shortlist survives cross-field navigation", async ({ page }) => {
@@ -151,6 +164,9 @@ test("discovery search, evidence and local shortlist work together", async ({ pa
   await expect(card.locator("[data-card-title]")).toHaveText(target.title);
   await card.locator("details").click();
   await expect(card.locator("details")).toHaveAttribute("open", "");
+  await expect(card.getByText("方向与主题", { exact: true })).toBeVisible();
+  await expect(card.getByText("研究证据", { exact: true })).toBeVisible();
+  await expect(card.locator("[data-evidence-publication]")).not.toHaveText("");
   await card.locator("[data-decision-action='queued']").click();
   await expect(page.locator("[data-queue-count]")).toHaveText("1");
 
@@ -160,6 +176,9 @@ test("discovery search, evidence and local shortlist work together", async ({ pa
   await page.locator("[data-queue-export]").click();
   const exported = await download;
   expect(exported.suggestedFilename()).toBe("paper-reading-queue.md");
+  const exportedPath = await exported.path();
+  expect(exportedPath && readFileSync(exportedPath, "utf8")).toContain("基础阅读分：");
+  expect(exportedPath && readFileSync(exportedPath, "utf8")).toContain("研究证据：");
 });
 
 test("discovery collected filter links back to the reading library", async ({ page }) => {

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedAt": "2026-07-17T05:59:42.813Z",
   "fields": [
     {
@@ -7,9 +7,10 @@
       "generatedAt": "2026-07-17T05:59:42.813Z",
       "retainedDays": 730,
       "candidateCount": 1255,
-      "featuredCount": 105,
+      "featuredCount": 84,
       "libraryMatchCount": 28,
       "seedCount": 24,
+      "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
@@ -34,9 +35,10 @@
       "generatedAt": "2026-07-17T01:29:09.124Z",
       "retainedDays": 730,
       "candidateCount": 1590,
-      "featuredCount": 4,
+      "featuredCount": 43,
       "libraryMatchCount": 5,
       "seedCount": 0,
+      "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
@@ -61,9 +63,10 @@
       "generatedAt": "2026-07-17T01:29:09.124Z",
       "retainedDays": 730,
       "candidateCount": 1501,
-      "featuredCount": 1,
+      "featuredCount": 64,
       "libraryMatchCount": 9,
       "seedCount": 0,
+      "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
@@ -88,9 +91,10 @@
       "generatedAt": "2026-07-17T01:29:09.124Z",
       "retainedDays": 730,
       "candidateCount": 1088,
-      "featuredCount": 8,
+      "featuredCount": 21,
       "libraryMatchCount": 11,
       "seedCount": 0,
+      "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
@@ -115,9 +119,10 @@
       "generatedAt": "2026-07-17T01:29:09.124Z",
       "retainedDays": 730,
       "candidateCount": 1465,
-      "featuredCount": 8,
+      "featuredCount": 27,
       "libraryMatchCount": 9,
       "seedCount": 0,
+      "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",

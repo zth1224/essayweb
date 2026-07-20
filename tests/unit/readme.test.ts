@@ -42,8 +42,9 @@ describe("agent-ready README", () => {
     expect(readme).toContain("SEMANTIC_SCHOLAR_API_KEY");
     expect(readme).toContain("北京时间工作日 11:30");
     expect(readme).toContain("最近 730 天");
-    expect(readme).toContain("证据成熟度至少 8");
-    expect(readme).toContain("信息完整度至少 11");
+    expect(readme).toContain("研究证据至少 14");
+    expect(readme).toContain("schema v3 将基础阅读分与个性化匹配分开");
+    expect(readme).toContain("信息完整度至少 12");
     expect(readme).toContain("`1:2` 交错展示");
     expect(readme).toContain("起始日期、截止日期");
   });

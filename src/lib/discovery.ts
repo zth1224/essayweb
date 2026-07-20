@@ -1,6 +1,7 @@
 import type {
   DiscoveryDecision,
   DiscoveryPaper,
+  DiscoveryPublicationStatus,
   DiscoveryScore,
   DiscoveryTier,
   DiscoveryTopicId,
@@ -13,6 +14,7 @@ export const DISCOVERY_DECISION_KEY = "paper-index:discovery-decisions:v1";
 export const DISCOVERY_PAGE_SIZE = 24;
 export const DISCOVERY_RECENT_DAYS = 180;
 export const DISCOVERY_MAX_AGE_DAYS = 730;
+export const DISCOVERY_SCORE_VERSION = "reading-priority-v3" as const;
 
 export const discoveryTopics: DiscoveryTopicDefinition[] = [
   {
@@ -119,24 +121,93 @@ export const classifyDiscoveryFields = (categories: string[], topicIds: Discover
 const clamp = (value: number, minimum: number, maximum: number) =>
   Math.min(maximum, Math.max(minimum, value));
 
-export const tierForScore = (score: number): DiscoveryTier => {
-  if (score >= 75) return "priority";
-  if (score >= 60) return "skim";
-  if (score >= 45) return "track";
-  return "archive";
+interface DiscoveryVenueDefinition {
+  id: string;
+  fieldIds: FieldId[];
+  pattern: RegExp;
+}
+
+const venueDefinitions: DiscoveryVenueDefinition[] = [
+  { id: "corl", fieldIds: ["embodied-intelligence"], pattern: /\bcorl\b|conference on robot learning/i },
+  { id: "rss", fieldIds: ["embodied-intelligence"], pattern: /\brss\b|robotics science and systems/i },
+  { id: "icra", fieldIds: ["embodied-intelligence"], pattern: /\bicra\b|international conference on robotics and automation/i },
+  { id: "iros", fieldIds: ["embodied-intelligence"], pattern: /\biros\b|international conference on intelligent robots? and systems/i },
+  { id: "aaai", fieldIds: ["cs-ai"], pattern: /\baaai\b|conference on artificial intelligence/i },
+  { id: "ijcai", fieldIds: ["cs-ai"], pattern: /\bijcai\b|international joint conference on artificial intelligence/i },
+  { id: "aamas", fieldIds: ["cs-ai"], pattern: /\baamas\b|autonomous agents and multiagent systems/i },
+  { id: "uai", fieldIds: ["cs-ai", "cs-lg"], pattern: /\buai\b|uncertainty in artificial intelligence/i },
+  { id: "findings-acl", fieldIds: ["cs-cl"], pattern: /findings of (?:the )?(?:association for computational linguistics|acl)/i },
+  { id: "emnlp", fieldIds: ["cs-cl"], pattern: /\bemnlp\b|empirical methods in natural language processing/i },
+  { id: "naacl", fieldIds: ["cs-cl"], pattern: /\bnaacl\b|north american chapter of (?:the )?association for computational linguistics/i },
+  { id: "eacl", fieldIds: ["cs-cl"], pattern: /\beacl\b|european chapter of (?:the )?association for computational linguistics/i },
+  { id: "coling", fieldIds: ["cs-cl"], pattern: /\bcoling\b|international conference on computational linguistics/i },
+  { id: "acl", fieldIds: ["cs-cl"], pattern: /\bacl\b|annual meeting of (?:the )?association for computational linguistics/i },
+  { id: "cvpr", fieldIds: ["cs-cv"], pattern: /\bcvpr\b|computer vision and pattern recognition/i },
+  { id: "iccv", fieldIds: ["cs-cv"], pattern: /\biccv\b|international conference on computer vision/i },
+  { id: "eccv", fieldIds: ["cs-cv"], pattern: /\beccv\b|european conference on computer vision/i },
+  { id: "wacv", fieldIds: ["cs-cv"], pattern: /\bwacv\b|winter conference on applications of computer vision/i },
+  { id: "neurips", fieldIds: ["cs-lg"], pattern: /\b(?:neurips|nips)\b|neural information processing systems/i },
+  { id: "icml", fieldIds: ["cs-lg"], pattern: /\bicml\b|international conference on machine learning(?! and applications)/i },
+  { id: "iclr", fieldIds: ["cs-lg"], pattern: /\biclr\b|international conference on learning representations/i },
+  { id: "aistats", fieldIds: ["cs-lg"], pattern: /\baistats\b|artificial intelligence and statistics/i },
+  { id: "colt", fieldIds: ["cs-lg"], pattern: /\bcolt\b|conference on learning theory/i },
+];
+
+const normalizeVenue = (venue: string) => venue
+  .normalize("NFKC")
+  .toLowerCase()
+  .replace(/\b(?:19|20)\d{2}\b/g, " ")
+  .replace(/(?:ieee|acm)(?:\s*\/\s*(?:cvf|rsj|rjs))?/g, " ")
+  .replace(/[^a-z0-9]+/g, " ")
+  .replace(/\s+/g, " ")
+  .trim();
+
+export const canonicalizeDiscoveryVenue = (venue = "") => {
+  const normalized = normalizeVenue(venue);
+  const definition = venueDefinitions.find((item) => item.pattern.test(normalized));
+  return definition ? { id: definition.id, fieldIds: definition.fieldIds } : undefined;
 };
 
-const formalVenuePatterns: Record<FieldId, RegExp> = {
-  "embodied-intelligence": /\b(corl|rss|robotics science and systems|icra|iros)\b/i,
-  "cs-ai": /\b(aaai|ijcai|aamas|uai|uncertainty in artificial intelligence)\b/i,
-  "cs-cl": /\b(acl|findings of (?:the )?acl|emnlp|naacl|eacl|coling)\b/i,
-  "cs-cv": /\b(cvpr|iccv|eccv|wacv)\b/i,
-  "cs-lg": /\b(neurips|nips|icml|iclr|aistats|colt|uai|uncertainty in artificial intelligence)\b/i,
+const isWorkshopVenue = (venue = "") => /\b(?:workshop|workshops|cvprw)\b/i.test(venue);
+
+export const classifyDiscoveryPublication = (
+  paper: Pick<DiscoveryPaper, "venue" | "doi" | "openReviewId">,
+  fieldId: FieldId,
+): { canonicalVenueId?: string; publicationStatus: DiscoveryPublicationStatus; publicationPoints: number } => {
+  const canonical = canonicalizeDiscoveryVenue(paper.venue);
+  const workshop = isWorkshopVenue(paper.venue);
+  let publicationStatus: DiscoveryPublicationStatus = "preprint";
+  let publicationPoints = 0;
+  if (canonical?.fieldIds.includes(fieldId) && !workshop) {
+    publicationStatus = "core";
+    publicationPoints = 10;
+  } else if (canonical || paper.doi) {
+    publicationStatus = "formal";
+    publicationPoints = 6;
+  } else if (paper.venue) {
+    publicationStatus = "unverified";
+    publicationPoints = 2;
+  }
+  if (paper.openReviewId) publicationPoints = Math.min(12, publicationPoints + 2);
+  return { canonicalVenueId: canonical?.id, publicationStatus, publicationPoints };
 };
 
-export const isFormalDiscoveryVenue = (venue = "", fieldId?: FieldId) => fieldId
-  ? formalVenuePatterns[fieldId].test(venue)
-  : Object.values(formalVenuePatterns).some((pattern) => pattern.test(venue));
+export const isFormalDiscoveryVenue = (venue = "", fieldId?: FieldId) => {
+  const canonical = canonicalizeDiscoveryVenue(venue);
+  if (!canonical || isWorkshopVenue(venue)) return false;
+  return fieldId ? canonical.fieldIds.includes(fieldId) : true;
+};
+
+export const discoveryPublicationLabel = (status: DiscoveryPublicationStatus) => ({
+  core: "本方向核心",
+  formal: "正式发表",
+  unverified: "未验证 venue",
+  preprint: "预印本",
+})[status];
+
+export const semanticRecommendationBoost = (rank?: number) => rank
+  ? clamp(16 - Math.ceil(rank / 50), 6, 15)
+  : 0;
 
 const evidenceArtifactKind = (artifact: DiscoveryPaper["artifacts"][number]) => {
   if (/huggingface\.co\/datasets\/|kaggle\.com\/datasets\/|zenodo\.org\/records?\//i.test(artifact.url)) return "dataset";
@@ -144,8 +215,22 @@ const evidenceArtifactKind = (artifact: DiscoveryPaper["artifacts"][number]) => 
   return artifact.kind;
 };
 
+type DiscoveryScoringPaper = Omit<DiscoveryPaper, "score" | "canonicalVenueId" | "publicationStatus" | "personalization"> &
+  Partial<Pick<DiscoveryPaper, "canonicalVenueId" | "publicationStatus" | "personalization">>;
+
+export const tierForDiscoveryScore = (
+  score: Pick<DiscoveryScore, "baseTotal" | "relevance" | "evidence" | "completeness">,
+  ageDays: number,
+): DiscoveryTier => {
+  const priorityEvidence = ageDays <= DISCOVERY_RECENT_DAYS ? 16 : 20;
+  if (score.baseTotal >= 70 && score.relevance >= 24 && score.completeness >= 12 && score.evidence >= priorityEvidence) return "priority";
+  if (score.baseTotal >= 60 && score.evidence >= 10) return "skim";
+  if (score.baseTotal >= 45) return "track";
+  return "archive";
+};
+
 export const scoreDiscoveryPaper = (
-  paper: Omit<DiscoveryPaper, "score">,
+  paper: DiscoveryScoringPaper,
   now = new Date(),
   fieldId = paper.fieldIds[0] ?? "embodied-intelligence",
 ): DiscoveryScore => {
@@ -153,40 +238,33 @@ export const scoreDiscoveryPaper = (
   const ageDays = Math.max(0, (now.getTime() - published.getTime()) / 86_400_000);
   const reasons: string[] = [];
 
-  const recommendationRank = paper.recommendationRanks?.[fieldId] ?? paper.recommendationRank;
-  const recommendationPoints = recommendationRank
-    ? clamp(16 - Math.ceil(recommendationRank / 50), 6, 15)
-    : 0;
   const fieldTopicCount = paper.topicIds.filter((topicId) => discoveryTopics.find((topic) => topic.id === topicId)?.fieldId === fieldId).length;
   const fieldPoints = paper.fieldIds.includes(fieldId) ? 10 : 0;
-  const topicPoints = fieldTopicCount
-    ? clamp(14 + (fieldTopicCount - 1) * 3, 14, 20)
-    : 0;
-  const interest = clamp(fieldPoints + topicPoints + recommendationPoints, 0, 45);
+  const topicPoints = fieldTopicCount ? clamp(14 + (fieldTopicCount - 1) * 3, 14, 20) : 0;
+  const relevance = clamp(fieldPoints + topicPoints, 0, 30);
   if (fieldPoints) reasons.push("匹配当前研究方向");
-  if (recommendationPoints >= 12) reasons.push("与已读论文高度相似");
   if (fieldTopicCount >= 2) reasons.push(`覆盖当前方向 ${fieldTopicCount} 个关注主题`);
 
-  let evidence = 0;
-  if (isFormalDiscoveryVenue(paper.venue, fieldId)) {
-    evidence += 6;
-    reasons.push(`已关联正式 venue：${paper.venue}`);
-  }
+  const publication = classifyDiscoveryPublication(paper, fieldId);
+  const publicationPoints = publication.publicationPoints;
+  if (publication.publicationStatus === "core") reasons.push(`本方向核心 venue：${paper.venue}`);
+  else if (publication.publicationStatus === "formal") reasons.push(`已有正式发表线索：${paper.venue ?? paper.doi}`);
+
+  let citationPoints = 0;
   if (ageDays >= 30 && paper.citationCount !== undefined) {
     const citationsPerMonth = paper.citationCount / Math.max(1, ageDays / 30);
-    const citationPoints = clamp(Math.round(Math.log2(citationsPerMonth + 1)), 0, 4);
-    evidence += citationPoints;
-    if (citationPoints >= 3) reasons.push("同龄论文中引用增长较快");
+    citationPoints = clamp(Math.round(Math.log2(citationsPerMonth + 1) * 1.5), 0, 8);
+    if (citationPoints >= 4) reasons.push("同龄论文中引用增长较快");
   } else if (ageDays < 30) {
-    reasons.push("新论文不以零引用降权");
+    reasons.push("新论文不因零引用降权");
   }
+
   const artifactKinds = new Set(paper.artifacts.map(evidenceArtifactKind));
-  const artifactPoints = Math.min(8,
+  const reproducibilityPoints = Math.min(10,
     (artifactKinds.has("code") ? 4 : 0)
     + (artifactKinds.has("project") ? 2 : 0)
     + (artifactKinds.has("dataset") ? 2 : 0)
     + (artifactKinds.has("model") ? 2 : 0));
-  evidence += artifactPoints;
   if (artifactKinds.has("code")) reasons.push("提供可复现代码");
   if (artifactKinds.has("dataset") || artifactKinds.has("model")) reasons.push("提供数据集或模型资源");
   else if (artifactKinds.has("project")) reasons.push("提供项目页面");
@@ -195,34 +273,48 @@ export const scoreDiscoveryPaper = (
   if (/\b(benchmark|experiment(?:s|al)?|evaluation|evaluate[ds]?|test suite)\b/i.test(paper.abstract)) empiricalPoints += 2;
   if (/(?:\b\d+(?:\.\d+)?\s*(?:%|x\b|fps\b|hz\b))|(?:success rate|accuracy|precision|recall|reward)\s*(?:of|by|to|=)?\s*\d/i.test(paper.abstract)) empiricalPoints += 2;
   if (/\b(outperform(?:s|ed)?|baseline(?:s)?|state-of-the-art|sota|compared? (?:to|with)|versus|improv(?:e|es|ed|ement))\b/i.test(paper.abstract)) empiricalPoints += 2;
-  if (/\bablation(?:s| study| studies)?\b/i.test(paper.abstract)) empiricalPoints += 1;
-  evidence = clamp(evidence + empiricalPoints, 0, 25);
-  if (empiricalPoints >= 4) reasons.push("包含明确的量化与对比实验");
+  if (/\bablation(?:s| study| studies)?\b/i.test(paper.abstract)) empiricalPoints += 2;
+  if (/\b(?:multiple|several|across) (?:datasets|benchmarks|tasks|robots|domains|environments)\b/i.test(paper.abstract)) empiricalPoints += 2;
+  if (/\b(?:confidence interval|standard deviation|statistical(?:ly)? significant|variance)\b/i.test(paper.abstract)) empiricalPoints += 1;
+  empiricalPoints = clamp(empiricalPoints, 0, 11);
+  if (empiricalPoints >= 6) reasons.push("包含明确的量化、对比或消融实验");
   else if (empiricalPoints >= 2) reasons.push("摘要给出实验或 benchmark 线索");
 
+  const corroborationPoints = Math.min(4,
+    (paper.sources.length >= 2 ? 2 : 0)
+    + (paper.doi || paper.openReviewId ? 2 : 0));
+  const evidence = clamp(publicationPoints + citationPoints + reproducibilityPoints + empiricalPoints + corroborationPoints, 0, 45);
+
   const freshness = ageDays <= 30
-    ? 15
-    : clamp(Math.round(15 * (DISCOVERY_MAX_AGE_DAYS - ageDays) / (DISCOVERY_MAX_AGE_DAYS - 30)), 0, 15);
+    ? 5
+    : clamp(Math.round(5 * (DISCOVERY_MAX_AGE_DAYS - ageDays) / (DISCOVERY_MAX_AGE_DAYS - 30)), 0, 5);
   if (ageDays <= 14) reasons.push("两周内发布");
 
   let completeness = 0;
-  if (paper.abstract.length >= 240) completeness += 6;
-  if (paper.authors.length > 0) completeness += 3;
+  if (paper.abstract.length >= 240) completeness += 5;
+  if (paper.authors.length > 0) completeness += 2;
   if (paper.sourceUrl && paper.publishedAt) completeness += 2;
+  if (paper.pdfUrl) completeness += 2;
   if (paper.venue) completeness += 2;
-  if (/\b(benchmark|experiment|evaluation|success rate|outperform|improv(?:e|es|ed|ement)|\d+(?:\.\d+)?%)\b/i.test(paper.abstract)) completeness += 2;
-  completeness = clamp(completeness, 0, 15);
-  if (completeness >= 11) reasons.push("摘要与实验线索较完整");
+  if (paper.citationCount !== undefined) completeness += 2;
+  if (paper.arxivId || paper.doi || paper.semanticScholarId || paper.openReviewId) completeness += 2;
+  if (/\b(benchmark|experiment|evaluation|success rate|outperform|improv(?:e|es|ed|ement)|\d+(?:\.\d+)?%)\b/i.test(paper.abstract)) completeness += 3;
+  completeness = clamp(completeness, 0, 20);
+  if (completeness >= 14) reasons.push("摘要、来源与实验线索较完整");
 
-  const total = clamp(interest + evidence + freshness + completeness, 0, 100);
+  const baseTotal = clamp(relevance + evidence + freshness + completeness, 0, 100);
+  const scoreBase = { baseTotal, relevance, evidence, freshness, completeness };
   return {
-    interest,
-    evidence,
-    freshness,
-    completeness,
-    total,
-    tier: tierForScore(total),
-    reasons: [...new Set(reasons)].slice(0, 7),
+    ...scoreBase,
+    tier: tierForDiscoveryScore(scoreBase, ageDays),
+    reasons: [...new Set(reasons)].slice(0, 8),
+    evidenceBreakdown: {
+      publication: publicationPoints,
+      citations: citationPoints,
+      reproducibility: reproducibilityPoints,
+      empirical: empiricalPoints,
+      corroboration: corroborationPoints,
+    },
   };
 };
 
@@ -232,7 +324,7 @@ export interface DiscoveryFilters {
   age?: "7" | "30" | "90" | "180" | "365" | "730" | "all";
   dateFrom?: string;
   dateTo?: string;
-  venue?: "all" | "formal" | "preprint";
+  venue?: "all" | "core" | "formal" | "unverified" | "preprint";
   source?: "all" | "arxiv" | "semantic-scholar" | "openreview";
   tier?: DiscoveryTier | "all";
   library?: "all" | "new" | "collected";
@@ -289,6 +381,19 @@ export const discoveryTextRelevance = (paper: DiscoveryPaper, query: string) => 
   return score;
 };
 
+const discoveryTierWeight: Record<DiscoveryTier, number> = {
+  priority: 3,
+  skim: 2,
+  track: 1,
+  archive: 0,
+};
+
+export const compareDiscoveryReadingPriority = (left: DiscoveryPaper, right: DiscoveryPaper) =>
+  discoveryTierWeight[right.score.tier] - discoveryTierWeight[left.score.tier]
+  || (right.score.baseTotal + (right.personalization.semanticBoost ?? 0)) - (left.score.baseTotal + (left.personalization.semanticBoost ?? 0))
+  || right.score.baseTotal - left.score.baseTotal
+  || right.publishedAt.localeCompare(left.publishedAt);
+
 export const filterAndSortDiscoveryPapers = (
   papers: DiscoveryPaper[],
   filters: DiscoveryFilters,
@@ -308,8 +413,10 @@ export const filterAndSortDiscoveryPapers = (
       const publishedDate = paper.publishedAt.slice(0, 10);
       if (filters.dateFrom && publishedDate < filters.dateFrom) return false;
       if (filters.dateTo && publishedDate > filters.dateTo) return false;
-      if (filters.venue === "formal" && !isFormalDiscoveryVenue(paper.venue)) return false;
-      if (filters.venue === "preprint" && isFormalDiscoveryVenue(paper.venue)) return false;
+      if (filters.venue === "core" && paper.publicationStatus !== "core") return false;
+      if (filters.venue === "formal" && paper.publicationStatus !== "core" && paper.publicationStatus !== "formal") return false;
+      if (filters.venue === "unverified" && paper.publicationStatus !== "unverified") return false;
+      if (filters.venue === "preprint" && paper.publicationStatus !== "preprint") return false;
       if (filters.source && filters.source !== "all" && !paper.sources.includes(filters.source)) return false;
       if (filters.tier && filters.tier !== "all" && paper.score.tier !== filters.tier) return false;
       if (filters.library === "new" && paper.librarySlug) return false;
@@ -317,8 +424,8 @@ export const filterAndSortDiscoveryPapers = (
       return true;
     })
     .sort((a, b) => query
-      ? b.relevance - a.relevance || b.paper.score.total - a.paper.score.total
-      : b.paper.score.total - a.paper.score.total || b.paper.publishedAt.localeCompare(a.paper.publishedAt))
+      ? b.relevance - a.relevance || compareDiscoveryReadingPriority(a.paper, b.paper)
+      : compareDiscoveryReadingPriority(a.paper, b.paper))
     .map(({ paper }) => paper);
   return query ? sorted : balanceDiscoveryAgeBands(sorted, now);
 };
