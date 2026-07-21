@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { beforeEach, describe, expect, test } from "vitest";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import type { DiscoveryPaper } from "../../src/data/discovery-types";
 import type { LibrarySnapshot } from "../../src/data/types";
 import {
@@ -22,6 +22,7 @@ import {
   buildDiscoverySnapshot,
   buildDiscoverySnapshots,
   buildArxivQueries,
+  fetchWithRetry,
   meetsDiscoveryRetention,
   mergeDiscoveryCandidates,
   parseArxivAtom,
@@ -36,6 +37,12 @@ import library from "../../src/data/generated/library.json";
 
 const fixture = (name: string) => readFileSync(resolve(process.cwd(), "tests", "fixtures", "discovery", name), "utf8");
 const now = new Date("2026-07-16T03:30:00.000Z");
+const originalFetch = globalThis.fetch;
+
+afterEach(() => {
+  globalThis.fetch = originalFetch;
+  vi.restoreAllMocks();
+});
 
 const candidate = (overrides: Partial<Candidate> = {}): Candidate => ({
   id: "arxiv:2607.01234",
@@ -77,6 +84,24 @@ describe("discovery source parsing and refresh", () => {
     expect(buildArxivQueries("cs-cv", now)[0].query).toContain("cat:cs.CV");
     expect(buildArxivQueries("cs-lg", now)[0].query).toContain("cat:stat.ML");
     expect(buildArxivQueries("embodied-intelligence", now)[0].query).toContain("cat:cs.RO");
+  });
+
+  test("honors Retry-After before retrying a rate-limited source", async () => {
+    const wait = vi.fn(async () => undefined);
+    globalThis.fetch = vi.fn()
+      .mockResolvedValueOnce(new Response("", { status: 429, headers: { "retry-after": "7" } }))
+      .mockResolvedValueOnce(new Response("ok", { status: 200 }));
+
+    const response = await fetchWithRetry("https://example.test/papers", {}, {
+      attempts: 2,
+      baseDelayMs: 1_000,
+      jitterMs: 0,
+      wait,
+    });
+
+    expect(await response.text()).toBe("ok");
+    expect(globalThis.fetch).toHaveBeenCalledTimes(2);
+    expect(wait).toHaveBeenCalledWith(7_000);
   });
 
   test("parses arXiv Atom metadata and resources", () => {

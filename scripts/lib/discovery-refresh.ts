@@ -316,26 +316,67 @@ export const attachLibraryMatches = (candidates: Candidate[], library: LibrarySn
 
 const sleep = (milliseconds: number) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
+interface FetchRetryOptions {
+  attempts?: number;
+  timeoutMs?: number;
+  baseDelayMs?: number;
+  maximumDelayMs?: number;
+  jitterMs?: number;
+  wait?: (milliseconds: number) => Promise<unknown>;
+  random?: () => number;
+}
+
+const retryAfterMilliseconds = (value: string | null, now = Date.now()) => {
+  if (!value) return 0;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1_000);
+  const date = Date.parse(value);
+  return Number.isNaN(date) ? 0 : Math.max(0, date - now);
+};
+
 export const fetchWithRetry = async (
   url: string,
   init: RequestInit = {},
-  attempts = 3,
+  attemptsOrOptions: number | FetchRetryOptions = 3,
 ): Promise<Response> => {
+  const options = typeof attemptsOrOptions === "number" ? { attempts: attemptsOrOptions } : attemptsOrOptions;
+  const attempts = options.attempts ?? 3;
+  const timeoutMs = options.timeoutMs ?? 30_000;
+  const baseDelayMs = options.baseDelayMs ?? 1_000;
+  const maximumDelayMs = options.maximumDelayMs ?? 60_000;
+  const jitterMs = options.jitterMs ?? 500;
+  const wait = options.wait ?? sleep;
+  const random = options.random ?? Math.random;
   let lastError: unknown;
   for (let attempt = 0; attempt < attempts; attempt += 1) {
+    let retryAfterMs = 0;
     try {
-      const response = await fetch(url, { ...init, signal: AbortSignal.timeout(30_000) });
+      const response = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
       if (response.ok) return response;
       if (![429, 500, 502, 503, 504].includes(response.status)) {
         throw new Error(`${response.status} ${response.statusText}: ${(await response.text()).slice(0, 240)}`);
       }
       lastError = new Error(`${response.status} ${response.statusText}`);
+      retryAfterMs = retryAfterMilliseconds(response.headers.get("retry-after"));
     } catch (error) {
       lastError = error;
     }
-    await sleep(1_000 * 2 ** attempt);
+    if (attempt + 1 < attempts) {
+      const exponentialDelay = Math.min(maximumDelayMs, baseDelayMs * 2 ** attempt);
+      const delay = Math.max(retryAfterMs, exponentialDelay) + Math.round(random() * jitterMs);
+      await wait(delay);
+    }
   }
   throw lastError instanceof Error ? lastError : new Error("Request failed");
+};
+
+const ARXIV_MIN_REQUEST_INTERVAL_MS = 5_000;
+let lastArxivRequestAt = 0;
+
+const waitForArxivRequestSlot = async () => {
+  const remaining = ARXIV_MIN_REQUEST_INTERVAL_MS - (Date.now() - lastArxivRequestAt);
+  if (remaining > 0) await sleep(remaining);
+  lastArxivRequestAt = Date.now();
 };
 
 const arxivDate = (date: Date) => date.toISOString().replace(/\D/g, "").slice(0, 12);
@@ -379,8 +420,8 @@ export const buildArxivQueries = (
 
 export const fetchArxivCandidates = async (fieldId: FieldId = "embodied-intelligence", now = new Date()) => {
   const candidates: Candidate[] = [];
-  for (const [index, item] of buildArxivQueries(fieldId, now).entries()) {
-    if (index > 0) await sleep(3_100);
+  for (const item of buildArxivQueries(fieldId, now)) {
+    await waitForArxivRequestSlot();
     const parameters = new URLSearchParams({
       search_query: item.query,
       start: "0",
@@ -388,7 +429,18 @@ export const fetchArxivCandidates = async (fieldId: FieldId = "embodied-intellig
       sortBy: item.sortBy ?? "submittedDate",
       sortOrder: "descending",
     });
-    const response = await fetchWithRetry(`https://export.arxiv.org/api/query?${parameters}`);
+    const response = await fetchWithRetry(`https://export.arxiv.org/api/query?${parameters}`, {
+      headers: {
+        accept: "application/atom+xml",
+        "user-agent": "essayweb-discovery/1.0 (+https://github.com/zth1224/essayweb)",
+      },
+    }, {
+      attempts: 3,
+      timeoutMs: 60_000,
+      baseDelayMs: 10_000,
+      maximumDelayMs: 60_000,
+      jitterMs: 2_000,
+    });
     candidates.push(...parseArxivAtom(await response.text()));
   }
   return mergeDiscoveryCandidates(candidates).filter((paper) =>
