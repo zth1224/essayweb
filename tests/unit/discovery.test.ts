@@ -84,6 +84,10 @@ describe("discovery source parsing and refresh", () => {
     expect(buildArxivQueries("cs-cv", now)[0].query).toContain("cat:cs.CV");
     expect(buildArxivQueries("cs-lg", now)[0].query).toContain("cat:stat.ML");
     expect(buildArxivQueries("embodied-intelligence", now)[0].query).toContain("cat:cs.RO");
+    expect(buildArxivQueries("embodied-intelligence", now)[0].query).not.toContain("cat:cs.AI");
+    for (const fieldId of ["embodied-intelligence", "cs-ai", "cs-cl", "cs-cv", "cs-lg"] as const) {
+      expect(buildArxivQueries(fieldId, now).every(({ query }) => !query.includes("all:"))).toBe(true);
+    }
   });
 
   test("honors Retry-After before retrying a rate-limited source", async () => {
@@ -208,19 +212,30 @@ describe("discovery source parsing and refresh", () => {
     } as const;
     const snapshots = await buildDiscoverySnapshots(library as LibrarySnapshot, {}, {
       now,
-      fetchArxiv: async (fieldId) => [candidate({
-        id: `arxiv:${fieldId}`,
-        arxivId: fieldId,
-        title: `${fieldId} benchmark paper`,
-        fieldIds: [fieldId],
-        topicIds: [fieldTopics[fieldId]],
-      })],
+      fetchArxiv: async (fieldId) => [
+        candidate({
+          id: `arxiv:${fieldId}`,
+          arxivId: fieldId,
+          title: `${fieldId} benchmark paper`,
+          fieldIds: [fieldId],
+          topicIds: [fieldTopics[fieldId]],
+        }),
+        ...(fieldId === "cs-ai" ? [candidate({
+          id: "arxiv:cross-field-robot-agent",
+          arxivId: "cross-field-robot-agent",
+          title: "Robot Agent Planning Benchmark",
+          categories: ["cs.AI"],
+          fieldIds: ["cs-ai", "embodied-intelligence"],
+          topicIds: ["ai-agents-tool-use", "robot-manipulation"],
+        })] : []),
+      ],
       fetchSemanticBatch: async () => [],
       fetchOpenReview: async () => [],
     });
     expect(Object.values(snapshots)).toHaveLength(5);
     expect(snapshots["cs-cl"]?.papers[0].fieldIds).toContain("cs-cl");
     expect(snapshots["cs-cl"]?.schemaVersion).toBe(3);
+    expect(snapshots["embodied-intelligence"]?.papers.some((item) => item.id === "arxiv:cross-field-robot-agent")).toBe(true);
   });
 
   test("migrates v2 scores deterministically and drops legacy recommendation fallback", () => {

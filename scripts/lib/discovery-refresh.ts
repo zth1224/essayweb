@@ -382,35 +382,21 @@ const waitForArxivRequestSlot = async () => {
 const arxivDate = (date: Date) => date.toISOString().replace(/\D/g, "").slice(0, 12);
 const daysBefore = (now: Date, days: number) => new Date(now.getTime() - days * 86_400_000);
 
-const fieldArxivScopes: Record<FieldId, { categories: string; topics: string }> = {
-  "embodied-intelligence": {
-    categories: "(cat:cs.RO OR cat:cs.AI OR cat:cs.CV OR cat:cs.LG)",
-    topics: "(all:robot OR all:embodied OR all:manipulation OR all:navigation OR all:\"vision language action\" OR all:\"world model\")",
-  },
-  "cs-ai": {
-    categories: "cat:cs.AI",
-    topics: "(all:reasoning OR all:planning OR all:agent OR all:\"knowledge graph\" OR all:alignment OR all:multi-agent)",
-  },
-  "cs-cl": {
-    categories: "cat:cs.CL",
-    topics: "(all:\"language model\" OR all:retrieval OR all:\"question answering\" OR all:\"information extraction\" OR all:multilingual OR all:translation OR all:hallucination)",
-  },
-  "cs-cv": {
-    categories: "cat:cs.CV",
-    topics: "(all:recognition OR all:detection OR all:segmentation OR all:generation OR all:\"3d reconstruction\" OR all:video OR all:\"vision language\")",
-  },
-  "cs-lg": {
-    categories: "(cat:cs.LG OR cat:stat.ML)",
-    topics: "(all:optimization OR all:\"representation learning\" OR all:\"self-supervised\" OR all:\"reinforcement learning\" OR all:\"generative model\" OR all:robustness OR all:generalization)",
-  },
+const fieldArxivCategories: Record<FieldId, string> = {
+  "embodied-intelligence": "cat:cs.RO",
+  "cs-ai": "cat:cs.AI",
+  "cs-cl": "cat:cs.CL",
+  "cs-cv": "cat:cs.CV",
+  "cs-lg": "(cat:cs.LG OR cat:stat.ML)",
 };
 
 export const buildArxivQueries = (
   fieldId: FieldId = "embodied-intelligence",
   now = new Date(),
 ): Array<{ query: string; limit: number; sortBy?: "submittedDate" | "relevance" }> => {
-  const scope = fieldArxivScopes[fieldId];
-  const base = `${scope.categories} AND ${scope.topics}`;
+  // arXiv's Atom API becomes unreliable for long OR expressions. Fetch the
+  // bounded category/date slices here and enforce core topics after parsing.
+  const base = fieldArxivCategories[fieldId];
   return [
     { query: `${base} AND submittedDate:[${arxivDate(daysBefore(now, 180))} TO ${arxivDate(now)}]`, limit: 700 },
     { query: `${base} AND submittedDate:[${arxivDate(daysBefore(now, 365))} TO ${arxivDate(daysBefore(now, 181))}]`, limit: 650, sortBy: "relevance" },
@@ -702,6 +688,14 @@ export const buildDiscoverySnapshots = async (
     } catch (error) {
       arxivErrors.set(fieldId, error);
     }
+  }
+
+  const fetchedArxivCandidates = mergeDiscoveryCandidates([...arxivByField.values()].flat());
+  for (const fieldId of DISCOVERY_FIELD_IDS) {
+    if (arxivErrors.has(fieldId)) continue;
+    const direct = arxivByField.get(fieldId) ?? [];
+    const crossField = fetchedArxivCandidates.filter((paper) => candidateBelongsToField(paper, fieldId));
+    arxivByField.set(fieldId, mergeDiscoveryCandidates([...direct, ...crossField]));
   }
 
   const seedIdsByField = new Map(DISCOVERY_FIELD_IDS.map((fieldId) => [fieldId, selectSeedArxivIds(library, fieldId)]));
