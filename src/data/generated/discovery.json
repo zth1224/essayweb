@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "embodied-intelligence",
-  "generatedAt": "2026-08-18T04:08:01.303Z",
+  "generatedAt": "2026-08-19T04:07:46.742Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -1700,78 +1700,6 @@
       }
     },
     {
-      "id": "arxiv:2509.19047",
-      "title": "ManipForce: Force-Guided Policy Learning with Frequency-Aware Representation for Contact-Rich Manipulation",
-      "authors": [
-        "Geonhyup Lee",
-        "Yeongjin Lee",
-        "Kangmin Kim",
-        "Seongju Lee",
-        "Sangjun Noh",
-        "Seunghyeok Back",
-        "Kyoobin Lee"
-      ],
-      "abstract": "Contact-rich manipulation tasks such as precision assembly require precise control of interaction forces, yet existing imitation learning methods rely mainly on vision-only demonstrations. We propose ManipForce, a handheld system designed to capture high-frequency force-torque (F/T) and RGB data during natural human demonstrations for contact-rich manipulation. Building on these demonstrations, we introduce the Frequency-Aware Multimodal Transformer (FMT). FMT encodes asynchronous RGB and F/T signals using frequency- and modality-aware embeddings and fuses them via bi-directional cross-attention within a transformer diffusion policy. Through extensive experiments on six real-world contact-rich manipulation tasks - such as gear assembly, box flipping, and battery insertion - FMT trained on ManipForce demonstrations achieves robust performance with an average success rate of 83% across all tasks, substantially outperforming RGB-only baselines. Ablation and sampling-frequency analyses further confirm that incorporating high-frequency F/T data and cross-modal integration improves policy performance, especially in tasks demanding high precision and stable contact.",
-      "publishedAt": "2025-09-23",
-      "updatedAt": "2025-09-23T14:15:19Z",
-      "arxivId": "2509.19047",
-      "doi": "10.48550/arXiv.2509.19047",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.19047v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.19047",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.19047v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.19047"
-        }
-      ],
-      "semanticScholarId": "a38168409043f9c9b22461ce99b028e2a126f673",
-      "citationCount": 11,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 71,
-        "relevance": 30,
-        "evidence": 20,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "priority",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.19047",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 8,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.10446",
       "title": "DeepDive: Advancing Deep Search Agents with Knowledge Graphs and Multi-Turn RL",
       "authors": [
@@ -2748,93 +2676,6 @@
       }
     },
     {
-      "id": "arxiv:2512.19562",
-      "title": "REALM: A Real-to-Sim Validated Benchmark for Generalization in Robotic Manipulation",
-      "authors": [
-        "Martin Sedlacek",
-        "Pavlo Yefanov",
-        "Georgy Ponimatkin",
-        "Jai Bardhan",
-        "Simon Pilc",
-        "Mederic Fourmy",
-        "Evangelos Kazakos",
-        "Cees G. M. Snoek",
-        "Josef Sivic",
-        "Vladimir Petrik"
-      ],
-      "abstract": "Vision-Language-Action (VLA) models empower robots to understand and execute tasks described by natural language instructions. However, a key challenge lies in their ability to generalize beyond the specific environments and conditions they were trained on, which is presently difficult and expensive to evaluate in the real-world. To address this gap, we present REALM, a new simulation environment and benchmark designed to evaluate the generalization capabilities of VLA models, with a specific emphasis on establishing a strong correlation between simulated and real-world performance through high-fidelity visuals and aligned robot control. Our environment offers a suite of 15 perturbation factors, 7 manipulation skills, and more than 3,500 objects. Finally, we establish two task sets that form our benchmark and evaluate the <inline-formula><tex-math notation=\"LaTeX\">$\\mathbf {\\pi _{0}}$</tex-math></inline-formula>, <inline-formula><tex-math notation=\"LaTeX\">$\\mathbf {\\pi _{0}}$</tex-math></inline-formula>-FAST, and GR00 T N1.5 VLA models, showing that generalization and robustness remain an open challenge. More broadly, we also show that simulation gives us a valuable proxy for the real-world and allows us to systematically probe for and quantify the weaknesses and failure modes of VLAs.",
-      "publishedAt": "2025-12-22",
-      "updatedAt": "2025-12-22T16:44:23Z",
-      "arxivId": "2512.19562",
-      "doi": "10.1109/LRA.2026.3692088",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2512.19562v1",
-      "pdfUrl": "https://arxiv.org/pdf/2512.19562",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://martin-sedlacek.com/realm"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2512.19562v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2512.19562"
-        }
-      ],
-      "semanticScholarId": "dd290457b11b0a2675b5baf80b72327e173ee475",
-      "venue": "IEEE Robotics and Automation Letters",
-      "citationCount": 9,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 70,
-        "relevance": 30,
-        "evidence": 16,
-        "freshness": 4,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "已有正式发表线索：IEEE Robotics and Automation Letters",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.09607",
       "title": "VITA-VLA: Efficiently Teaching Vision-Language Models to Act via Action Expert Distillation",
       "authors": [
@@ -2999,6 +2840,78 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.19047",
+      "title": "ManipForce: Force-Guided Policy Learning with Frequency-Aware Representation for Contact-Rich Manipulation",
+      "authors": [
+        "Geonhyup Lee",
+        "Yeongjin Lee",
+        "Kangmin Kim",
+        "Seongju Lee",
+        "Sangjun Noh",
+        "Seunghyeok Back",
+        "Kyoobin Lee"
+      ],
+      "abstract": "Contact-rich manipulation tasks such as precision assembly require precise control of interaction forces, yet existing imitation learning methods rely mainly on vision-only demonstrations. We propose ManipForce, a handheld system designed to capture high-frequency force-torque (F/T) and RGB data during natural human demonstrations for contact-rich manipulation. Building on these demonstrations, we introduce the Frequency-Aware Multimodal Transformer (FMT). FMT encodes asynchronous RGB and F/T signals using frequency- and modality-aware embeddings and fuses them via bi-directional cross-attention within a transformer diffusion policy. Through extensive experiments on six real-world contact-rich manipulation tasks - such as gear assembly, box flipping, and battery insertion - FMT trained on ManipForce demonstrations achieves robust performance with an average success rate of 83% across all tasks, substantially outperforming RGB-only baselines. Ablation and sampling-frequency analyses further confirm that incorporating high-frequency F/T data and cross-modal integration improves policy performance, especially in tasks demanding high precision and stable contact.",
+      "publishedAt": "2025-09-23",
+      "updatedAt": "2025-09-23T14:15:19Z",
+      "arxivId": "2509.19047",
+      "doi": "10.48550/arXiv.2509.19047",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.19047v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.19047",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.19047v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.19047"
+        }
+      ],
+      "semanticScholarId": "a38168409043f9c9b22461ce99b028e2a126f673",
+      "citationCount": 11,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 70,
+        "relevance": 30,
+        "evidence": 19,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.19047",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 8,
           "corroboration": 4
         }
       }
@@ -4246,6 +4159,93 @@
       }
     },
     {
+      "id": "arxiv:2512.19562",
+      "title": "REALM: A Real-to-Sim Validated Benchmark for Generalization in Robotic Manipulation",
+      "authors": [
+        "Martin Sedlacek",
+        "Pavlo Yefanov",
+        "Georgy Ponimatkin",
+        "Jai Bardhan",
+        "Simon Pilc",
+        "Mederic Fourmy",
+        "Evangelos Kazakos",
+        "Cees G. M. Snoek",
+        "Josef Sivic",
+        "Vladimir Petrik"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models empower robots to understand and execute tasks described by natural language instructions. However, a key challenge lies in their ability to generalize beyond the specific environments and conditions they were trained on, which is presently difficult and expensive to evaluate in the real-world. To address this gap, we present REALM, a new simulation environment and benchmark designed to evaluate the generalization capabilities of VLA models, with a specific emphasis on establishing a strong correlation between simulated and real-world performance through high-fidelity visuals and aligned robot control. Our environment offers a suite of 15 perturbation factors, 7 manipulation skills, and more than 3,500 objects. Finally, we establish two task sets that form our benchmark and evaluate the <inline-formula><tex-math notation=\"LaTeX\">$\\mathbf {\\pi _{0}}$</tex-math></inline-formula>, <inline-formula><tex-math notation=\"LaTeX\">$\\mathbf {\\pi _{0}}$</tex-math></inline-formula>-FAST, and GR00 T N1.5 VLA models, showing that generalization and robustness remain an open challenge. More broadly, we also show that simulation gives us a valuable proxy for the real-world and allows us to systematically probe for and quantify the weaknesses and failure modes of VLAs.",
+      "publishedAt": "2025-12-22",
+      "updatedAt": "2025-12-22T16:44:23Z",
+      "arxivId": "2512.19562",
+      "doi": "10.1109/LRA.2026.3692088",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2512.19562v1",
+      "pdfUrl": "https://arxiv.org/pdf/2512.19562",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://martin-sedlacek.com/realm"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2512.19562v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2512.19562"
+        }
+      ],
+      "semanticScholarId": "dd290457b11b0a2675b5baf80b72327e173ee475",
+      "venue": "IEEE Robotics and Automation Letters",
+      "citationCount": 9,
+      "influentialCitationCount": 1,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 69,
+        "relevance": 30,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "已有正式发表线索：IEEE Robotics and Automation Letters",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 2,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2512.06951",
       "title": "Task adaptation of Vision-Language-Action model: 1st Place Solution for the 2025 BEHAVIOR Challenge",
       "authors": [
@@ -4960,84 +4960,6 @@
           "citations": 1,
           "reproducibility": 4,
           "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.18676",
-      "title": "3D Flow Diffusion Policy: Visuomotor Policy Learning via Generating Flow in 3D Space",
-      "authors": [
-        "Sangjun Noh",
-        "Dongwoo Nam",
-        "Kangmin Kim",
-        "Geonhyup Lee",
-        "Yeonguk Yu",
-        "Raeyoung Kang",
-        "Kyoobin Lee"
-      ],
-      "abstract": "Learning robust visuomotor policies that generalize across diverse objects and interaction dynamics remains a central challenge in robotic manipulation. Most existing approaches rely on direct observation-to-action mappings or compress perceptual inputs into global or object-centric features, which often overlook localized motion cues critical for precise and contact-rich manipulation. We present 3D Flow Diffusion Policy (3D FDP), a novel framework that leverages scene-level 3D flow as a structured intermediate representation to capture fine-grained local motion cues. Our approach predicts the temporal trajectories of sampled query points and conditions action generation on these interaction-aware flows, implemented jointly within a unified diffusion architecture. This design grounds manipulation in localized dynamics while enabling the policy to reason about broader scene-level consequences of actions. Extensive experiments on the MetaWorld benchmark show that 3D FDP achieves state-of-the-art performance across 50 tasks, particularly excelling on medium and hard settings. Beyond simulation, we validate our method on eight real-robot tasks, where it consistently outperforms prior baselines in contact-rich and non-prehensile scenarios. These results highlight 3D flow as a powerful structural prior for learning generalizable visuomotor policies, supporting the development of more robust and versatile robotic manipulation. Robot demonstrations, additional results, and code can be found at https://sites.google.com/view/3dfdp/home.",
-      "publishedAt": "2025-09-23",
-      "updatedAt": "2025-09-23T05:48:01Z",
-      "arxivId": "2509.18676",
-      "doi": "10.48550/arXiv.2509.18676",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.18676v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.18676",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://sites.google.com/view/3dfdp/home"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.18676v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.18676"
-        }
-      ],
-      "semanticScholarId": "5236039bb0652130a6401f90882852ca60ef4708",
-      "citationCount": 11,
-      "influentialCitationCount": 2,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 69,
-        "relevance": 30,
-        "evidence": 18,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.18676",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -6107,97 +6029,6 @@
           "citations": 2,
           "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21257",
-      "title": "One-Step Diffusion Policy: Fast Visuomotor Policies via Diffusion Distillation",
-      "authors": [
-        "Zhendong Wang",
-        "Zhaoshuo Li",
-        "Ajay Mandlekar",
-        "Zhenjia Xu",
-        "Jiaojiao Fan",
-        "Yashraj Narang",
-        "Linxi Fan",
-        "Yuke Zhu",
-        "Yogesh Balaji",
-        "Mingyuan Zhou",
-        "Ming-Yu Liu",
-        "Yu Zeng"
-      ],
-      "abstract": "Diffusion models, praised for their success in generative tasks, are increasingly being applied to robotics, demonstrating exceptional performance in behavior cloning. However, their slow generation process stemming from iterative denoising steps poses a challenge for real-time applications in resource-constrained robotics setups and dynamically changing environments. In this paper, we introduce the One-Step Diffusion Policy (OneDP), a novel approach that distills knowledge from pre-trained diffusion policies into a single-step action generator, significantly accelerating response times for robotic control tasks. We ensure the distilled generator closely aligns with the original policy distribution by minimizing the Kullback-Leibler (KL) divergence along the diffusion chain, requiring only $2\\%$-$10\\%$ additional pre-training cost for convergence. We evaluated OneDP on 6 challenging simulation tasks as well as 4 self-designed real-world tasks using the Franka robot. The results demonstrate that OneDP not only achieves state-of-the-art success rates but also delivers an order-of-magnitude improvement in inference speed, boosting action prediction frequency from 1.5 Hz to 62 Hz, establishing its potential for dynamic and computationally constrained robotic applications. We share the project page at https://research.nvidia.com/labs/dir/onedp/.",
-      "publishedAt": "2024-10-28",
-      "updatedAt": "2024-10-28T17:54:31Z",
-      "arxivId": "2410.21257",
-      "doi": "10.48550/arXiv.2410.21257",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-image-video-generation",
-        "lg-theory-optimization",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21257v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21257",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://research.nvidia.com/labs/dir/onedp/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21257v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21257"
-        }
-      ],
-      "semanticScholarId": "d94b0358aaadc167698b8cc6babea6e5a49e5e05",
-      "venue": "International Conference on Machine Learning",
-      "citationCount": 85,
-      "influentialCitationCount": 5,
-      "canonicalVenueId": "icml",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 69,
-        "relevance": 27,
-        "evidence": 21,
-        "freshness": 1,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：International Conference on Machine Learning",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 3,
-          "reproducibility": 2,
-          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -8463,6 +8294,84 @@
       }
     },
     {
+      "id": "arxiv:2509.18676",
+      "title": "3D Flow Diffusion Policy: Visuomotor Policy Learning via Generating Flow in 3D Space",
+      "authors": [
+        "Sangjun Noh",
+        "Dongwoo Nam",
+        "Kangmin Kim",
+        "Geonhyup Lee",
+        "Yeonguk Yu",
+        "Raeyoung Kang",
+        "Kyoobin Lee"
+      ],
+      "abstract": "Learning robust visuomotor policies that generalize across diverse objects and interaction dynamics remains a central challenge in robotic manipulation. Most existing approaches rely on direct observation-to-action mappings or compress perceptual inputs into global or object-centric features, which often overlook localized motion cues critical for precise and contact-rich manipulation. We present 3D Flow Diffusion Policy (3D FDP), a novel framework that leverages scene-level 3D flow as a structured intermediate representation to capture fine-grained local motion cues. Our approach predicts the temporal trajectories of sampled query points and conditions action generation on these interaction-aware flows, implemented jointly within a unified diffusion architecture. This design grounds manipulation in localized dynamics while enabling the policy to reason about broader scene-level consequences of actions. Extensive experiments on the MetaWorld benchmark show that 3D FDP achieves state-of-the-art performance across 50 tasks, particularly excelling on medium and hard settings. Beyond simulation, we validate our method on eight real-robot tasks, where it consistently outperforms prior baselines in contact-rich and non-prehensile scenarios. These results highlight 3D flow as a powerful structural prior for learning generalizable visuomotor policies, supporting the development of more robust and versatile robotic manipulation. Robot demonstrations, additional results, and code can be found at https://sites.google.com/view/3dfdp/home.",
+      "publishedAt": "2025-09-23",
+      "updatedAt": "2025-09-23T05:48:01Z",
+      "arxivId": "2509.18676",
+      "doi": "10.48550/arXiv.2509.18676",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.18676v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.18676",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://sites.google.com/view/3dfdp/home"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.18676v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.18676"
+        }
+      ],
+      "semanticScholarId": "5236039bb0652130a6401f90882852ca60ef4708",
+      "citationCount": 11,
+      "influentialCitationCount": 2,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 68,
+        "relevance": 30,
+        "evidence": 17,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.18676",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.09397",
       "title": "Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift",
       "authors": [
@@ -9588,6 +9497,97 @@
       }
     },
     {
+      "id": "arxiv:2410.21257",
+      "title": "One-Step Diffusion Policy: Fast Visuomotor Policies via Diffusion Distillation",
+      "authors": [
+        "Zhendong Wang",
+        "Zhaoshuo Li",
+        "Ajay Mandlekar",
+        "Zhenjia Xu",
+        "Jiaojiao Fan",
+        "Yashraj Narang",
+        "Linxi Fan",
+        "Yuke Zhu",
+        "Yogesh Balaji",
+        "Mingyuan Zhou",
+        "Ming-Yu Liu",
+        "Yu Zeng"
+      ],
+      "abstract": "Diffusion models, praised for their success in generative tasks, are increasingly being applied to robotics, demonstrating exceptional performance in behavior cloning. However, their slow generation process stemming from iterative denoising steps poses a challenge for real-time applications in resource-constrained robotics setups and dynamically changing environments. In this paper, we introduce the One-Step Diffusion Policy (OneDP), a novel approach that distills knowledge from pre-trained diffusion policies into a single-step action generator, significantly accelerating response times for robotic control tasks. We ensure the distilled generator closely aligns with the original policy distribution by minimizing the Kullback-Leibler (KL) divergence along the diffusion chain, requiring only $2\\%$-$10\\%$ additional pre-training cost for convergence. We evaluated OneDP on 6 challenging simulation tasks as well as 4 self-designed real-world tasks using the Franka robot. The results demonstrate that OneDP not only achieves state-of-the-art success rates but also delivers an order-of-magnitude improvement in inference speed, boosting action prediction frequency from 1.5 Hz to 62 Hz, establishing its potential for dynamic and computationally constrained robotic applications. We share the project page at https://research.nvidia.com/labs/dir/onedp/.",
+      "publishedAt": "2024-10-28",
+      "updatedAt": "2024-10-28T17:54:31Z",
+      "arxivId": "2410.21257",
+      "doi": "10.48550/arXiv.2410.21257",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cv-image-video-generation",
+        "lg-theory-optimization",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2410.21257v1",
+      "pdfUrl": "https://arxiv.org/pdf/2410.21257",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://research.nvidia.com/labs/dir/onedp/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.21257v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.21257"
+        }
+      ],
+      "semanticScholarId": "d94b0358aaadc167698b8cc6babea6e5a49e5e05",
+      "venue": "International Conference on Machine Learning",
+      "citationCount": 85,
+      "influentialCitationCount": 5,
+      "canonicalVenueId": "icml",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 68,
+        "relevance": 27,
+        "evidence": 21,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：International Conference on Machine Learning",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 3,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2412.05408",
       "title": "FogROS2-FT: Fault Tolerant Cloud Robotics",
       "authors": [
@@ -10174,7 +10174,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
           "提供可复现代码",
           "提供数据集或模型资源",
           "摘要给出实验或 benchmark 线索",
@@ -13650,79 +13649,6 @@
           "citations": 0,
           "reproducibility": 6,
           "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2508.02649",
-      "title": "Manip4Care: Robotic Manipulation of Human Limbs for Solving Assistive Tasks",
-      "authors": [
-        "Yubin Koh",
-        "Ahmed H. Qureshi"
-      ],
-      "abstract": "Enabling robots to grasp and reposition human limbs can significantly enhance their ability to provide assistive care to individuals with severe mobility impairments, particularly in tasks such as robot-assisted bed bathing and dressing. However, existing assistive robotics solutions often assume that the human remains static or quasi-static, limiting their effectiveness. To address this issue, we present Manip4Care, a modular simulation pipeline that enables robotic manipulators to grasp and reposition human limbs effectively. Our approach features a physics simulator equipped with built-in techniques for grasping and repositioning while considering biomechanical and collision avoidance constraints. Our grasping method employs antipodal sampling with force closure to grasp limbs, and our repositioning system utilizes the Model Predictive Path Integral (MPPI) and vector-field-based control method to generate motion trajectories under collision avoidance and biomechanical constraints. We evaluate this approach across various limb manipulation tasks in both supine and sitting positions and compare outcomes for different age groups with differing shoulder joint limits. Additionally, we demonstrate our approach for limb manipulation using a real-world mannequin and further showcase its effectiveness in bed bathing tasks. Our implementation is available at https://github.com/yubink2/Manip4Care.",
-      "publishedAt": "2025-08-04",
-      "updatedAt": "2025-08-04T17:41:58Z",
-      "arxivId": "2508.02649",
-      "doi": "10.1109/IROS60139.2025.11245972",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "simulation-datasets-evaluation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2508.02649v1",
-      "pdfUrl": "https://arxiv.org/pdf/2508.02649",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.02649v1"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/yubink2/Manip4Care"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.02649"
-        }
-      ],
-      "semanticScholarId": "4822ea3bfeaf8ccfa28fe3015ce392ed02ace212",
-      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
-      "citationCount": 1,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "iros",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 67,
-        "relevance": 27,
-        "evidence": 20,
-        "freshness": 3,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "本方向核心 venue：IEEE/RJS International Conference on Intelligent RObots and Systems",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -20086,6 +20012,79 @@
       }
     },
     {
+      "id": "arxiv:2508.02649",
+      "title": "Manip4Care: Robotic Manipulation of Human Limbs for Solving Assistive Tasks",
+      "authors": [
+        "Yubin Koh",
+        "Ahmed H. Qureshi"
+      ],
+      "abstract": "Enabling robots to grasp and reposition human limbs can significantly enhance their ability to provide assistive care to individuals with severe mobility impairments, particularly in tasks such as robot-assisted bed bathing and dressing. However, existing assistive robotics solutions often assume that the human remains static or quasi-static, limiting their effectiveness. To address this issue, we present Manip4Care, a modular simulation pipeline that enables robotic manipulators to grasp and reposition human limbs effectively. Our approach features a physics simulator equipped with built-in techniques for grasping and repositioning while considering biomechanical and collision avoidance constraints. Our grasping method employs antipodal sampling with force closure to grasp limbs, and our repositioning system utilizes the Model Predictive Path Integral (MPPI) and vector-field-based control method to generate motion trajectories under collision avoidance and biomechanical constraints. We evaluate this approach across various limb manipulation tasks in both supine and sitting positions and compare outcomes for different age groups with differing shoulder joint limits. Additionally, we demonstrate our approach for limb manipulation using a real-world mannequin and further showcase its effectiveness in bed bathing tasks. Our implementation is available at https://github.com/yubink2/Manip4Care.",
+      "publishedAt": "2025-08-04",
+      "updatedAt": "2025-08-04T17:41:58Z",
+      "arxivId": "2508.02649",
+      "doi": "10.1109/IROS60139.2025.11245972",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "simulation-datasets-evaluation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2508.02649v1",
+      "pdfUrl": "https://arxiv.org/pdf/2508.02649",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.02649v1"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/yubink2/Manip4Care"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.02649"
+        }
+      ],
+      "semanticScholarId": "4822ea3bfeaf8ccfa28fe3015ce392ed02ace212",
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "citationCount": 1,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "iros",
+      "publicationStatus": "core",
+      "personalization": {},
+      "score": {
+        "baseTotal": 66,
+        "relevance": 27,
+        "evidence": 20,
+        "freshness": 2,
+        "completeness": 17,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "本方向核心 venue：IEEE/RJS International Conference on Intelligent RObots and Systems",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 10,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2508.11347",
       "title": "SAGE: Scale-Aware Gradual Evolution for Continual Knowledge Graph Embedding",
       "authors": [
@@ -22288,7 +22287,6 @@
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
           "已有正式发表线索：IEEE Robotics and Automation Practice",
-          "新论文不因零引用降权",
           "提供可复现代码",
           "提供项目页面",
           "摘要、来源与实验线索较完整"
@@ -30473,94 +30471,6 @@
       }
     },
     {
-      "id": "arxiv:2408.09787",
-      "title": "Anim-Director: A Large Multimodal Model Powered Agent for Controllable Animation Video Generation",
-      "authors": [
-        "Yunxin Li",
-        "Haoyuan Shi",
-        "Baotian Hu",
-        "Longyue Wang",
-        "Jiashun Zhu",
-        "Jinyi Xu",
-        "Zhen Zhao",
-        "Min Zhang"
-      ],
-      "abstract": "Traditional animation generation methods depend on training generative models with human-labelled data, entailing a sophisticated multi-stage pipeline that demands substantial human effort and incurs high training costs. Due to limited prompting plans, these methods typically produce brief, information-poor, and context-incoherent animations. To overcome these limitations and automate the animation process, we pioneer the introduction of large multimodal models (LMMs) as the core processor to build an autonomous animation-making agent, named Anim-Director. This agent mainly harnesses the advanced understanding and reasoning capabilities of LMMs and generative AI tools to create animated videos from concise narratives or simple instructions. Specifically, it operates in three main stages: Firstly, the Anim-Director generates a coherent storyline from user inputs, followed by a detailed director’s script that encompasses settings of character profiles and interior/exterior descriptions, and context-coherent scene descriptions that include appearing characters, interiors or exteriors, and scene events. Secondly, we employ LMMs with the image generation tool to produce visual images of settings and scenes. These images are designed to maintain visual consistency across different scenes using a visual-language prompting method that combines scene descriptions and images of the appearing character and setting. Thirdly, scene images serve as the foundation for producing animated videos, with LMMs generating prompts to guide this process. The whole process is notably autonomous without manual intervention, as the LMMs interact seamlessly with generative tools to generate prompts, evaluate visual quality, and select the best one to optimize the final output. To assess the effectiveness of our framework, we collect varied short narratives and incorporate various Image/video evaluation metrics including visual consistency and video quality. The experimental results and case studies demonstrate the Anim-Director’s versatility and significant potential to streamline animation creation.",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-08-19T08:27:31Z",
-      "arxivId": "2408.09787",
-      "doi": "10.1145/3680528.3687688",
-      "categories": [
-        "cs.CL",
-        "cs.CV",
-        "cs.MM"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "ai-reasoning-planning",
-        "cv-image-video-generation",
-        "cv-vision-language-multimodal",
-        "lg-generative-modeling",
-        "simulation-datasets-evaluation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.09787v1",
-      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3680528.3687688",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/HITsz-TMG/Anim-Director"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09787v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://dl.acm.org/doi/pdf/10.1145/3680528.3687688"
-        }
-      ],
-      "semanticScholarId": "b4587e49f5b431c897d7a945e1b017322961be8b",
-      "venue": "ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia",
-      "citationCount": 44,
-      "influentialCitationCount": 3,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 27,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.09138",
       "title": "SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning",
       "authors": [
@@ -30857,7 +30767,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Intelligent Service Robotics",
-          "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -38815,82 +38724,6 @@
       }
     },
     {
-      "id": "arxiv:2503.13296",
-      "title": "On Local Posterior Structure in Deep Ensembles",
-      "authors": [
-        "Mikkel Jordahn",
-        "Jonas Vestergaard Jensen",
-        "Mikkel N. Schmidt",
-        "Michael Riis Andersen"
-      ],
-      "abstract": "Bayesian Neural Networks (BNNs) often improve model calibration and predictive uncertainty quantification compared to point estimators such as maximum-a-posteriori (MAP). Similarly, deep ensembles (DEs) are also known to improve calibration, and therefore, it is natural to hypothesize that deep ensembles of BNNs (DE-BNNs) should provide even further improvements. In this work, we systematically investigate this across a number of datasets, neural network architectures, and BNN approximation methods and surprisingly find that when the ensembles grow large enough, DEs consistently outperform DE-BNNs on in-distribution data. To shine light on this observation, we conduct several sensitivity and ablation studies. Moreover, we show that even though DE-BNNs outperform DEs on out-of-distribution metrics, this comes at the cost of decreased in-distribution performance. As a final contribution, we open-source the large pool of trained models to facilitate further research on this topic.",
-      "publishedAt": "2025-03-17",
-      "updatedAt": "2025-03-17T15:41:39Z",
-      "arxivId": "2503.13296",
-      "doi": "10.48550/arXiv.2503.13296",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2503.13296v1",
-      "pdfUrl": "https://arxiv.org/pdf/2503.13296",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/jonasvj/OnLocalPosteriorStructureInDeepEnsembles"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2503.13296v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2503.13296"
-        }
-      ],
-      "semanticScholarId": "93089ee4d96258981c14964fd58cd84099f9194a",
-      "venue": "International Conference on Artificial Intelligence and Statistics",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 64,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 2,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Artificial Intelligence and Statistics",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2503.07901",
       "title": "Intelligent Framework for Human-Robot Collaboration: Dynamic Ergonomics and Adaptive Decision-Making",
       "authors": [
@@ -41000,7 +40833,6 @@
           "已有正式发表线索：10.1016/j.rcim.2026.103309",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -47731,6 +47563,82 @@
       }
     },
     {
+      "id": "arxiv:2503.13296",
+      "title": "On Local Posterior Structure in Deep Ensembles",
+      "authors": [
+        "Mikkel Jordahn",
+        "Jonas Vestergaard Jensen",
+        "Mikkel N. Schmidt",
+        "Michael Riis Andersen"
+      ],
+      "abstract": "Bayesian Neural Networks (BNNs) often improve model calibration and predictive uncertainty quantification compared to point estimators such as maximum-a-posteriori (MAP). Similarly, deep ensembles (DEs) are also known to improve calibration, and therefore, it is natural to hypothesize that deep ensembles of BNNs (DE-BNNs) should provide even further improvements. In this work, we systematically investigate this across a number of datasets, neural network architectures, and BNN approximation methods and surprisingly find that when the ensembles grow large enough, DEs consistently outperform DE-BNNs on in-distribution data. To shine light on this observation, we conduct several sensitivity and ablation studies. Moreover, we show that even though DE-BNNs outperform DEs on out-of-distribution metrics, this comes at the cost of decreased in-distribution performance. As a final contribution, we open-source the large pool of trained models to facilitate further research on this topic.",
+      "publishedAt": "2025-03-17",
+      "updatedAt": "2025-03-17T15:41:39Z",
+      "arxivId": "2503.13296",
+      "doi": "10.48550/arXiv.2503.13296",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2503.13296v1",
+      "pdfUrl": "https://arxiv.org/pdf/2503.13296",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/jonasvj/OnLocalPosteriorStructureInDeepEnsembles"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2503.13296v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2503.13296"
+        }
+      ],
+      "semanticScholarId": "93089ee4d96258981c14964fd58cd84099f9194a",
+      "venue": "International Conference on Artificial Intelligence and Statistics",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 63,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 1,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：International Conference on Artificial Intelligence and Statistics",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2503.12406",
       "title": "Bio-Inspired Plastic Neural Networks for Zero-Shot Out-of-Distribution Generalization in Complex Animal-Inspired Robots",
       "authors": [
@@ -49142,86 +49050,6 @@
           "citations": 2,
           "reproducibility": 4,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21153",
-      "title": "Synthetica: Large Scale Synthetic Data Generation for Robot Perception",
-      "authors": [
-        "Ritvik Singh",
-        "Jingzhou Liu",
-        "Karl Van Wyk",
-        "Yu-Wei Chao",
-        "Jean-Francois Lafleche",
-        "Florian Shkurti",
-        "Nathan Ratliff",
-        "Ankur Handa"
-      ],
-      "abstract": "Vision-based object detectors are a crucial basis for robotics applications as they provide valuable information about object localization in the environment. These need to ensure high reliability in different lighting conditions, occlusions, and visual artifacts, all while running in real-time. Collecting and annotating real-world data for these networks is prohibitively time consuming and costly, especially for custom assets, such as industrial objects, making it untenable for generalization to in-the-wild scenarios. To this end, we present Synthetica, a method for large-scale synthetic data generation for training robust state estimators. This paper focuses on the task of object detection, an important problem which can serve as the front-end for most state estimation problems, such as pose estimation. Leveraging data from a photorealistic ray-tracing renderer, we scale up data generation, generating 2.7 million images, to train highly accurate real-time detection transformers. We present a collection of rendering randomization and training-time data augmentation techniques conducive to robust sim-to-real performance for vision tasks. We demonstrate state-of-the-art performance on the task of object detection while having detectors that run at 50–100Hz which is 9 times faster than the prior state-of-the-art (SOTA). We further demonstrate the usefulness of our training methodology for robotics applications by showcasing a pipeline for use in the real world with custom objects for which there do not exist prior datasets. Our work highlights the importance of scaling synthetic data generation for robust sim-to-real transfer while achieving the fastest real-time inference speeds. Videos and supplementary information can be found at https://sites.google.com/view/synthetica-vision",
-      "publishedAt": "2024-10-28",
-      "updatedAt": "2024-10-28T15:50:56Z",
-      "arxivId": "2410.21153",
-      "doi": "10.1109/IROS60139.2025.11247126",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21153v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21153",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://sites.google.com/view/synthetica-vision"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21153v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21153"
-        }
-      ],
-      "semanticScholarId": "a29add7602e3bc1f210ee6c98c97fcad54e56769",
-      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
-      "citationCount": 8,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "iros",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 21,
-        "freshness": 1,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：IEEE/RJS International Conference on Intelligent RObots and Systems",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 1,
-          "reproducibility": 2,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -51010,83 +50838,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：International Conference on Pattern Recognition",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2408.10162",
-      "title": "Physics-Aware Combinatorial Assembly Sequence Planning using Data-free Action Masking",
-      "authors": [
-        "Ruixuan Liu",
-        "Alan Chen",
-        "Weiye Zhao",
-        "Changliu Liu"
-      ],
-      "abstract": "Combinatorial assembly uses standardized unit primitives to build objects that satisfy user specifications. This paper studies assembly sequence planning (ASP) for physical combinatorial assembly. Given the shape of the desired object, the goal is to find a sequence of actions for placing unit primitives to build the target object. In particular, we aim to ensure the planned assembly sequence is physically executable. However, ASP for combinatorial assembly is particularly challenging due to its combinatorial nature. To address the challenge, we employ deep reinforcement learning to learn a construction policy for placing unit primitives sequentially to build the desired object. Specifically, we design an online physics-aware action mask that filters out invalid actions, which effectively guides policy learning and ensures violation-free deployment. In the end, we apply the proposed method to Lego assembly with more than 250 3D structures. The experiment results demonstrate that the proposed method plans physically valid assembly sequences to build all structures, achieving a $100\\%$ success rate, whereas the best comparable baseline fails more than $40$ structures. Our implementation is available at \\url{https://github.com/intelligent-control-lab/PhysicsAwareCombinatorialASP}.",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2025-03-23T05:46:48Z",
-      "arxivId": "2408.10162",
-      "doi": "10.1109/LRA.2025.3555074",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "ai-reasoning-planning",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.10162v3",
-      "pdfUrl": "https://arxiv.org/pdf/2408.10162",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/intelligent-control-lab/PhysicsAwareCombinatorialASP}"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.10162v3"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.10162"
-        }
-      ],
-      "semanticScholarId": "73e5582a672c0b482a40d0fc6aa6c6517a07baee",
-      "venue": "IEEE Robotics and Automation Letters",
-      "citationCount": 12,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE Robotics and Automation Letters",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -60413,80 +60164,6 @@
       }
     },
     {
-      "id": "arxiv:2508.08287",
-      "title": "Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions",
-      "authors": [
-        "Farah Atif",
-        "Nursultan Askarbekuly",
-        "Kareem Darwish",
-        "Monojit Choudhury"
-      ],
-      "abstract": "Despite the increasing usage of Large Language Models\n(LLMs) in answering in questions in a variety of domains,\ntheir reliability and accuracy remain unexamined for a\na plethora of domains, including the religious domains. In\nthis paper, we introduce a novel benchmark FiqhQA focused\non the LLM generated Islamic rulings explicitly categorized\nby the four major Sunni schools of thought, in both Arabic\nand English. Unlike prior work, which either overlooks the\ndistinctions between religious schools of thought or fails\nto evaluate abstention behavior, we assess LLMs not only on\ntheir accuracy but also on their ability to recognize when\nnot to answer. Our zero-shot and abstention experiments\nreveal significant variation across LLMs, languages, and\nlegal schools of thought. While GPT-4o outperforms all\nother models in accuracy, Gemini and Fanar demonstrate\nsuperior abstention behavior critical for minimizing\nconfident incorrect answers. Notably, all models exhibit a\nperformance drop in Arabic, highlighting the limitations in\nreligious reasoning for languages other than English. To\nthe best of our knowledge, this is the first study to\nbenchmark the efficacy of LLMs for fine-grained Islamic\nschool of thought specific ruling generation and to\nevaluate abstention for Islamic jurisprudence queries. Our\nfindings underscore the need for task-specific evaluation\nand cautious deployment of LLMs in religious applications.",
-      "publishedAt": "2025-08-04",
-      "updatedAt": "2025-08-04T07:27:26Z",
-      "arxivId": "2508.08287",
-      "doi": "10.48550/arXiv.2508.08287",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.CY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2508.08287v1",
-      "pdfUrl": "https://arxiv.org/pdf/2508.08287",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.08287v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.08287"
-        }
-      ],
-      "semanticScholarId": "4d6606388f4e924182bfb025aa01a18401015ad0",
-      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
-      "citationCount": 8,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.21696",
       "title": "MS-YOLO: Infrared Object Detection for Edge Deployment via MobileNetV4 and SlideLoss",
       "authors": [
@@ -62603,83 +62280,81 @@
       }
     },
     {
-      "id": "arxiv:2410.21352",
-      "title": "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+      "id": "arxiv:2410.21153",
+      "title": "Synthetica: Large Scale Synthetic Data Generation for Robot Perception",
       "authors": [
-        "Ge Yang",
-        "Changyi He",
-        "Jinyang Guo",
-        "Jianyu Wu",
-        "Yifu Ding",
-        "Aishan Liu",
-        "Haotong Qin",
-        "Pengliang Ji",
-        "Xianglong Liu"
+        "Ritvik Singh",
+        "Jingzhou Liu",
+        "Karl Van Wyk",
+        "Yu-Wei Chao",
+        "Jean-Francois Lafleche",
+        "Florian Shkurti",
+        "Nathan Ratliff",
+        "Ankur Handa"
       ],
-      "abstract": "Although large language models (LLMs) have demonstrated their strong intelligence ability, the high demand for computation and storage hinders their practical application. To this end, many model compression techniques are proposed to increase the efficiency of LLMs. However, current researches only validate their methods on limited models, datasets, metrics, etc, and still lack a comprehensive evaluation under more general scenarios. So it is still a question of which model compression approach we should use under a specific case. To mitigate this gap, we present the Large Language Model Compression Benchmark (LLMCBench), a rigorously designed benchmark with an in-depth analysis for LLM compression algorithms. We first analyze the actual model production requirements and carefully design evaluation tracks and metrics. Then, we conduct extensive experiments and comparison using multiple mainstream LLM compression approaches. Finally, we perform an in-depth analysis based on the evaluation and provide useful insight for LLM compression design. We hope our LLMCBench can contribute insightful suggestions for LLM compression algorithm design and serve as a foundation for future research. Our code is available at https://github.com/AboveParadise/LLMCBench.",
+      "abstract": "Vision-based object detectors are a crucial basis for robotics applications as they provide valuable information about object localization in the environment. These need to ensure high reliability in different lighting conditions, occlusions, and visual artifacts, all while running in real-time. Collecting and annotating real-world data for these networks is prohibitively time consuming and costly, especially for custom assets, such as industrial objects, making it untenable for generalization to in-the-wild scenarios. To this end, we present Synthetica, a method for large-scale synthetic data generation for training robust state estimators. This paper focuses on the task of object detection, an important problem which can serve as the front-end for most state estimation problems, such as pose estimation. Leveraging data from a photorealistic ray-tracing renderer, we scale up data generation, generating 2.7 million images, to train highly accurate real-time detection transformers. We present a collection of rendering randomization and training-time data augmentation techniques conducive to robust sim-to-real performance for vision tasks. We demonstrate state-of-the-art performance on the task of object detection while having detectors that run at 50–100Hz which is 9 times faster than the prior state-of-the-art (SOTA). We further demonstrate the usefulness of our training methodology for robotics applications by showcasing a pipeline for use in the real world with custom objects for which there do not exist prior datasets. Our work highlights the importance of scaling synthetic data generation for robust sim-to-real transfer while achieving the fastest real-time inference speeds. Videos and supplementary information can be found at https://sites.google.com/view/synthetica-vision",
       "publishedAt": "2024-10-28",
-      "updatedAt": "2024-10-31T06:01:26Z",
-      "arxivId": "2410.21352",
-      "doi": "10.48550/arXiv.2410.21352",
+      "updatedAt": "2024-10-28T15:50:56Z",
+      "arxivId": "2410.21153",
+      "doi": "10.1109/IROS60139.2025.11247126",
       "categories": [
-        "cs.CL",
-        "cs.AI"
+        "cs.CV",
+        "cs.RO"
       ],
       "fieldIds": [
-        "cs-ai",
-        "cs-cl",
+        "cs-cv",
         "embodied-intelligence"
       ],
       "topicIds": [
         "simulation-datasets-evaluation",
-        "cl-language-modeling"
+        "cv-representation-recognition"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21352v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21352",
+      "sourceUrl": "http://arxiv.org/abs/2410.21153v1",
+      "pdfUrl": "https://arxiv.org/pdf/2410.21153",
       "artifacts": [
         {
-          "kind": "code",
-          "url": "https://github.com/AboveParadise/LLMCBench"
+          "kind": "project",
+          "url": "https://sites.google.com/view/synthetica-vision"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21352v2"
+          "url": "https://arxiv.org/pdf/2410.21153v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21352"
+          "url": "https://arxiv.org/pdf/2410.21153"
         }
       ],
-      "semanticScholarId": "81deb0e283c19101cd6187e6b83c89a21585678f",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 21,
+      "semanticScholarId": "a29add7602e3bc1f210ee6c98c97fcad54e56769",
+      "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+      "citationCount": 8,
       "influentialCitationCount": 1,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "formal",
+      "canonicalVenueId": "iros",
+      "publicationStatus": "core",
       "personalization": {},
       "score": {
         "baseTotal": 62,
         "relevance": 24,
-        "evidence": 17,
-        "freshness": 1,
-        "completeness": 20,
+        "evidence": 21,
+        "freshness": 0,
+        "completeness": 17,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：Neural Information Processing Systems",
-          "提供可复现代码",
+          "本方向核心 venue：IEEE/RJS International Conference on Intelligent RObots and Systems",
+          "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
-          "publication": 6,
+          "publication": 10,
           "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
+          "reproducibility": 2,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -65030,6 +64705,88 @@
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17253",
+      "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+      "authors": [
+        "Yunhao Yang",
+        "Yuexin Bian",
+        "Yunjie Tian",
+        "Di Fu",
+        "Tianjin Huang",
+        "Yuanyuan Shi",
+        "Ziang Xiao",
+        "Nuno Vasconcelos",
+        "Yijiang Li"
+      ],
+      "abstract": "Reinforcement learning (RL) has emerged as a powerful approach for improving reasoning in language and vision-language models, yet its strongest successes still depend heavily on ground-truth supervision (e.g., verifiable reward). Such annotations are costly to obtain and become increasingly scarce as reasoning capabilities advance beyond what humans can reliably evaluate. Self-rewarding RL reduces this dependence by enabling models to derive reward signals from their own completions. However, training solely on self-generated feedback can reinforce existing biases and suboptimal behaviors, reduce response diversity, and ultimately lead to homogenized responses and training collapse. In this work, we show that unsupervised reasoning can emerge through cooperative multi-agent training. We introduce Co-RL, a framework in which multiple decoupled models, sharing no parameters, are simultaneously optimized through RL using rewards derived from their peers. We further show that increasing cohort diversity, through heterogeneous model families, sizes, and rephrased training samples, reduces the correlated errors that drive self-reinforcing feedback loops. This diversity consistently improves reasoning performance, maintains behavioral diversity, and mitigates training collapse. Across text-only and multimodal domains, Co-RL consistently outperforms the base models and prior label-free approaches, while matching or surpassing supervised methods, without access to any ground-truth labels. Concretely, Co-RL yields average gains of 3.0-8.6% across seven text-only benchmarks for LLMs and 2.3-7.2% across four multimodal benchmarks for VLMs. Code is available at https://github.com/DrStranded/Co-RL.",
+      "publishedAt": "2026-08-18T01:16:02Z",
+      "updatedAt": "2026-08-18T01:16:02Z",
+      "arxivId": "2608.17253",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "ai-multi-agent-systems",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17253v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17253v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/DrStranded/Co-RL"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17253v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 30,
+        "evidence": 10,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 6,
+          "corroboration": 0
         }
       }
     },
@@ -67408,7 +67165,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -67489,7 +67245,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
@@ -67565,7 +67320,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -77228,6 +76982,80 @@
       }
     },
     {
+      "id": "arxiv:2508.08287",
+      "title": "Sacred or Synthetic? Evaluating LLM Reliability and Abstention for Religious Questions",
+      "authors": [
+        "Farah Atif",
+        "Nursultan Askarbekuly",
+        "Kareem Darwish",
+        "Monojit Choudhury"
+      ],
+      "abstract": "Despite the increasing usage of Large Language Models\n(LLMs) in answering in questions in a variety of domains,\ntheir reliability and accuracy remain unexamined for a\na plethora of domains, including the religious domains. In\nthis paper, we introduce a novel benchmark FiqhQA focused\non the LLM generated Islamic rulings explicitly categorized\nby the four major Sunni schools of thought, in both Arabic\nand English. Unlike prior work, which either overlooks the\ndistinctions between religious schools of thought or fails\nto evaluate abstention behavior, we assess LLMs not only on\ntheir accuracy but also on their ability to recognize when\nnot to answer. Our zero-shot and abstention experiments\nreveal significant variation across LLMs, languages, and\nlegal schools of thought. While GPT-4o outperforms all\nother models in accuracy, Gemini and Fanar demonstrate\nsuperior abstention behavior critical for minimizing\nconfident incorrect answers. Notably, all models exhibit a\nperformance drop in Arabic, highlighting the limitations in\nreligious reasoning for languages other than English. To\nthe best of our knowledge, this is the first study to\nbenchmark the efficacy of LLMs for fine-grained Islamic\nschool of thought specific ruling generation and to\nevaluate abstention for Islamic jurisprudence queries. Our\nfindings underscore the need for task-specific evaluation\nand cautious deployment of LLMs in religious applications.",
+      "publishedAt": "2025-08-04",
+      "updatedAt": "2025-08-04T07:27:26Z",
+      "arxivId": "2508.08287",
+      "doi": "10.48550/arXiv.2508.08287",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2508.08287v1",
+      "pdfUrl": "https://arxiv.org/pdf/2508.08287",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.08287v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.08287"
+        }
+      ],
+      "semanticScholarId": "4d6606388f4e924182bfb025aa01a18401015ad0",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "citationCount": 8,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2607.27959",
       "title": "FiRE: Enhancing MLLMs with Fine-Grained Context Learning for Complex Image Retrieval",
       "authors": [
@@ -78840,6 +78668,88 @@
           "citations": 2,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2410.21352",
+      "title": "LLMCBench: Benchmarking Large Language Model Compression for Efficient Deployment",
+      "authors": [
+        "Ge Yang",
+        "Changyi He",
+        "Jinyang Guo",
+        "Jianyu Wu",
+        "Yifu Ding",
+        "Aishan Liu",
+        "Haotong Qin",
+        "Pengliang Ji",
+        "Xianglong Liu"
+      ],
+      "abstract": "Although large language models (LLMs) have demonstrated their strong intelligence ability, the high demand for computation and storage hinders their practical application. To this end, many model compression techniques are proposed to increase the efficiency of LLMs. However, current researches only validate their methods on limited models, datasets, metrics, etc, and still lack a comprehensive evaluation under more general scenarios. So it is still a question of which model compression approach we should use under a specific case. To mitigate this gap, we present the Large Language Model Compression Benchmark (LLMCBench), a rigorously designed benchmark with an in-depth analysis for LLM compression algorithms. We first analyze the actual model production requirements and carefully design evaluation tracks and metrics. Then, we conduct extensive experiments and comparison using multiple mainstream LLM compression approaches. Finally, we perform an in-depth analysis based on the evaluation and provide useful insight for LLM compression design. We hope our LLMCBench can contribute insightful suggestions for LLM compression algorithm design and serve as a foundation for future research. Our code is available at https://github.com/AboveParadise/LLMCBench.",
+      "publishedAt": "2024-10-28",
+      "updatedAt": "2024-10-31T06:01:26Z",
+      "arxivId": "2410.21352",
+      "doi": "10.48550/arXiv.2410.21352",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2410.21352v2",
+      "pdfUrl": "https://arxiv.org/pdf/2410.21352",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/AboveParadise/LLMCBench"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.21352v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.21352"
+        }
+      ],
+      "semanticScholarId": "81deb0e283c19101cd6187e6b83c89a21585678f",
+      "venue": "Neural Information Processing Systems",
+      "citationCount": 21,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "neurips",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Neural Information Processing Systems",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -82112,84 +82022,6 @@
       }
     },
     {
-      "id": "arxiv:2408.09764",
-      "title": "Event Stream based Human Action Recognition: A High-Definition Benchmark Dataset and Algorithms",
-      "authors": [
-        "Xiao Wang",
-        "Shiao Wang",
-        "Pengpeng Shao",
-        "Bo Jiang",
-        "Lin Zhu",
-        "Yonghong Tian"
-      ],
-      "abstract": "Human Action Recognition (HAR) stands as a pivotal research domain in both computer vision and artificial intelligence, with RGB cameras dominating as the preferred tool for investigation and innovation in this field. However, in real-world applications, RGB cameras encounter numerous challenges, including light conditions, fast motion, and privacy concerns. Consequently, bio-inspired event cameras have garnered increasing attention due to their advantages of low energy consumption, high dynamic range, etc. Nevertheless, most existing event-based HAR datasets are low resolution ($346 \\times 260$). In this paper, we propose a large-scale, high-definition ($1280 \\times 800$) human action recognition dataset based on the CeleX-V event camera, termed CeleX-HAR. It encompasses 150 commonly occurring action categories, comprising a total of 124,625 video sequences. Various factors such as multi-view, illumination, action speed, and occlusion are considered when recording these data. To build a more comprehensive benchmark dataset, we report over 20 mainstream HAR models for future works to compare. In addition, we also propose a novel Mamba vision backbone network for event stream based HAR, termed EVMamba, which equips the spatial plane multi-directional scanning and novel voxel temporal scanning mechanism. By encoding and mining the spatio-temporal information of event streams, our EVMamba has achieved favorable results across multiple datasets. Both the dataset and source code will be released on \\url{https://github.com/Event-AHU/CeleX-HAR}",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-08-19T07:52:20Z",
-      "arxivId": "2408.09764",
-      "doi": "10.48550/arXiv.2408.09764",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.NE"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-video-understanding"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.09764v1",
-      "pdfUrl": "https://arxiv.org/pdf/2408.09764",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/Event-AHU/CeleX-HAR}"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09764v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09764"
-        }
-      ],
-      "semanticScholarId": "d15e631edabb95ffc6f1c28308629cce4ee8553c",
-      "citationCount": 14,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2408.09764",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.16259",
       "title": "Defake-o3: From Speculative Rationales to Verifiable Evidence for Explainable AIGI Detection",
       "authors": [
@@ -82475,85 +82307,6 @@
           "citations": 0,
           "reproducibility": 6,
           "empirical": 9,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2608.11616",
-      "title": "MBA: Multimodal Benchmark and Agents for Real-World Business Ideation",
-      "authors": [
-        "Hojun Choi",
-        "Jaeyo Shin",
-        "Suin Lee",
-        "Hyunjung Shim"
-      ],
-      "abstract": "Agentic systems powered by large language models (LLMs) have opened new opportunities for business ideation. Yet existing approaches remain confined to a text-only paradigm, despite the inherently multimodal nature of real-world contexts. We thus introduce MBA-Bench, the first multimodal benchmark for training and evaluating business ideation agents, comprising 30K samples across six domains, each domain characterized by distinct visual cues not fully conveyed by text alone. Concretely, we automatically caption images and employ GPT-4o to generate five reference ideas for each of three business questions through retrieval query generation, market evidence retrieval, and evidence-augmented synthesis. Following prior work, we evaluate agents across six business-oriented criteria using MLLM-as-a-Judge. To consider settings where criteria are hidden or disclosed, we present MBA-b and MBA-k for blind and known, respectively. We train both with two novel reward objectives---creativity and feasibility---while MBA-k further optimizes the six disclosed criteria for eight in total. Both are trained via LoRA-based supervised fine-tuning followed by group relative policy optimization with these setting-specific rewards. For extensive experiments on MBA-Bench, we set up two baselines accommodating either captions only or multimodal inputs, with the latter nearing closed-source performance on several metrics. MBA-b and MBA-k outperform caption baselines by 63.9% and 77.1%, and multimodal baselines by 25.6% and 35.8%, respectively.",
-      "publishedAt": "2026-08-12T03:52:57Z",
-      "updatedAt": "2026-08-13T02:06:46Z",
-      "arxivId": "2608.11616",
-      "categories": [
-        "cs.AI",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2608.11616v2",
-      "pdfUrl": "https://arxiv.org/pdf/2608.11616v2",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://hchoi256.github.io/projects/mba/"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/hchoi256/MBA"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2608.11616v2"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 27,
-        "evidence": 12,
-        "freshness": 5,
-        "completeness": 16,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
-          "提供可复现代码",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "两周内发布",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 6,
-          "empirical": 6,
           "corroboration": 0
         }
       }
@@ -84984,7 +84737,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
@@ -85060,7 +84812,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
@@ -88573,84 +88324,6 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.20888",
-      "title": "Video-As-Prompt: Unified Semantic Control for Video Generation",
-      "authors": [
-        "Yuxuan Bian",
-        "Xin Chen",
-        "Zenan Li",
-        "Tiancheng Zhi",
-        "Shen Sang",
-        "Linjie Luo",
-        "Qiang Xu"
-      ],
-      "abstract": "Unified, generalizable semantic control in video generation remains a critical open challenge. Existing methods either introduce artifacts by enforcing inappropriate pixel-wise priors from structure-based controls, or rely on non-generalizable, condition-specific finetuning or task-specific architectures. We introduce Video-As-Prompt (VAP), a new paradigm that reframes this problem as in-context generation. VAP leverages a reference video as a direct semantic prompt, guiding a frozen Video Diffusion Transformer (DiT) via a plug-and-play Mixture-of-Transformers (MoT) expert. This architecture prevents catastrophic forgetting and is guided by a temporally biased position embedding that eliminates spurious mapping priors for robust context retrieval. To power this approach and catalyze future research, we built VAP-Data, the largest dataset for semantic-controlled video generation with over 100K paired videos across 100 semantic conditions. As a single unified model, VAP sets a new state-of-the-art for open-source methods, achieving a 38.7% user preference rate that rivals leading condition-specific commercial models. VAP's strong zero-shot generalization and support for various downstream applications mark a significant advance toward general-purpose, controllable video generation.",
-      "publishedAt": "2025-10-23",
-      "updatedAt": "2025-10-23T17:59:52Z",
-      "arxivId": "2510.20888",
-      "doi": "10.48550/arXiv.2510.20888",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-image-video-generation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.20888v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.20888",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://bytedance.github.io/Video-As-Prompt"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.20888v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.20888"
-        }
-      ],
-      "semanticScholarId": "746d86c357020547bd605f3de76482d5dac5baee",
-      "citationCount": 10,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.20888",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -98608,83 +98281,6 @@
       }
     },
     {
-      "id": "arxiv:2408.09822",
-      "title": "SurgicaL-CD: Generating Surgical Images via Unpaired Image Translation with Latent Consistency Diffusion Models",
-      "authors": [
-        "Danush Kumar Venkatesh",
-        "Dominik Rivoir",
-        "Micha Pfeiffer",
-        "Stefanie Speidel"
-      ],
-      "abstract": "Computer-assisted surgery (CAS) systems are designed to assist surgeons during procedures, thereby reducing complications and enhancing patient care. Training machine learning models for these systems requires a large corpus of annotated datasets, which is challenging to obtain in the surgical domain due to patient privacy concerns and the significant labeling effort required from doctors. Previous methods have explored unpaired image translation using generative models to create realistic surgical images from simulations. However, these approaches have struggled to produce high-quality, diverse surgical images. In this work, we introduce \\emph{SurgicaL-CD}, a consistency-distilled diffusion method to generate realistic surgical images with only a few sampling steps without paired data. We evaluate our approach on three datasets, assessing the generated images in terms of quality and utility as downstream training datasets. Our results demonstrate that our method outperforms GANs and diffusion-based approaches. Our code is available at https://gitlab.com/nct_tso_public/gan2diffusion.",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-10-11T07:46:11Z",
-      "arxivId": "2408.09822",
-      "doi": "10.48550/arXiv.2408.09822",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-image-video-generation",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.09822v3",
-      "pdfUrl": "https://arxiv.org/pdf/2408.09822",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://gitlab.com/nct_tso_public/gan2diffusion"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09822v3"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09822"
-        }
-      ],
-      "semanticScholarId": "6dacd87bf0df0cf8076d421eeb71e7f6d880a119",
-      "venue": "ECCV Workshops",
-      "citationCount": 9,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "eccv",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：ECCV Workshops",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.16663",
       "title": "Bounded Semantic Planning and Deterministic Compilation for Reliable Enterprise Text-to-SQL",
       "authors": [
@@ -99010,180 +98606,6 @@
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2608.10513",
-      "title": "SafeCap: Improving LVLM Safety with Image Captioning Reinforcement Learning",
-      "authors": [
-        "Caoyuan Ma",
-        "Wenpu Liu",
-        "Weichu Xie",
-        "Tian Gu",
-        "Shilei Zhao",
-        "Lingxi Min",
-        "Shuai Dong",
-        "Yuqi Xu",
-        "Ji Zhao",
-        "Ziyue Wang",
-        "Wenzheng Chang",
-        "Taiqiang Wu",
-        "Yongfu Zhu",
-        "Wenqi Shao",
-        "Yinqiang Zheng"
-      ],
-      "abstract": "Large vision-language models (LVLMs) remain vulnerable to jailbreak attacks that exploit visual inputs to bypass safety alignment inherited from their language backbones. We propose SafeCap, a reinforcement-learning framework that aligns LVLMs through learned self-captioning. SafeCap trains a policy model to first generate a safety-relevant image caption and then produce a final answer; the caption is further optimized by whether it enables a frozen LLM to reach a safety-aligned decision. This caption-mediated objective encourages the policy to expose visual cues relevant to safe response generation rather than relying solely on direct refusal supervision. Across five multimodal safety benchmarks and six vision-utility benchmarks, SafeCap substantially improves aggregate safety performance under its intended DirectCap protocol, with gains of 3.7-19.0 points in safety average across four model settings while maintaining comparable or improved vision utility. Under controlled comparisons on matched backbones and data, SafeCap outperforms safety SFT, DPO, and SafeGRPO, demonstrating the effectiveness of caption-mediated reinforcement learning for multimodal safety alignment.",
-      "publishedAt": "2026-08-11T05:37:59Z",
-      "updatedAt": "2026-08-11T05:37:59Z",
-      "arxivId": "2608.10513",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2608.10513v1",
-      "pdfUrl": "https://arxiv.org/pdf/2608.10513v1",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://safe-vlm.github.io/SafeCap/"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/Safe-VLM/SafeCap"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2608.10513v1"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 30,
-        "evidence": 8,
-        "freshness": 5,
-        "completeness": 16,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
-          "提供可复现代码",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 6,
-          "empirical": 2,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2608.10413",
-      "title": "DriveVLA-M0: Failure-Aware Memory Augmentation for Autonomous Driving",
-      "authors": [
-        "Zebin Xing",
-        "Yupeng Zheng",
-        "Qiang Chen",
-        "Linbo Wang",
-        "Yichen Zhang",
-        "Pengxuan Yang",
-        "Junli Wang",
-        "Deheng Qian",
-        "Xiaoqing Ye",
-        "Junyu Han",
-        "Yifeng Pan",
-        "Qichao Zhang",
-        "Dongbin Zhao"
-      ],
-      "abstract": "Vision-Language-Action (VLA) models have recently emerged as a promising paradigm for end-to-end autonomous driving by enabling unified reasoning across perception, language, and planning. However, existing approaches lack mechanisms to exploit past failures or adapt to distribution shifts, causing the model to persistently underperform on similar scenarios where it has previously failed. In this paper, we propose DriveVLA-M0, a retrieval-augmented VLA with failure-aware latent memory. We construct a latent memory pool that stores failure cases along with their structure scene representations and expert trajectory labels, and design a dedicated Retrieve Model that decouples static road structure and dynamic agent interactions to enable structurally grounded retrieval. At inference time, retrieved cases are injected into the model via a lightweight decoupled LoRA-based test-time training (TTT) mechanism, allowing targeted and scenario-specific correction without modifying the backbone. Extensive experiments on NAVSIMv1 and NAVSIMv2 benchmark demonstrate that our approach consistently outperforms prior methods, achieving 94.1 PDMS on Navtest and 47.0 EPDMS on Navhard with only 26.44 ms TTT backward latency overhead. Furthermore, we show that DriveVLA-M0 scales effectively with additional memory, enabling training-free performance gains through memory expansion. The code is available at https://github.com/ZebinX/DriveVLA-M0.",
-      "publishedAt": "2026-08-11T03:01:46Z",
-      "updatedAt": "2026-08-11T03:01:46Z",
-      "arxivId": "2608.10413",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2608.10413v1",
-      "pdfUrl": "https://arxiv.org/pdf/2608.10413v1",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/ZebinX/DriveVLA-M0"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2608.10413v1"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 30,
-        "evidence": 8,
-        "freshness": 5,
-        "completeness": 16,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 0
         }
       }
     },
@@ -99621,7 +99043,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -99715,7 +99136,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -102941,7 +102361,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 4 个关注主题",
-          "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -108695,6 +108114,84 @@
           "publication": 6,
           "citations": 0,
           "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.20888",
+      "title": "Video-As-Prompt: Unified Semantic Control for Video Generation",
+      "authors": [
+        "Yuxuan Bian",
+        "Xin Chen",
+        "Zenan Li",
+        "Tiancheng Zhi",
+        "Shen Sang",
+        "Linjie Luo",
+        "Qiang Xu"
+      ],
+      "abstract": "Unified, generalizable semantic control in video generation remains a critical open challenge. Existing methods either introduce artifacts by enforcing inappropriate pixel-wise priors from structure-based controls, or rely on non-generalizable, condition-specific finetuning or task-specific architectures. We introduce Video-As-Prompt (VAP), a new paradigm that reframes this problem as in-context generation. VAP leverages a reference video as a direct semantic prompt, guiding a frozen Video Diffusion Transformer (DiT) via a plug-and-play Mixture-of-Transformers (MoT) expert. This architecture prevents catastrophic forgetting and is guided by a temporally biased position embedding that eliminates spurious mapping priors for robust context retrieval. To power this approach and catalyze future research, we built VAP-Data, the largest dataset for semantic-controlled video generation with over 100K paired videos across 100 semantic conditions. As a single unified model, VAP sets a new state-of-the-art for open-source methods, achieving a 38.7% user preference rate that rivals leading condition-specific commercial models. VAP's strong zero-shot generalization and support for various downstream applications mark a significant advance toward general-purpose, controllable video generation.",
+      "publishedAt": "2025-10-23",
+      "updatedAt": "2025-10-23T17:59:52Z",
+      "arxivId": "2510.20888",
+      "doi": "10.48550/arXiv.2510.20888",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.20888v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.20888",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://bytedance.github.io/Video-As-Prompt"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.20888v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.20888"
+        }
+      ],
+      "semanticScholarId": "746d86c357020547bd605f3de76482d5dac5baee",
+      "citationCount": 10,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 3,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.20888",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
           "empirical": 4,
           "corroboration": 4
         }
@@ -120897,81 +120394,6 @@
       }
     },
     {
-      "id": "arxiv:2408.10031",
-      "title": "Dynamic Label Injection for Imbalanced Industrial Defect Segmentation",
-      "authors": [
-        "Emanuele Caruso",
-        "Francesco Pelosin",
-        "Alessandro Simoni",
-        "Marco Boschetti"
-      ],
-      "abstract": "In this work, we propose a simple yet effective method to tackle the problem of imbalanced multi-class semantic segmentation in deep learning systems. One of the key properties for a good training set is the balancing among the classes. When the input distribution is heavily imbalanced in the number of instances, the learning process could be hindered or difficult to carry on. To this end, we propose a Dynamic Label Injection (DLI) algorithm to impose a uniform distribution in the input batch. Our algorithm computes the current batch defect distribution and re-balances it by transferring defects using a combination of Poisson-based seamless image cloning and cut-paste techniques. A thorough experimental section on the Magnetic Tiles dataset shows better results of DLI compared to other balancing loss approaches also in the challenging weakly-supervised setup. The code is available at https://github.com/covisionlab/dynamic-label-injection.git",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-08-19T14:24:46Z",
-      "arxivId": "2408.10031",
-      "doi": "10.48550/arXiv.2408.10031",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.10031v1",
-      "pdfUrl": "https://arxiv.org/pdf/2408.10031",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/covisionlab/dynamic-label-injection.git"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.10031v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.10031"
-        }
-      ],
-      "semanticScholarId": "6296e034e76acd96a7e0ffc750ce39cdc52dd360",
-      "venue": "ECCV Workshops",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "eccv",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：ECCV Workshops",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.16651",
       "title": "Orbit-Planner: Towards Latent World Models for On-Orbit Obstacle Avoidance of Satellite Agents",
       "authors": [
@@ -121656,77 +121078,6 @@
         {
           "kind": "pdf",
           "url": "https://arxiv.org/pdf/2608.07460v1"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 27,
-        "evidence": 10,
-        "freshness": 5,
-        "completeness": 16,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "两周内发布",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2608.06477",
-      "title": "StepJack: Benchmarking Computer-Use Agent Safety Against Multi-Step Indirect Prompt Injection",
-      "authors": [
-        "Zhuoxin Zhan",
-        "Akbar Rafiey",
-        "Avery Ma",
-        "Leila Pishdad",
-        "Layla El Asri"
-      ],
-      "abstract": "Computer-use agents (CUAs) face a growing threat from indirect prompt injection, where adversarial instructions are planted in the environment such as web pages. In this paper, we introduce multi-step indirect prompt injection, a new attack class against CUAs in which the adversarial goal is decomposed into multiple innocuous-looking sub-steps and distributed across a chain of pages referenced along the agent's navigation path. We develop a pipeline to automatically decompose an adversarial goal under the constraint that the execution of the decomposed sub-steps must achieve the original goal while optimizing the innocuousness of each decomposed sub-step. With this pipeline, we build StepJack, a CUA safety benchmark with 480 test examples. On this benchmark, we evaluate six state-of-the-art CUAs and find that at a fixed decomposition depth, multi-step attacks raise attack success rate (ASR) on three of six CUAs, by up to 31.2 points (e.g., GPT-5.4-mini: 41.7% at single-step to 72.9% at three-step); averaged over the five CUAs that can reliably follow the reference chain (all but EvoCUA-32B), ASR rises from 31.3% at single-step to 36.9% at three-step. Dataset and code are available at https://github.com/BorealisAI/StepJack.",
-      "publishedAt": "2026-08-06T18:14:30Z",
-      "updatedAt": "2026-08-06T18:14:30Z",
-      "arxivId": "2608.06477",
-      "categories": [
-        "cs.CR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "cl-evaluation-safety"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2608.06477v1",
-      "pdfUrl": "https://arxiv.org/pdf/2608.06477v1",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/BorealisAI/StepJack"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2608.06477v1"
         }
       ],
       "publicationStatus": "preprint",
@@ -124766,7 +124117,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -124841,7 +124191,6 @@
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
@@ -124914,7 +124263,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -124987,7 +124335,6 @@
         "reasons": [
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
-          "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
@@ -136930,145 +136277,213 @@
       }
     },
     {
-      "id": "arxiv:2408.09640",
-      "title": "Acquiring Bidirectionality via Large and Small Language Models",
+      "id": "arxiv:2608.18035",
+      "title": "Plug-and-Play Traffic Element Awareness for End-to-End Autonomous Driving",
       "authors": [
-        "Takumi Goto",
-        "Hiroyoshi Nagao",
-        "Yuta Koreeda"
+        "Zongzheng Zhang",
+        "Jijun Wang",
+        "Saining Zhang",
+        "Shuo Wang",
+        "Yiru Wang",
+        "Hai Yang",
+        "Yang Chen",
+        "Yuwen Heng",
+        "Hao Sun",
+        "Anqing Jiang",
+        "Hao Zhao"
       ],
-      "abstract": "Using token representation from bidirectional language models (LMs) such as BERT is still a widely used approach for token-classification tasks. Even though there exist much larger unidirectional LMs such as Llama-2, they are rarely used to replace the token representation of bidirectional LMs. In this work, we hypothesize that their lack of bidirectionality is keeping them behind. To that end, we propose to newly train a small backward LM and concatenate its representations to those of existing LM for downstream tasks. Through experiments in named entity recognition, we demonstrate that introducing backward model improves the benchmark performance more than 10 points. Furthermore, we show that the proposed method is especially effective for rare domains and in few-shot learning settings.",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-12-10T04:29:24Z",
-      "arxivId": "2408.09640",
-      "doi": "10.48550/arXiv.2408.09640",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cl-information-extraction"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2408.09640v2",
-      "pdfUrl": "https://arxiv.org/pdf/2408.09640",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09640v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09640"
-        }
-      ],
-      "semanticScholarId": "99aa71db9708dee6ebe051901211d557a627922e",
-      "venue": "International Conference on Computational Linguistics",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "coling",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Computational Linguistics",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2408.09800",
-      "title": "Latent Diffusion for Guided Document Table Generation",
-      "authors": [
-        "Syed Jawwad Haider Hamdani",
-        "Saifullah Saifullah",
-        "Stefan Agne",
-        "Andreas Dengel",
-        "Sheraz Ahmed"
-      ],
-      "abstract": "Obtaining annotated table structure data for complex tables is a challenging task due to the inherent diversity and complexity of real-world document layouts. The scarcity of publicly available datasets with comprehensive annotations for intricate table structures hinders the development and evaluation of models designed for such scenarios. This research paper introduces a novel approach for generating annotated images for table structure by leveraging conditioned mask images of rows and columns through the application of latent diffusion models. The proposed method aims to enhance the quality of synthetic data used for training object detection models. Specifically, the study employs a conditioning mechanism to guide the generation of complex document table images, ensuring a realistic representation of table layouts. To evaluate the effectiveness of the generated data, we employ the popular YOLOv5 object detection model for training. The generated table images serve as valuable training samples, enriching the dataset with diverse table structures. The model is subsequently tested on the challenging pubtables-1m testset, a benchmark for table structure recognition in complex document layouts. Experimental results demonstrate that the introduced approach significantly improves the quality of synthetic data for training, leading to YOLOv5 models with enhanced performance. The mean Average Precision (mAP) values obtained on the pubtables-1m testset showcase results closely aligned with state-of-the-art methods. Furthermore, low FID results obtained on the synthetic data further validate the efficacy of the proposed methodology in generating annotated images for table structure.",
-      "publishedAt": "2024-08-19",
-      "updatedAt": "2024-08-19T08:46:16Z",
-      "arxivId": "2408.09800",
-      "doi": "10.1007/978-3-031-70549-6_22",
+      "abstract": "Traffic elements such as traffic lights and road signs play a fundamental role in human driving decisions and should naturally influence end-to-end driving performance. However, existing end-to-end driving research predominantly focuses on dynamic road participants (e.g., vehicles and pedestrians), while the role of traffic elements remains largely unexplored. The community still lacks a systematic study quantifying their impact, largely because public datasets rarely provide structured traffic-element annotations and modern driving systems vary widely in architecture and training paradigm. In this work, we present the first systematic investigation of traffic element awareness for end-to-end autonomous driving. We construct a unified research infrastructure by augmenting multiple public driving datasets with comprehensive traffic-element annotations. To support diverse model families, we adopt a minimal and universal integration design that incorporates traffic-element signals into existing pipelines in a plug-and-play manner with negligible architectural modification. We evaluate this design across modern paradigms, including perception-prediction-planning pipelines, vision-language-action models (VLA), regression-based planners, diffusion-based policies, and trajectory-scoring frameworks, on nuScenes, NAVSIM-v1, NAVSIM-v2, and Bench2Drive. Across all paradigms and datasets, this simple integration consistently improves driving performance, demonstrating that traffic element awareness provides a robust and generalizable signal for end-to-end driving systems. Notably, on the challenging NAVSIM-v2 benchmark, our approach significantly improves state-of-the-art architectures and data pipelines, establishing a new state of the art.",
+      "publishedAt": "2026-08-18T17:29:51Z",
+      "updatedAt": "2026-08-18T17:29:51Z",
+      "arxivId": "2608.18035",
       "categories": [
         "cs.CV"
       ],
       "fieldIds": [
         "cs-cv",
         "embodied-intelligence",
-        "cs-lg"
+        "cs-ai"
       ],
       "topicIds": [
+        "navigation-planning",
         "simulation-datasets-evaluation",
-        "cv-representation-recognition",
-        "cv-image-video-generation",
-        "lg-generative-modeling"
+        "vision-language-action-models",
+        "ai-reasoning-planning",
+        "cv-vision-language-multimodal"
       ],
       "sources": [
-        "arxiv",
-        "semantic-scholar"
+        "arxiv"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2408.09800v1",
-      "pdfUrl": "https://arxiv.org/pdf/2408.09800",
+      "sourceUrl": "http://arxiv.org/abs/2608.18035v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.18035v1",
       "artifacts": [
         {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09800v1"
+          "kind": "project",
+          "url": "https://zzongzheng0918.github.io/TE-Aware-E2E-AD/"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2408.09800"
+          "url": "https://arxiv.org/pdf/2608.18035v1"
         }
       ],
-      "semanticScholarId": "2772426ce23097f98333b7535b5b45ad5a71ca29",
-      "venue": "IEEE International Conference on Document Analysis and Recognition",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
+      "publicationStatus": "preprint",
       "personalization": {},
       "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 20,
+        "baseTotal": 57,
+        "relevance": 30,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 16,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：IEEE International Conference on Document Analysis and Recognition",
+          "覆盖当前方向 3 个关注主题",
+          "新论文不因零引用降权",
+          "提供项目页面",
           "摘要给出实验或 benchmark 线索",
+          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
-          "publication": 6,
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17432",
+      "title": "UniReflex: Plug-and-Play Force Control for Pretrained Generative Policies via Fast-Slow Reflex",
+      "authors": [
+        "Yan Huang",
+        "Shoujie Li",
+        "Ziwu Song",
+        "Wenbo Ding"
+      ],
+      "abstract": "Generative imitation learning policies excel at trajectory planning but lack closed-loop force regulation, while directly incorporating force modalities often requires redesigning or retraining the network. We present UniReflex, a universal plug-and-play framework that equips frozen generative policies with variable impedance control (VIC) for contact regulation, guided by force-direction intent collected during demonstration, without further slow-backbone fine-tuning. By non-invasively intercepting deep latent representations from the action head, UniReflex drives a fast reflex network that decouples active force exertion from external interaction response. This scheme predicts normalized anisotropic stiffness directions for directional compliance allocation. Furthermore, UniReflex integrates an adaptive gating mechanism that enables seamless transitions between position-dominant planning and force-dominant execution. Real-world bimanual experiments demonstrate that UniReflex significantly improves contact stability and success rates while preserving original position accuracy. Our approach achieves 25-66x lower per-step backward latency relative to joint training strategies on the evaluated backbones.",
+      "publishedAt": "2026-08-18T06:54:22Z",
+      "updatedAt": "2026-08-18T06:54:22Z",
+      "arxivId": "2608.17432",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "robot-manipulation",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17432v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17432v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17432v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 30,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "新论文不因零引用降权",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
           "citations": 0,
           "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17027",
+      "title": "FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences",
+      "authors": [
+        "Omar Rayyan",
+        "Zhi Li",
+        "Max Argus",
+        "Yuxin Jiang",
+        "Chang Yu",
+        "Chenfanfu Jiang",
+        "Yuchen Cui"
+      ],
+      "abstract": "Visual loco-manipulation policies that can generalize to novel scenes and objects have long been a goal of robotics research. However, today's data-hungry algorithms make collecting sufficient demonstrations a struggle for tabletop manipulation, and even more so for humanoids that must also walk and balance. Learning from simulated data and transferring that behavior to the real world, as is commonly done in locomotion, sidesteps this struggle, so we replicate that recipe for loco-manipulation. In doing so, we find that cloning synthetic demonstrations results in a low performance ceiling no matter the amount of training data. Reinforcement learning breaks through it, and refining the cloned policy with Flow-GRPO on a single sparse reward yields performance that synthetic behavior cloning cannot match. Together, these stages form our end-to-end sim-to-real pipeline spanning more than 150,000 scenes, which we use to train FetchMan. We evaluate it on FetchMan-Bench, a simulation benchmark we release, and deploy it zero-shot on a real Unitree G1, where our single-object reach-and-pick policy walks to and grasps a target across unseen scenes at 73.3% success. Finally, we extend this recipe to multi-object training, a first step toward loco-manipulation generalist policies at this data scale.",
+      "publishedAt": "2026-08-17T18:24:41Z",
+      "updatedAt": "2026-08-17T18:24:41Z",
+      "arxivId": "2608.17027",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17027v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17027v1",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://orayyan.com/fetchman"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17027v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 30,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "新论文不因零引用降权",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 4
+          "corroboration": 0
         }
       }
     },
@@ -138457,76 +137872,6 @@
       }
     },
     {
-      "id": "arxiv:2608.10278",
-      "title": "Chain of Spatial Thoughts: Modality-Agnostic Spatial Grounding for Vision Language Models",
-      "authors": [
-        "Hunter Schofield",
-        "Mohammed Elmahgiubi",
-        "Mohammad Mahdavian",
-        "Richard Shi",
-        "Jinjun Shan",
-        "Amir Rasouli",
-        "Dongfeng Bai"
-      ],
-      "abstract": "Spatial understanding is fundamental to embodied intelligence, underpinning applications such as robotic manipulation, embodied navigation, and autonomous driving. Although recent vision-language models (VLMs) have achieved impressive performance on spatial reasoning benchmarks, state-of-the-art approaches typically rely on additional spatial encoders or architectural modifications during inference, increasing computational cost. We introduce Space Tokens, a lightweight, architecture-agnostic framework that equips VLMs with explicit continuous spatial representations without requiring additional inference-time modules. By distilling scene-level 3D geometry and object-centric spatial attributes into continuous latent tokens, our method enables these modalities to be directly incorporated into a chain-of-thought reasoning process, thereby improving the VLM's spatial reasoning capabilities. At the same time, the learned representations can be explicitly decoded to verify that they encode meaningful geometric information, while the unified token interface remains extensible to additional modalities. Experiments on VSI-Bench improve Qwen3-VL-8B by 4.3% and SenseNova-SI-1.3 by 1.3%, while achieving state-of-the-art performance on object size (79.2%) and room size estimation (75.7%). These results demonstrate that continuous spatial tokens provide an effective, interpretable, and computationally efficient mechanism for integrating geometric reasoning into large vision-language models.",
-      "publishedAt": "2026-08-10T22:20:07Z",
-      "updatedAt": "2026-08-10T22:20:07Z",
-      "arxivId": "2608.10278",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2608.10278v1",
-      "pdfUrl": "https://arxiv.org/pdf/2608.10278v1",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2608.10278v1"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 30,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 16,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "新论文不因零引用降权",
-          "包含明确的量化、对比或消融实验",
-          "两周内发布",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.10232",
       "title": "FACT: Failure-Aware Causal Training for World-Action Models",
       "authors": [
@@ -139747,8 +139092,7 @@
           "覆盖当前方向 2 个关注主题",
           "已有正式发表线索：10.1109/LRA.2026.3719203",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 6,
@@ -139829,7 +139173,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -144255,7 +143598,6 @@
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
@@ -151797,236 +151139,6 @@
       }
     },
     {
-      "id": "arxiv:2410.21406",
-      "title": "Investigating the Benefits of Nonlinear Action Maps in Data-Driven Teleoperation",
-      "authors": [
-        "Michael Przystupa",
-        "Gauthier Gidel",
-        "Matthew E. Taylor",
-        "Martin Jagersand",
-        "Justus Piater",
-        "Samuele Tosatto"
-      ],
-      "abstract": "As robots become more common for both able-bodied individuals and those living with a disability, it is increasingly important that lay people be able to drive multi-degree-of-freedom platforms with low-dimensional controllers. One approach is to use state-conditioned action mapping methods to learn mappings between low-dimensional controllers and high DOF manipulators -- prior research suggests these mappings can simplify the teleoperation experience for users. Recent works suggest that neural networks predicting a local linear function are superior to the typical end-to-end multi-layer perceptrons because they allow users to more easily undo actions, providing more control over the system. However, local linear models assume actions exist on a linear subspace and may not capture nuanced actions in training data. We observe that the benefit of these mappings is being an odd function concerning user actions, and propose end-to-end nonlinear action maps which achieve this property. Unfortunately, our experiments show that such modifications offer minimal advantages over previous solutions. We find that nonlinear odd functions behave linearly for most of the control space, suggesting architecture structure improvements are not the primary factor in data-driven teleoperation. Our results suggest other avenues, such as data augmentation techniques and analysis of human behavior, are necessary for action maps to become practical in real-world applications, such as in assistive robotics to improve the quality of life of people living with w disability.",
-      "publishedAt": "2024-10-28",
-      "updatedAt": "2024-10-28T18:08:22Z",
-      "arxivId": "2410.21406",
-      "doi": "10.48550/arXiv.2410.21406",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21406v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21406",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21406v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21406"
-        }
-      ],
-      "semanticScholarId": "5a490b5bcd7ea8025eb82340460e00214ff69abe",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.21406",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21338",
-      "title": "FinTeamExperts: Role Specialized MOEs For Financial Analysis",
-      "authors": [
-        "Yue Yu",
-        "Prayag Tiwari"
-      ],
-      "abstract": "Large Language Models (LLMs), such as ChatGPT, Phi3 and Llama-3, are leading a significant leap in AI, as they can generalize knowledge from their training to new tasks without fine-tuning. However, their application in the financial domain remains relatively limited. The financial field is inherently complex, requiring a deep understanding across various perspectives, from macro, micro economic trend to quantitative analysis. Motivated by this complexity, a mixture of expert LLMs tailored to specific financial domains could offer a more comprehensive understanding for intricate financial tasks. In this paper, we present the FinTeamExperts, a role-specialized LLM framework structured as a Mixture of Experts (MOEs) for financial analysis. The framework simulates a collaborative team setting by training each model to specialize in distinct roles: Macro Analysts, Micro analysts, and Quantitative Analysts. This role-specific specialization enhances the model's ability to integrate their domain-specific expertise. We achieve this by training three 8-billion parameter models on different corpus, each dedicated to excelling in specific finance-related roles. We then instruct-tune FinTeamExperts on downstream tasks to align with practical financial tasks. The experimental results show that FinTeamExperts outperform all models of the same size and larger on three out of four datasets. On the fourth dataset, which presents a more complex task, FinTeamExperts still surpass all models of the same size. This highlights the success of our role-based specialization approach and the continued training approach for FinTeamExperts.",
-      "publishedAt": "2024-10-28",
-      "updatedAt": "2024-11-07T23:11:04Z",
-      "arxivId": "2410.21338",
-      "doi": "10.48550/arXiv.2410.21338",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21338v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21338",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21338v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21338"
-        }
-      ],
-      "semanticScholarId": "8109c93988a2c6308c650d45431dcb1d251981f8",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.21338",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21418",
-      "title": "Large Language Models for Manufacturing",
-      "authors": [
-        "Yiwei Li",
-        "Huaqin Zhao",
-        "Hanqi Jiang",
-        "Yi Pan",
-        "Zhengliang Liu",
-        "Zihao Wu",
-        "Peng Shu",
-        "Jie Tian",
-        "Tianze Yang",
-        "Shaochen Xu",
-        "Yanjun Lyu",
-        "Parker Blenk",
-        "Jacob Pence",
-        "Jason Rupram",
-        "Eliza Banu",
-        "Ninghao Liu",
-        "Linbing Wang",
-        "Wenzhan Song",
-        "Xiaoming Zhai",
-        "Kenan Song",
-        "Dajiang Zhu",
-        "Beiwen Li",
-        "Xianqiao Wang",
-        "Tianming Liu"
-      ],
-      "abstract": "The rapid advances in Large Language Models (LLMs) have the potential to transform manufacturing industry, offering new opportunities to optimize processes, improve efficiency, and drive innovation. This paper provides a comprehensive exploration of the integration of LLMs into the manufacturing domain, focusing on their potential to automate and enhance various aspects of manufacturing, from product design and development to quality control, supply chain optimization, and talent management. Through extensive evaluations across multiple manufacturing tasks, we demonstrate the remarkable capabilities of state-of-the-art LLMs, such as GPT-4V, in understanding and executing complex instructions, extracting valuable insights from vast amounts of data, and facilitating knowledge sharing. We also delve into the transformative potential of LLMs in reshaping manufacturing education, automating coding processes, enhancing robot control systems, and enabling the creation of immersive, data-rich virtual environments through the industrial metaverse. By highlighting the practical applications and emerging use cases of LLMs in manufacturing, this paper aims to provide a valuable resource for professionals, researchers, and decision-makers seeking to harness the power of these technologies to address real-world challenges, drive operational excellence, and unlock sustainable growth in an increasingly competitive landscape.",
-      "publishedAt": "2024-10-28",
-      "updatedAt": "2024-10-28T18:13:47Z",
-      "arxivId": "2410.21418",
-      "doi": "10.48550/arXiv.2410.21418",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21418v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21418",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21418v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21418"
-        }
-      ],
-      "semanticScholarId": "a18dfb5f8d95987fcb46ca65d33a761f4c50a698",
-      "citationCount": 42,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.21418",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2410.20297",
       "title": "Fine-Tuning and Evaluating Open-Source Large Language Models for the Army Domain",
       "authors": [
@@ -152882,6 +151994,360 @@
       }
     },
     {
+      "id": "arxiv:2608.18077",
+      "title": "Hydra-0: Action Flow for Generalist World Modeling and Control",
+      "authors": [
+        "Hongyu Li",
+        "Bowen Wen",
+        "Xinghao Zhu",
+        "Yixuan Wang",
+        "Yilun Du",
+        "Yunzhu Li",
+        "George Konidaris",
+        "Stan Birchfield",
+        "Soha Pouya",
+        "Chenran Li",
+        "Yan Chang"
+      ],
+      "abstract": "We introduce Hydra-0, a generalist world model conditioned on action flow, which represents robot actions as pixel motion. This shared visual interface enables generalist world modeling and control by learning action consequences across embodiments, tasks, environments, and video-generation backbones. Our best configuration achieves 90.4% lower robot-motion error and 60.2% lower object-motion error than our action-conditioned baseline, while supporting zero-shot composition and data-efficient adaptation. On the RoboLab benchmark, Hydra-0 achieves a Pearson correlation of r=0.96 between replayed and reference success rates. Finally, we uncover an emergent inverse mode of this interface: a world action model that predicts compatible robot motion from desired object flow transferred from a human demonstration. A trained action head maps the resulting latent features to executable actions without requiring task-specific expert robot demonstrations. Together, these results demonstrate the potential of action flow as a shared control interface connecting heterogeneous training data, open-loop policy evaluation, and robot control.",
+      "publishedAt": "2026-08-18T17:59:30Z",
+      "updatedAt": "2026-08-18T17:59:30Z",
+      "arxivId": "2608.18077",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.18077v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.18077v1",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://nvidia-isaac.github.io/video_to_data/hydra-0/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.18077v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17453",
+      "title": "EATR-Stereo: Embodiment-Aware Routing of Paired Stereo Evidence for Humanoid Vision-Language-Action Control",
+      "authors": [
+        "Songwei Wu",
+        "Rui Zhao",
+        "Fan Yang",
+        "Zhongqiang Nie",
+        "Zhiduo Jiang",
+        "Wandong Sun",
+        "Yuwei Li",
+        "Yang Liu",
+        "Hong Liu"
+      ],
+      "abstract": "Long-horizon humanoid vision--language--action (VLA) control with head-mounted stereo cameras requires visual interfaces that can exploit complementary views while maintaining compatibility with pretrained representations. Existing interfaces often discard complementary stereo evidence or fuse additional observations without preserving the native primary-view pathway and adapting auxiliary information to robot embodiment. We present EATR-Stereo, an embodiment-aware token-routing framework that retains primary-view tokens and constructs primary-aligned Cross-View Auxiliary Tokens (CVATs) by querying the synchronized auxiliary-view token sequence. A body-segmented proprioceptive encoder further conditions token-wise auxiliary usage on robot configuration history, enabling selective incorporation of stereo evidence during action generation. The routed auxiliary stream augments the language and primary-visual context of a pretrained VLA while keeping its vision--language model frozen. On a 33-DoF physical humanoid with a 37-D proprioceptive state, we evaluate nine configurations in over-100-s search--approach--grasp--place--return tasks. EATR-Stereo achieves 60.0% full-task success, 100.0% grasp success, and 80.0% stage success. Under severe asymmetric occlusion, it improves recovery to 80% compared with 30% for CVAT alone. Ablation studies further show the importance of preserving primary tokens and combining cross-view auxiliary features with structured proprioceptive routing. These results demonstrate that selectively routed paired stereo evidence improves spatial grounding for reliable long-horizon humanoid VLA control.",
+      "publishedAt": "2026-08-18T07:32:50Z",
+      "updatedAt": "2026-08-18T07:32:50Z",
+      "arxivId": "2608.17453",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "vision-language-action-models",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17453v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17453v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17453v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 8,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17347",
+      "title": "Repetition as Reinforcement: Enhancing Sample Efficiency via Instant Episode Repetition in Reinforcement Learning",
+      "authors": [
+        "Hoda Yamani",
+        "Yuning Xing",
+        "Koen van Rijnsoever",
+        "Bruce A. MacDonald",
+        "Henry Williams"
+      ],
+      "abstract": "Repetition is a fundamental mechanism in human learning, where revisiting successful experiences strengthens memory, consolidates skills, and improves future performance. Motivated by this biological principle, we introduce Instant Episode Repetition (IER), a simple and novel mechanism that improves sample efficiency by immediately repeating action sequences from successful episodes during environment interaction. Unlike conventional approaches such as Experience Replay and Self-Imitation Learning (SIL), which passively reuse past experience during training updates, IER directly influences the data collection process. Upon identifying a high-reward episode, the agent repeats its action sequence for a fixed number of subsequent episodes, reinforcing valuable behaviors through renewed interaction with the environment. We integrate IER into state-of-the-art SAC and TD3 algorithms and evaluate its effectiveness on continuous-control benchmarks, including MuJoCo, the DeepMind Control Suite, and a real-world dynamic object translation task with a robotic manipulator. Experimental results demonstrate that this simple mechanism improves learning performance over standard and self-imitation-based baselines.",
+      "publishedAt": "2026-08-18T04:11:50Z",
+      "updatedAt": "2026-08-18T04:11:50Z",
+      "arxivId": "2608.17347",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17347v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17347v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/UoA-CARES/instant-episode-repetition"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17347v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17318",
+      "title": "If, Then, Otherwise: Diagnosing Conditional Branching in Vision-Language Navigation",
+      "authors": [
+        "Seoyoung Lee",
+        "Neel P. Bhatt",
+        "Pranay Samineni",
+        "Cong Liu",
+        "S P Sharan",
+        "Timothy Barclay",
+        "Gregory M. Wagner",
+        "Daniel Milan",
+        "Sandeep Chinchali",
+        "Ufuk Topcu",
+        "Atlas Wang"
+      ],
+      "abstract": "Vision-language navigation agents are often evaluated on their ability to follow route-like instructions toward a fixed goal. Yet, real navigation instructions often depend on observed states of the environment: if a condition holds, then follow one path, otherwise take another. Such instructions require an agent to evaluate scene evidence, select the correct logical branch, and execute the corresponding navigation behavior. Existing evaluations provide limited control over conditional branch execution, making it difficult to determine whether agents fail because of perception, grounding, navigation, or logical decision-making. We introduce CondVLN, a scene-graph-grounded benchmark for diagnosing conditional branching in vision-language navigation. CondVLN programmatically generates instructions whose branch conditions are grounded in verifiable 3D scene-graph predicates, with controlled variation in branch depth, dependency chain length, spatial composition, evidence observability, and instruction horizon. CondVLN contains over 11,500 generated conditional instructions across AI2-THOR, Matterport3D, Gibson, and ReplicaCAD, and evaluates agents using standard VLN metrics and branch-specific diagnostics: Branch Selection Accuracy and Conditional Success Rate. Evaluating four state-of-the-art VLN agents (VLN-Zero, NaVid, NaVILA, and Open-Nav) shows that conditional branching exposes failures that are not captured by standard success rate or path length alone: agents can navigate plausibly while committing to a branch inconsistent with the observed scene condition. We also present a lightweight neurosymbolic branch-selection model that separates condition grounding from navigation execution, improving performance by 2x. CondVLN provides a reusable testbed for measuring whether embodied agents can not only follow instructions, but follow the right instruction under the right condition.",
+      "publishedAt": "2026-08-18T03:22:29Z",
+      "updatedAt": "2026-08-18T03:22:29Z",
+      "arxivId": "2608.17318",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17318v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17318v1",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://condvln.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17318v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.17205",
+      "title": "Which Source Wins? Task-Dependent Reliance in Vision-Language Models",
+      "authors": [
+        "Rodela Ghosh",
+        "Aviral Gupta",
+        "Guangjing Wang"
+      ],
+      "abstract": "Vision-language models (VLMs) combine images and text, but when the two conflict and one becomes harder to read, it is unclear how a model shifts its reliance between them. We study this modality reallocation with a controlled setup: we degrade either the image or the text across four levels of legibility while keeping the other clean, and track how the model's preference changes. We build conflicts from GSM8K and SVAMP by pairing the rendered image of one arithmetic problem with the text of another, so the two sources support different answers. We also introduce ChartQA-Conflict, a manually reviewed benchmark of 229 chart-report conflicts with matched chart and table-image representations. We evaluate six open-weight VLMs using both generated answers and a length-normalized conditional log-likelihood margin. On GSM8K and SVAMP, five of six models shift more strongly away from degraded text than from degraded images. On ChartQA-Conflict, all six likelihood-scored models exhibit the opposite pattern, shifting more strongly away from the degraded visual source. This reversal persists after calibrating for unimodal accuracy loss and after replacing charts with plain table images. Two frontier API models, GPT-5.6-Luna and Gemini-3.5-Flash, behaviorally replicate the ChartQA-Conflict reversal, with GPT-5.6-Luna also matching the arithmetic direction. These results show that modality reliance in VLMs is not fixed, but varies across tasks, evidence structures, models, and evaluation settings. The source code is available at https://github.com/Ro-netizen004/multimodal-arbitration-artifact.",
+      "publishedAt": "2026-08-17T23:38:14Z",
+      "updatedAt": "2026-08-17T23:38:14Z",
+      "arxivId": "2608.17205",
+      "categories": [
+        "cs.CL",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.17205v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.17205v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/Ro-netizen004/multimodal-arbitration-artifact"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.17205v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
       "id": "arxiv:2608.16594",
       "title": "CACSurv: Concordance-Aligned Comparative Learning with Large Language Models for Cancer Survival Prediction",
       "authors": [
@@ -153014,30 +152480,457 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2608.16229",
+      "title": "Planner-Conditioned Diffusion for Coordinated Multi-Agent Exploration",
+      "authors": [
+        "Marcus Yu Siong Teo",
+        "Jeric Lew",
+        "Tanishq Duhan",
+        "Guillaume Sartoretti"
+      ],
+      "abstract": "Coordinated multi-agent exploration requires not only efficient individual coverage but also non-redundant coverage across agents over extended planning horizons. Conventional approaches rely on hand-crafted coordination rules, while end-to-end multi-agent learning methods are difficult to scale and train. Diffusion-based planners such as DARE offer a promising alternative by generating long-horizon trajectories instead of single-step actions, but existing methods are trained on a narrow planner distribution, limiting behavioral diversity and inference-time controllability. We propose a Planner-Conditioned Diffusion Policy (PCDP) for graph-based multi-agent exploration. PCDP is trained on demonstrations from multiple planner styles with planner identity as an explicit conditioning input, enabling a single shared model to learn a multimodal trajectory distribution and generate diverse, controllable trajectory candidates from the same observation. Rather than learning coordination end-to-end, we reuse this multimodal single-agent policy across all agents and introduce coordination through local reranking, in which nearby agents jointly select the trajectory combination with minimal predicted overlap. We evaluate PCDP against classical and diffusion-based baselines on 100 held-out maps in a four-agent simulation setting. PCDP matches the perfect success rate of the diffusion-based baselines while improving mean max-agent travel, total team travel, and agent imbalance. Crucially, reranking alone over a single-planner baseline yields only marginal gains, indicating that planner-conditioned multimodality is the main contributor to improved coordination. Qualitative simulation results and real-robot experiments with two agents further validate that diverse long-horizon trajectory generation produces emergent spatial separation between agents without any explicit repulsion mechanism.",
+      "publishedAt": "2026-08-17T08:07:20Z",
+      "updatedAt": "2026-08-17T08:07:20Z",
+      "arxivId": "2608.16229",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "ai-multi-agent-systems"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.16229v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.16229v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/marmotlab/PCDP"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.16229v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.15888",
+      "title": "Bounded Agents: Delegation Security for Multi-Agent AI Systems",
+      "authors": [
+        "Xabier Muruaga"
+      ],
+      "abstract": "LLM-based agents can act on behalf of a user to access cloud services, call tools, or invoke agents. At session start, the agent's permissions are set but remain static, and each request is evaluated independently, without considering prior actions. Within its permissions, an agent may act contrary to the delegated task, combine individually permitted actions into a prohibited outcome, or delegate authority to a sub-agent without limiting it. A prompt injection poses a risk only if the agent has authority to perform such actions; this is therefore a problem of authorization architecture, not just the model. The Agentic Principal Chain (APC) tracks delegated authority from one principal to the next. APC evaluates each request against the accumulated session state using six authorization checks. APC carries forward and restricts delegated scope and budgets. Using composition closure, APC checks requests against prior actions to prevent prohibited combinations and enforces the decision outside the model. We prove Blast Radius Monotonicity and Composition Soundness for APC implementations; Composition Soundness is limited to prohibited combinations under a complete restriction set and serialized admission. We evaluated 3,154 instances including InjecAgent, AgentDojo, and ASB. Our compromised-model evaluation tests APC independently of model behavior by inserting the ground-truth attack call after the first legitimate tool call. AgentDojo exfiltration fell from 75-100% to 0% across all four domains; APC blocked all 544 InjecAgent data-stealing cases. Intent binding reduced destruction from 38.6% to 4.0% and manipulation from 90.5% to 12.1%. Authorization latency was 0.24 ms at the 99th percentile on an idle host; across 949 AgentDojo task-injection pairs, utility was 8.6 and 13.9 percentage points lower in the two settings. Implementation, evaluation tools, and data are publicly available.",
+      "publishedAt": "2026-08-16T18:38:00Z",
+      "updatedAt": "2026-08-16T18:38:00Z",
+      "arxivId": "2608.15888",
+      "categories": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-multi-agent-systems",
+        "cl-evaluation-safety"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.15888v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.15888v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/xmuruaga/bounded-agents"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.15888v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.14212",
+      "title": "APTER: Adaptive Post-Training with Expert-Grounded Rubrics",
+      "authors": [
+        "Xukai Wang",
+        "Liangqi Li",
+        "Zhiyue Xu",
+        "Jingang Zhou",
+        "Xiaoyu Shi",
+        "Jiansheng Cai",
+        "Bo Zhang",
+        "Zhe Li",
+        "Xu-Yao Zhang"
+      ],
+      "abstract": "As large language models enter professional domains, they must satisfy domain constraints, include critical evidence, and provide complete reasoning rather than merely produce fluent responses. Existing post-training methods often rely on holistic preferences or outcome-level verification, while recent rubric-based methods usually generate rubrics independently for each query. In specialized domains, such unconstrained rubrics may omit critical requirements and vary across samples, hindering the diagnosis and targeted repair of persistent capability deficiencies. We propose APTER (Adaptive Post-Training with Expert-Grounded Rubrics), a framework that integrates structured domain knowledge into fine-grained evaluation, optimization, and diagnosis for specialized complex reasoning. First, expert-grounded rubric construction starts from an expert criteria framework built by domain experts, where each criterion represents a stable professional capability. For each query, APTER selects relevant criteria and instantiates them into query-level rubrics linked to their source criteria, turning reusable expert criteria into executable query-level supervision without reference answers. Second, adaptive post-training uses rubric verdicts as both optimization and criterion-level diagnostic signals. Aggregating low-scoring verdicts by criterion ID reveals persistent deficiencies and triggers targeted supervised fine-tuning updates during reinforcement learning. Experiments on mathematical reasoning and medical question answering show consistent gains across both domains. Across three model generations, APTER improves the mathematics and medical averages over the corresponding base models by up to 15.86 and 8.04 points, respectively. Code and rubric datasets are available at https://github.com/AntDT-APTER/APTER.",
+      "publishedAt": "2026-08-14T11:42:29Z",
+      "updatedAt": "2026-08-14T11:42:29Z",
+      "arxivId": "2608.14212",
+      "categories": [
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.14212v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.14212v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/AntDT-APTER/APTER"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.14212v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.13422",
+      "title": "Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning",
+      "authors": [
+        "Zheyu Zhuang",
+        "Ruiyu Wang",
+        "Nick Heppert",
+        "Johannes Fabian Hahn",
+        "Abhinav Valada",
+        "Florian T. Pokorny",
+        "Danica Kragic"
+      ],
+      "abstract": "Visual bottlenecks that focus policy inputs on regions of interest (ROIs) can improve data-efficient visuomotor learning by separating where to look from how to act. Many ROI interfaces rely on external spatial labels, such as gaze, object classes, or affordance annotations. Label-free alternatives often derive crops from trajectories by detecting gripper or motion events and centering a fixed crop at the projected end-effector. Such action-derived crops are useful spatial priors that require no additional labels, but they encode fixed choices about event timing, proxy points, and crop scale. When the visual evidence needed for control lies away from the end-effector or changes continuously with task progress, these crops can become misaligned. We propose Seeker, a task- and state-conditioned readout that learns attention from action. Starting from frozen DINOv3 features, Seeker iteratively updates a query with gathered visual evidence, producing progression-aware ROIs solely from action supervision. The learned ROI serves as a spatial interface for RGB cropping, mask-guided background augmentation, and point-cloud filtering. In simulation and the real world, Seeker improves data efficiency and robustness over no-crop, augmentation, and action-derived crop baselines. On real robots, Seeker raises average in-domain success from the best baseline's 48.3% to 76.7% and success under lighting/background shifts from 20.0% to 60.0%.",
+      "publishedAt": "2026-08-13T16:14:07Z",
+      "updatedAt": "2026-08-13T16:14:07Z",
+      "arxivId": "2608.13422",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.13422v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.13422v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/zheyu-zhuang/seeker"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.13422v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.11741",
+      "title": "JieZi: A Large-Scale Expert-Audited Dataset and Benchmark for Ancient Chinese Character Exegesis",
+      "authors": [
+        "Ran Li",
+        "Huiguo He",
+        "Jiahuan Cao",
+        "Junle Liu",
+        "Hiuyi Cheng",
+        "Lianwen Jin"
+      ],
+      "abstract": "The scholarly exegesis of ancient Chinese characters demands integrating visual observation, linguistic analysis, and historical context. However, existing computational approaches focus narrowly on subtasks such as character recognition and retrieval, lacking the structured datasets and benchmarks required for comprehensive scholarly analysis. To address this limitation, we introduce Ancient Chinese Character Exegesis (ACCE), a vision-language question answering (VQA) task that models the scholarly exegesis process. ACCE is organized into four progressive levels: basic character identification, glyph-form analysis, meaning exegesis, and diachronic evolution analysis. To support this task, we construct two complementary resources. JieZi-Dataset is the first large-scale, expert-audited VQA training dataset for ACCE, comprising over 500K QA pairs. It is constructed via a pipeline that reduces factual errors by constraining generation with expert-designed templates and source-text references. Human verification is further applied at each key stage to ensure scholarly accuracy. JieZi-Bench is an evaluation benchmark aligned with the exegesis process, constructed and verified by human experts to ensure evaluation reliability. It consists of four levels with reference answers curated from authoritative lexicographic works held separate from the training data. Experiments on multimodal large language models show that current models perform well on basic identification but struggle with glyph analysis, semantic reasoning, and diachronic understanding. Fine-tuning on JieZi-Dataset substantially improves performance across all four levels. Code and dataset are available at https://github.com/Ran00w/JieZi.",
+      "publishedAt": "2026-08-12T07:30:00Z",
+      "updatedAt": "2026-08-12T07:30:00Z",
+      "arxivId": "2608.11741",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.11741v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.11741v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/Ran00w/JieZi"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.11741v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2608.10824",
+      "title": "Neural Introspection Gating for Adaptive KV-Cache Reuse in Vision-Language-Action Models",
+      "authors": [
+        "Zhijie Wu",
+        "Kento Kawaharazuka",
+        "Kei Okada"
+      ],
+      "abstract": "Vision-Language-Action(VLA) models map camera images and language instructions directly to motor commands through a single autoregressive transformer. In real-time control, they still spend substantial compute recomputing key-value(KV) representations for visual tokens that barely change across neighboring frames. Recent work such as VLA-Cache reduces that cost by reusing KV states for visually static patches, but its policy relies only on observation-space heuristics and does not account for the model's own uncertainty. We propose Gated VLA-Cache, a lightweight, training-free extension that augments visual-similarity caching with neural introspection. The method monitors the logit margin between the top two predicted action tokens, a zero-cost confidence signal available during decoding. When the margin drops below a threshold, the cache is invalidated and a full recompute is triggered. Evaluated on four LIBERO benchmark suites with both OpenVLA and OpenVLA-OFT, Gated VLA-Cache improves reliability when blind caching hurts. On LIBERO-Goal and LIBERO-Long, it recovers over 100% of the lost accuracy while retaining 80% of the compute savings.",
+      "publishedAt": "2026-08-11T11:53:10Z",
+      "updatedAt": "2026-08-11T11:53:10Z",
+      "arxivId": "2608.10824",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2608.10824v1",
+      "pdfUrl": "https://arxiv.org/pdf/2608.10824v1",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://zjw4321.github.io/neural-introspection-gating-page/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2608.10824v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 8,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-08-18T04:08:01.303Z",
-      "recordCount": 3997
+      "fetchedAt": "2026-08-19T04:07:46.742Z",
+      "recordCount": 3991
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-08-18T04:08:01.303Z",
-      "recordCount": 1908,
+      "fetchedAt": "2026-08-19T04:07:46.742Z",
+      "recordCount": 1906,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-08-18T04:08:01.303Z",
+      "fetchedAt": "2026-08-19T04:07:46.742Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
     "candidateCount": 2000,
-    "featuredCount": 28,
+    "featuredCount": 27,
     "libraryMatchCount": 22,
     "seedCount": 24,
     "scoreVersion": "reading-priority-v3"
