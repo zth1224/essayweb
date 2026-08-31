@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-28T15:35:00.255Z",
+  "generatedAt": "2026-08-31T10:00:17.477Z",
   "fields": [
     {
       "fieldId": "embodied-intelligence",
-      "generatedAt": "2026-08-28T15:35:00.255Z",
+      "generatedAt": "2026-08-31T10:00:17.477Z",
       "retainedDays": 730,
       "candidateCount": 2000,
       "featuredCount": 27,
@@ -14,18 +14,18 @@
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 4018
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 4056
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1864,
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1860,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
@@ -33,7 +33,7 @@
     },
     {
       "fieldId": "cs-ai",
-      "generatedAt": "2026-08-28T15:35:00.255Z",
+      "generatedAt": "2026-08-31T10:00:17.477Z",
       "retainedDays": 730,
       "candidateCount": 2000,
       "featuredCount": 3,
@@ -43,18 +43,18 @@
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1849
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1879
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1387,
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1384,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
@@ -62,7 +62,7 @@
     },
     {
       "fieldId": "cs-cl",
-      "generatedAt": "2026-08-28T15:35:00.255Z",
+      "generatedAt": "2026-08-31T10:00:17.477Z",
       "retainedDays": 730,
       "candidateCount": 2000,
       "featuredCount": 19,
@@ -72,18 +72,18 @@
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 2146
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 2185
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1532,
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1528,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
@@ -91,28 +91,28 @@
     },
     {
       "fieldId": "cs-cv",
-      "generatedAt": "2026-08-28T15:35:00.255Z",
+      "generatedAt": "2026-08-31T10:00:17.477Z",
       "retainedDays": 730,
-      "candidateCount": 1657,
-      "featuredCount": 2,
+      "candidateCount": 1653,
+      "featuredCount": 1,
       "libraryMatchCount": 15,
       "seedCount": 0,
       "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1374
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1385
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1185,
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1179,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
@@ -120,28 +120,28 @@
     },
     {
       "fieldId": "cs-lg",
-      "generatedAt": "2026-08-28T15:35:00.255Z",
+      "generatedAt": "2026-08-31T10:00:17.477Z",
       "retainedDays": 730,
       "candidateCount": 2000,
-      "featuredCount": 17,
+      "featuredCount": 16,
       "libraryMatchCount": 11,
       "seedCount": 0,
       "scoreVersion": "reading-priority-v3",
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 2568
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 2577
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
-          "recordCount": 1592,
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
+          "recordCount": 1586,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-08-28T15:35:00.255Z",
+          "fetchedAt": "2026-08-31T10:00:17.477Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
