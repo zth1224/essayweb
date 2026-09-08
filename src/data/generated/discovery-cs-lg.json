@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-lg",
-  "generatedAt": "2026-09-07T08:33:52.577Z",
+  "generatedAt": "2026-09-08T08:16:35.420Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -14172,83 +14172,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23328",
-      "title": "Space Robotics Bench: Robot Learning Beyond Earth",
-      "authors": [
-        "Andrej Orsula",
-        "Matthieu Geist",
-        "Miguel Olivares-Mendez",
-        "Carol Martinez"
-      ],
-      "abstract": "The growing ambition for space exploration demands robust autonomous systems that can operate in unstructured environments under extreme extraterrestrial conditions. The adoption of robot learning in this domain is severely hindered by the prohibitive cost of technology demonstrations and the limited availability of data. To bridge this gap, we introduce the Space Robotics Bench, an open-source simulation framework for robot learning in space. It offers a modular architecture that integrates on-demand procedural generation with massively parallel simulation environments to support the creation of vast and diverse training distributions for learning-based agents. To ground research and enable direct comparison, the framework includes a comprehensive suite of benchmark tasks that span a wide range of mission-relevant scenarios. We establish performance baselines using standard reinforcement learning algorithms and present a series of experimental case studies that investigate key challenges in generalization, end-to-end learning, adaptive control, and sim-to-real transfer. Our results reveal insights into the limitations of current methods and demonstrate the utility of the framework in producing policies capable of real-world operation. These contributions establish the Space Robotics Bench as a valuable resource for developing, benchmarking, and deploying the robust autonomous systems required for the final frontier.",
-      "publishedAt": "2025-09-27",
-      "updatedAt": "2025-09-27T14:28:31Z",
-      "arxivId": "2509.23328",
-      "doi": "10.48550/arXiv.2509.23328",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23328v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23328",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/AndrejOrsula/space_robotics_bench"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23328v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23328"
-        }
-      ],
-      "semanticScholarId": "83ee4c0645f60880fe14df06bc1daaf2ad12d90f",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 64,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23328",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.21961",
       "title": "FlowDrive: moderated flow matching with data balancing for trajectory planning",
       "authors": [
@@ -19903,6 +19826,83 @@
           "publication": 6,
           "citations": 1,
           "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23328",
+      "title": "Space Robotics Bench: Robot Learning Beyond Earth",
+      "authors": [
+        "Andrej Orsula",
+        "Matthieu Geist",
+        "Miguel Olivares-Mendez",
+        "Carol Martinez"
+      ],
+      "abstract": "The growing ambition for space exploration demands robust autonomous systems that can operate in unstructured environments under extreme extraterrestrial conditions. The adoption of robot learning in this domain is severely hindered by the prohibitive cost of technology demonstrations and the limited availability of data. To bridge this gap, we introduce the Space Robotics Bench, an open-source simulation framework for robot learning in space. It offers a modular architecture that integrates on-demand procedural generation with massively parallel simulation environments to support the creation of vast and diverse training distributions for learning-based agents. To ground research and enable direct comparison, the framework includes a comprehensive suite of benchmark tasks that span a wide range of mission-relevant scenarios. We establish performance baselines using standard reinforcement learning algorithms and present a series of experimental case studies that investigate key challenges in generalization, end-to-end learning, adaptive control, and sim-to-real transfer. Our results reveal insights into the limitations of current methods and demonstrate the utility of the framework in producing policies capable of real-world operation. These contributions establish the Space Robotics Bench as a valuable resource for developing, benchmarking, and deploying the robust autonomous systems required for the final frontier.",
+      "publishedAt": "2025-09-27",
+      "updatedAt": "2025-09-27T14:28:31Z",
+      "arxivId": "2509.23328",
+      "doi": "10.48550/arXiv.2509.23328",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23328v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23328",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/AndrejOrsula/space_robotics_bench"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23328v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23328"
+        }
+      ],
+      "semanticScholarId": "83ee4c0645f60880fe14df06bc1daaf2ad12d90f",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 63,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23328",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
         }
@@ -56878,85 +56878,6 @@
       }
     },
     {
-      "id": "arxiv:2409.04963",
-      "title": "GS-PT: Exploiting 3D Gaussian Splatting for Comprehensive Point Cloud Understanding via Self-supervised Learning",
-      "authors": [
-        "Keyi Liu",
-        "Yeqi Luo",
-        "Weidong Yang",
-        "Jingyi Xu",
-        "Zhijun Li",
-        "Wen-Ming Chen",
-        "Ben Fei"
-      ],
-      "abstract": "Self-supervised learning of point cloud aims to leverage unlabeled 3D data to learn meaningful representations without reliance on manual annotations. However, current approaches face challenges such as limited data diversity and inadequate augmentation for effective feature learning. To address these challenges, we propose GS-PT, which integrates 3D Gaussian Splatting (3DGS) into point cloud self-supervised learning for the first time. Our pipeline utilizes transformers as the backbone for self-supervised pre-training and introduces novel contrastive learning tasks through 3DGS. Specifically, the transformers aim to reconstruct the masked point cloud. 3DGS utilizes multi-view rendered images as input to generate enhanced point cloud distributions and novel view images, facilitating data augmentation and cross-modal contrastive learning. Additionally, we incorporate features from depth maps. By optimizing these tasks collectively, our method enriches the tri-modal self-supervised learning process, enabling the model to leverage the correlation across 3D point clouds and 2D images from various modalities. We freeze the encoder after pre-training and test the model’s performance on multiple downstream tasks. Experimental results indicate that GS-PT outperforms the off-the-shelf self-supervised learning methods on various downstream tasks including 3D object classification, real-world classifications, and few-shot learning and segmentation. Project page: https://github.com/Luoyeqi1/GS-PT.git",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T03:46:47Z",
-      "arxivId": "2409.04963",
-      "doi": "10.1109/ICASSP49660.2025.10888910",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "cl-language-modeling",
-        "cv-three-dimensional-vision",
-        "lg-representation-self-supervised"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.04963v1",
-      "pdfUrl": "https://arxiv.org/pdf/2409.04963",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.04963v1"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/Luoyeqi1/GS-PT.git"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.04963"
-        }
-      ],
-      "semanticScholarId": "7b585ced34a62434bf8838bd494ad1dbedd464cc",
-      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE International Conference on Acoustics, Speech, and Signal Processing",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2609.04865",
       "title": "CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution",
       "authors": [
@@ -66041,88 +65962,6 @@
       }
     },
     {
-      "id": "arxiv:2409.05076",
-      "title": "PIP: Detecting Adversarial Examples in Large Vision-Language Models via Attention Patterns of Irrelevant Probe Questions",
-      "authors": [
-        "Yudong Zhang",
-        "Ruobing Xie",
-        "Jiansheng Chen",
-        "Xingwu Sun",
-        "Yu Wang"
-      ],
-      "abstract": "Large Vision-Language Models (LVLMs) have demonstrated their powerful multimodal capabilities. However, they also face serious safety problems, as adversaries can induce robustness issues in LVLMs through the use of well-designed adversarial examples. Therefore, LVLMs are in urgent need of detection tools for adversarial examples to prevent incorrect responses. In this work, we first discover that LVLMs exhibit regular attention patterns for clean images when presented with probe questions. We propose an unconventional method named PIP, which utilizes the attention patterns of one randomly selected irrelevant probe question (e.g., \"Is there a clock''') to distinguish adversarial examples from clean examples. Regardless of the image to be tested and its corresponding question, PIP only needs to perform one additional inference of the image to be tested and the probe question, and then achieves successful detection of adversarial examples. Even under black-box attacks and open dataset scenarios, our PIP, coupled with a simple SVM, still achieves more than 98% recall and a precision of over 90%. Our PIP is the first attempt to detect adversarial attacks on LVLMs via simple irrelevant probe questions, shedding light on deeper understanding and introspection within LVLMs. The code is available at https://github.com/btzyd/pip.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T12:38:25Z",
-      "arxivId": "2409.05076",
-      "doi": "10.1145/3664647.3685510",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05076v1",
-      "pdfUrl": "https://doi.org/10.1145/3664647.3685510",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/btzyd/pip"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05076v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://doi.org/10.1145/3664647.3685510"
-        }
-      ],
-      "semanticScholarId": "6629543c5a86692ea07766158a9817a8df4612a3",
-      "venue": "ACM Multimedia",
-      "citationCount": 20,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：ACM Multimedia",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2609.01596",
       "title": "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
       "authors": [
@@ -73108,84 +72947,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 5,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.10937",
-      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
-      "authors": [
-        "Wenjun Hou",
-        "Yi Cheng",
-        "Kaishuai Xu",
-        "Yan Hu",
-        "Wenjie Li",
-        "Jiang Liu"
-      ],
-      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T02:23:45Z",
-      "arxivId": "2411.10937",
-      "doi": "10.48550/arXiv.2411.10937",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937"
-        }
-      ],
-      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.10937",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -81027,6 +80788,84 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10937",
+      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
+      "authors": [
+        "Wenjun Hou",
+        "Yi Cheng",
+        "Kaishuai Xu",
+        "Yan Hu",
+        "Wenjie Li",
+        "Jiang Liu"
+      ],
+      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T02:23:45Z",
+      "arxivId": "2411.10937",
+      "doi": "10.48550/arXiv.2411.10937",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937"
+        }
+      ],
+      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 0,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2411.10937",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -90947,81 +90786,6 @@
       }
     },
     {
-      "id": "arxiv:2409.05206",
-      "title": "SEF: A Method for Computing Prediction Intervals by Shifting the Error Function in Neural Networks",
-      "authors": [
-        "E. V. Aretos",
-        "D. G. Sotiropoulos"
-      ],
-      "abstract": "In today's era, Neural Networks (NN) are applied in various scientific fields such as robotics, medicine, engineering, etc. However, the predictions of neural networks themselves contain a degree of uncertainty that must always be taken into account before any decision is made. This is why many researchers have focused on developing different ways to quantify the uncertainty of neural network predictions. Some of these methods are based on generating prediction intervals (PI) via neural networks for the requested target values. The SEF (Shifting the Error Function) method presented in this paper is a new method that belongs to this category of methods. The proposed approach involves training a single neural network three times, thus generating an estimate along with the corresponding upper and lower bounds for a given problem. A pivotal aspect of the method is the calculation of a parameter from the initial network's estimates, which is then integrated into the loss functions of the other two networks. This innovative process effectively produces PIs, resulting in a robust and efficient technique for uncertainty quantification. To evaluate the effectiveness of our method, a comparison in terms of successful PI generation between the SEF, $\\text{PI}3\\text{NN}$ and PIVEN methods was made using two synthetic datasets.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T19:46:45Z",
-      "arxivId": "2409.05206",
-      "doi": "10.1109/ICCA62237.2024.10927749",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05206v1",
-      "pdfUrl": "http://arxiv.org/pdf/2409.05206",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://icca-conf.info/icca-2024"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05206v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "http://arxiv.org/pdf/2409.05206"
-        }
-      ],
-      "semanticScholarId": "c176541a9e8b569537cbefc0bc007ca9eb5ff7ec",
-      "venue": "International Conferences on Computing Advancements",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conferences on Computing Advancements",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2609.05300",
       "title": "Human-Human & Human-Robot Interaction Transformer (H2INT) for Robot Navigation in Dense and Uncertain Crowds",
       "authors": [
@@ -92516,7 +92280,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -119621,7 +119384,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -119706,7 +119468,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -119772,7 +119533,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -130800,7 +130560,6 @@
           "覆盖当前方向 2 个关注主题",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -142966,8 +142725,7 @@
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -145493,23 +145251,227 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2609.01089",
+      "title": "Adaptive Depth-Map-Guided Bundle Adjustment for Correspondence-Free Multi-View Point Cloud Registration",
+      "authors": [
+        "Yiran Zhou",
+        "Yingyu Wang",
+        "Shoudong Huang",
+        "Liang Zhao"
+      ],
+      "abstract": "Robotic processing of irregular steel scrap requires dense 3-D measurement to replace manual visual assessment in hazardous cutting workcells. The reconstructed map is used to estimate piece dimensions, boundary geometry, feasible preheating and cutting regions, and collision-aware torch paths. The reconstruction errors therefore propagate directly to downstream measurement and planning. Existing multi-view registration methods commonly rely on feature extraction and data association to establish correspondences between views. In workcells with smooth metallic surfaces, repeated structures, occlusions, and partial overlaps, however, wrong correspondences may be established, leading to inaccurate pose estimation and distorted reconstruction. This paper presents an adaptive layered depth-map-guided bundle adjustment framework for correspondence-free multi-view point cloud registration. The scene is represented by a global 2.5-D grid, where each cell can adaptively maintain multiple depth hypotheses. Raw depth observations are directly projected into the global map to form depth constraints without explicit feature correspondences. At grid cells where multiple surfaces produce conflicting depths, a softmax-based layer assignment links each observation to compatible depth hypotheses. The resulting nonlinear least-squares formulation jointly refines sensor poses and the layered depth map, with correspondences implicitly induced by the depth-map representation and projection model. Experiments on self-collected industrial datasets show that the proposed method achieves consistently competitive reconstruction accuracy while maintaining robustness and low computational cost in challenging industrial scenarios. We release the open-source code implementation at: https://github.com/YiranZhou-Robotics/ADM-BA.git",
+      "publishedAt": "2026-09-01T11:28:46Z",
+      "updatedAt": "2026-09-01T11:28:46Z",
+      "arxivId": "2609.01089",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.01089v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.01089v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/YiranZhou-Robotics/ADM-BA.git"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.01089v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 48,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2609.00833",
+      "title": "Dense Process Supervision for Search Agents via Fact Utility Estimation",
+      "authors": [
+        "Rongzhi Zhu",
+        "Xiangyu Liu",
+        "Yi Liu",
+        "Shuo Zhang",
+        "Ruirui Zhang",
+        "Rui Wu",
+        "Tao Jiang",
+        "Zequn Sun",
+        "Wenhao Xu",
+        "Wei Hu"
+      ],
+      "abstract": "Reinforcement learning (RL) for search agents typically relies on outcome rewards. However, it often fails to achieve effective credit assignment, due to the unclear value of intermediate steps. It is hard to separate their contributions from the final result. In this paper, we propose a dense process supervision method based on fact utility estimation, which models the reasoning process as the accumulation of discrete evidence facts. We first extract structured facts from raw observations and organize them into an explicit fact store. To support credit assignment, we then cluster semantically equivalent facts and infer the posterior utility of each fact cluster using Bayesian estimation over group rollouts. Finally, we convert the estimated fact utilities into dense step-level rewards to guide RL training. Experiments on seven single-hop and multi-hop QA benchmarks show that our method consistently outperforms existing baselines. Ablation studies validate clear relative improvements on multi-hop QA compared to outcome reward-only training.",
+      "publishedAt": "2026-09-01T07:34:33Z",
+      "updatedAt": "2026-09-01T07:34:33Z",
+      "arxivId": "2609.00833",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.00833v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.00833v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.00833v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 48,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2609.00798",
+      "title": "Advanced Pixel Diffusion Model with Guided Sparse Global Refinement",
+      "authors": [
+        "Weiyi You",
+        "Jinhua Zhang",
+        "Xingyu Zhou",
+        "Wei Long",
+        "Junyu Lou",
+        "Shuhang Gu"
+      ],
+      "abstract": "Pixel-space diffusion has recently emerged as a promising direction for high-fidelity image generation by modeling images directly in the original pixel domain. However, pixel-space diffusion is computationally demanding due to the extremely high dimensionality of natural images. For efficiency, existing pixel diffusion models either compromise fine details with large-patch tokenization or confine subsequent refinement within individual patches. Such intra-patch refinement inevitably restricts structural continuity across patch boundaries and long-range token interactions, limiting refinement quality. To address these issues, we propose PixSGR, a novel Pixel diffusion framework with Sparse Global Refinement tailored for modeling the distribution of natural images directly in pixel space. PixSGR starts from a supervised low-channel bottleneck to efficiently capture the low-dimensional manifold of natural images. It then progressively expands the channel dimensionality and spatial resolution to recover increasingly fine-grained structures. At the spatial refinement stage, coarse-scale attention maps preselect globally relevant interactions to pre-sparsify fine-scale attention, enabling non-local refinement beyond isolated patches without the quadratic cost of dense attention. Extensive experiments on ImageNet validate the effectiveness of PixSGR. It achieves an FID of 1.51 at 256$\\times$256 and maintains performance when scaled to 512$\\times$512, attaining an FID of 1.60.",
+      "publishedAt": "2026-09-01T06:50:37Z",
+      "updatedAt": "2026-09-01T06:50:37Z",
+      "arxivId": "2609.00798",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.00798v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.00798v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/CVL-UESTC/PixSGR"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.00798v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 48,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 2612
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 2615
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1562,
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1554,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-ai",
-  "generatedAt": "2026-09-07T08:33:52.577Z",
+  "generatedAt": "2026-09-08T08:16:35.420Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -7123,83 +7123,6 @@
       }
     },
     {
-      "id": "arxiv:2409.05197",
-      "title": "Seemingly Plausible Distractors in Multi-Hop Reasoning: Are Large Language Models Attentive Readers?",
-      "authors": [
-        "Neeladri Bhuiya",
-        "Viktor Schlegel",
-        "Stefan Winkler"
-      ],
-      "abstract": "State-of-the-art Large Language Models (LLMs) are accredited with an increasing number of different capabilities, ranging from reading comprehension over advanced mathematical and reasoning skills to possessing scientific knowledge. In this paper we focus on multi-hop reasoning—the ability to identify and integrate information from multiple textual sources.Given the concerns with the presence of simplifying cues in existing multi-hop reasoning benchmarks, which allow models to circumvent the reasoning requirement, we set out to investigate whether LLMs are prone to exploiting such simplifying cues. We find evidence that they indeed circumvent the requirement to perform multi-hop reasoning, but they do so in more subtle ways than what was reported about their fine-tuned pre-trained language model (PLM) predecessors. We propose a challenging multi-hop reasoning benchmark by generating seemingly plausible multi-hop reasoning chains that ultimately lead to incorrect answers. We evaluate multiple open and proprietary state-of-the-art LLMs and show that their multi-hop reasoning performance is affected, as indicated by up to 45% relative decrease in F1 score when presented with such seemingly plausible alternatives. We also find that—while LLMs tend to ignore misleading lexical cues—misleading reasoning paths indeed present a significant challenge. The code and data are made available at https://github.com/zawedcvg/Are-Large-Language-Models-Attentive-Readers",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-10-31T02:19:12Z",
-      "arxivId": "2409.05197",
-      "doi": "10.48550/arXiv.2409.05197",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05197v3",
-      "pdfUrl": "https://arxiv.org/pdf/2409.05197",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05197v3"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/zawedcvg/Are-Large-Language-Models-Attentive-Readers"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05197"
-        }
-      ],
-      "semanticScholarId": "636b9e5bc46d2f249a5655e374aafe61a55412a7",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 14,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 24,
-        "evidence": 21,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.28678",
       "title": "ViSAGE: Constructing Self-Correcting Memories for Long-Form Video Understanding",
       "authors": [
@@ -9944,7 +9867,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -21367,6 +21289,78 @@
       }
     },
     {
+      "id": "arxiv:2510.26336",
+      "title": "From Amateur to Master: Infusing Knowledge into LLMs via Automated Curriculum Learning",
+      "authors": [
+        "Nishit Neema",
+        "Srinjoy Mukherjee",
+        "Sapan Shah",
+        "Gokul Ramakrishnan",
+        "Ganesh Venkatesh"
+      ],
+      "abstract": "Large Language Models (LLMs) excel at general tasks but underperform in specialized domains like economics and psychology, which require deep, principled understanding. To address this, we introduce ACER (Automated Curriculum-Enhanced Regimen) that transforms generalist models into domain experts without sacrificing their broad capabilities. ACER first synthesizes a comprehensive, textbook-style curriculum by generating a table of contents for a subject and then creating question-answer (QA) pairs guided by Bloom's taxonomy. This ensures systematic topic coverage and progressively increasing difficulty. The resulting synthetic corpus is used for continual pretraining with an interleaved curriculum schedule, aligning learning across both content and cognitive dimensions. Experiments with Llama 3.2 (1B and 3B) show significant gains in specialized MMLU subsets. In challenging domains like microeconomics, where baselines struggle, ACER boosts accuracy by 5 percentage points. Across all target domains, we observe a consistent macro-average improvement of 3 percentage points. Notably, ACER not only prevents catastrophic forgetting but also facilitates positive cross-domain knowledge transfer, improving performance on non-target domains by 0.7 points. Beyond MMLU, ACER enhances performance on knowledge-intensive benchmarks like ARC and GPQA by over 2 absolute points, while maintaining stable performance on general reasoning tasks. Our results demonstrate that ACER offers a scalable and effective recipe for closing critical domain gaps in LLMs.",
+      "publishedAt": "2025-10-30",
+      "updatedAt": "2025-10-30T10:43:40Z",
+      "arxivId": "2510.26336",
+      "doi": "10.48550/arXiv.2510.26336",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.26336v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.26336",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.26336v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.26336"
+        }
+      ],
+      "semanticScholarId": "b6e92ddee9d5bea9f1acf83fdd48f04a4d5fdca7",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.26336",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.26193",
       "title": "RCScore: Quantifying Response Consistency in Large Language Models",
       "authors": [
@@ -21435,78 +21429,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.26336",
-      "title": "From Amateur to Master: Infusing Knowledge into LLMs via Automated Curriculum Learning",
-      "authors": [
-        "Nishit Neema",
-        "Srinjoy Mukherjee",
-        "Sapan Shah",
-        "Gokul Ramakrishnan",
-        "Ganesh Venkatesh"
-      ],
-      "abstract": "Large Language Models (LLMs) excel at general tasks but underperform in specialized domains like economics and psychology, which require deep, principled understanding. To address this, we introduce ACER (Automated Curriculum-Enhanced Regimen) that transforms generalist models into domain experts without sacrificing their broad capabilities. ACER first synthesizes a comprehensive, textbook-style curriculum by generating a table of contents for a subject and then creating question-answer (QA) pairs guided by Bloom's taxonomy. This ensures systematic topic coverage and progressively increasing difficulty. The resulting synthetic corpus is used for continual pretraining with an interleaved curriculum schedule, aligning learning across both content and cognitive dimensions. Experiments with Llama 3.2 (1B and 3B) show significant gains in specialized MMLU subsets. In challenging domains like microeconomics, where baselines struggle, ACER boosts accuracy by 5 percentage points. Across all target domains, we observe a consistent macro-average improvement of 3 percentage points. Notably, ACER not only prevents catastrophic forgetting but also facilitates positive cross-domain knowledge transfer, improving performance on non-target domains by 0.7 points. Beyond MMLU, ACER enhances performance on knowledge-intensive benchmarks like ARC and GPQA by over 2 absolute points, while maintaining stable performance on general reasoning tasks. Our results demonstrate that ACER offers a scalable and effective recipe for closing critical domain gaps in LLMs.",
-      "publishedAt": "2025-10-30",
-      "updatedAt": "2025-10-30T10:43:40Z",
-      "arxivId": "2510.26336",
-      "doi": "10.48550/arXiv.2510.26336",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.26336v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.26336",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.26336v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.26336"
-        }
-      ],
-      "semanticScholarId": "b6e92ddee9d5bea9f1acf83fdd48f04a4d5fdca7",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.26336",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -24682,6 +24604,80 @@
       }
     },
     {
+      "id": "arxiv:2509.06598",
+      "title": "Integrating Spatial and Semantic Embeddings for Stereo Sound Event Localization in Videos",
+      "authors": [
+        "Davide Berghi",
+        "Philip J. B. Jackson"
+      ],
+      "abstract": "In this study, we address the multimodal task of stereo sound event localization and detection with source distance estimation (3D SELD) in regular video content. 3D SELD is a complex task that combines temporal event classification with spatial localization, requiring reasoning across spatial, temporal, and semantic dimensions. The last is arguably the most challenging to model. Traditional SELD approaches typically rely on multichannel input, limiting their capacity to benefit from large-scale pre-training due to data constraints. To overcome this, we enhance a standard SELD architecture with semantic information by integrating pre-trained, contrastive language-aligned models: CLAP for audio and OWL-ViT for visual inputs. These embeddings are incorporated into a modified Conformer module tailored for multimodal fusion, which we refer to as the Cross-Modal Conformer. We perform an ablation study on the development set of the DCASE2025 Task3 Stereo SELD Dataset to assess the individual contributions of the language-aligned models and benchmark against the DCASE Task 3 baseline systems. Additionally, we detail the curation process of large synthetic audio and audio-visual datasets used for model pre-training. These datasets were further expanded through left-right channel swapping augmentation. Our approach, combining extensive pre-training, model ensembling, and visual post-processing, achieved second rank in the DCASE 2025 Challenge Task 3 (Track B), underscoring the effectiveness of our method. Future work will explore the modality-specific contributions and architectural refinements.",
+      "publishedAt": "2025-09-08",
+      "updatedAt": "2025-09-08T12:07:32Z",
+      "arxivId": "2509.06598",
+      "doi": "10.48550/arXiv.2509.06598",
+      "categories": [
+        "eess.AS",
+        "cs.AI",
+        "cs.LG",
+        "eess.IV",
+        "eess.SP"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.06598v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.06598",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.06598v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.06598"
+        }
+      ],
+      "semanticScholarId": "4e8cea64194834dce6163cb0bd7bcc965679acb8",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.06598",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.06284",
       "title": "From Implicit Exploration to Structured Reasoning: Leveraging Guideline and Refinement for LLMs",
       "authors": [
@@ -24744,80 +24740,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2509.06284",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.06598",
-      "title": "Integrating Spatial and Semantic Embeddings for Stereo Sound Event Localization in Videos",
-      "authors": [
-        "Davide Berghi",
-        "Philip J. B. Jackson"
-      ],
-      "abstract": "In this study, we address the multimodal task of stereo sound event localization and detection with source distance estimation (3D SELD) in regular video content. 3D SELD is a complex task that combines temporal event classification with spatial localization, requiring reasoning across spatial, temporal, and semantic dimensions. The last is arguably the most challenging to model. Traditional SELD approaches typically rely on multichannel input, limiting their capacity to benefit from large-scale pre-training due to data constraints. To overcome this, we enhance a standard SELD architecture with semantic information by integrating pre-trained, contrastive language-aligned models: CLAP for audio and OWL-ViT for visual inputs. These embeddings are incorporated into a modified Conformer module tailored for multimodal fusion, which we refer to as the Cross-Modal Conformer. We perform an ablation study on the development set of the DCASE2025 Task3 Stereo SELD Dataset to assess the individual contributions of the language-aligned models and benchmark against the DCASE Task 3 baseline systems. Additionally, we detail the curation process of large synthetic audio and audio-visual datasets used for model pre-training. These datasets were further expanded through left-right channel swapping augmentation. Our approach, combining extensive pre-training, model ensembling, and visual post-processing, achieved second rank in the DCASE 2025 Challenge Task 3 (Track B), underscoring the effectiveness of our method. Future work will explore the modality-specific contributions and architectural refinements.",
-      "publishedAt": "2025-09-08",
-      "updatedAt": "2025-09-08T12:07:32Z",
-      "arxivId": "2509.06598",
-      "doi": "10.48550/arXiv.2509.06598",
-      "categories": [
-        "eess.AS",
-        "cs.AI",
-        "cs.LG",
-        "eess.IV",
-        "eess.SP"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.06598v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.06598",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.06598v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.06598"
-        }
-      ],
-      "semanticScholarId": "4e8cea64194834dce6163cb0bd7bcc965679acb8",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.06598",
           "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
@@ -25852,85 +25774,6 @@
         }
       ],
       "semanticScholarId": "26293539e4f08c8123b55d64ac8563979c4923e1",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2508.17234",
-      "title": "ClaimGen-CN: A Large-scale Chinese Dataset for Legal Claim Generation",
-      "authors": [
-        "Siying Zhou",
-        "Yiquan Wu",
-        "Hui Chen",
-        "Xavier Hu",
-        "Kun Kuang",
-        "Adam Jatowt",
-        "Ming Hu",
-        "Chunyan Zheng",
-        "Fei Wu"
-      ],
-      "abstract": "Legal claims refer to the plaintiff's demands in a case and are essential to guiding judicial reasoning and case resolution. While many works have focused on improving the efficiency of legal professionals, the research on helping non-professionals (e.g., plaintiffs) remains unexplored. This paper explores the problem of legal claim generation based on the given case's facts. First, we construct ClaimGen-CN, the first dataset for Chinese legal claim generation task, from various real-world legal disputes. Additionally, we design an evaluation metric tailored for assessing the generated claims, which encompasses two essential dimensions: factuality and clarity. Building on this, we conduct a comprehensive zero-shot evaluation of state-of-the-art general and legal-domain large language models. Our findings highlight the limitations of the current models in factual precision and expressive clarity, pointing to the need for more targeted development in this domain. To encourage further exploration of this important task, we will make the dataset publicly available.",
-      "publishedAt": "2025-08-24",
-      "updatedAt": "2025-10-27T14:25:55Z",
-      "arxivId": "2508.17234",
-      "doi": "10.48550/arXiv.2508.17234",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2508.17234v2",
-      "pdfUrl": "https://arxiv.org/pdf/2508.17234",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.17234v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.17234"
-        }
-      ],
-      "semanticScholarId": "a0982ab62a435cdafdc339a21549ebec964d6485",
       "venue": "Conference on Empirical Methods in Natural Language Processing",
       "citationCount": 2,
       "influentialCitationCount": 0,
@@ -31301,6 +31144,85 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2508.17234",
+      "title": "ClaimGen-CN: A Large-scale Chinese Dataset for Legal Claim Generation",
+      "authors": [
+        "Siying Zhou",
+        "Yiquan Wu",
+        "Hui Chen",
+        "Xavier Hu",
+        "Kun Kuang",
+        "Adam Jatowt",
+        "Ming Hu",
+        "Chunyan Zheng",
+        "Fei Wu"
+      ],
+      "abstract": "Legal claims refer to the plaintiff's demands in a case and are essential to guiding judicial reasoning and case resolution. While many works have focused on improving the efficiency of legal professionals, the research on helping non-professionals (e.g., plaintiffs) remains unexplored. This paper explores the problem of legal claim generation based on the given case's facts. First, we construct ClaimGen-CN, the first dataset for Chinese legal claim generation task, from various real-world legal disputes. Additionally, we design an evaluation metric tailored for assessing the generated claims, which encompasses two essential dimensions: factuality and clarity. Building on this, we conduct a comprehensive zero-shot evaluation of state-of-the-art general and legal-domain large language models. Our findings highlight the limitations of the current models in factual precision and expressive clarity, pointing to the need for more targeted development in this domain. To encourage further exploration of this important task, we will make the dataset publicly available.",
+      "publishedAt": "2025-08-24",
+      "updatedAt": "2025-10-27T14:25:55Z",
+      "arxivId": "2508.17234",
+      "doi": "10.48550/arXiv.2508.17234",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2508.17234v2",
+      "pdfUrl": "https://arxiv.org/pdf/2508.17234",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.17234v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.17234"
+        }
+      ],
+      "semanticScholarId": "a0982ab62a435cdafdc339a21549ebec964d6485",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -41309,78 +41231,6 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
-          "reproducibility": 0,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2409.05001",
-      "title": "A Pair Programming Framework for Code Generation via Multi-Plan Exploration and Feedback-Driven Refinement",
-      "authors": [
-        "Huan Zhang",
-        "Wei Cheng",
-        "Yuhan Wu",
-        "Wei Hu"
-      ],
-      "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. Although prior studies enhanced LLMs with prompting techniques and code refinement, they still struggle with complex programming problems due to rigid solution plans. In this paper, we draw on pair programming practices to propose PairCoder, a novel LLM-based framework for code generation. PairCoder incorporates two collaborative LLM agents, namely a Navigator agent for high-level planning and a Driver agent for specific implementation. The Navigator is responsible for proposing promising solution plans, selecting the current optimal plan, and directing the next iteration round based on execution feedback. The Driver follows the guidance of Navigator to undertake initial code generation, code testing, and refinement. This interleaved and iterative workflow involves multi-plan exploration and feedback-based refinement, which mimics the collaboration of pair programmers. We evaluate PairCoder with both open-source and closed-source LLMs on various code generation benchmarks. Extensive experimental results demonstrate the superior accuracy of PairCoder, achieving relative pass@1 improvements of 12.00%– 162.43% compared to prompting LLMs directly.CCS CONCEPTS• Software and its engineering → Automatic programming.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T07:22:19Z",
-      "arxivId": "2409.05001",
-      "doi": "10.1145/3691620.3695506",
-      "categories": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05001v1",
-      "pdfUrl": "https://arxiv.org/pdf/2409.05001",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05001v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05001"
-        }
-      ],
-      "semanticScholarId": "e3b340eed1349650476fd2aa98d6c957fc1ae274",
-      "venue": "International Conference on Automated Software Engineering",
-      "citationCount": 39,
-      "influentialCitationCount": 4,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Automated Software Engineering",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 4
@@ -53626,84 +53476,6 @@
       }
     },
     {
-      "id": "arxiv:2411.10937",
-      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
-      "authors": [
-        "Wenjun Hou",
-        "Yi Cheng",
-        "Kaishuai Xu",
-        "Yan Hu",
-        "Wenjie Li",
-        "Jiang Liu"
-      ],
-      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T02:23:45Z",
-      "arxivId": "2411.10937",
-      "doi": "10.48550/arXiv.2411.10937",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937"
-        }
-      ],
-      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.10937",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2411.02730",
       "title": "A Natural Language Processing Approach to Support Biomedical Data Harmonization: Leveraging Large Language Models",
       "authors": [
@@ -59642,6 +59414,84 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：International Symposium on Computing and Networking - Across Practical Development and Theoretical Research",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10937",
+      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
+      "authors": [
+        "Wenjun Hou",
+        "Yi Cheng",
+        "Kaishuai Xu",
+        "Yan Hu",
+        "Wenjie Li",
+        "Jiang Liu"
+      ],
+      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T02:23:45Z",
+      "arxivId": "2411.10937",
+      "doi": "10.48550/arXiv.2411.10937",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937"
+        }
+      ],
+      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 0,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2411.10937",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -74319,7 +74169,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -86531,7 +86380,6 @@
           "覆盖当前方向 2 个关注主题",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -95863,7 +95711,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -95932,7 +95779,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -119783,7 +119629,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -124224,8 +124069,7 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -124292,8 +124136,7 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -128628,76 +128471,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2606.12334",
-      "title": "Fourier Features Let Agents Learn High Precision Policies with Imitation Learning",
-      "authors": [
-        "Balázs Gyenes",
-        "Emiliyan Gospodinov",
-        "J. Frieling",
-        "Enrico Krohmer",
-        "Nicolas Schreiber",
-        "Xiaogang Jia",
-        "N. Freymuth",
-        "Gerhard Neumann"
-      ],
-      "abstract": "High-precision robotic manipulation requires fine-grained spatial reasoning that is often difficult to achieve with RGB-only policies due to depth ambiguity and perspective scale issues. Policies that leverage 3D information directly, such as those based on point clouds, offer a stronger geometric prior over purely image-based ones, yet their performance remains highly task-dependent. We hypothesize that this discrepancy may be due to the spectral bias of neural networks towards learning low frequency functions, which especially affects architectures conditioned on slow-moving Cartesian features. We thus propose to map point clouds from Cartesian space into high-dimensional Fourier space, effectively equipping the point cloud encoder with direct access to high-frequency features. We experimentally validate the use of Fourier features on challenging manipulation tasks from the RoboCasa and ManiSkill3 benchmarks and on a real robot setup. Despite their simplicity, we find that Fourier features provide significant benefits across diverse encoder architectures and benchmarks and are robust across hyperparameters. Our results indicate that Fourier features let policies leverage geometric details more effectively than Cartesian features, showing their potential as a general-purpose tool for point cloud-based imitation learning. We provide source code and videos on our project page: https://fourier-il.github.io/fourier-il",
-      "publishedAt": "2026-06-10",
-      "arxivId": "2606.12334",
-      "semanticScholarId": "1dd92d2b30824b17363cb972bebce8c8583a414c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-three-dimensional-vision"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2606.12334",
-      "pdfUrl": "https://arxiv.org/pdf/2606.12334",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://fourier-il.github.io/fourier-il"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2606.12334"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 48,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供项目页面",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 0,
           "corroboration": 0
         }
       }
@@ -135164,6 +134937,76 @@
       }
     },
     {
+      "id": "arxiv:2606.12334",
+      "title": "Fourier Features Let Agents Learn High Precision Policies with Imitation Learning",
+      "authors": [
+        "Balázs Gyenes",
+        "Emiliyan Gospodinov",
+        "J. Frieling",
+        "Enrico Krohmer",
+        "Nicolas Schreiber",
+        "Xiaogang Jia",
+        "N. Freymuth",
+        "Gerhard Neumann"
+      ],
+      "abstract": "High-precision robotic manipulation requires fine-grained spatial reasoning that is often difficult to achieve with RGB-only policies due to depth ambiguity and perspective scale issues. Policies that leverage 3D information directly, such as those based on point clouds, offer a stronger geometric prior over purely image-based ones, yet their performance remains highly task-dependent. We hypothesize that this discrepancy may be due to the spectral bias of neural networks towards learning low frequency functions, which especially affects architectures conditioned on slow-moving Cartesian features. We thus propose to map point clouds from Cartesian space into high-dimensional Fourier space, effectively equipping the point cloud encoder with direct access to high-frequency features. We experimentally validate the use of Fourier features on challenging manipulation tasks from the RoboCasa and ManiSkill3 benchmarks and on a real robot setup. Despite their simplicity, we find that Fourier features provide significant benefits across diverse encoder architectures and benchmarks and are robust across hyperparameters. Our results indicate that Fourier features let policies leverage geometric details more effectively than Cartesian features, showing their potential as a general-purpose tool for point cloud-based imitation learning. We provide source code and videos on our project page: https://fourier-il.github.io/fourier-il",
+      "publishedAt": "2026-06-10",
+      "arxivId": "2606.12334",
+      "semanticScholarId": "1dd92d2b30824b17363cb972bebce8c8583a414c",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2606.12334",
+      "pdfUrl": "https://arxiv.org/pdf/2606.12334",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://fourier-il.github.io/fourier-il"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2606.12334"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 47,
+        "relevance": 24,
+        "evidence": 3,
+        "freshness": 5,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供项目页面",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 0,
+          "corroboration": 0
+        }
+      }
+    },
+    {
       "id": "arxiv:2609.05298",
       "title": "Online Change-point Detection for Cooperative Multi-Agent Reinforcement Learning",
       "authors": [
@@ -137427,8 +137270,7 @@
         "reasons": [
           "匹配当前研究方向",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -144381,23 +144223,152 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2609.01757",
+      "title": "AlphaRAD: Grounded Zero-Shot Classification in Chest Radiology via $α$-Corrected Binary Cross Entropy and Factorized Latent Supervision",
+      "authors": [
+        "Jianzhong You",
+        "Yuan Gao",
+        "Chris McIntosh"
+      ],
+      "abstract": "Vision-Language Pretrained Models (VLPMs) offer a scalable path to open-vocabulary chest radiology understanding, yet two aspects remain underexplored: how structured clinical semantics extracted from medical reports can reduce in-batch noise during contrastive learning, and how cross-modal fusion can be designed to produce more faithful spatial grounding without added complexity. We introduce AlphaRAD, addressing these opportunities through two contributions. First, we construct a large-scale structured medical concept space from medical reports parsed by a Large Language Model for training, thereby mitigating in-batch learning noise and removing heuristic pair matching in contrastive learning, and thus naturally positioning AlphaRAD as a medical concept discriminator trained via $α$-Corrected Binary Cross-Entropy. Second, we propose FLaS (Factorized Latent Supervision), an extremely simple yet effective cross-modal feature fusion module that factorizes VLPM representations into independent subspaces, using dedicated alignment supervision to enhance the expressiveness of spatial grounding without introducing additional model parameters. Through extensive empirical validation, AlphaRAD shows strong zero-shot generalization across diverse chest radiology tasks. Notably, it establishes state-of-the-art average performance across 16 classification benchmarks, while achieving individual state-of-the-art results via distinct gains on 7 grounding/phrase grounding and 3 segmentation datasets.",
+      "publishedAt": "2026-09-01T18:24:50Z",
+      "updatedAt": "2026-09-01T18:24:50Z",
+      "arxivId": "2609.01757",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-representation-self-supervised"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.01757v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.01757v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.01757v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2609.01607",
+      "title": "Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System",
+      "authors": [
+        "Penghao Wu",
+        "Haiwen Diao",
+        "Weichen Fan",
+        "Lewei Lu",
+        "Dahua Lin",
+        "Ziwei Liu"
+      ],
+      "abstract": "While unified multimodal models (UMMs) jointly perform visual understanding and generation within a single model, functional unification does not guarantee learning synergy: the two objectives may reinforce each other, compete for capacity, or merely coexist. We investigate their relationship at the representation, task, and system levels in a controlled, structurally native setting without pretrained vision priors. At the representation level, we find that each objective provides useful signal to the other: generation enriches the visual features learned for understanding, while understanding strengthens vision--language alignment for generation. However, when both objectives are forced through the same computation path, one tends to dominate. A task-decoupled architecture that specializes conflicting visual computation while preserving semantic interaction avoids this asymmetric degradation. At the task level, through three case studies, we find positive bidirectional transfer when understanding and generation tasks rely on shared knowledge. At the system level, we show that an end-to-end UMM outperforms a matched planner--executor pipeline on complex tasks that explicitly require both image understanding and generation. Together, these results show that the value of UMMs extends beyond a unified interface: appropriate specialization, shared task knowledge, and end-to-end optimization can turn coexistence into synergy.",
+      "publishedAt": "2026-09-01T17:59:59Z",
+      "updatedAt": "2026-09-01T17:59:59Z",
+      "arxivId": "2609.01607",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "ai-safety-alignment",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.01607v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.01607v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.01607v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1916
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1920
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1368,
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1362,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

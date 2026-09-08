@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "embodied-intelligence",
-  "generatedAt": "2026-09-07T08:33:52.577Z",
+  "generatedAt": "2026-09-08T08:16:35.420Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -11842,84 +11842,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23328",
-      "title": "Space Robotics Bench: Robot Learning Beyond Earth",
-      "authors": [
-        "Andrej Orsula",
-        "Matthieu Geist",
-        "Miguel Olivares-Mendez",
-        "Carol Martinez"
-      ],
-      "abstract": "The growing ambition for space exploration demands robust autonomous systems that can operate in unstructured environments under extreme extraterrestrial conditions. The adoption of robot learning in this domain is severely hindered by the prohibitive cost of technology demonstrations and the limited availability of data. To bridge this gap, we introduce the Space Robotics Bench, an open-source simulation framework for robot learning in space. It offers a modular architecture that integrates on-demand procedural generation with massively parallel simulation environments to support the creation of vast and diverse training distributions for learning-based agents. To ground research and enable direct comparison, the framework includes a comprehensive suite of benchmark tasks that span a wide range of mission-relevant scenarios. We establish performance baselines using standard reinforcement learning algorithms and present a series of experimental case studies that investigate key challenges in generalization, end-to-end learning, adaptive control, and sim-to-real transfer. Our results reveal insights into the limitations of current methods and demonstrate the utility of the framework in producing policies capable of real-world operation. These contributions establish the Space Robotics Bench as a valuable resource for developing, benchmarking, and deploying the robust autonomous systems required for the final frontier.",
-      "publishedAt": "2025-09-27",
-      "updatedAt": "2025-09-27T14:28:31Z",
-      "arxivId": "2509.23328",
-      "doi": "10.48550/arXiv.2509.23328",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23328v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23328",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/AndrejOrsula/space_robotics_bench"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23328v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23328"
-        }
-      ],
-      "semanticScholarId": "83ee4c0645f60880fe14df06bc1daaf2ad12d90f",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 67,
-        "relevance": 27,
-        "evidence": 19,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.23328",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.21961",
       "title": "FlowDrive: moderated flow matching with data balancing for trajectory planning",
       "authors": [
@@ -13761,7 +13683,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -17266,6 +17187,84 @@
       }
     },
     {
+      "id": "arxiv:2509.23328",
+      "title": "Space Robotics Bench: Robot Learning Beyond Earth",
+      "authors": [
+        "Andrej Orsula",
+        "Matthieu Geist",
+        "Miguel Olivares-Mendez",
+        "Carol Martinez"
+      ],
+      "abstract": "The growing ambition for space exploration demands robust autonomous systems that can operate in unstructured environments under extreme extraterrestrial conditions. The adoption of robot learning in this domain is severely hindered by the prohibitive cost of technology demonstrations and the limited availability of data. To bridge this gap, we introduce the Space Robotics Bench, an open-source simulation framework for robot learning in space. It offers a modular architecture that integrates on-demand procedural generation with massively parallel simulation environments to support the creation of vast and diverse training distributions for learning-based agents. To ground research and enable direct comparison, the framework includes a comprehensive suite of benchmark tasks that span a wide range of mission-relevant scenarios. We establish performance baselines using standard reinforcement learning algorithms and present a series of experimental case studies that investigate key challenges in generalization, end-to-end learning, adaptive control, and sim-to-real transfer. Our results reveal insights into the limitations of current methods and demonstrate the utility of the framework in producing policies capable of real-world operation. These contributions establish the Space Robotics Bench as a valuable resource for developing, benchmarking, and deploying the robust autonomous systems required for the final frontier.",
+      "publishedAt": "2025-09-27",
+      "updatedAt": "2025-09-27T14:28:31Z",
+      "arxivId": "2509.23328",
+      "doi": "10.48550/arXiv.2509.23328",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23328v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23328",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/AndrejOrsula/space_robotics_bench"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23328v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23328"
+        }
+      ],
+      "semanticScholarId": "83ee4c0645f60880fe14df06bc1daaf2ad12d90f",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 66,
+        "relevance": 27,
+        "evidence": 18,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.23328",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.21986",
       "title": "Developing Vision-Language-Action Model from Egocentric Videos",
       "authors": [
@@ -19736,84 +19735,6 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.11228",
-      "title": "TEOcc: Radar-camera Multi-modal Occupancy Prediction via Temporal Enhancement",
-      "authors": [
-        "Zhiwei Lin",
-        "Hongbo Jin",
-        "Yongtao Wang",
-        "Yufei Wei",
-        "Nan Dong"
-      ],
-      "abstract": "As a novel 3D scene representation, semantic occupancy has gained much attention in autonomous driving. However, existing occupancy prediction methods mainly focus on designing better occupancy representations, such as tri-perspective view or neural radiance fields, while ignoring the advantages of using long-temporal information. In this paper, we propose a radar-camera multi-modal temporal enhanced occupancy prediction network, dubbed TEOcc. Our method is inspired by the success of utilizing temporal information in 3D object detection. Specifically, we introduce a temporal enhancement branch to learn temporal occupancy prediction. In this branch, we randomly discard the t-k input frame of the multi-view camera and predict its 3D occupancy by long-term and short-term temporal decoders separately with the information from other adjacent frames and multi-modal inputs. Besides, to reduce computational costs and incorporate multi-modal inputs, we specially designed 3D convolutional layers for long-term and short-term temporal decoders. Furthermore, since the lightweight occupancy prediction head is a dense classification head, we propose to use a shared occupancy prediction head for the temporal enhancement and main branches. It is worth noting that the temporal enhancement branch is only performed during training and is discarded during inference. Experiment results demonstrate that TEOcc achieves state-of-the-art occupancy prediction on nuScenes benchmarks. In addition, the proposed temporal enhancement branch is a plug-and-play module that can be easily integrated into existing occupancy prediction methods to improve the performance of occupancy prediction. The code and models will be released at https://github.com/VDIGPKU/TEOcc.",
-      "publishedAt": "2024-10-15",
-      "updatedAt": "2024-10-15T03:20:48Z",
-      "arxivId": "2410.11228",
-      "doi": "10.3233/FAIA240480",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.11228v1",
-      "pdfUrl": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/VDIGPKU/TEOcc"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11228v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480"
-        }
-      ],
-      "semanticScholarId": "90d883626a1f0d50ba250719a04f682cefcded64",
-      "venue": "European Conference on Artificial Intelligence",
-      "citationCount": 6,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 66,
-        "relevance": 27,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：European Conference on Artificial Intelligence",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -27524,6 +27445,84 @@
       }
     },
     {
+      "id": "arxiv:2410.11228",
+      "title": "TEOcc: Radar-camera Multi-modal Occupancy Prediction via Temporal Enhancement",
+      "authors": [
+        "Zhiwei Lin",
+        "Hongbo Jin",
+        "Yongtao Wang",
+        "Yufei Wei",
+        "Nan Dong"
+      ],
+      "abstract": "As a novel 3D scene representation, semantic occupancy has gained much attention in autonomous driving. However, existing occupancy prediction methods mainly focus on designing better occupancy representations, such as tri-perspective view or neural radiance fields, while ignoring the advantages of using long-temporal information. In this paper, we propose a radar-camera multi-modal temporal enhanced occupancy prediction network, dubbed TEOcc. Our method is inspired by the success of utilizing temporal information in 3D object detection. Specifically, we introduce a temporal enhancement branch to learn temporal occupancy prediction. In this branch, we randomly discard the t-k input frame of the multi-view camera and predict its 3D occupancy by long-term and short-term temporal decoders separately with the information from other adjacent frames and multi-modal inputs. Besides, to reduce computational costs and incorporate multi-modal inputs, we specially designed 3D convolutional layers for long-term and short-term temporal decoders. Furthermore, since the lightweight occupancy prediction head is a dense classification head, we propose to use a shared occupancy prediction head for the temporal enhancement and main branches. It is worth noting that the temporal enhancement branch is only performed during training and is discarded during inference. Experiment results demonstrate that TEOcc achieves state-of-the-art occupancy prediction on nuScenes benchmarks. In addition, the proposed temporal enhancement branch is a plug-and-play module that can be easily integrated into existing occupancy prediction methods to improve the performance of occupancy prediction. The code and models will be released at https://github.com/VDIGPKU/TEOcc.",
+      "publishedAt": "2024-10-15",
+      "updatedAt": "2024-10-15T03:20:48Z",
+      "arxivId": "2410.11228",
+      "doi": "10.3233/FAIA240480",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2410.11228v1",
+      "pdfUrl": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/VDIGPKU/TEOcc"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.11228v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480"
+        }
+      ],
+      "semanticScholarId": "90d883626a1f0d50ba250719a04f682cefcded64",
+      "venue": "European Conference on Artificial Intelligence",
+      "citationCount": 6,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 65,
+        "relevance": 27,
+        "evidence": 18,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：European Conference on Artificial Intelligence",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2410.05714",
       "title": "Enhancing Temporal Modeling of Video LLMs via Time Gating",
       "authors": [
@@ -28417,83 +28416,6 @@
           "citations": 1,
           "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2409.05197",
-      "title": "Seemingly Plausible Distractors in Multi-Hop Reasoning: Are Large Language Models Attentive Readers?",
-      "authors": [
-        "Neeladri Bhuiya",
-        "Viktor Schlegel",
-        "Stefan Winkler"
-      ],
-      "abstract": "State-of-the-art Large Language Models (LLMs) are accredited with an increasing number of different capabilities, ranging from reading comprehension over advanced mathematical and reasoning skills to possessing scientific knowledge. In this paper we focus on multi-hop reasoning—the ability to identify and integrate information from multiple textual sources.Given the concerns with the presence of simplifying cues in existing multi-hop reasoning benchmarks, which allow models to circumvent the reasoning requirement, we set out to investigate whether LLMs are prone to exploiting such simplifying cues. We find evidence that they indeed circumvent the requirement to perform multi-hop reasoning, but they do so in more subtle ways than what was reported about their fine-tuned pre-trained language model (PLM) predecessors. We propose a challenging multi-hop reasoning benchmark by generating seemingly plausible multi-hop reasoning chains that ultimately lead to incorrect answers. We evaluate multiple open and proprietary state-of-the-art LLMs and show that their multi-hop reasoning performance is affected, as indicated by up to 45% relative decrease in F1 score when presented with such seemingly plausible alternatives. We also find that—while LLMs tend to ignore misleading lexical cues—misleading reasoning paths indeed present a significant challenge. The code and data are made available at https://github.com/zawedcvg/Are-Large-Language-Models-Attentive-Readers",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-10-31T02:19:12Z",
-      "arxivId": "2409.05197",
-      "doi": "10.48550/arXiv.2409.05197",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05197v3",
-      "pdfUrl": "https://arxiv.org/pdf/2409.05197",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05197v3"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/zawedcvg/Are-Large-Language-Models-Attentive-Readers"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05197"
-        }
-      ],
-      "semanticScholarId": "636b9e5bc46d2f249a5655e374aafe61a55412a7",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 14,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 24,
-        "evidence": 21,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -58388,158 +58310,6 @@
       }
     },
     {
-      "id": "arxiv:2411.10954",
-      "title": "Dialectal Toxicity Detection: Evaluating LLM-as-a-Judge Consistency Across Language Varieties",
-      "authors": [
-        "Fahim Faisal",
-        "Md Mushfiqur Rahman",
-        "Antonios Anastasopoulos"
-      ],
-      "abstract": "There has been little systematic study on how dialectal differences affect toxicity detection by modern LLMs. Furthermore, although using LLMs as evaluators (\"LLM-as-a-judge\") is a growing research area, their sensitivity to dialectal nuances is still underexplored and requires more focused attention. In this paper, we address these gaps through a comprehensive toxicity evaluation of LLMs across diverse dialects. We create a multi-dialect dataset through synthetic transformations and human-assisted translations, covering 10 language clusters and 60 varieties. We then evaluated three LLMs on their ability to assess toxicity across multilingual, dialectal, and LLM-human consistency. Our findings show that LLMs are sensitive in handling both multilingual and dialectal variations. However, if we have to rank the consistency, the weakest area is LLM-human agreement, followed by dialectal consistency. Code repository: \\url{https://github.com/ffaisal93/dialect_toxicity_llm_judge}",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T03:53:24Z",
-      "arxivId": "2411.10954",
-      "doi": "10.48550/arXiv.2411.10954",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-multilingual-translation",
-        "cl-evaluation-safety"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10954v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10954",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/ffaisal93/dialect_toxicity_llm_judge}"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10954v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10954"
-        }
-      ],
-      "semanticScholarId": "2eb43d97b3ea3ea46b6948d01b118c1f1d490443",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 8,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 1,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.10928",
-      "title": "Learn from Downstream and Be Yourself in Multimodal Large Language Model Fine-Tuning",
-      "authors": [
-        "Wenke Huang",
-        "Jian Liang",
-        "Zekun Shi",
-        "Didi Zhu",
-        "Guancheng Wan",
-        "He Li",
-        "Bo Du",
-        "Dacheng Tao",
-        "Mang Ye"
-      ],
-      "abstract": "Multimodal Large Language Model (MLLM) have demonstrated strong generalization capabilities across diverse distributions and tasks, largely due to extensive pre-training datasets. Fine-tuning MLLM has become a common practice to improve performance on specific downstream tasks. However, during fine-tuning, MLLM often faces the risk of forgetting knowledge acquired during pre-training, which can result in a decline in generalization abilities. To balance the trade-off between generalization and specialization, we propose measuring the parameter importance for both pre-trained and fine-tuning distributions, based on frozen pre-trained weight magnitude and accumulated fine-tuning gradient values. We further apply an importance-aware weight allocation strategy, selectively updating relatively important parameters for downstream tasks. We conduct empirical evaluations on both image captioning and visual question-answering tasks using various MLLM architectures. The comprehensive experimental analysis demonstrates the effectiveness of the proposed solution, highlighting the efficiency of the crucial modules in enhancing downstream specialization performance while mitigating generalization degradation in MLLM Fine-Tuning.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T01:16:37Z",
-      "arxivId": "2411.10928",
-      "doi": "10.48550/arXiv.2411.10928",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10928v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10928",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10928v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10928"
-        }
-      ],
-      "semanticScholarId": "4c03c30f1d39c578ff6fa2a8de6913b387dd21fa",
-      "citationCount": 26,
-      "influentialCitationCount": 2,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 27,
-        "evidence": 16,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2411.10928",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2411.08566",
       "title": "Grammarization-Based Grasping with Deep Multi-Autoencoder Latent Space Exploration by Reinforcement Learning Agent",
       "authors": [
@@ -66621,6 +66391,78 @@
       }
     },
     {
+      "id": "arxiv:2510.26336",
+      "title": "From Amateur to Master: Infusing Knowledge into LLMs via Automated Curriculum Learning",
+      "authors": [
+        "Nishit Neema",
+        "Srinjoy Mukherjee",
+        "Sapan Shah",
+        "Gokul Ramakrishnan",
+        "Ganesh Venkatesh"
+      ],
+      "abstract": "Large Language Models (LLMs) excel at general tasks but underperform in specialized domains like economics and psychology, which require deep, principled understanding. To address this, we introduce ACER (Automated Curriculum-Enhanced Regimen) that transforms generalist models into domain experts without sacrificing their broad capabilities. ACER first synthesizes a comprehensive, textbook-style curriculum by generating a table of contents for a subject and then creating question-answer (QA) pairs guided by Bloom's taxonomy. This ensures systematic topic coverage and progressively increasing difficulty. The resulting synthetic corpus is used for continual pretraining with an interleaved curriculum schedule, aligning learning across both content and cognitive dimensions. Experiments with Llama 3.2 (1B and 3B) show significant gains in specialized MMLU subsets. In challenging domains like microeconomics, where baselines struggle, ACER boosts accuracy by 5 percentage points. Across all target domains, we observe a consistent macro-average improvement of 3 percentage points. Notably, ACER not only prevents catastrophic forgetting but also facilitates positive cross-domain knowledge transfer, improving performance on non-target domains by 0.7 points. Beyond MMLU, ACER enhances performance on knowledge-intensive benchmarks like ARC and GPQA by over 2 absolute points, while maintaining stable performance on general reasoning tasks. Our results demonstrate that ACER offers a scalable and effective recipe for closing critical domain gaps in LLMs.",
+      "publishedAt": "2025-10-30",
+      "updatedAt": "2025-10-30T10:43:40Z",
+      "arxivId": "2510.26336",
+      "doi": "10.48550/arXiv.2510.26336",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.26336v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.26336",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.26336v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.26336"
+        }
+      ],
+      "semanticScholarId": "b6e92ddee9d5bea9f1acf83fdd48f04a4d5fdca7",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.26336",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.26193",
       "title": "RCScore: Quantifying Response Consistency in Large Language Models",
       "authors": [
@@ -66689,78 +66531,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.26336",
-      "title": "From Amateur to Master: Infusing Knowledge into LLMs via Automated Curriculum Learning",
-      "authors": [
-        "Nishit Neema",
-        "Srinjoy Mukherjee",
-        "Sapan Shah",
-        "Gokul Ramakrishnan",
-        "Ganesh Venkatesh"
-      ],
-      "abstract": "Large Language Models (LLMs) excel at general tasks but underperform in specialized domains like economics and psychology, which require deep, principled understanding. To address this, we introduce ACER (Automated Curriculum-Enhanced Regimen) that transforms generalist models into domain experts without sacrificing their broad capabilities. ACER first synthesizes a comprehensive, textbook-style curriculum by generating a table of contents for a subject and then creating question-answer (QA) pairs guided by Bloom's taxonomy. This ensures systematic topic coverage and progressively increasing difficulty. The resulting synthetic corpus is used for continual pretraining with an interleaved curriculum schedule, aligning learning across both content and cognitive dimensions. Experiments with Llama 3.2 (1B and 3B) show significant gains in specialized MMLU subsets. In challenging domains like microeconomics, where baselines struggle, ACER boosts accuracy by 5 percentage points. Across all target domains, we observe a consistent macro-average improvement of 3 percentage points. Notably, ACER not only prevents catastrophic forgetting but also facilitates positive cross-domain knowledge transfer, improving performance on non-target domains by 0.7 points. Beyond MMLU, ACER enhances performance on knowledge-intensive benchmarks like ARC and GPQA by over 2 absolute points, while maintaining stable performance on general reasoning tasks. Our results demonstrate that ACER offers a scalable and effective recipe for closing critical domain gaps in LLMs.",
-      "publishedAt": "2025-10-30",
-      "updatedAt": "2025-10-30T10:43:40Z",
-      "arxivId": "2510.26336",
-      "doi": "10.48550/arXiv.2510.26336",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.26336v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.26336",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.26336v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.26336"
-        }
-      ],
-      "semanticScholarId": "b6e92ddee9d5bea9f1acf83fdd48f04a4d5fdca7",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.26336",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -72617,85 +72387,6 @@
       }
     },
     {
-      "id": "arxiv:2508.17234",
-      "title": "ClaimGen-CN: A Large-scale Chinese Dataset for Legal Claim Generation",
-      "authors": [
-        "Siying Zhou",
-        "Yiquan Wu",
-        "Hui Chen",
-        "Xavier Hu",
-        "Kun Kuang",
-        "Adam Jatowt",
-        "Ming Hu",
-        "Chunyan Zheng",
-        "Fei Wu"
-      ],
-      "abstract": "Legal claims refer to the plaintiff's demands in a case and are essential to guiding judicial reasoning and case resolution. While many works have focused on improving the efficiency of legal professionals, the research on helping non-professionals (e.g., plaintiffs) remains unexplored. This paper explores the problem of legal claim generation based on the given case's facts. First, we construct ClaimGen-CN, the first dataset for Chinese legal claim generation task, from various real-world legal disputes. Additionally, we design an evaluation metric tailored for assessing the generated claims, which encompasses two essential dimensions: factuality and clarity. Building on this, we conduct a comprehensive zero-shot evaluation of state-of-the-art general and legal-domain large language models. Our findings highlight the limitations of the current models in factual precision and expressive clarity, pointing to the need for more targeted development in this domain. To encourage further exploration of this important task, we will make the dataset publicly available.",
-      "publishedAt": "2025-08-24",
-      "updatedAt": "2025-10-27T14:25:55Z",
-      "arxivId": "2508.17234",
-      "doi": "10.48550/arXiv.2508.17234",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2508.17234v2",
-      "pdfUrl": "https://arxiv.org/pdf/2508.17234",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.17234v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2508.17234"
-        }
-      ],
-      "semanticScholarId": "a0982ab62a435cdafdc339a21549ebec964d6485",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2508.11232",
       "title": "Embodied Edge Intelligence Meets Near Field Communication: Concept, Design, and Verification",
       "authors": [
@@ -74757,6 +74448,158 @@
           "publication": 6,
           "citations": 1,
           "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10954",
+      "title": "Dialectal Toxicity Detection: Evaluating LLM-as-a-Judge Consistency Across Language Varieties",
+      "authors": [
+        "Fahim Faisal",
+        "Md Mushfiqur Rahman",
+        "Antonios Anastasopoulos"
+      ],
+      "abstract": "There has been little systematic study on how dialectal differences affect toxicity detection by modern LLMs. Furthermore, although using LLMs as evaluators (\"LLM-as-a-judge\") is a growing research area, their sensitivity to dialectal nuances is still underexplored and requires more focused attention. In this paper, we address these gaps through a comprehensive toxicity evaluation of LLMs across diverse dialects. We create a multi-dialect dataset through synthetic transformations and human-assisted translations, covering 10 language clusters and 60 varieties. We then evaluated three LLMs on their ability to assess toxicity across multilingual, dialectal, and LLM-human consistency. Our findings show that LLMs are sensitive in handling both multilingual and dialectal variations. However, if we have to rank the consistency, the weakest area is LLM-human agreement, followed by dialectal consistency. Code repository: \\url{https://github.com/ffaisal93/dialect_toxicity_llm_judge}",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T03:53:24Z",
+      "arxivId": "2411.10954",
+      "doi": "10.48550/arXiv.2411.10954",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-multilingual-translation",
+        "cl-evaluation-safety"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10954v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10954",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/ffaisal93/dialect_toxicity_llm_judge}"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10954v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10954"
+        }
+      ],
+      "semanticScholarId": "2eb43d97b3ea3ea46b6948d01b118c1f1d490443",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 8,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10928",
+      "title": "Learn from Downstream and Be Yourself in Multimodal Large Language Model Fine-Tuning",
+      "authors": [
+        "Wenke Huang",
+        "Jian Liang",
+        "Zekun Shi",
+        "Didi Zhu",
+        "Guancheng Wan",
+        "He Li",
+        "Bo Du",
+        "Dacheng Tao",
+        "Mang Ye"
+      ],
+      "abstract": "Multimodal Large Language Model (MLLM) have demonstrated strong generalization capabilities across diverse distributions and tasks, largely due to extensive pre-training datasets. Fine-tuning MLLM has become a common practice to improve performance on specific downstream tasks. However, during fine-tuning, MLLM often faces the risk of forgetting knowledge acquired during pre-training, which can result in a decline in generalization abilities. To balance the trade-off between generalization and specialization, we propose measuring the parameter importance for both pre-trained and fine-tuning distributions, based on frozen pre-trained weight magnitude and accumulated fine-tuning gradient values. We further apply an importance-aware weight allocation strategy, selectively updating relatively important parameters for downstream tasks. We conduct empirical evaluations on both image captioning and visual question-answering tasks using various MLLM architectures. The comprehensive experimental analysis demonstrates the effectiveness of the proposed solution, highlighting the efficiency of the crucial modules in enhancing downstream specialization performance while mitigating generalization degradation in MLLM Fine-Tuning.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T01:16:37Z",
+      "arxivId": "2411.10928",
+      "doi": "10.48550/arXiv.2411.10928",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10928v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10928",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10928v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10928"
+        }
+      ],
+      "semanticScholarId": "4c03c30f1d39c578ff6fa2a8de6913b387dd21fa",
+      "citationCount": 26,
+      "influentialCitationCount": 2,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 27,
+        "evidence": 16,
+        "freshness": 0,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2411.10928",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 2,
+          "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
         }
@@ -77131,89 +76974,6 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2409.05076",
-      "title": "PIP: Detecting Adversarial Examples in Large Vision-Language Models via Attention Patterns of Irrelevant Probe Questions",
-      "authors": [
-        "Yudong Zhang",
-        "Ruobing Xie",
-        "Jiansheng Chen",
-        "Xingwu Sun",
-        "Yu Wang"
-      ],
-      "abstract": "Large Vision-Language Models (LVLMs) have demonstrated their powerful multimodal capabilities. However, they also face serious safety problems, as adversaries can induce robustness issues in LVLMs through the use of well-designed adversarial examples. Therefore, LVLMs are in urgent need of detection tools for adversarial examples to prevent incorrect responses. In this work, we first discover that LVLMs exhibit regular attention patterns for clean images when presented with probe questions. We propose an unconventional method named PIP, which utilizes the attention patterns of one randomly selected irrelevant probe question (e.g., \"Is there a clock''') to distinguish adversarial examples from clean examples. Regardless of the image to be tested and its corresponding question, PIP only needs to perform one additional inference of the image to be tested and the probe question, and then achieves successful detection of adversarial examples. Even under black-box attacks and open dataset scenarios, our PIP, coupled with a simple SVM, still achieves more than 98% recall and a precision of over 90%. Our PIP is the first attempt to detect adversarial attacks on LVLMs via simple irrelevant probe questions, shedding light on deeper understanding and introspection within LVLMs. The code is available at https://github.com/btzyd/pip.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T12:38:25Z",
-      "arxivId": "2409.05076",
-      "doi": "10.1145/3664647.3685510",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05076v1",
-      "pdfUrl": "https://doi.org/10.1145/3664647.3685510",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/btzyd/pip"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05076v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://doi.org/10.1145/3664647.3685510"
-        }
-      ],
-      "semanticScholarId": "6629543c5a86692ea07766158a9817a8df4612a3",
-      "venue": "ACM Multimedia",
-      "citationCount": 20,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 27,
-        "evidence": 17,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：ACM Multimedia",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -86202,6 +85962,85 @@
       }
     },
     {
+      "id": "arxiv:2508.17234",
+      "title": "ClaimGen-CN: A Large-scale Chinese Dataset for Legal Claim Generation",
+      "authors": [
+        "Siying Zhou",
+        "Yiquan Wu",
+        "Hui Chen",
+        "Xavier Hu",
+        "Kun Kuang",
+        "Adam Jatowt",
+        "Ming Hu",
+        "Chunyan Zheng",
+        "Fei Wu"
+      ],
+      "abstract": "Legal claims refer to the plaintiff's demands in a case and are essential to guiding judicial reasoning and case resolution. While many works have focused on improving the efficiency of legal professionals, the research on helping non-professionals (e.g., plaintiffs) remains unexplored. This paper explores the problem of legal claim generation based on the given case's facts. First, we construct ClaimGen-CN, the first dataset for Chinese legal claim generation task, from various real-world legal disputes. Additionally, we design an evaluation metric tailored for assessing the generated claims, which encompasses two essential dimensions: factuality and clarity. Building on this, we conduct a comprehensive zero-shot evaluation of state-of-the-art general and legal-domain large language models. Our findings highlight the limitations of the current models in factual precision and expressive clarity, pointing to the need for more targeted development in this domain. To encourage further exploration of this important task, we will make the dataset publicly available.",
+      "publishedAt": "2025-08-24",
+      "updatedAt": "2025-10-27T14:25:55Z",
+      "arxivId": "2508.17234",
+      "doi": "10.48550/arXiv.2508.17234",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2508.17234v2",
+      "pdfUrl": "https://arxiv.org/pdf/2508.17234",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.17234v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2508.17234"
+        }
+      ],
+      "semanticScholarId": "a0982ab62a435cdafdc339a21549ebec964d6485",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2508.15635",
       "title": "Label Uncertainty for Ultrasound Segmentation",
       "authors": [
@@ -88592,85 +88431,6 @@
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
           "已有正式发表线索：10.48550/arXiv.2411.18750",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.10937",
-      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
-      "authors": [
-        "Wenjun Hou",
-        "Yi Cheng",
-        "Kaishuai Xu",
-        "Yan Hu",
-        "Wenjie Li",
-        "Jiang Liu"
-      ],
-      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T02:23:45Z",
-      "arxivId": "2411.10937",
-      "doi": "10.48550/arXiv.2411.10937",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937"
-        }
-      ],
-      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2411.10937",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -92538,7 +92298,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -92623,7 +92382,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -109700,6 +109458,85 @@
       }
     },
     {
+      "id": "arxiv:2411.10937",
+      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
+      "authors": [
+        "Wenjun Hou",
+        "Yi Cheng",
+        "Kaishuai Xu",
+        "Yan Hu",
+        "Wenjie Li",
+        "Jiang Liu"
+      ],
+      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T02:23:45Z",
+      "arxivId": "2411.10937",
+      "doi": "10.48550/arXiv.2411.10937",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937"
+        }
+      ],
+      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 0,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2411.10937",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2411.09052",
       "title": "ClevrSkills: Compositional Language and Visual Reasoning in Robotics",
       "authors": [
@@ -113058,78 +112895,6 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
-          "reproducibility": 0,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2409.05001",
-      "title": "A Pair Programming Framework for Code Generation via Multi-Plan Exploration and Feedback-Driven Refinement",
-      "authors": [
-        "Huan Zhang",
-        "Wei Cheng",
-        "Yuhan Wu",
-        "Wei Hu"
-      ],
-      "abstract": "Large language models (LLMs) have achieved impressive performance on code generation. Although prior studies enhanced LLMs with prompting techniques and code refinement, they still struggle with complex programming problems due to rigid solution plans. In this paper, we draw on pair programming practices to propose PairCoder, a novel LLM-based framework for code generation. PairCoder incorporates two collaborative LLM agents, namely a Navigator agent for high-level planning and a Driver agent for specific implementation. The Navigator is responsible for proposing promising solution plans, selecting the current optimal plan, and directing the next iteration round based on execution feedback. The Driver follows the guidance of Navigator to undertake initial code generation, code testing, and refinement. This interleaved and iterative workflow involves multi-plan exploration and feedback-based refinement, which mimics the collaboration of pair programmers. We evaluate PairCoder with both open-source and closed-source LLMs on various code generation benchmarks. Extensive experimental results demonstrate the superior accuracy of PairCoder, achieving relative pass@1 improvements of 12.00%– 162.43% compared to prompting LLMs directly.CCS CONCEPTS• Software and its engineering → Automatic programming.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T07:22:19Z",
-      "arxivId": "2409.05001",
-      "doi": "10.1145/3691620.3695506",
-      "categories": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05001v1",
-      "pdfUrl": "https://arxiv.org/pdf/2409.05001",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05001v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05001"
-        }
-      ],
-      "semanticScholarId": "e3b340eed1349650476fd2aa98d6c957fc1ae274",
-      "venue": "International Conference on Automated Software Engineering",
-      "citationCount": 39,
-      "influentialCitationCount": 4,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Automated Software Engineering",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 4
@@ -130914,7 +130679,6 @@
           "覆盖当前方向 4 个关注主题",
           "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -131000,7 +130764,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -131071,7 +130834,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -142919,73 +142681,6 @@
       }
     },
     {
-      "id": "arxiv:2411.10966",
-      "title": "Avian-Inspired High-Precision Tracking Control for Aerial Manipulators",
-      "authors": [
-        "Mengyu Ji",
-        "Jiahao Shen",
-        "Huazi Cao",
-        "Shiyu Zhao"
-      ],
-      "abstract": "Aerial manipulators, composed of multirotors and robotic arms, have a structure and function highly reminiscent of avian species. This paper studies the tracking control problem for aerial manipulators. We propose an avian-inspired aerial manipulation system, which includes an avian-inspired robotic arm design, a Recursive Newton-Euler (RNE) method-based nonlinear flight controller, and a coordinated controller with two modes. Compared to existing methods, our proposed approach offers several attractive features. First, the morphological characteristics of avian species are used to determine the size proportion of the multirotor and the robotic arm in the aerial manipulator. Second, the dynamic coupling of the aerial manipulator is addressed by the RNE-based flight controller and a dual-mode coordinated controller. Specifically, under our proposed algorithm, the aerial manipulator can stabilize the end-effector’s pose, similar to avian head stabilization. The proposed approach is verified through three numerical experiments. The results show that even when the quadcopter is disturbed by different forces, the position error of the end-effector achieves millimeter-level accuracy, and the attitude error remains within 1∘\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$1^{\\circ }$$\\end{document}. The limitation of this work is not considering aggressive manipulation like that seen in birds. Addressing this through future studies that explore real-world experiments will be a key direction for research.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T05:11:44Z",
-      "arxivId": "2411.10966",
-      "doi": "10.1007/s11071-024-10584-0",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "robot-manipulation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10966v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10966",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10966v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10966"
-        }
-      ],
-      "semanticScholarId": "f6f4e2d8a7dab8506f73e6f05a8010c86a231ba6",
-      "venue": "Nonlinear dynamics",
-      "citationCount": 9,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 1,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Nonlinear dynamics",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2411.09255",
       "title": "DAHL: Domain-specific Automated Hallucination Evaluation of Long-Form Text through a Benchmark Dataset in Biomedicine",
       "authors": [
@@ -146704,6 +146399,73 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10966",
+      "title": "Avian-Inspired High-Precision Tracking Control for Aerial Manipulators",
+      "authors": [
+        "Mengyu Ji",
+        "Jiahao Shen",
+        "Huazi Cao",
+        "Shiyu Zhao"
+      ],
+      "abstract": "Aerial manipulators, composed of multirotors and robotic arms, have a structure and function highly reminiscent of avian species. This paper studies the tracking control problem for aerial manipulators. We propose an avian-inspired aerial manipulation system, which includes an avian-inspired robotic arm design, a Recursive Newton-Euler (RNE) method-based nonlinear flight controller, and a coordinated controller with two modes. Compared to existing methods, our proposed approach offers several attractive features. First, the morphological characteristics of avian species are used to determine the size proportion of the multirotor and the robotic arm in the aerial manipulator. Second, the dynamic coupling of the aerial manipulator is addressed by the RNE-based flight controller and a dual-mode coordinated controller. Specifically, under our proposed algorithm, the aerial manipulator can stabilize the end-effector’s pose, similar to avian head stabilization. The proposed approach is verified through three numerical experiments. The results show that even when the quadcopter is disturbed by different forces, the position error of the end-effector achieves millimeter-level accuracy, and the attitude error remains within 1∘\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$1^{\\circ }$$\\end{document}. The limitation of this work is not considering aggressive manipulation like that seen in birds. Addressing this through future studies that explore real-world experiments will be a key direction for research.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T05:11:44Z",
+      "arxivId": "2411.10966",
+      "doi": "10.1007/s11071-024-10584-0",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "robot-manipulation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10966v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10966",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10966v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10966"
+        }
+      ],
+      "semanticScholarId": "f6f4e2d8a7dab8506f73e6f05a8010c86a231ba6",
+      "venue": "Nonlinear dynamics",
+      "citationCount": 9,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 0,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Nonlinear dynamics",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -152131,23 +151893,226 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2609.04860",
+      "title": "Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning",
+      "authors": [
+        "Jinge Ma",
+        "Gautham Vinod",
+        "Bruce Coburn",
+        "Jui-Feng Chi",
+        "Siddeshwar Raghavan",
+        "Fengqing Zhu"
+      ],
+      "abstract": "3D perception plays a crucial role in real-world applications such as autonomous driving, robotics, and AR/VR. In practical scenarios, 3D perception models need to continually adapt to newly emerging 3D object categories, making class-incremental learning (CIL) particularly important. However, unlike 2D images, 3D point clouds are inherently heterogeneous: objects from the same class may not only come from the clean CAD domain, but also from RGB-D camera scans of varying quality, video reconstructions, or even corrupted observations. We discover that such heterogeneity introduces a new challenge beyond catastrophic forgetting: the degree of performance degradation can vary substantially across domains, a phenomenon we term performance discrepancy. To investigate this problem, we establish the Domain3D-CIL training and evaluation protocol, which contains point cloud categories from heterogeneous domains. We further adapt a wide range of mainstream CIL methods to the 3D modality. The results demonstrate that this performance discrepancy consistently appears across these baselines. To mitigate this issue, we introduce PolyMem, an exemplar-free approach that implicitly models rich high-order statistics of the feature distribution to enhance cross-domain robustness. Experiments demonstrate that our method effectively alleviates the performance discrepancy while improving the model's performance across domains. Code will be made publicly available upon acceptance.",
+      "publishedAt": "2026-09-04T08:20:00Z",
+      "updatedAt": "2026-09-04T08:20:00Z",
+      "arxivId": "2609.04860",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cv-three-dimensional-vision",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.04860v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.04860v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.04860v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 27,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2609.04842",
+      "title": "MMTClinic: Multimodal, Multilingual Time Series Question Answering and Reasoning Benchmark for Clinical Domain",
+      "authors": [
+        "Sourav Malakar",
+        "Harshit Nigam",
+        "Akash Ghosh",
+        "Sriparna Saha",
+        "Amlan Chakrabarti",
+        "Saptarsi Goswami",
+        "Priti Singh"
+      ],
+      "abstract": "Time-series data in clinical settings is crucial for capturing dynamic changes in a patient's health over time, enabling timely diagnosis, personalized treatment, and early detection of critical events. However, the development of clinically reliable and linguistically inclusive medical AI systems remains a significant challenge, primarily due to the lack of multimodal, multilingual, and time-series-grounded benchmarks that reflect the complexity of real-world clinical scenarios. To fill this gap, we present MMTClinic, a benchmark designed to evaluate large language models (LLMs) on complex reasoning and question-answering tasks involving clinical time-series. MMTClinic combines text, medical images, and multivariate physiological signals and includes 30,000 QA pairs (15,000 multiple choice questions (MCQs) and 15,000 open-ended questions) across five languages: English, Hindi, Bengali, Marathi, and Tamil. These questions cover three important clinical tasks---mortality prediction, heart rate forecasting, and SOFA score estimation. We evaluate 13 state-of-the-art LLMs in zero-shot, few-shot, and chain-of-thought settings. Our evaluation reveals notable differences in model performance across tasks, languages, and modalities, highlighting current limitations in clinical reasoning capabilities. MMTClinic provides a valuable resource for advancing multilingual, multimodal, and time-series-aware medical AI research. The dataset will be made publicly available on successful acceptance of the work.",
+      "publishedAt": "2026-09-04T07:59:19Z",
+      "updatedAt": "2026-09-04T07:59:19Z",
+      "arxivId": "2609.04842",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "cl-multilingual-translation"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.04842v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.04842v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.04842v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 27,
+        "evidence": 6,
+        "freshness": 5,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "新论文不因零引用降权",
+          "包含明确的量化、对比或消融实验",
+          "两周内发布",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2609.04539",
+      "title": "A Calibrated Reflection Approach for Enhancing Confidence Estimation in LLMs",
+      "authors": [
+        "Umesh Bodhwani",
+        "Yuan Ling",
+        "Shujing Dong",
+        "Yarong Feng",
+        "Hongfei Li",
+        "Ayush Goyal"
+      ],
+      "abstract": "A critical challenge in deploying Large Language Models (LLMs) is developing reliable mechanisms to estimate their confidence, enabling systems to determine when to trust model outputs versus seek human intervention. We present a Calibrated Reflection approach for enhancing confidence estimation in LLMs, a framework that combines structured reasoning with distance-aware calibration technique. Our approach introduces three key innovations: (1) a Maximum Confidence Selection (MCS) method that comprehensively evaluates confidence across all possible labels, (2) a reflection-based prompting mechanism that enhances reasoning reliability, and (3) a distance-aware calibration technique that accounts for ordinal relationships between labels. We evaluate our framework on diverse datasets, including HelpSteer2, Llama T-REx, and a proprietary conversational dataset, demonstrating its effectiveness across both conversational and fact-based classification tasks. This work contributes to the broader goal of developing reliable and well-calibrated confidence estimation methods for LLMs, enabling informed decisions about model trust and human judgement.",
+      "publishedAt": "2026-09-03T22:52:01Z",
+      "updatedAt": "2026-09-03T22:52:01Z",
+      "arxivId": "2609.04539",
+      "doi": "10.18653/v1/2025.trustnlp-main.26",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2609.04539v1",
+      "pdfUrl": "https://arxiv.org/pdf/2609.04539v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.04539v1"
+        }
+      ],
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 24,
+        "evidence": 12,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.18653/v1/2025.trustnlp-main.26",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 4057
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 4055
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1825,
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1817,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cv",
-  "generatedAt": "2026-09-07T08:33:52.577Z",
+  "generatedAt": "2026-09-08T08:16:35.420Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -10549,83 +10549,6 @@
       }
     },
     {
-      "id": "arxiv:2410.11228",
-      "title": "TEOcc: Radar-camera Multi-modal Occupancy Prediction via Temporal Enhancement",
-      "authors": [
-        "Zhiwei Lin",
-        "Hongbo Jin",
-        "Yongtao Wang",
-        "Yufei Wei",
-        "Nan Dong"
-      ],
-      "abstract": "As a novel 3D scene representation, semantic occupancy has gained much attention in autonomous driving. However, existing occupancy prediction methods mainly focus on designing better occupancy representations, such as tri-perspective view or neural radiance fields, while ignoring the advantages of using long-temporal information. In this paper, we propose a radar-camera multi-modal temporal enhanced occupancy prediction network, dubbed TEOcc. Our method is inspired by the success of utilizing temporal information in 3D object detection. Specifically, we introduce a temporal enhancement branch to learn temporal occupancy prediction. In this branch, we randomly discard the t-k input frame of the multi-view camera and predict its 3D occupancy by long-term and short-term temporal decoders separately with the information from other adjacent frames and multi-modal inputs. Besides, to reduce computational costs and incorporate multi-modal inputs, we specially designed 3D convolutional layers for long-term and short-term temporal decoders. Furthermore, since the lightweight occupancy prediction head is a dense classification head, we propose to use a shared occupancy prediction head for the temporal enhancement and main branches. It is worth noting that the temporal enhancement branch is only performed during training and is discarded during inference. Experiment results demonstrate that TEOcc achieves state-of-the-art occupancy prediction on nuScenes benchmarks. In addition, the proposed temporal enhancement branch is a plug-and-play module that can be easily integrated into existing occupancy prediction methods to improve the performance of occupancy prediction. The code and models will be released at https://github.com/VDIGPKU/TEOcc.",
-      "publishedAt": "2024-10-15",
-      "updatedAt": "2024-10-15T03:20:48Z",
-      "arxivId": "2410.11228",
-      "doi": "10.3233/FAIA240480",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.11228v1",
-      "pdfUrl": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/VDIGPKU/TEOcc"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11228v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480"
-        }
-      ],
-      "semanticScholarId": "90d883626a1f0d50ba250719a04f682cefcded64",
-      "venue": "European Conference on Artificial Intelligence",
-      "citationCount": 6,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：European Conference on Artificial Intelligence",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2410.06555",
       "title": "ING-VP: MLLMs cannot Play Easy Vision-based Games Yet",
       "authors": [
@@ -14478,6 +14401,83 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：The international journal of robotics research",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2410.11228",
+      "title": "TEOcc: Radar-camera Multi-modal Occupancy Prediction via Temporal Enhancement",
+      "authors": [
+        "Zhiwei Lin",
+        "Hongbo Jin",
+        "Yongtao Wang",
+        "Yufei Wei",
+        "Nan Dong"
+      ],
+      "abstract": "As a novel 3D scene representation, semantic occupancy has gained much attention in autonomous driving. However, existing occupancy prediction methods mainly focus on designing better occupancy representations, such as tri-perspective view or neural radiance fields, while ignoring the advantages of using long-temporal information. In this paper, we propose a radar-camera multi-modal temporal enhanced occupancy prediction network, dubbed TEOcc. Our method is inspired by the success of utilizing temporal information in 3D object detection. Specifically, we introduce a temporal enhancement branch to learn temporal occupancy prediction. In this branch, we randomly discard the t-k input frame of the multi-view camera and predict its 3D occupancy by long-term and short-term temporal decoders separately with the information from other adjacent frames and multi-modal inputs. Besides, to reduce computational costs and incorporate multi-modal inputs, we specially designed 3D convolutional layers for long-term and short-term temporal decoders. Furthermore, since the lightweight occupancy prediction head is a dense classification head, we propose to use a shared occupancy prediction head for the temporal enhancement and main branches. It is worth noting that the temporal enhancement branch is only performed during training and is discarded during inference. Experiment results demonstrate that TEOcc achieves state-of-the-art occupancy prediction on nuScenes benchmarks. In addition, the proposed temporal enhancement branch is a plug-and-play module that can be easily integrated into existing occupancy prediction methods to improve the performance of occupancy prediction. The code and models will be released at https://github.com/VDIGPKU/TEOcc.",
+      "publishedAt": "2024-10-15",
+      "updatedAt": "2024-10-15T03:20:48Z",
+      "arxivId": "2410.11228",
+      "doi": "10.3233/FAIA240480",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2410.11228v1",
+      "pdfUrl": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/VDIGPKU/TEOcc"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2410.11228v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240480"
+        }
+      ],
+      "semanticScholarId": "90d883626a1f0d50ba250719a04f682cefcded64",
+      "venue": "European Conference on Artificial Intelligence",
+      "citationCount": 6,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：European Conference on Artificial Intelligence",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
@@ -33487,85 +33487,6 @@
       }
     },
     {
-      "id": "arxiv:2409.04963",
-      "title": "GS-PT: Exploiting 3D Gaussian Splatting for Comprehensive Point Cloud Understanding via Self-supervised Learning",
-      "authors": [
-        "Keyi Liu",
-        "Yeqi Luo",
-        "Weidong Yang",
-        "Jingyi Xu",
-        "Zhijun Li",
-        "Wen-Ming Chen",
-        "Ben Fei"
-      ],
-      "abstract": "Self-supervised learning of point cloud aims to leverage unlabeled 3D data to learn meaningful representations without reliance on manual annotations. However, current approaches face challenges such as limited data diversity and inadequate augmentation for effective feature learning. To address these challenges, we propose GS-PT, which integrates 3D Gaussian Splatting (3DGS) into point cloud self-supervised learning for the first time. Our pipeline utilizes transformers as the backbone for self-supervised pre-training and introduces novel contrastive learning tasks through 3DGS. Specifically, the transformers aim to reconstruct the masked point cloud. 3DGS utilizes multi-view rendered images as input to generate enhanced point cloud distributions and novel view images, facilitating data augmentation and cross-modal contrastive learning. Additionally, we incorporate features from depth maps. By optimizing these tasks collectively, our method enriches the tri-modal self-supervised learning process, enabling the model to leverage the correlation across 3D point clouds and 2D images from various modalities. We freeze the encoder after pre-training and test the model’s performance on multiple downstream tasks. Experimental results indicate that GS-PT outperforms the off-the-shelf self-supervised learning methods on various downstream tasks including 3D object classification, real-world classifications, and few-shot learning and segmentation. Project page: https://github.com/Luoyeqi1/GS-PT.git",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T03:46:47Z",
-      "arxivId": "2409.04963",
-      "doi": "10.1109/ICASSP49660.2025.10888910",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "cl-language-modeling",
-        "cv-three-dimensional-vision",
-        "lg-representation-self-supervised"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.04963v1",
-      "pdfUrl": "https://arxiv.org/pdf/2409.04963",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.04963v1"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/Luoyeqi1/GS-PT.git"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.04963"
-        }
-      ],
-      "semanticScholarId": "7b585ced34a62434bf8838bd494ad1dbedd464cc",
-      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE International Conference on Acoustics, Speech, and Signal Processing",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.29847",
       "title": "ContextBias: Controlled Evaluation of Bias Persistence Under Context Shift in Text-to-Image Models",
       "authors": [
@@ -38919,88 +38840,6 @@
       }
     },
     {
-      "id": "arxiv:2409.05076",
-      "title": "PIP: Detecting Adversarial Examples in Large Vision-Language Models via Attention Patterns of Irrelevant Probe Questions",
-      "authors": [
-        "Yudong Zhang",
-        "Ruobing Xie",
-        "Jiansheng Chen",
-        "Xingwu Sun",
-        "Yu Wang"
-      ],
-      "abstract": "Large Vision-Language Models (LVLMs) have demonstrated their powerful multimodal capabilities. However, they also face serious safety problems, as adversaries can induce robustness issues in LVLMs through the use of well-designed adversarial examples. Therefore, LVLMs are in urgent need of detection tools for adversarial examples to prevent incorrect responses. In this work, we first discover that LVLMs exhibit regular attention patterns for clean images when presented with probe questions. We propose an unconventional method named PIP, which utilizes the attention patterns of one randomly selected irrelevant probe question (e.g., \"Is there a clock''') to distinguish adversarial examples from clean examples. Regardless of the image to be tested and its corresponding question, PIP only needs to perform one additional inference of the image to be tested and the probe question, and then achieves successful detection of adversarial examples. Even under black-box attacks and open dataset scenarios, our PIP, coupled with a simple SVM, still achieves more than 98% recall and a precision of over 90%. Our PIP is the first attempt to detect adversarial attacks on LVLMs via simple irrelevant probe questions, shedding light on deeper understanding and introspection within LVLMs. The code is available at https://github.com/btzyd/pip.",
-      "publishedAt": "2024-09-08",
-      "updatedAt": "2024-09-08T12:38:25Z",
-      "arxivId": "2409.05076",
-      "doi": "10.1145/3664647.3685510",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2409.05076v1",
-      "pdfUrl": "https://doi.org/10.1145/3664647.3685510",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/btzyd/pip"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2409.05076v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://doi.org/10.1145/3664647.3685510"
-        }
-      ],
-      "semanticScholarId": "6629543c5a86692ea07766158a9817a8df4612a3",
-      "venue": "ACM Multimedia",
-      "citationCount": 20,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 0,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：ACM Multimedia",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2609.04867",
       "title": "PRISM-Bench: An Audio-Centric Diagnostic Benchmark for Text-to-Audio-Video Generation",
       "authors": [
@@ -42594,84 +42433,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 5,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.10937",
-      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
-      "authors": [
-        "Wenjun Hou",
-        "Yi Cheng",
-        "Kaishuai Xu",
-        "Yan Hu",
-        "Wenjie Li",
-        "Jiang Liu"
-      ],
-      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
-      "publishedAt": "2024-11-17",
-      "updatedAt": "2024-11-17T02:23:45Z",
-      "arxivId": "2411.10937",
-      "doi": "10.48550/arXiv.2411.10937",
-      "categories": [
-        "cs.CV",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.10937"
-        }
-      ],
-      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.10937",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -47253,6 +47014,84 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.10937",
+      "title": "Memory-Augmented Multimodal LLMs for Surgical VQA via Self-Contained Inquiry",
+      "authors": [
+        "Wenjun Hou",
+        "Yi Cheng",
+        "Kaishuai Xu",
+        "Yan Hu",
+        "Wenjie Li",
+        "Jiang Liu"
+      ],
+      "abstract": "Comprehensively understanding surgical scenes in Surgical Visual Question Answering (Surgical VQA) requires reasoning over multiple objects. Previous approaches address this task using cross-modal fusion strategies to enhance reasoning ability. However, these methods often struggle with limited scene understanding and question comprehension, and some rely on external resources (e.g., pre-extracted object features), which can introduce errors and generalize poorly across diverse surgical environments. To address these challenges, we propose SCAN, a simple yet effective memory-augmented framework that leverages Multimodal LLMs to improve surgical context comprehension via Self-Contained Inquiry. SCAN operates autonomously, generating two types of memory for context augmentation: Direct Memory (DM), which provides multiple candidates (or hints) to the final answer, and Indirect Memory (IM), which consists of self-contained question-hint pairs to capture broader scene context. DM directly assists in answering the question, while IM enhances understanding of the surgical scene beyond the immediate query. Reasoning over these object-aware memories enables the model to accurately interpret images and respond to questions. Extensive experiments on three publicly available Surgical VQA datasets demonstrate that SCAN achieves state-of-the-art performance, offering improved accuracy and robustness across various surgical scenarios.",
+      "publishedAt": "2024-11-17",
+      "updatedAt": "2024-11-17T02:23:45Z",
+      "arxivId": "2411.10937",
+      "doi": "10.48550/arXiv.2411.10937",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.10937v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.10937",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.10937"
+        }
+      ],
+      "semanticScholarId": "92ec875ec42273b615346710cba3b6f7559acabb",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 0,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2411.10937",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -60612,7 +60451,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -60696,7 +60534,6 @@
           "新论文不因零引用降权",
           "提供可复现代码",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -70296,7 +70133,6 @@
           "覆盖当前方向 2 个关注主题",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -76831,7 +76667,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "包含明确的量化、对比或消融实验",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -76901,7 +76736,6 @@
           "新论文不因零引用降权",
           "提供项目页面",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -99083,8 +98917,7 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -99151,8 +98984,7 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -102886,76 +102718,6 @@
       }
     },
     {
-      "id": "arxiv:2606.12334",
-      "title": "Fourier Features Let Agents Learn High Precision Policies with Imitation Learning",
-      "authors": [
-        "Balázs Gyenes",
-        "Emiliyan Gospodinov",
-        "J. Frieling",
-        "Enrico Krohmer",
-        "Nicolas Schreiber",
-        "Xiaogang Jia",
-        "N. Freymuth",
-        "Gerhard Neumann"
-      ],
-      "abstract": "High-precision robotic manipulation requires fine-grained spatial reasoning that is often difficult to achieve with RGB-only policies due to depth ambiguity and perspective scale issues. Policies that leverage 3D information directly, such as those based on point clouds, offer a stronger geometric prior over purely image-based ones, yet their performance remains highly task-dependent. We hypothesize that this discrepancy may be due to the spectral bias of neural networks towards learning low frequency functions, which especially affects architectures conditioned on slow-moving Cartesian features. We thus propose to map point clouds from Cartesian space into high-dimensional Fourier space, effectively equipping the point cloud encoder with direct access to high-frequency features. We experimentally validate the use of Fourier features on challenging manipulation tasks from the RoboCasa and ManiSkill3 benchmarks and on a real robot setup. Despite their simplicity, we find that Fourier features provide significant benefits across diverse encoder architectures and benchmarks and are robust across hyperparameters. Our results indicate that Fourier features let policies leverage geometric details more effectively than Cartesian features, showing their potential as a general-purpose tool for point cloud-based imitation learning. We provide source code and videos on our project page: https://fourier-il.github.io/fourier-il",
-      "publishedAt": "2026-06-10",
-      "arxivId": "2606.12334",
-      "semanticScholarId": "1dd92d2b30824b17363cb972bebce8c8583a414c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-three-dimensional-vision"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2606.12334",
-      "pdfUrl": "https://arxiv.org/pdf/2606.12334",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://fourier-il.github.io/fourier-il"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2606.12334"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 48,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供项目页面",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 0,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2609.05401",
       "title": "Same Trajectory, Contradictory Rewards (ROBORMBENCH): Paraphrase Fragility in Vision Language Reward Models",
       "authors": [
@@ -106214,7 +105976,6 @@
           "匹配当前研究方向",
           "新论文不因零引用降权",
           "摘要给出实验或 benchmark 线索",
-          "两周内发布",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
@@ -106907,6 +106668,76 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2606.12334",
+      "title": "Fourier Features Let Agents Learn High Precision Policies with Imitation Learning",
+      "authors": [
+        "Balázs Gyenes",
+        "Emiliyan Gospodinov",
+        "J. Frieling",
+        "Enrico Krohmer",
+        "Nicolas Schreiber",
+        "Xiaogang Jia",
+        "N. Freymuth",
+        "Gerhard Neumann"
+      ],
+      "abstract": "High-precision robotic manipulation requires fine-grained spatial reasoning that is often difficult to achieve with RGB-only policies due to depth ambiguity and perspective scale issues. Policies that leverage 3D information directly, such as those based on point clouds, offer a stronger geometric prior over purely image-based ones, yet their performance remains highly task-dependent. We hypothesize that this discrepancy may be due to the spectral bias of neural networks towards learning low frequency functions, which especially affects architectures conditioned on slow-moving Cartesian features. We thus propose to map point clouds from Cartesian space into high-dimensional Fourier space, effectively equipping the point cloud encoder with direct access to high-frequency features. We experimentally validate the use of Fourier features on challenging manipulation tasks from the RoboCasa and ManiSkill3 benchmarks and on a real robot setup. Despite their simplicity, we find that Fourier features provide significant benefits across diverse encoder architectures and benchmarks and are robust across hyperparameters. Our results indicate that Fourier features let policies leverage geometric details more effectively than Cartesian features, showing their potential as a general-purpose tool for point cloud-based imitation learning. We provide source code and videos on our project page: https://fourier-il.github.io/fourier-il",
+      "publishedAt": "2026-06-10",
+      "arxivId": "2606.12334",
+      "semanticScholarId": "1dd92d2b30824b17363cb972bebce8c8583a414c",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2606.12334",
+      "pdfUrl": "https://arxiv.org/pdf/2606.12334",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://fourier-il.github.io/fourier-il"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2606.12334"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 47,
+        "relevance": 24,
+        "evidence": 3,
+        "freshness": 5,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供项目页面",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 0,
           "corroboration": 0
         }
       }
@@ -109971,8 +109802,7 @@
         "reasons": [
           "匹配当前研究方向",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -116337,8 +116167,7 @@
         "reasons": [
           "匹配当前研究方向",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -116414,8 +116243,7 @@
         "reasons": [
           "匹配当前研究方向",
           "新论文不因零引用降权",
-          "提供项目页面",
-          "两周内发布"
+          "提供项目页面"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -116480,8 +116308,7 @@
         "reasons": [
           "匹配当前研究方向",
           "新论文不因零引用降权",
-          "摘要给出实验或 benchmark 线索",
-          "两周内发布"
+          "摘要给出实验或 benchmark 线索"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -118509,8 +118336,7 @@
         "tier": "archive",
         "reasons": [
           "匹配当前研究方向",
-          "新论文不因零引用降权",
-          "两周内发布"
+          "新论文不因零引用降权"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -118569,8 +118395,7 @@
         "tier": "archive",
         "reasons": [
           "匹配当前研究方向",
-          "新论文不因零引用降权",
-          "两周内发布"
+          "新论文不因零引用降权"
         ],
         "evidenceBreakdown": {
           "publication": 0,
@@ -118792,24 +118617,24 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1384
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1385
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
-      "recordCount": 1150,
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
+      "recordCount": 1143,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-09-07T08:33:52.577Z",
+      "fetchedAt": "2026-09-08T08:16:35.420Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
-    "candidateCount": 1637,
+    "candidateCount": 1635,
     "featuredCount": 1,
     "libraryMatchCount": 15,
     "seedCount": 0,
