@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-23T08:46:20.154Z",
+  "generatedAt": "2026-09-24T08:40:51.568Z",
   "fields": [
     {
       "fieldId": "embodied-intelligence",
@@ -91,9 +91,9 @@
     },
     {
       "fieldId": "cs-cv",
-      "generatedAt": "2026-09-23T08:46:20.154Z",
+      "generatedAt": "2026-09-24T08:40:51.568Z",
       "retainedDays": 730,
-      "candidateCount": 1590,
+      "candidateCount": 1409,
       "featuredCount": 1,
       "libraryMatchCount": 14,
       "seedCount": 0,
@@ -101,18 +101,18 @@
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
-          "recordCount": 1388
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
+          "recordCount": 937
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
-          "recordCount": 1092,
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
+          "recordCount": 1088,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
@@ -120,9 +120,9 @@
     },
     {
       "fieldId": "cs-lg",
-      "generatedAt": "2026-09-23T08:46:20.154Z",
+      "generatedAt": "2026-09-24T08:40:51.568Z",
       "retainedDays": 730,
-      "candidateCount": 2000,
+      "candidateCount": 1889,
       "featuredCount": 16,
       "libraryMatchCount": 11,
       "seedCount": 0,
@@ -130,18 +130,18 @@
       "sources": {
         "arxiv": {
           "state": "ok",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
-          "recordCount": 2606
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
+          "recordCount": 1406
         },
         "semantic-scholar": {
           "state": "degraded",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
-          "recordCount": 1495,
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
+          "recordCount": 1494,
           "message": "Semantic Scholar unavailable (429)"
         },
         "openreview": {
           "state": "degraded",
-          "fetchedAt": "2026-09-23T08:46:20.154Z",
+          "fetchedAt": "2026-09-24T08:40:51.568Z",
           "recordCount": 0,
           "message": "OpenReview unavailable (403)"
         }
