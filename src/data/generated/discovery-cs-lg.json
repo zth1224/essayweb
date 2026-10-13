@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-lg",
-  "generatedAt": "2026-10-12T11:13:36.454Z",
+  "generatedAt": "2026-10-13T10:54:56.713Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -2409,84 +2409,6 @@
           "citations": 4,
           "reproducibility": 0,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.09836",
-      "title": "Learning Pattern-Specific Experts for Time Series Forecasting Under Patch-level Distribution Shift",
-      "authors": [
-        "Yanru Sun",
-        "Zongxia Xie",
-        "Emadeldeen Eldele",
-        "Dongyue Chen",
-        "Qinghua Hu",
-        "Min Wu"
-      ],
-      "abstract": "Time series forecasting, which aims to predict future values based on historical data, has garnered significant attention due to its broad range of applications. However, real-world time series often exhibit complex non-uniform distribution with varying patterns across segments, such as season, operating condition, or semantic meaning, making accurate forecasting challenging. Existing approaches, which typically train a single model to capture all these diverse patterns, often struggle with the pattern drifts between patches and may lead to poor generalization. To address these challenges, we propose TFPS, a novel architecture that leverages pattern-specific experts for more accurate and adaptable time series forecasting. TFPS employs a dual-domain encoder to capture both time-domain and frequency-domain features, enabling a more comprehensive understanding of temporal dynamics. It then uses subspace clustering to dynamically identify distinct patterns across data patches. Finally, pattern-specific experts model these unique patterns, delivering tailored predictions for each patch. By explicitly learning and adapting to evolving patterns, TFPS achieves significantly improved forecasting accuracy. Extensive experiments on real-world datasets demonstrate that TFPS outperforms state-of-the-art methods, particularly in long-term forecasting, through its dynamic and pattern-aware learning approach. The data and codes are available: https://github.com/syrGitHub/TFPS.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2025-10-01T05:25:11Z",
-      "arxivId": "2410.09836",
-      "doi": "10.48550/arXiv.2410.09836",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.09836v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.09836",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/syrGitHub/TFPS"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.09836v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.09836"
-        }
-      ],
-      "semanticScholarId": "b535dd5cfb6225e935a51fb38d812dc907008a4c",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 25,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 68,
-        "relevance": 24,
-        "evidence": 24,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Neural Information Processing Systems",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 2,
-          "reproducibility": 4,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -21864,80 +21786,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23723",
-      "title": "DiffPCN: Latent Diffusion Model Based on Multi-view Depth Images for Point Cloud Completion",
-      "authors": [
-        "Zijun Li",
-        "Hongyu Yan",
-        "Shijie Li",
-        "Kunming Luo",
-        "Li Lu",
-        "Xulei Yang",
-        "Weisi Lin"
-      ],
-      "abstract": "Latent diffusion models (LDMs) have demonstrated remarkable generative capabilities across various low-level vision tasks. However, their potential for point cloud completion remains underexplored due to the unstructured and irregular nature of point clouds. In this work, we propose DiffPCN, a novel diffusion-based coarse-to-fine framework for point cloud completion. Our approach comprises two stages: an initial stage for generating coarse point clouds, and a refinement stage that improves their quality through point denoising and upsampling. Specifically, we first project the unordered and irregular partial point cloud into structured depth images, which serve as conditions for a well-designed DepthLDM to synthesize completed multi-view depth images that are used to form coarse point clouds. In this way, our DiffPCN can yield high-quality and high-completeness coarse point clouds by leveraging LDM' s powerful generation and comprehension capabilities. Then, since LDMs inevitably introduce outliers into the generated depth maps, we design a Point Denoising Network to remove artifacts from the coarse point cloud by predicting a per-point distance score. Finally, we devise an Association-Aware Point Upsampler, which guides the upsampling process by leveraging local association features between the input point cloud and the corresponding coarse points, further yielding a dense and high-fidelity output. Experimental results demonstrate that our DiffPCN achieves state-of-the-art performance in geometric accuracy and shape completeness, significantly improving the robustness and consistency of point cloud completion.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T08:05:43Z",
-      "arxivId": "2509.23723",
-      "doi": "10.48550/arXiv.2509.23723",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "cv-image-video-generation",
-        "cv-three-dimensional-vision",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23723v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23723",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23723v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23723"
-        }
-      ],
-      "semanticScholarId": "f1f70f44dfce8474bd73470857a20cba78c63743",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.23723",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.23328",
       "title": "Space Robotics Bench: Robot Learning Beyond Earth",
       "authors": [
@@ -30131,72 +29979,75 @@
       }
     },
     {
-      "id": "arxiv:2509.23653",
-      "title": "Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models",
+      "id": "arxiv:2509.23723",
+      "title": "DiffPCN: Latent Diffusion Model Based on Multi-view Depth Images for Point Cloud Completion",
       "authors": [
-        "Zemin Huang",
-        "Yuhang Wang",
-        "Zhiyang Chen",
-        "Guo-Jun Qi"
+        "Zijun Li",
+        "Hongyu Yan",
+        "Shijie Li",
+        "Kunming Luo",
+        "Li Lu",
+        "Xulei Yang",
+        "Weisi Lin"
       ],
-      "abstract": "Mask-based Diffusion Language Models (DLMs) struggle to revise incorrect tokens: once a token is generated, it typically remains fixed. The key challenge is to identify potential errors in the inputs. In this paper, we propose \\emph{\\underline{Rem}asking-\\underline{e}nabled \\underline{Di}ffusion Language Model (RemeDi}, a mask-based DLM that introduces \\emph{remasking} as another fundamental mechanism, enabling more flexible text refinement in diffusion-based text generation. To achieve this, RemeDi jointly predicts token distributions and per-token confidence scores at each step. The confidence scores determine which tokens to be unmasked after the current step, allowing the model to identify tokens with low quality and remask them. These remasked tokens can be resampled with richer context in subsequent steps. We design a remask-aware pipeline to train this ability, including supervised fine-tuning which teaches the model to detect and remask incorrect tokens in addition to predict mask tokens, and reinforcement learning which optimizes full generation trajectories toward higher rewards. Experiments show that RemeDi achieves the state-of-the-art results among open-source DLMs on multiple datasets.",
+      "abstract": "Latent diffusion models (LDMs) have demonstrated remarkable generative capabilities across various low-level vision tasks. However, their potential for point cloud completion remains underexplored due to the unstructured and irregular nature of point clouds. In this work, we propose DiffPCN, a novel diffusion-based coarse-to-fine framework for point cloud completion. Our approach comprises two stages: an initial stage for generating coarse point clouds, and a refinement stage that improves their quality through point denoising and upsampling. Specifically, we first project the unordered and irregular partial point cloud into structured depth images, which serve as conditions for a well-designed DepthLDM to synthesize completed multi-view depth images that are used to form coarse point clouds. In this way, our DiffPCN can yield high-quality and high-completeness coarse point clouds by leveraging LDM' s powerful generation and comprehension capabilities. Then, since LDMs inevitably introduce outliers into the generated depth maps, we design a Point Denoising Network to remove artifacts from the coarse point cloud by predicting a per-point distance score. Finally, we devise an Association-Aware Point Upsampler, which guides the upsampling process by leveraging local association features between the input point cloud and the corresponding coarse points, further yielding a dense and high-fidelity output. Experimental results demonstrate that our DiffPCN achieves state-of-the-art performance in geometric accuracy and shape completeness, significantly improving the robustness and consistency of point cloud completion.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T05:39:49Z",
-      "arxivId": "2509.23653",
-      "doi": "10.48550/arXiv.2509.23653",
+      "updatedAt": "2025-09-28T08:05:43Z",
+      "arxivId": "2509.23723",
+      "doi": "10.48550/arXiv.2509.23723",
       "categories": [
-        "cs.CL"
+        "cs.CV"
       ],
       "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
+        "cs-cv",
         "cs-lg"
       ],
       "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
+        "cv-image-video-generation",
+        "cv-three-dimensional-vision",
+        "lg-generative-modeling",
+        "lg-robustness-generalization"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23653v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23653",
+      "sourceUrl": "http://arxiv.org/abs/2509.23723v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23723",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23653v1"
+          "url": "https://arxiv.org/pdf/2509.23723v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23653"
+          "url": "https://arxiv.org/pdf/2509.23723"
         }
       ],
-      "semanticScholarId": "396fdacf5afe126e69d1e9364fe04462726b47bc",
-      "citationCount": 31,
-      "influentialCitationCount": 6,
+      "semanticScholarId": "f1f70f44dfce8474bd73470857a20cba78c63743",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 3,
-        "completeness": 15,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23653",
-          "包含明确的量化、对比或消融实验",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.23723",
+          "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 3,
+          "citations": 0,
           "reproducibility": 0,
-          "empirical": 6,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -33176,75 +33027,6 @@
       }
     },
     {
-      "id": "arxiv:2410.10024",
-      "title": "Sharper Guarantees for Learning Neural Network Classifiers with Gradient Methods",
-      "authors": [
-        "Hossein Taheri",
-        "Christos Thrampoulidis",
-        "Arya Mazumdar"
-      ],
-      "abstract": "In this paper, we study the data-dependent convergence and generalization behavior of gradient methods for neural networks with smooth activation. Our first result is a novel bound on the excess risk of deep networks trained by the logistic loss, via an alogirthmic stability analysis. Compared to previous works, our results improve upon the shortcomings of the well-established Rademacher complexity-based bounds. Importantly, the bounds we derive in this paper are tighter, hold even for neural networks of small width, do not scale unfavorably with width, are algorithm-dependent, and consequently capture the role of initialization on the sample complexity of gradient descent for deep nets. Specialized to noiseless data separable with margin $\\gamma$ by neural tangent kernel (NTK) features of a network of width $\\Omega(\\text{poly}(\\log(n)))$, we show the test-error rate to be $e^{O(L)}/{\\gamma^2 n}$, where $n$ is the training set size and $L$ denotes the number of hidden layers. This is an improvement in the test loss bound compared to previous works while maintaining the poly-logarithmic width conditions. We further investigate excess risk bounds for deep nets trained with noisy data, establishing that under a polynomial condition on the network width, gradient descent can achieve the optimal excess risk. Finally, we show that a large step-size significantly improves upon the NTK regime's results in classifying the XOR distribution. In particular, we show for a one-hidden-layer neural network of constant width $m$ with quadratic activation and standard Gaussian initialization that mini-batch SGD with linear sample complexity and with a large step-size $\\eta=m$ reaches the perfect test accuracy after only $\\ceil{\\log(d)}$ iterations, where $d$ is the data dimension.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-12-05T21:14:47Z",
-      "arxivId": "2410.10024",
-      "doi": "10.48550/arXiv.2410.10024",
-      "categories": [
-        "cs.LG",
-        "cs.IT",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-lg"
-      ],
-      "topicIds": [
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.10024v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.10024",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10024v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10024"
-        }
-      ],
-      "semanticScholarId": "ddbd78b832b98107d9626d0f8b3787283aeed160",
-      "venue": "International Conference on Learning Representations",
-      "citationCount": 7,
-      "influentialCitationCount": 3,
-      "canonicalVenueId": "iclr",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：International Conference on Learning Representations",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.10932",
       "title": "World-Model Policy Arbiter for Goal-Conditioned Reinforcement Learning",
       "authors": [
@@ -35465,78 +35247,72 @@
       }
     },
     {
-      "id": "arxiv:2509.23829",
-      "title": "DexFlyWheel: A Scalable and Self-improving Data Generation Framework for Dexterous Manipulation",
+      "id": "arxiv:2509.23653",
+      "title": "Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models",
       "authors": [
-        "Kefei Zhu",
-        "Fengshuo Bai",
-        "YuanHao Xiang",
-        "Yishuai Cai",
-        "Xinglin Chen",
-        "Ruochong Li",
-        "Xingtao Wang",
-        "Hao Dong",
-        "Yaodong Yang",
-        "Xiaopeng Fan",
-        "Yuanpei Chen"
+        "Zemin Huang",
+        "Yuhang Wang",
+        "Zhiyang Chen",
+        "Guo-Jun Qi"
       ],
-      "abstract": "Dexterous manipulation is critical for advancing robot capabilities in real-world applications, yet diverse and high-quality datasets remain scarce. Existing data collection methods either rely on human teleoperation or require significant human engineering, or generate data with limited diversity, which restricts their scalability and generalization. In this paper, we introduce DexFlyWheel, a scalable data generation framework that employs a self-improving cycle to continuously enrich data diversity. Starting from efficient seed demonstrations warmup, DexFlyWheel expands the dataset through iterative cycles. Each cycle follows a closed-loop pipeline that integrates Imitation Learning (IL), residual Reinforcement Learning (RL), rollout trajectory collection, and data augmentation. Specifically, IL extracts human-like behaviors from demonstrations, and residual RL enhances policy generalization. The learned policy is then used to generate trajectories in simulation, which are further augmented across diverse environments and spatial configurations before being fed back into the next cycle. Over successive iterations, a self-improving data flywheel effect emerges, producing datasets that cover diverse scenarios and thereby scaling policy performance. Experimental results demonstrate that DexFlyWheel generates over 2,000 diverse demonstrations across four challenging tasks. Policies trained on our dataset achieve an average success rate of 81.9\\% on the challenge test sets and successfully transfer to the real world through digital twin, achieving a 78.3\\% success rate on dual-arm lift tasks.",
+      "abstract": "Mask-based Diffusion Language Models (DLMs) struggle to revise incorrect tokens: once a token is generated, it typically remains fixed. The key challenge is to identify potential errors in the inputs. In this paper, we propose \\emph{\\underline{Rem}asking-\\underline{e}nabled \\underline{Di}ffusion Language Model (RemeDi}, a mask-based DLM that introduces \\emph{remasking} as another fundamental mechanism, enabling more flexible text refinement in diffusion-based text generation. To achieve this, RemeDi jointly predicts token distributions and per-token confidence scores at each step. The confidence scores determine which tokens to be unmasked after the current step, allowing the model to identify tokens with low quality and remask them. These remasked tokens can be resampled with richer context in subsequent steps. We design a remask-aware pipeline to train this ability, including supervised fine-tuning which teaches the model to detect and remask incorrect tokens in addition to predict mask tokens, and reinforcement learning which optimizes full generation trajectories toward higher rewards. Experiments show that RemeDi achieves the state-of-the-art results among open-source DLMs on multiple datasets.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T12:07:02Z",
-      "arxivId": "2509.23829",
-      "doi": "10.48550/arXiv.2509.23829",
+      "updatedAt": "2025-09-28T05:39:49Z",
+      "arxivId": "2509.23653",
+      "doi": "10.48550/arXiv.2509.23653",
       "categories": [
-        "cs.RO"
+        "cs.CL"
       ],
       "fieldIds": [
+        "cs-cl",
         "embodied-intelligence",
         "cs-lg"
       ],
       "topicIds": [
         "imitation-reinforcement-learning",
-        "robot-manipulation",
         "simulation-datasets-evaluation",
+        "cl-language-modeling",
         "lg-reinforcement-learning"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23829v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23829",
+      "sourceUrl": "http://arxiv.org/abs/2509.23653v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23653",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23829v1"
+          "url": "https://arxiv.org/pdf/2509.23653v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23829"
+          "url": "https://arxiv.org/pdf/2509.23653"
         }
       ],
-      "semanticScholarId": "6f6c0217f3825e46282dfcc37137ea75e998b5f5",
-      "citationCount": 7,
-      "influentialCitationCount": 0,
+      "semanticScholarId": "396fdacf5afe126e69d1e9364fe04462726b47bc",
+      "citationCount": 31,
+      "influentialCitationCount": 6,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 60,
         "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
+        "evidence": 19,
+        "freshness": 2,
+        "completeness": 15,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23829",
-          "摘要给出实验或 benchmark 线索",
+          "已有正式发表线索：10.48550/arXiv.2509.23653",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 1,
+          "citations": 3,
           "reproducibility": 0,
-          "empirical": 4,
+          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -41411,6 +41187,75 @@
       }
     },
     {
+      "id": "arxiv:2601.15779",
+      "title": "Diffusion Model-Based Data Augmentation for Enhanced Neuron Segmentation",
+      "authors": [
+        "Liuyun Jiang",
+        "Yanchao Zhang",
+        "Jinyue Guo",
+        "Yizhuo Lu",
+        "Ruining Zhou",
+        "Hua Han"
+      ],
+      "abstract": "Neuron segmentation in electron microscopy (EM) aims to reconstruct the complete neuronal connectome; however, current deep learning-based methods are limited by their reliance on large-scale training data and extensive, time-consuming manual annotations. Traditional methods augment the training set through geometric and photometric transformations; however, the generated samples remain highly correlated with the original images and lack structural diversity. To address this limitation, we propose a diffusion-based data augmentation framework capable of generating diverse and structurally plausible image-label pairs for neuron segmentation. Specifically, the framework employs a resolution-aware conditional diffusion model with multi-scale conditioning and EM resolution priors to enable voxel-level image synthesis from 3D masks. It further incorporates a biology-guided mask remodeling module that produces augmented masks with enhanced structural realism. Together, these components effectively enrich the training set and improve segmentation performance. On the AC3 and AC4 datasets under low-annotation regimes, our method improves the ARAND metric by 32.1% and 30.7%, respectively, when combined with two different post-processing methods. Our code is available at https://github.com/HeadLiuYun/NeuroDiff.",
+      "publishedAt": "2026-01-22T09:12:05Z",
+      "updatedAt": "2026-01-22T09:12:05Z",
+      "arxivId": "2601.15779",
+      "doi": "10.1109/ISBI61048.2026.11515854",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2601.15779v1",
+      "pdfUrl": "https://arxiv.org/pdf/2601.15779v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/HeadLiuYun/NeuroDiff"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2601.15779v1"
+        }
+      ],
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.1109/ISBI61048.2026.11515854",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2601.07640",
       "title": "Dual-Level Models for Physics-Informed Multi-Step Time Series Forecasting",
       "authors": [
@@ -46166,146 +46011,76 @@
       }
     },
     {
-      "id": "arxiv:2509.23979",
-      "title": "ByteSized32Refactored: Towards an Extensible Interactive Text Games Corpus for LLM World Modeling and Evaluation",
+      "id": "arxiv:2509.23829",
+      "title": "DexFlyWheel: A Scalable and Self-improving Data Generation Framework for Dexterous Manipulation",
       "authors": [
-        "Haonan Wang",
-        "Junfeng Sun",
-        "Xingdi Yuan",
-        "Ruoyao Wang",
-        "Ziang Xiao"
+        "Kefei Zhu",
+        "Fengshuo Bai",
+        "YuanHao Xiang",
+        "Yishuai Cai",
+        "Xinglin Chen",
+        "Ruochong Li",
+        "Xingtao Wang",
+        "Hao Dong",
+        "Yaodong Yang",
+        "Xiaopeng Fan",
+        "Yuanpei Chen"
       ],
-      "abstract": "Simulating interactive world models remains a core challenge in Large Language Models(LLMs). In this work, we introduce the ByteSized32Refactored, a refactored, modular, and extensible implementation of the original ByteSized32 corpus to explore the task of text game generation. We further optimize the code structure of each text game and create the GameBasic.py foundation library, which centralizes common logic across all 32 games by abstracting 7 base classes (GameObject, etc.) into reusable modules, thereby reducing from 20k to 10k total lines of Python code compared to the original Bytesized32. Our refactored implementation enables extendability - with our centralized design, ByteSized32Refactored can be more efficiently extended to include text games of new scenarios and specifications by reusing the shared logic and functionalities. Extensive experiments with GPT-4o demonstrate a mix of performance - with Bytesized32Refactored, the generated text games for unseen scenarios showcase quality improvements on two of the four evaluation dimensions while decreases on the other two, indicating that the hierarchical structure of the refactored code presents new challenges for LLMs. Overall, we highlight that our extensible code structure, centered on the foundation library and the modular optimization, not only facilitates LLM adaptation to environment specifications but also establishes a scalable environment that supports future extensions.",
+      "abstract": "Dexterous manipulation is critical for advancing robot capabilities in real-world applications, yet diverse and high-quality datasets remain scarce. Existing data collection methods either rely on human teleoperation or require significant human engineering, or generate data with limited diversity, which restricts their scalability and generalization. In this paper, we introduce DexFlyWheel, a scalable data generation framework that employs a self-improving cycle to continuously enrich data diversity. Starting from efficient seed demonstrations warmup, DexFlyWheel expands the dataset through iterative cycles. Each cycle follows a closed-loop pipeline that integrates Imitation Learning (IL), residual Reinforcement Learning (RL), rollout trajectory collection, and data augmentation. Specifically, IL extracts human-like behaviors from demonstrations, and residual RL enhances policy generalization. The learned policy is then used to generate trajectories in simulation, which are further augmented across diverse environments and spatial configurations before being fed back into the next cycle. Over successive iterations, a self-improving data flywheel effect emerges, producing datasets that cover diverse scenarios and thereby scaling policy performance. Experimental results demonstrate that DexFlyWheel generates over 2,000 diverse demonstrations across four challenging tasks. Policies trained on our dataset achieve an average success rate of 81.9\\% on the challenge test sets and successfully transfer to the real world through digital twin, achieving a 78.3\\% success rate on dual-arm lift tasks.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T17:07:54Z",
-      "arxivId": "2509.23979",
-      "doi": "10.48550/arXiv.2509.23979",
+      "updatedAt": "2025-09-28T12:07:02Z",
+      "arxivId": "2509.23829",
+      "doi": "10.48550/arXiv.2509.23829",
       "categories": [
-        "cs.CL"
+        "cs.RO"
       ],
       "fieldIds": [
-        "cs-cl",
         "embodied-intelligence",
         "cs-lg"
       ],
       "topicIds": [
-        "multimodal-world-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
         "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
+        "lg-reinforcement-learning"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23979v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23979",
+      "sourceUrl": "http://arxiv.org/abs/2509.23829v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23829",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23979v1"
+          "url": "https://arxiv.org/pdf/2509.23829v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23979"
+          "url": "https://arxiv.org/pdf/2509.23829"
         }
       ],
-      "semanticScholarId": "9de63c2affd4534b63a32ce18061d08369622ca0",
-      "citationCount": 0,
+      "semanticScholarId": "6f6c0217f3825e46282dfcc37137ea75e998b5f5",
+      "citationCount": 7,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 59,
         "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
+        "evidence": 15,
+        "freshness": 2,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23979",
+          "已有正式发表线索：10.48550/arXiv.2509.23829",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.23708",
-      "title": "CrimEdit: Controllable Editing for Counterfactual Object Removal, Insertion, and Movement",
-      "authors": [
-        "Boseong Jeon",
-        "Junghyuk Lee",
-        "Jimin Park",
-        "Kwanyoung Kim",
-        "Jingi Jung",
-        "Sangwon Lee",
-        "Hyunbo Shim"
-      ],
-      "abstract": "Recent works on object removal and insertion have enhanced their performance by handling object effects such as shadows and reflections, using diffusion models trained on counterfactual datasets. However, the performance impact of applying classifier-free guidance to handle object effects across removal and insertion tasks within a unified model remains largely unexplored. To address this gap and improve efficiency in composite editing, we propose CrimEdit, which jointly trains the task embeddings for removal and insertion within a single model and leverages them in a classifier-free guidance scheme -- enhancing the removal of both objects and their effects, and enabling controllable synthesis of object effects during insertion. CrimEdit also extends these two task prompts to be applied to spatially distinct regions, enabling object movement (repositioning) within a single denoising step. By employing both guidance techniques, extensive experiments show that CrimEdit achieves superior object removal, controllable effect insertion, and efficient object movement without requiring additional training or separate removal and insertion stages.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T07:41:25Z",
-      "arxivId": "2509.23708",
-      "doi": "10.48550/arXiv.2509.23708",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-image-video-generation",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23708v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23708",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23708v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23708"
-        }
-      ],
-      "semanticScholarId": "dde7f4025151f69cab95ee93d5276e7de27eb75e",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23708",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -52593,6 +52368,153 @@
       }
     },
     {
+      "id": "arxiv:2509.23979",
+      "title": "ByteSized32Refactored: Towards an Extensible Interactive Text Games Corpus for LLM World Modeling and Evaluation",
+      "authors": [
+        "Haonan Wang",
+        "Junfeng Sun",
+        "Xingdi Yuan",
+        "Ruoyao Wang",
+        "Ziang Xiao"
+      ],
+      "abstract": "Simulating interactive world models remains a core challenge in Large Language Models(LLMs). In this work, we introduce the ByteSized32Refactored, a refactored, modular, and extensible implementation of the original ByteSized32 corpus to explore the task of text game generation. We further optimize the code structure of each text game and create the GameBasic.py foundation library, which centralizes common logic across all 32 games by abstracting 7 base classes (GameObject, etc.) into reusable modules, thereby reducing from 20k to 10k total lines of Python code compared to the original Bytesized32. Our refactored implementation enables extendability - with our centralized design, ByteSized32Refactored can be more efficiently extended to include text games of new scenarios and specifications by reusing the shared logic and functionalities. Extensive experiments with GPT-4o demonstrate a mix of performance - with Bytesized32Refactored, the generated text games for unseen scenarios showcase quality improvements on two of the four evaluation dimensions while decreases on the other two, indicating that the hierarchical structure of the refactored code presents new challenges for LLMs. Overall, we highlight that our extensible code structure, centered on the foundation library and the modular optimization, not only facilitates LLM adaptation to environment specifications but also establishes a scalable environment that supports future extensions.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T17:07:54Z",
+      "arxivId": "2509.23979",
+      "doi": "10.48550/arXiv.2509.23979",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23979v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23979",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23979v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23979"
+        }
+      ],
+      "semanticScholarId": "9de63c2affd4534b63a32ce18061d08369622ca0",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23979",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23708",
+      "title": "CrimEdit: Controllable Editing for Counterfactual Object Removal, Insertion, and Movement",
+      "authors": [
+        "Boseong Jeon",
+        "Junghyuk Lee",
+        "Jimin Park",
+        "Kwanyoung Kim",
+        "Jingi Jung",
+        "Sangwon Lee",
+        "Hyunbo Shim"
+      ],
+      "abstract": "Recent works on object removal and insertion have enhanced their performance by handling object effects such as shadows and reflections, using diffusion models trained on counterfactual datasets. However, the performance impact of applying classifier-free guidance to handle object effects across removal and insertion tasks within a unified model remains largely unexplored. To address this gap and improve efficiency in composite editing, we propose CrimEdit, which jointly trains the task embeddings for removal and insertion within a single model and leverages them in a classifier-free guidance scheme -- enhancing the removal of both objects and their effects, and enabling controllable synthesis of object effects during insertion. CrimEdit also extends these two task prompts to be applied to spatially distinct regions, enabling object movement (repositioning) within a single denoising step. By employing both guidance techniques, extensive experiments show that CrimEdit achieves superior object removal, controllable effect insertion, and efficient object movement without requiring additional training or separate removal and insertion stages.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T07:41:25Z",
+      "arxivId": "2509.23708",
+      "doi": "10.48550/arXiv.2509.23708",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23708v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23708",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23708v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23708"
+        }
+      ],
+      "semanticScholarId": "dde7f4025151f69cab95ee93d5276e7de27eb75e",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23708",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.23107",
       "title": "Open-Vocabulary Spatio-Temporal Scene Graph for Robot Perception and Teleoperation Planning",
       "authors": [
@@ -55384,81 +55306,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 1,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2505.06875",
-      "title": "Towards Human-Centric Autonomous Driving: A Fast-Slow Architecture Integrating Large Language Model Guidance with Reinforcement Learning",
-      "authors": [
-        "Chengkai Xu",
-        "Jiaqi Liu",
-        "Yicheng Guo",
-        "Yuhang Zhang",
-        "Peng Hang",
-        "Jian Sun"
-      ],
-      "abstract": "Autonomous driving has made significant strides through data-driven techniques, achieving robust performance in standardized tasks. However, existing methods frequently overlook user-specific preferences, offering limited scope for interaction and adaptation with users. To address these challenges, we propose a \"fast-slow\" decision-making framework that integrates a Large Language Model (LLM) for high-level instruction parsing with a Reinforcement Learning (RL) agent for low-level real-time decision. In this dual system, the LLM operates as the \"slow\" module, translating user directives into structured guidance, while the RL agent functions as the \"fast\" module, making time-critical maneuvers under stringent latency constraints. By decoupling high-level decision making from rapid control, our framework enables personalized user-centric operation while maintaining robust safety margins. Experimental evaluations across various driving scenarios demonstrate the effectiveness of our method. Compared to baseline algorithms, the proposed architecture not only reduces collision rates but also aligns driving behaviors more closely with user preferences, thereby achieving a human-centric mode. By integrating user guidance at the decision level and refining it with real-time control, our framework bridges the gap between individual passenger needs and the rigor required for safe, reliable driving in complex traffic environments.",
-      "publishedAt": "2025-05-11",
-      "updatedAt": "2025-05-11T06:55:54Z",
-      "arxivId": "2505.06875",
-      "doi": "10.1109/ITSC60802.2025.11423568",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2505.06875v1",
-      "pdfUrl": "https://arxiv.org/pdf/2505.06875",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.06875v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.06875"
-        }
-      ],
-      "semanticScholarId": "efe6aae8e90fafef29566b0a5862ae229cc873f3",
-      "venue": "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
-      "citationCount": 15,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -59745,78 +59592,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04179",
-      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
-      "authors": [
-        "Zhaohong Liu",
-        "Hao Ye",
-        "Xianlin Zhang",
-        "Mengshi Qi"
-      ],
-      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04179",
-      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04179",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04179"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 10,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2606.13675",
       "title": "Improving Robotic Generalist Policies via Flow Reversal Steering",
       "authors": [
@@ -63397,6 +63172,81 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 0,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2505.06875",
+      "title": "Towards Human-Centric Autonomous Driving: A Fast-Slow Architecture Integrating Large Language Model Guidance with Reinforcement Learning",
+      "authors": [
+        "Chengkai Xu",
+        "Jiaqi Liu",
+        "Yicheng Guo",
+        "Yuhang Zhang",
+        "Peng Hang",
+        "Jian Sun"
+      ],
+      "abstract": "Autonomous driving has made significant strides through data-driven techniques, achieving robust performance in standardized tasks. However, existing methods frequently overlook user-specific preferences, offering limited scope for interaction and adaptation with users. To address these challenges, we propose a \"fast-slow\" decision-making framework that integrates a Large Language Model (LLM) for high-level instruction parsing with a Reinforcement Learning (RL) agent for low-level real-time decision. In this dual system, the LLM operates as the \"slow\" module, translating user directives into structured guidance, while the RL agent functions as the \"fast\" module, making time-critical maneuvers under stringent latency constraints. By decoupling high-level decision making from rapid control, our framework enables personalized user-centric operation while maintaining robust safety margins. Experimental evaluations across various driving scenarios demonstrate the effectiveness of our method. Compared to baseline algorithms, the proposed architecture not only reduces collision rates but also aligns driving behaviors more closely with user preferences, thereby achieving a human-centric mode. By integrating user guidance at the decision level and refining it with real-time control, our framework bridges the gap between individual passenger needs and the rigor required for safe, reliable driving in complex traffic environments.",
+      "publishedAt": "2025-05-11",
+      "updatedAt": "2025-05-11T06:55:54Z",
+      "arxivId": "2505.06875",
+      "doi": "10.1109/ITSC60802.2025.11423568",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2505.06875v1",
+      "pdfUrl": "https://arxiv.org/pdf/2505.06875",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.06875v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.06875"
+        }
+      ],
+      "semanticScholarId": "efe6aae8e90fafef29566b0a5862ae229cc873f3",
+      "venue": "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
+      "citationCount": 15,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 1,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -68410,53 +68260,51 @@
       }
     },
     {
-      "id": "arxiv:2607.04265",
-      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "id": "arxiv:2607.04179",
+      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
       "authors": [
-        "Angen Ye",
-        "Weijie Ke",
-        "Xiaofeng Wang",
-        "Xinze Chen",
-        "Chaojun Ni",
-        "Guosheng Zhao",
-        "Boyuan Wang",
-        "Zheng Zhu",
-        "Junjie Xie",
-        "Dapeng Zhang"
+        "Zhaohong Liu",
+        "Hao Ye",
+        "Xianlin Zhang",
+        "Mengshi Qi"
       ],
-      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
       "publishedAt": "2026-07-05",
-      "arxivId": "2607.04265",
-      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "arxivId": "2607.04179",
+      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
       "categories": [],
       "fieldIds": [
         "embodied-intelligence",
         "cs-ai",
+        "cs-cl",
+        "cs-cv",
         "cs-lg"
       ],
       "topicIds": [
-        "embodied-foundation-models",
         "imitation-reinforcement-learning",
-        "robot-manipulation",
+        "navigation-planning",
         "simulation-datasets-evaluation",
-        "ai-safety-alignment",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety",
+        "cv-vision-language-multimodal",
         "lg-reinforcement-learning"
       ],
       "sources": [
         "semantic-scholar"
       ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04265",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
-      "citationCount": 1,
+      "sourceUrl": "https://arxiv.org/abs/2607.04179",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
+      "citationCount": 0,
       "influentialCitationCount": 0,
       "artifacts": [
         {
           "kind": "code",
-          "url": "https://github.com/YeanRoot/HALO-WA"
+          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04265"
+          "url": "https://arxiv.org/pdf/2607.04179"
         }
       ],
       "publicationStatus": "preprint",
@@ -68464,21 +68312,21 @@
       "score": {
         "baseTotal": 56,
         "relevance": 24,
-        "evidence": 9,
-        "freshness": 5,
+        "evidence": 10,
+        "freshness": 4,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
           "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 0,
-          "citations": 1,
+          "citations": 0,
           "reproducibility": 4,
-          "empirical": 4,
+          "empirical": 6,
           "corroboration": 0
         }
       }
@@ -78845,6 +78693,80 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04265",
+      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "authors": [
+        "Angen Ye",
+        "Weijie Ke",
+        "Xiaofeng Wang",
+        "Xinze Chen",
+        "Chaojun Ni",
+        "Guosheng Zhao",
+        "Boyuan Wang",
+        "Zheng Zhu",
+        "Junjie Xie",
+        "Dapeng Zhang"
+      ],
+      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04265",
+      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04265",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/YeanRoot/HALO-WA"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04265"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 9,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 4,
           "corroboration": 0
         }
       }
@@ -114790,73 +114712,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04171",
-      "title": "Teaching Tiny VLA Models Where to Look and How to Move",
-      "authors": [
-        "Iok Tong Lei",
-        "Ying Jie Yap",
-        "Wei Huang",
-        "Qingchen Xie",
-        "Qianzhi Li",
-        "Yujie Zhang",
-        "Xiaolong Liu",
-        "Zhidong Deng"
-      ],
-      "abstract": "Tiny Vision-Language-Action models are appealing for real-time robotic control, but reducing model scale often weakens two capabilities essential for manipulation: task-conditioned spatial grounding and coherent action generation. We introduce XS-VLA, a lightweight framework that teaches tiny VLA policies\"where to look\"and\"how to move\"without increasing deployment-time model cost. For spatial grounding, Coarse-Grained Spatial Distillation uses Qwen3-VL-4B to produce teacher-derived coarse image-plane location labels for task-relevant objects, which are quantized into a spatial vocabulary and distilled into a SmolVLM2-0.25B backbone without human annotations. For action generation, Latent Flow Matching combines a CVAE-style latent variable with flow-based policy learning to organize multimodal demonstrations during training and produce stable action chunks at deployment. On LIBERO, XS-VLA improves average success from 82.8\\% to 90.3\\% over SmolVLA-0.25B and improves LIBERO-Long from 63.0\\% to 89.0\\%. In real-world experiments, we design three tasks covering single-arm placement, precision bimanual stacking, and long-horizon sequential coordination, where XS-VLA improves average task success from 21.7\\% to 65.0\\%. These results show that explicit spatial grounding and latent action-structure learning can make tiny VLA models effective for robotic manipulation.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04171",
-      "semanticScholarId": "565a3929ae5941ae560d13f14c7b369fe8c78526",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "vision-language-action-models",
-        "cv-vision-language-multimodal",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04171",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04171",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04171"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.02195",
       "title": "Bridge-WA: Predicting Where and How the World Changes for Robotic Action",
       "authors": [
@@ -121696,6 +121551,73 @@
           "reproducibility": 2,
           "empirical": 2,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04171",
+      "title": "Teaching Tiny VLA Models Where to Look and How to Move",
+      "authors": [
+        "Iok Tong Lei",
+        "Ying Jie Yap",
+        "Wei Huang",
+        "Qingchen Xie",
+        "Qianzhi Li",
+        "Yujie Zhang",
+        "Xiaolong Liu",
+        "Zhidong Deng"
+      ],
+      "abstract": "Tiny Vision-Language-Action models are appealing for real-time robotic control, but reducing model scale often weakens two capabilities essential for manipulation: task-conditioned spatial grounding and coherent action generation. We introduce XS-VLA, a lightweight framework that teaches tiny VLA policies\"where to look\"and\"how to move\"without increasing deployment-time model cost. For spatial grounding, Coarse-Grained Spatial Distillation uses Qwen3-VL-4B to produce teacher-derived coarse image-plane location labels for task-relevant objects, which are quantized into a spatial vocabulary and distilled into a SmolVLM2-0.25B backbone without human annotations. For action generation, Latent Flow Matching combines a CVAE-style latent variable with flow-based policy learning to organize multimodal demonstrations during training and produce stable action chunks at deployment. On LIBERO, XS-VLA improves average success from 82.8\\% to 90.3\\% over SmolVLA-0.25B and improves LIBERO-Long from 63.0\\% to 89.0\\%. In real-world experiments, we design three tasks covering single-arm placement, precision bimanual stacking, and long-horizon sequential coordination, where XS-VLA improves average task success from 21.7\\% to 65.0\\%. These results show that explicit spatial grounding and latent action-structure learning can make tiny VLA models effective for robotic manipulation.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04171",
+      "semanticScholarId": "565a3929ae5941ae560d13f14c7b369fe8c78526",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04171",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04171",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04171"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 0
         }
       }
     },
@@ -143932,23 +143854,85 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2610.05819",
+      "title": "Transporting Unsecured Stacked Payloads with a Quadrupedal Robot via Multi-Objective Reinforcement Learning",
+      "authors": [
+        "Nobuo Namura",
+        "Masayuki Hiromoto",
+        "Kento Uemura",
+        "Hironobu Sasaki",
+        "Kanata Suzuki"
+      ],
+      "abstract": "Transporting unsecured payloads with legged robots over uneven terrain requires balancing locomotion performance and payload stability, since aggressive motion can destabilize the payload even when the robot remains stable. We study quadrupedal transportation of unsecured stacked boxes on an edgeless torso-mounted board without dedicated payload sensors or active carrier mechanisms. To address this trade-off, we propose Payload-Adaptive Multi-Objective Reinforcement learning for Transportation (PAMORT). PAMORT trains a multi-objective base policy conditioned on a preference vector that weights locomotion and payload-stability reward groups, then trains a weight adjuster on the frozen policy to adapt this preference online from proprioception. In simulation, PAMORT achieves comparable or better overall transportation success than a corresponding single-objective baseline across different payload configurations, including an unseen three-box stack, despite training only with two boxes. Real-world experiments on a Unitree Go2 demonstrate zero-shot transfer to slopes and steps at or beyond the training difficulty, with mean success rates of 0.850 for PAMORT and 0.675 for the baseline across eight tasks. These results demonstrate robust unsecured-payload transportation with online adaptation of the locomotion--payload trade-off from proprioceptive information.",
+      "publishedAt": "2026-10-05T05:13:04Z",
+      "updatedAt": "2026-10-05T05:13:04Z",
+      "arxivId": "2610.05819",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.05819v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.05819v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.05819v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 46,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 2577
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 2580
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1434,
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1417,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

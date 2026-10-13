@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cv",
-  "generatedAt": "2026-10-12T11:13:36.454Z",
+  "generatedAt": "2026-10-13T10:54:56.713Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -9973,80 +9973,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23723",
-      "title": "DiffPCN: Latent Diffusion Model Based on Multi-view Depth Images for Point Cloud Completion",
-      "authors": [
-        "Zijun Li",
-        "Hongyu Yan",
-        "Shijie Li",
-        "Kunming Luo",
-        "Li Lu",
-        "Xulei Yang",
-        "Weisi Lin"
-      ],
-      "abstract": "Latent diffusion models (LDMs) have demonstrated remarkable generative capabilities across various low-level vision tasks. However, their potential for point cloud completion remains underexplored due to the unstructured and irregular nature of point clouds. In this work, we propose DiffPCN, a novel diffusion-based coarse-to-fine framework for point cloud completion. Our approach comprises two stages: an initial stage for generating coarse point clouds, and a refinement stage that improves their quality through point denoising and upsampling. Specifically, we first project the unordered and irregular partial point cloud into structured depth images, which serve as conditions for a well-designed DepthLDM to synthesize completed multi-view depth images that are used to form coarse point clouds. In this way, our DiffPCN can yield high-quality and high-completeness coarse point clouds by leveraging LDM' s powerful generation and comprehension capabilities. Then, since LDMs inevitably introduce outliers into the generated depth maps, we design a Point Denoising Network to remove artifacts from the coarse point cloud by predicting a per-point distance score. Finally, we devise an Association-Aware Point Upsampler, which guides the upsampling process by leveraging local association features between the input point cloud and the corresponding coarse points, further yielding a dense and high-fidelity output. Experimental results demonstrate that our DiffPCN achieves state-of-the-art performance in geometric accuracy and shape completeness, significantly improving the robustness and consistency of point cloud completion.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T08:05:43Z",
-      "arxivId": "2509.23723",
-      "doi": "10.48550/arXiv.2509.23723",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "cv-image-video-generation",
-        "cv-three-dimensional-vision",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23723v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23723",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23723v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23723"
-        }
-      ],
-      "semanticScholarId": "f1f70f44dfce8474bd73470857a20cba78c63743",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.23723",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.11783",
       "title": "Augmented Reality-Enhanced Robot Teleoperation for Collecting User Demonstrations",
       "authors": [
@@ -14349,79 +14275,6 @@
       }
     },
     {
-      "id": "arxiv:2510.11012",
-      "title": "COCO-Tree: Compositional Hierarchical Concept Trees for Enhanced Reasoning in Vision Language Models",
-      "authors": [
-        "Sanchit Sinha",
-        "Guangzhi Xiong",
-        "Aidong Zhang"
-      ],
-      "abstract": "Compositional reasoning remains a persistent weakness of modern vision language models (VLMs): they often falter when a task hinges on understanding how multiple objects, attributes, and relations interact within an image. Multiple research works have attempted to improve compositionality performance by creative tricks such as improving prompt structure, chain of thought reasoning, etc. A more recent line of work attempts to impart additional reasoning in VLMs using well-trained Large Language Models (LLMs), which are far superior in linguistic understanding than VLMs to compensate for the limited linguistic prowess of VLMs. However, these approaches are either resource-intensive or do not provide an interpretable reasoning process. In this paper, we present 'COCO-Tree' - a novel approach that augments VLM outputs with carefully designed neurosymbolic concept trees learned from LLMs to improve VLM's linguistic reasoning. COCO-Tree's beam search-inspired reasoning process boosts compositionality performance and provides a rationale behind VLM predictions. Empirical results on four compositionality benchmarks, Winoground, EqBench, ColorSwap, and SugarCrepe, in seven different open-source VLMs with varying sizes, demonstrate that COCO-Tree significantly improves compositional generalization by 5-10% over baselines.",
-      "publishedAt": "2025-10-13",
-      "updatedAt": "2025-10-13T05:07:13Z",
-      "arxivId": "2510.11012",
-      "doi": "10.18653/v1/2025.emnlp-main.135",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.11012v1",
-      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.135.pdf",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.11012v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://aclanthology.org/2025.emnlp-main.135.pdf"
-        }
-      ],
-      "semanticScholarId": "7adc06ef0c7cb7fc2dbb12bca0329b62ad9a7300",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.11996",
       "title": "Prompt-Guided Spatial Understanding with RGB-D Transformers for Fine-Grained Object Relation Reasoning",
       "authors": [
@@ -14487,6 +14340,79 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.11012",
+      "title": "COCO-Tree: Compositional Hierarchical Concept Trees for Enhanced Reasoning in Vision Language Models",
+      "authors": [
+        "Sanchit Sinha",
+        "Guangzhi Xiong",
+        "Aidong Zhang"
+      ],
+      "abstract": "Compositional reasoning remains a persistent weakness of modern vision language models (VLMs): they often falter when a task hinges on understanding how multiple objects, attributes, and relations interact within an image. Multiple research works have attempted to improve compositionality performance by creative tricks such as improving prompt structure, chain of thought reasoning, etc. A more recent line of work attempts to impart additional reasoning in VLMs using well-trained Large Language Models (LLMs), which are far superior in linguistic understanding than VLMs to compensate for the limited linguistic prowess of VLMs. However, these approaches are either resource-intensive or do not provide an interpretable reasoning process. In this paper, we present 'COCO-Tree' - a novel approach that augments VLM outputs with carefully designed neurosymbolic concept trees learned from LLMs to improve VLM's linguistic reasoning. COCO-Tree's beam search-inspired reasoning process boosts compositionality performance and provides a rationale behind VLM predictions. Empirical results on four compositionality benchmarks, Winoground, EqBench, ColorSwap, and SugarCrepe, in seven different open-source VLMs with varying sizes, demonstrate that COCO-Tree significantly improves compositional generalization by 5-10% over baselines.",
+      "publishedAt": "2025-10-13",
+      "updatedAt": "2025-10-13T05:07:13Z",
+      "arxivId": "2510.11012",
+      "doi": "10.18653/v1/2025.emnlp-main.135",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.11012v1",
+      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.135.pdf",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.11012v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://aclanthology.org/2025.emnlp-main.135.pdf"
+        }
+      ],
+      "semanticScholarId": "7adc06ef0c7cb7fc2dbb12bca0329b62ad9a7300",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -15500,6 +15426,80 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：2025 IEEE International Conference on Data Mining Workshops (ICDMW)",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23723",
+      "title": "DiffPCN: Latent Diffusion Model Based on Multi-view Depth Images for Point Cloud Completion",
+      "authors": [
+        "Zijun Li",
+        "Hongyu Yan",
+        "Shijie Li",
+        "Kunming Luo",
+        "Li Lu",
+        "Xulei Yang",
+        "Weisi Lin"
+      ],
+      "abstract": "Latent diffusion models (LDMs) have demonstrated remarkable generative capabilities across various low-level vision tasks. However, their potential for point cloud completion remains underexplored due to the unstructured and irregular nature of point clouds. In this work, we propose DiffPCN, a novel diffusion-based coarse-to-fine framework for point cloud completion. Our approach comprises two stages: an initial stage for generating coarse point clouds, and a refinement stage that improves their quality through point denoising and upsampling. Specifically, we first project the unordered and irregular partial point cloud into structured depth images, which serve as conditions for a well-designed DepthLDM to synthesize completed multi-view depth images that are used to form coarse point clouds. In this way, our DiffPCN can yield high-quality and high-completeness coarse point clouds by leveraging LDM' s powerful generation and comprehension capabilities. Then, since LDMs inevitably introduce outliers into the generated depth maps, we design a Point Denoising Network to remove artifacts from the coarse point cloud by predicting a per-point distance score. Finally, we devise an Association-Aware Point Upsampler, which guides the upsampling process by leveraging local association features between the input point cloud and the corresponding coarse points, further yielding a dense and high-fidelity output. Experimental results demonstrate that our DiffPCN achieves state-of-the-art performance in geometric accuracy and shape completeness, significantly improving the robustness and consistency of point cloud completion.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T08:05:43Z",
+      "arxivId": "2509.23723",
+      "doi": "10.48550/arXiv.2509.23723",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "cv-image-video-generation",
+        "cv-three-dimensional-vision",
+        "lg-generative-modeling",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23723v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23723",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23723v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23723"
+        }
+      ],
+      "semanticScholarId": "f1f70f44dfce8474bd73470857a20cba78c63743",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.23723",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -19210,80 +19210,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23737",
-      "title": "GRS-SLAM3R: Real-Time Dense SLAM with Gated Recurrent State",
-      "authors": [
-        "Guole Shen",
-        "Tianchen Deng",
-        "Yanbo Wang",
-        "Yongtao Chen",
-        "Yilin Shen",
-        "Jiuming Liu",
-        "Jingchuan Wang"
-      ],
-      "abstract": "DUSt3R-based end-to-end scene reconstruction has recently shown promising results in dense visual SLAM. However, most existing methods only use image pairs to estimate pointmaps, overlooking spatial memory and global consistency.To this end, we introduce GRS-SLAM3R, an end-to-end SLAM framework for dense scene reconstruction and pose estimation from RGB images without any prior knowledge of the scene or camera parameters. Unlike existing DUSt3R-based frameworks, which operate on all image pairs and predict per-pair point maps in local coordinate frames, our method supports sequentialized input and incrementally estimates metric-scale point clouds in the global coordinate. In order to improve consistent spatial correlation, we use a latent state for spatial memory and design a transformer-based gated update module to reset and update the spatial memory that continuously aggregates and tracks relevant 3D information across frames. Furthermore, we partition the scene into submaps, apply local alignment within each submap, and register all submaps into a common world frame using relative constraints, producing a globally consistent map. Experiments on various datasets show that our framework achieves superior reconstruction accuracy while maintaining real-time performance.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T08:33:34Z",
-      "arxivId": "2509.23737",
-      "doi": "10.48550/arXiv.2509.23737",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cv-three-dimensional-vision"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23737v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23737",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23737v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23737"
-        }
-      ],
-      "semanticScholarId": "994ed1331e3da3ed5926ce2f23d5c8f8e9f7751d",
-      "citationCount": 4,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23737",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.21938",
       "title": "SemanticControl: A Training-Free Approach for Handling Loosely Aligned Visual Conditions in ControlNet",
       "authors": [
@@ -22415,6 +22341,75 @@
       }
     },
     {
+      "id": "arxiv:2601.15779",
+      "title": "Diffusion Model-Based Data Augmentation for Enhanced Neuron Segmentation",
+      "authors": [
+        "Liuyun Jiang",
+        "Yanchao Zhang",
+        "Jinyue Guo",
+        "Yizhuo Lu",
+        "Ruining Zhou",
+        "Hua Han"
+      ],
+      "abstract": "Neuron segmentation in electron microscopy (EM) aims to reconstruct the complete neuronal connectome; however, current deep learning-based methods are limited by their reliance on large-scale training data and extensive, time-consuming manual annotations. Traditional methods augment the training set through geometric and photometric transformations; however, the generated samples remain highly correlated with the original images and lack structural diversity. To address this limitation, we propose a diffusion-based data augmentation framework capable of generating diverse and structurally plausible image-label pairs for neuron segmentation. Specifically, the framework employs a resolution-aware conditional diffusion model with multi-scale conditioning and EM resolution priors to enable voxel-level image synthesis from 3D masks. It further incorporates a biology-guided mask remodeling module that produces augmented masks with enhanced structural realism. Together, these components effectively enrich the training set and improve segmentation performance. On the AC3 and AC4 datasets under low-annotation regimes, our method improves the ARAND metric by 32.1% and 30.7%, respectively, when combined with two different post-processing methods. Our code is available at https://github.com/HeadLiuYun/NeuroDiff.",
+      "publishedAt": "2026-01-22T09:12:05Z",
+      "updatedAt": "2026-01-22T09:12:05Z",
+      "arxivId": "2601.15779",
+      "doi": "10.1109/ISBI61048.2026.11515854",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2601.15779v1",
+      "pdfUrl": "https://arxiv.org/pdf/2601.15779v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/HeadLiuYun/NeuroDiff"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2601.15779v1"
+        }
+      ],
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 3,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.1109/ISBI61048.2026.11515854",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2601.14921",
       "title": "Vision-Language Models on the Edge for Real-Time Robotic Perception",
       "authors": [
@@ -25411,214 +25406,73 @@
       }
     },
     {
-      "id": "arxiv:2509.23888",
-      "title": "AssemblyHands-X: Modeling 3D Hand-Body Coordination for Understanding Bimanual Human Activities",
+      "id": "arxiv:2509.23737",
+      "title": "GRS-SLAM3R: Real-Time Dense SLAM with Gated Recurrent State",
       "authors": [
-        "Tatsuro Banno",
-        "Takehiko Ohkawa",
-        "Ruicong Liu",
-        "Ryosuke Furuta",
-        "Yoichi Sato"
+        "Guole Shen",
+        "Tianchen Deng",
+        "Yanbo Wang",
+        "Yongtao Chen",
+        "Yilin Shen",
+        "Jiuming Liu",
+        "Jingchuan Wang"
       ],
-      "abstract": "Bimanual human activities inherently involve coordinated movements of both hands and body. However, the impact of this coordination in activity understanding has not been systematically evaluated due to the lack of suitable datasets. Such evaluation demands kinematic-level annotations (e.g., 3D pose) for the hands and body, yet existing 3D activity datasets typically annotate either hand or body pose. Another line of work employs marker-based motion capture to provide full-body pose, but the physical markers introduce visual artifacts, thereby limiting models' generalization to natural, markerless videos. To address these limitations, we present AssemblyHands-X, the first markerless 3D hand-body benchmark for bimanual activities, designed to study the effect of hand-body coordination for action recognition. We begin by constructing a pipeline for 3D pose annotation from synchronized multi-view videos. Our approach combines multi-view triangulation with SMPL-X mesh fitting, yielding reliable 3D registration of hands and upper body. We then validate different input representations (e.g., video, hand pose, body pose, or hand-body pose) across recent action recognition models based on graph convolution or spatio-temporal attention. Our extensive experiments show that pose-based action inference is more efficient and accurate than video baselines. Moreover, joint modeling of hand and body cues improves action recognition over using hands or upper body alone, highlighting the importance of modeling interdependent hand-body dynamics for a holistic understanding of bimanual activities.",
+      "abstract": "DUSt3R-based end-to-end scene reconstruction has recently shown promising results in dense visual SLAM. However, most existing methods only use image pairs to estimate pointmaps, overlooking spatial memory and global consistency.To this end, we introduce GRS-SLAM3R, an end-to-end SLAM framework for dense scene reconstruction and pose estimation from RGB images without any prior knowledge of the scene or camera parameters. Unlike existing DUSt3R-based frameworks, which operate on all image pairs and predict per-pair point maps in local coordinate frames, our method supports sequentialized input and incrementally estimates metric-scale point clouds in the global coordinate. In order to improve consistent spatial correlation, we use a latent state for spatial memory and design a transformer-based gated update module to reset and update the spatial memory that continuously aggregates and tracks relevant 3D information across frames. Furthermore, we partition the scene into submaps, apply local alignment within each submap, and register all submaps into a common world frame using relative constraints, producing a globally consistent map. Experiments on various datasets show that our framework achieves superior reconstruction accuracy while maintaining real-time performance.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T13:52:14Z",
-      "arxivId": "2509.23888",
-      "doi": "10.48550/arXiv.2509.23888",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "cv-video-understanding"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23888v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23888",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23888v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23888"
-        }
-      ],
-      "semanticScholarId": "f0b1fad820a742c98e5b909650c31c75e8178015",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23888",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.23605",
-      "title": "VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis",
-      "authors": [
-        "Zeren Xiong",
-        "Yue Yu",
-        "Zedong Zhang",
-        "Shuo Chen",
-        "Jian Yang",
-        "Jun Li"
-      ],
-      "abstract": "Creating novel images by fusing visual cues from multiple sources is a fundamental yet underexplored problem in image-to-image generation, with broad applications in artistic creation, virtual reality and visual media. Existing methods often face two key challenges: coexistent generation, where multiple objects are simply juxtaposed without true integration, and bias generation, where one object dominates the output due to semantic imbalance. To address these issues, we propose Visual Mixing Diffusion (VMDiff), a simple yet effective diffusion-based framework that synthesizes a single, coherent object by integrating two input images at both noise and latent levels. Our approach comprises: (1) a hybrid sampling process that combines guided denoising, inversion, and spherical interpolation with adjustable parameters to achieve structure-aware fusion, mitigating coexistent generation; and (2) an efficient adaptive adjustment module, which introduces a novel similarity-based score to automatically and adaptively search for optimal parameters, countering semantic bias. Experiments on a curated benchmark of 780 concept pairs demonstrate that our method outperforms strong baselines in visual quality, semantic consistency, and human-rated creativity.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T03:17:58Z",
-      "arxivId": "2509.23605",
-      "doi": "10.48550/arXiv.2509.23605",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-image-video-generation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23605v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23605",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23605v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23605"
-        }
-      ],
-      "semanticScholarId": "a7cf128cdd74844d5c0f2d06bdbeddfdd00e54a3",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23605",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.23708",
-      "title": "CrimEdit: Controllable Editing for Counterfactual Object Removal, Insertion, and Movement",
-      "authors": [
-        "Boseong Jeon",
-        "Junghyuk Lee",
-        "Jimin Park",
-        "Kwanyoung Kim",
-        "Jingi Jung",
-        "Sangwon Lee",
-        "Hyunbo Shim"
-      ],
-      "abstract": "Recent works on object removal and insertion have enhanced their performance by handling object effects such as shadows and reflections, using diffusion models trained on counterfactual datasets. However, the performance impact of applying classifier-free guidance to handle object effects across removal and insertion tasks within a unified model remains largely unexplored. To address this gap and improve efficiency in composite editing, we propose CrimEdit, which jointly trains the task embeddings for removal and insertion within a single model and leverages them in a classifier-free guidance scheme -- enhancing the removal of both objects and their effects, and enabling controllable synthesis of object effects during insertion. CrimEdit also extends these two task prompts to be applied to spatially distinct regions, enabling object movement (repositioning) within a single denoising step. By employing both guidance techniques, extensive experiments show that CrimEdit achieves superior object removal, controllable effect insertion, and efficient object movement without requiring additional training or separate removal and insertion stages.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T07:41:25Z",
-      "arxivId": "2509.23708",
-      "doi": "10.48550/arXiv.2509.23708",
+      "updatedAt": "2025-09-28T08:33:34Z",
+      "arxivId": "2509.23737",
+      "doi": "10.48550/arXiv.2509.23737",
       "categories": [
         "cs.CV",
-        "cs.AI"
+        "cs.RO"
       ],
       "fieldIds": [
-        "cs-ai",
         "cs-cv",
         "embodied-intelligence",
-        "cs-lg"
+        "cs-ai"
       ],
       "topicIds": [
         "simulation-datasets-evaluation",
-        "cv-image-video-generation",
-        "lg-generative-modeling"
+        "ai-safety-alignment",
+        "cv-three-dimensional-vision"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23708v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23708",
+      "sourceUrl": "http://arxiv.org/abs/2509.23737v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23737",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23708v1"
+          "url": "https://arxiv.org/pdf/2509.23737v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23708"
+          "url": "https://arxiv.org/pdf/2509.23737"
         }
       ],
-      "semanticScholarId": "dde7f4025151f69cab95ee93d5276e7de27eb75e",
-      "citationCount": 1,
+      "semanticScholarId": "994ed1331e3da3ed5926ce2f23d5c8f8e9f7751d",
+      "citationCount": 4,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 59,
         "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
+        "evidence": 15,
+        "freshness": 2,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23708",
+          "已有正式发表线索：10.48550/arXiv.2509.23737",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -28988,6 +28842,221 @@
       }
     },
     {
+      "id": "arxiv:2509.23888",
+      "title": "AssemblyHands-X: Modeling 3D Hand-Body Coordination for Understanding Bimanual Human Activities",
+      "authors": [
+        "Tatsuro Banno",
+        "Takehiko Ohkawa",
+        "Ruicong Liu",
+        "Ryosuke Furuta",
+        "Yoichi Sato"
+      ],
+      "abstract": "Bimanual human activities inherently involve coordinated movements of both hands and body. However, the impact of this coordination in activity understanding has not been systematically evaluated due to the lack of suitable datasets. Such evaluation demands kinematic-level annotations (e.g., 3D pose) for the hands and body, yet existing 3D activity datasets typically annotate either hand or body pose. Another line of work employs marker-based motion capture to provide full-body pose, but the physical markers introduce visual artifacts, thereby limiting models' generalization to natural, markerless videos. To address these limitations, we present AssemblyHands-X, the first markerless 3D hand-body benchmark for bimanual activities, designed to study the effect of hand-body coordination for action recognition. We begin by constructing a pipeline for 3D pose annotation from synchronized multi-view videos. Our approach combines multi-view triangulation with SMPL-X mesh fitting, yielding reliable 3D registration of hands and upper body. We then validate different input representations (e.g., video, hand pose, body pose, or hand-body pose) across recent action recognition models based on graph convolution or spatio-temporal attention. Our extensive experiments show that pose-based action inference is more efficient and accurate than video baselines. Moreover, joint modeling of hand and body cues improves action recognition over using hands or upper body alone, highlighting the importance of modeling interdependent hand-body dynamics for a holistic understanding of bimanual activities.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T13:52:14Z",
+      "arxivId": "2509.23888",
+      "doi": "10.48550/arXiv.2509.23888",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "cv-video-understanding"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23888v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23888",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23888v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23888"
+        }
+      ],
+      "semanticScholarId": "f0b1fad820a742c98e5b909650c31c75e8178015",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23888",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23605",
+      "title": "VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis",
+      "authors": [
+        "Zeren Xiong",
+        "Yue Yu",
+        "Zedong Zhang",
+        "Shuo Chen",
+        "Jian Yang",
+        "Jun Li"
+      ],
+      "abstract": "Creating novel images by fusing visual cues from multiple sources is a fundamental yet underexplored problem in image-to-image generation, with broad applications in artistic creation, virtual reality and visual media. Existing methods often face two key challenges: coexistent generation, where multiple objects are simply juxtaposed without true integration, and bias generation, where one object dominates the output due to semantic imbalance. To address these issues, we propose Visual Mixing Diffusion (VMDiff), a simple yet effective diffusion-based framework that synthesizes a single, coherent object by integrating two input images at both noise and latent levels. Our approach comprises: (1) a hybrid sampling process that combines guided denoising, inversion, and spherical interpolation with adjustable parameters to achieve structure-aware fusion, mitigating coexistent generation; and (2) an efficient adaptive adjustment module, which introduces a novel similarity-based score to automatically and adaptively search for optimal parameters, countering semantic bias. Experiments on a curated benchmark of 780 concept pairs demonstrate that our method outperforms strong baselines in visual quality, semantic consistency, and human-rated creativity.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T03:17:58Z",
+      "arxivId": "2509.23605",
+      "doi": "10.48550/arXiv.2509.23605",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23605v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23605",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23605v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23605"
+        }
+      ],
+      "semanticScholarId": "a7cf128cdd74844d5c0f2d06bdbeddfdd00e54a3",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23605",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23708",
+      "title": "CrimEdit: Controllable Editing for Counterfactual Object Removal, Insertion, and Movement",
+      "authors": [
+        "Boseong Jeon",
+        "Junghyuk Lee",
+        "Jimin Park",
+        "Kwanyoung Kim",
+        "Jingi Jung",
+        "Sangwon Lee",
+        "Hyunbo Shim"
+      ],
+      "abstract": "Recent works on object removal and insertion have enhanced their performance by handling object effects such as shadows and reflections, using diffusion models trained on counterfactual datasets. However, the performance impact of applying classifier-free guidance to handle object effects across removal and insertion tasks within a unified model remains largely unexplored. To address this gap and improve efficiency in composite editing, we propose CrimEdit, which jointly trains the task embeddings for removal and insertion within a single model and leverages them in a classifier-free guidance scheme -- enhancing the removal of both objects and their effects, and enabling controllable synthesis of object effects during insertion. CrimEdit also extends these two task prompts to be applied to spatially distinct regions, enabling object movement (repositioning) within a single denoising step. By employing both guidance techniques, extensive experiments show that CrimEdit achieves superior object removal, controllable effect insertion, and efficient object movement without requiring additional training or separate removal and insertion stages.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T07:41:25Z",
+      "arxivId": "2509.23708",
+      "doi": "10.48550/arXiv.2509.23708",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23708v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23708",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23708v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23708"
+        }
+      ],
+      "semanticScholarId": "dde7f4025151f69cab95ee93d5276e7de27eb75e",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23708",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.23109",
       "title": "AttAnchor: Guiding Cross-Modal Token Alignment in VLMs with Attention Anchors",
       "authors": [
@@ -31254,85 +31323,6 @@
       }
     },
     {
-      "id": "arxiv:2410.11578",
-      "title": "STA-Unet: Rethink the semantic redundant for Medical Imaging Segmentation",
-      "authors": [
-        "Vamsi Krishna Vasa",
-        "Wenhui Zhu",
-        "Xiwen Chen",
-        "Peijie Qiu",
-        "Xuanzhao Dong",
-        "Yalin Wang"
-      ],
-      "abstract": "In recent years, significant progress has been made in the medical image analysis domain using convolutional neural networks (CNNs). In particular, deep neural networks based on a U-shaped architecture (UNet) with skip connections have been adopted for several medical imaging tasks, including organ segmentation. Despite their great success, CNNs are not good at learning global or semantic features. Especially ones that require human-like reasoning to understand the context. Many UNet architectures attempted to adjust with the introduction of Transformer-based self-attention mechanisms, and notable gains in performance have been noted. However, the transformers are inherently flawed with redundancy to learn at shallow layers, which often leads to an increase in the computation of attention from the nearby pixels offering limited information. The recently introduced Super Token Attention (STA) mechanism adapts the concept of superpixels from pixel space to token space, using super tokens as compact visual representations. This approach tackles the redundancy by learning efficient global representations in vision transformers, especially for the shallow layers. In this work, we introduce the STA module in the UNet architecture (STA-UNet), to limit redundancy without losing rich information. Experimental results on four publicly available datasets demonstrate the superiority of STA-UNet over existing state-of-the-art architectures in terms of Dice score and IOU for organ segmentation tasks. The code is available at \\url{https://github.com/Retinal-Research/STA-UNet}.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-10-13T07:19:46Z",
-      "arxivId": "2410.11578",
-      "doi": "10.48550/arXiv.2410.11578",
-      "categories": [
-        "eess.IV",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.11578v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.11578",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/Retinal-Research/STA-UNet}"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11578v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11578"
-        }
-      ],
-      "semanticScholarId": "e53d30820b4f2536cc02dd08de76f3672b00fc9e",
-      "citationCount": 7,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.11578",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.11579",
       "title": "SV-TAD: Native Sparse Convs for Efficient Temporal Action Detection",
       "authors": [
@@ -33097,78 +33087,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04179",
-      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
-      "authors": [
-        "Zhaohong Liu",
-        "Hao Ye",
-        "Xianlin Zhang",
-        "Mengshi Qi"
-      ],
-      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04179",
-      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04179",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04179"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 10,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.26596",
       "title": "Decoupled Visual Processing: Efficient Multimodal Adaptation via Modality-Specific Transformer Substitution",
       "authors": [
@@ -34125,76 +34043,6 @@
           "citations": 3,
           "reproducibility": 2,
           "empirical": 0,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.24081",
-      "title": "Autoregressive Video Generation beyond Next Frames Prediction",
-      "authors": [
-        "Sucheng Ren",
-        "Chen Chen",
-        "Zhenbang Wang",
-        "Liangchen Song",
-        "Xiangxin Zhu",
-        "Alan Yuille",
-        "Yinfei Yang",
-        "Jiasen Lu"
-      ],
-      "abstract": "Autoregressive models for video generation typically operate frame-by-frame, extending next-token prediction from language to video's temporal dimension. We question that unlike word as token is universally agreed in language if frame is a appropriate prediction unit? To address this, we present VideoAR, a unified framework that supports a spectrum of prediction units including full frames, key-detail frames, multiscale refinements, and spatiotemporal cubes. Among these designs, we find model video generation using \\textit{spatiotemporal} cubes as prediction units, which allows autoregressive models to operate across both spatial and temporal dimensions simultaneously. This approach eliminates the assumption that frames are the natural atomic units for video autoregression. We evaluate VideoAR across diverse prediction strategies, finding that cube-based prediction consistently delivers superior quality, speed, and temporal coherence. By removing the frame-by-frame constraint, our video generator surpasses state-of-the-art baselines on VBench while achieving faster inference and enabling seamless scaling to minute-long sequences. We hope this work will motivate rethinking sequence decomposition in video and other spatiotemporal domains.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T21:37:53Z",
-      "arxivId": "2509.24081",
-      "doi": "10.48550/arXiv.2509.24081",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv"
-      ],
-      "topicIds": [
-        "cv-image-video-generation"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.24081v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.24081",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.24081v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.24081"
-        }
-      ],
-      "semanticScholarId": "f4061dc9f3d303b0016c95dfd427b401a2783635",
-      "citationCount": 4,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.24081",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -37152,6 +37000,78 @@
       }
     },
     {
+      "id": "arxiv:2607.04179",
+      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
+      "authors": [
+        "Zhaohong Liu",
+        "Hao Ye",
+        "Xianlin Zhang",
+        "Mengshi Qi"
+      ],
+      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04179",
+      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04179",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04179"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 10,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供可复现代码",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
       "id": "arxiv:2606.26801",
       "title": "Improving Vision-Language-Action Model Fine-Tuning with Structured Stage and Keyframe Supervision",
       "authors": [
@@ -38716,6 +38636,76 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.24081",
+      "title": "Autoregressive Video Generation beyond Next Frames Prediction",
+      "authors": [
+        "Sucheng Ren",
+        "Chen Chen",
+        "Zhenbang Wang",
+        "Liangchen Song",
+        "Xiangxin Zhu",
+        "Alan Yuille",
+        "Yinfei Yang",
+        "Jiasen Lu"
+      ],
+      "abstract": "Autoregressive models for video generation typically operate frame-by-frame, extending next-token prediction from language to video's temporal dimension. We question that unlike word as token is universally agreed in language if frame is a appropriate prediction unit? To address this, we present VideoAR, a unified framework that supports a spectrum of prediction units including full frames, key-detail frames, multiscale refinements, and spatiotemporal cubes. Among these designs, we find model video generation using \\textit{spatiotemporal} cubes as prediction units, which allows autoregressive models to operate across both spatial and temporal dimensions simultaneously. This approach eliminates the assumption that frames are the natural atomic units for video autoregression. We evaluate VideoAR across diverse prediction strategies, finding that cube-based prediction consistently delivers superior quality, speed, and temporal coherence. By removing the frame-by-frame constraint, our video generator surpasses state-of-the-art baselines on VBench while achieving faster inference and enabling seamless scaling to minute-long sequences. We hope this work will motivate rethinking sequence decomposition in video and other spatiotemporal domains.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T21:37:53Z",
+      "arxivId": "2509.24081",
+      "doi": "10.48550/arXiv.2509.24081",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv"
+      ],
+      "topicIds": [
+        "cv-image-video-generation"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.24081v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.24081",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.24081v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.24081"
+        }
+      ],
+      "semanticScholarId": "f4061dc9f3d303b0016c95dfd427b401a2783635",
+      "citationCount": 4,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.24081",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -62835,103 +62825,6 @@
       }
     },
     {
-      "id": "arxiv:2606.17030",
-      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
-      "authors": [
-        "Jie Zhang",
-        "Xiaoyue Chen",
-        "An-Jen Chen",
-        "Chen Lv",
-        "De-mei Li",
-        "G. Zhou",
-        "Hang Yin",
-        "Haoqi Yuan",
-        "Haoyang Li",
-        "Jiahao Li",
-        "Jiazhao Zhang",
-        "Jingren Zhou",
-        "Kaiyuan Gao",
-        "Kun Yan",
-        "Lihan Jiang",
-        "Ningyuan Tang",
-        "Peibin Lin",
-        "Qihang Peng",
-        "Sheng-Siang Yin",
-        "Tianhe Wu",
-        "Tianyi Yan",
-        "Xiao Xu",
-        "Yan Shu",
-        "Yanran Zhang",
-        "Yetong Wang",
-        "Yi Wang",
-        "Yilei Chen",
-        "Yixian Xu",
-        "Yiyang Huang",
-        "Yuxiang Chen",
-        "Zekai Zhang",
-        "Zhendong Wang",
-        "Zhi Lei",
-        "Zhixuan Liang",
-        "Zihao Liu",
-        "Zikai Zhou",
-        "Xiong-hui Chen",
-        "Chenfei Wu"
-      ],
-      "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driving, indoor navigation, and human-to-robot transfer. This unified formulation provides three promising application directions: synthetic data generation for policy training augmentation, scalable virtual environments for policy evaluation, and language-guided planning signals for downstream robot control. This is achieved through a three-part design: a) Double-Stream MMDiT with MLLM Action Encoding, where a 60-layer double-stream diffusion transformer couples frozen Qwen2.5-VL semantics with video-VAE latents through layer-wise joint attention; b) Embodied World Knowledge (EWK), an 8.6M video-text corpus (200M+ frames) with action-language mapping over 20+ embodiments and 500+ action categories; and c) General+Expert Progressive Curriculum, a two-stage training strategy that first learns general visual priors and then injects embodied specialization under a shared language interface. Extensive results show strong competitiveness: ranks 1st overall on EWMBench and DreamGen Bench, outperforms all open-source models on WorldModelBench and PBench. Additional zero-shot analyses on RoboTwin-IF benchmark further support robust generalization and multi-view consistency.",
-      "publishedAt": "2026-06-15",
-      "arxivId": "2606.17030",
-      "semanticScholarId": "50a37c68c2c78cdd926048155e0ed73f0b1c285a",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "navigation-planning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-image-video-generation"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2606.17030",
-      "pdfUrl": "https://arxiv.org/pdf/2606.17030",
-      "citationCount": 4,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2606.17030"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 52,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 4,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2606.15568",
       "title": "SAPS: Shared Autonomy for Policy Steering by Blending Teleoperation with a Pretrained VLA",
       "authors": [
@@ -71462,73 +71355,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04171",
-      "title": "Teaching Tiny VLA Models Where to Look and How to Move",
-      "authors": [
-        "Iok Tong Lei",
-        "Ying Jie Yap",
-        "Wei Huang",
-        "Qingchen Xie",
-        "Qianzhi Li",
-        "Yujie Zhang",
-        "Xiaolong Liu",
-        "Zhidong Deng"
-      ],
-      "abstract": "Tiny Vision-Language-Action models are appealing for real-time robotic control, but reducing model scale often weakens two capabilities essential for manipulation: task-conditioned spatial grounding and coherent action generation. We introduce XS-VLA, a lightweight framework that teaches tiny VLA policies\"where to look\"and\"how to move\"without increasing deployment-time model cost. For spatial grounding, Coarse-Grained Spatial Distillation uses Qwen3-VL-4B to produce teacher-derived coarse image-plane location labels for task-relevant objects, which are quantized into a spatial vocabulary and distilled into a SmolVLM2-0.25B backbone without human annotations. For action generation, Latent Flow Matching combines a CVAE-style latent variable with flow-based policy learning to organize multimodal demonstrations during training and produce stable action chunks at deployment. On LIBERO, XS-VLA improves average success from 82.8\\% to 90.3\\% over SmolVLA-0.25B and improves LIBERO-Long from 63.0\\% to 89.0\\%. In real-world experiments, we design three tasks covering single-arm placement, precision bimanual stacking, and long-horizon sequential coordination, where XS-VLA improves average task success from 21.7\\% to 65.0\\%. These results show that explicit spatial grounding and latent action-structure learning can make tiny VLA models effective for robotic manipulation.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04171",
-      "semanticScholarId": "565a3929ae5941ae560d13f14c7b369fe8c78526",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "vision-language-action-models",
-        "cv-vision-language-multimodal",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04171",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04171",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04171"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2606.30552",
       "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
       "authors": [
@@ -71856,6 +71682,103 @@
         {
           "kind": "pdf",
           "url": "https://arxiv.org/pdf/2606.23617"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 51,
+        "relevance": 24,
+        "evidence": 5,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2606.17030",
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+      "authors": [
+        "Jie Zhang",
+        "Xiaoyue Chen",
+        "An-Jen Chen",
+        "Chen Lv",
+        "De-mei Li",
+        "G. Zhou",
+        "Hang Yin",
+        "Haoqi Yuan",
+        "Haoyang Li",
+        "Jiahao Li",
+        "Jiazhao Zhang",
+        "Jingren Zhou",
+        "Kaiyuan Gao",
+        "Kun Yan",
+        "Lihan Jiang",
+        "Ningyuan Tang",
+        "Peibin Lin",
+        "Qihang Peng",
+        "Sheng-Siang Yin",
+        "Tianhe Wu",
+        "Tianyi Yan",
+        "Xiao Xu",
+        "Yan Shu",
+        "Yanran Zhang",
+        "Yetong Wang",
+        "Yi Wang",
+        "Yilei Chen",
+        "Yixian Xu",
+        "Yiyang Huang",
+        "Yuxiang Chen",
+        "Zekai Zhang",
+        "Zhendong Wang",
+        "Zhi Lei",
+        "Zhixuan Liang",
+        "Zihao Liu",
+        "Zikai Zhou",
+        "Xiong-hui Chen",
+        "Chenfei Wu"
+      ],
+      "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driving, indoor navigation, and human-to-robot transfer. This unified formulation provides three promising application directions: synthetic data generation for policy training augmentation, scalable virtual environments for policy evaluation, and language-guided planning signals for downstream robot control. This is achieved through a three-part design: a) Double-Stream MMDiT with MLLM Action Encoding, where a 60-layer double-stream diffusion transformer couples frozen Qwen2.5-VL semantics with video-VAE latents through layer-wise joint attention; b) Embodied World Knowledge (EWK), an 8.6M video-text corpus (200M+ frames) with action-language mapping over 20+ embodiments and 500+ action categories; and c) General+Expert Progressive Curriculum, a two-stage training strategy that first learns general visual priors and then injects embodied specialization under a shared language interface. Extensive results show strong competitiveness: ranks 1st overall on EWMBench and DreamGen Bench, outperforms all open-source models on WorldModelBench and PBench. Additional zero-shot analyses on RoboTwin-IF benchmark further support robust generalization and multi-view consistency.",
+      "publishedAt": "2026-06-15",
+      "arxivId": "2606.17030",
+      "semanticScholarId": "50a37c68c2c78cdd926048155e0ed73f0b1c285a",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "navigation-planning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-image-video-generation"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2606.17030",
+      "pdfUrl": "https://arxiv.org/pdf/2606.17030",
+      "citationCount": 4,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2606.17030"
         }
       ],
       "publicationStatus": "preprint",
@@ -76542,6 +76465,73 @@
           "reproducibility": 2,
           "empirical": 2,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04171",
+      "title": "Teaching Tiny VLA Models Where to Look and How to Move",
+      "authors": [
+        "Iok Tong Lei",
+        "Ying Jie Yap",
+        "Wei Huang",
+        "Qingchen Xie",
+        "Qianzhi Li",
+        "Yujie Zhang",
+        "Xiaolong Liu",
+        "Zhidong Deng"
+      ],
+      "abstract": "Tiny Vision-Language-Action models are appealing for real-time robotic control, but reducing model scale often weakens two capabilities essential for manipulation: task-conditioned spatial grounding and coherent action generation. We introduce XS-VLA, a lightweight framework that teaches tiny VLA policies\"where to look\"and\"how to move\"without increasing deployment-time model cost. For spatial grounding, Coarse-Grained Spatial Distillation uses Qwen3-VL-4B to produce teacher-derived coarse image-plane location labels for task-relevant objects, which are quantized into a spatial vocabulary and distilled into a SmolVLM2-0.25B backbone without human annotations. For action generation, Latent Flow Matching combines a CVAE-style latent variable with flow-based policy learning to organize multimodal demonstrations during training and produce stable action chunks at deployment. On LIBERO, XS-VLA improves average success from 82.8\\% to 90.3\\% over SmolVLA-0.25B and improves LIBERO-Long from 63.0\\% to 89.0\\%. In real-world experiments, we design three tasks covering single-arm placement, precision bimanual stacking, and long-horizon sequential coordination, where XS-VLA improves average task success from 21.7\\% to 65.0\\%. These results show that explicit spatial grounding and latent action-structure learning can make tiny VLA models effective for robotic manipulation.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04171",
+      "semanticScholarId": "565a3929ae5941ae560d13f14c7b369fe8c78526",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04171",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04171",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04171"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 0
         }
       }
     },
@@ -108579,18 +108569,18 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1357
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1362
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1025,
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1013,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-ai",
-  "generatedAt": "2026-10-12T11:13:36.454Z",
+  "generatedAt": "2026-10-13T10:54:56.713Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -19472,6 +19472,84 @@
       }
     },
     {
+      "id": "arxiv:2510.11996",
+      "title": "Prompt-Guided Spatial Understanding with RGB-D Transformers for Fine-Grained Object Relation Reasoning",
+      "authors": [
+        "Tanner Muturi",
+        "Blessing Agyei Kyem",
+        "Joshua Kofi Asamoah",
+        "Neema Jakisa Owor",
+        "Richard Dyzinela",
+        "Andrews Danyo",
+        "Yaw Adu-Gyamfi",
+        "Armstrong Aboah"
+      ],
+      "abstract": "Spatial reasoning in large-scale 3D environments such as warehouses remains a significant challenge for vision-language systems due to scene clutter, occlusions, and the need for precise spatial understanding. Existing models often struggle with generalization in such settings, as they rely heavily on local appearance and lack explicit spatial grounding. In this work, we introduce a dedicated spatial reasoning framework for the Physical AI Spatial Intelligence Warehouse dataset introduced in the Track 3 2025 AI City Challenge. Our approach enhances spatial comprehension by embedding mask dimensions in the form of bounding box coordinates directly into the input prompts, enabling the model to reason over object geometry and layout. We fine-tune the framework across four question categories namely: Distance Estimation, Object Counting, Multi-choice Grounding, and Spatial Relation Inference using task-specific supervision. To further improve consistency with the evaluation system, normalized answers are appended to the GPT response within the training set. Our comprehensive pipeline achieves a final score of 73.0606, placing 4th overall on the public leaderboard. These results demonstrate the effectiveness of structured prompt enrichment and targeted optimization in advancing spatial reasoning for real-world industrial environments.",
+      "publishedAt": "2025-10-13",
+      "updatedAt": "2025-10-13T22:51:20Z",
+      "arxivId": "2510.11996",
+      "doi": "10.1109/ICCVW69036.2025.00557",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.11996v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.11996",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.11996v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.11996"
+        }
+      ],
+      "semanticScholarId": "6a38421b3bd18dc3ae0aa70cba4f3f2f96f53501",
+      "venue": "2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "iccv",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.11040",
       "title": "Enabling Doctor-Centric Medical AI with LLMs through Workflow-Aligned Tasks and Benchmarks",
       "authors": [
@@ -19610,84 +19688,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.11996",
-      "title": "Prompt-Guided Spatial Understanding with RGB-D Transformers for Fine-Grained Object Relation Reasoning",
-      "authors": [
-        "Tanner Muturi",
-        "Blessing Agyei Kyem",
-        "Joshua Kofi Asamoah",
-        "Neema Jakisa Owor",
-        "Richard Dyzinela",
-        "Andrews Danyo",
-        "Yaw Adu-Gyamfi",
-        "Armstrong Aboah"
-      ],
-      "abstract": "Spatial reasoning in large-scale 3D environments such as warehouses remains a significant challenge for vision-language systems due to scene clutter, occlusions, and the need for precise spatial understanding. Existing models often struggle with generalization in such settings, as they rely heavily on local appearance and lack explicit spatial grounding. In this work, we introduce a dedicated spatial reasoning framework for the Physical AI Spatial Intelligence Warehouse dataset introduced in the Track 3 2025 AI City Challenge. Our approach enhances spatial comprehension by embedding mask dimensions in the form of bounding box coordinates directly into the input prompts, enabling the model to reason over object geometry and layout. We fine-tune the framework across four question categories namely: Distance Estimation, Object Counting, Multi-choice Grounding, and Spatial Relation Inference using task-specific supervision. To further improve consistency with the evaluation system, normalized answers are appended to the GPT response within the training set. Our comprehensive pipeline achieves a final score of 73.0606, placing 4th overall on the public leaderboard. These results demonstrate the effectiveness of structured prompt enrichment and targeted optimization in advancing spatial reasoning for real-world industrial environments.",
-      "publishedAt": "2025-10-13",
-      "updatedAt": "2025-10-13T22:51:20Z",
-      "arxivId": "2510.11996",
-      "doi": "10.1109/ICCVW69036.2025.00557",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-vision-language-multimodal",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.11996v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.11996",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.11996v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.11996"
-        }
-      ],
-      "semanticScholarId": "6a38421b3bd18dc3ae0aa70cba4f3f2f96f53501",
-      "venue": "2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "iccv",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -25474,80 +25474,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23737",
-      "title": "GRS-SLAM3R: Real-Time Dense SLAM with Gated Recurrent State",
-      "authors": [
-        "Guole Shen",
-        "Tianchen Deng",
-        "Yanbo Wang",
-        "Yongtao Chen",
-        "Yilin Shen",
-        "Jiuming Liu",
-        "Jingchuan Wang"
-      ],
-      "abstract": "DUSt3R-based end-to-end scene reconstruction has recently shown promising results in dense visual SLAM. However, most existing methods only use image pairs to estimate pointmaps, overlooking spatial memory and global consistency.To this end, we introduce GRS-SLAM3R, an end-to-end SLAM framework for dense scene reconstruction and pose estimation from RGB images without any prior knowledge of the scene or camera parameters. Unlike existing DUSt3R-based frameworks, which operate on all image pairs and predict per-pair point maps in local coordinate frames, our method supports sequentialized input and incrementally estimates metric-scale point clouds in the global coordinate. In order to improve consistent spatial correlation, we use a latent state for spatial memory and design a transformer-based gated update module to reset and update the spatial memory that continuously aggregates and tracks relevant 3D information across frames. Furthermore, we partition the scene into submaps, apply local alignment within each submap, and register all submaps into a common world frame using relative constraints, producing a globally consistent map. Experiments on various datasets show that our framework achieves superior reconstruction accuracy while maintaining real-time performance.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T08:33:34Z",
-      "arxivId": "2509.23737",
-      "doi": "10.48550/arXiv.2509.23737",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cv-three-dimensional-vision"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23737v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23737",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23737v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23737"
-        }
-      ],
-      "semanticScholarId": "994ed1331e3da3ed5926ce2f23d5c8f8e9f7751d",
-      "citationCount": 4,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23737",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.22558",
       "title": "StepORLM: A Self-Evolving Framework With Generative Process Supervision For Operations Research Language Models",
       "authors": [
@@ -29102,76 +29028,6 @@
           "citations": 3,
           "reproducibility": 2,
           "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.10020",
-      "title": "Adaptive Reasoning and Acting in Medical Language Agents",
-      "authors": [
-        "Abhishek Dutta",
-        "Yen-Che Hsiao"
-      ],
-      "abstract": "This paper presents an innovative large language model (LLM) agent framework for enhancing diagnostic accuracy in simulated clinical environments using the AgentClinic benchmark. The proposed automatic correction enables doctor agents to iteratively refine their reasoning and actions following incorrect diagnoses, fostering improved decision-making over time. Experiments show that the implementation of the adaptive LLM-based doctor agents achieve correct diagnoses through dynamic interactions with simulated patients. The evaluations highlight the capacity of autonomous agents to adapt and improve in complex medical scenarios. Future enhancements will focus on refining the algorithm and expanding its applicability across a wider range of tasks and different large language models.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-10-13T21:45:16Z",
-      "arxivId": "2410.10020",
-      "doi": "10.48550/arXiv.2410.10020",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "ai-agents-tool-use",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.10020v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.10020",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10020v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10020"
-        }
-      ],
-      "semanticScholarId": "2a4e1b729b70e85ef5ff412e890bc4bc96b2d9b0",
-      "citationCount": 10,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 27,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2410.10020",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -34421,6 +34277,80 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23737",
+      "title": "GRS-SLAM3R: Real-Time Dense SLAM with Gated Recurrent State",
+      "authors": [
+        "Guole Shen",
+        "Tianchen Deng",
+        "Yanbo Wang",
+        "Yongtao Chen",
+        "Yilin Shen",
+        "Jiuming Liu",
+        "Jingchuan Wang"
+      ],
+      "abstract": "DUSt3R-based end-to-end scene reconstruction has recently shown promising results in dense visual SLAM. However, most existing methods only use image pairs to estimate pointmaps, overlooking spatial memory and global consistency.To this end, we introduce GRS-SLAM3R, an end-to-end SLAM framework for dense scene reconstruction and pose estimation from RGB images without any prior knowledge of the scene or camera parameters. Unlike existing DUSt3R-based frameworks, which operate on all image pairs and predict per-pair point maps in local coordinate frames, our method supports sequentialized input and incrementally estimates metric-scale point clouds in the global coordinate. In order to improve consistent spatial correlation, we use a latent state for spatial memory and design a transformer-based gated update module to reset and update the spatial memory that continuously aggregates and tracks relevant 3D information across frames. Furthermore, we partition the scene into submaps, apply local alignment within each submap, and register all submaps into a common world frame using relative constraints, producing a globally consistent map. Experiments on various datasets show that our framework achieves superior reconstruction accuracy while maintaining real-time performance.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T08:33:34Z",
+      "arxivId": "2509.23737",
+      "doi": "10.48550/arXiv.2509.23737",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cv-three-dimensional-vision"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23737v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23737",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23737v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23737"
+        }
+      ],
+      "semanticScholarId": "994ed1331e3da3ed5926ce2f23d5c8f8e9f7751d",
+      "citationCount": 4,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23737",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -43276,85 +43206,6 @@
       }
     },
     {
-      "id": "arxiv:2410.11578",
-      "title": "STA-Unet: Rethink the semantic redundant for Medical Imaging Segmentation",
-      "authors": [
-        "Vamsi Krishna Vasa",
-        "Wenhui Zhu",
-        "Xiwen Chen",
-        "Peijie Qiu",
-        "Xuanzhao Dong",
-        "Yalin Wang"
-      ],
-      "abstract": "In recent years, significant progress has been made in the medical image analysis domain using convolutional neural networks (CNNs). In particular, deep neural networks based on a U-shaped architecture (UNet) with skip connections have been adopted for several medical imaging tasks, including organ segmentation. Despite their great success, CNNs are not good at learning global or semantic features. Especially ones that require human-like reasoning to understand the context. Many UNet architectures attempted to adjust with the introduction of Transformer-based self-attention mechanisms, and notable gains in performance have been noted. However, the transformers are inherently flawed with redundancy to learn at shallow layers, which often leads to an increase in the computation of attention from the nearby pixels offering limited information. The recently introduced Super Token Attention (STA) mechanism adapts the concept of superpixels from pixel space to token space, using super tokens as compact visual representations. This approach tackles the redundancy by learning efficient global representations in vision transformers, especially for the shallow layers. In this work, we introduce the STA module in the UNet architecture (STA-UNet), to limit redundancy without losing rich information. Experimental results on four publicly available datasets demonstrate the superiority of STA-UNet over existing state-of-the-art architectures in terms of Dice score and IOU for organ segmentation tasks. The code is available at \\url{https://github.com/Retinal-Research/STA-UNet}.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-10-13T07:19:46Z",
-      "arxivId": "2410.11578",
-      "doi": "10.48550/arXiv.2410.11578",
-      "categories": [
-        "eess.IV",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.11578v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.11578",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/Retinal-Research/STA-UNet}"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11578v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.11578"
-        }
-      ],
-      "semanticScholarId": "e53d30820b4f2536cc02dd08de76f3672b00fc9e",
-      "citationCount": 7,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.11578",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.12669",
       "title": "GeoFitBench-LLM: A Benchmark for Assessing Large Language Models' Capabilities in Geospatial Data Requirements Elicitation for Geo-Analytic Tasks",
       "authors": [
@@ -46354,78 +46205,6 @@
         {
           "kind": "pdf",
           "url": "https://arxiv.org/pdf/2607.12659"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 10,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.04179",
-      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
-      "authors": [
-        "Zhaohong Liu",
-        "Hao Ye",
-        "Xianlin Zhang",
-        "Mengshi Qi"
-      ],
-      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04179",
-      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04179",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04179"
         }
       ],
       "publicationStatus": "preprint",
@@ -51856,53 +51635,51 @@
       }
     },
     {
-      "id": "arxiv:2607.04265",
-      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "id": "arxiv:2607.04179",
+      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
       "authors": [
-        "Angen Ye",
-        "Weijie Ke",
-        "Xiaofeng Wang",
-        "Xinze Chen",
-        "Chaojun Ni",
-        "Guosheng Zhao",
-        "Boyuan Wang",
-        "Zheng Zhu",
-        "Junjie Xie",
-        "Dapeng Zhang"
+        "Zhaohong Liu",
+        "Hao Ye",
+        "Xianlin Zhang",
+        "Mengshi Qi"
       ],
-      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
       "publishedAt": "2026-07-05",
-      "arxivId": "2607.04265",
-      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "arxivId": "2607.04179",
+      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
       "categories": [],
       "fieldIds": [
         "embodied-intelligence",
         "cs-ai",
+        "cs-cl",
+        "cs-cv",
         "cs-lg"
       ],
       "topicIds": [
-        "embodied-foundation-models",
         "imitation-reinforcement-learning",
-        "robot-manipulation",
+        "navigation-planning",
         "simulation-datasets-evaluation",
-        "ai-safety-alignment",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety",
+        "cv-vision-language-multimodal",
         "lg-reinforcement-learning"
       ],
       "sources": [
         "semantic-scholar"
       ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04265",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
-      "citationCount": 1,
+      "sourceUrl": "https://arxiv.org/abs/2607.04179",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
+      "citationCount": 0,
       "influentialCitationCount": 0,
       "artifacts": [
         {
           "kind": "code",
-          "url": "https://github.com/YeanRoot/HALO-WA"
+          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04265"
+          "url": "https://arxiv.org/pdf/2607.04179"
         }
       ],
       "publicationStatus": "preprint",
@@ -51910,21 +51687,21 @@
       "score": {
         "baseTotal": 56,
         "relevance": 24,
-        "evidence": 9,
-        "freshness": 5,
+        "evidence": 10,
+        "freshness": 4,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
           "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 0,
-          "citations": 1,
+          "citations": 0,
           "reproducibility": 4,
-          "empirical": 4,
+          "empirical": 6,
           "corroboration": 0
         }
       }
@@ -61561,6 +61338,80 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04265",
+      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "authors": [
+        "Angen Ye",
+        "Weijie Ke",
+        "Xiaofeng Wang",
+        "Xinze Chen",
+        "Chaojun Ni",
+        "Guosheng Zhao",
+        "Boyuan Wang",
+        "Zheng Zhu",
+        "Junjie Xie",
+        "Dapeng Zhang"
+      ],
+      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04265",
+      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04265",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/YeanRoot/HALO-WA"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04265"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 9,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 4,
           "corroboration": 0
         }
       }
@@ -82960,103 +82811,6 @@
       }
     },
     {
-      "id": "arxiv:2606.17030",
-      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
-      "authors": [
-        "Jie Zhang",
-        "Xiaoyue Chen",
-        "An-Jen Chen",
-        "Chen Lv",
-        "De-mei Li",
-        "G. Zhou",
-        "Hang Yin",
-        "Haoqi Yuan",
-        "Haoyang Li",
-        "Jiahao Li",
-        "Jiazhao Zhang",
-        "Jingren Zhou",
-        "Kaiyuan Gao",
-        "Kun Yan",
-        "Lihan Jiang",
-        "Ningyuan Tang",
-        "Peibin Lin",
-        "Qihang Peng",
-        "Sheng-Siang Yin",
-        "Tianhe Wu",
-        "Tianyi Yan",
-        "Xiao Xu",
-        "Yan Shu",
-        "Yanran Zhang",
-        "Yetong Wang",
-        "Yi Wang",
-        "Yilei Chen",
-        "Yixian Xu",
-        "Yiyang Huang",
-        "Yuxiang Chen",
-        "Zekai Zhang",
-        "Zhendong Wang",
-        "Zhi Lei",
-        "Zhixuan Liang",
-        "Zihao Liu",
-        "Zikai Zhou",
-        "Xiong-hui Chen",
-        "Chenfei Wu"
-      ],
-      "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driving, indoor navigation, and human-to-robot transfer. This unified formulation provides three promising application directions: synthetic data generation for policy training augmentation, scalable virtual environments for policy evaluation, and language-guided planning signals for downstream robot control. This is achieved through a three-part design: a) Double-Stream MMDiT with MLLM Action Encoding, where a 60-layer double-stream diffusion transformer couples frozen Qwen2.5-VL semantics with video-VAE latents through layer-wise joint attention; b) Embodied World Knowledge (EWK), an 8.6M video-text corpus (200M+ frames) with action-language mapping over 20+ embodiments and 500+ action categories; and c) General+Expert Progressive Curriculum, a two-stage training strategy that first learns general visual priors and then injects embodied specialization under a shared language interface. Extensive results show strong competitiveness: ranks 1st overall on EWMBench and DreamGen Bench, outperforms all open-source models on WorldModelBench and PBench. Additional zero-shot analyses on RoboTwin-IF benchmark further support robust generalization and multi-view consistency.",
-      "publishedAt": "2026-06-15",
-      "arxivId": "2606.17030",
-      "semanticScholarId": "50a37c68c2c78cdd926048155e0ed73f0b1c285a",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "navigation-planning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cv-image-video-generation"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2606.17030",
-      "pdfUrl": "https://arxiv.org/pdf/2606.17030",
-      "citationCount": 4,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2606.17030"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 52,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 4,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2606.15285",
       "title": "Acting While Understanding: Asynchronous Semantic-Action Decoupling for Real-Time Vision-Language-Action Models",
       "authors": [
@@ -97102,70 +96856,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04409",
-      "title": "Learning Task-Sufficient World Models by Synergizing Agentic Exploration and Structured Modeling",
-      "authors": [
-        "Fan Feng",
-        "Yujian Zheng",
-        "Minghao Fu",
-        "Yongqiang Chen",
-        "Guan-Hong Chen",
-        "Kevin P. Murphy",
-        "Biwei Huang",
-        "Kun Zhang"
-      ],
-      "abstract": "Learning and planning in imagination using world models provides an effective paradigm for training agents for decision-making. However, existing approaches often rely on high-dimensional latent spaces or generic visual embeddings that retain many factors irrelevant to control, limiting efficiency and generalization across tasks. To this end, we study how agents can learn world models with representations that are task-specific, minimal, and sufficient for decision-making. We achieve this via a closed-loop synergy between the agent and the world model, in which structured world-model learning distills task-sufficient representations from informative interaction data. On the agent side, agents actively probe the environment to collect informative trajectories that expose task-relevant latent factors, guided by an adaptive curriculum. On the world-model side, we learn structured representations over observations to distill compact, task-sufficient latent states from the collected interaction data. This synergy enables the empirical recovery of task-sufficient latent representations that capture all control-relevant factors. Leveraging these representations, the resulting policies achieve improved sample efficiency and generalization, including generalization across skills, object-skill compositions, and previously unseen tasks on standard continuous-control and robotic-manipulation benchmarks.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04409",
-      "semanticScholarId": "24be3c3699ba4d357e200dcd87c60a06be98cef0",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04409",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04409",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04409"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.01084",
       "title": "Can Agents Generalize to the Open World? Unveiling the Fragility of Static Training in Tool Use",
       "authors": [
@@ -97582,6 +97272,103 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 8,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2606.17030",
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+      "authors": [
+        "Jie Zhang",
+        "Xiaoyue Chen",
+        "An-Jen Chen",
+        "Chen Lv",
+        "De-mei Li",
+        "G. Zhou",
+        "Hang Yin",
+        "Haoqi Yuan",
+        "Haoyang Li",
+        "Jiahao Li",
+        "Jiazhao Zhang",
+        "Jingren Zhou",
+        "Kaiyuan Gao",
+        "Kun Yan",
+        "Lihan Jiang",
+        "Ningyuan Tang",
+        "Peibin Lin",
+        "Qihang Peng",
+        "Sheng-Siang Yin",
+        "Tianhe Wu",
+        "Tianyi Yan",
+        "Xiao Xu",
+        "Yan Shu",
+        "Yanran Zhang",
+        "Yetong Wang",
+        "Yi Wang",
+        "Yilei Chen",
+        "Yixian Xu",
+        "Yiyang Huang",
+        "Yuxiang Chen",
+        "Zekai Zhang",
+        "Zhendong Wang",
+        "Zhi Lei",
+        "Zhixuan Liang",
+        "Zihao Liu",
+        "Zikai Zhou",
+        "Xiong-hui Chen",
+        "Chenfei Wu"
+      ],
+      "abstract": "We introduce Qwen-RobotWorld, a language-conditioned video world model for embodied intelligence. With natural language as a unified action interface, it predicts physically grounded future visual trajectories from current observations across robotic manipulation, autonomous driving, indoor navigation, and human-to-robot transfer. This unified formulation provides three promising application directions: synthetic data generation for policy training augmentation, scalable virtual environments for policy evaluation, and language-guided planning signals for downstream robot control. This is achieved through a three-part design: a) Double-Stream MMDiT with MLLM Action Encoding, where a 60-layer double-stream diffusion transformer couples frozen Qwen2.5-VL semantics with video-VAE latents through layer-wise joint attention; b) Embodied World Knowledge (EWK), an 8.6M video-text corpus (200M+ frames) with action-language mapping over 20+ embodiments and 500+ action categories; and c) General+Expert Progressive Curriculum, a two-stage training strategy that first learns general visual priors and then injects embodied specialization under a shared language interface. Extensive results show strong competitiveness: ranks 1st overall on EWMBench and DreamGen Bench, outperforms all open-source models on WorldModelBench and PBench. Additional zero-shot analyses on RoboTwin-IF benchmark further support robust generalization and multi-view consistency.",
+      "publishedAt": "2026-06-15",
+      "arxivId": "2606.17030",
+      "semanticScholarId": "50a37c68c2c78cdd926048155e0ed73f0b1c285a",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "navigation-planning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cv-image-video-generation"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2606.17030",
+      "pdfUrl": "https://arxiv.org/pdf/2606.17030",
+      "citationCount": 4,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2606.17030"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 51,
+        "relevance": 24,
+        "evidence": 5,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 0
         }
       }
@@ -103446,6 +103233,70 @@
           "reproducibility": 4,
           "empirical": 0,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04409",
+      "title": "Learning Task-Sufficient World Models by Synergizing Agentic Exploration and Structured Modeling",
+      "authors": [
+        "Fan Feng",
+        "Yujian Zheng",
+        "Minghao Fu",
+        "Yongqiang Chen",
+        "Guan-Hong Chen",
+        "Kevin P. Murphy",
+        "Biwei Huang",
+        "Kun Zhang"
+      ],
+      "abstract": "Learning and planning in imagination using world models provides an effective paradigm for training agents for decision-making. However, existing approaches often rely on high-dimensional latent spaces or generic visual embeddings that retain many factors irrelevant to control, limiting efficiency and generalization across tasks. To this end, we study how agents can learn world models with representations that are task-specific, minimal, and sufficient for decision-making. We achieve this via a closed-loop synergy between the agent and the world model, in which structured world-model learning distills task-sufficient representations from informative interaction data. On the agent side, agents actively probe the environment to collect informative trajectories that expose task-relevant latent factors, guided by an adaptive curriculum. On the world-model side, we learn structured representations over observations to distill compact, task-sufficient latent states from the collected interaction data. This synergy enables the empirical recovery of task-sufficient latent representations that capture all control-relevant factors. Leveraging these representations, the resulting policies achieve improved sample efficiency and generalization, including generalization across skills, object-skill compositions, and previously unseen tasks on standard continuous-control and robotic-manipulation benchmarks.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04409",
+      "semanticScholarId": "24be3c3699ba4d357e200dcd87c60a06be98cef0",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04409",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04409",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04409"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 0
         }
       }
     },
@@ -142257,24 +142108,24 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1956
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1955
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1295,
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1281,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
-    "candidateCount": 1979,
+    "candidateCount": 1977,
     "featuredCount": 3,
     "libraryMatchCount": 7,
     "seedCount": 0,

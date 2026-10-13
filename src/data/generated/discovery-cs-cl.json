@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cl",
-  "generatedAt": "2026-10-12T11:13:36.454Z",
+  "generatedAt": "2026-10-13T10:54:56.713Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -15729,80 +15729,6 @@
       }
     },
     {
-      "id": "arxiv:2509.23698",
-      "title": "VIVA+: Human-Centered Situational Decision-Making",
-      "authors": [
-        "Zhe Hu",
-        "Yixiao Ren",
-        "Guanzhong Liu",
-        "Jing Li",
-        "Yu Yin"
-      ],
-      "abstract": "Multimodal Large Language Models (MLLMs) show promising results for embodied agents in operating meaningfully in complex, human-centered environments. Yet, evaluating their capacity for nuanced, human-like reasoning and decision-making remains challenging. In this work, we introduce VIVA+, a cognitively grounded benchmark for evaluating the reasoning and decision-making of MLLMs in human-centered situations. VIVA+ consists of 1,317 real-world situations paired with 6,373 multiple-choice questions, targeting three core abilities for decision-making: (1) Foundational Situation Comprehension, (2) Context-Driven Action Justification, and (3) Reflective Reasoning. Together, these dimensions provide a systematic framework for assessing a model's ability to perceive, reason, and act in socially meaningful ways. We evaluate the latest commercial and open-source models on VIVA+, where we reveal distinct performance patterns and highlight significant challenges. We further explore targeted training and multi-step reasoning strategies, which yield consistent performance improvements. Finally, our in-depth analysis highlights current model limitations and provides actionable insights for advancing MLLMs toward more robust, context-aware, and socially adept decision-making in real-world settings.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T07:13:11Z",
-      "arxivId": "2509.23698",
-      "doi": "10.48550/arXiv.2509.23698",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23698v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23698",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23698v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23698"
-        }
-      ],
-      "semanticScholarId": "68fb4a6fac2486577cd1698b9218c7cdfc618ae6",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.22589",
       "title": "ArabJobs: A Multinational Corpus of Arabic Job Ads",
       "authors": [
@@ -20000,72 +19926,75 @@
       }
     },
     {
-      "id": "arxiv:2509.23715",
-      "title": "Do LLMs Understand Romanian Driving Laws? A Study on Multimodal and Fine-Tuned Question Answering",
+      "id": "arxiv:2509.23698",
+      "title": "VIVA+: Human-Centered Situational Decision-Making",
       "authors": [
-        "Eduard Barbu",
-        "Adrian Marius Dumitran"
+        "Zhe Hu",
+        "Yixiao Ren",
+        "Guanzhong Liu",
+        "Jing Li",
+        "Yu Yin"
       ],
-      "abstract": "Ensuring that both new and experienced drivers master current traffic rules is critical to road safety. This paper evaluates Large Language Models (LLMs) on Romanian driving-law QA with explanation generation. We release a 1{,}208-question dataset (387 multimodal) and compare text-only and multimodal SOTA systems, then measure the impact of domain-specific fine-tuning for Llama 3.1-8B-Instruct and RoLlama 3.1-8B-Instruct. SOTA models perform well, but fine-tuned 8B models are competitive. Textual descriptions of images outperform direct visual input. Finally, an LLM-as-a-Judge assesses explanation quality, revealing self-preference bias. The study informs explainable QA for less-resourced languages.",
+      "abstract": "Multimodal Large Language Models (MLLMs) show promising results for embodied agents in operating meaningfully in complex, human-centered environments. Yet, evaluating their capacity for nuanced, human-like reasoning and decision-making remains challenging. In this work, we introduce VIVA+, a cognitively grounded benchmark for evaluating the reasoning and decision-making of MLLMs in human-centered situations. VIVA+ consists of 1,317 real-world situations paired with 6,373 multiple-choice questions, targeting three core abilities for decision-making: (1) Foundational Situation Comprehension, (2) Context-Driven Action Justification, and (3) Reflective Reasoning. Together, these dimensions provide a systematic framework for assessing a model's ability to perceive, reason, and act in socially meaningful ways. We evaluate the latest commercial and open-source models on VIVA+, where we reveal distinct performance patterns and highlight significant challenges. We further explore targeted training and multi-step reasoning strategies, which yield consistent performance improvements. Finally, our in-depth analysis highlights current model limitations and provides actionable insights for advancing MLLMs toward more robust, context-aware, and socially adept decision-making in real-world settings.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T07:58:00Z",
-      "arxivId": "2509.23715",
-      "doi": "10.48550/arXiv.2509.23715",
+      "updatedAt": "2025-09-28T07:13:11Z",
+      "arxivId": "2509.23698",
+      "doi": "10.48550/arXiv.2509.23698",
       "categories": [
-        "cs.CL",
-        "cs.LG"
+        "cs.CL"
       ],
       "fieldIds": [
         "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
+        "embodied-intelligence",
+        "cs-ai"
       ],
       "topicIds": [
         "multimodal-world-models",
         "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cl-retrieval-question-answering"
+        "ai-reasoning-planning",
+        "cl-language-modeling"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23715v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23715",
+      "sourceUrl": "http://arxiv.org/abs/2509.23698v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23698",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23715v1"
+          "url": "https://arxiv.org/pdf/2509.23698v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23715"
+          "url": "https://arxiv.org/pdf/2509.23698"
         }
       ],
-      "semanticScholarId": "39ffd1ffbfc29352b1379a950393b1016310d599",
+      "semanticScholarId": "68fb4a6fac2486577cd1698b9218c7cdfc618ae6",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
       "citationCount": 0,
       "influentialCitationCount": 0,
-      "publicationStatus": "formal",
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "core",
       "personalization": {},
       "score": {
         "baseTotal": 62,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 20,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2509.23715",
+          "本方向核心 venue：Conference on Empirical Methods in Natural Language Processing",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
-          "publication": 6,
+          "publication": 10,
           "citations": 0,
           "reproducibility": 0,
-          "empirical": 4,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -26762,72 +26691,72 @@
       }
     },
     {
-      "id": "arxiv:2509.23653",
-      "title": "Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models",
+      "id": "arxiv:2509.23715",
+      "title": "Do LLMs Understand Romanian Driving Laws? A Study on Multimodal and Fine-Tuned Question Answering",
       "authors": [
-        "Zemin Huang",
-        "Yuhang Wang",
-        "Zhiyang Chen",
-        "Guo-Jun Qi"
+        "Eduard Barbu",
+        "Adrian Marius Dumitran"
       ],
-      "abstract": "Mask-based Diffusion Language Models (DLMs) struggle to revise incorrect tokens: once a token is generated, it typically remains fixed. The key challenge is to identify potential errors in the inputs. In this paper, we propose \\emph{\\underline{Rem}asking-\\underline{e}nabled \\underline{Di}ffusion Language Model (RemeDi}, a mask-based DLM that introduces \\emph{remasking} as another fundamental mechanism, enabling more flexible text refinement in diffusion-based text generation. To achieve this, RemeDi jointly predicts token distributions and per-token confidence scores at each step. The confidence scores determine which tokens to be unmasked after the current step, allowing the model to identify tokens with low quality and remask them. These remasked tokens can be resampled with richer context in subsequent steps. We design a remask-aware pipeline to train this ability, including supervised fine-tuning which teaches the model to detect and remask incorrect tokens in addition to predict mask tokens, and reinforcement learning which optimizes full generation trajectories toward higher rewards. Experiments show that RemeDi achieves the state-of-the-art results among open-source DLMs on multiple datasets.",
+      "abstract": "Ensuring that both new and experienced drivers master current traffic rules is critical to road safety. This paper evaluates Large Language Models (LLMs) on Romanian driving-law QA with explanation generation. We release a 1{,}208-question dataset (387 multimodal) and compare text-only and multimodal SOTA systems, then measure the impact of domain-specific fine-tuning for Llama 3.1-8B-Instruct and RoLlama 3.1-8B-Instruct. SOTA models perform well, but fine-tuned 8B models are competitive. Textual descriptions of images outperform direct visual input. Finally, an LLM-as-a-Judge assesses explanation quality, revealing self-preference bias. The study informs explainable QA for less-resourced languages.",
       "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T05:39:49Z",
-      "arxivId": "2509.23653",
-      "doi": "10.48550/arXiv.2509.23653",
+      "updatedAt": "2025-09-28T07:58:00Z",
+      "arxivId": "2509.23715",
+      "doi": "10.48550/arXiv.2509.23715",
       "categories": [
-        "cs.CL"
+        "cs.CL",
+        "cs.LG"
       ],
       "fieldIds": [
         "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
+        "cs-lg",
+        "embodied-intelligence"
       ],
       "topicIds": [
-        "imitation-reinforcement-learning",
+        "multimodal-world-models",
         "simulation-datasets-evaluation",
         "cl-language-modeling",
-        "lg-reinforcement-learning"
+        "cl-retrieval-question-answering"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23653v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23653",
+      "sourceUrl": "http://arxiv.org/abs/2509.23715v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23715",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23653v1"
+          "url": "https://arxiv.org/pdf/2509.23715v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23653"
+          "url": "https://arxiv.org/pdf/2509.23715"
         }
       ],
-      "semanticScholarId": "396fdacf5afe126e69d1e9364fe04462726b47bc",
-      "citationCount": 31,
-      "influentialCitationCount": 6,
+      "semanticScholarId": "39ffd1ffbfc29352b1379a950393b1016310d599",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 3,
-        "completeness": 15,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23653",
-          "包含明确的量化、对比或消融实验",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2509.23715",
+          "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 3,
+          "citations": 0,
           "reproducibility": 0,
-          "empirical": 6,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -30160,79 +30089,6 @@
       }
     },
     {
-      "id": "arxiv:2607.04179",
-      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
-      "authors": [
-        "Zhaohong Liu",
-        "Hao Ye",
-        "Xianlin Zhang",
-        "Mengshi Qi"
-      ],
-      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04179",
-      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cl-evaluation-safety",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04179",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04179"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 27,
-        "evidence": 10,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
       "id": "arxiv:2606.29148",
       "title": "GPC: Large-Scale Generative Pretraining for Transferable Motor Control",
       "authors": [
@@ -32406,6 +32262,77 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.23653",
+      "title": "Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models",
+      "authors": [
+        "Zemin Huang",
+        "Yuhang Wang",
+        "Zhiyang Chen",
+        "Guo-Jun Qi"
+      ],
+      "abstract": "Mask-based Diffusion Language Models (DLMs) struggle to revise incorrect tokens: once a token is generated, it typically remains fixed. The key challenge is to identify potential errors in the inputs. In this paper, we propose \\emph{\\underline{Rem}asking-\\underline{e}nabled \\underline{Di}ffusion Language Model (RemeDi}, a mask-based DLM that introduces \\emph{remasking} as another fundamental mechanism, enabling more flexible text refinement in diffusion-based text generation. To achieve this, RemeDi jointly predicts token distributions and per-token confidence scores at each step. The confidence scores determine which tokens to be unmasked after the current step, allowing the model to identify tokens with low quality and remask them. These remasked tokens can be resampled with richer context in subsequent steps. We design a remask-aware pipeline to train this ability, including supervised fine-tuning which teaches the model to detect and remask incorrect tokens in addition to predict mask tokens, and reinforcement learning which optimizes full generation trajectories toward higher rewards. Experiments show that RemeDi achieves the state-of-the-art results among open-source DLMs on multiple datasets.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T05:39:49Z",
+      "arxivId": "2509.23653",
+      "doi": "10.48550/arXiv.2509.23653",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23653v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23653",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23653v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23653"
+        }
+      ],
+      "semanticScholarId": "396fdacf5afe126e69d1e9364fe04462726b47bc",
+      "citationCount": 31,
+      "influentialCitationCount": 6,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 19,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23653",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 3,
+          "reproducibility": 0,
+          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -35753,78 +35680,6 @@
       }
     },
     {
-      "id": "arxiv:2410.09775",
-      "title": "EasyJudge: an Easy-to-use Tool for Comprehensive Response Evaluation of LLMs",
-      "authors": [
-        "Yijie Li",
-        "Yuan Sun"
-      ],
-      "abstract": "Recently, there has been a growing trend of employing large language models (LLMs) to judge the quality of other LLMs. Many studies have adopted closed-source models, mainly using GPT-4 as the evaluator. However, due to the closed-source nature of the GPT-4 model, employing it as an evaluator has resulted in issues including transparency, controllability, and cost-effectiveness. Some researchers have turned to using fine-tuned open-source LLMs as evaluators. However, existing open-source evaluation LLMs generally lack a user-friendly visualization tool, and they have not been optimized for accelerated model inference, which causes inconvenience for researchers with limited resources and those working across different fields. This paper presents EasyJudge, a model developed to evaluate significant language model responses. It is lightweight, precise, efficient, and user-friendly, featuring an intuitive visualization interface for ease of deployment and use. EasyJudge uses detailed datasets and refined prompts for model optimization, achieving strong consistency with human and proprietary model evaluations. The model optimized with quantitative methods enables EasyJudge to run efficiently on consumer-grade GPUs or even CPUs. We also provide detailed analysis and case studies to further reveal the potential of our method.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-10-13T08:24:12Z",
-      "arxivId": "2410.09775",
-      "doi": "10.48550/arXiv.2410.09775",
-      "categories": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.09775v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.09775",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.09775v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.09775"
-        }
-      ],
-      "semanticScholarId": "7a92c2d382810346e4388b86b8f1611246a3b401",
-      "venue": "International Conference on Computational Linguistics",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "coling",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：International Conference on Computational Linguistics",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.13207",
       "title": "SharP: Soft and Hard Prompt-Guided Augmentation with LLM for Low Resource Fake News Detection",
       "authors": [
@@ -36960,6 +36815,79 @@
           "reproducibility": 4,
           "empirical": 6,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04179",
+      "title": "CritiqueDriveVLM: From Verifier-Guided Reinforcement Learning to Latent Thought Distillation for Autonomous Driving",
+      "authors": [
+        "Zhaohong Liu",
+        "Hao Ye",
+        "Xianlin Zhang",
+        "Mengshi Qi"
+      ],
+      "abstract": "End-to-end Vision-Language Models (VLMs) show immense potential in autonomous driving. However, standard Supervised Fine-Tuning (SFT) often suffers from reasoning hallucinations and conservative biases. While traditional tool-augmented frameworks and Chain-of-Thought (CoT) approaches mitigate these issues, they incur exorbitant token consumption and unacceptable latency, rendering real-time deployment impractical. To resolve this reliability-efficiency trade-off, we propose CritiqueDriveVLM, a novel unified three-stage framework internalizing reasoning directly into the VLM. First, we introduce Critique-Driven Multi-Turn Reinforcement Learning (RL) guided by a multi-dimensional verifier. By providing granular scalar feedback and a multi-turn penalty, we force the policy to internalize logical deduction, cultivating a robust System-2 Teacher that achieves high accuracy without fragile external tools. Subsequently, we propose Latent Thought Distillation to overcome the latency bottleneck. By aligning the Student's latent representations with the Teacher's fully converged reasoning states, we compress deep logical capabilities into a fast, CoT-free System-1 Student. Extensive experiments on the widely-used DriveLMM-01 benchmark demonstrate remarkable improvements. Compared to the base model, our tool-free Teacher significantly boosts Multiple Choice Quality (MCQ) from 55.54% to a state-of-the-art 76.54%. Crucially, our distilled Student preserves competitive reasoning depth while drastically minimizing generation length to an average of merely 28 tokens. This slashes inference latency by 88% (from 3482 ms to 416 ms), paving a highly robust pathway for low-latency autonomous driving.Our source code is available at https://github.com/MICLAB-BUPT/CritiqueDriveVLM.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04179",
+      "semanticScholarId": "617d6c36b2eff092f77d9e70e065c6f16f447b9c",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cl-evaluation-safety",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04179",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04179",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/MICLAB-BUPT/CritiqueDriveVLM"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04179"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 27,
+        "evidence": 10,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "提供可复现代码",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 6,
+          "corroboration": 0
         }
       }
     },
@@ -40564,78 +40492,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2509.24147",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.23979",
-      "title": "ByteSized32Refactored: Towards an Extensible Interactive Text Games Corpus for LLM World Modeling and Evaluation",
-      "authors": [
-        "Haonan Wang",
-        "Junfeng Sun",
-        "Xingdi Yuan",
-        "Ruoyao Wang",
-        "Ziang Xiao"
-      ],
-      "abstract": "Simulating interactive world models remains a core challenge in Large Language Models(LLMs). In this work, we introduce the ByteSized32Refactored, a refactored, modular, and extensible implementation of the original ByteSized32 corpus to explore the task of text game generation. We further optimize the code structure of each text game and create the GameBasic.py foundation library, which centralizes common logic across all 32 games by abstracting 7 base classes (GameObject, etc.) into reusable modules, thereby reducing from 20k to 10k total lines of Python code compared to the original Bytesized32. Our refactored implementation enables extendability - with our centralized design, ByteSized32Refactored can be more efficiently extended to include text games of new scenarios and specifications by reusing the shared logic and functionalities. Extensive experiments with GPT-4o demonstrate a mix of performance - with Bytesized32Refactored, the generated text games for unseen scenarios showcase quality improvements on two of the four evaluation dimensions while decreases on the other two, indicating that the hierarchical structure of the refactored code presents new challenges for LLMs. Overall, we highlight that our extensible code structure, centered on the foundation library and the modular optimization, not only facilitates LLM adaptation to environment specifications but also establishes a scalable environment that supports future extensions.",
-      "publishedAt": "2025-09-28",
-      "updatedAt": "2025-09-28T17:07:54Z",
-      "arxivId": "2509.23979",
-      "doi": "10.48550/arXiv.2509.23979",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.23979v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.23979",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23979v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.23979"
-        }
-      ],
-      "semanticScholarId": "9de63c2affd4534b63a32ce18061d08369622ca0",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.23979",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -45930,6 +45786,78 @@
       }
     },
     {
+      "id": "arxiv:2509.23979",
+      "title": "ByteSized32Refactored: Towards an Extensible Interactive Text Games Corpus for LLM World Modeling and Evaluation",
+      "authors": [
+        "Haonan Wang",
+        "Junfeng Sun",
+        "Xingdi Yuan",
+        "Ruoyao Wang",
+        "Ziang Xiao"
+      ],
+      "abstract": "Simulating interactive world models remains a core challenge in Large Language Models(LLMs). In this work, we introduce the ByteSized32Refactored, a refactored, modular, and extensible implementation of the original ByteSized32 corpus to explore the task of text game generation. We further optimize the code structure of each text game and create the GameBasic.py foundation library, which centralizes common logic across all 32 games by abstracting 7 base classes (GameObject, etc.) into reusable modules, thereby reducing from 20k to 10k total lines of Python code compared to the original Bytesized32. Our refactored implementation enables extendability - with our centralized design, ByteSized32Refactored can be more efficiently extended to include text games of new scenarios and specifications by reusing the shared logic and functionalities. Extensive experiments with GPT-4o demonstrate a mix of performance - with Bytesized32Refactored, the generated text games for unseen scenarios showcase quality improvements on two of the four evaluation dimensions while decreases on the other two, indicating that the hierarchical structure of the refactored code presents new challenges for LLMs. Overall, we highlight that our extensible code structure, centered on the foundation library and the modular optimization, not only facilitates LLM adaptation to environment specifications but also establishes a scalable environment that supports future extensions.",
+      "publishedAt": "2025-09-28",
+      "updatedAt": "2025-09-28T17:07:54Z",
+      "arxivId": "2509.23979",
+      "doi": "10.48550/arXiv.2509.23979",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.23979v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.23979",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23979v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.23979"
+        }
+      ],
+      "semanticScholarId": "9de63c2affd4534b63a32ce18061d08369622ca0",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.23979",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.02342",
       "title": "CATMark: A Context-Aware Thresholding Framework for Robust Cross-Task Watermarking in Large Language Models",
       "authors": [
@@ -48363,81 +48291,6 @@
           "citations": 3,
           "reproducibility": 0,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2505.06875",
-      "title": "Towards Human-Centric Autonomous Driving: A Fast-Slow Architecture Integrating Large Language Model Guidance with Reinforcement Learning",
-      "authors": [
-        "Chengkai Xu",
-        "Jiaqi Liu",
-        "Yicheng Guo",
-        "Yuhang Zhang",
-        "Peng Hang",
-        "Jian Sun"
-      ],
-      "abstract": "Autonomous driving has made significant strides through data-driven techniques, achieving robust performance in standardized tasks. However, existing methods frequently overlook user-specific preferences, offering limited scope for interaction and adaptation with users. To address these challenges, we propose a \"fast-slow\" decision-making framework that integrates a Large Language Model (LLM) for high-level instruction parsing with a Reinforcement Learning (RL) agent for low-level real-time decision. In this dual system, the LLM operates as the \"slow\" module, translating user directives into structured guidance, while the RL agent functions as the \"fast\" module, making time-critical maneuvers under stringent latency constraints. By decoupling high-level decision making from rapid control, our framework enables personalized user-centric operation while maintaining robust safety margins. Experimental evaluations across various driving scenarios demonstrate the effectiveness of our method. Compared to baseline algorithms, the proposed architecture not only reduces collision rates but also aligns driving behaviors more closely with user preferences, thereby achieving a human-centric mode. By integrating user guidance at the decision level and refining it with real-time control, our framework bridges the gap between individual passenger needs and the rigor required for safe, reliable driving in complex traffic environments.",
-      "publishedAt": "2025-05-11",
-      "updatedAt": "2025-05-11T06:55:54Z",
-      "arxivId": "2505.06875",
-      "doi": "10.1109/ITSC60802.2025.11423568",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2505.06875v1",
-      "pdfUrl": "https://arxiv.org/pdf/2505.06875",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.06875v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.06875"
-        }
-      ],
-      "semanticScholarId": "efe6aae8e90fafef29566b0a5862ae229cc873f3",
-      "venue": "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
-      "citationCount": 15,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -55557,6 +55410,81 @@
       }
     },
     {
+      "id": "arxiv:2505.06875",
+      "title": "Towards Human-Centric Autonomous Driving: A Fast-Slow Architecture Integrating Large Language Model Guidance with Reinforcement Learning",
+      "authors": [
+        "Chengkai Xu",
+        "Jiaqi Liu",
+        "Yicheng Guo",
+        "Yuhang Zhang",
+        "Peng Hang",
+        "Jian Sun"
+      ],
+      "abstract": "Autonomous driving has made significant strides through data-driven techniques, achieving robust performance in standardized tasks. However, existing methods frequently overlook user-specific preferences, offering limited scope for interaction and adaptation with users. To address these challenges, we propose a \"fast-slow\" decision-making framework that integrates a Large Language Model (LLM) for high-level instruction parsing with a Reinforcement Learning (RL) agent for low-level real-time decision. In this dual system, the LLM operates as the \"slow\" module, translating user directives into structured guidance, while the RL agent functions as the \"fast\" module, making time-critical maneuvers under stringent latency constraints. By decoupling high-level decision making from rapid control, our framework enables personalized user-centric operation while maintaining robust safety margins. Experimental evaluations across various driving scenarios demonstrate the effectiveness of our method. Compared to baseline algorithms, the proposed architecture not only reduces collision rates but also aligns driving behaviors more closely with user preferences, thereby achieving a human-centric mode. By integrating user guidance at the decision level and refining it with real-time control, our framework bridges the gap between individual passenger needs and the rigor required for safe, reliable driving in complex traffic environments.",
+      "publishedAt": "2025-05-11",
+      "updatedAt": "2025-05-11T06:55:54Z",
+      "arxivId": "2505.06875",
+      "doi": "10.1109/ITSC60802.2025.11423568",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2505.06875v1",
+      "pdfUrl": "https://arxiv.org/pdf/2505.06875",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.06875v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.06875"
+        }
+      ],
+      "semanticScholarId": "efe6aae8e90fafef29566b0a5862ae229cc873f3",
+      "venue": "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
+      "citationCount": 15,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 1,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2504.09997",
       "title": "GenTe: Generative Real-world Terrains for General Legged Robot Locomotion Control",
       "authors": [
@@ -57046,75 +56974,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2410.10998",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.10020",
-      "title": "Adaptive Reasoning and Acting in Medical Language Agents",
-      "authors": [
-        "Abhishek Dutta",
-        "Yen-Che Hsiao"
-      ],
-      "abstract": "This paper presents an innovative large language model (LLM) agent framework for enhancing diagnostic accuracy in simulated clinical environments using the AgentClinic benchmark. The proposed automatic correction enables doctor agents to iteratively refine their reasoning and actions following incorrect diagnoses, fostering improved decision-making over time. Experiments show that the implementation of the adaptive LLM-based doctor agents achieve correct diagnoses through dynamic interactions with simulated patients. The evaluations highlight the capacity of autonomous agents to adapt and improve in complex medical scenarios. Future enhancements will focus on refining the algorithm and expanding its applicability across a wider range of tasks and different large language models.",
-      "publishedAt": "2024-10-13",
-      "updatedAt": "2024-10-13T21:45:16Z",
-      "arxivId": "2410.10020",
-      "doi": "10.48550/arXiv.2410.10020",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "ai-agents-tool-use",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.10020v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.10020",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10020v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.10020"
-        }
-      ],
-      "semanticScholarId": "2a4e1b729b70e85ef5ff412e890bc4bc96b2d9b0",
-      "citationCount": 10,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.10020",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -71603,88 +71462,6 @@
       }
     },
     {
-      "id": "arxiv:2411.09595",
-      "title": "LLaMA-Mesh: Unifying 3D Mesh Generation with Language Models",
-      "authors": [
-        "Zhengyi Wang",
-        "Jonathan Lorraine",
-        "Yikai Wang",
-        "Hang Su",
-        "Jun Zhu",
-        "Sanja Fidler",
-        "Xiaohui Zeng"
-      ],
-      "abstract": "This work explores expanding the capabilities of large language models (LLMs) pretrained on text to generate 3D meshes within a unified model. This offers key advantages of (1) leveraging spatial knowledge already embedded in LLMs, derived from textual sources like 3D tutorials, and (2) enabling conversational 3D generation and mesh understanding. A primary challenge is effectively tokenizing 3D mesh data into discrete tokens that LLMs can process seamlessly. To address this, we introduce LLaMA-Mesh, a novel approach that represents the vertex coordinates and face definitions of 3D meshes as plain text, allowing direct integration with LLMs without expanding the vocabulary. We construct a supervised fine-tuning (SFT) dataset enabling pretrained LLMs to (1) generate 3D meshes from text prompts, (2) produce interleaved text and 3D mesh outputs as required, and (3) understand and interpret 3D meshes. Our work is the first to demonstrate that LLMs can be fine-tuned to acquire complex spatial knowledge for 3D mesh generation in a text-based format, effectively unifying the 3D and text modalities. LLaMA-Mesh achieves mesh generation quality on par with models trained from scratch while maintaining strong text generation performance.",
-      "publishedAt": "2024-11-14",
-      "updatedAt": "2024-11-14T17:08:23Z",
-      "arxivId": "2411.09595",
-      "doi": "10.48550/arXiv.2411.09595",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.09595v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.09595",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.09595v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.09595"
-        }
-      ],
-      "semanticScholarId": "b9806875c6472434f99ac1e50055d240c3bfb3b6",
-      "citationCount": 94,
-      "influentialCitationCount": 5,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.09595",
-          "同龄论文中引用增长较快",
-          "提供项目页面",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 2,
-          "empirical": 0,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2411.08968",
       "title": "Sparse Upcycling: Inference Inefficient Finetuning",
       "authors": [
@@ -76267,6 +76044,87 @@
           "publication": 6,
           "citations": 1,
           "reproducibility": 4,
+          "empirical": 0,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.09595",
+      "title": "LLaMA-Mesh: Unifying 3D Mesh Generation with Language Models",
+      "authors": [
+        "Zhengyi Wang",
+        "Jonathan Lorraine",
+        "Yikai Wang",
+        "Hang Su",
+        "Jun Zhu",
+        "Sanja Fidler",
+        "Xiaohui Zeng"
+      ],
+      "abstract": "This work explores expanding the capabilities of large language models (LLMs) pretrained on text to generate 3D meshes within a unified model. This offers key advantages of (1) leveraging spatial knowledge already embedded in LLMs, derived from textual sources like 3D tutorials, and (2) enabling conversational 3D generation and mesh understanding. A primary challenge is effectively tokenizing 3D mesh data into discrete tokens that LLMs can process seamlessly. To address this, we introduce LLaMA-Mesh, a novel approach that represents the vertex coordinates and face definitions of 3D meshes as plain text, allowing direct integration with LLMs without expanding the vocabulary. We construct a supervised fine-tuning (SFT) dataset enabling pretrained LLMs to (1) generate 3D meshes from text prompts, (2) produce interleaved text and 3D mesh outputs as required, and (3) understand and interpret 3D meshes. Our work is the first to demonstrate that LLMs can be fine-tuned to acquire complex spatial knowledge for 3D mesh generation in a text-based format, effectively unifying the 3D and text modalities. LLaMA-Mesh achieves mesh generation quality on par with models trained from scratch while maintaining strong text generation performance.",
+      "publishedAt": "2024-11-14",
+      "updatedAt": "2024-11-14T17:08:23Z",
+      "arxivId": "2411.09595",
+      "doi": "10.48550/arXiv.2411.09595",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-cv",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.09595v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.09595",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.09595v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.09595"
+        }
+      ],
+      "semanticScholarId": "b9806875c6472434f99ac1e50055d240c3bfb3b6",
+      "citationCount": 94,
+      "influentialCitationCount": 5,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 0,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2411.09595",
+          "提供项目页面",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 3,
+          "reproducibility": 2,
           "empirical": 0,
           "corroboration": 4
         }
@@ -143758,23 +143616,138 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2610.07535",
+      "title": "Disentangling Models from Personas in Heterogeneous LLM Simulations",
+      "authors": [
+        "Dani Roytburg",
+        "Daphne Ippolito"
+      ],
+      "abstract": "Multi-agent simulations with large language models (LLMs) often operate networks of agents with a single base model. This overlooks the inter-model effects which may dominate engagement dynamics in real-world deployments. To show this, we simulate a heterogeneous social network powered by several different base models and show that the amount of engagement an agent receives depends more on its base model than on its assigned persona. The attraction or repulsion effects of a base model strengthen dramatically when more models are added in the mix, suggesting that networks dynamics may converge to base model effects at scale. To help explain this effect, we conduct a series of content-mediating analyses, showing the predictability of base models across contexts as well as the relationship between a model's lexical patterns and an engagement-maximizing style. In light of recent developments in mass multi-agent interaction, this work underscores the relevance of heterogeneous compositions in driving the outcomes of those networks",
+      "publishedAt": "2026-10-06T00:01:30Z",
+      "updatedAt": "2026-10-06T00:01:30Z",
+      "arxivId": "2610.07535",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL",
+        "cs.SI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-multi-agent-systems",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.07535v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.07535v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.07535v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 42,
+        "relevance": 24,
+        "evidence": 0,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 0,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2610.07306",
+      "title": "Kurate: Scalable Scientific Quality Analysis",
+      "authors": [
+        "Matthew J. Vowels",
+        "Jamie Cummins"
+      ],
+      "abstract": "Scientific search systems can find papers that are relevant to a question, but they generally do not assess the quality of the evidence that those papers provide. We present Kurate, a system that uses large language models (LLMs) to assess the quality of published studies. Kurate uses both the paper and its related documents (e.g., the study's trial registration and protocol), and links each of its judgments to the passage of text on which that judgment is based. We applied Kurate to a corpus of 4,347 papers (3,913 of which report randomized trials) and scored each paper on 8 dimensions of study design and reporting: specifically, statistical power, causal identification, preregistration, selective reporting, measurement validity, analysis prespecification, reporting transparency, and conflict of interest and funding. Across the corpus, we found that papers most often exhibited issues with statistical power, selective reporting, and analysis prespecification, although average quality differed between clinical areas. When compared against expert annotations of 60 held-out clinical-trial documents, the information Kurate extracted matched the expert label in 221/242 protocol scorepoints and 294/370 results-publication scorepoints, with AC1 0.94 and 0.81, respectively. Using a well-reputed, high quality clinical trial as a worked example, we show how a single paper's overall grade breaks down into separate judgments, with each linked to specific evidence from the trial's registration, protocol, and published report. Together, these results show that large-scale quality assessment of this kind is feasible, and that it can be used to address meta-scientific research questions.",
+      "publishedAt": "2026-10-05T19:44:07Z",
+      "updatedAt": "2026-10-05T19:44:07Z",
+      "arxivId": "2610.07306",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl"
+      ],
+      "topicIds": [
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.07306v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.07306v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.07306v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 42,
+        "relevance": 24,
+        "evidence": 0,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 0,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 2160
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 2159
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
-      "recordCount": 1334,
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
+      "recordCount": 1306,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-12T11:13:36.454Z",
+      "fetchedAt": "2026-10-13T10:54:56.713Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
