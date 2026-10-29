@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-lg",
-  "generatedAt": "2026-10-28T09:56:15.368Z",
+  "generatedAt": "2026-10-29T10:18:52.068Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -2704,90 +2704,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12255",
-      "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
-      "authors": [
-        "Blazej Manczak",
-        "Eric Lin",
-        "Francisco Eiras",
-        "James O' Neill",
-        "Vaikkunth Mugunthan"
-      ],
-      "abstract": "Large language models (LLMs) are rapidly transitioning into medical clinical use, yet their reliability under realistic, multi-turn interactions remains poorly understood. Existing evaluation frameworks typically assess single-turn question answering under idealized conditions, overlooking the complexities of medical consultations where conflicting input, misleading context, and authority influence are common. We introduce MedQA-Followup, a framework for systematically evaluating multi-turn robustness in medical question answering. Our approach distinguishes between shallow robustness (resisting misleading initial context) and deep robustness (maintaining accuracy when answers are challenged across turns), while also introducing an indirect-direct axis that separates contextual framing (indirect) from explicit suggestion (direct). Using controlled interventions on the MedQA dataset, we evaluate five state-of-the-art LLMs and find that while models perform reasonably well under shallow perturbations, they exhibit severe vulnerabilities in multi-turn settings, with accuracy dropping from 91.2% to as low as 13.5% for Claude Sonnet 4. Counterintuitively, indirect, context-based interventions are often more harmful than direct suggestions, yielding larger accuracy drops across models and exposing a significant vulnerability for clinical deployment. Further compounding analyses reveal model differences, with some showing additional performance drops under repeated interventions while others partially recovering or even improving. These findings highlight multi-turn robustness as a critical but underexplored dimension for safe and reliable deployment of medical LLMs.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T08:04:18Z",
-      "arxivId": "2510.12255",
-      "doi": "10.48550/arXiv.2510.12255",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cl-retrieval-question-answering",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12255v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12255",
-      "artifacts": [
-        {
-          "kind": "dataset",
-          "url": "https://huggingface.co/datasets/dynamoai-ml/MedQA-USMLE-4-MultiTurnRobust"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/bmanczak/MedQA-MultiTurnRobustness"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12255v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12255"
-        }
-      ],
-      "semanticScholarId": "edee9b03fd13b34d5aac6a04597fe1a281ddf7b0",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 67,
-        "relevance": 24,
-        "evidence": 22,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12255",
-          "提供可复现代码",
-          "提供数据集或模型资源",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 6,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.25278",
       "title": "MAESTRO : Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series",
       "authors": [
@@ -4499,24 +4415,26 @@
       }
     },
     {
-      "id": "arxiv:2509.26488",
-      "title": "dParallel: Learnable Parallel Decoding for dLLMs",
+      "id": "arxiv:2510.12255",
+      "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
       "authors": [
-        "Zigeng Chen",
-        "Gongfan Fang",
-        "Xinyin Ma",
-        "Ruonan Yu",
-        "Xinchao Wang"
+        "Blazej Manczak",
+        "Eric Lin",
+        "Francisco Eiras",
+        "James O' Neill",
+        "Vaikkunth Mugunthan"
       ],
-      "abstract": "Diffusion large language models (dLLMs) have recently drawn considerable attention within the research community as a promising alternative to autoregressive generation, offering parallel token prediction and lower inference latency. Yet, their parallel decoding potential remains largely underexplored, as existing open-source models still require nearly token-length decoding steps to ensure performance. To address this, we introduce dParallel, a simple and effective method that unlocks the inherent parallelism of dLLMs for fast sampling. We identify that the key bottleneck to parallel decoding arises from the sequential certainty convergence for masked tokens. Building on this insight, we introduce the core of our approach: certainty-forcing distillation, a novel training strategy that distills the model to follow its original sampling trajectories while enforcing it to achieve high certainty on masked tokens more rapidly and in parallel. Extensive experiments across various benchmarks demonstrate that our method can dramatically reduce the number of decoding steps while maintaining performance. When applied to the LLaDA-8B-Instruct model, dParallel reduces decoding steps from 256 to 30 on GSM8K, achieving an 8.5x speedup without performance degradation. On the MBPP benchmark, it cuts decoding steps from 256 to 24, resulting in a 10.5x speedup while maintaining accuracy. Our code is available at https://github.com/czg1225/dParallel",
-      "publishedAt": "2025-09-30",
-      "updatedAt": "2025-09-30T16:32:52Z",
-      "arxivId": "2509.26488",
-      "doi": "10.48550/arXiv.2509.26488",
+      "abstract": "Large language models (LLMs) are rapidly transitioning into medical clinical use, yet their reliability under realistic, multi-turn interactions remains poorly understood. Existing evaluation frameworks typically assess single-turn question answering under idealized conditions, overlooking the complexities of medical consultations where conflicting input, misleading context, and authority influence are common. We introduce MedQA-Followup, a framework for systematically evaluating multi-turn robustness in medical question answering. Our approach distinguishes between shallow robustness (resisting misleading initial context) and deep robustness (maintaining accuracy when answers are challenged across turns), while also introducing an indirect-direct axis that separates contextual framing (indirect) from explicit suggestion (direct). Using controlled interventions on the MedQA dataset, we evaluate five state-of-the-art LLMs and find that while models perform reasonably well under shallow perturbations, they exhibit severe vulnerabilities in multi-turn settings, with accuracy dropping from 91.2% to as low as 13.5% for Claude Sonnet 4. Counterintuitively, indirect, context-based interventions are often more harmful than direct suggestions, yielding larger accuracy drops across models and exposing a significant vulnerability for clinical deployment. Further compounding analyses reveal model differences, with some showing additional performance drops under repeated interventions while others partially recovering or even improving. These findings highlight multi-turn robustness as a critical but underexplored dimension for safe and reliable deployment of medical LLMs.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T08:04:18Z",
+      "arxivId": "2510.12255",
+      "doi": "10.48550/arXiv.2510.12255",
       "categories": [
-        "cs.CL"
+        "cs.CL",
+        "cs.AI"
       ],
       "fieldIds": [
+        "cs-ai",
         "cs-cl",
         "embodied-intelligence",
         "cs-lg"
@@ -4524,31 +4442,36 @@
       "topicIds": [
         "simulation-datasets-evaluation",
         "cl-language-modeling",
-        "lg-theory-optimization"
+        "cl-retrieval-question-answering",
+        "lg-robustness-generalization"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2509.26488v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.26488",
+      "sourceUrl": "http://arxiv.org/abs/2510.12255v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12255",
       "artifacts": [
         {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/dynamoai-ml/MedQA-USMLE-4-MultiTurnRobust"
+        },
+        {
           "kind": "code",
-          "url": "https://github.com/czg1225/dParallel"
+          "url": "https://github.com/bmanczak/MedQA-MultiTurnRobustness"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.26488v1"
+          "url": "https://arxiv.org/pdf/2510.12255v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.26488"
+          "url": "https://arxiv.org/pdf/2510.12255"
         }
       ],
-      "semanticScholarId": "a9950abc25bcafb8ff1859e8add566d741e52a5d",
-      "citationCount": 53,
-      "influentialCitationCount": 10,
+      "semanticScholarId": "edee9b03fd13b34d5aac6a04597fe1a281ddf7b0",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
@@ -4560,17 +4483,17 @@
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.26488",
-          "同龄论文中引用增长较快",
+          "已有正式发表线索：10.48550/arXiv.2510.12255",
           "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
+          "提供数据集或模型资源",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 4,
-          "reproducibility": 4,
-          "empirical": 4,
+          "citations": 0,
+          "reproducibility": 6,
+          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -6309,6 +6232,82 @@
       }
     },
     {
+      "id": "arxiv:2509.26488",
+      "title": "dParallel: Learnable Parallel Decoding for dLLMs",
+      "authors": [
+        "Zigeng Chen",
+        "Gongfan Fang",
+        "Xinyin Ma",
+        "Ruonan Yu",
+        "Xinchao Wang"
+      ],
+      "abstract": "Diffusion large language models (dLLMs) have recently drawn considerable attention within the research community as a promising alternative to autoregressive generation, offering parallel token prediction and lower inference latency. Yet, their parallel decoding potential remains largely underexplored, as existing open-source models still require nearly token-length decoding steps to ensure performance. To address this, we introduce dParallel, a simple and effective method that unlocks the inherent parallelism of dLLMs for fast sampling. We identify that the key bottleneck to parallel decoding arises from the sequential certainty convergence for masked tokens. Building on this insight, we introduce the core of our approach: certainty-forcing distillation, a novel training strategy that distills the model to follow its original sampling trajectories while enforcing it to achieve high certainty on masked tokens more rapidly and in parallel. Extensive experiments across various benchmarks demonstrate that our method can dramatically reduce the number of decoding steps while maintaining performance. When applied to the LLaDA-8B-Instruct model, dParallel reduces decoding steps from 256 to 30 on GSM8K, achieving an 8.5x speedup without performance degradation. On the MBPP benchmark, it cuts decoding steps from 256 to 24, resulting in a 10.5x speedup while maintaining accuracy. Our code is available at https://github.com/czg1225/dParallel",
+      "publishedAt": "2025-09-30",
+      "updatedAt": "2025-09-30T16:32:52Z",
+      "arxivId": "2509.26488",
+      "doi": "10.48550/arXiv.2509.26488",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.26488v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.26488",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/czg1225/dParallel"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.26488v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.26488"
+        }
+      ],
+      "semanticScholarId": "a9950abc25bcafb8ff1859e8add566d741e52a5d",
+      "citationCount": 53,
+      "influentialCitationCount": 10,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 65,
+        "relevance": 24,
+        "evidence": 21,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.26488",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 3,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.22436",
       "title": "Global Convergence in Neural ODEs: Impact of Activation Functions",
       "authors": [
@@ -7448,87 +7447,6 @@
       "venue": "Neural Information Processing Systems",
       "citationCount": 8,
       "influentialCitationCount": 0,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 24,
-        "evidence": 21,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Neural Information Processing Systems",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21795",
-      "title": "Robot Policy Learning with Temporal Optimal Transport Reward",
-      "authors": [
-        "Yuwei Fu",
-        "Haichao Zhang",
-        "Di Wu",
-        "Wei Xu",
-        "Benoit Boulet"
-      ],
-      "abstract": "Reward specification is one of the most tricky problems in Reinforcement Learning, which usually requires tedious hand engineering in practice. One promising approach to tackle this challenge is to adopt existing expert video demonstrations for policy learning. Some recent work investigates how to learn robot policies from only a single/few expert video demonstrations. For example, reward labeling via Optimal Transport (OT) has been shown to be an effective strategy to generate a proxy reward by measuring the alignment between the robot trajectory and the expert demonstrations. However, previous work mostly overlooks that the OT reward is invariant to temporal order information, which could bring extra noise to the reward signal. To address this issue, in this paper, we introduce the Temporal Optimal Transport (TemporalOT) reward to incorporate temporal order information for learning a more accurate OT-based proxy reward. Extensive experiments on the Meta-world benchmark tasks validate the efficacy of the proposed method. Code is available at: https://github.com/fuyw/TemporalOT",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-11-02T02:09:58Z",
-      "arxivId": "2410.21795",
-      "doi": "10.48550/arXiv.2410.21795",
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21795v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21795",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/fuyw/TemporalOT"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21795v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21795"
-        }
-      ],
-      "semanticScholarId": "e02478f97ed90766d87530b35647e55d1edf6f64",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 12,
-      "influentialCitationCount": 5,
       "canonicalVenueId": "neurips",
       "publicationStatus": "core",
       "personalization": {},
@@ -10492,89 +10410,6 @@
       }
     },
     {
-      "id": "arxiv:2509.04063",
-      "title": "Balancing Signal and Variance: Adaptive Offline RL Post-Training for VLA Flow Models",
-      "authors": [
-        "Hongyin Zhang",
-        "Shiyuan Zhang",
-        "Junxi Jin",
-        "Qixin Zeng",
-        "Yifan Qiao",
-        "Hongchao Lu",
-        "Donglin Wang"
-      ],
-      "abstract": "Vision-Language-Action (VLA) models based on flow matching have shown excellent performance in general-purpose robotic manipulation tasks. However, the action accuracy of these models on complex downstream tasks is unsatisfactory. One important reason is that these models rely solely on the post-training paradigm of imitation learning, which makes it difficult to have a deeper understanding of the distribution properties of data quality, which is exactly what Reinforcement Learning (RL) excels at. In this paper, we theoretically propose an offline RL post-training objective for VLA flow models and induce an efficient and feasible offline RL fine-tuning algorithm -- Adaptive Reinforced Flow Matching (ARFM). By introducing an adaptively adjusted scaling factor in the VLA flow model loss, we construct a principled bias-variance trade-off objective function to optimally control the impact of RL signal on flow loss. ARFM adaptively balances RL advantage preservation and flow loss gradient variance control, resulting in a more stable and efficient fine-tuning process. Extensive simulation and real-world experimental results show that ARFM exhibits excellent generalization, robustness, few-shot learning, and continuous learning performance.",
-      "publishedAt": "2025-09-04",
-      "updatedAt": "2025-09-04T09:48:43Z",
-      "arxivId": "2509.04063",
-      "doi": "10.48550/arXiv.2509.04063",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "embodied-foundation-models",
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.04063v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.04063",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.04063v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.04063"
-        }
-      ],
-      "semanticScholarId": "8cc3498c93e6003bbc0203e761a67021bf8a988e",
-      "venue": "AAAI Conference on Artificial Intelligence",
-      "citationCount": 14,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 64,
-        "relevance": 30,
-        "evidence": 15,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 3 个关注主题",
-          "已有正式发表线索：AAAI Conference on Artificial Intelligence",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 3,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.03312",
       "title": "AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?",
       "authors": [
@@ -11757,81 +11592,6 @@
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19599",
-      "title": "A Splitting Architecture for Exact Reduced Coulomb Friction",
-      "authors": [
-        "Hongcheng Song",
-        "Ye Fan",
-        "Uri M. Ascher",
-        "Dinesh K. Pai"
-      ],
-      "abstract": "Existing approaches to frictional contact dynamics typically either modify the Coulomb law to improve numerical robustness or solve the exact law in a fully coupled monolithic form. However, in its reduced form, exact Coulomb friction can be written as a cone complementarity problem with an augmented velocity, which reveals a natural split between a cone-constrained linear response and a scalar non-associated coupling induced by tangential velocity. We exploit this structure in the solver design. Our method uses an outer iteration to update the non-associated coupling explicitly, and an inner solve for a strongly convex cone-constrained quadratic program. This separation also makes the inner solver modular, so different numerical schemes can be used without changing the outer iteration. We evaluate the method on rigid-body benchmarks with stick-slip transitions and frictional stacking, and show that it reproduces exact Coulomb complementarity without smoothing or relaxing the friction law.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T22:00:12Z",
-      "arxivId": "2607.19599",
-      "doi": "10.1111/cgf.70576",
-      "categories": [
-        "cs.GR",
-        "cs.RO",
-        "math.NA"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19599v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19599",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://www.cs.ubc.ca/research/fbf-friction"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19599v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19599"
-        }
-      ],
-      "semanticScholarId": "4cdb79ff79684576dce5ce8b9f1260873812f172",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.1111/cgf.70576",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
         }
       }
     },
@@ -13110,86 +12870,6 @@
       }
     },
     {
-      "id": "arxiv:2511.01758",
-      "title": "RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks",
-      "authors": [
-        "Mian Wu",
-        "Gavin Zhang",
-        "Sewon Min",
-        "Sergey Levine",
-        "Aviral Kumar"
-      ],
-      "abstract": "Open-ended generation tasks require outputs to satisfy diverse and often implicit task-specific evaluation rubrics. The sheer number of relevant rubrics leads to prohibitively high verification costs and incomplete assessments of a response, making reinforcement learning (RL) post-training with rubric-based rewards difficult to scale. This problem is exacerbated by the fact that often the best way to combine these rubrics into one single reward is also highly prompt-specific. We propose Reinforcement Learning with Adversarial Critic (RLAC), a post-training approach that addresses these challenges via dynamic rubric verification. Our approach employs a large language model (LLM) as a critic that dynamically identifies only the most likely failure modes (e.g., a factual error or unhandled edge case), which are then verified by an external validator to optimize both generator and critic jointly. By training both the generator and the critic, this game enhances the critic's error detection and the generator's output quality while reducing required verifications. Our experiments demonstrate that RLAC improves factual accuracy in text generation and correctness in code generation, while also outperforming exhaustive verification and reward model methods. We show that dynamic critics are more effective than fixed critics, showcasing the potential of RLAC for scaling RL post-training to free-form generation tasks.",
-      "publishedAt": "2025-11-03",
-      "updatedAt": "2025-11-03T17:15:05Z",
-      "arxivId": "2511.01758",
-      "doi": "10.48550/arXiv.2511.01758",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2511.01758v1",
-      "pdfUrl": "https://arxiv.org/pdf/2511.01758",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://mianwu01.github.io/RLAC_website/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01758v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01758"
-        }
-      ],
-      "semanticScholarId": "dd78d717dbac9083413220119508f304401041b0",
-      "citationCount": 12,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2511.01758",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2511.01149",
       "title": "Modular Task Decomposition and Dynamic Collaboration in Multi-Agent Systems Driven by Large Language Models",
       "authors": [
@@ -13787,82 +13467,6 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12503",
-      "title": "The Robustness of Differentiable Causal Discovery in Misspecified Scenarios",
-      "authors": [
-        "Huiyang Yi",
-        "Yanyan He",
-        "Duxin Chen",
-        "Mingyu Kang",
-        "He Wang",
-        "Wenwu Yu"
-      ],
-      "abstract": "Causal discovery aims to learn causal relationships between variables from targeted data, making it a fundamental task in machine learning. However, causal discovery algorithms often rely on unverifiable causal assumptions, which are usually difficult to satisfy in real-world data, thereby limiting the broad application of causal discovery in practical scenarios. Inspired by these considerations, this work extensively benchmarks the empirical performance of various mainstream causal discovery algorithms, which assume i.i.d. data, under eight model assumption violations. Our experimental results show that differentiable causal discovery methods exhibit robustness under the metrics of Structural Hamming Distance and Structural Intervention Distance of the inferred graphs in commonly used challenging scenarios, except for scale variation. We also provide the theoretical explanations for the performance of differentiable causal discovery methods. Finally, our work aims to comprehensively benchmark the performance of recent differentiable causal discovery methods under model assumption violations, and provide the standard for reasonable evaluation of causal discovery, as well as to further promote its application in real-world scenarios.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T13:33:06Z",
-      "arxivId": "2510.12503",
-      "doi": "10.48550/arXiv.2510.12503",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "stat.ME",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12503v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12503",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12503v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12503"
-        }
-      ],
-      "semanticScholarId": "bbb2b81b0e6ad6862c9e712ba2a83eb11bc27651",
-      "venue": "International Conference on Learning Representations",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "iclr",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：International Conference on Learning Representations",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -15188,6 +14792,89 @@
       }
     },
     {
+      "id": "arxiv:2509.04063",
+      "title": "Balancing Signal and Variance: Adaptive Offline RL Post-Training for VLA Flow Models",
+      "authors": [
+        "Hongyin Zhang",
+        "Shiyuan Zhang",
+        "Junxi Jin",
+        "Qixin Zeng",
+        "Yifan Qiao",
+        "Hongchao Lu",
+        "Donglin Wang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models based on flow matching have shown excellent performance in general-purpose robotic manipulation tasks. However, the action accuracy of these models on complex downstream tasks is unsatisfactory. One important reason is that these models rely solely on the post-training paradigm of imitation learning, which makes it difficult to have a deeper understanding of the distribution properties of data quality, which is exactly what Reinforcement Learning (RL) excels at. In this paper, we theoretically propose an offline RL post-training objective for VLA flow models and induce an efficient and feasible offline RL fine-tuning algorithm -- Adaptive Reinforced Flow Matching (ARFM). By introducing an adaptively adjusted scaling factor in the VLA flow model loss, we construct a principled bias-variance trade-off objective function to optimally control the impact of RL signal on flow loss. ARFM adaptively balances RL advantage preservation and flow loss gradient variance control, resulting in a more stable and efficient fine-tuning process. Extensive simulation and real-world experimental results show that ARFM exhibits excellent generalization, robustness, few-shot learning, and continuous learning performance.",
+      "publishedAt": "2025-09-04",
+      "updatedAt": "2025-09-04T09:48:43Z",
+      "arxivId": "2509.04063",
+      "doi": "10.48550/arXiv.2509.04063",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning",
+        "lg-generative-modeling",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.04063v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.04063",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.04063v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.04063"
+        }
+      ],
+      "semanticScholarId": "8cc3498c93e6003bbc0203e761a67021bf8a988e",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "citationCount": 14,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 63,
+        "relevance": 30,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 17,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 3 个关注主题",
+          "已有正式发表线索：AAAI Conference on Artificial Intelligence",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 3,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.01111",
       "title": "SR-SLAM: Scene-reliability Based RGB-D SLAM in Diverse Environments",
       "authors": [
@@ -16050,77 +15737,6 @@
       }
     },
     {
-      "id": "arxiv:2505.21721",
-      "title": "Nearly Dimension-Independent Convergence of Mean-Field Black-Box Variational Inference",
-      "authors": [
-        "Kyurae Kim",
-        "Yi-An Ma",
-        "Trevor Campbell",
-        "Jacob R. Gardner"
-      ],
-      "abstract": "We prove that, given a mean-field location-scale variational family, black-box variational inference (BBVI) with the reparametrization gradient converges at a rate that is nearly independent of explicit dimension dependence. Specifically, for a $d$-dimensional strongly log-concave and log-smooth target, the number of iterations for BBVI with a sub-Gaussian family to obtain a solution $\\epsilon$-close to the global optimum has a dimension dependence of $\\mathrm{O}(\\log d)$. This is a significant improvement over the $\\mathrm{O}(d)$ dependence of full-rank location-scale families. For heavy-tailed families, we prove a weaker $\\mathrm{O}(d^{2/k})$ dependence, where $k$ is the number of finite moments of the family. Additionally, if the Hessian of the target log-density is constant, the complexity is free of any explicit dimension dependence. We also prove that our bound on the gradient variance, which is key to our result, cannot be improved using only spectral bounds on the Hessian of the target log-density.",
-      "publishedAt": "2025-05-27",
-      "updatedAt": "2025-10-21T00:38:53Z",
-      "arxivId": "2505.21721",
-      "doi": "10.48550/arXiv.2505.21721",
-      "categories": [
-        "stat.ML",
-        "cs.LG",
-        "math.OC",
-        "stat.CO"
-      ],
-      "fieldIds": [
-        "cs-lg"
-      ],
-      "topicIds": [
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2505.21721v2",
-      "pdfUrl": "https://arxiv.org/pdf/2505.21721",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.21721v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.21721"
-        }
-      ],
-      "semanticScholarId": "b730678b1670488e3f07905f1c0445106a6f52e1",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 2,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 3,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2505.17741",
       "title": "Discrete Neural Flow Samplers with Locally Equivariant Transformer",
       "authors": [
@@ -16822,6 +16438,81 @@
           "reproducibility": 4,
           "empirical": 6,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19599",
+      "title": "A Splitting Architecture for Exact Reduced Coulomb Friction",
+      "authors": [
+        "Hongcheng Song",
+        "Ye Fan",
+        "Uri M. Ascher",
+        "Dinesh K. Pai"
+      ],
+      "abstract": "Existing approaches to frictional contact dynamics typically either modify the Coulomb law to improve numerical robustness or solve the exact law in a fully coupled monolithic form. However, in its reduced form, exact Coulomb friction can be written as a cone complementarity problem with an augmented velocity, which reveals a natural split between a cone-constrained linear response and a scalar non-associated coupling induced by tangential velocity. We exploit this structure in the solver design. Our method uses an outer iteration to update the non-associated coupling explicitly, and an inner solve for a strongly convex cone-constrained quadratic program. This separation also makes the inner solver modular, so different numerical schemes can be used without changing the outer iteration. We evaluate the method on rigid-body benchmarks with stick-slip transitions and frictional stacking, and show that it reproduces exact Coulomb complementarity without smoothing or relaxing the friction law.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T22:00:12Z",
+      "arxivId": "2607.19599",
+      "doi": "10.1111/cgf.70576",
+      "categories": [
+        "cs.GR",
+        "cs.RO",
+        "math.NA"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19599v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19599",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://www.cs.ubc.ca/research/fbf-friction"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19599v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19599"
+        }
+      ],
+      "semanticScholarId": "4cdb79ff79684576dce5ce8b9f1260873812f172",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.1111/cgf.70576",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 4
         }
       }
     },
@@ -18324,6 +18015,86 @@
       }
     },
     {
+      "id": "arxiv:2511.01758",
+      "title": "RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks",
+      "authors": [
+        "Mian Wu",
+        "Gavin Zhang",
+        "Sewon Min",
+        "Sergey Levine",
+        "Aviral Kumar"
+      ],
+      "abstract": "Open-ended generation tasks require outputs to satisfy diverse and often implicit task-specific evaluation rubrics. The sheer number of relevant rubrics leads to prohibitively high verification costs and incomplete assessments of a response, making reinforcement learning (RL) post-training with rubric-based rewards difficult to scale. This problem is exacerbated by the fact that often the best way to combine these rubrics into one single reward is also highly prompt-specific. We propose Reinforcement Learning with Adversarial Critic (RLAC), a post-training approach that addresses these challenges via dynamic rubric verification. Our approach employs a large language model (LLM) as a critic that dynamically identifies only the most likely failure modes (e.g., a factual error or unhandled edge case), which are then verified by an external validator to optimize both generator and critic jointly. By training both the generator and the critic, this game enhances the critic's error detection and the generator's output quality while reducing required verifications. Our experiments demonstrate that RLAC improves factual accuracy in text generation and correctness in code generation, while also outperforming exhaustive verification and reward model methods. We show that dynamic critics are more effective than fixed critics, showcasing the potential of RLAC for scaling RL post-training to free-form generation tasks.",
+      "publishedAt": "2025-11-03",
+      "updatedAt": "2025-11-03T17:15:05Z",
+      "arxivId": "2511.01758",
+      "doi": "10.48550/arXiv.2511.01758",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2511.01758v1",
+      "pdfUrl": "https://arxiv.org/pdf/2511.01758",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://mianwu01.github.io/RLAC_website/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01758v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01758"
+        }
+      ],
+      "semanticScholarId": "dd78d717dbac9083413220119508f304401041b0",
+      "citationCount": 12,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2511.01758",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2511.01386",
       "title": "RAGSmith: A Framework for Finding the Optimal Composition of Retrieval-Augmented Generation Methods Across Datasets",
       "authors": [
@@ -18847,6 +18618,82 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12503",
+      "title": "The Robustness of Differentiable Causal Discovery in Misspecified Scenarios",
+      "authors": [
+        "Huiyang Yi",
+        "Yanyan He",
+        "Duxin Chen",
+        "Mingyu Kang",
+        "He Wang",
+        "Wenwu Yu"
+      ],
+      "abstract": "Causal discovery aims to learn causal relationships between variables from targeted data, making it a fundamental task in machine learning. However, causal discovery algorithms often rely on unverifiable causal assumptions, which are usually difficult to satisfy in real-world data, thereby limiting the broad application of causal discovery in practical scenarios. Inspired by these considerations, this work extensively benchmarks the empirical performance of various mainstream causal discovery algorithms, which assume i.i.d. data, under eight model assumption violations. Our experimental results show that differentiable causal discovery methods exhibit robustness under the metrics of Structural Hamming Distance and Structural Intervention Distance of the inferred graphs in commonly used challenging scenarios, except for scale variation. We also provide the theoretical explanations for the performance of differentiable causal discovery methods. Finally, our work aims to comprehensively benchmark the performance of recent differentiable causal discovery methods under model assumption violations, and provide the standard for reasonable evaluation of causal discovery, as well as to further promote its application in real-world scenarios.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T13:33:06Z",
+      "arxivId": "2510.12503",
+      "doi": "10.48550/arXiv.2510.12503",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12503v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12503",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12503v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12503"
+        }
+      ],
+      "semanticScholarId": "bbb2b81b0e6ad6862c9e712ba2a83eb11bc27651",
+      "venue": "International Conference on Learning Representations",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "iclr",
+      "publicationStatus": "core",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "本方向核心 venue：International Conference on Learning Representations",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 10,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -21398,6 +21245,77 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2505.21721",
+      "title": "Nearly Dimension-Independent Convergence of Mean-Field Black-Box Variational Inference",
+      "authors": [
+        "Kyurae Kim",
+        "Yi-An Ma",
+        "Trevor Campbell",
+        "Jacob R. Gardner"
+      ],
+      "abstract": "We prove that, given a mean-field location-scale variational family, black-box variational inference (BBVI) with the reparametrization gradient converges at a rate that is nearly independent of explicit dimension dependence. Specifically, for a $d$-dimensional strongly log-concave and log-smooth target, the number of iterations for BBVI with a sub-Gaussian family to obtain a solution $\\epsilon$-close to the global optimum has a dimension dependence of $\\mathrm{O}(\\log d)$. This is a significant improvement over the $\\mathrm{O}(d)$ dependence of full-rank location-scale families. For heavy-tailed families, we prove a weaker $\\mathrm{O}(d^{2/k})$ dependence, where $k$ is the number of finite moments of the family. Additionally, if the Hessian of the target log-density is constant, the complexity is free of any explicit dimension dependence. We also prove that our bound on the gradient variance, which is key to our result, cannot be improved using only spectral bounds on the Hessian of the target log-density.",
+      "publishedAt": "2025-05-27",
+      "updatedAt": "2025-10-21T00:38:53Z",
+      "arxivId": "2505.21721",
+      "doi": "10.48550/arXiv.2505.21721",
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "math.OC",
+        "stat.CO"
+      ],
+      "fieldIds": [
+        "cs-lg"
+      ],
+      "topicIds": [
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2505.21721v2",
+      "pdfUrl": "https://arxiv.org/pdf/2505.21721",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.21721v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.21721"
+        }
+      ],
+      "semanticScholarId": "b730678b1670488e3f07905f1c0445106a6f52e1",
+      "venue": "Neural Information Processing Systems",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "neurips",
+      "publicationStatus": "core",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 1,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "本方向核心 venue：Neural Information Processing Systems",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 10,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 3,
           "corroboration": 4
         }
       }
@@ -25544,88 +25462,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12215",
-      "title": "Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications",
-      "authors": [
-        "Chanwoo Kim",
-        "Jihwan Yoon",
-        "Hyeonseong Kim",
-        "Taemoon Jeong",
-        "Changwoo Yoo",
-        "Seungbeen Lee",
-        "Soohwan Byeon",
-        "Hoon Chung",
-        "Matthew Pan",
-        "Jean Oh",
-        "Kyungjae Lee",
-        "Sungjoon Choi"
-      ],
-      "abstract": "Mobile robot navigation in dynamic human environments requires policies that balance adaptability to diverse behaviors with compliance to safety constraints. We hypothesize that integrating data-driven rewards with rule-based objectives enables navigation policies to achieve a more effective balance of adaptability and safety. To this end, we develop a framework that learns a density-based reward from positive and negative demonstrations and augments it with rule-based objectives for obstacle avoidance and goal reaching. A sampling-based lookahead controller produces supervisory actions that are both safe and adaptive, which are subsequently distilled into a compact student policy suitable for real-time operation with uncertainty estimates. Experiments in synthetic and elevator co-boarding simulations show consistent gains in success rate and time efficiency over baselines, and real-world demonstrations with human participants confirm the practicality of deployment. A video illustrating this work can be found on our project page https://chanwookim971024.github.io/PioneeR/.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T07:10:15Z",
-      "arxivId": "2510.12215",
-      "doi": "10.48550/arXiv.2510.12215",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12215v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12215",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://chanwookim971024.github.io/PioneeR/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12215v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12215"
-        }
-      ],
-      "semanticScholarId": "e65c5e1ac659d54e96c38183b863ed07a13b02ec",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12215",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.11696",
       "title": "QeRL: Beyond Efficiency -- Quantization-enhanced Reinforcement Learning for LLMs",
       "authors": [
@@ -28591,78 +28427,6 @@
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2505.21073",
-      "title": "Bridging Arbitrary and Tree Metrics via Differentiable Gromov Hyperbolicity",
-      "authors": [
-        "Pierre Houedry",
-        "Nicolas Courty",
-        "Florestan Martin-Baillon",
-        "Laetitia Chapel",
-        "Titouan Vayer"
-      ],
-      "abstract": "Trees and the associated shortest-path tree metrics provide a powerful framework for representing hierarchical and combinatorial structures in data. Given an arbitrary metric space, its deviation from a tree metric can be quantified by Gromov's $\\delta$-hyperbolicity. Nonetheless, designing algorithms that bridge an arbitrary metric to its closest tree metric is still a vivid subject of interest, as most common approaches are either heuristical and lack guarantees, or perform moderately well. In this work, we introduce a novel differentiable optimization framework, coined DeltaZero, that solves this problem. Our method leverages a smooth surrogate for Gromov's $\\delta$-hyperbolicity which enables a gradient-based optimization, with a tractable complexity. The corresponding optimization procedure is derived from a problem with better worst case guarantees than existing bounds, and is justified statistically. Experiments on synthetic and real-world datasets demonstrate that our method consistently achieves state-of-the-art distortion.",
-      "publishedAt": "2025-05-27",
-      "updatedAt": "2025-09-25T10:47:40Z",
-      "arxivId": "2505.21073",
-      "doi": "10.48550/arXiv.2505.21073",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2505.21073v3",
-      "pdfUrl": "https://arxiv.org/pdf/2505.21073",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.21073v3"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2505.21073"
-        }
-      ],
-      "semanticScholarId": "e591b2dcca86c2e2c7e0b67873dfbf0c966d5d81",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
@@ -31663,6 +31427,88 @@
           "publication": 6,
           "citations": 1,
           "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12215",
+      "title": "Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications",
+      "authors": [
+        "Chanwoo Kim",
+        "Jihwan Yoon",
+        "Hyeonseong Kim",
+        "Taemoon Jeong",
+        "Changwoo Yoo",
+        "Seungbeen Lee",
+        "Soohwan Byeon",
+        "Hoon Chung",
+        "Matthew Pan",
+        "Jean Oh",
+        "Kyungjae Lee",
+        "Sungjoon Choi"
+      ],
+      "abstract": "Mobile robot navigation in dynamic human environments requires policies that balance adaptability to diverse behaviors with compliance to safety constraints. We hypothesize that integrating data-driven rewards with rule-based objectives enables navigation policies to achieve a more effective balance of adaptability and safety. To this end, we develop a framework that learns a density-based reward from positive and negative demonstrations and augments it with rule-based objectives for obstacle avoidance and goal reaching. A sampling-based lookahead controller produces supervisory actions that are both safe and adaptive, which are subsequently distilled into a compact student policy suitable for real-time operation with uncertainty estimates. Experiments in synthetic and elevator co-boarding simulations show consistent gains in success rate and time efficiency over baselines, and real-world demonstrations with human participants confirm the practicality of deployment. A video illustrating this work can be found on our project page https://chanwookim971024.github.io/PioneeR/.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T07:10:15Z",
+      "arxivId": "2510.12215",
+      "doi": "10.48550/arXiv.2510.12215",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12215v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12215",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://chanwookim971024.github.io/PioneeR/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12215v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12215"
+        }
+      ],
+      "semanticScholarId": "e65c5e1ac659d54e96c38183b863ed07a13b02ec",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12215",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 2,
           "empirical": 4,
           "corroboration": 4
         }
@@ -35756,6 +35602,78 @@
       }
     },
     {
+      "id": "arxiv:2505.21073",
+      "title": "Bridging Arbitrary and Tree Metrics via Differentiable Gromov Hyperbolicity",
+      "authors": [
+        "Pierre Houedry",
+        "Nicolas Courty",
+        "Florestan Martin-Baillon",
+        "Laetitia Chapel",
+        "Titouan Vayer"
+      ],
+      "abstract": "Trees and the associated shortest-path tree metrics provide a powerful framework for representing hierarchical and combinatorial structures in data. Given an arbitrary metric space, its deviation from a tree metric can be quantified by Gromov's $\\delta$-hyperbolicity. Nonetheless, designing algorithms that bridge an arbitrary metric to its closest tree metric is still a vivid subject of interest, as most common approaches are either heuristical and lack guarantees, or perform moderately well. In this work, we introduce a novel differentiable optimization framework, coined DeltaZero, that solves this problem. Our method leverages a smooth surrogate for Gromov's $\\delta$-hyperbolicity which enables a gradient-based optimization, with a tractable complexity. The corresponding optimization procedure is derived from a problem with better worst case guarantees than existing bounds, and is justified statistically. Experiments on synthetic and real-world datasets demonstrate that our method consistently achieves state-of-the-art distortion.",
+      "publishedAt": "2025-05-27",
+      "updatedAt": "2025-09-25T10:47:40Z",
+      "arxivId": "2505.21073",
+      "doi": "10.48550/arXiv.2505.21073",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2505.21073v3",
+      "pdfUrl": "https://arxiv.org/pdf/2505.21073",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.21073v3"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2505.21073"
+        }
+      ],
+      "semanticScholarId": "e591b2dcca86c2e2c7e0b67873dfbf0c966d5d81",
+      "venue": "Neural Information Processing Systems",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "neurips",
+      "publicationStatus": "core",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 1,
+        "completeness": 17,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "本方向核心 venue：Neural Information Processing Systems",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 10,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2505.02288",
       "title": "Universal Approximation Theorem of Deep Q-Networks",
       "authors": [
@@ -36888,150 +36806,6 @@
           "publication": 6,
           "citations": 0,
           "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22113",
-      "title": "Where Do Large Learning Rates Lead Us?",
-      "authors": [
-        "Ildus Sadrtdinov",
-        "Maxim Kodryan",
-        "Eduard Pokonechny",
-        "Ekaterina Lobacheva",
-        "Dmitry Vetrov"
-      ],
-      "abstract": "It is generally accepted that starting neural networks training with large learning rates (LRs) improves generalization. Following a line of research devoted to understanding this effect, we conduct an empirical study in a controlled setting focusing on two questions: 1) how large an initial LR is required for obtaining optimal quality, and 2) what are the key differences between models trained with different LRs? We discover that only a narrow range of initial LRs slightly above the convergence threshold lead to optimal results after fine-tuning with a small LR or weight averaging. By studying the local geometry of reached minima, we observe that using LRs from this optimal range allows for the optimization to locate a basin that only contains high-quality minima. Additionally, we show that these initial LRs result in a sparse set of learned features, with a clear focus on those most relevant for the task. In contrast, starting training with too small LRs leads to unstable minima and attempts to learn all features simultaneously, resulting in poor generalization. Conversely, using initial LRs that are too large fails to detect a basin with good solutions and extract meaningful patterns from the data.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T15:14:37Z",
-      "arxivId": "2410.22113",
-      "doi": "10.48550/arXiv.2410.22113",
-      "categories": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "fieldIds": [
-        "cs-lg"
-      ],
-      "topicIds": [
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22113v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22113",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22113v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22113"
-        }
-      ],
-      "semanticScholarId": "20db0c08f3e3fc2c9dbf26b7d8060466a8043005",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 6,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22143",
-      "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
-      "authors": [
-        "Vishal Kumar",
-        "Zeyi Liao",
-        "Jaylen Jones",
-        "Huan Sun"
-      ],
-      "abstract": "Although large language models (LLMs) are typically aligned, they remain vulnerable to jailbreaking through either carefully crafted prompts in natural language or, interestingly, gibberish adversarial suffixes. However, gibberish tokens have received relatively less attention despite their success in attacking aligned LLMs. Recent work, AmpleGCG~\\citep{liao2024amplegcg}, demonstrates that a generative model can quickly produce numerous customizable gibberish adversarial suffixes for any harmful query, exposing a range of alignment gaps in out-of-distribution (OOD) language spaces. To bring more attention to this area, we introduce AmpleGCG-Plus, an enhanced version that achieves better performance in fewer attempts. Through a series of exploratory experiments, we identify several training strategies to improve the learning of gibberish suffixes. Our results, verified under a strict evaluation setting, show that it outperforms AmpleGCG on both open-weight and closed-source models, achieving increases in attack success rate (ASR) of up to 17\\% in the white-box setting against Llama-2-7B-chat, and more than tripling ASR in the black-box setting against GPT-4. Notably, AmpleGCG-Plus jailbreaks the newer GPT-4o series of models at similar rates to GPT-4, and, uncovers vulnerabilities against the recently proposed circuit breakers defense. We publicly release AmpleGCG-Plus along with our collected training datasets.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T15:40:07Z",
-      "arxivId": "2410.22143",
-      "doi": "10.48550/arXiv.2410.22143",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22143v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22143",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143"
-        }
-      ],
-      "semanticScholarId": "41fa921adfcd32f442e112b80ccdeeef360bc6e7",
-      "citationCount": 9,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 27,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2410.22143",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
         }
@@ -41185,78 +40959,6 @@
           "citations": 2,
           "reproducibility": 0,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12174",
-      "title": "UniGS: Unified Geometry-Aware Gaussian Splatting for Multimodal Rendering",
-      "authors": [
-        "Yusen Xie",
-        "Zhenmin Huang",
-        "Jianhao Jiao",
-        "Dimitrios Kanoulas",
-        "Jun Ma"
-      ],
-      "abstract": "In this paper, we propose UniGS, a unified map representation and differentiable framework for high-fidelity multimodal 3D reconstruction based on 3D Gaussian Splatting. Our framework integrates a CUDA-accelerated rasterization pipeline capable of rendering photo-realistic RGB images, geometrically accurate depth maps, consistent surface normals, and semantic logits simultaneously. We redesign the rasterization to render depth via differentiable ray-ellipsoid intersection rather than using Gaussian centers, enabling effective optimization of rotation and scale attribute through analytic depth gradients. Furthermore, we derive the analytic gradient formulation for surface normal rendering, ensuring geometric consistency among reconstructed 3D scenes. To improve computational and storage efficiency, we introduce a learnable attribute that enables differentiable pruning of Gaussians with minimal contribution during training. Quantitative and qualitative experiments demonstrate state-of-the-art reconstruction accuracy across all modalities, validating the efficacy of our geometry-aware paradigm. Source code and multimodal viewer will be available on GitHub.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-11-13T13:24:20Z",
-      "arxivId": "2510.12174",
-      "doi": "10.48550/arXiv.2510.12174",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12174v2",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12174",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12174v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12174"
-        }
-      ],
-      "semanticScholarId": "3db34fde37348a16b17f5e3cf01ca773324d0770",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12174",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -46952,6 +46654,78 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12174",
+      "title": "UniGS: Unified Geometry-Aware Gaussian Splatting for Multimodal Rendering",
+      "authors": [
+        "Yusen Xie",
+        "Zhenmin Huang",
+        "Jianhao Jiao",
+        "Dimitrios Kanoulas",
+        "Jun Ma"
+      ],
+      "abstract": "In this paper, we propose UniGS, a unified map representation and differentiable framework for high-fidelity multimodal 3D reconstruction based on 3D Gaussian Splatting. Our framework integrates a CUDA-accelerated rasterization pipeline capable of rendering photo-realistic RGB images, geometrically accurate depth maps, consistent surface normals, and semantic logits simultaneously. We redesign the rasterization to render depth via differentiable ray-ellipsoid intersection rather than using Gaussian centers, enabling effective optimization of rotation and scale attribute through analytic depth gradients. Furthermore, we derive the analytic gradient formulation for surface normal rendering, ensuring geometric consistency among reconstructed 3D scenes. To improve computational and storage efficiency, we introduce a learnable attribute that enables differentiable pruning of Gaussians with minimal contribution during training. Quantitative and qualitative experiments demonstrate state-of-the-art reconstruction accuracy across all modalities, validating the efficacy of our geometry-aware paradigm. Source code and multimodal viewer will be available on GitHub.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-11-13T13:24:20Z",
+      "arxivId": "2510.12174",
+      "doi": "10.48550/arXiv.2510.12174",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12174v2",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12174",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12174v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12174"
+        }
+      ],
+      "semanticScholarId": "3db34fde37348a16b17f5e3cf01ca773324d0770",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12174",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -52999,78 +52773,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22059",
-      "title": "PACA: Perspective-Aware Cross-Attention Representation for Zero-Shot Scene Rearrangement",
-      "authors": [
-        "Shutong Jin",
-        "Ruiyu Wang",
-        "Kuangyi Chen",
-        "Florian T. Pokorny"
-      ],
-      "abstract": "Scene rearrangement, like table tidying, is a challenging task in robotic manipulation due to the complexity of predicting diverse object arrangements. Web-scale trained generative models such as Stable Diffusion can aid by generating natural scenes as goals. To facilitate robot execution, object-level representations must be extracted to match the real scenes with the generated goals and to calculate object pose transformations. Current methods typically use a multi-step design that involves separate models for generation, segmentation, and feature encoding, which can lead to a low success rate due to error accumulation. Furthermore, they lack control over the viewing perspectives of the generated goals, restricting the tasks to 3-DoF settings. In this paper, we propose PACA, a zero-shot pipeline for scene rearrangement that leverages perspective-aware cross-attention representation derived from Stable Diffusion. Specifically, we develop a representation that integrates generation, segmentation, and feature encoding into a single step to produce object-level representations. Additionally, we introduce perspective control, thus enabling the matching of 6-DoF camera views and extending past approaches that were limited to 3-DoF top-down views. The efficacy of our method is demonstrated through its zero-shot performance in real robot experiments across various scenes, achieving an average matching accuracy and execution success rate of 87% and 67%, respectively.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-12-01T11:38:07Z",
-      "arxivId": "2410.22059",
-      "doi": "10.1109/WACV61041.2025.00639",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22059v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22059",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22059v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22059"
-        }
-      ],
-      "semanticScholarId": "91bb8ea0072f65629cf349bdb461ff2ee275b521",
-      "venue": "IEEE Workshop/Winter Conference on Applications of Computer Vision",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "wacv",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE Workshop/Winter Conference on Applications of Computer Vision",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.37236",
       "title": "HDVS: semi-supervised semantic segmentation via heterogeneous dual-branch voting supervision",
       "authors": [
@@ -55470,76 +55172,6 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 6,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19609",
-      "title": "CRB-Driven Beamforming and Trajectory Optimization for UAV-assisted ISAC System",
-      "authors": [
-        "Yi Yang",
-        "Qianqian Zhang",
-        "Huaxia Wang"
-      ],
-      "abstract": "In this paper, we study an unmanned aerial vehicle (UAV)-assisted integrated sensing and communication (ISAC) system, where a UAV enhances the sensing capability of a base station (BS) towards a target while ensuring reliable communication towards a downlink user. This architecture is practically attractive for future wireless networks due to the UAV's controllable mobility and adaptive sensing coverage in wireless environments. The sensing performance is characterized by the average Cram\\'er-Rao bound (CRB), which quantifies the minimum variance of the unbiased angle-of-arrival estimation. To enhance the sensing performance, the UAV trajectory and beamforming parameters are jointly optimized under power and mobility constraints, while satisfying communication requirements to the downlink user. To address the resulting non-convex problem, we employ null-space projection for beamforming design and adopt deep reinforcement learning for the trajectory optimization over a discrete-time scale. In each time slot, beamforming is optimized based on the channel state information to improve CRB performance while mitigating interference between the BS and the communication user. Simulation results demonstrate that the proposed method significantly reduces the time-averaged CRB by over 10%, compared with the ISAC system without UAV assistance, and also achieves a higher sensing accuracy than both the fixed-UAV-trajectory and the maximum-ratio-transmission-based beamforming benchmarks.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T22:25:03Z",
-      "arxivId": "2607.19609",
-      "categories": [
-        "cs.IT",
-        "cs.LG",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19609v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19609",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19609v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19609"
-        }
-      ],
-      "semanticScholarId": "9268b5190f85b356fded5b7559afed482e9ca991",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 27,
-        "evidence": 7,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 5,
           "corroboration": 2
         }
       }
@@ -63480,6 +63112,76 @@
       }
     },
     {
+      "id": "arxiv:2607.19609",
+      "title": "CRB-Driven Beamforming and Trajectory Optimization for UAV-assisted ISAC System",
+      "authors": [
+        "Yi Yang",
+        "Qianqian Zhang",
+        "Huaxia Wang"
+      ],
+      "abstract": "In this paper, we study an unmanned aerial vehicle (UAV)-assisted integrated sensing and communication (ISAC) system, where a UAV enhances the sensing capability of a base station (BS) towards a target while ensuring reliable communication towards a downlink user. This architecture is practically attractive for future wireless networks due to the UAV's controllable mobility and adaptive sensing coverage in wireless environments. The sensing performance is characterized by the average Cram\\'er-Rao bound (CRB), which quantifies the minimum variance of the unbiased angle-of-arrival estimation. To enhance the sensing performance, the UAV trajectory and beamforming parameters are jointly optimized under power and mobility constraints, while satisfying communication requirements to the downlink user. To address the resulting non-convex problem, we employ null-space projection for beamforming design and adopt deep reinforcement learning for the trajectory optimization over a discrete-time scale. In each time slot, beamforming is optimized based on the channel state information to improve CRB performance while mitigating interference between the BS and the communication user. Simulation results demonstrate that the proposed method significantly reduces the time-averaged CRB by over 10%, compared with the ISAC system without UAV assistance, and also achieves a higher sensing accuracy than both the fixed-UAV-trajectory and the maximum-ratio-transmission-based beamforming benchmarks.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T22:25:03Z",
+      "arxivId": "2607.19609",
+      "categories": [
+        "cs.IT",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19609v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19609",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19609v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19609"
+        }
+      ],
+      "semanticScholarId": "9268b5190f85b356fded5b7559afed482e9ca991",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 27,
+        "evidence": 7,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 5,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2607.18231",
       "title": "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
       "authors": [
@@ -68200,80 +67902,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2410.23526",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.00039",
-      "title": "Linear Chain Transformation: Expanding Optimization Dynamics for Fine-Tuning Large Language Models",
-      "authors": [
-        "Yulong Wang",
-        "Chang Zuo",
-        "Yin Xuan",
-        "Hong Li",
-        "Ni Wei"
-      ],
-      "abstract": "Fine-tuning large language models (LLMs) has become essential for adapting pretrained models to specific downstream tasks. In this paper, we propose Linear Chain Transformation (LinChain), a novel approach that introduces a sequence of linear transformations during fine-tuning to enrich optimization dynamics. By incorporating multiple linear transformations into the parameter update process, LinChain expands the effective rank of updates and enhances the model's ability to learn complex task-specific representations. We demonstrate that this method significantly improves the performance of LLM fine-tuning over state-of-the-art methods by providing more flexible optimization paths during training, while maintaining the inference efficiency of the resulting model. Our experiments on various benchmark tasks show that LinChain leads to better generalization, fewer learnable parameters, and improved task adaptation, making it a compelling strategy for LLM fine-tuning.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T14:07:24Z",
-      "arxivId": "2411.00039",
-      "doi": "10.48550/arXiv.2411.00039",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.00039v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.00039",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.00039v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.00039"
-        }
-      ],
-      "semanticScholarId": "62336c19ed0b786c8ffaf1b928f58ab2fd51f109",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.00039",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -73664,78 +73292,6 @@
       }
     },
     {
-      "id": "arxiv:2607.18794",
-      "title": "Beyond Transformers: Linear Attention Policy for Open-Vocabulary Object Goal Navigation",
-      "authors": [
-        "Jiahong Zhang",
-        "Yifan Lin",
-        "Yandong Zhang",
-        "Sijun Shen",
-        "Kexin Wang",
-        "Yuqi Pan",
-        "Hongjuan Pei",
-        "Wei Wang",
-        "Guoqi Li"
-      ],
-      "abstract": "Open-Vocabulary Object Goal Navigation (OVON) requires agents to operate under partial observability, making effective internal state updates critical for navigation performance. This update is implemented by the policy network, where recent approaches adopt Transformer-based backbones with self-attention over a context window to integrate temporal information. However, our controlled experiments show that performance does not scale with context length under Transformer-based policies, questioning the suitability of self-attention for state integration in navigation. To this end, we propose Linear Attention-based Navigation (LANav), which adopts linear attention (LA) as the policy backbone to maintain a structured state update rather than self-attention over the context window. Across multiple LA variants evaluated under identical settings, LANav consistently outperforms Transformer-based baselines. Performance improves as state update mechanisms become more structured and regulated, highlighting the importance of state update design. To improve state update effectiveness, we introduce Weighted State-Expansion Linear Attention (WSLA), which expands each attention head's state into multiple sub-states and uses learnable weighted readout to aggregate expanded sub-states. Equipped with WSLA, LANav achieves 36.4% average success rate (SR) on HM3D-OVON, outperforming Transformer-based counterparts by 6.3 percentage points in macro-averaged SR, while maintaining computational efficiency. Distance-stratified results show larger gains in long-distance episodes, while HSSD transfer and fine-tuning demonstrate robustness across scene distributions. Real-world deployment on a Unitree Go2 further achieves an 82% success rate over 50 trials, supporting the practical feasibility and sim-to-real transfer of LANav.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T07:15:36Z",
-      "arxivId": "2607.18794",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18794v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18794",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18794v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18794"
-        }
-      ],
-      "semanticScholarId": "3fabe42105f742b9a2c0f7b5247c6638f6fe9b92",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 8,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.18362",
       "title": "FARO: Feasibility-Aware Robot Motion Optimization",
       "authors": [
@@ -74192,80 +73748,6 @@
           "reproducibility": 2,
           "empirical": 4,
           "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.04265",
-      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
-      "authors": [
-        "Angen Ye",
-        "Weijie Ke",
-        "Xiaofeng Wang",
-        "Xinze Chen",
-        "Chaojun Ni",
-        "Guosheng Zhao",
-        "Boyuan Wang",
-        "Zheng Zhu",
-        "Junjie Xie",
-        "Dapeng Zhang"
-      ],
-      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04265",
-      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "embodied-foundation-models",
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04265",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/YeanRoot/HALO-WA"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04265"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 9,
-        "freshness": 4,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 0
         }
       }
     },
@@ -79972,79 +79454,73 @@
       }
     },
     {
-      "id": "arxiv:2607.19194",
-      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
+      "id": "arxiv:2607.18794",
+      "title": "Beyond Transformers: Linear Attention Policy for Open-Vocabulary Object Goal Navigation",
       "authors": [
-        "Zhongyao Yang",
-        "Haoyu Li",
-        "Yu Yan",
-        "Zhuangxuan Yu",
-        "Jiangfeng Nan",
-        "Jinrui Nan"
+        "Jiahong Zhang",
+        "Yifan Lin",
+        "Yandong Zhang",
+        "Sijun Shen",
+        "Kexin Wang",
+        "Yuqi Pan",
+        "Hongjuan Pei",
+        "Wei Wang",
+        "Guoqi Li"
       ],
-      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
+      "abstract": "Open-Vocabulary Object Goal Navigation (OVON) requires agents to operate under partial observability, making effective internal state updates critical for navigation performance. This update is implemented by the policy network, where recent approaches adopt Transformer-based backbones with self-attention over a context window to integrate temporal information. However, our controlled experiments show that performance does not scale with context length under Transformer-based policies, questioning the suitability of self-attention for state integration in navigation. To this end, we propose Linear Attention-based Navigation (LANav), which adopts linear attention (LA) as the policy backbone to maintain a structured state update rather than self-attention over the context window. Across multiple LA variants evaluated under identical settings, LANav consistently outperforms Transformer-based baselines. Performance improves as state update mechanisms become more structured and regulated, highlighting the importance of state update design. To improve state update effectiveness, we introduce Weighted State-Expansion Linear Attention (WSLA), which expands each attention head's state into multiple sub-states and uses learnable weighted readout to aggregate expanded sub-states. Equipped with WSLA, LANav achieves 36.4% average success rate (SR) on HM3D-OVON, outperforming Transformer-based counterparts by 6.3 percentage points in macro-averaged SR, while maintaining computational efficiency. Distance-stratified results show larger gains in long-distance episodes, while HSSD transfer and fine-tuning demonstrate robustness across scene distributions. Real-world deployment on a Unitree Go2 further achieves an 82% success rate over 50 trials, supporting the practical feasibility and sim-to-real transfer of LANav.",
       "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-22T03:53:48Z",
-      "arxivId": "2607.19194",
+      "updatedAt": "2026-07-21T07:15:36Z",
+      "arxivId": "2607.18794",
       "categories": [
-        "cs.RO",
-        "cs.CV"
+        "cs.RO"
       ],
       "fieldIds": [
-        "cs-cv",
         "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
         "cs-lg"
       ],
       "topicIds": [
         "navigation-planning",
         "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
+        "lg-robustness-generalization"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
+      "sourceUrl": "http://arxiv.org/abs/2607.18794v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18794",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194v2"
+          "url": "https://arxiv.org/pdf/2607.18794v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194"
+          "url": "https://arxiv.org/pdf/2607.18794"
         }
       ],
-      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
+      "semanticScholarId": "3fabe42105f742b9a2c0f7b5247c6638f6fe9b92",
       "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "preprint",
       "personalization": {},
       "score": {
         "baseTotal": 54,
-        "relevance": 27,
-        "evidence": 4,
-        "freshness": 5,
+        "relevance": 24,
+        "evidence": 8,
+        "freshness": 4,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "摘要给出实验或 benchmark 线索",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 0,
           "citations": 0,
           "reproducibility": 0,
-          "empirical": 2,
+          "empirical": 6,
           "corroboration": 2
         }
       }
@@ -80769,6 +80245,80 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 6,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.04265",
+      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "authors": [
+        "Angen Ye",
+        "Weijie Ke",
+        "Xiaofeng Wang",
+        "Xinze Chen",
+        "Chaojun Ni",
+        "Guosheng Zhao",
+        "Boyuan Wang",
+        "Zheng Zhu",
+        "Junjie Xie",
+        "Dapeng Zhang"
+      ],
+      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04265",
+      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04265",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/YeanRoot/HALO-WA"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04265"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 24,
+        "evidence": 8,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
           "corroboration": 0
         }
       }
@@ -92561,62 +92111,71 @@
       }
     },
     {
-      "id": "arxiv:2607.19284",
-      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
+      "id": "arxiv:2607.19194",
+      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
       "authors": [
-        "Thomas Marshall Vielmetti",
-        "Daniel Cherenson",
-        "Dimitra Panagou"
+        "Zhongyao Yang",
+        "Haoyu Li",
+        "Yu Yan",
+        "Zhuangxuan Yu",
+        "Jiangfeng Nan",
+        "Jinrui Nan"
       ],
-      "abstract": "This paper addresses multi-objective kinodynamic planning in environments with stochastic hybrid adversaries that probabilistically transition to adversarial modes based on the ego state. The goal is to construct the Pareto-front of paths that trade off execution cost and the probability of safety constraint violation (risk). Existing chance-constrained planners evaluate risk over open-loop trajectories, yielding overly conservative solutions that fail to account for ego-agent reactivity. To address this limitation, we shift the planning space to sequences of closed-loop policies, and integrate sample-based risk evaluation directly into tree construction via Monte-Carlo particle rollouts. We first introduce Stochastic Multi-Objective RRT (SMO-RRT), for which we prove probabilistic completeness, followed by Stochastic Multi-Objective Stable Sparse RRT (SMO-SST), which leverages selective pruning to improve numerical performance at the cost of completeness. For both algorithms, we derive a finite-sample bound on the probability of chance constraint violation for systems with non-Gaussian, state-dependent uncertainty, enabling probabilistically safe planning in a broad class of environments applicable to multi-agent systems, social navigation, and autonomous driving.",
+      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
       "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T16:56:34Z",
-      "arxivId": "2607.19284",
+      "updatedAt": "2026-07-22T03:53:48Z",
+      "arxivId": "2607.19194",
       "categories": [
-        "cs.RO"
+        "cs.RO",
+        "cs.CV"
       ],
       "fieldIds": [
+        "cs-cv",
         "embodied-intelligence",
         "cs-ai",
+        "cs-cl",
         "cs-lg"
       ],
       "topicIds": [
         "navigation-planning",
         "simulation-datasets-evaluation",
         "ai-reasoning-planning",
-        "ai-multi-agent-systems",
-        "lg-robustness-generalization"
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19284v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19284",
+      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19284v1"
+          "url": "https://arxiv.org/pdf/2607.19194v2"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19284"
+          "url": "https://arxiv.org/pdf/2607.19194"
         }
       ],
-      "semanticScholarId": "145e0cdc5c8c8455ad97e791c7bbf84f4388ff61",
+      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
       "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "preprint",
       "personalization": {},
       "score": {
         "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
+        "relevance": 27,
+        "evidence": 4,
+        "freshness": 4,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -92624,7 +92183,7 @@
           "publication": 0,
           "citations": 0,
           "reproducibility": 0,
-          "empirical": 4,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -96375,6 +95934,75 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19284",
+      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
+      "authors": [
+        "Thomas Marshall Vielmetti",
+        "Daniel Cherenson",
+        "Dimitra Panagou"
+      ],
+      "abstract": "This paper addresses multi-objective kinodynamic planning in environments with stochastic hybrid adversaries that probabilistically transition to adversarial modes based on the ego state. The goal is to construct the Pareto-front of paths that trade off execution cost and the probability of safety constraint violation (risk). Existing chance-constrained planners evaluate risk over open-loop trajectories, yielding overly conservative solutions that fail to account for ego-agent reactivity. To address this limitation, we shift the planning space to sequences of closed-loop policies, and integrate sample-based risk evaluation directly into tree construction via Monte-Carlo particle rollouts. We first introduce Stochastic Multi-Objective RRT (SMO-RRT), for which we prove probabilistic completeness, followed by Stochastic Multi-Objective Stable Sparse RRT (SMO-SST), which leverages selective pruning to improve numerical performance at the cost of completeness. For both algorithms, we derive a finite-sample bound on the probability of chance constraint violation for systems with non-Gaussian, state-dependent uncertainty, enabling probabilistically safe planning in a broad class of environments applicable to multi-agent systems, social navigation, and autonomous driving.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T16:56:34Z",
+      "arxivId": "2607.19284",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "ai-multi-agent-systems",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19284v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19284",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19284v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19284"
+        }
+      ],
+      "semanticScholarId": "145e0cdc5c8c8455ad97e791c7bbf84f4388ff61",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 2
         }
       }
@@ -109443,367 +109071,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19306",
-      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
-      "authors": [
-        "Jason Stanley",
-        "Zhirui Dai",
-        "Qihao Qian",
-        "Tzu-Chin Ho",
-        "Tianxing Fan",
-        "Siddhartha Saha",
-        "C. Barngrover",
-        "K. Lee",
-        "Nikolay Atanasov UC San Diego",
-        "La Jolla",
-        "Usa",
-        "AI Shield",
-        "San Diego"
-      ],
-      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T17:18:46Z",
-      "arxivId": "2607.19306",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306"
-        }
-      ],
-      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19174",
-      "title": "Bayesian Retraction Optimization for Tissue Attachment Mapping in Surgical Dissection",
-      "authors": [
-        "Shing-Hei Ho",
-        "Bao Thach",
-        "Toan Vo",
-        "James M. Ferguson",
-        "Alan Kuntz"
-      ],
-      "abstract": "With growing surgeon shortages, automating surgical sub-tasks such as tissue dissection offers a promising step toward reducing workload and expanding patient access. Prior work has relied on hand-crafted incision policies that cannot quantify uncertainty or has relied on simulation-based methods that require strong modeling assumptions. We instead view tissue attachment identification as an inherently probabilistic problem and propose a Bayesian approach that avoids explicit tissue modeling. Our method uses a Sequential Bayesian Hilbert Map (SBHM) to represent the likelihood that each tissue point is attached to the underlying resection surface. An ensemble of learned classifiers predicts attachment likelihoods from spatial data acquired during robotic tissue retraction, with each classifier serving as a noisy information source to update the SBHM. To plan the next retraction, we devise Bayesian Retraction Optimization (BRO) to select the most informative action under safety constraints. As the SBHM refines over time, regions with high attachment likelihood are selectively incised. We validate our method in simulation across diverse tissue geometries and acquisition strategies, and demonstrate zero-shot transfer to real robotic dissection experiments.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T15:12:11Z",
-      "arxivId": "2607.19174",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-theory-optimization",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19174v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19174",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19174v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19174"
-        }
-      ],
-      "semanticScholarId": "e1fed07ffab679bf88a73f3851ee922d87c88d98",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 27,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18950",
-      "title": "Design and stability analysis of an underactuated hand with passively rotating fingers",
-      "authors": [
-        "Léonie Plancoulaine",
-        "Sylvain Guégan",
-        "Franck Plestan",
-        "Damien Chablat"
-      ],
-      "abstract": "This paper presents an innovative design and stability analysis of an underactuated robotic finger with spatial mobility, designed to enhance gripping dexterity in robotic hands. The finger architecture incorporates a revolute joint at its base, enabling passive spatial rotation that facilitates both cylindrical and spherical grasping. With only two phalanges per finger, the design simplifies kinematic complexity while supporting precision and enveloping grasps. Stability criteria, based on the moment at the finger base joint induced by contact forces, are introduced to ensure reliable object gripping and prevent ejection during manipulation. The study also examines a differential mechanism that distributes a single actuation torque across multiple fingers, allowing adaptive and coordinated motion. This mechanism enhances the hand's ability to grasp diverse object shapes with minimal pre-grasp adjustments, leveraging passivity for autonomous adaptation. Theoretical findings are experimentally validated using a fully mechanical prototype, demonstrating versatility in performing cylindrical, spherical, parallel, and enveloping grasps. The integration of underactuation-both within individual fingers and among multiple fingers-reduces mechanical complexity, cost, and control demands while preserving functional adaptability. This work advances the development of compliant robotic hands suitable for applications requiring dexterity and robustness, such as agricultural robotics, logistics, assistive technologies, and waste sorting. Future research will focus on automating actuation and refining control strategies to further improve grasp stability and precision, paving the way for autonomous manipulation in unstructured environments.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T10:37:18Z",
-      "arxivId": "2607.18950",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18950v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18950",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18950v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18950"
-        }
-      ],
-      "semanticScholarId": "cee94412a680088c89f343af26c4bdff09586120",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18731",
-      "title": "Correct-by-Construction Behavior Tree Synthesis from Signal Temporal Logic Specifications with Application to Robotic Missions",
-      "authors": [
-        "Jiaheng Dong",
-        "Jingyi Huang",
-        "Liang Han"
-      ],
-      "abstract": "Behavior Trees (BTs) are widely adopted for complex task execution in robotics, providing modular, reactive control but lacking formal guarantees. However, existing correct-by-construction synthesis from Linear Temporal Logic (LTL) cannot express quantitative timing constraints. This letter synthesizes correct-by-construction BTs from Signal Temporal Logic (STL) specifications. The workspace is modeled as a timed transition system and abstracted into a zone graph, and an augmented state space tracking both logical progress and timing constraints is introduced. A hierarchical fixed-point algorithm computes winning sets for an STL fragment encompassing safety, reachability, response, recurrence, and persistence, yielding BT subtrees with a runtime constraint function. Correctness guarantees are proven and complexity bounds are derived. Simulations demonstrate specification satisfaction with strictly positive robustness, and a physical quadrotor experiment with six STL specifications validates practical deployability.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T05:43:19Z",
-      "arxivId": "2607.18731",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18731v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18731",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18731v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18731"
-        }
-      ],
-      "semanticScholarId": "2578b13ac6d6dd2e66bf5fc8c1980d3a6bd1ff8f",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18604",
-      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
-      "authors": [
-        "Zijiang Yan",
-        "Hao Zhou",
-        "Wael Jaafar",
-        "Jianhua Pei",
-        "Ping Wang",
-        "Halim Yanikomeroglu",
-        "Hina Tabassum"
-      ],
-      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T00:34:42Z",
-      "arxivId": "2607.18604",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG",
-        "cs.NI",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604"
-        }
-      ],
-      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.14943",
       "title": "Steering Robustness into World Action Models via Mechanistic Interpretability and Optimal Control",
       "authors": [
@@ -116111,6 +115378,367 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 0,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19306",
+      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
+      "authors": [
+        "Jason Stanley",
+        "Zhirui Dai",
+        "Qihao Qian",
+        "Tzu-Chin Ho",
+        "Tianxing Fan",
+        "Siddhartha Saha",
+        "C. Barngrover",
+        "K. Lee",
+        "Nikolay Atanasov UC San Diego",
+        "La Jolla",
+        "Usa",
+        "AI Shield",
+        "San Diego"
+      ],
+      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T17:18:46Z",
+      "arxivId": "2607.19306",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19306v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19306"
+        }
+      ],
+      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19174",
+      "title": "Bayesian Retraction Optimization for Tissue Attachment Mapping in Surgical Dissection",
+      "authors": [
+        "Shing-Hei Ho",
+        "Bao Thach",
+        "Toan Vo",
+        "James M. Ferguson",
+        "Alan Kuntz"
+      ],
+      "abstract": "With growing surgeon shortages, automating surgical sub-tasks such as tissue dissection offers a promising step toward reducing workload and expanding patient access. Prior work has relied on hand-crafted incision policies that cannot quantify uncertainty or has relied on simulation-based methods that require strong modeling assumptions. We instead view tissue attachment identification as an inherently probabilistic problem and propose a Bayesian approach that avoids explicit tissue modeling. Our method uses a Sequential Bayesian Hilbert Map (SBHM) to represent the likelihood that each tissue point is attached to the underlying resection surface. An ensemble of learned classifiers predicts attachment likelihoods from spatial data acquired during robotic tissue retraction, with each classifier serving as a noisy information source to update the SBHM. To plan the next retraction, we devise Bayesian Retraction Optimization (BRO) to select the most informative action under safety constraints. As the SBHM refines over time, regions with high attachment likelihood are selectively incised. We validate our method in simulation across diverse tissue geometries and acquisition strategies, and demonstrate zero-shot transfer to real robotic dissection experiments.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T15:12:11Z",
+      "arxivId": "2607.19174",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-theory-optimization",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19174v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19174",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19174v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19174"
+        }
+      ],
+      "semanticScholarId": "e1fed07ffab679bf88a73f3851ee922d87c88d98",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 27,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18950",
+      "title": "Design and stability analysis of an underactuated hand with passively rotating fingers",
+      "authors": [
+        "Léonie Plancoulaine",
+        "Sylvain Guégan",
+        "Franck Plestan",
+        "Damien Chablat"
+      ],
+      "abstract": "This paper presents an innovative design and stability analysis of an underactuated robotic finger with spatial mobility, designed to enhance gripping dexterity in robotic hands. The finger architecture incorporates a revolute joint at its base, enabling passive spatial rotation that facilitates both cylindrical and spherical grasping. With only two phalanges per finger, the design simplifies kinematic complexity while supporting precision and enveloping grasps. Stability criteria, based on the moment at the finger base joint induced by contact forces, are introduced to ensure reliable object gripping and prevent ejection during manipulation. The study also examines a differential mechanism that distributes a single actuation torque across multiple fingers, allowing adaptive and coordinated motion. This mechanism enhances the hand's ability to grasp diverse object shapes with minimal pre-grasp adjustments, leveraging passivity for autonomous adaptation. Theoretical findings are experimentally validated using a fully mechanical prototype, demonstrating versatility in performing cylindrical, spherical, parallel, and enveloping grasps. The integration of underactuation-both within individual fingers and among multiple fingers-reduces mechanical complexity, cost, and control demands while preserving functional adaptability. This work advances the development of compliant robotic hands suitable for applications requiring dexterity and robustness, such as agricultural robotics, logistics, assistive technologies, and waste sorting. Future research will focus on automating actuation and refining control strategies to further improve grasp stability and precision, paving the way for autonomous manipulation in unstructured environments.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T10:37:18Z",
+      "arxivId": "2607.18950",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18950v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18950",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18950v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18950"
+        }
+      ],
+      "semanticScholarId": "cee94412a680088c89f343af26c4bdff09586120",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18731",
+      "title": "Correct-by-Construction Behavior Tree Synthesis from Signal Temporal Logic Specifications with Application to Robotic Missions",
+      "authors": [
+        "Jiaheng Dong",
+        "Jingyi Huang",
+        "Liang Han"
+      ],
+      "abstract": "Behavior Trees (BTs) are widely adopted for complex task execution in robotics, providing modular, reactive control but lacking formal guarantees. However, existing correct-by-construction synthesis from Linear Temporal Logic (LTL) cannot express quantitative timing constraints. This letter synthesizes correct-by-construction BTs from Signal Temporal Logic (STL) specifications. The workspace is modeled as a timed transition system and abstracted into a zone graph, and an augmented state space tracking both logical progress and timing constraints is introduced. A hierarchical fixed-point algorithm computes winning sets for an STL fragment encompassing safety, reachability, response, recurrence, and persistence, yielding BT subtrees with a runtime constraint function. Correctness guarantees are proven and complexity bounds are derived. Simulations demonstrate specification satisfaction with strictly positive robustness, and a physical quadrotor experiment with six STL specifications validates practical deployability.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T05:43:19Z",
+      "arxivId": "2607.18731",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18731v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18731",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18731v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18731"
+        }
+      ],
+      "semanticScholarId": "2578b13ac6d6dd2e66bf5fc8c1980d3a6bd1ff8f",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18604",
+      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
+      "authors": [
+        "Zijiang Yan",
+        "Hao Zhou",
+        "Wael Jaafar",
+        "Jianhua Pei",
+        "Ping Wang",
+        "Halim Yanikomeroglu",
+        "Hina Tabassum"
+      ],
+      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T00:34:42Z",
+      "arxivId": "2607.18604",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG",
+        "cs.NI",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604"
+        }
+      ],
+      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -143233,23 +142861,320 @@
           "corroboration": 0
         }
       }
+    },
+    {
+      "id": "arxiv:2610.33930",
+      "title": "EnerGNN: Learning Optimization-Compatible Energy Functions for Exact Constrained Combinatorial Inference",
+      "authors": [
+        "Niki Triantafyllou",
+        "Maria M. Papathanasiou"
+      ],
+      "abstract": "Learning-based approaches to combinatorial optimization often predict solutions directly or use predictions to restrict search, while expressive energy-based models typically rely on approximate inference. We introduce EnerGNN, a framework that learns energy functions over complete binary configurations and minimizes them under explicit hard constraints through mixed integer programming (MIP). EnerGNN combines a graph neural network encoder with an optimization-compatible readout and a nonlinear energy head, enabling exact constrained inference over the learned energy. An optimality-aware contrastive loss trains the energy to reflect solution quality and constraint violations. Across Quadratic Knapsack, Combinatorial Auctions, and a personalized cell therapy supply chain problem, EnerGNN achieves near-optimal solutions with 100% feasibility. On the supply chain problem, it achieves a 0.05% mean primal gap and a 17.4$\\times$ speedup over the monolithic MIP. The learned energy also generalizes to larger instances and supports zero-shot constraint injection, adapting to changing constraints without retraining while preserving feasibility.",
+      "publishedAt": "2026-10-24T21:43:59Z",
+      "updatedAt": "2026-10-24T21:43:59Z",
+      "arxivId": "2610.33930",
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "fieldIds": [
+        "cs-lg"
+      ],
+      "topicIds": [
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.33930v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.33930v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.33930v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2610.33840",
+      "title": "Sliding Networks: A Family of Residual Structures Preserving Feature Learning and Feature Diversity",
+      "authors": [
+        "Datong Zhou",
+        "Blake Bordelon"
+      ],
+      "abstract": "Deep learning models tend to perform best at large widths and depths. The growing interest in scaling laws, especially in the language modeling domain, has motivated procedures for scaling up network widths and depths in order to preserve stability and computational efficiency of training dynamics. Existing depth-scaling approaches force a choice between retaining locally maximal \\emph{feature learning} and preserving a form of \\emph{feature diversity} in the residual stream arising from random differences between channels. We examine a \\textit{joint scaling recipe} that preserves both. With residual width $N_\\flat$, hidden width $N_\\sharp$, and depth $L$, the key quantity is, by default, the limiting ratio $N_\\flat/(N_\\sharp L)\\toα$, while correlated initialization (Half Copy) can partially relax the resulting shape constraints. Theory and residual-MLP experiments support convergence at fixed positive $α$ to an SDE limit with locally maximal feature learning. Hidden computations can then be redistributed between width and depth while preserving this limit, like turning melody into harmony and back. Language-model experiments nevertheless show performance differences under regrouping at fixed parameter count. These results distinguish approximating a limit (ODE or SDE) from scaling for better performance.",
+      "publishedAt": "2026-10-24T18:22:51Z",
+      "updatedAt": "2026-10-24T18:22:51Z",
+      "arxivId": "2610.33840",
+      "categories": [
+        "cs.LG",
+        "cond-mat.dis-nn"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "cl-language-modeling",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.33840v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.33840v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.33840v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2610.33835",
+      "title": "Hessian-Similar Optimization with Capped Participation: Lower Bounds and Virtual Masters",
+      "authors": [
+        "Rui Wang"
+      ],
+      "abstract": "What is the round complexity of Hessian-similar optimization when each round can contact at most $s$ of $m$ clients? Prior rates permit a free master or full participation and do not characterize strict caps. We count every one-vector query and reply. A hidden-client chain gives a lower bound for zero-respecting local algorithms with adaptive cohorts and random stopping: on strongly convex quadratics, the required rounds are $Ω((m/s)\\sqrt{\\min\\{δ_a,\\barδ/\\sqrt m\\}/μ}\\,\\log(1/ε))$ for $s\\leq(m-2)/2$ in the high-accuracy, high-dissimilarity regime. Here $μ$ is strong convexity, while $δ_a$ and $\\barδ$ bound anchor and average Hessian variation. To remove dependence on a poor anchor, virtual-master SVRS uses independent estimator and proximal cohorts and averages the proximal replies. With Catalyst, it reaches relative gap $ε$ in $\\tilde O(m/s+(\\sqrt{m/s}+m^{3/4}/s)\\sqrt{\\barδ/μ})$ expected rounds on quadratics with strongly convex clients, independent of $δ_a$. Combining this method with charged analyses of existing algorithms matches the lower bound's polynomial dependence for $s\\leq\\sqrt m$ and $s=Ω(m)$; the worst gap is $O(m^{1/8})$. A held-out 12-seed synthetic study finds fewer rounds than tuned SVRP in nine of ten dip-family incomplete-cohort cells, versus two of 30 other cells. The lower bounds concern zero-respecting algorithms and do not cover unrestricted messages.",
+      "publishedAt": "2026-10-24T18:14:24Z",
+      "updatedAt": "2026-10-24T18:14:24Z",
+      "arxivId": "2610.33835",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "fieldIds": [
+        "cs-lg"
+      ],
+      "topicIds": [
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.33835v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.33835v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.33835v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2610.33813",
+      "title": "Task Format as a Factor in Adaptation: A Controlled Comparison of LoRA and Full Fine-Tuning for Prompt-Safety Classification",
+      "authors": [
+        "John Alderete",
+        "Srirakshith Betageri",
+        "Jennifer Flynn",
+        "Alex Greenhalgh",
+        "Josh Rubin",
+        "Yoshita Varma Annam"
+      ],
+      "abstract": "Fine-tuning a language model for classification involves many design decisions. Comparisons of low-rank adaptation (LoRA) with full fine-tuning are common but often confounded, and task format is rarely studied. We compare both regimes on prompt-safety classification with a matched 400M encoder-decoder pair (Ettin) across three task formats, with up to 15 seeds per cell and pre-specified analyses. At the pre-specified learning rates, full fine-tuning leads LoRA by 2-3 pp in every architecture and format trained on the label alone. On the encoder, the gap closes once both rates are chosen by the same search. Training LoRA to write a reason after its verdict adds 4.0 pp and closes the gap, but a content-free sentence of equal length does not. Trained models score above a prompted 8B in domain but fall behind it on two of three out-of-distribution corpora, trailing by 8-23 pp on adversarial jailbreaks and flagging 27-66% of benign but harmful-looking prompts as unsafe, against the 8B's 2-3%. Together, the results suggest that the adaptation regime matters less than how each model is trained, its learning rate, and training target, and that in-domain accuracy alone is an incomplete guide to robustness.",
+      "publishedAt": "2026-10-24T17:24:54Z",
+      "updatedAt": "2026-10-24T17:24:54Z",
+      "arxivId": "2610.33813",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.33813v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.33813v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.33813v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2610.33811",
+      "title": "Rectified Language Flow",
+      "authors": [
+        "Baiyu Su",
+        "Runlong Liao",
+        "Lizhang Chen",
+        "Qiang Liu"
+      ],
+      "abstract": "Continuous-state flow and diffusion models offer a promising approach to fast, parallel language generation, but matching the generation quality of autoregressive models remains challenging. We present Rectified Language Flow (ReLF), a language model that generates text by transporting noise to token embeddings using rectified flow. ReLF combines several complementary design choices: fixed token embeddings constructed with Hellinger-SVD, self-conditioning guidance trained with cross-entropy, and regularized reflow for few-step generation. We further introduce singular logits, which combine an analytically computed term that drives commitment to a valid token embedding as noise vanishes with a bounded neural residual that learns contextual token preferences. With 64 function evaluations on OpenWebText, ReLF achieves lower generative perplexity than autoregressive baselines at matched diversity across all three model sizes tested, while also outperforming prior continuous flow methods in this setting. After two reflow rounds, ReLF still outperforms autoregressive baselines with 16 function evaluations while generating 1,024-token sequences 15-19 times faster at batch size 1.",
+      "publishedAt": "2026-10-24T17:16:49Z",
+      "updatedAt": "2026-10-24T17:16:49Z",
+      "arxivId": "2610.33811",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2610.33811v1",
+      "pdfUrl": "https://arxiv.org/pdf/2610.33811v1",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.33811v1"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 44,
+        "relevance": 24,
+        "evidence": 2,
+        "freshness": 5,
+        "completeness": 13,
+        "tier": "archive",
+        "reasons": [
+          "匹配当前研究方向",
+          "新论文不因零引用降权",
+          "摘要给出实验或 benchmark 线索",
+          "两周内发布"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 0
+        }
+      }
     }
   ],
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 2560
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 2557
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 1376,
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 1372,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

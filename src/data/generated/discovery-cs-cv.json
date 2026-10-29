@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cv",
-  "generatedAt": "2026-10-28T09:56:15.368Z",
+  "generatedAt": "2026-10-29T10:18:52.068Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -335,84 +335,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12276",
-      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
-      "authors": [
-        "Fuhao Li",
-        "Wenxuan Song",
-        "Han Zhao",
-        "Jingbo Wang",
-        "Pengxiang Ding",
-        "Donglin Wang",
-        "L. Zeng",
-        "Haoang Li"
-      ],
-      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
-      "publishedAt": "2025-10-14",
-      "arxivId": "2510.12276",
-      "doi": "10.48550/arXiv.2510.12276",
-      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-three-dimensional-vision",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2510.12276",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
-      "citationCount": 87,
-      "influentialCitationCount": 14,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://spatial-forcing.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12276"
-        }
-      ],
-      "librarySlug": "2025-spatial-forcing-vla",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 68,
-        "relevance": 27,
-        "evidence": 20,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2510.12276",
-          "同龄论文中引用增长较快",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 2,
-          "empirical": 6,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.15591",
       "title": "Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification",
       "authors": [
@@ -684,6 +606,84 @@
           "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12276",
+      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
+      "authors": [
+        "Fuhao Li",
+        "Wenxuan Song",
+        "Han Zhao",
+        "Jingbo Wang",
+        "Pengxiang Ding",
+        "Donglin Wang",
+        "L. Zeng",
+        "Haoang Li"
+      ],
+      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
+      "publishedAt": "2025-10-14",
+      "arxivId": "2510.12276",
+      "doi": "10.48550/arXiv.2510.12276",
+      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-three-dimensional-vision",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2510.12276",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
+      "citationCount": 87,
+      "influentialCitationCount": 14,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://spatial-forcing.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12276"
+        }
+      ],
+      "librarySlug": "2025-spatial-forcing-vla",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 67,
+        "relevance": 27,
+        "evidence": 20,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2510.12276",
+          "同龄论文中引用增长较快",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 4,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 2
         }
       }
     },
@@ -7767,91 +7767,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22313",
-      "title": "Senna: Bridging Large Vision-Language Models and End-to-End Autonomous Driving",
-      "authors": [
-        "Bo Jiang",
-        "Shaoyu Chen",
-        "Bencheng Liao",
-        "Xingyu Zhang",
-        "Wei Yin",
-        "Qian Zhang",
-        "Chang Huang",
-        "Wenyu Liu",
-        "Xinggang Wang"
-      ],
-      "abstract": "End-to-end autonomous driving demonstrates strong planning capabilities with large-scale data but still struggles in complex, rare scenarios due to limited commonsense. In contrast, Large Vision-Language Models (LVLMs) excel in scene understanding and reasoning. The path forward lies in merging the strengths of both approaches. Previous methods using LVLMs to predict trajectories or control signals yield suboptimal results, as LVLMs are not well-suited for precise numerical predictions. This paper presents Senna, an autonomous driving system combining an LVLM (Senna-VLM) with an end-to-end model (Senna-E2E). Senna decouples high-level planning from low-level trajectory prediction. Senna-VLM generates planning decisions in natural language, while Senna-E2E predicts precise trajectories. Senna-VLM utilizes a multi-image encoding approach and multi-view prompts for efficient scene understanding. Besides, we introduce planning-oriented QAs alongside a three-stage training strategy, which enhances Senna-VLM's planning performance while preserving commonsense. Extensive experiments on two datasets show that Senna achieves state-of-the-art planning performance. Notably, with pre-training on a large-scale dataset DriveX and fine-tuning on nuScenes, Senna significantly reduces average planning error by 27.12% and collision rate by 33.33% over model without pre-training. We believe Senna's cross-scenario generalization and transferability are essential for achieving fully autonomous driving. Code and models will be released at https://github.com/hustvl/Senna.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T17:53:56Z",
-      "arxivId": "2410.22313",
-      "doi": "10.48550/arXiv.2410.22313",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22313v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22313",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/hustvl/Senna"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313"
-        }
-      ],
-      "semanticScholarId": "2e7328eddcf0f300888c9bf8ab300a92be04b7d7",
-      "citationCount": 148,
-      "influentialCitationCount": 10,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 24,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22313",
-          "同龄论文中引用增长较快",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.23704",
       "title": "LabRobFail: A Benchmark for Robotic Failure Analysis in Chemical Self-driving Laboratory",
       "authors": [
@@ -11783,90 +11698,6 @@
       }
     },
     {
-      "id": "arxiv:2511.01163",
-      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
-      "authors": [
-        "Yongyuan Liang",
-        "Wei Chow",
-        "Feng Li",
-        "Ziqiao Ma",
-        "Xiyao Wang",
-        "Jiageng Mao",
-        "Jiuhai Chen",
-        "Jiatao Gu",
-        "Yue Wang",
-        "Furong Huang"
-      ],
-      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
-      "publishedAt": "2025-11-03",
-      "updatedAt": "2025-11-03T02:27:46Z",
-      "arxivId": "2511.01163",
-      "doi": "10.48550/arXiv.2511.01163",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
-      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://roverbench.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163"
-        }
-      ],
-      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
-      "citationCount": 12,
-      "influentialCitationCount": 2,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2511.01163",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.27392",
       "title": "A Hybrid Deep Learning and Forensic Approach for Robust Deepfake Detection",
       "authors": [
@@ -13248,88 +13079,6 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12267",
-      "title": "SpineBench: Benchmarking Multimodal LLMs for Spinal Pathology Analysis",
-      "authors": [
-        "Chenghanyu Zhang",
-        "Zekun Li",
-        "Peipei Li",
-        "Xing Cui",
-        "Shuhan Xia",
-        "Weixiang Yan",
-        "Yiqiao Zhang",
-        "Qianyu Zhuang"
-      ],
-      "abstract": "With the increasing integration of Multimodal Large Language Models (MLLMs) into the medical field, comprehensive evaluation of their performance in various medical domains becomes critical. However, existing benchmarks primarily assess general medical tasks, inadequately capturing performance in nuanced areas like the spine, which relies heavily on visual input. To address this, we introduce SpineBench, a comprehensive Visual Question Answering (VQA) benchmark designed for fine-grained analysis and evaluation of MLLMs in the spinal domain. SpineBench comprises 64,878 QA pairs from 40,263 spine images, covering 11 spinal diseases through two critical clinical tasks: spinal disease diagnosis and spinal lesion localization, both in multiple-choice format. SpineBench is built by integrating and standardizing image-label pairs from open-source spinal disease datasets, and samples challenging hard negative options for each VQA pair based on visual similarity (similar but not the same disease), simulating real-world challenging scenarios. We evaluate 12 leading MLLMs on SpineBench. The results reveal that these models exhibit poor performance in spinal tasks, highlighting limitations of current MLLM in the spine domain and guiding future improvements in spinal medicine applications. SpineBench is publicly available at https://zhangchenghanyu.github.io/SpineBench.github.io/.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T08:19:22Z",
-      "arxivId": "2510.12267",
-      "doi": "10.1145/3746027.3758212",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12267v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12267",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://zhangchenghanyu.github.io/SpineBench.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12267v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12267"
-        }
-      ],
-      "semanticScholarId": "e76720fc3cfe2538bfd01e22c61ee3e25bca5749",
-      "venue": "ACM Multimedia",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：ACM Multimedia",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -16296,6 +16045,90 @@
       }
     },
     {
+      "id": "arxiv:2511.01163",
+      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
+      "authors": [
+        "Yongyuan Liang",
+        "Wei Chow",
+        "Feng Li",
+        "Ziqiao Ma",
+        "Xiyao Wang",
+        "Jiageng Mao",
+        "Jiuhai Chen",
+        "Jiatao Gu",
+        "Yue Wang",
+        "Furong Huang"
+      ],
+      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
+      "publishedAt": "2025-11-03",
+      "updatedAt": "2025-11-03T02:27:46Z",
+      "arxivId": "2511.01163",
+      "doi": "10.48550/arXiv.2511.01163",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
+      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://roverbench.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163"
+        }
+      ],
+      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
+      "citationCount": 12,
+      "influentialCitationCount": 2,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2511.01163",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.24285",
       "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
       "authors": [
@@ -16683,6 +16516,88 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12267",
+      "title": "SpineBench: Benchmarking Multimodal LLMs for Spinal Pathology Analysis",
+      "authors": [
+        "Chenghanyu Zhang",
+        "Zekun Li",
+        "Peipei Li",
+        "Xing Cui",
+        "Shuhan Xia",
+        "Weixiang Yan",
+        "Yiqiao Zhang",
+        "Qianyu Zhuang"
+      ],
+      "abstract": "With the increasing integration of Multimodal Large Language Models (MLLMs) into the medical field, comprehensive evaluation of their performance in various medical domains becomes critical. However, existing benchmarks primarily assess general medical tasks, inadequately capturing performance in nuanced areas like the spine, which relies heavily on visual input. To address this, we introduce SpineBench, a comprehensive Visual Question Answering (VQA) benchmark designed for fine-grained analysis and evaluation of MLLMs in the spinal domain. SpineBench comprises 64,878 QA pairs from 40,263 spine images, covering 11 spinal diseases through two critical clinical tasks: spinal disease diagnosis and spinal lesion localization, both in multiple-choice format. SpineBench is built by integrating and standardizing image-label pairs from open-source spinal disease datasets, and samples challenging hard negative options for each VQA pair based on visual similarity (similar but not the same disease), simulating real-world challenging scenarios. We evaluate 12 leading MLLMs on SpineBench. The results reveal that these models exhibit poor performance in spinal tasks, highlighting limitations of current MLLM in the spine domain and guiding future improvements in spinal medicine applications. SpineBench is publicly available at https://zhangchenghanyu.github.io/SpineBench.github.io/.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T08:19:22Z",
+      "arxivId": "2510.12267",
+      "doi": "10.1145/3746027.3758212",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12267v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12267",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://zhangchenghanyu.github.io/SpineBench.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12267v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12267"
+        }
+      ],
+      "semanticScholarId": "e76720fc3cfe2538bfd01e22c61ee3e25bca5749",
+      "venue": "ACM Multimedia",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：ACM Multimedia",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -19136,83 +19051,6 @@
       }
     },
     {
-      "id": "arxiv:2410.23317",
-      "title": "VL-Cache: Sparsity and Modality-Aware KV Cache Compression for Vision-Language Model Inference Acceleration",
-      "authors": [
-        "Dezhan Tu",
-        "Danylo Vashchilenko",
-        "Yuzhe Lu",
-        "Panpan Xu"
-      ],
-      "abstract": "Vision-Language Models (VLMs) have demonstrated impressive performance across a versatile set of tasks. A key challenge in accelerating VLMs is storing and accessing the large Key-Value (KV) cache that encodes long visual contexts, such as images or videos. While existing KV cache compression methods are effective for Large Language Models (LLMs), directly migrating them to VLMs yields suboptimal accuracy and speedup. To bridge the gap, we propose VL-Cache, a novel KV cache compression recipe tailored for accelerating VLM inference. In this paper, we first investigate the unique sparsity pattern of VLM attention by distinguishing visual and text tokens in prefill and decoding phases. Based on these observations, we introduce a layer-adaptive sparsity-aware cache budget allocation method that effectively distributes the limited cache budget across different layers, further reducing KV cache size without compromising accuracy. Additionally, we develop a modality-aware token scoring policy to better evaluate the token importance. Empirical results on multiple benchmark datasets demonstrate that retaining only 10% of KV cache achieves accuracy comparable to that with full cache. In a speed benchmark, our method accelerates end-to-end latency of generating 100 tokens by up to 2.33x and speeds up decoding by up to 7.08x, while reducing the memory footprint of KV cache in GPU by 90%.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T20:04:34Z",
-      "arxivId": "2410.23317",
-      "doi": "10.48550/arXiv.2410.23317",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL",
-        "cs.DC",
-        "cs.PF"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.23317v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.23317",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.23317v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.23317"
-        }
-      ],
-      "semanticScholarId": "9e39eb548f1ddd9a98b73ed03b35ca9991da8046",
-      "venue": "International Conference on Learning Representations",
-      "citationCount": 43,
-      "influentialCitationCount": 6,
-      "canonicalVenueId": "iclr",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Learning Representations",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.30023",
       "title": "RealMe: Immersive Volumetric Video from Minimal Captures",
       "authors": [
@@ -21571,74 +21409,6 @@
       }
     },
     {
-      "id": "arxiv:2510.25318",
-      "title": "Prototype-Driven Adaptation for Few-Shot Object Detection",
-      "authors": [
-        "Yushen Huang",
-        "Zhiming Wang"
-      ],
-      "abstract": "Few-shot object detection (FSOD) often suffers from base-class bias and unstable calibration when only a few novel samples are available. We propose Prototype-Driven Alignment (PDA), a lightweight, plug-in metric head for DeFRCN that provides a prototype-based \"second opinion\" complementary to the linear classifier. PDA maintains support-only prototypes in a learnable identity-initialized projection space and optionally applies prototype-conditioned RoI alignment to reduce geometric mismatch. During fine-tuning, prototypes can be adapted via exponential moving average(EMA) updates on labeled foreground RoIs-without introducing class-specific parameters-and are frozen at inference to ensure strict protocol compliance. PDA employs a best-of-K matching scheme to capture intra-class multi-modality and temperature-scaled fusion to combine metric similarities with detector logits. Experiments on VOC FSOD and GFSOD benchmarks show that PDA consistently improves novel-class performance with minimal impact on base classes and negligible computational overhead.",
-      "publishedAt": "2025-10-29",
-      "updatedAt": "2025-10-29T09:32:42Z",
-      "arxivId": "2510.25318",
-      "doi": "10.48550/arXiv.2510.25318",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.25318v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.25318",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.25318v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.25318"
-        }
-      ],
-      "semanticScholarId": "09ab08c93176b95b8e37cf5c55fc806eebbaa8a8",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.25318",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.25772",
       "title": "VFXMaster: Unlocking Dynamic Visual Effect Generation via In-Context Learning",
       "authors": [
@@ -21715,6 +21485,74 @@
           "citations": 1,
           "reproducibility": 2,
           "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.25318",
+      "title": "Prototype-Driven Adaptation for Few-Shot Object Detection",
+      "authors": [
+        "Yushen Huang",
+        "Zhiming Wang"
+      ],
+      "abstract": "Few-shot object detection (FSOD) often suffers from base-class bias and unstable calibration when only a few novel samples are available. We propose Prototype-Driven Alignment (PDA), a lightweight, plug-in metric head for DeFRCN that provides a prototype-based \"second opinion\" complementary to the linear classifier. PDA maintains support-only prototypes in a learnable identity-initialized projection space and optionally applies prototype-conditioned RoI alignment to reduce geometric mismatch. During fine-tuning, prototypes can be adapted via exponential moving average(EMA) updates on labeled foreground RoIs-without introducing class-specific parameters-and are frozen at inference to ensure strict protocol compliance. PDA employs a best-of-K matching scheme to capture intra-class multi-modality and temperature-scaled fusion to combine metric similarities with detector logits. Experiments on VOC FSOD and GFSOD benchmarks show that PDA consistently improves novel-class performance with minimal impact on base classes and negligible computational overhead.",
+      "publishedAt": "2025-10-29",
+      "updatedAt": "2025-10-29T09:32:42Z",
+      "arxivId": "2510.25318",
+      "doi": "10.48550/arXiv.2510.25318",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.25318v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.25318",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.25318v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.25318"
+        }
+      ],
+      "semanticScholarId": "09ab08c93176b95b8e37cf5c55fc806eebbaa8a8",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.25318",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -22378,78 +22216,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2510.13276",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12174",
-      "title": "UniGS: Unified Geometry-Aware Gaussian Splatting for Multimodal Rendering",
-      "authors": [
-        "Yusen Xie",
-        "Zhenmin Huang",
-        "Jianhao Jiao",
-        "Dimitrios Kanoulas",
-        "Jun Ma"
-      ],
-      "abstract": "In this paper, we propose UniGS, a unified map representation and differentiable framework for high-fidelity multimodal 3D reconstruction based on 3D Gaussian Splatting. Our framework integrates a CUDA-accelerated rasterization pipeline capable of rendering photo-realistic RGB images, geometrically accurate depth maps, consistent surface normals, and semantic logits simultaneously. We redesign the rasterization to render depth via differentiable ray-ellipsoid intersection rather than using Gaussian centers, enabling effective optimization of rotation and scale attribute through analytic depth gradients. Furthermore, we derive the analytic gradient formulation for surface normal rendering, ensuring geometric consistency among reconstructed 3D scenes. To improve computational and storage efficiency, we introduce a learnable attribute that enables differentiable pruning of Gaussians with minimal contribution during training. Quantitative and qualitative experiments demonstrate state-of-the-art reconstruction accuracy across all modalities, validating the efficacy of our geometry-aware paradigm. Source code and multimodal viewer will be available on GitHub.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-11-13T13:24:20Z",
-      "arxivId": "2510.12174",
-      "doi": "10.48550/arXiv.2510.12174",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12174v2",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12174",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12174v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12174"
-        }
-      ],
-      "semanticScholarId": "3db34fde37348a16b17f5e3cf01ca773324d0770",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12174",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -25382,6 +25148,81 @@
       }
     },
     {
+      "id": "arxiv:2510.24055",
+      "title": "Language-Conditioned Representations and Mixture-of-Experts Policy for Robust Multi-Task Robotic Manipulation",
+      "authors": [
+        "Xiucheng Zhang",
+        "Yang Jiang",
+        "Hongwei Qin",
+        "Jiashuo Bai",
+        "Maocheng Bai"
+      ],
+      "abstract": "Perceptual ambiguity and task conflict limit multitask robotic manipulation via imitation learning. We propose a framework combining a Language-Conditioned Visual Representation (LCVR) module and a Language-conditioned Mixture-ofExperts Density Policy (LMoE-DP). LCVR resolves perceptual ambiguities by grounding visual features with language instructions, enabling differentiation between visually similar tasks. To mitigate task conflict, LMoE-DP uses a sparse expert architecture to specialize in distinct, multimodal action distributions, stabilized by gradient modulation. On real-robot benchmarks, LCVR boosts Action Chunking with Transformers (ACT) and Diffusion Policy (DP) success rates by 33.75% and 25%, respectively. The full framework achieves a 79% average success, outperforming the advanced baseline by 21%. Our work shows that combining semantic grounding and expert specialization enables robust, efficient multi-task manipulation",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T04:27:03Z",
+      "arxivId": "2510.24055",
+      "doi": "10.1109/LRA.2026.3678002",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24055v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24055",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24055v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24055"
+        }
+      ],
+      "semanticScholarId": "a11ad0f4197e4050e1f5d88dd7dc7c2d23f9acbe",
+      "venue": "IEEE Robotics and Automation Letters",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：IEEE Robotics and Automation Letters",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.24650",
       "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
       "authors": [
@@ -25458,81 +25299,6 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24055",
-      "title": "Language-Conditioned Representations and Mixture-of-Experts Policy for Robust Multi-Task Robotic Manipulation",
-      "authors": [
-        "Xiucheng Zhang",
-        "Yang Jiang",
-        "Hongwei Qin",
-        "Jiashuo Bai",
-        "Maocheng Bai"
-      ],
-      "abstract": "Perceptual ambiguity and task conflict limit multitask robotic manipulation via imitation learning. We propose a framework combining a Language-Conditioned Visual Representation (LCVR) module and a Language-conditioned Mixture-ofExperts Density Policy (LMoE-DP). LCVR resolves perceptual ambiguities by grounding visual features with language instructions, enabling differentiation between visually similar tasks. To mitigate task conflict, LMoE-DP uses a sparse expert architecture to specialize in distinct, multimodal action distributions, stabilized by gradient modulation. On real-robot benchmarks, LCVR boosts Action Chunking with Transformers (ACT) and Diffusion Policy (DP) success rates by 33.75% and 25%, respectively. The full framework achieves a 79% average success, outperforming the advanced baseline by 21%. Our work shows that combining semantic grounding and expert specialization enables robust, efficient multi-task manipulation",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T04:27:03Z",
-      "arxivId": "2510.24055",
-      "doi": "10.1109/LRA.2026.3678002",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24055v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24055",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24055v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24055"
-        }
-      ],
-      "semanticScholarId": "a11ad0f4197e4050e1f5d88dd7dc7c2d23f9acbe",
-      "venue": "IEEE Robotics and Automation Letters",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE Robotics and Automation Letters",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -25701,6 +25467,78 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12174",
+      "title": "UniGS: Unified Geometry-Aware Gaussian Splatting for Multimodal Rendering",
+      "authors": [
+        "Yusen Xie",
+        "Zhenmin Huang",
+        "Jianhao Jiao",
+        "Dimitrios Kanoulas",
+        "Jun Ma"
+      ],
+      "abstract": "In this paper, we propose UniGS, a unified map representation and differentiable framework for high-fidelity multimodal 3D reconstruction based on 3D Gaussian Splatting. Our framework integrates a CUDA-accelerated rasterization pipeline capable of rendering photo-realistic RGB images, geometrically accurate depth maps, consistent surface normals, and semantic logits simultaneously. We redesign the rasterization to render depth via differentiable ray-ellipsoid intersection rather than using Gaussian centers, enabling effective optimization of rotation and scale attribute through analytic depth gradients. Furthermore, we derive the analytic gradient formulation for surface normal rendering, ensuring geometric consistency among reconstructed 3D scenes. To improve computational and storage efficiency, we introduce a learnable attribute that enables differentiable pruning of Gaussians with minimal contribution during training. Quantitative and qualitative experiments demonstrate state-of-the-art reconstruction accuracy across all modalities, validating the efficacy of our geometry-aware paradigm. Source code and multimodal viewer will be available on GitHub.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-11-13T13:24:20Z",
+      "arxivId": "2510.12174",
+      "doi": "10.48550/arXiv.2510.12174",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12174v2",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12174",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12174v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12174"
+        }
+      ],
+      "semanticScholarId": "3db34fde37348a16b17f5e3cf01ca773324d0770",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12174",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -27726,88 +27564,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2509.04063",
-      "title": "Balancing Signal and Variance: Adaptive Offline RL Post-Training for VLA Flow Models",
-      "authors": [
-        "Hongyin Zhang",
-        "Shiyuan Zhang",
-        "Junxi Jin",
-        "Qixin Zeng",
-        "Yifan Qiao",
-        "Hongchao Lu",
-        "Donglin Wang"
-      ],
-      "abstract": "Vision-Language-Action (VLA) models based on flow matching have shown excellent performance in general-purpose robotic manipulation tasks. However, the action accuracy of these models on complex downstream tasks is unsatisfactory. One important reason is that these models rely solely on the post-training paradigm of imitation learning, which makes it difficult to have a deeper understanding of the distribution properties of data quality, which is exactly what Reinforcement Learning (RL) excels at. In this paper, we theoretically propose an offline RL post-training objective for VLA flow models and induce an efficient and feasible offline RL fine-tuning algorithm -- Adaptive Reinforced Flow Matching (ARFM). By introducing an adaptively adjusted scaling factor in the VLA flow model loss, we construct a principled bias-variance trade-off objective function to optimally control the impact of RL signal on flow loss. ARFM adaptively balances RL advantage preservation and flow loss gradient variance control, resulting in a more stable and efficient fine-tuning process. Extensive simulation and real-world experimental results show that ARFM exhibits excellent generalization, robustness, few-shot learning, and continuous learning performance.",
-      "publishedAt": "2025-09-04",
-      "updatedAt": "2025-09-04T09:48:43Z",
-      "arxivId": "2509.04063",
-      "doi": "10.48550/arXiv.2509.04063",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "embodied-foundation-models",
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.04063v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.04063",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.04063v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.04063"
-        }
-      ],
-      "semanticScholarId": "8cc3498c93e6003bbc0203e761a67021bf8a988e",
-      "venue": "AAAI Conference on Artificial Intelligence",
-      "citationCount": 14,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "aaai",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：AAAI Conference on Artificial Intelligence",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 3,
           "corroboration": 4
         }
       }
@@ -32108,6 +31864,88 @@
       }
     },
     {
+      "id": "arxiv:2509.04063",
+      "title": "Balancing Signal and Variance: Adaptive Offline RL Post-Training for VLA Flow Models",
+      "authors": [
+        "Hongyin Zhang",
+        "Shiyuan Zhang",
+        "Junxi Jin",
+        "Qixin Zeng",
+        "Yifan Qiao",
+        "Hongchao Lu",
+        "Donglin Wang"
+      ],
+      "abstract": "Vision-Language-Action (VLA) models based on flow matching have shown excellent performance in general-purpose robotic manipulation tasks. However, the action accuracy of these models on complex downstream tasks is unsatisfactory. One important reason is that these models rely solely on the post-training paradigm of imitation learning, which makes it difficult to have a deeper understanding of the distribution properties of data quality, which is exactly what Reinforcement Learning (RL) excels at. In this paper, we theoretically propose an offline RL post-training objective for VLA flow models and induce an efficient and feasible offline RL fine-tuning algorithm -- Adaptive Reinforced Flow Matching (ARFM). By introducing an adaptively adjusted scaling factor in the VLA flow model loss, we construct a principled bias-variance trade-off objective function to optimally control the impact of RL signal on flow loss. ARFM adaptively balances RL advantage preservation and flow loss gradient variance control, resulting in a more stable and efficient fine-tuning process. Extensive simulation and real-world experimental results show that ARFM exhibits excellent generalization, robustness, few-shot learning, and continuous learning performance.",
+      "publishedAt": "2025-09-04",
+      "updatedAt": "2025-09-04T09:48:43Z",
+      "arxivId": "2509.04063",
+      "doi": "10.48550/arXiv.2509.04063",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning",
+        "lg-generative-modeling",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.04063v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.04063",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.04063v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.04063"
+        }
+      ],
+      "semanticScholarId": "8cc3498c93e6003bbc0203e761a67021bf8a988e",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "citationCount": 14,
+      "influentialCitationCount": 1,
+      "canonicalVenueId": "aaai",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：AAAI Conference on Artificial Intelligence",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 3,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2509.24275",
       "title": "Robust Partial 3D Point Cloud Registration via Confidence Estimation under Global Context",
       "authors": [
@@ -35760,6 +35598,75 @@
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2411.16061",
+      "title": "Scaling Spike-driven Transformer with Efficient Spike Firing Approximation Training",
+      "authors": [
+        "Man Yao",
+        "Xuerui Qiu",
+        "Tianxiang Hu",
+        "Jiakui Hu",
+        "Yuhong Chou",
+        "Keyu Tian",
+        "Jianxing Liao",
+        "Luziwei Leng",
+        "Bo Xu",
+        "Guoqi Li"
+      ],
+      "abstract": "The ambition of brain-inspired Spiking Neural Networks (SNNs) is to become a low-power alternative to traditional Artificial Neural Networks (ANNs). This work addresses two major challenges in realizing this vision: the performance gap between SNNs and ANNs, and the high training costs of SNNs. We identify intrinsic flaws in spiking neurons caused by binary firing mechanisms and propose a Spike Firing Approximation (SFA) method using integer training and spike-driven inference. This optimizes the spike firing pattern of spiking neurons, enhancing efficient training, reducing power consumption, improving performance, enabling easier scaling, and better utilizing neuromorphic chips. We also develop an efficient spike-driven Transformer architecture and a spike-masked autoencoder to prevent performance degradation during SNN scaling. On ImageNet-1k, we achieve state-of-the-art top-1 accuracy of 78.5\\%, 79.8\\%, 84.0\\%, and 86.2\\% with models containing 10M, 19M, 83M, and 173M parameters, respectively. For instance, the 10M model outperforms the best existing SNN by 7.2\\% on ImageNet, with training time acceleration and inference energy efficiency improved by 4.5$\\times$ and 3.9$\\times$, respectively. We validate the effectiveness and efficiency of the proposed method across various tasks, including object detection, semantic segmentation, and neuromorphic vision tasks. This work enables SNNs to match ANN performance while maintaining the low-power advantage, marking a significant step towards SNNs as a general visual backbone. Code is available at https://github.com/BICLab/Spike-Driven-Transformer-V3.",
+      "publishedAt": "2024-11-25T03:05:41Z",
+      "updatedAt": "2024-11-25T03:05:41Z",
+      "arxivId": "2411.16061",
+      "doi": "10.1109/TPAMI.2025.3530246",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv"
+      ],
+      "topicIds": [
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2411.16061v1",
+      "pdfUrl": "https://arxiv.org/pdf/2411.16061v1",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/BICLab/Spike-Driven-Transformer-V3"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2411.16061v1"
+        }
+      ],
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 0,
+        "completeness": 16,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.1109/TPAMI.2025.3530246",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 2
         }
       }
     },
@@ -52746,178 +52653,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19288",
-      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
-      "authors": [
-        "Feinan Cheng",
-        "Dongliang Xu",
-        "Wenli Nong",
-        "Zhiheng Zhang",
-        "Ang Liu",
-        "Tianyu Wang",
-        "Yue Yao"
-      ],
-      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T16:59:12Z",
-      "arxivId": "2607.19288",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288"
-        }
-      ],
-      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19190",
-      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
-      "authors": [
-        "Guanxiong Chen",
-        "Qianjun Xia",
-        "Jiawei Peng",
-        "Heng Zhang",
-        "Bole Ma",
-        "Justin Qian",
-        "Ziyi Jiao",
-        "Bingyang Zhou",
-        "Luoxin Ye",
-        "Kaifeng Zhang",
-        "Kunyi Wang",
-        "Weijia Zeng",
-        "Yunuo Chen",
-        "Pengzhi Yang",
-        "Ziqiu Zeng",
-        "Siyuan Luo",
-        "Huamin Wang",
-        "Chao Liu",
-        "Alan Yuille",
-        "Fan Shi",
-        "Changxi Zheng",
-        "Yunzhu Li",
-        "Chenfanfu Jiang",
-        "Peter Yichen Chen"
-      ],
-      "abstract": "Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \\textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework's agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://agentic-real2sim.github.io/.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-24T08:16:46Z",
-      "arxivId": "2607.19190",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19190v3",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19190",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://agentic-real2sim.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19190v3"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19190"
-        }
-      ],
-      "semanticScholarId": "01f2b84200d14d3fd177d691eff119049c6be53d",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.15828",
       "title": "Beyond Frontiers: Scene-Anomaly Guided Autonomous Exploration",
       "authors": [
@@ -55940,6 +55675,178 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19288",
+      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
+      "authors": [
+        "Feinan Cheng",
+        "Dongliang Xu",
+        "Wenli Nong",
+        "Zhiheng Zhang",
+        "Ang Liu",
+        "Tianyu Wang",
+        "Yue Yao"
+      ],
+      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T16:59:12Z",
+      "arxivId": "2607.19288",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "ai-reasoning-planning",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19288v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19288"
+        }
+      ],
+      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19190",
+      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
+      "authors": [
+        "Guanxiong Chen",
+        "Qianjun Xia",
+        "Jiawei Peng",
+        "Heng Zhang",
+        "Bole Ma",
+        "Justin Qian",
+        "Ziyi Jiao",
+        "Bingyang Zhou",
+        "Luoxin Ye",
+        "Kaifeng Zhang",
+        "Kunyi Wang",
+        "Weijia Zeng",
+        "Yunuo Chen",
+        "Pengzhi Yang",
+        "Ziqiu Zeng",
+        "Siyuan Luo",
+        "Huamin Wang",
+        "Chao Liu",
+        "Alan Yuille",
+        "Fan Shi",
+        "Changxi Zheng",
+        "Yunzhu Li",
+        "Chenfanfu Jiang",
+        "Peter Yichen Chen"
+      ],
+      "abstract": "Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \\textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework's agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://agentic-real2sim.github.io/.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-24T08:16:46Z",
+      "arxivId": "2607.19190",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19190v3",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19190",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://agentic-real2sim.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19190v3"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19190"
+        }
+      ],
+      "semanticScholarId": "01f2b84200d14d3fd177d691eff119049c6be53d",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -66923,165 +66830,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19306",
-      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
-      "authors": [
-        "Jason Stanley",
-        "Zhirui Dai",
-        "Qihao Qian",
-        "Tzu-Chin Ho",
-        "Tianxing Fan",
-        "Siddhartha Saha",
-        "C. Barngrover",
-        "K. Lee",
-        "Nikolay Atanasov UC San Diego",
-        "La Jolla",
-        "Usa",
-        "AI Shield",
-        "San Diego"
-      ],
-      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T17:18:46Z",
-      "arxivId": "2607.19306",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306"
-        }
-      ],
-      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19194",
-      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
-      "authors": [
-        "Zhongyao Yang",
-        "Haoyu Li",
-        "Yu Yan",
-        "Zhuangxuan Yu",
-        "Jiangfeng Nan",
-        "Jinrui Nan"
-      ],
-      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-22T03:53:48Z",
-      "arxivId": "2607.19194",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194"
-        }
-      ],
-      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.15621",
       "title": "Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving",
       "authors": [
@@ -71763,6 +71511,165 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19306",
+      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
+      "authors": [
+        "Jason Stanley",
+        "Zhirui Dai",
+        "Qihao Qian",
+        "Tzu-Chin Ho",
+        "Tianxing Fan",
+        "Siddhartha Saha",
+        "C. Barngrover",
+        "K. Lee",
+        "Nikolay Atanasov UC San Diego",
+        "La Jolla",
+        "Usa",
+        "AI Shield",
+        "San Diego"
+      ],
+      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T17:18:46Z",
+      "arxivId": "2607.19306",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19306v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19306"
+        }
+      ],
+      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19194",
+      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
+      "authors": [
+        "Zhongyao Yang",
+        "Haoyu Li",
+        "Yu Yan",
+        "Zhuangxuan Yu",
+        "Jiangfeng Nan",
+        "Jinrui Nan"
+      ],
+      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-22T03:53:48Z",
+      "arxivId": "2607.19194",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194"
+        }
+      ],
+      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -104367,24 +104274,24 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 1329
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 1333
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 984,
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 982,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
-    "candidateCount": 1444,
+    "candidateCount": 1443,
     "featuredCount": 1,
     "libraryMatchCount": 14,
     "seedCount": 0,

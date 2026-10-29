@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cl",
-  "generatedAt": "2026-10-28T09:56:15.368Z",
+  "generatedAt": "2026-10-29T10:18:52.068Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -654,91 +654,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12255",
-      "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
-      "authors": [
-        "Blazej Manczak",
-        "Eric Lin",
-        "Francisco Eiras",
-        "James O' Neill",
-        "Vaikkunth Mugunthan"
-      ],
-      "abstract": "Large language models (LLMs) are rapidly transitioning into medical clinical use, yet their reliability under realistic, multi-turn interactions remains poorly understood. Existing evaluation frameworks typically assess single-turn question answering under idealized conditions, overlooking the complexities of medical consultations where conflicting input, misleading context, and authority influence are common. We introduce MedQA-Followup, a framework for systematically evaluating multi-turn robustness in medical question answering. Our approach distinguishes between shallow robustness (resisting misleading initial context) and deep robustness (maintaining accuracy when answers are challenged across turns), while also introducing an indirect-direct axis that separates contextual framing (indirect) from explicit suggestion (direct). Using controlled interventions on the MedQA dataset, we evaluate five state-of-the-art LLMs and find that while models perform reasonably well under shallow perturbations, they exhibit severe vulnerabilities in multi-turn settings, with accuracy dropping from 91.2% to as low as 13.5% for Claude Sonnet 4. Counterintuitively, indirect, context-based interventions are often more harmful than direct suggestions, yielding larger accuracy drops across models and exposing a significant vulnerability for clinical deployment. Further compounding analyses reveal model differences, with some showing additional performance drops under repeated interventions while others partially recovering or even improving. These findings highlight multi-turn robustness as a critical but underexplored dimension for safe and reliable deployment of medical LLMs.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T08:04:18Z",
-      "arxivId": "2510.12255",
-      "doi": "10.48550/arXiv.2510.12255",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cl-retrieval-question-answering",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12255v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12255",
-      "artifacts": [
-        {
-          "kind": "dataset",
-          "url": "https://huggingface.co/datasets/dynamoai-ml/MedQA-USMLE-4-MultiTurnRobust"
-        },
-        {
-          "kind": "code",
-          "url": "https://github.com/bmanczak/MedQA-MultiTurnRobustness"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12255v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12255"
-        }
-      ],
-      "semanticScholarId": "edee9b03fd13b34d5aac6a04597fe1a281ddf7b0",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 70,
-        "relevance": 27,
-        "evidence": 22,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "priority",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2510.12255",
-          "提供可复现代码",
-          "提供数据集或模型资源",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 6,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.08902",
       "title": "A Unified Biomedical Named Entity Recognition Framework with Large Language Models",
       "authors": [
@@ -1069,6 +984,91 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12255",
+      "title": "Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs",
+      "authors": [
+        "Blazej Manczak",
+        "Eric Lin",
+        "Francisco Eiras",
+        "James O' Neill",
+        "Vaikkunth Mugunthan"
+      ],
+      "abstract": "Large language models (LLMs) are rapidly transitioning into medical clinical use, yet their reliability under realistic, multi-turn interactions remains poorly understood. Existing evaluation frameworks typically assess single-turn question answering under idealized conditions, overlooking the complexities of medical consultations where conflicting input, misleading context, and authority influence are common. We introduce MedQA-Followup, a framework for systematically evaluating multi-turn robustness in medical question answering. Our approach distinguishes between shallow robustness (resisting misleading initial context) and deep robustness (maintaining accuracy when answers are challenged across turns), while also introducing an indirect-direct axis that separates contextual framing (indirect) from explicit suggestion (direct). Using controlled interventions on the MedQA dataset, we evaluate five state-of-the-art LLMs and find that while models perform reasonably well under shallow perturbations, they exhibit severe vulnerabilities in multi-turn settings, with accuracy dropping from 91.2% to as low as 13.5% for Claude Sonnet 4. Counterintuitively, indirect, context-based interventions are often more harmful than direct suggestions, yielding larger accuracy drops across models and exposing a significant vulnerability for clinical deployment. Further compounding analyses reveal model differences, with some showing additional performance drops under repeated interventions while others partially recovering or even improving. These findings highlight multi-turn robustness as a critical but underexplored dimension for safe and reliable deployment of medical LLMs.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T08:04:18Z",
+      "arxivId": "2510.12255",
+      "doi": "10.48550/arXiv.2510.12255",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12255v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12255",
+      "artifacts": [
+        {
+          "kind": "dataset",
+          "url": "https://huggingface.co/datasets/dynamoai-ml/MedQA-USMLE-4-MultiTurnRobust"
+        },
+        {
+          "kind": "code",
+          "url": "https://github.com/bmanczak/MedQA-MultiTurnRobustness"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12255v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12255"
+        }
+      ],
+      "semanticScholarId": "edee9b03fd13b34d5aac6a04597fe1a281ddf7b0",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 69,
+        "relevance": 27,
+        "evidence": 22,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2510.12255",
+          "提供可复现代码",
+          "提供数据集或模型资源",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 6,
+          "empirical": 6,
           "corroboration": 4
         }
       }
@@ -5038,83 +5038,6 @@
       }
     },
     {
-      "id": "arxiv:2509.26488",
-      "title": "dParallel: Learnable Parallel Decoding for dLLMs",
-      "authors": [
-        "Zigeng Chen",
-        "Gongfan Fang",
-        "Xinyin Ma",
-        "Ruonan Yu",
-        "Xinchao Wang"
-      ],
-      "abstract": "Diffusion large language models (dLLMs) have recently drawn considerable attention within the research community as a promising alternative to autoregressive generation, offering parallel token prediction and lower inference latency. Yet, their parallel decoding potential remains largely underexplored, as existing open-source models still require nearly token-length decoding steps to ensure performance. To address this, we introduce dParallel, a simple and effective method that unlocks the inherent parallelism of dLLMs for fast sampling. We identify that the key bottleneck to parallel decoding arises from the sequential certainty convergence for masked tokens. Building on this insight, we introduce the core of our approach: certainty-forcing distillation, a novel training strategy that distills the model to follow its original sampling trajectories while enforcing it to achieve high certainty on masked tokens more rapidly and in parallel. Extensive experiments across various benchmarks demonstrate that our method can dramatically reduce the number of decoding steps while maintaining performance. When applied to the LLaDA-8B-Instruct model, dParallel reduces decoding steps from 256 to 30 on GSM8K, achieving an 8.5x speedup without performance degradation. On the MBPP benchmark, it cuts decoding steps from 256 to 24, resulting in a 10.5x speedup while maintaining accuracy. Our code is available at https://github.com/czg1225/dParallel",
-      "publishedAt": "2025-09-30",
-      "updatedAt": "2025-09-30T16:32:52Z",
-      "arxivId": "2509.26488",
-      "doi": "10.48550/arXiv.2509.26488",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2509.26488v1",
-      "pdfUrl": "https://arxiv.org/pdf/2509.26488",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/czg1225/dParallel"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.26488v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2509.26488"
-        }
-      ],
-      "semanticScholarId": "a9950abc25bcafb8ff1859e8add566d741e52a5d",
-      "citationCount": 53,
-      "influentialCitationCount": 10,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 66,
-        "relevance": 24,
-        "evidence": 22,
-        "freshness": 2,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2509.26488",
-          "同龄论文中引用增长较快",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2509.25299",
       "title": "ID-RAG: Identity Retrieval-Augmented Generation for Long-Horizon Persona Coherence in Generative Agents",
       "authors": [
@@ -6682,83 +6605,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12276",
-      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
-      "authors": [
-        "Fuhao Li",
-        "Wenxuan Song",
-        "Han Zhao",
-        "Jingbo Wang",
-        "Pengxiang Ding",
-        "Donglin Wang",
-        "L. Zeng",
-        "Haoang Li"
-      ],
-      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
-      "publishedAt": "2025-10-14",
-      "arxivId": "2510.12276",
-      "doi": "10.48550/arXiv.2510.12276",
-      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-three-dimensional-vision",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2510.12276",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
-      "citationCount": 87,
-      "influentialCitationCount": 14,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://spatial-forcing.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12276"
-        }
-      ],
-      "librarySlug": "2025-spatial-forcing-vla",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 24,
-        "evidence": 20,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12276",
-          "同龄论文中引用增长较快",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 2,
-          "empirical": 6,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.13831",
       "title": "Informed Routing in LLMs: Smarter Token-Level Computation for Faster Inference",
       "authors": [
@@ -7201,6 +7047,82 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2509.26488",
+      "title": "dParallel: Learnable Parallel Decoding for dLLMs",
+      "authors": [
+        "Zigeng Chen",
+        "Gongfan Fang",
+        "Xinyin Ma",
+        "Ruonan Yu",
+        "Xinchao Wang"
+      ],
+      "abstract": "Diffusion large language models (dLLMs) have recently drawn considerable attention within the research community as a promising alternative to autoregressive generation, offering parallel token prediction and lower inference latency. Yet, their parallel decoding potential remains largely underexplored, as existing open-source models still require nearly token-length decoding steps to ensure performance. To address this, we introduce dParallel, a simple and effective method that unlocks the inherent parallelism of dLLMs for fast sampling. We identify that the key bottleneck to parallel decoding arises from the sequential certainty convergence for masked tokens. Building on this insight, we introduce the core of our approach: certainty-forcing distillation, a novel training strategy that distills the model to follow its original sampling trajectories while enforcing it to achieve high certainty on masked tokens more rapidly and in parallel. Extensive experiments across various benchmarks demonstrate that our method can dramatically reduce the number of decoding steps while maintaining performance. When applied to the LLaDA-8B-Instruct model, dParallel reduces decoding steps from 256 to 30 on GSM8K, achieving an 8.5x speedup without performance degradation. On the MBPP benchmark, it cuts decoding steps from 256 to 24, resulting in a 10.5x speedup while maintaining accuracy. Our code is available at https://github.com/czg1225/dParallel",
+      "publishedAt": "2025-09-30",
+      "updatedAt": "2025-09-30T16:32:52Z",
+      "arxivId": "2509.26488",
+      "doi": "10.48550/arXiv.2509.26488",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2509.26488v1",
+      "pdfUrl": "https://arxiv.org/pdf/2509.26488",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/czg1225/dParallel"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.26488v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2509.26488"
+        }
+      ],
+      "semanticScholarId": "a9950abc25bcafb8ff1859e8add566d741e52a5d",
+      "citationCount": 53,
+      "influentialCitationCount": 10,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 65,
+        "relevance": 24,
+        "evidence": 21,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2509.26488",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 3,
+          "reproducibility": 4,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -9006,85 +8928,79 @@
       }
     },
     {
-      "id": "arxiv:2510.12267",
-      "title": "SpineBench: Benchmarking Multimodal LLMs for Spinal Pathology Analysis",
+      "id": "arxiv:2510.12276",
+      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
       "authors": [
-        "Chenghanyu Zhang",
-        "Zekun Li",
-        "Peipei Li",
-        "Xing Cui",
-        "Shuhan Xia",
-        "Weixiang Yan",
-        "Yiqiao Zhang",
-        "Qianyu Zhuang"
+        "Fuhao Li",
+        "Wenxuan Song",
+        "Han Zhao",
+        "Jingbo Wang",
+        "Pengxiang Ding",
+        "Donglin Wang",
+        "L. Zeng",
+        "Haoang Li"
       ],
-      "abstract": "With the increasing integration of Multimodal Large Language Models (MLLMs) into the medical field, comprehensive evaluation of their performance in various medical domains becomes critical. However, existing benchmarks primarily assess general medical tasks, inadequately capturing performance in nuanced areas like the spine, which relies heavily on visual input. To address this, we introduce SpineBench, a comprehensive Visual Question Answering (VQA) benchmark designed for fine-grained analysis and evaluation of MLLMs in the spinal domain. SpineBench comprises 64,878 QA pairs from 40,263 spine images, covering 11 spinal diseases through two critical clinical tasks: spinal disease diagnosis and spinal lesion localization, both in multiple-choice format. SpineBench is built by integrating and standardizing image-label pairs from open-source spinal disease datasets, and samples challenging hard negative options for each VQA pair based on visual similarity (similar but not the same disease), simulating real-world challenging scenarios. We evaluate 12 leading MLLMs on SpineBench. The results reveal that these models exhibit poor performance in spinal tasks, highlighting limitations of current MLLM in the spine domain and guiding future improvements in spinal medicine applications. SpineBench is publicly available at https://zhangchenghanyu.github.io/SpineBench.github.io/.",
+      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
       "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T08:19:22Z",
-      "arxivId": "2510.12267",
-      "doi": "10.1145/3746027.3758212",
-      "categories": [
-        "cs.CV"
-      ],
+      "arxivId": "2510.12276",
+      "doi": "10.48550/arXiv.2510.12276",
+      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
+      "categories": [],
       "fieldIds": [
-        "cs-cv",
         "embodied-intelligence",
-        "cs-cl"
+        "cs-ai",
+        "cs-cl",
+        "cs-cv"
       ],
       "topicIds": [
-        "multimodal-world-models",
         "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "ai-safety-alignment",
         "cl-language-modeling",
-        "cl-retrieval-question-answering",
+        "cv-three-dimensional-vision",
         "cv-vision-language-multimodal"
       ],
       "sources": [
-        "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12267v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12267",
+      "sourceUrl": "https://arxiv.org/abs/2510.12276",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
+      "citationCount": 87,
+      "influentialCitationCount": 14,
       "artifacts": [
         {
           "kind": "project",
-          "url": "https://zhangchenghanyu.github.io/SpineBench.github.io/"
+          "url": "https://spatial-forcing.github.io/"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12267v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12267"
+          "url": "https://arxiv.org/pdf/2510.12276"
         }
       ],
-      "semanticScholarId": "e76720fc3cfe2538bfd01e22c61ee3e25bca5749",
-      "venue": "ACM Multimedia",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
+      "librarySlug": "2025-spatial-forcing-vla",
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 64,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
+        "relevance": 24,
+        "evidence": 20,
+        "freshness": 2,
+        "completeness": 18,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：ACM Multimedia",
+          "已有正式发表线索：10.48550/arXiv.2510.12276",
+          "同龄论文中引用增长较快",
           "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
+          "包含明确的量化、对比或消融实验",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
+          "citations": 4,
           "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
+          "empirical": 6,
+          "corroboration": 2
         }
       }
     },
@@ -11476,86 +11392,6 @@
       }
     },
     {
-      "id": "arxiv:2511.01758",
-      "title": "RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks",
-      "authors": [
-        "Mian Wu",
-        "Gavin Zhang",
-        "Sewon Min",
-        "Sergey Levine",
-        "Aviral Kumar"
-      ],
-      "abstract": "Open-ended generation tasks require outputs to satisfy diverse and often implicit task-specific evaluation rubrics. The sheer number of relevant rubrics leads to prohibitively high verification costs and incomplete assessments of a response, making reinforcement learning (RL) post-training with rubric-based rewards difficult to scale. This problem is exacerbated by the fact that often the best way to combine these rubrics into one single reward is also highly prompt-specific. We propose Reinforcement Learning with Adversarial Critic (RLAC), a post-training approach that addresses these challenges via dynamic rubric verification. Our approach employs a large language model (LLM) as a critic that dynamically identifies only the most likely failure modes (e.g., a factual error or unhandled edge case), which are then verified by an external validator to optimize both generator and critic jointly. By training both the generator and the critic, this game enhances the critic's error detection and the generator's output quality while reducing required verifications. Our experiments demonstrate that RLAC improves factual accuracy in text generation and correctness in code generation, while also outperforming exhaustive verification and reward model methods. We show that dynamic critics are more effective than fixed critics, showcasing the potential of RLAC for scaling RL post-training to free-form generation tasks.",
-      "publishedAt": "2025-11-03",
-      "updatedAt": "2025-11-03T17:15:05Z",
-      "arxivId": "2511.01758",
-      "doi": "10.48550/arXiv.2511.01758",
-      "categories": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2511.01758v1",
-      "pdfUrl": "https://arxiv.org/pdf/2511.01758",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://mianwu01.github.io/RLAC_website/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01758v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01758"
-        }
-      ],
-      "semanticScholarId": "dd78d717dbac9083413220119508f304401041b0",
-      "citationCount": 12,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2511.01758",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2511.00940",
       "title": "URDF-Anything: Constructing Articulated Objects with 3D Multimodal Language Model",
       "authors": [
@@ -12554,69 +12390,83 @@
       }
     },
     {
-      "id": "arxiv:2510.12722",
-      "title": "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages",
+      "id": "arxiv:2510.12267",
+      "title": "SpineBench: Benchmarking Multimodal LLMs for Spinal Pathology Analysis",
       "authors": [
-        "Nadine El-Naggar",
-        "Tatsuki Kuribayashi",
-        "Ted Briscoe"
+        "Chenghanyu Zhang",
+        "Zekun Li",
+        "Peipei Li",
+        "Xing Cui",
+        "Shuhan Xia",
+        "Weixiang Yan",
+        "Yiqiao Zhang",
+        "Qianyu Zhuang"
       ],
-      "abstract": "Whether language models (LMs) have inductive biases that favor typologically frequent grammatical properties over rare, implausible ones has been investigated, typically using artificial languages (ALs) (White and Cotterell, 2021; Kuribayashi et al., 2024). In this paper, we extend these works from two perspectives. First, we extend their context-free AL formalization by adopting Generalized Categorial Grammar (GCG) (Wood, 2014), which allows ALs to cover attested but previously overlooked constructions, such as unbounded dependency and mildly context-sensitive structures. Second, our evaluation focuses more on the generalization ability of LMs to process unseen longer test sentences. Thus, our ALs better capture features of natural languages and our experimental paradigm leads to clearer conclusions -- typologically plausible word orders tend to be easier for LMs to productively generalize.",
+      "abstract": "With the increasing integration of Multimodal Large Language Models (MLLMs) into the medical field, comprehensive evaluation of their performance in various medical domains becomes critical. However, existing benchmarks primarily assess general medical tasks, inadequately capturing performance in nuanced areas like the spine, which relies heavily on visual input. To address this, we introduce SpineBench, a comprehensive Visual Question Answering (VQA) benchmark designed for fine-grained analysis and evaluation of MLLMs in the spinal domain. SpineBench comprises 64,878 QA pairs from 40,263 spine images, covering 11 spinal diseases through two critical clinical tasks: spinal disease diagnosis and spinal lesion localization, both in multiple-choice format. SpineBench is built by integrating and standardizing image-label pairs from open-source spinal disease datasets, and samples challenging hard negative options for each VQA pair based on visual similarity (similar but not the same disease), simulating real-world challenging scenarios. We evaluate 12 leading MLLMs on SpineBench. The results reveal that these models exhibit poor performance in spinal tasks, highlighting limitations of current MLLM in the spine domain and guiding future improvements in spinal medicine applications. SpineBench is publicly available at https://zhangchenghanyu.github.io/SpineBench.github.io/.",
       "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T17:00:19Z",
-      "arxivId": "2510.12722",
-      "doi": "10.18653/v1/2025.emnlp-main.1803",
+      "updatedAt": "2025-10-14T08:19:22Z",
+      "arxivId": "2510.12267",
+      "doi": "10.1145/3746027.3758212",
       "categories": [
-        "cs.CL"
+        "cs.CV"
       ],
       "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence"
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-cl"
       ],
       "topicIds": [
+        "multimodal-world-models",
         "simulation-datasets-evaluation",
-        "cl-language-modeling"
+        "cl-language-modeling",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12722v1",
-      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.1803.pdf",
+      "sourceUrl": "http://arxiv.org/abs/2510.12267v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12267",
       "artifacts": [
         {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12722v1"
+          "kind": "project",
+          "url": "https://zhangchenghanyu.github.io/SpineBench.github.io/"
         },
         {
           "kind": "pdf",
-          "url": "https://aclanthology.org/2025.emnlp-main.1803.pdf"
+          "url": "https://arxiv.org/pdf/2510.12267v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12267"
         }
       ],
-      "semanticScholarId": "c095abe8e5d7e340ea0d1822f8bb7b3b14cc4a05",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 2,
+      "semanticScholarId": "e76720fc3cfe2538bfd01e22c61ee3e25bca5749",
+      "venue": "ACM Multimedia",
+      "citationCount": 0,
       "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "core",
+      "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 2,
         "completeness": 20,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "本方向核心 venue：Conference on Empirical Methods in Natural Language Processing",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：ACM Multimedia",
+          "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
-          "publication": 10,
+          "publication": 6,
           "citations": 0,
-          "reproducibility": 0,
+          "reproducibility": 2,
           "empirical": 2,
           "corroboration": 4
         }
@@ -15371,91 +15221,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22313",
-      "title": "Senna: Bridging Large Vision-Language Models and End-to-End Autonomous Driving",
-      "authors": [
-        "Bo Jiang",
-        "Shaoyu Chen",
-        "Bencheng Liao",
-        "Xingyu Zhang",
-        "Wei Yin",
-        "Qian Zhang",
-        "Chang Huang",
-        "Wenyu Liu",
-        "Xinggang Wang"
-      ],
-      "abstract": "End-to-end autonomous driving demonstrates strong planning capabilities with large-scale data but still struggles in complex, rare scenarios due to limited commonsense. In contrast, Large Vision-Language Models (LVLMs) excel in scene understanding and reasoning. The path forward lies in merging the strengths of both approaches. Previous methods using LVLMs to predict trajectories or control signals yield suboptimal results, as LVLMs are not well-suited for precise numerical predictions. This paper presents Senna, an autonomous driving system combining an LVLM (Senna-VLM) with an end-to-end model (Senna-E2E). Senna decouples high-level planning from low-level trajectory prediction. Senna-VLM generates planning decisions in natural language, while Senna-E2E predicts precise trajectories. Senna-VLM utilizes a multi-image encoding approach and multi-view prompts for efficient scene understanding. Besides, we introduce planning-oriented QAs alongside a three-stage training strategy, which enhances Senna-VLM's planning performance while preserving commonsense. Extensive experiments on two datasets show that Senna achieves state-of-the-art planning performance. Notably, with pre-training on a large-scale dataset DriveX and fine-tuning on nuScenes, Senna significantly reduces average planning error by 27.12% and collision rate by 33.33% over model without pre-training. We believe Senna's cross-scenario generalization and transferability are essential for achieving fully autonomous driving. Code and models will be released at https://github.com/hustvl/Senna.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T17:53:56Z",
-      "arxivId": "2410.22313",
-      "doi": "10.48550/arXiv.2410.22313",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22313v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22313",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/hustvl/Senna"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313"
-        }
-      ],
-      "semanticScholarId": "2e7328eddcf0f300888c9bf8ab300a92be04b7d7",
-      "citationCount": 148,
-      "influentialCitationCount": 10,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 24,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22313",
-          "同龄论文中引用增长较快",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.24743",
       "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
       "authors": [
@@ -16227,6 +15992,86 @@
       }
     },
     {
+      "id": "arxiv:2511.01758",
+      "title": "RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks",
+      "authors": [
+        "Mian Wu",
+        "Gavin Zhang",
+        "Sewon Min",
+        "Sergey Levine",
+        "Aviral Kumar"
+      ],
+      "abstract": "Open-ended generation tasks require outputs to satisfy diverse and often implicit task-specific evaluation rubrics. The sheer number of relevant rubrics leads to prohibitively high verification costs and incomplete assessments of a response, making reinforcement learning (RL) post-training with rubric-based rewards difficult to scale. This problem is exacerbated by the fact that often the best way to combine these rubrics into one single reward is also highly prompt-specific. We propose Reinforcement Learning with Adversarial Critic (RLAC), a post-training approach that addresses these challenges via dynamic rubric verification. Our approach employs a large language model (LLM) as a critic that dynamically identifies only the most likely failure modes (e.g., a factual error or unhandled edge case), which are then verified by an external validator to optimize both generator and critic jointly. By training both the generator and the critic, this game enhances the critic's error detection and the generator's output quality while reducing required verifications. Our experiments demonstrate that RLAC improves factual accuracy in text generation and correctness in code generation, while also outperforming exhaustive verification and reward model methods. We show that dynamic critics are more effective than fixed critics, showcasing the potential of RLAC for scaling RL post-training to free-form generation tasks.",
+      "publishedAt": "2025-11-03",
+      "updatedAt": "2025-11-03T17:15:05Z",
+      "arxivId": "2511.01758",
+      "doi": "10.48550/arXiv.2511.01758",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2511.01758v1",
+      "pdfUrl": "https://arxiv.org/pdf/2511.01758",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://mianwu01.github.io/RLAC_website/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01758v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01758"
+        }
+      ],
+      "semanticScholarId": "dd78d717dbac9083413220119508f304401041b0",
+      "citationCount": 12,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2511.01758",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2511.01386",
       "title": "RAGSmith: A Framework for Finding the Optimal Composition of Retrieval-Augmented Generation Methods Across Datasets",
       "authors": [
@@ -16969,6 +16814,75 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12722",
+      "title": "Which Word Orders Facilitate Length Generalization in LMs? An Investigation with GCG-Based Artificial Languages",
+      "authors": [
+        "Nadine El-Naggar",
+        "Tatsuki Kuribayashi",
+        "Ted Briscoe"
+      ],
+      "abstract": "Whether language models (LMs) have inductive biases that favor typologically frequent grammatical properties over rare, implausible ones has been investigated, typically using artificial languages (ALs) (White and Cotterell, 2021; Kuribayashi et al., 2024). In this paper, we extend these works from two perspectives. First, we extend their context-free AL formalization by adopting Generalized Categorial Grammar (GCG) (Wood, 2014), which allows ALs to cover attested but previously overlooked constructions, such as unbounded dependency and mildly context-sensitive structures. Second, our evaluation focuses more on the generalization ability of LMs to process unseen longer test sentences. Thus, our ALs better capture features of natural languages and our experimental paradigm leads to clearer conclusions -- typologically plausible word orders tend to be easier for LMs to productively generalize.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T17:00:19Z",
+      "arxivId": "2510.12722",
+      "doi": "10.18653/v1/2025.emnlp-main.1803",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12722v1",
+      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.1803.pdf",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12722v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://aclanthology.org/2025.emnlp-main.1803.pdf"
+        }
+      ],
+      "semanticScholarId": "c095abe8e5d7e340ea0d1822f8bb7b3b14cc4a05",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "core",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "本方向核心 venue：Conference on Empirical Methods in Natural Language Processing",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 10,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -21209,90 +21123,6 @@
       }
     },
     {
-      "id": "arxiv:2511.01163",
-      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
-      "authors": [
-        "Yongyuan Liang",
-        "Wei Chow",
-        "Feng Li",
-        "Ziqiao Ma",
-        "Xiyao Wang",
-        "Jiageng Mao",
-        "Jiuhai Chen",
-        "Jiatao Gu",
-        "Yue Wang",
-        "Furong Huang"
-      ],
-      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
-      "publishedAt": "2025-11-03",
-      "updatedAt": "2025-11-03T02:27:46Z",
-      "arxivId": "2511.01163",
-      "doi": "10.48550/arXiv.2511.01163",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
-      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://roverbench.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163"
-        }
-      ],
-      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
-      "citationCount": 12,
-      "influentialCitationCount": 2,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2511.01163",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.26336",
       "title": "From Amateur to Master: Infusing Knowledge into LLMs via Automated Curriculum Learning",
       "authors": [
@@ -21360,6 +21190,78 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.25623",
+      "title": "Evaluating the Role of Verifiers in Test-Time Scaling for Legal Reasoning Tasks",
+      "authors": [
+        "Davide Romano",
+        "Jonathan Schwarz",
+        "Daniele Giofré"
+      ],
+      "abstract": "Test-time scaling (TTS) techniques can improve the performance of large language models (LLMs) at the expense of additional computation and latency. While TTS has proven effective in formal domains such as mathematics and programming, its value in argumentative domains such as law remains underexplored. We present an empirical study of verifier-based TTS methods for legal multiple-choice QA (MCQA) across five benchmarks. Using a family of 7 reward models, we evaluate both outcome-level (Best-of-$N$) and process-level (tree search) verification under realistic low-$N$ budgets. Our analysis systematically investigates how verifier utility is affected by key properties such as domain specialization, model size, and supervision type (process-supervised PRMs vs. outcome-only ORMs), even when applied across different roles.",
+      "publishedAt": "2025-10-29",
+      "updatedAt": "2025-10-30T13:49:22Z",
+      "arxivId": "2510.25623",
+      "doi": "10.18653/v1/2025.nllp-1.15",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.25623v2",
+      "pdfUrl": "https://aclanthology.org/2025.nllp-1.15.pdf",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.25623v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://aclanthology.org/2025.nllp-1.15.pdf"
+        }
+      ],
+      "semanticScholarId": "f2efecb97aea76de6cb763278844fd8caeee71c8",
+      "venue": "Proceedings of the Natural Legal Language Processing Workshop 2025",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Proceedings of the Natural Legal Language Processing Workshop 2025",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -21434,78 +21336,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.25623",
-      "title": "Evaluating the Role of Verifiers in Test-Time Scaling for Legal Reasoning Tasks",
-      "authors": [
-        "Davide Romano",
-        "Jonathan Schwarz",
-        "Daniele Giofré"
-      ],
-      "abstract": "Test-time scaling (TTS) techniques can improve the performance of large language models (LLMs) at the expense of additional computation and latency. While TTS has proven effective in formal domains such as mathematics and programming, its value in argumentative domains such as law remains underexplored. We present an empirical study of verifier-based TTS methods for legal multiple-choice QA (MCQA) across five benchmarks. Using a family of 7 reward models, we evaluate both outcome-level (Best-of-$N$) and process-level (tree search) verification under realistic low-$N$ budgets. Our analysis systematically investigates how verifier utility is affected by key properties such as domain specialization, model size, and supervision type (process-supervised PRMs vs. outcome-only ORMs), even when applied across different roles.",
-      "publishedAt": "2025-10-29",
-      "updatedAt": "2025-10-30T13:49:22Z",
-      "arxivId": "2510.25623",
-      "doi": "10.18653/v1/2025.nllp-1.15",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.25623v2",
-      "pdfUrl": "https://aclanthology.org/2025.nllp-1.15.pdf",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.25623v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://aclanthology.org/2025.nllp-1.15.pdf"
-        }
-      ],
-      "semanticScholarId": "f2efecb97aea76de6cb763278844fd8caeee71c8",
-      "venue": "Proceedings of the Natural Legal Language Processing Workshop 2025",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Proceedings of the Natural Legal Language Processing Workshop 2025",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -25377,84 +25207,6 @@
       }
     },
     {
-      "id": "arxiv:2410.21779",
-      "title": "Leveraging LLMs for Hypothetical Deduction in Logical Inference: A Neuro-Symbolic Approach",
-      "authors": [
-        "Qingchuan Li",
-        "Jiatong Li",
-        "Tongxuan Liu",
-        "Yuting Zeng",
-        "Mingyue Cheng",
-        "Weizhe Huang",
-        "Qi Liu"
-      ],
-      "abstract": "Large Language Models (LLMs) have exhibited remarkable potential across a wide array of reasoning tasks, including logical reasoning. Although massive efforts have been made to empower the logical reasoning ability of LLMs via external logical symbolic solvers, crucial challenges of the poor generalization ability to questions with different features and inevitable question information loss of symbolic solver-driven approaches remain unresolved. To mitigate these issues, we introduce LINA, a LLM-driven neuro-symbolic approach for faithful logical reasoning. By enabling an LLM to autonomously perform the transition from propositional logic extraction to sophisticated logical reasoning, LINA not only bolsters the resilience of the reasoning process but also eliminates the dependency on external solvers. Additionally, through its adoption of a hypothetical-deductive reasoning paradigm, LINA effectively circumvents the expansive search space challenge that plagues traditional forward reasoning methods. Empirical evaluations demonstrate that LINA substantially outperforms both established propositional logic frameworks and conventional prompting techniques across a spectrum of five logical reasoning tasks. Specifically, LINA achieves an improvement of 24.34% over LINC on the FOLIO dataset, while also surpassing prompting strategies like CoT and CoT-SC by up to 24.02%. Our code is available at https://github.com/wufeiwuwoshihua/nshy.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T06:38:46Z",
-      "arxivId": "2410.21779",
-      "doi": "10.48550/arXiv.2410.21779",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21779v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21779",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/wufeiwuwoshihua/nshy"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21779v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21779"
-        }
-      ],
-      "semanticScholarId": "9ddeed05e92aba5674902084d86234dbd90ccce0",
-      "citationCount": 8,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.21779",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.33608",
       "title": "Mycelium: A Meta-Study of Hallucination Detection Across Provenance, Typology, and Granularities",
       "authors": [
@@ -26942,6 +26694,90 @@
       }
     },
     {
+      "id": "arxiv:2511.01163",
+      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
+      "authors": [
+        "Yongyuan Liang",
+        "Wei Chow",
+        "Feng Li",
+        "Ziqiao Ma",
+        "Xiyao Wang",
+        "Jiageng Mao",
+        "Jiuhai Chen",
+        "Jiatao Gu",
+        "Yue Wang",
+        "Furong Huang"
+      ],
+      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
+      "publishedAt": "2025-11-03",
+      "updatedAt": "2025-11-03T02:27:46Z",
+      "arxivId": "2511.01163",
+      "doi": "10.48550/arXiv.2511.01163",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
+      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://roverbench.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163"
+        }
+      ],
+      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
+      "citationCount": 12,
+      "influentialCitationCount": 2,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2511.01163",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.26446",
       "title": "1+1>2: A Synergistic Sparse and Low-Rank Compression Method for Large Language Models",
       "authors": [
@@ -27692,80 +27528,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2510.14660",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12224",
-      "title": "MedKGEval: A Knowledge Graph-Based Multi-Turn Evaluation Framework for Open-Ended Patient Interactions with Clinical LLMs",
-      "authors": [
-        "Yuechun Yu",
-        "Han Ying",
-        "Haoan Jin",
-        "Wenjian Jiang",
-        "Dong Xian",
-        "Binghao Wang",
-        "Zhou Yang",
-        "Mengyue Wu"
-      ],
-      "abstract": "The reliable evaluation of large language models (LLMs) in medical applications remains an open challenge, particularly in capturing the complexity of multi-turn doctor-patient interactions that unfold in real clinical environments. Existing evaluation methods typically rely on post hoc review of full conversation transcripts, thereby neglecting the dynamic, context-sensitive nature of medical dialogues and the evolving informational needs of patients. In this work, we present MedKGEval, a novel multi-turn evaluation framework for clinical LLMs grounded in structured medical knowledge. Our approach introduces three key contributions: (1) a knowledge graph-driven patient simulation mechanism, where a dedicated control module retrieves relevant medical facts from a curated knowledge graph, thereby endowing the patient agent with human-like and realistic conversational behavior. This knowledge graph is constructed by integrating open-source resources with additional triples extracted from expert-annotated datasets; (2) an in-situ, turn-level evaluation framework, where each model response is assessed by a Judge Agent for clinical appropriateness, factual correctness, and safety as the dialogue progresses using a suite of fine-grained, task-specific metrics; (3) a comprehensive multi-turn benchmark of eight state-of-the-art LLMs, demonstrating MedKGEval's ability to identify subtle behavioral flaws and safety risks that are often overlooked by conventional evaluation pipelines. Although initially designed for Chinese and English medical applications, our framework can be readily extended to additional languages by switching the input knowledge graphs, ensuring seamless bilingual support and domain-specific applicability.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T07:22:26Z",
-      "arxivId": "2510.12224",
-      "doi": "10.48550/arXiv.2510.12224",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-knowledge-retrieval",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12224v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12224",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12224v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12224"
-        }
-      ],
-      "semanticScholarId": "8bb850f6c00b87c8c0a0a12d2063ab101ad339d7",
-      "citationCount": 6,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12224",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -32098,153 +31860,6 @@
       }
     },
     {
-      "id": "arxiv:2410.23317",
-      "title": "VL-Cache: Sparsity and Modality-Aware KV Cache Compression for Vision-Language Model Inference Acceleration",
-      "authors": [
-        "Dezhan Tu",
-        "Danylo Vashchilenko",
-        "Yuzhe Lu",
-        "Panpan Xu"
-      ],
-      "abstract": "Vision-Language Models (VLMs) have demonstrated impressive performance across a versatile set of tasks. A key challenge in accelerating VLMs is storing and accessing the large Key-Value (KV) cache that encodes long visual contexts, such as images or videos. While existing KV cache compression methods are effective for Large Language Models (LLMs), directly migrating them to VLMs yields suboptimal accuracy and speedup. To bridge the gap, we propose VL-Cache, a novel KV cache compression recipe tailored for accelerating VLM inference. In this paper, we first investigate the unique sparsity pattern of VLM attention by distinguishing visual and text tokens in prefill and decoding phases. Based on these observations, we introduce a layer-adaptive sparsity-aware cache budget allocation method that effectively distributes the limited cache budget across different layers, further reducing KV cache size without compromising accuracy. Additionally, we develop a modality-aware token scoring policy to better evaluate the token importance. Empirical results on multiple benchmark datasets demonstrate that retaining only 10% of KV cache achieves accuracy comparable to that with full cache. In a speed benchmark, our method accelerates end-to-end latency of generating 100 tokens by up to 2.33x and speeds up decoding by up to 7.08x, while reducing the memory footprint of KV cache in GPU by 90%.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T20:04:34Z",
-      "arxivId": "2410.23317",
-      "doi": "10.48550/arXiv.2410.23317",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL",
-        "cs.DC",
-        "cs.PF"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.23317v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.23317",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.23317v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.23317"
-        }
-      ],
-      "semanticScholarId": "9e39eb548f1ddd9a98b73ed03b35ca9991da8046",
-      "venue": "International Conference on Learning Representations",
-      "citationCount": 43,
-      "influentialCitationCount": 6,
-      "canonicalVenueId": "iclr",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Learning Representations",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22375",
-      "title": "Rethinking Code Refinement: Learning to Judge Code Efficiency",
-      "authors": [
-        "Minju Seo",
-        "Jinheon Baek",
-        "Sung Ju Hwang"
-      ],
-      "abstract": "Large Language Models (LLMs) have demonstrated impressive capabilities in understanding and generating codes. Due to these capabilities, many recent methods are proposed to automatically refine the codes with LLMs. However, we should rethink that the refined codes (from LLMs and even humans) are not always more efficient than their original versions. On the other hand, running two different versions of codes and comparing them every time is not ideal and time-consuming. Therefore, in this work, we propose a novel method based on the code language model that is trained to judge the efficiency between two different codes (generated across humans and machines) by either classifying the superior one or predicting the relative improvement. We validate our method on multiple programming languages with multiple refinement steps, demonstrating that the proposed method can effectively distinguish between more and less efficient versions of code.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T06:17:37Z",
-      "arxivId": "2410.22375",
-      "doi": "10.18653/v1/2024.findings-emnlp.645",
-      "categories": [
-        "cs.SE",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22375v1",
-      "pdfUrl": "https://aclanthology.org/2024.findings-emnlp.645.pdf",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22375v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://aclanthology.org/2024.findings-emnlp.645.pdf"
-        }
-      ],
-      "semanticScholarId": "4529932d0c604e213dba4f840d80ebc9efe05f28",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "core",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "本方向核心 venue：Conference on Empirical Methods in Natural Language Processing",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 10,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.37316",
       "title": "ReForest: Interpretability Meets Reasoning in Isolation Forest",
       "authors": [
@@ -35591,68 +35206,73 @@
       }
     },
     {
-      "id": "arxiv:2510.12943",
-      "title": "The Curious Case of Curiosity across Human Cultures and LLMs",
+      "id": "arxiv:2510.12224",
+      "title": "MedKGEval: A Knowledge Graph-Based Multi-Turn Evaluation Framework for Open-Ended Patient Interactions with Clinical LLMs",
       "authors": [
-        "Angana Borah",
-        "Zhijing Jin",
-        "Rada Mihalcea"
+        "Yuechun Yu",
+        "Han Ying",
+        "Haoan Jin",
+        "Wenjian Jiang",
+        "Dong Xian",
+        "Binghao Wang",
+        "Zhou Yang",
+        "Mengyue Wu"
       ],
-      "abstract": "Recent advances in Large Language Models (LLMs) have expanded their role in human interaction, yet curiosity -- a central driver of inquiry -- remains underexplored in these systems, particularly across cultural contexts. In this work, we investigate cultural variation in curiosity using Yahoo! Answers, a real-world multi-country dataset spanning diverse topics. We introduce CUEST (CUriosity Evaluation across SocieTies), an evaluation framework that measures human-model alignment in curiosity through linguistic (style), topic preference (content) analysis and grounding insights in social science constructs. Across open- and closed-source models, we find that LLMs flatten cross-cultural diversity, aligning more closely with how curiosity is expressed in Western countries. We then explore fine-tuning strategies to induce curiosity in LLMs, narrowing the human-model alignment gap by up to 50%. Finally, we demonstrate the practical value of curiosity for LLM adaptability across cultures, showing its importance for future NLP research.",
+      "abstract": "The reliable evaluation of large language models (LLMs) in medical applications remains an open challenge, particularly in capturing the complexity of multi-turn doctor-patient interactions that unfold in real clinical environments. Existing evaluation methods typically rely on post hoc review of full conversation transcripts, thereby neglecting the dynamic, context-sensitive nature of medical dialogues and the evolving informational needs of patients. In this work, we present MedKGEval, a novel multi-turn evaluation framework for clinical LLMs grounded in structured medical knowledge. Our approach introduces three key contributions: (1) a knowledge graph-driven patient simulation mechanism, where a dedicated control module retrieves relevant medical facts from a curated knowledge graph, thereby endowing the patient agent with human-like and realistic conversational behavior. This knowledge graph is constructed by integrating open-source resources with additional triples extracted from expert-annotated datasets; (2) an in-situ, turn-level evaluation framework, where each model response is assessed by a Judge Agent for clinical appropriateness, factual correctness, and safety as the dialogue progresses using a suite of fine-grained, task-specific metrics; (3) a comprehensive multi-turn benchmark of eight state-of-the-art LLMs, demonstrating MedKGEval's ability to identify subtle behavioral flaws and safety risks that are often overlooked by conventional evaluation pipelines. Although initially designed for Chinese and English medical applications, our framework can be readily extended to additional languages by switching the input knowledge graphs, ensuring seamless bilingual support and domain-specific applicability.",
       "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-20T15:55:28Z",
-      "arxivId": "2510.12943",
-      "doi": "10.48550/arXiv.2510.12943",
+      "updatedAt": "2025-10-14T07:22:26Z",
+      "arxivId": "2510.12224",
+      "doi": "10.48550/arXiv.2510.12224",
       "categories": [
-        "cs.CL"
+        "cs.AI"
       ],
       "fieldIds": [
-        "cs-cl",
+        "cs-ai",
         "embodied-intelligence",
-        "cs-ai"
+        "cs-cl"
       ],
       "topicIds": [
         "simulation-datasets-evaluation",
-        "ai-safety-alignment",
+        "ai-knowledge-retrieval",
         "cl-language-modeling"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12943v2",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12943",
+      "sourceUrl": "http://arxiv.org/abs/2510.12224v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12224",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12943v2"
+          "url": "https://arxiv.org/pdf/2510.12224v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12943"
+          "url": "https://arxiv.org/pdf/2510.12224"
         }
       ],
-      "semanticScholarId": "4e65a5e06fd2d80b54d133f1e0fe2a312c4e9a0c",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
+      "semanticScholarId": "8bb850f6c00b87c8c0a0a12d2063ab101ad339d7",
+      "citationCount": 6,
+      "influentialCitationCount": 1,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 59,
         "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
+        "evidence": 15,
+        "freshness": 2,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12943",
+          "已有正式发表线索：10.48550/arXiv.2510.12224",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -38755,77 +38375,6 @@
       }
     },
     {
-      "id": "arxiv:2410.21965",
-      "title": "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
-      "authors": [
-        "Yutao Mou",
-        "Shikun Zhang",
-        "Wei Ye"
-      ],
-      "abstract": "Ensuring the safety of large language model (LLM) applications is essential for developing trustworthy artificial intelligence. Current LLM safety benchmarks have two limitations. First, they focus solely on either discriminative or generative evaluation paradigms while ignoring their interconnection. Second, they rely on standardized inputs, overlooking the effects of widespread prompting techniques, such as system prompts, few-shot demonstrations, and chain-of-thought prompting. To overcome these issues, we developed SG-Bench, a novel benchmark to assess the generalization of LLM safety across various tasks and prompt types. This benchmark integrates both generative and discriminative evaluation tasks and includes extended data to examine the impact of prompt engineering and jailbreak on LLM safety. Our assessment of 3 advanced proprietary LLMs and 10 open-source LLMs with the benchmark reveals that most LLMs perform worse on discriminative tasks than generative ones, and are highly susceptible to prompts, indicating poor generalization in safety alignment. We also explain these findings quantitatively and qualitatively to provide insights for future research.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T11:47:01Z",
-      "arxivId": "2410.21965",
-      "doi": "10.48550/arXiv.2410.21965",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21965v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21965",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21965v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21965"
-        }
-      ],
-      "semanticScholarId": "feb0715d22cc79a9771e1243f056febff46750d3",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 78,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 3,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.35077",
       "title": "Improving VLMs on Scientific Chart Analysis via Autonomous Evolution",
       "authors": [
@@ -41075,6 +40624,75 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：ACM Multimedia",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12943",
+      "title": "The Curious Case of Curiosity across Human Cultures and LLMs",
+      "authors": [
+        "Angana Borah",
+        "Zhijing Jin",
+        "Rada Mihalcea"
+      ],
+      "abstract": "Recent advances in Large Language Models (LLMs) have expanded their role in human interaction, yet curiosity -- a central driver of inquiry -- remains underexplored in these systems, particularly across cultural contexts. In this work, we investigate cultural variation in curiosity using Yahoo! Answers, a real-world multi-country dataset spanning diverse topics. We introduce CUEST (CUriosity Evaluation across SocieTies), an evaluation framework that measures human-model alignment in curiosity through linguistic (style), topic preference (content) analysis and grounding insights in social science constructs. Across open- and closed-source models, we find that LLMs flatten cross-cultural diversity, aligning more closely with how curiosity is expressed in Western countries. We then explore fine-tuning strategies to induce curiosity in LLMs, narrowing the human-model alignment gap by up to 50%. Finally, we demonstrate the practical value of curiosity for LLM adaptability across cultures, showing its importance for future NLP research.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-20T15:55:28Z",
+      "arxivId": "2510.12943",
+      "doi": "10.48550/arXiv.2510.12943",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12943v2",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12943",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12943v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12943"
+        }
+      ],
+      "semanticScholarId": "4e65a5e06fd2d80b54d133f1e0fe2a312c4e9a0c",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12943",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -45833,81 +45451,6 @@
           "publication": 6,
           "citations": 0,
           "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22480",
-      "title": "Scaling LLM Inference with Optimized Sample Compute Allocation",
-      "authors": [
-        "Kexun Zhang",
-        "Shang Zhou",
-        "Danqing Wang",
-        "William Yang Wang",
-        "Lei Li"
-      ],
-      "abstract": "Sampling is a basic operation in many inference-time algorithms of large language models (LLMs). To scale up inference efficiently with a limited compute, it is crucial to find an optimal allocation for sample compute budgets: Which sampling configurations (model, temperature, language, etc.) do we use? How many samples do we generate in each configuration? We formulate these choices as a learning problem and propose OSCA, an algorithm that Optimizes Sample Compute Allocation by finding an optimal mix of different inference configurations. Our experiments show that with our learned mixed allocation, we can achieve accuracy better than the best single configuration with 128x less compute on code generation and 25x less compute on 4 reasoning tasks. OSCA is also shown to be effective in agentic workflows beyond single-turn tasks, achieving a better accuracy on SWE-Bench with 3x less compute than the default configuration. Our code and generations are released at https://github.com/LeiLiLab/OSCA.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T19:17:55Z",
-      "arxivId": "2410.22480",
-      "doi": "10.48550/arXiv.2410.22480",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22480v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22480",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/LeiLiLab/OSCA"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22480v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22480"
-        }
-      ],
-      "semanticScholarId": "13bb753605ed37320b0f0f3be5a7dc10f9eb18c6",
-      "citationCount": 16,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22480",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
         }
@@ -52120,79 +51663,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22143",
-      "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
-      "authors": [
-        "Vishal Kumar",
-        "Zeyi Liao",
-        "Jaylen Jones",
-        "Huan Sun"
-      ],
-      "abstract": "Although large language models (LLMs) are typically aligned, they remain vulnerable to jailbreaking through either carefully crafted prompts in natural language or, interestingly, gibberish adversarial suffixes. However, gibberish tokens have received relatively less attention despite their success in attacking aligned LLMs. Recent work, AmpleGCG~\\citep{liao2024amplegcg}, demonstrates that a generative model can quickly produce numerous customizable gibberish adversarial suffixes for any harmful query, exposing a range of alignment gaps in out-of-distribution (OOD) language spaces. To bring more attention to this area, we introduce AmpleGCG-Plus, an enhanced version that achieves better performance in fewer attempts. Through a series of exploratory experiments, we identify several training strategies to improve the learning of gibberish suffixes. Our results, verified under a strict evaluation setting, show that it outperforms AmpleGCG on both open-weight and closed-source models, achieving increases in attack success rate (ASR) of up to 17\\% in the white-box setting against Llama-2-7B-chat, and more than tripling ASR in the black-box setting against GPT-4. Notably, AmpleGCG-Plus jailbreaks the newer GPT-4o series of models at similar rates to GPT-4, and, uncovers vulnerabilities against the recently proposed circuit breakers defense. We publicly release AmpleGCG-Plus along with our collected training datasets.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T15:40:07Z",
-      "arxivId": "2410.22143",
-      "doi": "10.48550/arXiv.2410.22143",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22143v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22143",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143"
-        }
-      ],
-      "semanticScholarId": "41fa921adfcd32f442e112b80ccdeeef360bc6e7",
-      "citationCount": 9,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22143",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.36990",
       "title": "The State and Fate of Multilingual, Contextual Evaluation in the NLP World",
       "authors": [
@@ -55467,159 +54937,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12083",
-      "title": "An AI-Based Behavioral Health Safety Filter and Dataset for Identifying Mental Health Crises in Text-Based Conversations",
-      "authors": [
-        "Benjamin W. Nelson",
-        "Celeste Wong",
-        "Matthew T. Silvestrini",
-        "Sooyoon Shin",
-        "Alanna Robinson",
-        "Jessica Lee",
-        "Eric Yang",
-        "John Torous",
-        "Andrew Trister"
-      ],
-      "abstract": "Large language models often mishandle psychiatric emergencies, offering harmful or inappropriate advice and enabling destructive behaviors. This study evaluated the Verily behavioral health safety filter (VBHSF) on two datasets: the Verily Mental Health Crisis Dataset containing 1,800 simulated messages and the NVIDIA Aegis AI Content Safety Dataset subsetted to 794 mental health-related messages. The two datasets were clinician-labelled and we evaluated performance using the clinician labels. Additionally, we carried out comparative performance analyses against two open source, content moderation guardrails: OpenAI Omni Moderation Latest and NVIDIA NeMo Guardrails. The VBHSF demonstrated, well-balanced performance on the Verily Mental Health Crisis Dataset v1.0, achieving high sensitivity (0.990) and specificity (0.992) in detecting any mental health crises. It achieved an F1-score of 0.939, sensitivity ranged from 0.917-0.992, and specificity was >= 0.978 in identifying specific crisis categories. When evaluated against the NVIDIA Aegis AI Content Safety Dataset 2.0, VBHSF performance remained highly sensitive (0.982) and accuracy (0.921) with reduced specificity (0.859). When compared with the NVIDIA NeMo and OpenAI Omni Moderation Latest guardrails, the VBHSF demonstrated superior performance metrics across both datasets, achieving significantly higher sensitivity in all cases (all p < 0.001) and higher specificity relative to NVIDIA NeMo (p < 0.001), but not to OpenAI Omni Moderation Latest (p = 0.094). NVIDIA NeMo and OpenAI Omni Moderation Latest exhibited inconsistent performance across specific crisis types, with sensitivity for some categories falling below 0.10. Overall, the VBHSF demonstrated robust, generalizable performance that prioritizes sensitivity to minimize missed crises, a crucial feature for healthcare applications.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T02:47:52Z",
-      "arxivId": "2510.12083",
-      "doi": "10.48550/arXiv.2510.12083",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12083v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12083",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12083v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12083"
-        }
-      ],
-      "semanticScholarId": "7eeb44eb66191731205a880d99a88c014f9336a2",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12083",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12072",
-      "title": "EmboMatrix: A Scalable Training-Ground for Embodied Decision-Making",
-      "authors": [
-        "Zixing Lei",
-        "Sheng Yin",
-        "Yichen Xiong",
-        "Yuanzhuo Ding",
-        "Wenhao Huang",
-        "Yuxi Wei",
-        "Qingyao Xu",
-        "Yiming Li",
-        "Weixin Li",
-        "Yunhong Wang",
-        "Siheng Chen"
-      ],
-      "abstract": "Embodied decision-making enables agents to translate high-level goals into executable actions through continuous interactions within the physical world, forming a cornerstone of general-purpose embodied intelligence. Large language models (LLMs), with their general decision-making capabilities, offer a promising path to realize this potential; however, LLMs trained solely on language lack exposure to physical environments, limiting their true embodied understanding. To bridge this gap, we propose the concept of a training ground: a comprehensive infrastructure that provides task and scene simulation, embodied interaction, and feedback signals, offering a one-stop solution for LLM acquire genuine embodied decision-making skills. In this work, we present EmboMatrix, the first training ground of its kind, providing massive and diverse tasks with efficient simulation and precise rewards. EmboMatrix incorporates a series of novel techniques: a multi-agent data engine for large-scale task and scene generation, a distributed heterogeneous-hardware system for scalable simulation, and a multi-level reward architecture for precise supervision. Leveraging EmboMatrix, we cultivate EmboBrain, an LLM whose embodied decision-making abilities emerge from extensive embodied interactions. Experiments show that EmboBrain-7B surpasses the 671B DeepSeek-R1 baseline by 9.5\\% on two challenging embodied decision-making benchmarks, demonstrating the power of interactive, environment-grounded learning for building truly intelligent embodied agents.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T02:26:52Z",
-      "arxivId": "2510.12072",
-      "doi": "10.48550/arXiv.2510.12072",
-      "categories": [
-        "cs.AI",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-multi-agent-systems",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12072v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12072",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12072v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12072"
-        }
-      ],
-      "semanticScholarId": "a49396691008693fee368e7b7d1dfa15ce864b90",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12072",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.11370",
       "title": "Stabilizing MoE Reinforcement Learning by Aligning Training and Inference Routers",
       "authors": [
@@ -57573,153 +56890,6 @@
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
           "已有正式发表线索：10.48550/arXiv.2410.23968",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2411.00039",
-      "title": "Linear Chain Transformation: Expanding Optimization Dynamics for Fine-Tuning Large Language Models",
-      "authors": [
-        "Yulong Wang",
-        "Chang Zuo",
-        "Yin Xuan",
-        "Hong Li",
-        "Ni Wei"
-      ],
-      "abstract": "Fine-tuning large language models (LLMs) has become essential for adapting pretrained models to specific downstream tasks. In this paper, we propose Linear Chain Transformation (LinChain), a novel approach that introduces a sequence of linear transformations during fine-tuning to enrich optimization dynamics. By incorporating multiple linear transformations into the parameter update process, LinChain expands the effective rank of updates and enhances the model's ability to learn complex task-specific representations. We demonstrate that this method significantly improves the performance of LLM fine-tuning over state-of-the-art methods by providing more flexible optimization paths during training, while maintaining the inference efficiency of the resulting model. Our experiments on various benchmark tasks show that LinChain leads to better generalization, fewer learnable parameters, and improved task adaptation, making it a compelling strategy for LLM fine-tuning.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T14:07:24Z",
-      "arxivId": "2411.00039",
-      "doi": "10.48550/arXiv.2411.00039",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2411.00039v1",
-      "pdfUrl": "https://arxiv.org/pdf/2411.00039",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.00039v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2411.00039"
-        }
-      ],
-      "semanticScholarId": "62336c19ed0b786c8ffaf1b928f58ab2fd51f109",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2411.00039",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22457",
-      "title": "Advancing Agentic Systems: Dynamic Task Decomposition, Tool Integration and Evaluation using Novel Metrics and Dataset",
-      "authors": [
-        "Adrian Garret Gabriel",
-        "Alaa Alameer Ahmad",
-        "Shankar Kumar Jeyakumar"
-      ],
-      "abstract": "Advancements in Large Language Models (LLMs) are revolutionizing the development of autonomous agentic systems by enabling dynamic, context-aware task decomposition and automated tool selection. These sophisticated systems possess significant automation potential across various industries, managing complex tasks, interacting with external systems to enhance knowledge, and executing actions independently. This paper presents three primary contributions to advance this field: - Advanced Agentic Framework: A system that handles multi-hop queries, generates and executes task graphs, selects appropriate tools, and adapts to real-time changes. - Novel Evaluation Metrics: Introduction of Node F1 Score, Structural Similarity Index (SSI), and Tool F1 Score to comprehensively assess agentic systems. - Specialized Dataset: Development of an AsyncHow-based dataset for analyzing agent behavior across different task complexities. Our findings reveal that asynchronous and dynamic task graph decomposition significantly enhances system responsiveness and scalability, particularly for complex, multi-step tasks. Detailed analysis shows that structural and node-level metrics are crucial for sequential tasks, while tool-related metrics are more important for parallel tasks. Specifically, the Structural Similarity Index (SSI) is the most significant predictor of performance in sequential tasks, and the Tool F1 Score is essential for parallel tasks. These insights highlight the need for balanced evaluation methods that capture both structural and operational dimensions of agentic systems. Additionally, our evaluation framework, validated through empirical analysis and statistical testing, provides valuable insights for improving the adaptability and reliability of agentic systems in dynamic environments.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T18:45:13Z",
-      "arxivId": "2410.22457",
-      "doi": "10.48550/arXiv.2410.22457",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-agents-tool-use",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22457v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22457",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22457v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22457"
-        }
-      ],
-      "semanticScholarId": "0ffbe1ac31c6da094c679622effd3f16ed4e71f9",
-      "citationCount": 31,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22457",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -64539,6 +63709,159 @@
           "reproducibility": 6,
           "empirical": 4,
           "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12083",
+      "title": "An AI-Based Behavioral Health Safety Filter and Dataset for Identifying Mental Health Crises in Text-Based Conversations",
+      "authors": [
+        "Benjamin W. Nelson",
+        "Celeste Wong",
+        "Matthew T. Silvestrini",
+        "Sooyoon Shin",
+        "Alanna Robinson",
+        "Jessica Lee",
+        "Eric Yang",
+        "John Torous",
+        "Andrew Trister"
+      ],
+      "abstract": "Large language models often mishandle psychiatric emergencies, offering harmful or inappropriate advice and enabling destructive behaviors. This study evaluated the Verily behavioral health safety filter (VBHSF) on two datasets: the Verily Mental Health Crisis Dataset containing 1,800 simulated messages and the NVIDIA Aegis AI Content Safety Dataset subsetted to 794 mental health-related messages. The two datasets were clinician-labelled and we evaluated performance using the clinician labels. Additionally, we carried out comparative performance analyses against two open source, content moderation guardrails: OpenAI Omni Moderation Latest and NVIDIA NeMo Guardrails. The VBHSF demonstrated, well-balanced performance on the Verily Mental Health Crisis Dataset v1.0, achieving high sensitivity (0.990) and specificity (0.992) in detecting any mental health crises. It achieved an F1-score of 0.939, sensitivity ranged from 0.917-0.992, and specificity was >= 0.978 in identifying specific crisis categories. When evaluated against the NVIDIA Aegis AI Content Safety Dataset 2.0, VBHSF performance remained highly sensitive (0.982) and accuracy (0.921) with reduced specificity (0.859). When compared with the NVIDIA NeMo and OpenAI Omni Moderation Latest guardrails, the VBHSF demonstrated superior performance metrics across both datasets, achieving significantly higher sensitivity in all cases (all p < 0.001) and higher specificity relative to NVIDIA NeMo (p < 0.001), but not to OpenAI Omni Moderation Latest (p = 0.094). NVIDIA NeMo and OpenAI Omni Moderation Latest exhibited inconsistent performance across specific crisis types, with sensitivity for some categories falling below 0.10. Overall, the VBHSF demonstrated robust, generalizable performance that prioritizes sensitivity to minimize missed crises, a crucial feature for healthcare applications.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T02:47:52Z",
+      "arxivId": "2510.12083",
+      "doi": "10.48550/arXiv.2510.12083",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12083v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12083",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12083v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12083"
+        }
+      ],
+      "semanticScholarId": "7eeb44eb66191731205a880d99a88c014f9336a2",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12083",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12072",
+      "title": "EmboMatrix: A Scalable Training-Ground for Embodied Decision-Making",
+      "authors": [
+        "Zixing Lei",
+        "Sheng Yin",
+        "Yichen Xiong",
+        "Yuanzhuo Ding",
+        "Wenhao Huang",
+        "Yuxi Wei",
+        "Qingyao Xu",
+        "Yiming Li",
+        "Weixin Li",
+        "Yunhong Wang",
+        "Siheng Chen"
+      ],
+      "abstract": "Embodied decision-making enables agents to translate high-level goals into executable actions through continuous interactions within the physical world, forming a cornerstone of general-purpose embodied intelligence. Large language models (LLMs), with their general decision-making capabilities, offer a promising path to realize this potential; however, LLMs trained solely on language lack exposure to physical environments, limiting their true embodied understanding. To bridge this gap, we propose the concept of a training ground: a comprehensive infrastructure that provides task and scene simulation, embodied interaction, and feedback signals, offering a one-stop solution for LLM acquire genuine embodied decision-making skills. In this work, we present EmboMatrix, the first training ground of its kind, providing massive and diverse tasks with efficient simulation and precise rewards. EmboMatrix incorporates a series of novel techniques: a multi-agent data engine for large-scale task and scene generation, a distributed heterogeneous-hardware system for scalable simulation, and a multi-level reward architecture for precise supervision. Leveraging EmboMatrix, we cultivate EmboBrain, an LLM whose embodied decision-making abilities emerge from extensive embodied interactions. Experiments show that EmboBrain-7B surpasses the 671B DeepSeek-R1 baseline by 9.5\\% on two challenging embodied decision-making benchmarks, demonstrating the power of interactive, environment-grounded learning for building truly intelligent embodied agents.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T02:26:52Z",
+      "arxivId": "2510.12072",
+      "doi": "10.48550/arXiv.2510.12072",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-multi-agent-systems",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12072v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12072",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12072v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12072"
+        }
+      ],
+      "semanticScholarId": "a49396691008693fee368e7b7d1dfa15ce864b90",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12072",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
         }
       }
     },
@@ -82242,81 +81565,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19288",
-      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
-      "authors": [
-        "Feinan Cheng",
-        "Dongliang Xu",
-        "Wenli Nong",
-        "Zhiheng Zhang",
-        "Ang Liu",
-        "Tianyu Wang",
-        "Yue Yao"
-      ],
-      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T16:59:12Z",
-      "arxivId": "2607.19288",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288"
-        }
-      ],
-      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.14586",
       "title": "SoftNav: Injecting 3D Scene Tokens into VLMs for Embodied Navigation",
       "authors": [
@@ -87000,6 +86248,81 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 3,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19288",
+      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
+      "authors": [
+        "Feinan Cheng",
+        "Dongliang Xu",
+        "Wenli Nong",
+        "Zhiheng Zhang",
+        "Ang Liu",
+        "Tianyu Wang",
+        "Yue Yao"
+      ],
+      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T16:59:12Z",
+      "arxivId": "2607.19288",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "ai-reasoning-planning",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19288v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19288"
+        }
+      ],
+      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 2
         }
       }
@@ -100310,162 +99633,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19194",
-      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
-      "authors": [
-        "Zhongyao Yang",
-        "Haoyu Li",
-        "Yu Yan",
-        "Zhuangxuan Yu",
-        "Jiangfeng Nan",
-        "Jinrui Nan"
-      ],
-      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-22T03:53:48Z",
-      "arxivId": "2607.19194",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194"
-        }
-      ],
-      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18604",
-      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
-      "authors": [
-        "Zijiang Yan",
-        "Hao Zhou",
-        "Wael Jaafar",
-        "Jianhua Pei",
-        "Ping Wang",
-        "Halim Yanikomeroglu",
-        "Hina Tabassum"
-      ],
-      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T00:34:42Z",
-      "arxivId": "2607.18604",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG",
-        "cs.NI",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604"
-        }
-      ],
-      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.15898",
       "title": "Orbis 2: A Hierarchical World Model for Driving",
       "authors": [
@@ -107946,6 +107113,162 @@
           "citations": 0,
           "reproducibility": 4,
           "empirical": 0,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19194",
+      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
+      "authors": [
+        "Zhongyao Yang",
+        "Haoyu Li",
+        "Yu Yan",
+        "Zhuangxuan Yu",
+        "Jiangfeng Nan",
+        "Jinrui Nan"
+      ],
+      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-22T03:53:48Z",
+      "arxivId": "2607.19194",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194"
+        }
+      ],
+      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18604",
+      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
+      "authors": [
+        "Zijiang Yan",
+        "Hao Zhou",
+        "Wael Jaafar",
+        "Jianhua Pei",
+        "Ping Wang",
+        "Halim Yanikomeroglu",
+        "Hina Tabassum"
+      ],
+      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T00:34:42Z",
+      "arxivId": "2607.18604",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG",
+        "cs.NI",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604"
+        }
+      ],
+      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -140747,25 +140070,25 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 2175
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 2172
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 1231,
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 1225,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
-    "candidateCount": 1966,
-    "featuredCount": 10,
+    "candidateCount": 1957,
+    "featuredCount": 9,
     "libraryMatchCount": 10,
     "seedCount": 0,
     "scoreVersion": "reading-priority-v3"

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-ai",
-  "generatedAt": "2026-10-28T09:56:15.368Z",
+  "generatedAt": "2026-10-29T10:18:52.068Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -3550,83 +3550,6 @@
       }
     },
     {
-      "id": "arxiv:2510.12276",
-      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
-      "authors": [
-        "Fuhao Li",
-        "Wenxuan Song",
-        "Han Zhao",
-        "Jingbo Wang",
-        "Pengxiang Ding",
-        "Donglin Wang",
-        "L. Zeng",
-        "Haoang Li"
-      ],
-      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
-      "publishedAt": "2025-10-14",
-      "arxivId": "2510.12276",
-      "doi": "10.48550/arXiv.2510.12276",
-      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-three-dimensional-vision",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2510.12276",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
-      "citationCount": 87,
-      "influentialCitationCount": 14,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://spatial-forcing.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12276"
-        }
-      ],
-      "librarySlug": "2025-spatial-forcing-vla",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 65,
-        "relevance": 24,
-        "evidence": 20,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12276",
-          "同龄论文中引用增长较快",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 2,
-          "empirical": 6,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.12839",
       "title": "FaStfact: Faster, Stronger Long-Form Factuality Evaluations in LLMs",
       "authors": [
@@ -6099,6 +6022,83 @@
           "reproducibility": 2,
           "empirical": 4,
           "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12276",
+      "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
+      "authors": [
+        "Fuhao Li",
+        "Wenxuan Song",
+        "Han Zhao",
+        "Jingbo Wang",
+        "Pengxiang Ding",
+        "Donglin Wang",
+        "L. Zeng",
+        "Haoang Li"
+      ],
+      "abstract": "Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/",
+      "publishedAt": "2025-10-14",
+      "arxivId": "2510.12276",
+      "doi": "10.48550/arXiv.2510.12276",
+      "semanticScholarId": "263896525561a4c4299dcf1bf80815088d00e509",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-three-dimensional-vision",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2510.12276",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12276",
+      "citationCount": 87,
+      "influentialCitationCount": 14,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://spatial-forcing.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12276"
+        }
+      ],
+      "librarySlug": "2025-spatial-forcing-vla",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 64,
+        "relevance": 24,
+        "evidence": 20,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12276",
+          "同龄论文中引用增长较快",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 4,
+          "reproducibility": 2,
+          "empirical": 6,
+          "corroboration": 2
         }
       }
     },
@@ -10219,91 +10219,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22313",
-      "title": "Senna: Bridging Large Vision-Language Models and End-to-End Autonomous Driving",
-      "authors": [
-        "Bo Jiang",
-        "Shaoyu Chen",
-        "Bencheng Liao",
-        "Xingyu Zhang",
-        "Wei Yin",
-        "Qian Zhang",
-        "Chang Huang",
-        "Wenyu Liu",
-        "Xinggang Wang"
-      ],
-      "abstract": "End-to-end autonomous driving demonstrates strong planning capabilities with large-scale data but still struggles in complex, rare scenarios due to limited commonsense. In contrast, Large Vision-Language Models (LVLMs) excel in scene understanding and reasoning. The path forward lies in merging the strengths of both approaches. Previous methods using LVLMs to predict trajectories or control signals yield suboptimal results, as LVLMs are not well-suited for precise numerical predictions. This paper presents Senna, an autonomous driving system combining an LVLM (Senna-VLM) with an end-to-end model (Senna-E2E). Senna decouples high-level planning from low-level trajectory prediction. Senna-VLM generates planning decisions in natural language, while Senna-E2E predicts precise trajectories. Senna-VLM utilizes a multi-image encoding approach and multi-view prompts for efficient scene understanding. Besides, we introduce planning-oriented QAs alongside a three-stage training strategy, which enhances Senna-VLM's planning performance while preserving commonsense. Extensive experiments on two datasets show that Senna achieves state-of-the-art planning performance. Notably, with pre-training on a large-scale dataset DriveX and fine-tuning on nuScenes, Senna significantly reduces average planning error by 27.12% and collision rate by 33.33% over model without pre-training. We believe Senna's cross-scenario generalization and transferability are essential for achieving fully autonomous driving. Code and models will be released at https://github.com/hustvl/Senna.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T17:53:56Z",
-      "arxivId": "2410.22313",
-      "doi": "10.48550/arXiv.2410.22313",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22313v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22313",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/hustvl/Senna"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22313"
-        }
-      ],
-      "semanticScholarId": "2e7328eddcf0f300888c9bf8ab300a92be04b7d7",
-      "citationCount": 148,
-      "influentialCitationCount": 10,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 24,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22313",
-          "同龄论文中引用增长较快",
-          "提供可复现代码",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 4,
-          "reproducibility": 4,
-          "empirical": 6,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.30051",
       "title": "From Reasoning to Action: Benchmarking Frontier AI Models on LIBERO-10 Robot Manipulation Tasks",
       "authors": [
@@ -12286,87 +12201,6 @@
           "publication": 6,
           "citations": 1,
           "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12482",
-      "title": "A Text-Image Fusion Method with Data Augmentation Capabilities for Referring Medical Image Segmentation",
-      "authors": [
-        "Shurong Chai",
-        "Rahul Kumar JAIN",
-        "Rui Xu",
-        "Shaocong Mo",
-        "Ruibo Hou",
-        "Shiyu Teng",
-        "Jiaqing Liu",
-        "Lanfen Lin",
-        "Yen-Wei Chen"
-      ],
-      "abstract": "Deep learning relies heavily on data augmentation to mitigate limited data, especially in medical imaging. Recent multimodal learning integrates text and images for segmentation, known as referring or text-guided image segmentation. However, common augmentations like rotation and flipping disrupt spatial alignment between image and text, weakening performance. To address this, we propose an early fusion framework that combines text and visual features before augmentation, preserving spatial consistency. We also design a lightweight generator that projects text embeddings into visual space, bridging semantic gaps. Visualization of generated pseudo-images shows accurate region localization. Our method is evaluated on three medical imaging tasks and four segmentation frameworks, achieving state-of-the-art results. Code is publicly available on GitHub: https://github.com/11yxk/MedSeg_EarlyFusion.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T13:18:34Z",
-      "arxivId": "2510.12482",
-      "doi": "10.48550/arXiv.2510.12482",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "ai-safety-alignment"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12482v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12482",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/11yxk/MedSeg_EarlyFusion"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12482v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12482"
-        }
-      ],
-      "semanticScholarId": "6e1ec3fbe770b8aeca3c6182673799f5b9e16e91",
-      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 62,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 3,
-        "completeness": 17,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE International Conference on Acoustics, Speech, and Signal Processing",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
         }
@@ -16219,90 +16053,6 @@
       }
     },
     {
-      "id": "arxiv:2511.01163",
-      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
-      "authors": [
-        "Yongyuan Liang",
-        "Wei Chow",
-        "Feng Li",
-        "Ziqiao Ma",
-        "Xiyao Wang",
-        "Jiageng Mao",
-        "Jiuhai Chen",
-        "Jiatao Gu",
-        "Yue Wang",
-        "Furong Huang"
-      ],
-      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
-      "publishedAt": "2025-11-03",
-      "updatedAt": "2025-11-03T02:27:46Z",
-      "arxivId": "2511.01163",
-      "doi": "10.48550/arXiv.2511.01163",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-retrieval-question-answering",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
-      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://roverbench.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2511.01163"
-        }
-      ],
-      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
-      "citationCount": 12,
-      "influentialCitationCount": 2,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2511.01163",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2511.01928",
       "title": "A Unified Model for Human Mobility Generation in Natural Disasters",
       "authors": [
@@ -16585,6 +16335,78 @@
       }
     },
     {
+      "id": "arxiv:2510.25623",
+      "title": "Evaluating the Role of Verifiers in Test-Time Scaling for Legal Reasoning Tasks",
+      "authors": [
+        "Davide Romano",
+        "Jonathan Schwarz",
+        "Daniele Giofré"
+      ],
+      "abstract": "Test-time scaling (TTS) techniques can improve the performance of large language models (LLMs) at the expense of additional computation and latency. While TTS has proven effective in formal domains such as mathematics and programming, its value in argumentative domains such as law remains underexplored. We present an empirical study of verifier-based TTS methods for legal multiple-choice QA (MCQA) across five benchmarks. Using a family of 7 reward models, we evaluate both outcome-level (Best-of-$N$) and process-level (tree search) verification under realistic low-$N$ budgets. Our analysis systematically investigates how verifier utility is affected by key properties such as domain specialization, model size, and supervision type (process-supervised PRMs vs. outcome-only ORMs), even when applied across different roles.",
+      "publishedAt": "2025-10-29",
+      "updatedAt": "2025-10-30T13:49:22Z",
+      "arxivId": "2510.25623",
+      "doi": "10.18653/v1/2025.nllp-1.15",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.25623v2",
+      "pdfUrl": "https://aclanthology.org/2025.nllp-1.15.pdf",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.25623v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://aclanthology.org/2025.nllp-1.15.pdf"
+        }
+      ],
+      "semanticScholarId": "f2efecb97aea76de6cb763278844fd8caeee71c8",
+      "venue": "Proceedings of the Natural Legal Language Processing Workshop 2025",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Proceedings of the Natural Legal Language Processing Workshop 2025",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.25798",
       "title": "MemEIC: A Step Toward Continual and Compositional Knowledge Editing",
       "authors": [
@@ -16654,78 +16476,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.25623",
-      "title": "Evaluating the Role of Verifiers in Test-Time Scaling for Legal Reasoning Tasks",
-      "authors": [
-        "Davide Romano",
-        "Jonathan Schwarz",
-        "Daniele Giofré"
-      ],
-      "abstract": "Test-time scaling (TTS) techniques can improve the performance of large language models (LLMs) at the expense of additional computation and latency. While TTS has proven effective in formal domains such as mathematics and programming, its value in argumentative domains such as law remains underexplored. We present an empirical study of verifier-based TTS methods for legal multiple-choice QA (MCQA) across five benchmarks. Using a family of 7 reward models, we evaluate both outcome-level (Best-of-$N$) and process-level (tree search) verification under realistic low-$N$ budgets. Our analysis systematically investigates how verifier utility is affected by key properties such as domain specialization, model size, and supervision type (process-supervised PRMs vs. outcome-only ORMs), even when applied across different roles.",
-      "publishedAt": "2025-10-29",
-      "updatedAt": "2025-10-30T13:49:22Z",
-      "arxivId": "2510.25623",
-      "doi": "10.18653/v1/2025.nllp-1.15",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.25623v2",
-      "pdfUrl": "https://aclanthology.org/2025.nllp-1.15.pdf",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.25623v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://aclanthology.org/2025.nllp-1.15.pdf"
-        }
-      ],
-      "semanticScholarId": "f2efecb97aea76de6cb763278844fd8caeee71c8",
-      "venue": "Proceedings of the Natural Legal Language Processing Workshop 2025",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Proceedings of the Natural Legal Language Processing Workshop 2025",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -17422,6 +17172,87 @@
           "publication": 6,
           "citations": 0,
           "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12482",
+      "title": "A Text-Image Fusion Method with Data Augmentation Capabilities for Referring Medical Image Segmentation",
+      "authors": [
+        "Shurong Chai",
+        "Rahul Kumar JAIN",
+        "Rui Xu",
+        "Shaocong Mo",
+        "Ruibo Hou",
+        "Shiyu Teng",
+        "Jiaqing Liu",
+        "Lanfen Lin",
+        "Yen-Wei Chen"
+      ],
+      "abstract": "Deep learning relies heavily on data augmentation to mitigate limited data, especially in medical imaging. Recent multimodal learning integrates text and images for segmentation, known as referring or text-guided image segmentation. However, common augmentations like rotation and flipping disrupt spatial alignment between image and text, weakening performance. To address this, we propose an early fusion framework that combines text and visual features before augmentation, preserving spatial consistency. We also design a lightweight generator that projects text embeddings into visual space, bridging semantic gaps. Visualization of generated pseudo-images shows accurate region localization. Our method is evaluated on three medical imaging tasks and four segmentation frameworks, achieving state-of-the-art results. Code is publicly available on GitHub: https://github.com/11yxk/MedSeg_EarlyFusion.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T13:18:34Z",
+      "arxivId": "2510.12482",
+      "doi": "10.48550/arXiv.2510.12482",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "ai-safety-alignment"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12482v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12482",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/11yxk/MedSeg_EarlyFusion"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12482v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12482"
+        }
+      ],
+      "semanticScholarId": "6e1ec3fbe770b8aeca3c6182673799f5b9e16e91",
+      "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 61,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 2,
+        "completeness": 17,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：IEEE International Conference on Acoustics, Speech, and Signal Processing",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
         }
@@ -20125,165 +19956,6 @@
       }
     },
     {
-      "id": "arxiv:2410.21795",
-      "title": "Robot Policy Learning with Temporal Optimal Transport Reward",
-      "authors": [
-        "Yuwei Fu",
-        "Haichao Zhang",
-        "Di Wu",
-        "Wei Xu",
-        "Benoit Boulet"
-      ],
-      "abstract": "Reward specification is one of the most tricky problems in Reinforcement Learning, which usually requires tedious hand engineering in practice. One promising approach to tackle this challenge is to adopt existing expert video demonstrations for policy learning. Some recent work investigates how to learn robot policies from only a single/few expert video demonstrations. For example, reward labeling via Optimal Transport (OT) has been shown to be an effective strategy to generate a proxy reward by measuring the alignment between the robot trajectory and the expert demonstrations. However, previous work mostly overlooks that the OT reward is invariant to temporal order information, which could bring extra noise to the reward signal. To address this issue, in this paper, we introduce the Temporal Optimal Transport (TemporalOT) reward to incorporate temporal order information for learning a more accurate OT-based proxy reward. Extensive experiments on the Meta-world benchmark tasks validate the efficacy of the proposed method. Code is available at: https://github.com/fuyw/TemporalOT",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-11-02T02:09:58Z",
-      "arxivId": "2410.21795",
-      "doi": "10.48550/arXiv.2410.21795",
-      "categories": [
-        "cs.AI",
-        "cs.LG",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21795v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21795",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/fuyw/TemporalOT"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21795v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21795"
-        }
-      ],
-      "semanticScholarId": "e02478f97ed90766d87530b35647e55d1edf6f64",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 12,
-      "influentialCitationCount": 5,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Neural Information Processing Systems",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21779",
-      "title": "Leveraging LLMs for Hypothetical Deduction in Logical Inference: A Neuro-Symbolic Approach",
-      "authors": [
-        "Qingchuan Li",
-        "Jiatong Li",
-        "Tongxuan Liu",
-        "Yuting Zeng",
-        "Mingyue Cheng",
-        "Weizhe Huang",
-        "Qi Liu"
-      ],
-      "abstract": "Large Language Models (LLMs) have exhibited remarkable potential across a wide array of reasoning tasks, including logical reasoning. Although massive efforts have been made to empower the logical reasoning ability of LLMs via external logical symbolic solvers, crucial challenges of the poor generalization ability to questions with different features and inevitable question information loss of symbolic solver-driven approaches remain unresolved. To mitigate these issues, we introduce LINA, a LLM-driven neuro-symbolic approach for faithful logical reasoning. By enabling an LLM to autonomously perform the transition from propositional logic extraction to sophisticated logical reasoning, LINA not only bolsters the resilience of the reasoning process but also eliminates the dependency on external solvers. Additionally, through its adoption of a hypothetical-deductive reasoning paradigm, LINA effectively circumvents the expansive search space challenge that plagues traditional forward reasoning methods. Empirical evaluations demonstrate that LINA substantially outperforms both established propositional logic frameworks and conventional prompting techniques across a spectrum of five logical reasoning tasks. Specifically, LINA achieves an improvement of 24.34% over LINC on the FOLIO dataset, while also surpassing prompting strategies like CoT and CoT-SC by up to 24.02%. Our code is available at https://github.com/wufeiwuwoshihua/nshy.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T06:38:46Z",
-      "arxivId": "2410.21779",
-      "doi": "10.48550/arXiv.2410.21779",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21779v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21779",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/wufeiwuwoshihua/nshy"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21779v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21779"
-        }
-      ],
-      "semanticScholarId": "9ddeed05e92aba5674902084d86234dbd90ccce0",
-      "citationCount": 8,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.21779",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.35690",
       "title": "EvoRouter: Cost-Efficient Multi-Agent Routing via Insight-Guided On-Policy Distillation",
       "authors": [
@@ -21685,6 +21357,90 @@
       }
     },
     {
+      "id": "arxiv:2511.01163",
+      "title": "ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation",
+      "authors": [
+        "Yongyuan Liang",
+        "Wei Chow",
+        "Feng Li",
+        "Ziqiao Ma",
+        "Xiyao Wang",
+        "Jiageng Mao",
+        "Jiuhai Chen",
+        "Jiatao Gu",
+        "Yue Wang",
+        "Furong Huang"
+      ],
+      "abstract": "Unified multimodal models (UMMs) have emerged as a powerful paradigm for seamlessly unifying text and image understanding and generation. However, prevailing evaluations treat these abilities in isolation, such that tasks with multimodal inputs and outputs are scored primarily through unimodal reasoning, i.e., textual benchmarks emphasize language-based reasoning, while visual benchmarks emphasize reasoning outcomes manifested in the pixels. We introduce ROVER to address this pressing need to test reciprocal cross-modal reasoning, the use of one modality to guide, verify, or refine outputs in the other, an ability central to the vision of unified multimodal intelligence. ROVER is a human-annotated benchmark that explicitly targets reciprocal cross-modal reasoning, which contains 1312 tasks grounded in 1876 images, spanning two complementary settings. Verbally-augmented reasoning for visual generation evaluates whether models can use verbal prompts and reasoning chains to guide faithful image synthesis. Visually-augmented reasoning for verbal generation evaluates whether models can generate intermediate visualizations that strengthen their own reasoning processes for question answering. Experiments on 17 unified models reveal two key findings: (i) Cross-modal reasoning determines visual generation quality, with interleaved models significantly outperforming non-interleaved ones; notably, combining strong unimodal models fails to achieve comparable reasoning. (ii) Models show dissociation between physical and symbolic reasoning: they succeed at interpreting perceptual concepts literally but fail to construct visual abstractions for symbolic tasks, where faulty reasoning harms performance. These results highlight reciprocal cross-modal reasoning as a critical frontier for enabling true omnimodal generation.",
+      "publishedAt": "2025-11-03",
+      "updatedAt": "2025-11-03T02:27:46Z",
+      "arxivId": "2511.01163",
+      "doi": "10.48550/arXiv.2511.01163",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-retrieval-question-answering",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2511.01163v1",
+      "pdfUrl": "https://arxiv.org/pdf/2511.01163",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://roverbench.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2511.01163"
+        }
+      ],
+      "semanticScholarId": "89ebf59359d4ef67cb89a795c27d3da15392300c",
+      "citationCount": 12,
+      "influentialCitationCount": 2,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2511.01163",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2511.00850",
       "title": "MULTI-Bench: A Multi-Turn Interactive Benchmark for Assessing Emotional Intelligence ability of Spoken Dialogue Models",
       "authors": [
@@ -22527,80 +22283,6 @@
           "匹配当前研究方向",
           "覆盖当前方向 2 个关注主题",
           "已有正式发表线索：10.48550/arXiv.2510.14647",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12224",
-      "title": "MedKGEval: A Knowledge Graph-Based Multi-Turn Evaluation Framework for Open-Ended Patient Interactions with Clinical LLMs",
-      "authors": [
-        "Yuechun Yu",
-        "Han Ying",
-        "Haoan Jin",
-        "Wenjian Jiang",
-        "Dong Xian",
-        "Binghao Wang",
-        "Zhou Yang",
-        "Mengyue Wu"
-      ],
-      "abstract": "The reliable evaluation of large language models (LLMs) in medical applications remains an open challenge, particularly in capturing the complexity of multi-turn doctor-patient interactions that unfold in real clinical environments. Existing evaluation methods typically rely on post hoc review of full conversation transcripts, thereby neglecting the dynamic, context-sensitive nature of medical dialogues and the evolving informational needs of patients. In this work, we present MedKGEval, a novel multi-turn evaluation framework for clinical LLMs grounded in structured medical knowledge. Our approach introduces three key contributions: (1) a knowledge graph-driven patient simulation mechanism, where a dedicated control module retrieves relevant medical facts from a curated knowledge graph, thereby endowing the patient agent with human-like and realistic conversational behavior. This knowledge graph is constructed by integrating open-source resources with additional triples extracted from expert-annotated datasets; (2) an in-situ, turn-level evaluation framework, where each model response is assessed by a Judge Agent for clinical appropriateness, factual correctness, and safety as the dialogue progresses using a suite of fine-grained, task-specific metrics; (3) a comprehensive multi-turn benchmark of eight state-of-the-art LLMs, demonstrating MedKGEval's ability to identify subtle behavioral flaws and safety risks that are often overlooked by conventional evaluation pipelines. Although initially designed for Chinese and English medical applications, our framework can be readily extended to additional languages by switching the input knowledge graphs, ensuring seamless bilingual support and domain-specific applicability.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T07:22:26Z",
-      "arxivId": "2510.12224",
-      "doi": "10.48550/arXiv.2510.12224",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-knowledge-retrieval",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12224v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12224",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12224v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12224"
-        }
-      ],
-      "semanticScholarId": "8bb850f6c00b87c8c0a0a12d2063ab101ad339d7",
-      "citationCount": 6,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12224",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -30398,68 +30080,73 @@
       }
     },
     {
-      "id": "arxiv:2510.12943",
-      "title": "The Curious Case of Curiosity across Human Cultures and LLMs",
+      "id": "arxiv:2510.12224",
+      "title": "MedKGEval: A Knowledge Graph-Based Multi-Turn Evaluation Framework for Open-Ended Patient Interactions with Clinical LLMs",
       "authors": [
-        "Angana Borah",
-        "Zhijing Jin",
-        "Rada Mihalcea"
+        "Yuechun Yu",
+        "Han Ying",
+        "Haoan Jin",
+        "Wenjian Jiang",
+        "Dong Xian",
+        "Binghao Wang",
+        "Zhou Yang",
+        "Mengyue Wu"
       ],
-      "abstract": "Recent advances in Large Language Models (LLMs) have expanded their role in human interaction, yet curiosity -- a central driver of inquiry -- remains underexplored in these systems, particularly across cultural contexts. In this work, we investigate cultural variation in curiosity using Yahoo! Answers, a real-world multi-country dataset spanning diverse topics. We introduce CUEST (CUriosity Evaluation across SocieTies), an evaluation framework that measures human-model alignment in curiosity through linguistic (style), topic preference (content) analysis and grounding insights in social science constructs. Across open- and closed-source models, we find that LLMs flatten cross-cultural diversity, aligning more closely with how curiosity is expressed in Western countries. We then explore fine-tuning strategies to induce curiosity in LLMs, narrowing the human-model alignment gap by up to 50%. Finally, we demonstrate the practical value of curiosity for LLM adaptability across cultures, showing its importance for future NLP research.",
+      "abstract": "The reliable evaluation of large language models (LLMs) in medical applications remains an open challenge, particularly in capturing the complexity of multi-turn doctor-patient interactions that unfold in real clinical environments. Existing evaluation methods typically rely on post hoc review of full conversation transcripts, thereby neglecting the dynamic, context-sensitive nature of medical dialogues and the evolving informational needs of patients. In this work, we present MedKGEval, a novel multi-turn evaluation framework for clinical LLMs grounded in structured medical knowledge. Our approach introduces three key contributions: (1) a knowledge graph-driven patient simulation mechanism, where a dedicated control module retrieves relevant medical facts from a curated knowledge graph, thereby endowing the patient agent with human-like and realistic conversational behavior. This knowledge graph is constructed by integrating open-source resources with additional triples extracted from expert-annotated datasets; (2) an in-situ, turn-level evaluation framework, where each model response is assessed by a Judge Agent for clinical appropriateness, factual correctness, and safety as the dialogue progresses using a suite of fine-grained, task-specific metrics; (3) a comprehensive multi-turn benchmark of eight state-of-the-art LLMs, demonstrating MedKGEval's ability to identify subtle behavioral flaws and safety risks that are often overlooked by conventional evaluation pipelines. Although initially designed for Chinese and English medical applications, our framework can be readily extended to additional languages by switching the input knowledge graphs, ensuring seamless bilingual support and domain-specific applicability.",
       "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-20T15:55:28Z",
-      "arxivId": "2510.12943",
-      "doi": "10.48550/arXiv.2510.12943",
+      "updatedAt": "2025-10-14T07:22:26Z",
+      "arxivId": "2510.12224",
+      "doi": "10.48550/arXiv.2510.12224",
       "categories": [
-        "cs.CL"
+        "cs.AI"
       ],
       "fieldIds": [
-        "cs-cl",
+        "cs-ai",
         "embodied-intelligence",
-        "cs-ai"
+        "cs-cl"
       ],
       "topicIds": [
         "simulation-datasets-evaluation",
-        "ai-safety-alignment",
+        "ai-knowledge-retrieval",
         "cl-language-modeling"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12943v2",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12943",
+      "sourceUrl": "http://arxiv.org/abs/2510.12224v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12224",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12943v2"
+          "url": "https://arxiv.org/pdf/2510.12224v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12943"
+          "url": "https://arxiv.org/pdf/2510.12224"
         }
       ],
-      "semanticScholarId": "4e65a5e06fd2d80b54d133f1e0fe2a312c4e9a0c",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
+      "semanticScholarId": "8bb850f6c00b87c8c0a0a12d2063ab101ad339d7",
+      "citationCount": 6,
+      "influentialCitationCount": 1,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 59,
         "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
+        "evidence": 15,
+        "freshness": 2,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12943",
+          "已有正式发表线索：10.48550/arXiv.2510.12224",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -33113,77 +32800,6 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 6,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21965",
-      "title": "SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types",
-      "authors": [
-        "Yutao Mou",
-        "Shikun Zhang",
-        "Wei Ye"
-      ],
-      "abstract": "Ensuring the safety of large language model (LLM) applications is essential for developing trustworthy artificial intelligence. Current LLM safety benchmarks have two limitations. First, they focus solely on either discriminative or generative evaluation paradigms while ignoring their interconnection. Second, they rely on standardized inputs, overlooking the effects of widespread prompting techniques, such as system prompts, few-shot demonstrations, and chain-of-thought prompting. To overcome these issues, we developed SG-Bench, a novel benchmark to assess the generalization of LLM safety across various tasks and prompt types. This benchmark integrates both generative and discriminative evaluation tasks and includes extended data to examine the impact of prompt engineering and jailbreak on LLM safety. Our assessment of 3 advanced proprietary LLMs and 10 open-source LLMs with the benchmark reveals that most LLMs perform worse on discriminative tasks than generative ones, and are highly susceptible to prompts, indicating poor generalization in safety alignment. We also explain these findings quantitatively and qualitatively to provide insights for future research.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T11:47:01Z",
-      "arxivId": "2410.21965",
-      "doi": "10.48550/arXiv.2410.21965",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21965v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21965",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21965v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21965"
-        }
-      ],
-      "semanticScholarId": "feb0715d22cc79a9771e1243f056febff46750d3",
-      "venue": "Neural Information Processing Systems",
-      "citationCount": 78,
-      "influentialCitationCount": 1,
-      "canonicalVenueId": "neurips",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 59,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 20,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 3,
           "reproducibility": 0,
           "empirical": 2,
           "corroboration": 4
@@ -35894,6 +35510,75 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12943",
+      "title": "The Curious Case of Curiosity across Human Cultures and LLMs",
+      "authors": [
+        "Angana Borah",
+        "Zhijing Jin",
+        "Rada Mihalcea"
+      ],
+      "abstract": "Recent advances in Large Language Models (LLMs) have expanded their role in human interaction, yet curiosity -- a central driver of inquiry -- remains underexplored in these systems, particularly across cultural contexts. In this work, we investigate cultural variation in curiosity using Yahoo! Answers, a real-world multi-country dataset spanning diverse topics. We introduce CUEST (CUriosity Evaluation across SocieTies), an evaluation framework that measures human-model alignment in curiosity through linguistic (style), topic preference (content) analysis and grounding insights in social science constructs. Across open- and closed-source models, we find that LLMs flatten cross-cultural diversity, aligning more closely with how curiosity is expressed in Western countries. We then explore fine-tuning strategies to induce curiosity in LLMs, narrowing the human-model alignment gap by up to 50%. Finally, we demonstrate the practical value of curiosity for LLM adaptability across cultures, showing its importance for future NLP research.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-20T15:55:28Z",
+      "arxivId": "2510.12943",
+      "doi": "10.48550/arXiv.2510.12943",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12943v2",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12943",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12943v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12943"
+        }
+      ],
+      "semanticScholarId": "4e65a5e06fd2d80b54d133f1e0fe2a312c4e9a0c",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 58,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12943",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -39985,81 +39670,6 @@
           "publication": 6,
           "citations": 3,
           "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22480",
-      "title": "Scaling LLM Inference with Optimized Sample Compute Allocation",
-      "authors": [
-        "Kexun Zhang",
-        "Shang Zhou",
-        "Danqing Wang",
-        "William Yang Wang",
-        "Lei Li"
-      ],
-      "abstract": "Sampling is a basic operation in many inference-time algorithms of large language models (LLMs). To scale up inference efficiently with a limited compute, it is crucial to find an optimal allocation for sample compute budgets: Which sampling configurations (model, temperature, language, etc.) do we use? How many samples do we generate in each configuration? We formulate these choices as a learning problem and propose OSCA, an algorithm that Optimizes Sample Compute Allocation by finding an optimal mix of different inference configurations. Our experiments show that with our learned mixed allocation, we can achieve accuracy better than the best single configuration with 128x less compute on code generation and 25x less compute on 4 reasoning tasks. OSCA is also shown to be effective in agentic workflows beyond single-turn tasks, achieving a better accuracy on SWE-Bench with 3x less compute than the default configuration. Our code and generations are released at https://github.com/LeiLiLab/OSCA.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T19:17:55Z",
-      "arxivId": "2410.22480",
-      "doi": "10.48550/arXiv.2410.22480",
-      "categories": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22480v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22480",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/LeiLiLab/OSCA"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22480v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22480"
-        }
-      ],
-      "semanticScholarId": "13bb753605ed37320b0f0f3be5a7dc10f9eb18c6",
-      "citationCount": 16,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 0,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22480",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
           "empirical": 4,
           "corroboration": 4
         }
@@ -46030,79 +45640,6 @@
       }
     },
     {
-      "id": "arxiv:2410.22143",
-      "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
-      "authors": [
-        "Vishal Kumar",
-        "Zeyi Liao",
-        "Jaylen Jones",
-        "Huan Sun"
-      ],
-      "abstract": "Although large language models (LLMs) are typically aligned, they remain vulnerable to jailbreaking through either carefully crafted prompts in natural language or, interestingly, gibberish adversarial suffixes. However, gibberish tokens have received relatively less attention despite their success in attacking aligned LLMs. Recent work, AmpleGCG~\\citep{liao2024amplegcg}, demonstrates that a generative model can quickly produce numerous customizable gibberish adversarial suffixes for any harmful query, exposing a range of alignment gaps in out-of-distribution (OOD) language spaces. To bring more attention to this area, we introduce AmpleGCG-Plus, an enhanced version that achieves better performance in fewer attempts. Through a series of exploratory experiments, we identify several training strategies to improve the learning of gibberish suffixes. Our results, verified under a strict evaluation setting, show that it outperforms AmpleGCG on both open-weight and closed-source models, achieving increases in attack success rate (ASR) of up to 17\\% in the white-box setting against Llama-2-7B-chat, and more than tripling ASR in the black-box setting against GPT-4. Notably, AmpleGCG-Plus jailbreaks the newer GPT-4o series of models at similar rates to GPT-4, and, uncovers vulnerabilities against the recently proposed circuit breakers defense. We publicly release AmpleGCG-Plus along with our collected training datasets.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T15:40:07Z",
-      "arxivId": "2410.22143",
-      "doi": "10.48550/arXiv.2410.22143",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "lg-generative-modeling",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22143v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22143",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22143"
-        }
-      ],
-      "semanticScholarId": "41fa921adfcd32f442e112b80ccdeeef360bc6e7",
-      "citationCount": 9,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22143",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2610.36554",
       "title": "PRISM-BENCH: Diagnosing Grounded and Faithful Multimodal Reasoning Beyond Final-Answer Accuracy",
       "authors": [
@@ -47874,152 +47411,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19288",
-      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
-      "authors": [
-        "Feinan Cheng",
-        "Dongliang Xu",
-        "Wenli Nong",
-        "Zhiheng Zhang",
-        "Ang Liu",
-        "Tianyu Wang",
-        "Yue Yao"
-      ],
-      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T16:59:12Z",
-      "arxivId": "2607.19288",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "ai-safety-alignment",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19288"
-        }
-      ],
-      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 27,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19284",
-      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
-      "authors": [
-        "Thomas Marshall Vielmetti",
-        "Daniel Cherenson",
-        "Dimitra Panagou"
-      ],
-      "abstract": "This paper addresses multi-objective kinodynamic planning in environments with stochastic hybrid adversaries that probabilistically transition to adversarial modes based on the ego state. The goal is to construct the Pareto-front of paths that trade off execution cost and the probability of safety constraint violation (risk). Existing chance-constrained planners evaluate risk over open-loop trajectories, yielding overly conservative solutions that fail to account for ego-agent reactivity. To address this limitation, we shift the planning space to sequences of closed-loop policies, and integrate sample-based risk evaluation directly into tree construction via Monte-Carlo particle rollouts. We first introduce Stochastic Multi-Objective RRT (SMO-RRT), for which we prove probabilistic completeness, followed by Stochastic Multi-Objective Stable Sparse RRT (SMO-SST), which leverages selective pruning to improve numerical performance at the cost of completeness. For both algorithms, we derive a finite-sample bound on the probability of chance constraint violation for systems with non-Gaussian, state-dependent uncertainty, enabling probabilistically safe planning in a broad class of environments applicable to multi-agent systems, social navigation, and autonomous driving.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T16:56:34Z",
-      "arxivId": "2607.19284",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "ai-multi-agent-systems",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19284v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19284",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19284v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19284"
-        }
-      ],
-      "semanticScholarId": "145e0cdc5c8c8455ad97e791c7bbf84f4388ff61",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 27,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.18231",
       "title": "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
       "authors": [
@@ -49370,84 +48761,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2510.16290",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.12072",
-      "title": "EmboMatrix: A Scalable Training-Ground for Embodied Decision-Making",
-      "authors": [
-        "Zixing Lei",
-        "Sheng Yin",
-        "Yichen Xiong",
-        "Yuanzhuo Ding",
-        "Wenhao Huang",
-        "Yuxi Wei",
-        "Qingyao Xu",
-        "Yiming Li",
-        "Weixin Li",
-        "Yunhong Wang",
-        "Siheng Chen"
-      ],
-      "abstract": "Embodied decision-making enables agents to translate high-level goals into executable actions through continuous interactions within the physical world, forming a cornerstone of general-purpose embodied intelligence. Large language models (LLMs), with their general decision-making capabilities, offer a promising path to realize this potential; however, LLMs trained solely on language lack exposure to physical environments, limiting their true embodied understanding. To bridge this gap, we propose the concept of a training ground: a comprehensive infrastructure that provides task and scene simulation, embodied interaction, and feedback signals, offering a one-stop solution for LLM acquire genuine embodied decision-making skills. In this work, we present EmboMatrix, the first training ground of its kind, providing massive and diverse tasks with efficient simulation and precise rewards. EmboMatrix incorporates a series of novel techniques: a multi-agent data engine for large-scale task and scene generation, a distributed heterogeneous-hardware system for scalable simulation, and a multi-level reward architecture for precise supervision. Leveraging EmboMatrix, we cultivate EmboBrain, an LLM whose embodied decision-making abilities emerge from extensive embodied interactions. Experiments show that EmboBrain-7B surpasses the 671B DeepSeek-R1 baseline by 9.5\\% on two challenging embodied decision-making benchmarks, demonstrating the power of interactive, environment-grounded learning for building truly intelligent embodied agents.",
-      "publishedAt": "2025-10-14",
-      "updatedAt": "2025-10-14T02:26:52Z",
-      "arxivId": "2510.12072",
-      "doi": "10.48550/arXiv.2510.12072",
-      "categories": [
-        "cs.AI",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-multi-agent-systems",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.12072v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.12072",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12072v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.12072"
-        }
-      ],
-      "semanticScholarId": "a49396691008693fee368e7b7d1dfa15ce864b90",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.12072",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -51348,79 +50661,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.22457",
-      "title": "Advancing Agentic Systems: Dynamic Task Decomposition, Tool Integration and Evaluation using Novel Metrics and Dataset",
-      "authors": [
-        "Adrian Garret Gabriel",
-        "Alaa Alameer Ahmad",
-        "Shankar Kumar Jeyakumar"
-      ],
-      "abstract": "Advancements in Large Language Models (LLMs) are revolutionizing the development of autonomous agentic systems by enabling dynamic, context-aware task decomposition and automated tool selection. These sophisticated systems possess significant automation potential across various industries, managing complex tasks, interacting with external systems to enhance knowledge, and executing actions independently. This paper presents three primary contributions to advance this field: - Advanced Agentic Framework: A system that handles multi-hop queries, generates and executes task graphs, selects appropriate tools, and adapts to real-time changes. - Novel Evaluation Metrics: Introduction of Node F1 Score, Structural Similarity Index (SSI), and Tool F1 Score to comprehensively assess agentic systems. - Specialized Dataset: Development of an AsyncHow-based dataset for analyzing agent behavior across different task complexities. Our findings reveal that asynchronous and dynamic task graph decomposition significantly enhances system responsiveness and scalability, particularly for complex, multi-step tasks. Detailed analysis shows that structural and node-level metrics are crucial for sequential tasks, while tool-related metrics are more important for parallel tasks. Specifically, the Structural Similarity Index (SSI) is the most significant predictor of performance in sequential tasks, and the Tool F1 Score is essential for parallel tasks. These insights highlight the need for balanced evaluation methods that capture both structural and operational dimensions of agentic systems. Additionally, our evaluation framework, validated through empirical analysis and statistical testing, provides valuable insights for improving the adaptability and reliability of agentic systems in dynamic environments.",
-      "publishedAt": "2024-10-29",
-      "updatedAt": "2024-10-29T18:45:13Z",
-      "arxivId": "2410.22457",
-      "doi": "10.48550/arXiv.2410.22457",
-      "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.MA"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-agents-tool-use",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.22457v1",
-      "pdfUrl": "https://arxiv.org/pdf/2410.22457",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22457v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.22457"
-        }
-      ],
-      "semanticScholarId": "0ffbe1ac31c6da094c679622effd3f16ed4e71f9",
-      "citationCount": 31,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2410.22457",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 0,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -56768,25 +56008,21 @@
       }
     },
     {
-      "id": "arxiv:2607.19343",
-      "title": "Masked Visual Actions for Unified World Modeling",
+      "id": "arxiv:2607.19288",
+      "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
       "authors": [
-        "Hadi Alzayer",
-        "Wenlong Huang",
-        "Haonan Chen",
-        "Christopher Luey",
-        "Lvmin Zhang",
-        "Maneesh Agrawala",
-        "Gordon Wetzstein",
-        "Li Fei-Fei",
-        "Yilun Du",
-        "Jiajun Wu",
-        "Jia-Bin Huang"
+        "Feinan Cheng",
+        "Dongliang Xu",
+        "Wenli Nong",
+        "Zhiheng Zhang",
+        "Ang Liu",
+        "Tianyu Wang",
+        "Yue Yao"
       ],
-      "abstract": "Video models absorb rich priors over how the visual world moves, interacts, and responds to contact, making them promising substrates for robotic world modeling. The central challenge is how to communicate action to such models in a form aligned with the visual space in which they learned these interaction priors, yet still grounded in physical manipulation. We introduce Masked Visual Actions, a pixel-space control interface that expresses action as a partially revealed trajectory of an arbitrary entity in a video. Revealing robot motion makes the model act as a forward dynamics model that predicts the scene's response to low-level robot actions, while revealing desired object motion makes the same model recover robot behavior consistent with that outcome. Finetuned with only 15 hours of masked examples from real videos and simulation, a single checkpoint achieves strong visual fidelity and controllability across diverse scenes and multiple embodiments. In downstream manipulation settings, the model produces imagined rollouts whose outcomes correlate with real-world execution for policy evaluation, improves decision making by ranking candidate futures in model-based planning, and supports inverse modeling by synthesizing robot motion from desired object motion.",
+      "abstract": "Test-time scaling offers a promising method to improve the inference performance of Vision-Language Models (VLMs) without additional training. Existing approaches to vision-language navigation (VLN) for Unmanned Aerial Vehicle (UAV) typically relies on a single inference pass, which can falter in complex environments by producing suboptimal or unsafe trajectories. In this paper, we explore a simple and effective approach to apply test-time scaling to VLN for UAV. We enhance navigation reasoning through an iterative refinement process that requires no extra model training, guiding the model to re-evaluate its initial navigation plan for better accuracy and safety. Our method first prompts the model to generate multiple parallel candidates and then performs a self-correction step, achieving deeper and more robust planning without changing the underlying model. To further strengthen decision-making, we design a multi-criteria scoring function to evaluate the refined candidates based on safety, goal alignment, and forward-progress. This simple yet powerful combination enables a frozen UAV navigation VLMs to self-correct and generate more accurate and reliable flight plans, achieving SOTA performance in this task.",
       "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T17:59:11Z",
-      "arxivId": "2607.19343",
+      "updatedAt": "2026-07-21T16:59:12Z",
+      "arxivId": "2607.19288",
       "categories": [
         "cs.CV",
         "cs.RO"
@@ -56794,56 +56030,124 @@
       "fieldIds": [
         "cs-cv",
         "embodied-intelligence",
-        "cs-ai"
+        "cs-ai",
+        "cs-cl"
       ],
       "topicIds": [
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning"
+        "navigation-planning",
+        "ai-reasoning-planning",
+        "ai-safety-alignment",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19343v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19343",
+      "sourceUrl": "http://arxiv.org/abs/2607.19288v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19288",
       "artifacts": [
         {
-          "kind": "project",
-          "url": "https://masked-visual-actions.github.io"
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19288v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19343v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19343"
+          "url": "https://arxiv.org/pdf/2607.19288"
         }
       ],
-      "semanticScholarId": "9085002e8a6b142c8210e5f6a571ac5ea10cba08",
+      "semanticScholarId": "4c4eb9ba1a3e821f967a0a8a93e5e55a004c36c6",
       "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "preprint",
       "personalization": {},
       "score": {
         "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 8,
-        "freshness": 5,
+        "relevance": 27,
+        "evidence": 6,
+        "freshness": 4,
         "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "提供项目页面",
+          "覆盖当前方向 2 个关注主题",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 0,
           "citations": 0,
-          "reproducibility": 2,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19284",
+      "title": "Stochastic Multi-Objective Kinodynamic Planning Against Adversaries",
+      "authors": [
+        "Thomas Marshall Vielmetti",
+        "Daniel Cherenson",
+        "Dimitra Panagou"
+      ],
+      "abstract": "This paper addresses multi-objective kinodynamic planning in environments with stochastic hybrid adversaries that probabilistically transition to adversarial modes based on the ego state. The goal is to construct the Pareto-front of paths that trade off execution cost and the probability of safety constraint violation (risk). Existing chance-constrained planners evaluate risk over open-loop trajectories, yielding overly conservative solutions that fail to account for ego-agent reactivity. To address this limitation, we shift the planning space to sequences of closed-loop policies, and integrate sample-based risk evaluation directly into tree construction via Monte-Carlo particle rollouts. We first introduce Stochastic Multi-Objective RRT (SMO-RRT), for which we prove probabilistic completeness, followed by Stochastic Multi-Objective Stable Sparse RRT (SMO-SST), which leverages selective pruning to improve numerical performance at the cost of completeness. For both algorithms, we derive a finite-sample bound on the probability of chance constraint violation for systems with non-Gaussian, state-dependent uncertainty, enabling probabilistically safe planning in a broad class of environments applicable to multi-agent systems, social navigation, and autonomous driving.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T16:56:34Z",
+      "arxivId": "2607.19284",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "ai-multi-agent-systems",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19284v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19284",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19284v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19284"
+        }
+      ],
+      "semanticScholarId": "145e0cdc5c8c8455ad97e791c7bbf84f4388ff61",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 27,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
           "empirical": 4,
           "corroboration": 2
         }
@@ -56909,80 +56213,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 6,
-          "corroboration": 0
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.04265",
-      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
-      "authors": [
-        "Angen Ye",
-        "Weijie Ke",
-        "Xiaofeng Wang",
-        "Xinze Chen",
-        "Chaojun Ni",
-        "Guosheng Zhao",
-        "Boyuan Wang",
-        "Zheng Zhu",
-        "Junjie Xie",
-        "Dapeng Zhang"
-      ],
-      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
-      "publishedAt": "2026-07-05",
-      "arxivId": "2607.04265",
-      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "embodied-foundation-models",
-        "imitation-reinforcement-learning",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2607.04265",
-      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
-      "citationCount": 1,
-      "influentialCitationCount": 0,
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/YeanRoot/HALO-WA"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.04265"
-        }
-      ],
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 55,
-        "relevance": 24,
-        "evidence": 9,
-        "freshness": 4,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
           "corroboration": 0
         }
       }
@@ -57258,6 +56488,84 @@
           "reproducibility": 0,
           "empirical": 6,
           "corroboration": 0
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.12072",
+      "title": "EmboMatrix: A Scalable Training-Ground for Embodied Decision-Making",
+      "authors": [
+        "Zixing Lei",
+        "Sheng Yin",
+        "Yichen Xiong",
+        "Yuanzhuo Ding",
+        "Wenhao Huang",
+        "Yuxi Wei",
+        "Qingyao Xu",
+        "Yiming Li",
+        "Weixin Li",
+        "Yunhong Wang",
+        "Siheng Chen"
+      ],
+      "abstract": "Embodied decision-making enables agents to translate high-level goals into executable actions through continuous interactions within the physical world, forming a cornerstone of general-purpose embodied intelligence. Large language models (LLMs), with their general decision-making capabilities, offer a promising path to realize this potential; however, LLMs trained solely on language lack exposure to physical environments, limiting their true embodied understanding. To bridge this gap, we propose the concept of a training ground: a comprehensive infrastructure that provides task and scene simulation, embodied interaction, and feedback signals, offering a one-stop solution for LLM acquire genuine embodied decision-making skills. In this work, we present EmboMatrix, the first training ground of its kind, providing massive and diverse tasks with efficient simulation and precise rewards. EmboMatrix incorporates a series of novel techniques: a multi-agent data engine for large-scale task and scene generation, a distributed heterogeneous-hardware system for scalable simulation, and a multi-level reward architecture for precise supervision. Leveraging EmboMatrix, we cultivate EmboBrain, an LLM whose embodied decision-making abilities emerge from extensive embodied interactions. Experiments show that EmboBrain-7B surpasses the 671B DeepSeek-R1 baseline by 9.5\\% on two challenging embodied decision-making benchmarks, demonstrating the power of interactive, environment-grounded learning for building truly intelligent embodied agents.",
+      "publishedAt": "2025-10-14",
+      "updatedAt": "2025-10-14T02:26:52Z",
+      "arxivId": "2510.12072",
+      "doi": "10.48550/arXiv.2510.12072",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-multi-agent-systems",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.12072v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.12072",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12072v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.12072"
+        }
+      ],
+      "semanticScholarId": "a49396691008693fee368e7b7d1dfa15ce864b90",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.12072",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
         }
       }
     },
@@ -62157,6 +61465,88 @@
       }
     },
     {
+      "id": "arxiv:2607.19343",
+      "title": "Masked Visual Actions for Unified World Modeling",
+      "authors": [
+        "Hadi Alzayer",
+        "Wenlong Huang",
+        "Haonan Chen",
+        "Christopher Luey",
+        "Lvmin Zhang",
+        "Maneesh Agrawala",
+        "Gordon Wetzstein",
+        "Li Fei-Fei",
+        "Yilun Du",
+        "Jiajun Wu",
+        "Jia-Bin Huang"
+      ],
+      "abstract": "Video models absorb rich priors over how the visual world moves, interacts, and responds to contact, making them promising substrates for robotic world modeling. The central challenge is how to communicate action to such models in a form aligned with the visual space in which they learned these interaction priors, yet still grounded in physical manipulation. We introduce Masked Visual Actions, a pixel-space control interface that expresses action as a partially revealed trajectory of an arbitrary entity in a video. Revealing robot motion makes the model act as a forward dynamics model that predicts the scene's response to low-level robot actions, while revealing desired object motion makes the same model recover robot behavior consistent with that outcome. Finetuned with only 15 hours of masked examples from real videos and simulation, a single checkpoint achieves strong visual fidelity and controllability across diverse scenes and multiple embodiments. In downstream manipulation settings, the model produces imagined rollouts whose outcomes correlate with real-world execution for policy evaluation, improves decision making by ranking candidate futures in model-based planning, and supports inverse modeling by synthesizing robot motion from desired object motion.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T17:59:11Z",
+      "arxivId": "2607.19343",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19343v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19343",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://masked-visual-actions.github.io"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19343v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19343"
+        }
+      ],
+      "semanticScholarId": "9085002e8a6b142c8210e5f6a571ac5ea10cba08",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 24,
+        "evidence": 8,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2607.18062",
       "title": "UniETP: Unifying Environments for Generalizable Embodied Task Planning",
       "authors": [
@@ -63044,6 +62434,80 @@
       }
     },
     {
+      "id": "arxiv:2607.04265",
+      "title": "HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models",
+      "authors": [
+        "Angen Ye",
+        "Weijie Ke",
+        "Xiaofeng Wang",
+        "Xinze Chen",
+        "Chaojun Ni",
+        "Guosheng Zhao",
+        "Boyuan Wang",
+        "Zheng Zhu",
+        "Junjie Xie",
+        "Dapeng Zhang"
+      ],
+      "abstract": "World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\\% for WA-base to 87.1\\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.",
+      "publishedAt": "2026-07-05",
+      "arxivId": "2607.04265",
+      "semanticScholarId": "9a7128f2c42b32390fc554206de4e344b585fb2e",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "embodied-foundation-models",
+        "imitation-reinforcement-learning",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2607.04265",
+      "pdfUrl": "https://arxiv.org/pdf/2607.04265",
+      "citationCount": 1,
+      "influentialCitationCount": 0,
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/YeanRoot/HALO-WA"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.04265"
+        }
+      ],
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 54,
+        "relevance": 24,
+        "evidence": 8,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 4,
+          "corroboration": 0
+        }
+      }
+    },
+    {
       "id": "arxiv:2606.22794",
       "title": "UniFS: Unified Fast-to-Slow Hierarchical Architecture for Vision-Language-Action Models",
       "authors": [
@@ -63731,67 +63195,6 @@
           "citations": 0,
           "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2410.21630",
-      "title": "Constrained Nonlinear Kaczmarz Projection on Intersections of Manifolds for Coordinated Multi-Robot Mobile Manipulation",
-      "authors": [
-        "Akshaya Agrawal",
-        "Parker Mayer",
-        "Zachary Kingston",
-        "Geoffrey A. Hollinger"
-      ],
-      "abstract": "Cooperative manipulation tasks impose various structure-, task-, and robot-specific constraints on mobile manipulators. However, current methods struggle to model and solve these myriad constraints simultaneously. We propose a twofold solution: first, we model constraints as a family of manifolds amenable to simultaneous solving. Second, we introduce the constrained nonlinear Kaczmarz (cNKZ) projection technique to produce constraint-satisfying solutions. Experiments show that cNKZ dramatically outperforms baseline approaches, which cannot find solutions at all. We integrate cNKZ with a sampling-based motion planning algorithm to generate complex, coordinated motions for 3 to 6 mobile manipulators (18--36 DoF), with cNKZ solving up to 80 nonlinear constraints simultaneously and achieving up to a 92% success rate in cluttered environments. We also demonstrate our approach on hardware using three Turtlebot3 Waffle Pi robots with OpenMANIPULATOR-X arms.",
-      "publishedAt": "2024-10-29T00:22:02Z",
-      "updatedAt": "2025-03-27T10:01:08Z",
-      "arxivId": "2410.21630",
-      "doi": "10.1109/ICRA55743.2025.11127991",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "robot-manipulation",
-        "ai-reasoning-planning"
-      ],
-      "sources": [
-        "arxiv"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2410.21630v2",
-      "pdfUrl": "https://arxiv.org/pdf/2410.21630v2",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2410.21630v2"
-        }
-      ],
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 54,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 0,
-        "completeness": 16,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.1109/ICRA55743.2025.11127991",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 6,
           "corroboration": 2
         }
       }
@@ -72754,246 +72157,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19190",
-      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
-      "authors": [
-        "Guanxiong Chen",
-        "Qianjun Xia",
-        "Jiawei Peng",
-        "Heng Zhang",
-        "Bole Ma",
-        "Justin Qian",
-        "Ziyi Jiao",
-        "Bingyang Zhou",
-        "Luoxin Ye",
-        "Kaifeng Zhang",
-        "Kunyi Wang",
-        "Weijia Zeng",
-        "Yunuo Chen",
-        "Pengzhi Yang",
-        "Ziqiu Zeng",
-        "Siyuan Luo",
-        "Huamin Wang",
-        "Chao Liu",
-        "Alan Yuille",
-        "Fan Shi",
-        "Changxi Zheng",
-        "Yunzhu Li",
-        "Chenfanfu Jiang",
-        "Peter Yichen Chen"
-      ],
-      "abstract": "Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \\textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework's agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://agentic-real2sim.github.io/.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-24T08:16:46Z",
-      "arxivId": "2607.19190",
-      "categories": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19190v3",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19190",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://agentic-real2sim.github.io/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19190v3"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19190"
-        }
-      ],
-      "semanticScholarId": "01f2b84200d14d3fd177d691eff119049c6be53d",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18713",
-      "title": "Confidence-Gated Vision-Only Heading Alignment for UAV-UGV Cooperative Systems",
-      "authors": [
-        "Reza Ahmari",
-        "Vahid Hemmati",
-        "Parham Kebria",
-        "Olusola Odeyomi",
-        "Kaushik Roy",
-        "Abdollah Homaifar"
-      ],
-      "abstract": "Vision-based heading prediction is useful for UAV--UGV cooperation, but accurate prediction alone does not guarantee that every predicted heading should be issued directly as a control command. This paper investigates the decision problem of when and how a fixed vision-based heading predictor should be trusted for command issuance. A lightweight confidence-gated framework is proposed in which execution decisions are made using two interpretable reliability proxies derived from the perception stream: bounding-box area as a visibility-related proxy and short-window variation in predicted heading as a stability-related proxy. During low-confidence intervals, the framework compares the baseline freeze-HOLD policy with a bounded-blend fallback that updates the issued command conservatively. The method is evaluated on a real UAV--UGV dataset under clean and perturbed conditions. The results show that confidence gating creates a clear trade-off among execution rate, executed-frame accuracy, issued-command accuracy, and smoothness. The results further show that sparse execution can cause severe stale-command error under the baseline freeze-HOLD policy, whereas the bounded-blend fallback substantially improves command-level behavior under the same gate decisions. These findings highlight that reliable perception-driven autonomy depends not only on prediction accuracy, but also on decision-aware command issuance during low-confidence",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T05:09:32Z",
-      "arxivId": "2607.18713",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-safety-alignment"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18713v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18713",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18713v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18713"
-        }
-      ],
-      "semanticScholarId": "5e7adff37d95ae4326732efaadc1fd7a7662ae60",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18709",
-      "title": "RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation",
-      "authors": [
-        "Ziqin Wang",
-        "Hao Li",
-        "Weijun Wang",
-        "Junhao Cai",
-        "Jia Zeng",
-        "Yilun Chen",
-        "Jiangmiao Pang",
-        "Si Liu"
-      ],
-      "abstract": "Existing robot datasets remain expensive to curate, embodiment-specific, and insufficiently annotated with the fine-grained structure required for generalizable reasoning, execution, or long-horizon environment dynamics simulation. Building on our prior work, RoboInter1.0, we present RoboInter1.5, an extended and holistic suite of intermediate representations for both robotic manipulation and embodied world modeling. RoboInter1.5 provides a unified resource of data, benchmarks, and models centered on dense manipulation-oriented intermediate representations. Specifically, RoboInter-Data contains over 230k manipulation episodes across 571 scenes with dense per-frame annotations covering more than ten types of intermediate representations, including subtasks, primitive skills, object and gripper grounding, segmentation, affordance, grasp poses, contact points, motion traces, etc. Built upon these annotations, RoboInter-VQA introduces spatial and temporal embodied VQA tasks to benchmark and improve the intermediate-representation reasoning capabilities of our RoboInter-VLM. RoboInter-VLA further studies how such representations benefit action execution through implicit, explicit, and modular plan-then-execute paradigms. To better model the physical world, we further introduce RoboInter-World, which leverages intermediate representations as structured conditioning signals for controllable prediction of future world states. Extensive evaluations demonstrate that RoboInter1.5 provides a unified spatiotemporal scaffolding for intermediate representations. Rather than treating intermediate representations merely as interpretable signals, RoboInter1.5 conceptualizes them as a bidirectional interface that both regularizes low-level action spaces and constrains the latent rollouts of open-world physical simulators.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-22T05:33:17Z",
-      "arxivId": "2607.18709",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "ai-reasoning-planning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18709v2",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18709",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18709v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18709"
-        }
-      ],
-      "semanticScholarId": "e8ee8d0c9963914602691fdd699a6e296ca6d8ba",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 53,
-        "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.17951",
       "title": "RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control",
       "authors": [
@@ -77069,6 +76232,246 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 3,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19190",
+      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
+      "authors": [
+        "Guanxiong Chen",
+        "Qianjun Xia",
+        "Jiawei Peng",
+        "Heng Zhang",
+        "Bole Ma",
+        "Justin Qian",
+        "Ziyi Jiao",
+        "Bingyang Zhou",
+        "Luoxin Ye",
+        "Kaifeng Zhang",
+        "Kunyi Wang",
+        "Weijia Zeng",
+        "Yunuo Chen",
+        "Pengzhi Yang",
+        "Ziqiu Zeng",
+        "Siyuan Luo",
+        "Huamin Wang",
+        "Chao Liu",
+        "Alan Yuille",
+        "Fan Shi",
+        "Changxi Zheng",
+        "Yunzhu Li",
+        "Chenfanfu Jiang",
+        "Peter Yichen Chen"
+      ],
+      "abstract": "Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \\textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework's agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://agentic-real2sim.github.io/.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-24T08:16:46Z",
+      "arxivId": "2607.19190",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19190v3",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19190",
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://agentic-real2sim.github.io/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19190v3"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19190"
+        }
+      ],
+      "semanticScholarId": "01f2b84200d14d3fd177d691eff119049c6be53d",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18713",
+      "title": "Confidence-Gated Vision-Only Heading Alignment for UAV-UGV Cooperative Systems",
+      "authors": [
+        "Reza Ahmari",
+        "Vahid Hemmati",
+        "Parham Kebria",
+        "Olusola Odeyomi",
+        "Kaushik Roy",
+        "Abdollah Homaifar"
+      ],
+      "abstract": "Vision-based heading prediction is useful for UAV--UGV cooperation, but accurate prediction alone does not guarantee that every predicted heading should be issued directly as a control command. This paper investigates the decision problem of when and how a fixed vision-based heading predictor should be trusted for command issuance. A lightweight confidence-gated framework is proposed in which execution decisions are made using two interpretable reliability proxies derived from the perception stream: bounding-box area as a visibility-related proxy and short-window variation in predicted heading as a stability-related proxy. During low-confidence intervals, the framework compares the baseline freeze-HOLD policy with a bounded-blend fallback that updates the issued command conservatively. The method is evaluated on a real UAV--UGV dataset under clean and perturbed conditions. The results show that confidence gating creates a clear trade-off among execution rate, executed-frame accuracy, issued-command accuracy, and smoothness. The results further show that sparse execution can cause severe stale-command error under the baseline freeze-HOLD policy, whereas the bounded-blend fallback substantially improves command-level behavior under the same gate decisions. These findings highlight that reliable perception-driven autonomy depends not only on prediction accuracy, but also on decision-aware command issuance during low-confidence",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T05:09:32Z",
+      "arxivId": "2607.18713",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-safety-alignment"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18713v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18713",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18713v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18713"
+        }
+      ],
+      "semanticScholarId": "5e7adff37d95ae4326732efaadc1fd7a7662ae60",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18709",
+      "title": "RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation",
+      "authors": [
+        "Ziqin Wang",
+        "Hao Li",
+        "Weijun Wang",
+        "Junhao Cai",
+        "Jia Zeng",
+        "Yilun Chen",
+        "Jiangmiao Pang",
+        "Si Liu"
+      ],
+      "abstract": "Existing robot datasets remain expensive to curate, embodiment-specific, and insufficiently annotated with the fine-grained structure required for generalizable reasoning, execution, or long-horizon environment dynamics simulation. Building on our prior work, RoboInter1.0, we present RoboInter1.5, an extended and holistic suite of intermediate representations for both robotic manipulation and embodied world modeling. RoboInter1.5 provides a unified resource of data, benchmarks, and models centered on dense manipulation-oriented intermediate representations. Specifically, RoboInter-Data contains over 230k manipulation episodes across 571 scenes with dense per-frame annotations covering more than ten types of intermediate representations, including subtasks, primitive skills, object and gripper grounding, segmentation, affordance, grasp poses, contact points, motion traces, etc. Built upon these annotations, RoboInter-VQA introduces spatial and temporal embodied VQA tasks to benchmark and improve the intermediate-representation reasoning capabilities of our RoboInter-VLM. RoboInter-VLA further studies how such representations benefit action execution through implicit, explicit, and modular plan-then-execute paradigms. To better model the physical world, we further introduce RoboInter-World, which leverages intermediate representations as structured conditioning signals for controllable prediction of future world states. Extensive evaluations demonstrate that RoboInter1.5 provides a unified spatiotemporal scaffolding for intermediate representations. Rather than treating intermediate representations merely as interpretable signals, RoboInter1.5 conceptualizes them as a bidirectional interface that both regularizes low-level action spaces and constrains the latent rollouts of open-world physical simulators.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-22T05:33:17Z",
+      "arxivId": "2607.18709",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18709v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18709",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18709v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18709"
+        }
+      ],
+      "semanticScholarId": "e8ee8d0c9963914602691fdd699a6e296ca6d8ba",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 52,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 2
         }
       }
@@ -91400,311 +90803,6 @@
       }
     },
     {
-      "id": "arxiv:2607.19306",
-      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
-      "authors": [
-        "Jason Stanley",
-        "Zhirui Dai",
-        "Qihao Qian",
-        "Tzu-Chin Ho",
-        "Tianxing Fan",
-        "Siddhartha Saha",
-        "C. Barngrover",
-        "K. Lee",
-        "Nikolay Atanasov UC San Diego",
-        "La Jolla",
-        "Usa",
-        "AI Shield",
-        "San Diego"
-      ],
-      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T17:18:46Z",
-      "arxivId": "2607.19306",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "ai-reasoning-planning",
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19306"
-        }
-      ],
-      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19194",
-      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
-      "authors": [
-        "Zhongyao Yang",
-        "Haoyu Li",
-        "Yu Yan",
-        "Zhuangxuan Yu",
-        "Jiangfeng Nan",
-        "Jinrui Nan"
-      ],
-      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-22T03:53:48Z",
-      "arxivId": "2607.19194",
-      "categories": [
-        "cs.RO",
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-theory-optimization",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19194"
-        }
-      ],
-      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18855",
-      "title": "Pose-Parameterized Motion Planning and CBF-QP Self-Collision Filtering for a Long-Reach Drilling Boom",
-      "authors": [
-        "Mehdi Heydari Shahna",
-        "Tuomo Kivelä",
-        "Jouni Mattila"
-      ],
-      "abstract": "Long-reach drilling booms must reach successive poses without self-collision. Moving from operator-supervised control toward autonomy requires collision-aware motion planning and execution. For the Sandvik SB60, this study adapts established methods by integrating pose-parameterized planning with a capsule-based control barrier function quadratic program (CBF-QP) in measured-state inverse kinematics (IK). A fixed task-specific parameter set within each task generates waypoints, detours, timed references, and chained motion without target-specific retuning. The offline detour planner screens candidate waypoints using 23 selected rod-segment-to-body-region distances, whereas the online CBF-QP filters joint velocities using 14 configured capsule-pair constraints from a nine-primitive whole-body capsule model. Evaluation considers two drilling tasks in a manufacturer-developed SB60 Simscape Multibody model: a five-target restricted-orientation tour and a three-target full-pose tour. Across several hundred thousand samples, the method produced zero IK failures, generated several detour waypoints, achieved millimetre-level mean final-position error, and recorded no sampled CBF margins below the reported thresholds.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T08:41:49Z",
-      "arxivId": "2607.18855",
-      "categories": [
-        "cs.RO",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18855v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18855",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18855v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18855"
-        }
-      ],
-      "semanticScholarId": "fdc3fb8b0597135e8361aeff3bac17ea72eb88b2",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18604",
-      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
-      "authors": [
-        "Zijiang Yan",
-        "Hao Zhou",
-        "Wael Jaafar",
-        "Jianhua Pei",
-        "Ping Wang",
-        "Halim Yanikomeroglu",
-        "Hina Tabassum"
-      ],
-      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T00:34:42Z",
-      "arxivId": "2607.18604",
-      "categories": [
-        "cs.RO",
-        "cs.AI",
-        "cs.LG",
-        "cs.NI",
-        "eess.SY"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18604"
-        }
-      ],
-      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 51,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 18,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
       "id": "arxiv:2607.15898",
       "title": "Orbis 2: A Hierarchical World Model for Driving",
       "authors": [
@@ -97436,55 +96534,62 @@
       }
     },
     {
-      "id": "arxiv:2607.18637",
-      "title": "End-to-end Conditional Diffusion for Realistic and Controllable Visual Traffic Scenario Generation",
+      "id": "arxiv:2607.19306",
+      "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
       "authors": [
-        "Jingzheng Li",
-        "Yufei Ge",
-        "Zhijun Chen",
-        "Qianren Mao",
-        "Zizhe Wang",
-        "Binhang Qi",
-        "Bing Li",
-        "Keyu Chen",
-        "Baochang Zhang",
-        "Xianglong Liu",
-        "Philip S Yu"
+        "Jason Stanley",
+        "Zhirui Dai",
+        "Qihao Qian",
+        "Tzu-Chin Ho",
+        "Tianxing Fan",
+        "Siddhartha Saha",
+        "C. Barngrover",
+        "K. Lee",
+        "Nikolay Atanasov UC San Diego",
+        "La Jolla",
+        "Usa",
+        "AI Shield",
+        "San Diego"
       ],
-      "abstract": "Generating closed-loop traffic scenarios that are both realistic and controllable is crucial for evaluating autonomous driving systems, especially under rare safety-critical interactions. Existing learning-based methods often struggle to balance controllability and realism, offering either limited fine-grained control over traffic behavior or controllable scenarios at the expense of behavioral plausibility. This paper presents E2E-CDiff, an end-to-end conditional diffusion framework for controllable and realistic scenario generation. Conditioned on front-view visual observations, E2E-CDiff jointly denoises future motion states and executable low-level controls for route-interacting background vehicles. This unified state-action generation mitigates the planning-control mismatch in conventional two-stage trajectory-then-controller pipelines. Differentiable guidance further regulates speed, enforces drivable-area compliance, and supports collision-avoidance or collision-seeking behaviors, enabling both naturalistic and safety-critical scenario generation. Experiments on Bench2Drive show that E2E-CDiff achieves a favorable controllability-realism trade-off compared with representative reinforcement- and imitation-learning baselines, while its collision-guided variant induces challenging interactions across multiple autonomous driving systems. E2E-CDiff also performs competitively as a learning-based ego planner, demonstrating the generality of end-to-end state-action diffusion.",
+      "abstract": "Autonomous flight in cluttered environments requires a robot to build a geometric map of its surroundings and plan safe, dynamically feasible trajectories, all onboard and in real time. Conventional approaches treat mapping and planning as separate stages and often rely on binary occupancy for collision checking. We argue that these two stages should be co-designed around a single representation: a signed distance function (SDF). By encoding distance to the nearest obstacle, an SDF provides richer information for planning and trajectory optimization than occupancy alone. We develop an Octree REsidual Network (OREN) that pairs an explicit octree prior with an implicit neural residual to reconstruct SDFs online from point cloud observations with the efficiency of volumetric methods and the accuracy and differentiability of neural methods. In tandem, we develop Bubble$^\\star$, a search-based planner that exploits the distance information to grow maximal collision-free balls, which we call bubbles, with formal guarantees of termination, completeness, and failure detection. Planning over a graph of bubbles significantly reduces collision checks compared to a grid-based A$^\\star$ search and returns a bubble sequence that forms a safe corridor for trajectory optimization. We demonstrate the integrated OREN-Bubble$^\\star$ approach onboard a quadrotor, navigating unseen indoor environments in real time under tight compute constraints. OREN improves SDF estimation by $22$% compared to baselines, while Bubble$^\\star$ finds trajectories spanning $\\approx 90$ m through a cluttered environment in $1$-$3$ sec., whereas baselines take up to $10$ sec. in the same environment.",
       "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T02:13:25Z",
-      "arxivId": "2607.18637",
+      "updatedAt": "2026-07-21T17:18:46Z",
+      "arxivId": "2607.19306",
       "categories": [
         "cs.RO",
-        "cs.LG"
+        "cs.AI",
+        "cs.CV",
+        "eess.SY"
       ],
       "fieldIds": [
-        "cs-lg",
+        "cs-ai",
+        "cs-cv",
         "embodied-intelligence",
-        "cs-ai"
+        "cs-lg"
       ],
       "topicIds": [
         "navigation-planning",
-        "ai-reasoning-planning"
+        "ai-reasoning-planning",
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18637v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18637",
+      "sourceUrl": "http://arxiv.org/abs/2607.19306v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19306",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18637v1"
+          "url": "https://arxiv.org/pdf/2607.19306v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18637"
+          "url": "https://arxiv.org/pdf/2607.19306"
         }
       ],
-      "semanticScholarId": "561a2405ebdd195af7b694ac215b7333b9656d3a",
+      "semanticScholarId": "52ef91deac477bf8e73c227e9b4aaf1865e1373d",
       "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "preprint",
@@ -97492,9 +96597,9 @@
       "score": {
         "baseTotal": 50,
         "relevance": 24,
-        "evidence": 6,
-        "freshness": 5,
-        "completeness": 15,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
@@ -97505,7 +96610,230 @@
           "publication": 0,
           "citations": 0,
           "reproducibility": 0,
-          "empirical": 4,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19194",
+      "title": "Cognitive Dual-Process Planning for Autonomous Driving with Structured Scene Knowledge and Verifiable Reasoning-Action Consistency",
+      "authors": [
+        "Zhongyao Yang",
+        "Haoyu Li",
+        "Yu Yan",
+        "Zhuangxuan Yu",
+        "Jiangfeng Nan",
+        "Jinrui Nan"
+      ],
+      "abstract": "High-level planning for autonomous driving is a knowledge-intensive engineering decision task that requires accurate scene understanding, timely inference, and internally consistent action selection. Vision-language models (VLMs) can make intermediate reasoning explicit, but their use in deployed planners is constrained by costly structured supervision, unnecessary reasoning in routine scenes, and possible inconsistencies between generated rationales and driving actions. We present a cognitive dual-process planning framework that represents planning-relevant scene knowledge in a machine-parsable structured chain-of-thought (S-CoT) schema. An automated data engine integrates perception foundation models, critical-path filtering, and an expert VLM to generate S-CoT supervision without manual annotation of individual rationales. A lightweight visual Arbiter estimates scene complexity from multilevel vision-encoder features before language decoding and routes each input to either fast meta-action prediction or slow structured reasoning. For slow-path outputs, a deterministic rule-based validator checks whether the parsed S-CoT fields are consistent with the final meta-action and provides verifiable rewards for Group Relative Policy Optimization (GRPO). In a 195-scene manual audit, the generated annotations achieve 91.8\\% CoT accuracy and a 98.5\\% Logical Consistency Score (LCS). On 574 manually verified NAVSIM test samples, the planner achieves 80.14\\% planning accuracy and 97.20\\% LCS while reducing average latency by 17.39\\% relative to applying slow reasoning to every scene. Evaluation on external long-tail subsets further identifies conditions under which routing and planning performance degrade. Together, these results show how explicit scene knowledge can be operationalized through adaptive reasoning and rule-based verification to support high-level VLM planning decisions.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-22T03:53:48Z",
+      "arxivId": "2607.19194",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-theory-optimization",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19194v2",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19194",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19194"
+        }
+      ],
+      "semanticScholarId": "dd8fef109e43b18e3e62d63f5c659f9e7dec88f4",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18855",
+      "title": "Pose-Parameterized Motion Planning and CBF-QP Self-Collision Filtering for a Long-Reach Drilling Boom",
+      "authors": [
+        "Mehdi Heydari Shahna",
+        "Tuomo Kivelä",
+        "Jouni Mattila"
+      ],
+      "abstract": "Long-reach drilling booms must reach successive poses without self-collision. Moving from operator-supervised control toward autonomy requires collision-aware motion planning and execution. For the Sandvik SB60, this study adapts established methods by integrating pose-parameterized planning with a capsule-based control barrier function quadratic program (CBF-QP) in measured-state inverse kinematics (IK). A fixed task-specific parameter set within each task generates waypoints, detours, timed references, and chained motion without target-specific retuning. The offline detour planner screens candidate waypoints using 23 selected rod-segment-to-body-region distances, whereas the online CBF-QP filters joint velocities using 14 configured capsule-pair constraints from a nine-primitive whole-body capsule model. Evaluation considers two drilling tasks in a manufacturer-developed SB60 Simscape Multibody model: a five-target restricted-orientation tour and a three-target full-pose tour. Across several hundred thousand samples, the method produced zero IK failures, generated several detour waypoints, achieved millimetre-level mean final-position error, and recorded no sampled CBF margins below the reported thresholds.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T08:41:49Z",
+      "arxivId": "2607.18855",
+      "categories": [
+        "cs.RO",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18855v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18855",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18855v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18855"
+        }
+      ],
+      "semanticScholarId": "fdc3fb8b0597135e8361aeff3bac17ea72eb88b2",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18604",
+      "title": "Intelligent Multi-UAV Navigation in ITNTNs: A Hierarchical LLM Approach",
+      "authors": [
+        "Zijiang Yan",
+        "Hao Zhou",
+        "Wael Jaafar",
+        "Jianhua Pei",
+        "Ping Wang",
+        "Halim Yanikomeroglu",
+        "Hina Tabassum"
+      ],
+      "abstract": "The deployment of high-speed Uncrewed Aerial Vehicles (UAVs) in 3D aerial highways necessitates robust coordination of physical flight kinematics and multi-tier network handovers. While Deep Reinforcement Learning (DRL) offers rapid tactical control, it lacks the zero-shot strategic reasoning required to quickly adapt to dynamic Integrated Terrestrial and Non-Terrestrial Networks (ITNTNs). Conversely, Large Language Models (LLMs) excel at semantic reasoning but suffer from high inference latency, rendering them unsuitable for real-time aerodynamic control. To bridge this gap, we propose a novel Hierarchical LLM-driven control framework. A massive cloud-based LLM deployed on a High-Altitude Platform Station (HAPS) manages slow-timescale global load balancing, while lightweight edge-LLMs on individual UAVs translate local observations into tactical sub-goals. These sub-goals guide a fast-timescale physical DRL controller to execute collision-free, handover-aware trajectories. Simulation results demonstrate that our agentic architecture significantly reduces collision rates and improves aggregate system throughput compared to existing baselines.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T00:34:42Z",
+      "arxivId": "2607.18604",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG",
+        "cs.NI",
+        "eess.SY"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18604v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18604",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18604"
+        }
+      ],
+      "semanticScholarId": "74317beb46181b56c9f442aa0befb95e4e67b840",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 50,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -109754,6 +109082,81 @@
       }
     },
     {
+      "id": "arxiv:2607.18637",
+      "title": "End-to-end Conditional Diffusion for Realistic and Controllable Visual Traffic Scenario Generation",
+      "authors": [
+        "Jingzheng Li",
+        "Yufei Ge",
+        "Zhijun Chen",
+        "Qianren Mao",
+        "Zizhe Wang",
+        "Binhang Qi",
+        "Bing Li",
+        "Keyu Chen",
+        "Baochang Zhang",
+        "Xianglong Liu",
+        "Philip S Yu"
+      ],
+      "abstract": "Generating closed-loop traffic scenarios that are both realistic and controllable is crucial for evaluating autonomous driving systems, especially under rare safety-critical interactions. Existing learning-based methods often struggle to balance controllability and realism, offering either limited fine-grained control over traffic behavior or controllable scenarios at the expense of behavioral plausibility. This paper presents E2E-CDiff, an end-to-end conditional diffusion framework for controllable and realistic scenario generation. Conditioned on front-view visual observations, E2E-CDiff jointly denoises future motion states and executable low-level controls for route-interacting background vehicles. This unified state-action generation mitigates the planning-control mismatch in conventional two-stage trajectory-then-controller pipelines. Differentiable guidance further regulates speed, enforces drivable-area compliance, and supports collision-avoidance or collision-seeking behaviors, enabling both naturalistic and safety-critical scenario generation. Experiments on Bench2Drive show that E2E-CDiff achieves a favorable controllability-realism trade-off compared with representative reinforcement- and imitation-learning baselines, while its collision-guided variant induces challenging interactions across multiple autonomous driving systems. E2E-CDiff also performs competitively as a learning-based ego planner, demonstrating the generality of end-to-end state-action diffusion.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T02:13:25Z",
+      "arxivId": "2607.18637",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-ai"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "ai-reasoning-planning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18637v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18637",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18637v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18637"
+        }
+      ],
+      "semanticScholarId": "561a2405ebdd195af7b694ac215b7333b9656d3a",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 49,
+        "relevance": 24,
+        "evidence": 6,
+        "freshness": 4,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2607.18517",
       "title": "Beyond Fixed Goal Delivery: Online POMDP Planning for Target Interception in Crowds",
       "authors": [
@@ -115606,157 +115009,6 @@
         }
       ],
       "semanticScholarId": "0ddec6fff6dd4022bc38f09db671abae1f5a069c",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 48,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.19196",
-      "title": "STL-GCS: A Planner-Controller Framework for Signal Temporal Logic via Graphs of Time-varying Convex Sets",
-      "authors": [
-        "Nicola De Carli",
-        "Gregorio Marchesini",
-        "Dimos Dimarogonas"
-      ],
-      "abstract": "We present a unified trajectory planning and control framework for the satisfaction of Signal Temporal Logic (STL) specifications defined over convex predicates. At the planning layer, STL tasks are encoded as time-varying convex sets in configuration space, specifically designed so that forward invariance of the system with respect to these sets implies satisfaction of the specification with a prescribed robustness margin. This representation is then lifted to the joint time--configuration space and combined with the Graphs of Convex Sets (GCS) framework, yielding a shortest-path formulation of the planning problem over convex spatio-temporal sets. Trajectories are parameterized by B-splines, which enable continuous-time enforcement of STL satisfaction, collision avoidance, and smoothness constraints. At the control layer, the same time-varying sets used for planning are exploited to design a feedback controller that tracks the planned trajectory while prioritizing satisfaction of the STL specification during execution in the presence of tracking errors and model mismatch. We validate the proposed approach in simulation and in real-world experiments on space robotic platforms.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T15:30:55Z",
-      "arxivId": "2607.19196",
-      "categories": [
-        "eess.SY",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "navigation-planning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.19196v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.19196",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19196v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.19196"
-        }
-      ],
-      "semanticScholarId": "a1122e551558b5c25a6b8b02595d8f8edc99a5f2",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "preprint",
-      "personalization": {},
-      "score": {
-        "baseTotal": 48,
-        "relevance": 24,
-        "evidence": 4,
-        "freshness": 5,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 0,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 2,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.18840",
-      "title": "WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory",
-      "authors": [
-        "Haisheng Su",
-        "Zongdai Liu",
-        "Xin Jin",
-        "Haoxuan Dou",
-        "Chengming Hu",
-        "Baorun Li",
-        "Zhanwang Liu",
-        "Ruiyan Xu",
-        "Jianjie Fang",
-        "Xin Zhang",
-        "Zhenjie Yang",
-        "Xue Yang",
-        "Chen Gao",
-        "Junchi Yan",
-        "Yong Li",
-        "Wei Wu"
-      ],
-      "abstract": "World Action Models (WAMs) offer a promising paradigm for robotic manipulation by jointly modeling visual state transitions and robot actions. However, existing WAMs are constrained by limited temporal context, coarse episode-level language supervision, and predominantly text-only conditioning, which hinder task-progress tracking and fine-grained language-video-action grounding while limiting visual-context reasoning and cross-embodiment transfer. In this paper, we introduce WorldScape Policy 2.0, a controllable WAM with reasoning-augmented long short-term memory. Its causal short-term visual memory supplies recent observations as DiT prefill to preserve local interaction dynamics, while its long short-term event memory organizes historical VLM outputs into global-history, local-active, and event-boundary representations for progress-aware retrieval. The retrieved history augments perception and autoregressively generated planning tokens, yielding an implicit subgoal condition for autonomous planning; semantic forcing further transfers event-level instruction semantics into this latent planning pathway. To establish fine-grained multimodal controllability, we construct ManipEvent-5M, an event-grounded embodied pretraining dataset containing nearly 5 million event segments with aligned action trajectories, episode-level task instructions, segment-level subtask captions, goal images, and video demonstrations. These designs provide a unified interface for autonomous planning from high-level instructions and controllable execution from fine-grained text, goal-image, or video-context prompts. Experiments in both simulation and real-world platforms demonstrate superior capabilities in long-horizon autonomous planning, fine-grained instruction following and in-context adaptation.",
-      "publishedAt": "2026-07-21",
-      "updatedAt": "2026-07-21T08:25:37Z",
-      "arxivId": "2607.18840",
-      "categories": [
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-ai",
-        "cs-cl"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.18840v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.18840",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18840v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.18840"
-        }
-      ],
-      "semanticScholarId": "d092c9136f0470c5d69b83d2620d33810c5194cd",
       "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "preprint",
@@ -121824,6 +121076,157 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 0,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.19196",
+      "title": "STL-GCS: A Planner-Controller Framework for Signal Temporal Logic via Graphs of Time-varying Convex Sets",
+      "authors": [
+        "Nicola De Carli",
+        "Gregorio Marchesini",
+        "Dimos Dimarogonas"
+      ],
+      "abstract": "We present a unified trajectory planning and control framework for the satisfaction of Signal Temporal Logic (STL) specifications defined over convex predicates. At the planning layer, STL tasks are encoded as time-varying convex sets in configuration space, specifically designed so that forward invariance of the system with respect to these sets implies satisfaction of the specification with a prescribed robustness margin. This representation is then lifted to the joint time--configuration space and combined with the Graphs of Convex Sets (GCS) framework, yielding a shortest-path formulation of the planning problem over convex spatio-temporal sets. Trajectories are parameterized by B-splines, which enable continuous-time enforcement of STL satisfaction, collision avoidance, and smoothness constraints. At the control layer, the same time-varying sets used for planning are exploited to design a feedback controller that tracks the planned trajectory while prioritizing satisfaction of the STL specification during execution in the presence of tracking errors and model mismatch. We validate the proposed approach in simulation and in real-world experiments on space robotic platforms.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T15:30:55Z",
+      "arxivId": "2607.19196",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "navigation-planning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.19196v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.19196",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19196v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.19196"
+        }
+      ],
+      "semanticScholarId": "a1122e551558b5c25a6b8b02595d8f8edc99a5f2",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 47,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.18840",
+      "title": "WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory",
+      "authors": [
+        "Haisheng Su",
+        "Zongdai Liu",
+        "Xin Jin",
+        "Haoxuan Dou",
+        "Chengming Hu",
+        "Baorun Li",
+        "Zhanwang Liu",
+        "Ruiyan Xu",
+        "Jianjie Fang",
+        "Xin Zhang",
+        "Zhenjie Yang",
+        "Xue Yang",
+        "Chen Gao",
+        "Junchi Yan",
+        "Yong Li",
+        "Wei Wu"
+      ],
+      "abstract": "World Action Models (WAMs) offer a promising paradigm for robotic manipulation by jointly modeling visual state transitions and robot actions. However, existing WAMs are constrained by limited temporal context, coarse episode-level language supervision, and predominantly text-only conditioning, which hinder task-progress tracking and fine-grained language-video-action grounding while limiting visual-context reasoning and cross-embodiment transfer. In this paper, we introduce WorldScape Policy 2.0, a controllable WAM with reasoning-augmented long short-term memory. Its causal short-term visual memory supplies recent observations as DiT prefill to preserve local interaction dynamics, while its long short-term event memory organizes historical VLM outputs into global-history, local-active, and event-boundary representations for progress-aware retrieval. The retrieved history augments perception and autoregressively generated planning tokens, yielding an implicit subgoal condition for autonomous planning; semantic forcing further transfers event-level instruction semantics into this latent planning pathway. To establish fine-grained multimodal controllability, we construct ManipEvent-5M, an event-grounded embodied pretraining dataset containing nearly 5 million event segments with aligned action trajectories, episode-level task instructions, segment-level subtask captions, goal images, and video demonstrations. These designs provide a unified interface for autonomous planning from high-level instructions and controllable execution from fine-grained text, goal-image, or video-context prompts. Experiments in both simulation and real-world platforms demonstrate superior capabilities in long-horizon autonomous planning, fine-grained instruction following and in-context adaptation.",
+      "publishedAt": "2026-07-21",
+      "updatedAt": "2026-07-21T08:25:37Z",
+      "arxivId": "2607.18840",
+      "categories": [
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-ai",
+        "cs-cl"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.18840v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.18840",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18840v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.18840"
+        }
+      ],
+      "semanticScholarId": "d092c9136f0470c5d69b83d2620d33810c5194cd",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "preprint",
+      "personalization": {},
+      "score": {
+        "baseTotal": 47,
+        "relevance": 24,
+        "evidence": 4,
+        "freshness": 4,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 0,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -136729,24 +136132,24 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 1948
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 1947
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
-      "recordCount": 1242,
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
+      "recordCount": 1241,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-10-28T09:56:15.368Z",
+      "fetchedAt": "2026-10-29T10:18:52.068Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
   },
   "meta": {
-    "candidateCount": 1898,
+    "candidateCount": 1890,
     "featuredCount": 3,
     "libraryMatchCount": 7,
     "seedCount": 0,
