@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-ai",
-  "generatedAt": "2026-11-11T11:20:40.711Z",
+  "generatedAt": "2026-11-12T11:40:12.464Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -15529,89 +15529,6 @@
       }
     },
     {
-      "id": "arxiv:2510.24706",
-      "title": "ComboBench: Can LLMs Manipulate Physical Devices to Play Virtual Reality Games?",
-      "authors": [
-        "Shuqing Li",
-        "Jiayi Yan",
-        "Chenyu Niu",
-        "Jen-tse Huang",
-        "Yun Peng",
-        "Wenxuan Wang",
-        "Yepang Liu",
-        "Michael R. Lyu"
-      ],
-      "abstract": "Virtual Reality (VR) games require players to translate high-level semantic actions into precise device manipulations using controllers and head-mounted displays (HMDs). While humans intuitively perform this translation based on common sense and embodied understanding, whether Large Language Models (LLMs) can effectively replicate this ability remains underexplored. This paper introduces a benchmark, ComboBench, evaluating LLMs' capability to translate semantic actions into VR device manipulation sequences across 262 scenarios from four popular VR games: Half-Life: Alyx, Into the Radius, Moss: Book II, and Vivecraft. We evaluate seven LLMs, including GPT-3.5, GPT-4, GPT-4o, Gemini-1.5-Pro, LLaMA-3-8B, Mixtral-8x7B, and GLM-4-Flash, compared against annotated ground truth and human performance. Our results reveal that while top-performing models like Gemini-1.5-Pro demonstrate strong task decomposition capabilities, they still struggle with procedural reasoning and spatial understanding compared to humans. Performance varies significantly across games, suggesting sensitivity to interaction complexity. Few-shot examples substantially improve performance, indicating potential for targeted enhancement of LLMs' VR manipulation capabilities. We release all materials at https://sites.google.com/view/combobench.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T17:55:42Z",
-      "arxivId": "2510.24706",
-      "doi": "10.48550/arXiv.2510.24706",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.HC",
-        "cs.SE"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24706v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24706",
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://sites.google.com/view/combobench"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24706v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24706"
-        }
-      ],
-      "semanticScholarId": "d71e44e1ad7fd68a52cac0afb6bc671814c86901",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24706",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 2,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.25332",
       "title": "StreamingCoT: A Dataset for Temporal Dynamics and Multimodal Chain-of-Thought Reasoning in Streaming VideoQA",
       "authors": [
@@ -20623,161 +20540,83 @@
       }
     },
     {
-      "id": "arxiv:2510.24285",
-      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
+      "id": "arxiv:2510.24706",
+      "title": "ComboBench: Can LLMs Manipulate Physical Devices to Play Virtual Reality Games?",
       "authors": [
-        "Juntian Zhang",
-        "Song Jin",
-        "Chuanqi Cheng",
-        "Yuhan Liu",
-        "Yankai Lin",
-        "Xun Zhang",
-        "Yufei Zhang",
-        "Fei Jiang",
-        "Guojun Yin",
-        "Wei Lin",
-        "Rui Yan"
+        "Shuqing Li",
+        "Jiayi Yan",
+        "Chenyu Niu",
+        "Jen-tse Huang",
+        "Yun Peng",
+        "Wenxuan Wang",
+        "Yepang Liu",
+        "Michael R. Lyu"
       ],
-      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
+      "abstract": "Virtual Reality (VR) games require players to translate high-level semantic actions into precise device manipulations using controllers and head-mounted displays (HMDs). While humans intuitively perform this translation based on common sense and embodied understanding, whether Large Language Models (LLMs) can effectively replicate this ability remains underexplored. This paper introduces a benchmark, ComboBench, evaluating LLMs' capability to translate semantic actions into VR device manipulation sequences across 262 scenarios from four popular VR games: Half-Life: Alyx, Into the Radius, Moss: Book II, and Vivecraft. We evaluate seven LLMs, including GPT-3.5, GPT-4, GPT-4o, Gemini-1.5-Pro, LLaMA-3-8B, Mixtral-8x7B, and GLM-4-Flash, compared against annotated ground truth and human performance. Our results reveal that while top-performing models like Gemini-1.5-Pro demonstrate strong task decomposition capabilities, they still struggle with procedural reasoning and spatial understanding compared to humans. Performance varies significantly across games, suggesting sensitivity to interaction complexity. Few-shot examples substantially improve performance, indicating potential for targeted enhancement of LLMs' VR manipulation capabilities. We release all materials at https://sites.google.com/view/combobench.",
       "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T10:42:57Z",
-      "arxivId": "2510.24285",
-      "doi": "10.48550/arXiv.2510.24285",
+      "updatedAt": "2025-10-28T17:55:42Z",
+      "arxivId": "2510.24706",
+      "doi": "10.48550/arXiv.2510.24706",
       "categories": [
-        "cs.CV",
+        "cs.CL",
         "cs.AI",
-        "cs.CL"
+        "cs.HC",
+        "cs.SE"
       ],
       "fieldIds": [
         "cs-ai",
         "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
+        "embodied-intelligence"
       ],
       "topicIds": [
-        "imitation-reinforcement-learning",
+        "robot-manipulation",
         "simulation-datasets-evaluation",
         "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
+        "cl-language-modeling"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
+      "sourceUrl": "http://arxiv.org/abs/2510.24706v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24706",
       "artifacts": [
         {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285v1"
+          "kind": "project",
+          "url": "https://sites.google.com/view/combobench"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285"
+          "url": "https://arxiv.org/pdf/2510.24706v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24706"
         }
       ],
-      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
-      "citationCount": 7,
+      "semanticScholarId": "d71e44e1ad7fd68a52cac0afb6bc671814c86901",
+      "citationCount": 0,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 60,
         "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
+        "evidence": 16,
+        "freshness": 2,
         "completeness": 18,
         "tier": "skim",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24285",
+          "已有正式发表线索：10.48550/arXiv.2510.24706",
+          "提供项目页面",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24505",
-      "title": "CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?",
-      "authors": [
-        "Qing Zong",
-        "Jiayu Liu",
-        "Tianshi Zheng",
-        "Chunyang Li",
-        "Baixuan Xu",
-        "Haochen Shi",
-        "Weiqi Wang",
-        "Zhaowei Wang",
-        "Chunkit Chan",
-        "Yangqiu Song"
-      ],
-      "abstract": "Accurate confidence calibration in Large Language Models (LLMs) is critical for safe use in high-stakes domains, where clear verbalized confidence enhances user trust. Traditional methods that mimic reference confidence expressions often fail to capture the reasoning needed for accurate confidence assessment. We propose natural language critiques as a solution, ideally suited for confidence calibration, as precise gold confidence labels are hard to obtain and often require multiple generations. This paper studies how natural language critiques can enhance verbalized confidence, addressing: (1) What to critique: uncertainty (question-focused) or confidence (answer-specific)? Analysis shows confidence suits multiple-choice tasks, while uncertainty excels in open-ended scenarios. (2) How to critique: self-critique or critique calibration training? We propose Self-Critique, enabling LLMs to critique and optimize their confidence beyond mere accuracy, and CritiCal, a novel Critique Calibration training method that leverages natural language critiques to improve confidence calibration, moving beyond direct numerical optimization. Experiments show that CritiCal significantly outperforms Self-Critique and other competitive baselines, even surpassing its teacher model, GPT-4o, in complex reasoning tasks. CritiCal also shows robust generalization in out-of-distribution settings, advancing LLM's reliability.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T15:16:06Z",
-      "arxivId": "2510.24505",
-      "doi": "10.48550/arXiv.2510.24505",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-theory-optimization",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24505v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24505",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24505v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24505"
-        }
-      ],
-      "semanticScholarId": "a660f45d2c225294d11ceb89102f86a156dc5d54",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24505",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
+          "citations": 0,
+          "reproducibility": 2,
           "empirical": 4,
           "corroboration": 4
         }
@@ -28122,6 +27961,167 @@
       }
     },
     {
+      "id": "arxiv:2510.24285",
+      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
+      "authors": [
+        "Juntian Zhang",
+        "Song Jin",
+        "Chuanqi Cheng",
+        "Yuhan Liu",
+        "Yankai Lin",
+        "Xun Zhang",
+        "Yufei Zhang",
+        "Fei Jiang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Rui Yan"
+      ],
+      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T10:42:57Z",
+      "arxivId": "2510.24285",
+      "doi": "10.48550/arXiv.2510.24285",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24285v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24285"
+        }
+      ],
+      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
+      "citationCount": 7,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24285",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.24505",
+      "title": "CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?",
+      "authors": [
+        "Qing Zong",
+        "Jiayu Liu",
+        "Tianshi Zheng",
+        "Chunyang Li",
+        "Baixuan Xu",
+        "Haochen Shi",
+        "Weiqi Wang",
+        "Zhaowei Wang",
+        "Chunkit Chan",
+        "Yangqiu Song"
+      ],
+      "abstract": "Accurate confidence calibration in Large Language Models (LLMs) is critical for safe use in high-stakes domains, where clear verbalized confidence enhances user trust. Traditional methods that mimic reference confidence expressions often fail to capture the reasoning needed for accurate confidence assessment. We propose natural language critiques as a solution, ideally suited for confidence calibration, as precise gold confidence labels are hard to obtain and often require multiple generations. This paper studies how natural language critiques can enhance verbalized confidence, addressing: (1) What to critique: uncertainty (question-focused) or confidence (answer-specific)? Analysis shows confidence suits multiple-choice tasks, while uncertainty excels in open-ended scenarios. (2) How to critique: self-critique or critique calibration training? We propose Self-Critique, enabling LLMs to critique and optimize their confidence beyond mere accuracy, and CritiCal, a novel Critique Calibration training method that leverages natural language critiques to improve confidence calibration, moving beyond direct numerical optimization. Experiments show that CritiCal significantly outperforms Self-Critique and other competitive baselines, even surpassing its teacher model, GPT-4o, in complex reasoning tasks. CritiCal also shows robust generalization in out-of-distribution settings, advancing LLM's reliability.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T15:16:06Z",
+      "arxivId": "2510.24505",
+      "doi": "10.48550/arXiv.2510.24505",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-theory-optimization",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24505v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24505",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24505v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24505"
+        }
+      ],
+      "semanticScholarId": "a660f45d2c225294d11ceb89102f86a156dc5d54",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24505",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.19818",
       "title": "Semantic World Models",
       "authors": [
@@ -33397,162 +33397,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Neural Information Processing Systems",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24650",
-      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
-      "authors": [
-        "Nitin Rai",
-        "Daeun",
-        "Choi",
-        "Nathan S. Boyd",
-        "Arnold W. Schumann"
-      ],
-      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T17:16:47Z",
-      "arxivId": "2510.24650",
-      "doi": "10.48550/arXiv.2510.24650",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650"
-        }
-      ],
-      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24650",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.25784",
-      "title": "zFLoRA: Zero-Latency Fused Low-Rank Adapters",
-      "authors": [
-        "Dhananjaya Gowda",
-        "Seoha Song",
-        "Harshith Goka",
-        "Junhyun Lee"
-      ],
-      "abstract": "Large language models (LLMs) are increasingly deployed with task-specific adapters catering to multiple downstream applications. In such a scenario, the additional compute associated with these apparently insignificant number of adapter parameters (typically less than 1% of the base model) turns out to be disproportionately significant during inference time (upto 2.5x times that of the base model). In this paper, we propose a new zero-latency fused low-rank adapter (zFLoRA) that introduces zero or negligible latency overhead on top of the base model. Experimental results on LLMs of size 1B, 3B and 7B show that zFLoRA compares favorably against the popular supervised fine-tuning benchmarks including low-rank adapters (LoRA) as well as full fine-tuning (FFT). Experiments are conducted on 18 different tasks across three different categories namely commonsense reasoning, math reasoning and summary-dialogue. Latency measurements made on NPU (Samsung Galaxy S25+) as well as GPU (NVIDIA H100) platforms show that the proposed zFLoRA adapters introduce zero to negligible latency overhead.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T13:10:41Z",
-      "arxivId": "2510.25784",
-      "doi": "10.18653/v1/2025.emnlp-main.1086",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.25784v1",
-      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.1086.pdf",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.25784v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://aclanthology.org/2025.emnlp-main.1086.pdf"
-        }
-      ],
-      "semanticScholarId": "93e3816c49207465ac3a73adc589727246873c40",
-      "venue": "Conference on Empirical Methods in Natural Language Processing",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "emnlp",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -40602,6 +40446,162 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.24650",
+      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
+      "authors": [
+        "Nitin Rai",
+        "Daeun",
+        "Choi",
+        "Nathan S. Boyd",
+        "Arnold W. Schumann"
+      ],
+      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T17:16:47Z",
+      "arxivId": "2510.24650",
+      "doi": "10.48550/arXiv.2510.24650",
+      "categories": [
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24650v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24650"
+        }
+      ],
+      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24650",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 4,
+          "empirical": 2,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.25784",
+      "title": "zFLoRA: Zero-Latency Fused Low-Rank Adapters",
+      "authors": [
+        "Dhananjaya Gowda",
+        "Seoha Song",
+        "Harshith Goka",
+        "Junhyun Lee"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed with task-specific adapters catering to multiple downstream applications. In such a scenario, the additional compute associated with these apparently insignificant number of adapter parameters (typically less than 1% of the base model) turns out to be disproportionately significant during inference time (upto 2.5x times that of the base model). In this paper, we propose a new zero-latency fused low-rank adapter (zFLoRA) that introduces zero or negligible latency overhead on top of the base model. Experimental results on LLMs of size 1B, 3B and 7B show that zFLoRA compares favorably against the popular supervised fine-tuning benchmarks including low-rank adapters (LoRA) as well as full fine-tuning (FFT). Experiments are conducted on 18 different tasks across three different categories namely commonsense reasoning, math reasoning and summary-dialogue. Latency measurements made on NPU (Samsung Galaxy S25+) as well as GPU (NVIDIA H100) platforms show that the proposed zFLoRA adapters introduce zero to negligible latency overhead.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T13:10:41Z",
+      "arxivId": "2510.25784",
+      "doi": "10.18653/v1/2025.emnlp-main.1086",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.25784v1",
+      "pdfUrl": "https://aclanthology.org/2025.emnlp-main.1086.pdf",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.25784v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://aclanthology.org/2025.emnlp-main.1086.pdf"
+        }
+      ],
+      "semanticScholarId": "93e3816c49207465ac3a73adc589727246873c40",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "emnlp",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -130909,18 +130909,18 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
-      "recordCount": 1932
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
+      "recordCount": 1934
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
       "recordCount": 1218,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

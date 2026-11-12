@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-lg",
-  "generatedAt": "2026-11-11T11:20:40.711Z",
+  "generatedAt": "2026-11-12T11:40:12.464Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -11742,84 +11742,6 @@
       }
     },
     {
-      "id": "arxiv:2510.24505",
-      "title": "CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?",
-      "authors": [
-        "Qing Zong",
-        "Jiayu Liu",
-        "Tianshi Zheng",
-        "Chunyang Li",
-        "Baixuan Xu",
-        "Haochen Shi",
-        "Weiqi Wang",
-        "Zhaowei Wang",
-        "Chunkit Chan",
-        "Yangqiu Song"
-      ],
-      "abstract": "Accurate confidence calibration in Large Language Models (LLMs) is critical for safe use in high-stakes domains, where clear verbalized confidence enhances user trust. Traditional methods that mimic reference confidence expressions often fail to capture the reasoning needed for accurate confidence assessment. We propose natural language critiques as a solution, ideally suited for confidence calibration, as precise gold confidence labels are hard to obtain and often require multiple generations. This paper studies how natural language critiques can enhance verbalized confidence, addressing: (1) What to critique: uncertainty (question-focused) or confidence (answer-specific)? Analysis shows confidence suits multiple-choice tasks, while uncertainty excels in open-ended scenarios. (2) How to critique: self-critique or critique calibration training? We propose Self-Critique, enabling LLMs to critique and optimize their confidence beyond mere accuracy, and CritiCal, a novel Critique Calibration training method that leverages natural language critiques to improve confidence calibration, moving beyond direct numerical optimization. Experiments show that CritiCal significantly outperforms Self-Critique and other competitive baselines, even surpassing its teacher model, GPT-4o, in complex reasoning tasks. CritiCal also shows robust generalization in out-of-distribution settings, advancing LLM's reliability.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T15:16:06Z",
-      "arxivId": "2510.24505",
-      "doi": "10.48550/arXiv.2510.24505",
-      "categories": [
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-cl",
-        "cs-ai",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "lg-theory-optimization",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24505v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24505",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24505v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24505"
-        }
-      ],
-      "semanticScholarId": "a660f45d2c225294d11ceb89102f86a156dc5d54",
-      "citationCount": 5,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 27,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2510.24505",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.21606",
       "title": "Modest-Align: Data-Efficient Alignment for Vision-Language Models",
       "authors": [
@@ -17368,6 +17290,84 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Conference on Empirical Methods in Natural Language Processing",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.24505",
+      "title": "CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?",
+      "authors": [
+        "Qing Zong",
+        "Jiayu Liu",
+        "Tianshi Zheng",
+        "Chunyang Li",
+        "Baixuan Xu",
+        "Haochen Shi",
+        "Weiqi Wang",
+        "Zhaowei Wang",
+        "Chunkit Chan",
+        "Yangqiu Song"
+      ],
+      "abstract": "Accurate confidence calibration in Large Language Models (LLMs) is critical for safe use in high-stakes domains, where clear verbalized confidence enhances user trust. Traditional methods that mimic reference confidence expressions often fail to capture the reasoning needed for accurate confidence assessment. We propose natural language critiques as a solution, ideally suited for confidence calibration, as precise gold confidence labels are hard to obtain and often require multiple generations. This paper studies how natural language critiques can enhance verbalized confidence, addressing: (1) What to critique: uncertainty (question-focused) or confidence (answer-specific)? Analysis shows confidence suits multiple-choice tasks, while uncertainty excels in open-ended scenarios. (2) How to critique: self-critique or critique calibration training? We propose Self-Critique, enabling LLMs to critique and optimize their confidence beyond mere accuracy, and CritiCal, a novel Critique Calibration training method that leverages natural language critiques to improve confidence calibration, moving beyond direct numerical optimization. Experiments show that CritiCal significantly outperforms Self-Critique and other competitive baselines, even surpassing its teacher model, GPT-4o, in complex reasoning tasks. CritiCal also shows robust generalization in out-of-distribution settings, advancing LLM's reliability.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T15:16:06Z",
+      "arxivId": "2510.24505",
+      "doi": "10.48550/arXiv.2510.24505",
+      "categories": [
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-cl",
+        "cs-ai",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "lg-theory-optimization",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24505v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24505",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24505v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24505"
+        }
+      ],
+      "semanticScholarId": "a660f45d2c225294d11ceb89102f86a156dc5d54",
+      "citationCount": 5,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 27,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2510.24505",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -29852,90 +29852,6 @@
       }
     },
     {
-      "id": "arxiv:2510.24285",
-      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
-      "authors": [
-        "Juntian Zhang",
-        "Song Jin",
-        "Chuanqi Cheng",
-        "Yuhan Liu",
-        "Yankai Lin",
-        "Xun Zhang",
-        "Yufei Zhang",
-        "Fei Jiang",
-        "Guojun Yin",
-        "Wei Lin",
-        "Rui Yan"
-      ],
-      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T10:42:57Z",
-      "arxivId": "2510.24285",
-      "doi": "10.48550/arXiv.2510.24285",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285"
-        }
-      ],
-      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
-      "citationCount": 7,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24285",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.26391",
       "title": "EEG-Driven Image Reconstruction with Saliency-Guided Diffusion Models",
       "authors": [
@@ -38214,73 +38130,83 @@
       }
     },
     {
-      "id": "arxiv:2510.24482",
-      "title": "Sample-efficient and Scalable Exploration in Continuous-Time RL",
+      "id": "arxiv:2510.24285",
+      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
       "authors": [
-        "Klemens Iten",
-        "Lenart Treven",
-        "Bhavya Sukhija",
-        "Florian Dörfler",
-        "Andreas Krause"
+        "Juntian Zhang",
+        "Song Jin",
+        "Chuanqi Cheng",
+        "Yuhan Liu",
+        "Yankai Lin",
+        "Xun Zhang",
+        "Yufei Zhang",
+        "Fei Jiang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Rui Yan"
       ],
-      "abstract": "Reinforcement learning algorithms are typically designed for discrete-time dynamics, even though the underlying real-world control systems are often continuous in time. In this paper, we study the problem of continuous-time reinforcement learning, where the unknown system dynamics are represented using nonlinear ordinary differential equations (ODEs). We leverage probabilistic models, such as Gaussian processes and Bayesian neural networks, to learn an uncertainty-aware model of the underlying ODE. Our algorithm, COMBRL, greedily maximizes a weighted sum of the extrinsic reward and model epistemic uncertainty. This yields a scalable and sample-efficient approach to continuous-time model-based RL. We show that COMBRL achieves sublinear regret in the reward-driven setting, and in the unsupervised RL setting (i.e., without extrinsic rewards), we provide a sample complexity bound. In our experiments, we evaluate COMBRL in both standard and unsupervised RL settings and demonstrate that it scales better, is more sample-efficient than prior methods, and outperforms baselines across several deep RL tasks.",
+      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
       "publishedAt": "2025-10-28",
-      "updatedAt": "2026-03-02T15:08:43Z",
-      "arxivId": "2510.24482",
-      "doi": "10.48550/arXiv.2510.24482",
+      "updatedAt": "2025-10-28T10:42:57Z",
+      "arxivId": "2510.24285",
+      "doi": "10.48550/arXiv.2510.24285",
       "categories": [
-        "cs.LG",
+        "cs.CV",
         "cs.AI",
-        "cs.RO"
+        "cs.CL"
       ],
       "fieldIds": [
         "cs-ai",
-        "cs-lg",
-        "embodied-intelligence"
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
       ],
       "topicIds": [
         "imitation-reinforcement-learning",
-        "lg-reinforcement-learning",
-        "lg-robustness-generalization"
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24482v2",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24482",
+      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
       "artifacts": [
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24482v2"
+          "url": "https://arxiv.org/pdf/2510.24285v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24482"
+          "url": "https://arxiv.org/pdf/2510.24285"
         }
       ],
-      "semanticScholarId": "a4ac9d299c6d644c888a2c2c58686b8b0d707c06",
-      "citationCount": 2,
+      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
+      "citationCount": 7,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 59,
-        "relevance": 27,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 15,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "覆盖当前方向 2 个关注主题",
-          "已有正式发表线索：10.48550/arXiv.2510.24482",
+          "已有正式发表线索：10.48550/arXiv.2510.24285",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 0,
+          "citations": 1,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -43764,82 +43690,75 @@
       }
     },
     {
-      "id": "arxiv:2510.24650",
-      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
+      "id": "arxiv:2510.24482",
+      "title": "Sample-efficient and Scalable Exploration in Continuous-Time RL",
       "authors": [
-        "Nitin Rai",
-        "Daeun",
-        "Choi",
-        "Nathan S. Boyd",
-        "Arnold W. Schumann"
+        "Klemens Iten",
+        "Lenart Treven",
+        "Bhavya Sukhija",
+        "Florian Dörfler",
+        "Andreas Krause"
       ],
-      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
+      "abstract": "Reinforcement learning algorithms are typically designed for discrete-time dynamics, even though the underlying real-world control systems are often continuous in time. In this paper, we study the problem of continuous-time reinforcement learning, where the unknown system dynamics are represented using nonlinear ordinary differential equations (ODEs). We leverage probabilistic models, such as Gaussian processes and Bayesian neural networks, to learn an uncertainty-aware model of the underlying ODE. Our algorithm, COMBRL, greedily maximizes a weighted sum of the extrinsic reward and model epistemic uncertainty. This yields a scalable and sample-efficient approach to continuous-time model-based RL. We show that COMBRL achieves sublinear regret in the reward-driven setting, and in the unsupervised RL setting (i.e., without extrinsic rewards), we provide a sample complexity bound. In our experiments, we evaluate COMBRL in both standard and unsupervised RL settings and demonstrate that it scales better, is more sample-efficient than prior methods, and outperforms baselines across several deep RL tasks.",
       "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T17:16:47Z",
-      "arxivId": "2510.24650",
-      "doi": "10.48550/arXiv.2510.24650",
+      "updatedAt": "2026-03-02T15:08:43Z",
+      "arxivId": "2510.24482",
+      "doi": "10.48550/arXiv.2510.24482",
       "categories": [
-        "cs.AI"
+        "cs.LG",
+        "cs.AI",
+        "cs.RO"
       ],
       "fieldIds": [
         "cs-ai",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
+        "cs-lg",
+        "embodied-intelligence"
       ],
       "topicIds": [
         "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
+        "lg-reinforcement-learning",
+        "lg-robustness-generalization"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
+      "sourceUrl": "http://arxiv.org/abs/2510.24482v2",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24482",
       "artifacts": [
         {
-          "kind": "code",
-          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24482v2"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650"
+          "url": "https://arxiv.org/pdf/2510.24482"
         }
       ],
-      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
+      "semanticScholarId": "a4ac9d299c6d644c888a2c2c58686b8b0d707c06",
       "citationCount": 2,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
+        "relevance": 27,
+        "evidence": 14,
+        "freshness": 2,
         "completeness": 15,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24650",
-          "提供可复现代码",
+          "覆盖当前方向 2 个关注主题",
+          "已有正式发表线索：10.48550/arXiv.2510.24482",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 0,
-          "reproducibility": 4,
-          "empirical": 2,
+          "reproducibility": 0,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -53408,76 +53327,82 @@
       }
     },
     {
-      "id": "arxiv:2510.24907",
-      "title": "Understanding Multi-View Transformers",
+      "id": "arxiv:2510.24650",
+      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
       "authors": [
-        "Michal Stary",
-        "Julien Gaubil",
-        "Ayush Tewari",
-        "Vincent Sitzmann"
+        "Nitin Rai",
+        "Daeun",
+        "Choi",
+        "Nathan S. Boyd",
+        "Arnold W. Schumann"
       ],
-      "abstract": "Multi-view transformers such as DUSt3R are revolutionizing 3D vision by solving 3D tasks in a feed-forward manner. However, contrary to previous optimization-based pipelines, the inner mechanisms of multi-view transformers are unclear. Their black-box nature makes further improvements beyond data scaling challenging and complicates usage in safety- and reliability-critical applications. Here, we present an approach for probing and visualizing 3D representations from the residual connections of the multi-view transformers' layers. In this manner, we investigate a variant of the DUSt3R model, shedding light on the development of its latent state across blocks, the role of the individual layers, and suggest how it differs from methods with stronger inductive biases of explicit global pose. Finally, we show that the investigated variant of DUSt3R estimates correspondences that are refined with reconstructed geometry. The code used for the analysis is available at https://github.com/JulienGaubil/und3rstand .",
+      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
       "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T19:19:35Z",
-      "arxivId": "2510.24907",
-      "doi": "10.48550/arXiv.2510.24907",
+      "updatedAt": "2025-10-28T17:16:47Z",
+      "arxivId": "2510.24650",
+      "doi": "10.48550/arXiv.2510.24650",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.LG"
+        "cs.AI"
       ],
       "fieldIds": [
         "cs-ai",
+        "embodied-intelligence",
+        "cs-cl",
         "cs-cv",
         "cs-lg"
       ],
       "topicIds": [
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24907v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24907",
+      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
       "artifacts": [
         {
           "kind": "code",
-          "url": "https://github.com/JulienGaubil/und3rstand"
+          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24907v1"
+          "url": "https://arxiv.org/pdf/2510.24650v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24907"
+          "url": "https://arxiv.org/pdf/2510.24650"
         }
       ],
-      "semanticScholarId": "af20eb81ac52a6622a00329f78c2c50daf5472d7",
-      "citationCount": 7,
+      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
+      "citationCount": 2,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 57,
         "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
+        "evidence": 16,
+        "freshness": 2,
         "completeness": 15,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24907",
+          "已有正式发表线索：10.48550/arXiv.2510.24650",
           "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 1,
+          "citations": 0,
           "reproducibility": 4,
-          "empirical": 0,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -62131,6 +62056,81 @@
       }
     },
     {
+      "id": "arxiv:2510.24907",
+      "title": "Understanding Multi-View Transformers",
+      "authors": [
+        "Michal Stary",
+        "Julien Gaubil",
+        "Ayush Tewari",
+        "Vincent Sitzmann"
+      ],
+      "abstract": "Multi-view transformers such as DUSt3R are revolutionizing 3D vision by solving 3D tasks in a feed-forward manner. However, contrary to previous optimization-based pipelines, the inner mechanisms of multi-view transformers are unclear. Their black-box nature makes further improvements beyond data scaling challenging and complicates usage in safety- and reliability-critical applications. Here, we present an approach for probing and visualizing 3D representations from the residual connections of the multi-view transformers' layers. In this manner, we investigate a variant of the DUSt3R model, shedding light on the development of its latent state across blocks, the role of the individual layers, and suggest how it differs from methods with stronger inductive biases of explicit global pose. Finally, we show that the investigated variant of DUSt3R estimates correspondences that are refined with reconstructed geometry. The code used for the analysis is available at https://github.com/JulienGaubil/und3rstand .",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T19:19:35Z",
+      "arxivId": "2510.24907",
+      "doi": "10.48550/arXiv.2510.24907",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24907v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24907",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/JulienGaubil/und3rstand"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24907v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24907"
+        }
+      ],
+      "semanticScholarId": "af20eb81ac52a6622a00329f78c2c50daf5472d7",
+      "citationCount": 7,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24907",
+          "提供可复现代码",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 0,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.22282",
       "title": "CityRiSE: Reasoning Urban Socio-Economic Status in Vision-Language Models via Reinforcement Learning",
       "authors": [
@@ -63585,75 +63585,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：Journal of Computational And Graphical Statistics",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2501.12314",
-      "title": "Uncertainty Quantification With Noise Injection in Neural Networks: A Bayesian Perspective",
-      "authors": [
-        "Xueqiong Yuan",
-        "Jipeng Li",
-        "Ercan Engin Kuruoglu"
-      ],
-      "abstract": "Model uncertainty quantification involves measuring and evaluating the uncertainty linked to a model's predictions, helping assess their reliability and confidence. Noise injection is a technique used to enhance the robustness of neural networks by introducing randomness. In this paper, we establish a connection between noise injection and uncertainty quantification from a Bayesian standpoint. We theoretically demonstrate that injecting noise into the weights of a neural network is equivalent to Bayesian inference on a deep Gaussian process. Consequently, we introduce a Monte Carlo Noise Injection (MCNI) method, which involves injecting noise into the parameters during training and performing multiple forward propagations during inference to estimate the uncertainty of the prediction. Through simulation and experiments on regression and classification tasks, our method demonstrates superior performance compared to the baseline model.",
-      "publishedAt": "2025-01-21",
-      "updatedAt": "2025-04-24T02:50:32Z",
-      "arxivId": "2501.12314",
-      "doi": "10.1109/IJCNN64981.2025.11228576",
-      "categories": [
-        "stat.ML",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "lg-robustness-generalization"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2501.12314v2",
-      "pdfUrl": "https://arxiv.org/pdf/2501.12314",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2501.12314v2"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2501.12314"
-        }
-      ],
-      "semanticScholarId": "fadc7814fe81ba10e78405b2a161a1b659abfc6c",
-      "venue": "IEEE International Joint Conference on Neural Network",
-      "citationCount": 4,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 56,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 1,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE International Joint Conference on Neural Network",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -70093,6 +70024,75 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2501.12314",
+      "title": "Uncertainty Quantification With Noise Injection in Neural Networks: A Bayesian Perspective",
+      "authors": [
+        "Xueqiong Yuan",
+        "Jipeng Li",
+        "Ercan Engin Kuruoglu"
+      ],
+      "abstract": "Model uncertainty quantification involves measuring and evaluating the uncertainty linked to a model's predictions, helping assess their reliability and confidence. Noise injection is a technique used to enhance the robustness of neural networks by introducing randomness. In this paper, we establish a connection between noise injection and uncertainty quantification from a Bayesian standpoint. We theoretically demonstrate that injecting noise into the weights of a neural network is equivalent to Bayesian inference on a deep Gaussian process. Consequently, we introduce a Monte Carlo Noise Injection (MCNI) method, which involves injecting noise into the parameters during training and performing multiple forward propagations during inference to estimate the uncertainty of the prediction. Through simulation and experiments on regression and classification tasks, our method demonstrates superior performance compared to the baseline model.",
+      "publishedAt": "2025-01-21",
+      "updatedAt": "2025-04-24T02:50:32Z",
+      "arxivId": "2501.12314",
+      "doi": "10.1109/IJCNN64981.2025.11228576",
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "lg-robustness-generalization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2501.12314v2",
+      "pdfUrl": "https://arxiv.org/pdf/2501.12314",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2501.12314v2"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2501.12314"
+        }
+      ],
+      "semanticScholarId": "fadc7814fe81ba10e78405b2a161a1b659abfc6c",
+      "venue": "IEEE International Joint Conference on Neural Network",
+      "citationCount": 4,
+      "influentialCitationCount": 1,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 55,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 0,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：IEEE International Joint Conference on Neural Network",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -142405,18 +142405,18 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
-      "recordCount": 2551
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
+      "recordCount": 2550
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
-      "recordCount": 1341,
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
+      "recordCount": 1339,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }

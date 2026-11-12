@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cv",
-  "generatedAt": "2026-11-11T11:20:40.711Z",
+  "generatedAt": "2026-11-12T11:40:12.464Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -1317,85 +1317,6 @@
       }
     },
     {
-      "id": "arxiv:2510.24105",
-      "title": "Enhancing Pre-trained Representation Classifiability can Boost its Interpretability",
-      "authors": [
-        "Shufan Shen",
-        "Zhaobo Qi",
-        "Junshu Sun",
-        "Qingming Huang",
-        "Qi Tian",
-        "Shuhui Wang"
-      ],
-      "abstract": "The visual representation of a pre-trained model prioritizes the classifiability on downstream tasks, while the widespread applications for pre-trained visual models have posed new requirements for representation interpretability. However, it remains unclear whether the pre-trained representations can achieve high interpretability and classifiability simultaneously. To answer this question, we quantify the representation interpretability by leveraging its correlation with the ratio of interpretable semantics within the representations. Given the pre-trained representations, only the interpretable semantics can be captured by interpretations, whereas the uninterpretable part leads to information loss. Based on this fact, we propose the Inherent Interpretability Score (IIS) that evaluates the information loss, measures the ratio of interpretable semantics, and quantifies the representation interpretability. In the evaluation of the representation interpretability with different classifiability, we surprisingly discover that the interpretability and classifiability are positively correlated, i.e., representations with higher classifiability provide more interpretable semantics that can be captured in the interpretations. This observation further supports two benefits to the pre-trained representations. First, the classifiability of representations can be further improved by fine-tuning with interpretability maximization. Second, with the classifiability improvement for the representations, we obtain predictions based on their interpretations with less accuracy degradation. The discovered positive correlation and corresponding applications show that practitioners can unify the improvements in interpretability and classifiability for pre-trained vision models. Codes are available at https://github.com/ssfgunner/IIS.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T06:21:06Z",
-      "arxivId": "2510.24105",
-      "doi": "10.48550/arXiv.2510.24105",
-      "categories": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "cs-lg",
-        "embodied-intelligence"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24105v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24105",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/ssfgunner/IIS"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24105v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24105"
-        }
-      ],
-      "semanticScholarId": "6b69273252cc02c8c57830440705ada438cfcb31",
-      "venue": "International Conference on Learning Representations",
-      "citationCount": 6,
-      "influentialCitationCount": 0,
-      "canonicalVenueId": "iclr",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 66,
-        "relevance": 24,
-        "evidence": 19,
-        "freshness": 3,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：International Conference on Learning Representations",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 4,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2510.13778",
       "title": "InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy",
       "authors": [
@@ -1972,6 +1893,85 @@
           "citations": 4,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.24105",
+      "title": "Enhancing Pre-trained Representation Classifiability can Boost its Interpretability",
+      "authors": [
+        "Shufan Shen",
+        "Zhaobo Qi",
+        "Junshu Sun",
+        "Qingming Huang",
+        "Qi Tian",
+        "Shuhui Wang"
+      ],
+      "abstract": "The visual representation of a pre-trained model prioritizes the classifiability on downstream tasks, while the widespread applications for pre-trained visual models have posed new requirements for representation interpretability. However, it remains unclear whether the pre-trained representations can achieve high interpretability and classifiability simultaneously. To answer this question, we quantify the representation interpretability by leveraging its correlation with the ratio of interpretable semantics within the representations. Given the pre-trained representations, only the interpretable semantics can be captured by interpretations, whereas the uninterpretable part leads to information loss. Based on this fact, we propose the Inherent Interpretability Score (IIS) that evaluates the information loss, measures the ratio of interpretable semantics, and quantifies the representation interpretability. In the evaluation of the representation interpretability with different classifiability, we surprisingly discover that the interpretability and classifiability are positively correlated, i.e., representations with higher classifiability provide more interpretable semantics that can be captured in the interpretations. This observation further supports two benefits to the pre-trained representations. First, the classifiability of representations can be further improved by fine-tuning with interpretability maximization. Second, with the classifiability improvement for the representations, we obtain predictions based on their interpretations with less accuracy degradation. The discovered positive correlation and corresponding applications show that practitioners can unify the improvements in interpretability and classifiability for pre-trained vision models. Codes are available at https://github.com/ssfgunner/IIS.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T06:21:06Z",
+      "arxivId": "2510.24105",
+      "doi": "10.48550/arXiv.2510.24105",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "cs-lg",
+        "embodied-intelligence"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24105v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24105",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/ssfgunner/IIS"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24105v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24105"
+        }
+      ],
+      "semanticScholarId": "6b69273252cc02c8c57830440705ada438cfcb31",
+      "venue": "International Conference on Learning Representations",
+      "citationCount": 6,
+      "influentialCitationCount": 0,
+      "canonicalVenueId": "iclr",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 65,
+        "relevance": 24,
+        "evidence": 19,
+        "freshness": 2,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：International Conference on Learning Representations",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -4343,91 +4343,6 @@
           "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2603.16861",
-      "title": "MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation",
-      "authors": [
-        "Abhay Deshpande",
-        "M. Guru",
-        "Rose Hendrix",
-        "Snehal Jauhri",
-        "Haoquan Fang",
-        "Wilbert Pumacay",
-        "Yejin Kim",
-        "Quinn Pfeifer",
-        "Ying-Chun Lee",
-        "Piper Wolters",
-        "Omar Rayyan",
-        "Mingtong Zhang",
-        "Karen Farley",
-        "Winson Han",
-        "Eli VanderBilt",
-        "Dieter Fox",
-        "Ali Farhadi",
-        "Georgia Chalvatzaki",
-        "Dhruv Shah",
-        "Ranjay Krishna"
-      ],
-      "abstract": "A prevailing view in robot learning is that simulation alone is not enough; effective sim-to-real transfer is widely believed to require at least some real-world data collection or task-specific fine-tuning to bridge the gap between simulated and physical environments. We challenge that assumption. With sufficiently large-scale and diverse simulated synthetic training data, we show that zero-shot transfer to the real world is not only possible, but effective for both static and mobile manipulation. We introduce MolmoBot-Engine, a fully open-source pipeline for procedural data generation across robots, tasks, and diverse simulated environments in MolmoSpaces. With it, we release MolmoBot-Data, a dataset of 1.8 million expert trajectories for articulated object manipulation and pick-and-place tasks. We train three policy classes: MolmoBot, a Molmo2-based multi-frame vision-language model with a flow-matching action head; MolmoBot-Pi0, which replicates the $\\pi_0$ architecture to enable direct comparison; and MolmoBot-SPOC, a lightweight policy suitable for edge deployment and amenable to RL fine-tuning. We evaluate on two robotic platforms: the Franka FR3 for tabletop manipulation tasks and the Rainbow Robotics RB-Y1 mobile manipulator for door opening, drawer manipulation, cabinet interaction, and mobile pick-and-place. Without any real-world fine-tuning, our policies achieve zero-shot transfer to unseen objects and environments. On tabletop pick-and-place, MolmoBot achieves a success rate of 79.2% in real world evaluations across 4 settings, outperforming $\\pi_{0.5}$ at 39.2%. Our results demonstrate that procedural environment generation combined with diverse articulated assets can produce robust manipulation policies that generalize broadly to the real world. Technical website: https://allenai.github.io/MolmoBot",
-      "publishedAt": "2026-03-17",
-      "arxivId": "2603.16861",
-      "doi": "10.48550/arXiv.2603.16861",
-      "semanticScholarId": "5bbd321de138816bfa902c7d2ac1845c19b897bb",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2603.16861",
-      "pdfUrl": "https://arxiv.org/pdf/2603.16861",
-      "citationCount": 5,
-      "influentialCitationCount": 1,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://allenai.github.io/MolmoBot"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2603.16861"
-        }
-      ],
-      "librarySlug": "2026-molmob0t",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 17,
-        "freshness": 4,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2603.16861",
-          "提供项目页面",
-          "包含明确的量化、对比或消融实验",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 2,
-          "empirical": 6,
           "corroboration": 2
         }
       }
@@ -7302,6 +7217,91 @@
           "publication": 6,
           "citations": 0,
           "reproducibility": 0,
+          "empirical": 6,
+          "corroboration": 2
+        }
+      }
+    },
+    {
+      "id": "arxiv:2603.16861",
+      "title": "MolmoB0T: Large-Scale Simulation Enables Zero-Shot Manipulation",
+      "authors": [
+        "Abhay Deshpande",
+        "M. Guru",
+        "Rose Hendrix",
+        "Snehal Jauhri",
+        "Haoquan Fang",
+        "Wilbert Pumacay",
+        "Yejin Kim",
+        "Quinn Pfeifer",
+        "Ying-Chun Lee",
+        "Piper Wolters",
+        "Omar Rayyan",
+        "Mingtong Zhang",
+        "Karen Farley",
+        "Winson Han",
+        "Eli VanderBilt",
+        "Dieter Fox",
+        "Ali Farhadi",
+        "Georgia Chalvatzaki",
+        "Dhruv Shah",
+        "Ranjay Krishna"
+      ],
+      "abstract": "A prevailing view in robot learning is that simulation alone is not enough; effective sim-to-real transfer is widely believed to require at least some real-world data collection or task-specific fine-tuning to bridge the gap between simulated and physical environments. We challenge that assumption. With sufficiently large-scale and diverse simulated synthetic training data, we show that zero-shot transfer to the real world is not only possible, but effective for both static and mobile manipulation. We introduce MolmoBot-Engine, a fully open-source pipeline for procedural data generation across robots, tasks, and diverse simulated environments in MolmoSpaces. With it, we release MolmoBot-Data, a dataset of 1.8 million expert trajectories for articulated object manipulation and pick-and-place tasks. We train three policy classes: MolmoBot, a Molmo2-based multi-frame vision-language model with a flow-matching action head; MolmoBot-Pi0, which replicates the $\\pi_0$ architecture to enable direct comparison; and MolmoBot-SPOC, a lightweight policy suitable for edge deployment and amenable to RL fine-tuning. We evaluate on two robotic platforms: the Franka FR3 for tabletop manipulation tasks and the Rainbow Robotics RB-Y1 mobile manipulator for door opening, drawer manipulation, cabinet interaction, and mobile pick-and-place. Without any real-world fine-tuning, our policies achieve zero-shot transfer to unseen objects and environments. On tabletop pick-and-place, MolmoBot achieves a success rate of 79.2% in real world evaluations across 4 settings, outperforming $\\pi_{0.5}$ at 39.2%. Our results demonstrate that procedural environment generation combined with diverse articulated assets can produce robust manipulation policies that generalize broadly to the real world. Technical website: https://allenai.github.io/MolmoBot",
+      "publishedAt": "2026-03-17",
+      "arxivId": "2603.16861",
+      "doi": "10.48550/arXiv.2603.16861",
+      "semanticScholarId": "5bbd321de138816bfa902c7d2ac1845c19b897bb",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2603.16861",
+      "pdfUrl": "https://arxiv.org/pdf/2603.16861",
+      "citationCount": 5,
+      "influentialCitationCount": 1,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://allenai.github.io/MolmoBot"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2603.16861"
+        }
+      ],
+      "librarySlug": "2026-molmob0t",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 17,
+        "freshness": 3,
+        "completeness": 18,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2603.16861",
+          "提供项目页面",
+          "包含明确的量化、对比或消融实验",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 2,
           "empirical": 6,
           "corroboration": 2
         }
@@ -10322,77 +10322,6 @@
           "citations": 1,
           "reproducibility": 2,
           "empirical": 4,
-          "corroboration": 2
-        }
-      }
-    },
-    {
-      "id": "arxiv:2603.16666",
-      "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
-      "authors": [
-        "Tianyuan Yuan",
-        "Zibin Dong",
-        "Yicheng Liu",
-        "Hang Zhao"
-      ],
-      "abstract": "World Action Models (WAMs) have emerged as a promising alternative to Vision-Language-Action (VLA) models for embodied control because they explicitly model how visual observations may evolve under action. Most existing WAMs follow an imagine-then-execute paradigm, incurring substantial test-time latency from iterative video denoising, yet it remains unclear whether explicit future imagination is actually necessary for strong action performance. In this paper, we ask whether WAMs need explicit future imagination at test time, or whether their benefit comes primarily from video modeling during training. We disentangle the role of video modeling during training from explicit future generation during inference by proposing \\textbf{Fast-WAM}, a WAM architecture that retains video co-training during training but skips future prediction at test time. We further instantiate several Fast-WAM variants to enable a controlled comparison of these two factors. Across these variants, we find that Fast-WAM remains competitive with imagine-then-execute variants, while removing video co-training causes a much larger performance drop. Empirically, Fast-WAM achieves competitive results with state-of-the-art methods both on simulation benchmarks (LIBERO and RoboTwin) and real-world tasks, without embodied pretraining. It runs in real time with 190ms latency, over 4$\\times$ faster than existing imagine-then-execute WAMs. These results suggest that the main value of video prediction in WAMs may lie in improving world representations during training rather than generating future observations at test time. Project page: https://yuantianyuan01.github.io/FastWAM/",
-      "publishedAt": "2026-03-17",
-      "arxivId": "2603.16666",
-      "doi": "10.48550/arXiv.2603.16666",
-      "semanticScholarId": "b5be12ccbb037be57a1dbc03fbd43d379170055f",
-      "categories": [],
-      "fieldIds": [
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "simulation-datasets-evaluation",
-        "vision-language-action-models",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal"
-      ],
-      "sources": [
-        "semantic-scholar"
-      ],
-      "sourceUrl": "https://arxiv.org/abs/2603.16666",
-      "pdfUrl": "https://arxiv.org/pdf/2603.16666",
-      "citationCount": 121,
-      "influentialCitationCount": 35,
-      "artifacts": [
-        {
-          "kind": "project",
-          "url": "https://yuantianyuan01.github.io/FastWAM/"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2603.16666"
-        }
-      ],
-      "librarySlug": "2026-fast-wam",
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 61,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 4,
-        "completeness": 15,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2603.16666",
-          "同龄论文中引用增长较快",
-          "提供项目页面",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 6,
-          "reproducibility": 2,
-          "empirical": 2,
           "corroboration": 2
         }
       }
@@ -14318,6 +14247,77 @@
       }
     },
     {
+      "id": "arxiv:2603.16666",
+      "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
+      "authors": [
+        "Tianyuan Yuan",
+        "Zibin Dong",
+        "Yicheng Liu",
+        "Hang Zhao"
+      ],
+      "abstract": "World Action Models (WAMs) have emerged as a promising alternative to Vision-Language-Action (VLA) models for embodied control because they explicitly model how visual observations may evolve under action. Most existing WAMs follow an imagine-then-execute paradigm, incurring substantial test-time latency from iterative video denoising, yet it remains unclear whether explicit future imagination is actually necessary for strong action performance. In this paper, we ask whether WAMs need explicit future imagination at test time, or whether their benefit comes primarily from video modeling during training. We disentangle the role of video modeling during training from explicit future generation during inference by proposing \\textbf{Fast-WAM}, a WAM architecture that retains video co-training during training but skips future prediction at test time. We further instantiate several Fast-WAM variants to enable a controlled comparison of these two factors. Across these variants, we find that Fast-WAM remains competitive with imagine-then-execute variants, while removing video co-training causes a much larger performance drop. Empirically, Fast-WAM achieves competitive results with state-of-the-art methods both on simulation benchmarks (LIBERO and RoboTwin) and real-world tasks, without embodied pretraining. It runs in real time with 190ms latency, over 4$\\times$ faster than existing imagine-then-execute WAMs. These results suggest that the main value of video prediction in WAMs may lie in improving world representations during training rather than generating future observations at test time. Project page: https://yuantianyuan01.github.io/FastWAM/",
+      "publishedAt": "2026-03-17",
+      "arxivId": "2603.16666",
+      "doi": "10.48550/arXiv.2603.16666",
+      "semanticScholarId": "b5be12ccbb037be57a1dbc03fbd43d379170055f",
+      "categories": [],
+      "fieldIds": [
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "simulation-datasets-evaluation",
+        "vision-language-action-models",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal"
+      ],
+      "sources": [
+        "semantic-scholar"
+      ],
+      "sourceUrl": "https://arxiv.org/abs/2603.16666",
+      "pdfUrl": "https://arxiv.org/pdf/2603.16666",
+      "citationCount": 121,
+      "influentialCitationCount": 35,
+      "artifacts": [
+        {
+          "kind": "project",
+          "url": "https://yuantianyuan01.github.io/FastWAM/"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2603.16666"
+        }
+      ],
+      "librarySlug": "2026-fast-wam",
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 60,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 3,
+        "completeness": 15,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2603.16666",
+          "同龄论文中引用增长较快",
+          "提供项目页面",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 6,
+          "reproducibility": 2,
+          "empirical": 2,
+          "corroboration": 2
+        }
+      }
+    },
+    {
       "id": "arxiv:2601.12993",
       "title": "Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization",
       "authors": [
@@ -15016,90 +15016,6 @@
           "citations": 1,
           "reproducibility": 2,
           "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24285",
-      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
-      "authors": [
-        "Juntian Zhang",
-        "Song Jin",
-        "Chuanqi Cheng",
-        "Yuhan Liu",
-        "Yankai Lin",
-        "Xun Zhang",
-        "Yufei Zhang",
-        "Fei Jiang",
-        "Guojun Yin",
-        "Wei Lin",
-        "Rui Yan"
-      ],
-      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T10:42:57Z",
-      "arxivId": "2510.24285",
-      "doi": "10.48550/arXiv.2510.24285",
-      "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "cs-cl",
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24285"
-        }
-      ],
-      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
-      "citationCount": 7,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 60,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 18,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24285",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
           "corroboration": 4
         }
       }
@@ -20512,6 +20428,90 @@
       }
     },
     {
+      "id": "arxiv:2510.24285",
+      "title": "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model",
+      "authors": [
+        "Juntian Zhang",
+        "Song Jin",
+        "Chuanqi Cheng",
+        "Yuhan Liu",
+        "Yankai Lin",
+        "Xun Zhang",
+        "Yufei Zhang",
+        "Fei Jiang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Rui Yan"
+      ],
+      "abstract": "The limited capacity for fine-grained visual perception presents a critical bottleneck for Vision-Language Models (VLMs) in real-world applications. Addressing this is challenging due to the scarcity of high-quality data and the limitations of existing methods: supervised fine-tuning (SFT) often compromises general capabilities, while reinforcement fine-tuning (RFT) prioritizes textual reasoning over visual perception. To bridge this gap, we propose a novel two-stage task that structures visual perception learning as a coarse-to-fine progressive process. Based on this task formulation, we develop ViPER, a self-bootstrapping framework specifically designed to enable iterative evolution through self-critiquing and self-prediction. By synergistically integrating image-level and instance-level reconstruction with a two-stage reinforcement learning strategy, ViPER establishes a closed-loop training paradigm, where internally synthesized data directly fuel the enhancement of perceptual ability. Applied to the Qwen2.5-VL family, ViPER produces the Qwen-Viper series. With an average gain of 1.7% on seven comprehensive benchmarks spanning various tasks and up to 6.0% on fine-grained perception, Qwen-Viper consistently demonstrates superior performance across different vision-language scenarios while maintaining generalizability. Beyond enabling self-improvement in perceptual capabilities, ViPER provides concrete evidence for the reciprocal relationship between generation and understanding, a breakthrough to developing more autonomous and capable VLMs.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T10:42:57Z",
+      "arxivId": "2510.24285",
+      "doi": "10.48550/arXiv.2510.24285",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cl",
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24285v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24285",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24285v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24285"
+        }
+      ],
+      "semanticScholarId": "4f24eee8df6f0cdee17bc5d6826f8c34cd7977a9",
+      "citationCount": 7,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 59,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 18,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24285",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.21083",
       "title": "Knowledge-Driven Vision-Language Model for Plexus Detection in Hirschsprung's Disease",
       "authors": [
@@ -23904,162 +23904,6 @@
           "citations": 2,
           "reproducibility": 0,
           "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24055",
-      "title": "Language-Conditioned Representations and Mixture-of-Experts Policy for Robust Multi-Task Robotic Manipulation",
-      "authors": [
-        "Xiucheng Zhang",
-        "Yang Jiang",
-        "Hongwei Qin",
-        "Jiashuo Bai",
-        "Maocheng Bai"
-      ],
-      "abstract": "Perceptual ambiguity and task conflict limit multitask robotic manipulation via imitation learning. We propose a framework combining a Language-Conditioned Visual Representation (LCVR) module and a Language-conditioned Mixture-ofExperts Density Policy (LMoE-DP). LCVR resolves perceptual ambiguities by grounding visual features with language instructions, enabling differentiation between visually similar tasks. To mitigate task conflict, LMoE-DP uses a sparse expert architecture to specialize in distinct, multimodal action distributions, stabilized by gradient modulation. On real-robot benchmarks, LCVR boosts Action Chunking with Transformers (ACT) and Diffusion Policy (DP) success rates by 33.75% and 25%, respectively. The full framework achieves a 79% average success, outperforming the advanced baseline by 21%. Our work shows that combining semantic grounding and expert specialization enables robust, efficient multi-task manipulation",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T04:27:03Z",
-      "arxivId": "2510.24055",
-      "doi": "10.1109/LRA.2026.3678002",
-      "categories": [
-        "cs.RO",
-        "cs.LG"
-      ],
-      "fieldIds": [
-        "cs-lg",
-        "embodied-intelligence",
-        "cs-cv"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24055v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24055",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24055v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24055"
-        }
-      ],
-      "semanticScholarId": "a11ad0f4197e4050e1f5d88dd7dc7c2d23f9acbe",
-      "venue": "IEEE Robotics and Automation Letters",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 3,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE Robotics and Automation Letters",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2510.24650",
-      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
-      "authors": [
-        "Nitin Rai",
-        "Daeun",
-        "Choi",
-        "Nathan S. Boyd",
-        "Arnold W. Schumann"
-      ],
-      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
-      "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T17:16:47Z",
-      "arxivId": "2510.24650",
-      "doi": "10.48550/arXiv.2510.24650",
-      "categories": [
-        "cs.AI"
-      ],
-      "fieldIds": [
-        "cs-ai",
-        "embodied-intelligence",
-        "cs-cl",
-        "cs-cv",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "imitation-reinforcement-learning",
-        "simulation-datasets-evaluation",
-        "ai-reasoning-planning",
-        "cl-language-modeling",
-        "cv-vision-language-multimodal",
-        "lg-reinforcement-learning"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24650"
-        }
-      ],
-      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
-      "citationCount": 2,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 58,
-        "relevance": 24,
-        "evidence": 16,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24650",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 4,
-          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -29143,76 +28987,157 @@
       }
     },
     {
-      "id": "arxiv:2510.24907",
-      "title": "Understanding Multi-View Transformers",
+      "id": "arxiv:2510.24055",
+      "title": "Language-Conditioned Representations and Mixture-of-Experts Policy for Robust Multi-Task Robotic Manipulation",
       "authors": [
-        "Michal Stary",
-        "Julien Gaubil",
-        "Ayush Tewari",
-        "Vincent Sitzmann"
+        "Xiucheng Zhang",
+        "Yang Jiang",
+        "Hongwei Qin",
+        "Jiashuo Bai",
+        "Maocheng Bai"
       ],
-      "abstract": "Multi-view transformers such as DUSt3R are revolutionizing 3D vision by solving 3D tasks in a feed-forward manner. However, contrary to previous optimization-based pipelines, the inner mechanisms of multi-view transformers are unclear. Their black-box nature makes further improvements beyond data scaling challenging and complicates usage in safety- and reliability-critical applications. Here, we present an approach for probing and visualizing 3D representations from the residual connections of the multi-view transformers' layers. In this manner, we investigate a variant of the DUSt3R model, shedding light on the development of its latent state across blocks, the role of the individual layers, and suggest how it differs from methods with stronger inductive biases of explicit global pose. Finally, we show that the investigated variant of DUSt3R estimates correspondences that are refined with reconstructed geometry. The code used for the analysis is available at https://github.com/JulienGaubil/und3rstand .",
+      "abstract": "Perceptual ambiguity and task conflict limit multitask robotic manipulation via imitation learning. We propose a framework combining a Language-Conditioned Visual Representation (LCVR) module and a Language-conditioned Mixture-ofExperts Density Policy (LMoE-DP). LCVR resolves perceptual ambiguities by grounding visual features with language instructions, enabling differentiation between visually similar tasks. To mitigate task conflict, LMoE-DP uses a sparse expert architecture to specialize in distinct, multimodal action distributions, stabilized by gradient modulation. On real-robot benchmarks, LCVR boosts Action Chunking with Transformers (ACT) and Diffusion Policy (DP) success rates by 33.75% and 25%, respectively. The full framework achieves a 79% average success, outperforming the advanced baseline by 21%. Our work shows that combining semantic grounding and expert specialization enables robust, efficient multi-task manipulation",
       "publishedAt": "2025-10-28",
-      "updatedAt": "2025-10-28T19:19:35Z",
-      "arxivId": "2510.24907",
-      "doi": "10.48550/arXiv.2510.24907",
+      "updatedAt": "2025-10-28T04:27:03Z",
+      "arxivId": "2510.24055",
+      "doi": "10.1109/LRA.2026.3678002",
       "categories": [
-        "cs.CV",
-        "cs.AI",
+        "cs.RO",
         "cs.LG"
       ],
       "fieldIds": [
-        "cs-ai",
-        "cs-cv",
-        "cs-lg"
+        "cs-lg",
+        "embodied-intelligence",
+        "cs-cv"
       ],
       "topicIds": [
-        "cv-three-dimensional-vision",
-        "lg-theory-optimization"
+        "imitation-reinforcement-learning",
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition"
       ],
       "sources": [
         "arxiv",
         "semantic-scholar"
       ],
-      "sourceUrl": "http://arxiv.org/abs/2510.24907v1",
-      "pdfUrl": "https://arxiv.org/pdf/2510.24907",
+      "sourceUrl": "http://arxiv.org/abs/2510.24055v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24055",
       "artifacts": [
         {
-          "kind": "code",
-          "url": "https://github.com/JulienGaubil/und3rstand"
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24055v1"
         },
         {
           "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24907v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2510.24907"
+          "url": "https://arxiv.org/pdf/2510.24055"
         }
       ],
-      "semanticScholarId": "af20eb81ac52a6622a00329f78c2c50daf5472d7",
-      "citationCount": 7,
+      "semanticScholarId": "a11ad0f4197e4050e1f5d88dd7dc7c2d23f9acbe",
+      "venue": "IEEE Robotics and Automation Letters",
+      "citationCount": 3,
       "influentialCitationCount": 0,
       "publicationStatus": "formal",
       "personalization": {},
       "score": {
         "baseTotal": 57,
         "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 15,
+        "evidence": 14,
+        "freshness": 2,
+        "completeness": 17,
         "tier": "track",
         "reasons": [
           "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2510.24907",
-          "提供可复现代码",
+          "已有正式发表线索：IEEE Robotics and Automation Letters",
+          "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
         "evidenceBreakdown": {
           "publication": 6,
-          "citations": 1,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2510.24650",
+      "title": "Advancing site-specific disease and pest management in precision agriculture: From reasoning-driven foundation models to adaptive, feedback-based learning",
+      "authors": [
+        "Nitin Rai",
+        "Daeun",
+        "Choi",
+        "Nathan S. Boyd",
+        "Arnold W. Schumann"
+      ],
+      "abstract": "Site-specific disease management (SSDM) in crops has advanced rapidly through machine and deep learning (ML and DL) for real-time computer vision. Research evolved from handcrafted feature extraction to large-scale automated feature learning. With foundation models (FMs), crop disease datasets are now processed in fundamentally new ways. Unlike traditional neural networks, FMs integrate visual and textual data, interpret symptoms in text, reason about symptom-management relationships, and support interactive QA for growers and educators. Adaptive and imitation learning in robotics further enables field-based disease management. This review screened approx. 40 articles on FM applications for SSDM, focusing on large-language models (LLMs) and vision-language models (VLMs), and discussing their role in adaptive learning (AL), reinforcement learning (RL), and digital twin frameworks for targeted spraying. Key findings: (a) FMs are gaining traction with surging literature in 2023-24; (b) VLMs outpace LLMs, with a 5-10x increase in publications; (c) RL and AL are still nascent for smart spraying; (d) digital twins with RL can simulate targeted spraying virtually; (e) addressing the sim-to-real gap is critical for real-world deployment; (f) human-robot collaboration remains limited, especially in human-in-the-loop approaches where robots detect early symptoms and humans validate uncertain cases; (g) multi-modal FMs with real-time feedback will drive next-gen SSDM. For updates, resources, and contributions, visit, https://github.com/nitin-dominic/AgriPathogenDatabase, to submit papers, code, or datasets.",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T17:16:47Z",
+      "arxivId": "2510.24650",
+      "doi": "10.48550/arXiv.2510.24650",
+      "categories": [
+        "cs.AI"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "embodied-intelligence",
+        "cs-cl",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "imitation-reinforcement-learning",
+        "simulation-datasets-evaluation",
+        "ai-reasoning-planning",
+        "cl-language-modeling",
+        "cv-vision-language-multimodal",
+        "lg-reinforcement-learning"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24650v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24650",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/nitin-dominic/AgriPathogenDatabase"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24650v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24650"
+        }
+      ],
+      "semanticScholarId": "d3d800753aceafe767edcb2e1cd2748f54c29dea",
+      "citationCount": 2,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 57,
+        "relevance": 24,
+        "evidence": 16,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24650",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 4,
-          "empirical": 0,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -30652,73 +30577,6 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：European Conference on Mobile Robots",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 0,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
-      "id": "arxiv:2607.28132",
-      "title": "Convolutional Neural Shading for High-Quality 3D Reconstruction from Multi-View Images",
-      "authors": [
-        "Juheon Hwang",
-        "Taewan Kim",
-        "Heeseok Oh",
-        "Jiwoo Kang"
-      ],
-      "abstract": "We propose a convolutional neural shading (CNS), a novel pipeline to reconstruct high-quality 3D shapes from multi-view images. Several recent studies have used neural radiance fields and other neural differentiable rendering methods to understand 3D geometry. However, these approaches rely on single-point geometric information, such as positions and normals of the surface, leading to a lack of detailed local geometry. Our approach addresses the inherent limitations of single-point information by leveraging a neural shader to capture variations even in dark and textureless regions with a convolutional neural shader, resulting in far more accurate geometry predictions. Additionally, our method mitigates surface irregularities at image boundaries by introducing a fine-detail displacement network, which utilizes spatial information of surface geometry and learns fine displacement details by correlating neighboring values in the rendering coordinates. Through extensive experiments, our proposed method has demonstrated significant quality improvements in the reconstructed shapes and rendered images over current state-of-the-art methods.",
-      "publishedAt": "2025-06-10",
-      "updatedAt": "2026-07-30T12:41:50Z",
-      "arxivId": "2607.28132",
-      "doi": "10.1007/s00530-025-01883-6",
-      "categories": [
-        "cs.CV"
-      ],
-      "fieldIds": [
-        "cs-cv"
-      ],
-      "topicIds": [
-        "cv-three-dimensional-vision"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2607.28132v1",
-      "pdfUrl": "https://arxiv.org/pdf/2607.28132",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.28132v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2607.28132"
-        }
-      ],
-      "semanticScholarId": "3563a929f2d17e16a6450bf375a3b0469fc7e53e",
-      "venue": "Multimedia Systems",
-      "citationCount": 0,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 14,
-        "freshness": 2,
-        "completeness": 17,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：Multimedia Systems",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -33508,6 +33366,81 @@
       }
     },
     {
+      "id": "arxiv:2510.24907",
+      "title": "Understanding Multi-View Transformers",
+      "authors": [
+        "Michal Stary",
+        "Julien Gaubil",
+        "Ayush Tewari",
+        "Vincent Sitzmann"
+      ],
+      "abstract": "Multi-view transformers such as DUSt3R are revolutionizing 3D vision by solving 3D tasks in a feed-forward manner. However, contrary to previous optimization-based pipelines, the inner mechanisms of multi-view transformers are unclear. Their black-box nature makes further improvements beyond data scaling challenging and complicates usage in safety- and reliability-critical applications. Here, we present an approach for probing and visualizing 3D representations from the residual connections of the multi-view transformers' layers. In this manner, we investigate a variant of the DUSt3R model, shedding light on the development of its latent state across blocks, the role of the individual layers, and suggest how it differs from methods with stronger inductive biases of explicit global pose. Finally, we show that the investigated variant of DUSt3R estimates correspondences that are refined with reconstructed geometry. The code used for the analysis is available at https://github.com/JulienGaubil/und3rstand .",
+      "publishedAt": "2025-10-28",
+      "updatedAt": "2025-10-28T19:19:35Z",
+      "arxivId": "2510.24907",
+      "doi": "10.48550/arXiv.2510.24907",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "fieldIds": [
+        "cs-ai",
+        "cs-cv",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "cv-three-dimensional-vision",
+        "lg-theory-optimization"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2510.24907v1",
+      "pdfUrl": "https://arxiv.org/pdf/2510.24907",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/JulienGaubil/und3rstand"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24907v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2510.24907"
+        }
+      ],
+      "semanticScholarId": "af20eb81ac52a6622a00329f78c2c50daf5472d7",
+      "citationCount": 7,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 15,
+        "freshness": 2,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2510.24907",
+          "提供可复现代码",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 1,
+          "reproducibility": 4,
+          "empirical": 0,
+          "corroboration": 4
+        }
+      }
+    },
+    {
       "id": "arxiv:2510.22282",
       "title": "CityRiSE: Reasoning Urban Socio-Economic Status in Vision-Language Models via Reinforcement Learning",
       "authors": [
@@ -34110,6 +34043,73 @@
         "evidenceBreakdown": {
           "publication": 6,
           "citations": 1,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2607.28132",
+      "title": "Convolutional Neural Shading for High-Quality 3D Reconstruction from Multi-View Images",
+      "authors": [
+        "Juheon Hwang",
+        "Taewan Kim",
+        "Heeseok Oh",
+        "Jiwoo Kang"
+      ],
+      "abstract": "We propose a convolutional neural shading (CNS), a novel pipeline to reconstruct high-quality 3D shapes from multi-view images. Several recent studies have used neural radiance fields and other neural differentiable rendering methods to understand 3D geometry. However, these approaches rely on single-point geometric information, such as positions and normals of the surface, leading to a lack of detailed local geometry. Our approach addresses the inherent limitations of single-point information by leveraging a neural shader to capture variations even in dark and textureless regions with a convolutional neural shader, resulting in far more accurate geometry predictions. Additionally, our method mitigates surface irregularities at image boundaries by introducing a fine-detail displacement network, which utilizes spatial information of surface geometry and learns fine displacement details by correlating neighboring values in the rendering coordinates. Through extensive experiments, our proposed method has demonstrated significant quality improvements in the reconstructed shapes and rendered images over current state-of-the-art methods.",
+      "publishedAt": "2025-06-10",
+      "updatedAt": "2026-07-30T12:41:50Z",
+      "arxivId": "2607.28132",
+      "doi": "10.1007/s00530-025-01883-6",
+      "categories": [
+        "cs.CV"
+      ],
+      "fieldIds": [
+        "cs-cv"
+      ],
+      "topicIds": [
+        "cv-three-dimensional-vision"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2607.28132v1",
+      "pdfUrl": "https://arxiv.org/pdf/2607.28132",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.28132v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2607.28132"
+        }
+      ],
+      "semanticScholarId": "3563a929f2d17e16a6450bf375a3b0469fc7e53e",
+      "venue": "Multimedia Systems",
+      "citationCount": 0,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 1,
+        "completeness": 17,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：Multimedia Systems",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
           "reproducibility": 0,
           "empirical": 4,
           "corroboration": 4
@@ -103057,18 +103057,18 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
-      "recordCount": 1363
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
+      "recordCount": 1370
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
-      "recordCount": 974,
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
+      "recordCount": 973,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-11-11T11:20:40.711Z",
+      "fetchedAt": "2026-11-12T11:40:12.464Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
