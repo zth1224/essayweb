@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "fieldId": "cs-cv",
-  "generatedAt": "2026-11-26T13:00:03.534Z",
+  "generatedAt": "2026-11-27T12:57:08.564Z",
   "retainedDays": 730,
   "candidateCap": 2000,
   "papers": [
@@ -6358,86 +6358,6 @@
       }
     },
     {
-      "id": "arxiv:2502.03266",
-      "title": "ZISVFM: Zero-Shot Object Instance Segmentation in Indoor Robotic Environments with Vision Foundation Models",
-      "authors": [
-        "Ying Zhang",
-        "Maoliang Yin",
-        "Wenfu Bi",
-        "Haibao Yan",
-        "Shaohan Bian",
-        "Cui-Hua Zhang",
-        "Changchun Hua"
-      ],
-      "abstract": "Service robots operating in unstructured environments must effectively recognize and segment unknown objects to enhance their functionality. Traditional supervised learningbased segmentation techniques require extensive annotated datasets, which are impractical for the diversity of objects encountered in real-world scenarios. Unseen Object Instance Segmentation (UOIS) methods aim to address this by training models on synthetic data to generalize to novel objects, but they often suffer from the simulation-to-reality gap. This paper proposes a novel approach (ZISVFM) for solving UOIS by leveraging the powerful zero-shot capability of the segment anything model (SAM) and explicit visual representations from a selfsupervised vision transformer (ViT). The proposed framework operates in three stages: (1) generating object-agnostic mask proposals from colorized depth images using SAM, (2) refining these proposals using attention-based features from the selfsupervised ViT to filter non-object masks, and (3) applying K-Medoids clustering to generate point prompts that guide SAM towards precise object segmentation. Experimental validation on two benchmark datasets and a self-collected dataset demonstrates the superior performance of ZISVFM in complex environments, including hierarchical settings such as cabinets, drawers, and handheld objects. Our source code is available at https://github.com/Yinmlmaoliang/zisvfm.",
-      "publishedAt": "2025-02-05",
-      "updatedAt": "2025-02-05T15:22:20Z",
-      "arxivId": "2502.03266",
-      "doi": "10.1109/TRO.2025.3539198",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "simulation-datasets-evaluation",
-        "cv-representation-recognition",
-        "lg-representation-self-supervised"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2502.03266v1",
-      "pdfUrl": "https://arxiv.org/pdf/2502.03266",
-      "artifacts": [
-        {
-          "kind": "code",
-          "url": "https://github.com/Yinmlmaoliang/zisvfm"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2502.03266v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2502.03266"
-        }
-      ],
-      "semanticScholarId": "768c91782d2bfe698d7eb9fa474287108a36634e",
-      "venue": "IEEE Transactions on robotics",
-      "citationCount": 25,
-      "influentialCitationCount": 1,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 63,
-        "relevance": 24,
-        "evidence": 18,
-        "freshness": 1,
-        "completeness": 20,
-        "tier": "skim",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：IEEE Transactions on robotics",
-          "提供可复现代码",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 2,
-          "reproducibility": 4,
-          "empirical": 2,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2608.00068",
       "title": "SafeBuild-Bench: A Temporal-Robust Construction Safety Benchmark with Graph-Enhanced Data Mining",
       "authors": [
@@ -9321,6 +9241,86 @@
           "citations": 1,
           "reproducibility": 0,
           "empirical": 6,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2502.03266",
+      "title": "ZISVFM: Zero-Shot Object Instance Segmentation in Indoor Robotic Environments with Vision Foundation Models",
+      "authors": [
+        "Ying Zhang",
+        "Maoliang Yin",
+        "Wenfu Bi",
+        "Haibao Yan",
+        "Shaohan Bian",
+        "Cui-Hua Zhang",
+        "Changchun Hua"
+      ],
+      "abstract": "Service robots operating in unstructured environments must effectively recognize and segment unknown objects to enhance their functionality. Traditional supervised learningbased segmentation techniques require extensive annotated datasets, which are impractical for the diversity of objects encountered in real-world scenarios. Unseen Object Instance Segmentation (UOIS) methods aim to address this by training models on synthetic data to generalize to novel objects, but they often suffer from the simulation-to-reality gap. This paper proposes a novel approach (ZISVFM) for solving UOIS by leveraging the powerful zero-shot capability of the segment anything model (SAM) and explicit visual representations from a selfsupervised vision transformer (ViT). The proposed framework operates in three stages: (1) generating object-agnostic mask proposals from colorized depth images using SAM, (2) refining these proposals using attention-based features from the selfsupervised ViT to filter non-object masks, and (3) applying K-Medoids clustering to generate point prompts that guide SAM towards precise object segmentation. Experimental validation on two benchmark datasets and a self-collected dataset demonstrates the superior performance of ZISVFM in complex environments, including hierarchical settings such as cabinets, drawers, and handheld objects. Our source code is available at https://github.com/Yinmlmaoliang/zisvfm.",
+      "publishedAt": "2025-02-05",
+      "updatedAt": "2025-02-05T15:22:20Z",
+      "arxivId": "2502.03266",
+      "doi": "10.1109/TRO.2025.3539198",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "simulation-datasets-evaluation",
+        "cv-representation-recognition",
+        "lg-representation-self-supervised"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2502.03266v1",
+      "pdfUrl": "https://arxiv.org/pdf/2502.03266",
+      "artifacts": [
+        {
+          "kind": "code",
+          "url": "https://github.com/Yinmlmaoliang/zisvfm"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2502.03266v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2502.03266"
+        }
+      ],
+      "semanticScholarId": "768c91782d2bfe698d7eb9fa474287108a36634e",
+      "venue": "IEEE Transactions on robotics",
+      "citationCount": 25,
+      "influentialCitationCount": 1,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 62,
+        "relevance": 24,
+        "evidence": 18,
+        "freshness": 0,
+        "completeness": 20,
+        "tier": "skim",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：IEEE Transactions on robotics",
+          "提供可复现代码",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 2,
+          "reproducibility": 4,
+          "empirical": 2,
           "corroboration": 4
         }
       }
@@ -27906,82 +27906,6 @@
       }
     },
     {
-      "id": "arxiv:2512.14217",
-      "title": "DRAW2ACT: Turning Depth-Encoded Trajectories into Robotic Demonstration Videos",
-      "authors": [
-        "Yang Bai",
-        "Liudi Yang",
-        "George Eskandar",
-        "Fengyi Shen",
-        "Mohammad Altillawi",
-        "Ziyuan Liu",
-        "Gitta Kutyniok"
-      ],
-      "abstract": "Video diffusion models provide powerful real-world simulators for embodied AI but remain limited in controllability for robotic manipulation. Recent works on trajectory-conditioned video generation address this gap but often rely on 2D trajectories or single modality conditioning, which restricts their ability to produce controllable and consistent robotic demonstrations. We present DRAW2ACT, a depth-aware trajectory-conditioned video generation framework that extracts multiple orthogonal representations from the input trajectory, capturing depth, semantics, shape and motion, and injects them into the diffusion model. Moreover, we propose to jointly generate spatially aligned RGB and depth videos, leveraging cross-modality attention mechanisms and depth supervision to enhance the spatio-temporal consistency. Finally, we introduce a multimodal policy model conditioned on the generated RGB and depth sequences to regress the robot's joint angles. Experiments on Bridge V2, Berkeley Autolab, and simulation benchmarks show that DRAW2ACT achieves superior visual fidelity and consistency while yielding higher manipulation success rates compared to existing baselines.",
-      "publishedAt": "2025-12-16",
-      "updatedAt": "2025-12-16T09:11:36Z",
-      "arxivId": "2512.14217",
-      "doi": "10.48550/arXiv.2512.14217",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "fieldIds": [
-        "cs-cv",
-        "embodied-intelligence",
-        "cs-lg"
-      ],
-      "topicIds": [
-        "multimodal-world-models",
-        "robot-manipulation",
-        "simulation-datasets-evaluation",
-        "cv-image-video-generation",
-        "lg-generative-modeling"
-      ],
-      "sources": [
-        "arxiv",
-        "semantic-scholar"
-      ],
-      "sourceUrl": "http://arxiv.org/abs/2512.14217v1",
-      "pdfUrl": "https://arxiv.org/pdf/2512.14217",
-      "artifacts": [
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2512.14217v1"
-        },
-        {
-          "kind": "pdf",
-          "url": "https://arxiv.org/pdf/2512.14217"
-        }
-      ],
-      "semanticScholarId": "ecb2880c4adb6fd3bd8f0840a27e2674335009a1",
-      "citationCount": 3,
-      "influentialCitationCount": 0,
-      "publicationStatus": "formal",
-      "personalization": {},
-      "score": {
-        "baseTotal": 57,
-        "relevance": 24,
-        "evidence": 15,
-        "freshness": 3,
-        "completeness": 15,
-        "tier": "track",
-        "reasons": [
-          "匹配当前研究方向",
-          "已有正式发表线索：10.48550/arXiv.2512.14217",
-          "摘要给出实验或 benchmark 线索",
-          "摘要、来源与实验线索较完整"
-        ],
-        "evidenceBreakdown": {
-          "publication": 6,
-          "citations": 1,
-          "reproducibility": 0,
-          "empirical": 4,
-          "corroboration": 4
-        }
-      }
-    },
-    {
       "id": "arxiv:2512.09406",
       "title": "H2R-Grounder: A Paired-Data-Free Paradigm for Translating Human Interaction Videos into Physically Grounded Robot Videos",
       "authors": [
@@ -32094,6 +32018,82 @@
         "reasons": [
           "匹配当前研究方向",
           "已有正式发表线索：10.48550/arXiv.2512.23617",
+          "摘要给出实验或 benchmark 线索",
+          "摘要、来源与实验线索较完整"
+        ],
+        "evidenceBreakdown": {
+          "publication": 6,
+          "citations": 0,
+          "reproducibility": 0,
+          "empirical": 4,
+          "corroboration": 4
+        }
+      }
+    },
+    {
+      "id": "arxiv:2512.14217",
+      "title": "DRAW2ACT: Turning Depth-Encoded Trajectories into Robotic Demonstration Videos",
+      "authors": [
+        "Yang Bai",
+        "Liudi Yang",
+        "George Eskandar",
+        "Fengyi Shen",
+        "Mohammad Altillawi",
+        "Ziyuan Liu",
+        "Gitta Kutyniok"
+      ],
+      "abstract": "Video diffusion models provide powerful real-world simulators for embodied AI but remain limited in controllability for robotic manipulation. Recent works on trajectory-conditioned video generation address this gap but often rely on 2D trajectories or single modality conditioning, which restricts their ability to produce controllable and consistent robotic demonstrations. We present DRAW2ACT, a depth-aware trajectory-conditioned video generation framework that extracts multiple orthogonal representations from the input trajectory, capturing depth, semantics, shape and motion, and injects them into the diffusion model. Moreover, we propose to jointly generate spatially aligned RGB and depth videos, leveraging cross-modality attention mechanisms and depth supervision to enhance the spatio-temporal consistency. Finally, we introduce a multimodal policy model conditioned on the generated RGB and depth sequences to regress the robot's joint angles. Experiments on Bridge V2, Berkeley Autolab, and simulation benchmarks show that DRAW2ACT achieves superior visual fidelity and consistency while yielding higher manipulation success rates compared to existing baselines.",
+      "publishedAt": "2025-12-16",
+      "updatedAt": "2025-12-16T09:11:36Z",
+      "arxivId": "2512.14217",
+      "doi": "10.48550/arXiv.2512.14217",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "fieldIds": [
+        "cs-cv",
+        "embodied-intelligence",
+        "cs-lg"
+      ],
+      "topicIds": [
+        "multimodal-world-models",
+        "robot-manipulation",
+        "simulation-datasets-evaluation",
+        "cv-image-video-generation",
+        "lg-generative-modeling"
+      ],
+      "sources": [
+        "arxiv",
+        "semantic-scholar"
+      ],
+      "sourceUrl": "http://arxiv.org/abs/2512.14217v1",
+      "pdfUrl": "https://arxiv.org/pdf/2512.14217",
+      "artifacts": [
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2512.14217v1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2512.14217"
+        }
+      ],
+      "semanticScholarId": "ecb2880c4adb6fd3bd8f0840a27e2674335009a1",
+      "citationCount": 3,
+      "influentialCitationCount": 0,
+      "publicationStatus": "formal",
+      "personalization": {},
+      "score": {
+        "baseTotal": 56,
+        "relevance": 24,
+        "evidence": 14,
+        "freshness": 3,
+        "completeness": 15,
+        "tier": "track",
+        "reasons": [
+          "匹配当前研究方向",
+          "已有正式发表线索：10.48550/arXiv.2512.14217",
           "摘要给出实验或 benchmark 线索",
           "摘要、来源与实验线索较完整"
         ],
@@ -109785,18 +109785,18 @@
   "sources": {
     "arxiv": {
       "state": "ok",
-      "fetchedAt": "2026-11-26T13:00:03.534Z",
-      "recordCount": 1508
+      "fetchedAt": "2026-11-27T12:57:08.564Z",
+      "recordCount": 1509
     },
     "semantic-scholar": {
       "state": "degraded",
-      "fetchedAt": "2026-11-26T13:00:03.534Z",
+      "fetchedAt": "2026-11-27T12:57:08.564Z",
       "recordCount": 968,
       "message": "Semantic Scholar unavailable (429)"
     },
     "openreview": {
       "state": "degraded",
-      "fetchedAt": "2026-11-26T13:00:03.534Z",
+      "fetchedAt": "2026-11-27T12:57:08.564Z",
       "recordCount": 0,
       "message": "OpenReview unavailable (403)"
     }
